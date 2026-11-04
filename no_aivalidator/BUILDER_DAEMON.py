@@ -247,6 +247,12 @@ def _attempt_report(agent_cands: list[SolutionCandidate], gate_log: list[dict[st
         stages = [g for g in gate_log if g.get("role") == c.role]
         failed_obs = next((o for o in c.observations if o.startswith(("stage=fail", "filter=fail", "parse=fail",
                                                                      "differs=no"))), "")
+        if any(o.startswith("gate=integrated") for o in c.observations):
+            last = next((s for s in reversed(stages) if s.get("stage") in ("tests", "integrates")), {})
+            rec.update(status="integrated", stage=last.get("stage", "integrates"), detail=last.get("detail", ""),
+                       probe=last.get("probe") or {}, next="nothing — it was applied on an earlier cycle; the rescan closes the row")
+            out.append(rec)
+            continue
         if failed_obs.startswith("stage=fail"):
             _, stage, detail = failed_obs.split(":", 2)
             g = next((s for s in stages if s.get("stage") == stage), {})
@@ -1020,6 +1026,7 @@ class CheatsheetBuilder:
         if ledger is None or not ledger.exists():
             return []
         failed: dict[str, dict[str, Any]] = {}
+        integrated: dict[str, list[dict[str, Any]]] = {}
         carried: list[dict[str, Any]] = []
         for raw in ledger.read_text(encoding="utf-8").splitlines():
             try:
@@ -1028,11 +1035,22 @@ class CheatsheetBuilder:
                 continue
             if rec.get("verdict") == "fail" and rec.get("attempt_id") not in failed:
                 failed[rec["attempt_id"]] = rec
+            # cr_trials round two F7 (2026-11-04): an attempt the ledger already APPLIED is a fact of the row too. The
+            # next cycle re-joined it against the rewritten live function, read "differs=no", and overwrote the row's
+            # history with "refused". It carries its integrates (and tests) records forward instead.
+            if rec.get("verdict") == "pass" and rec.get("stage") in ("integrates", "tests"):
+                integrated.setdefault(rec.get("attempt_id"), []).append(rec)
         for c in cands:
-            rec = failed.get(c.role.rsplit("_", 1)[-1])
+            aid = c.role.rsplit("_", 1)[-1]
+            rec = failed.get(aid)
             if rec and not any(o.startswith("stage=fail") for o in c.observations):
                 c.observations.append(f"stage=fail:{rec.get('stage')}:{rec.get('detail')}")
                 carried.append({"role": c.role, **{k: v for k, v in rec.items() if k not in ("attempt_id", "row_key", "at")}})
+            done = integrated.get(aid)
+            if done and any(r.get("stage") == "integrates" for r in done) and aid not in failed:
+                c.observations.append("gate=integrated:applied on an earlier cycle")
+                for r in done:
+                    carried.append({"role": c.role, **{k: v for k, v in r.items() if k not in ("attempt_id", "row_key", "at")}})
         return carried
 
     async def _stage_integrates(self, pick: SolutionCandidate, finding: dict[str, Any],
