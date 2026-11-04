@@ -102,4 +102,4 @@ release bar.
 ## License
 
 PolyForm Noncommercial 1.0.0. Free for non-commercial use; commercial use needs a licence from the author
-(contact LowerJacksonMound through GitHub). See LICENSE. A security problem goes through SECURITY.md, not an issue.
+(LowerJacksonMound@proton.me). See LICENSE. A security problem goes through SECURITY.md, not an issue.
