@@ -595,6 +595,7 @@ _CHIP_STYLE = {
     'padding': '0px 4px', 'marginLeft': '6px', 'whiteSpace': 'nowrap',
 }
 _WITHHELD_PAGE = 25
+_SERVER_TOKEN = f"{os.getpid()}-{int(time.time())}"   # cr_trials F5 (2026-11-04): this dashboard process; a page from an older one reloads
 app.layout = dbc.Container([
     # ── Startup overlay ─────────────────────────────────────────────────
     html.Div(id='startup-overlay', children=[
@@ -643,7 +644,7 @@ app.layout = dbc.Container([
             # Item 8 (2026-09-15): the PURPOSE field on the overlay — the developer's statement of what the
             # target is for, submitted before lift (the lift never waits on it); stored in the intent file
             # labelled `developer`, turned into discrete facts by fixed rules, read by the Ranker's profile.
-            html.Div([
+            html.Div(id='overlay-purpose-block', children=[
                 html.Div('purpose — what is this code for? (one or two sentences; saved to the intent file)',
                          style={'color': '#9ca3af', 'fontFamily': 'monospace', 'fontSize': '9pt', 'marginBottom': '4px'}),
                 dcc.Textarea(id='purpose-input-overlay', value=_INTENT_TEXT0,
@@ -661,7 +662,7 @@ app.layout = dbc.Container([
             # owner 2026-09-28: pick the scan interval up front, with a word on why — a big repo scanned every
             # 2.5s runs the machine hot and the user would not know why. Same setting as the dash's Poll Rate
             # slider (it moves that slider, which writes poll_config). Wording is a first draft.
-            html.Div([
+            html.Div(id='overlay-interval-block', children=[
                 html.Div([
                     html.Span('scan interval', style={'color': '#9ca3af', 'fontFamily': 'monospace', 'fontSize': '9pt',
                                                       'marginRight': '10px'}),
@@ -747,6 +748,8 @@ app.layout = dbc.Container([
     # of any of the three writers (circuit slot 0, validator slot 2, Builder slot 4).
     dcc.Interval(id='verdict-interval', interval=_CADENCE_SLOT_MS['verdict_interval'],
                  n_intervals=0, max_intervals=-1),
+    html.Div(id='server-token-page', children=_SERVER_TOKEN, style={'display': 'none'}),
+    html.Div(id='server-token-live', children='', style={'display': 'none'}),
     dcc.Interval(id='circuit-interval', interval=_CADENCE_SLOT_MS['circuit_interval'],
                  n_intervals=0, max_intervals=-1),
     dcc.Store(id='poll-rate-store', data=2500),
@@ -1589,6 +1592,39 @@ def overlay_ready_button(done, _n=None):
     return True, 'launching — opens when every step is green', {**base, 'backgroundColor': '#1f2937',
                                                                   'color': '#6b7280', 'border': '1px solid #374151'}
 
+
+
+@app.callback(
+    Output('overlay-purpose-block', 'style'),
+    Output('overlay-interval-block', 'style'),
+    Input('circuit-interval', 'n_intervals'),
+)
+def hide_setup_inputs_on_argv_launch(_n):
+    """cr_trials F5 (owner 2026-11-04): an argv or MCP launch made every choice before this page existed (cr_watch
+    names the target and trackers; there is no purpose to type), so the purpose and scan-interval inputs are
+    hidden; they stay for a launch that came from the setup page (SETUP_TAB_WAITING)."""
+    block = {'marginTop': '12px', 'borderTop': '1px solid #374151', 'paddingTop': '8px'}
+    if SETUP_TAB_WAITING:
+        return block, block
+    return {'display': 'none'}, {'display': 'none'}
+
+
+@app.callback(Output('server-token-live', 'children'), Input('circuit-interval', 'n_intervals'))
+def serve_token(_n):
+    return _SERVER_TOKEN
+
+
+app.clientside_callback(
+    """
+    function(live, page) {
+        if (live && page && live !== page) { location.reload(); }
+        return window.dash_clientside.no_update;
+    }
+    """,
+    Output('server-token-page', 'title'),
+    Input('server-token-live', 'children'),
+    State('server-token-page', 'children'),
+)
 
 @app.callback(
     Output('launch-control-chip', 'children'),

@@ -74,11 +74,15 @@ def update(path: Path | str, stage: str, status: str, detail: str = "",
                     doc["detail"] = detail
             else:
                 st = doc.setdefault("stages", {}).setdefault(stage, {})
-                if started is not None:
+                # cr_trials F6 (2026-11-04): a step that already passed keeps its time; a later pass write (the
+                # fix builder's build time is re-read every cycle) updates the detail only, so the launch row
+                # shows the launch step's seconds, not the latest cycle's.
+                passed_already = status == "pass" and st.get("status") == "pass" and "secs" in st
+                if started is not None and not passed_already:
                     st["started"] = started
                 if status == "running":
                     st["started"] = st.get("started", now)
-                elif "started" in st:
+                elif "started" in st and not passed_already:
                     st["secs"] = round(now - st["started"], 1)
                 st["status"] = status
                 st["detail"] = detail
