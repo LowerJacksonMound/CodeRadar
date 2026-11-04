@@ -70,3 +70,6 @@ system_scripts/*.json.lock
 
 # reference material, kept beside the repo, not in it (as the other two gates do)
 NEW_CR_DESIGN_N_SUPPORTING_DOCS/
+
+# the census ledger of record lives under .archive (preranker_census.newest_ledger); it is tracked, the rest of .archive is not
+!.archive/PRERANKER_HUNT_*.tsv
