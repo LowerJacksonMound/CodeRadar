@@ -24,9 +24,29 @@ if [ ! -x "$ENTRY" ]; then
   echo "install_coderadar_mcp.sh: $ENTRY is missing or not executable" >&2
   exit 1
 fi
+# A fresh clone has no venv. Build it here, once, from pyproject.toml (2026-11-04: the stranger-facing path; before
+# this the script refused and said "build the venv first" without saying how). Every other script in the tree
+# (launch.sh, coderadar-mcp.sh, replay_gates.sh) expects exactly this path, so the name is not a choice.
 if [ ! -x "$ROOT/.venv_new/bin/coderadar-mcp" ]; then
-  echo "install_coderadar_mcp.sh: $ROOT/.venv_new/bin/coderadar-mcp is missing — build the venv first" >&2
-  exit 1
+  PY="${PYTHON:-python3}"
+  if ! "$PY" -c 'import sys; sys.exit(0 if sys.version_info >= (3, 12) else 1)' 2>/dev/null; then
+    echo "install_coderadar_mcp.sh: CodeRadar needs Python 3.12 or newer; '$PY' is $("$PY" --version 2>&1). Set PYTHON=/path/to/python3.13 and run again." >&2
+    exit 1
+  fi
+  if [ "${1:-}" = "--print" ]; then
+    echo "# the venv $ROOT/.venv_new does not exist yet; without --print this script builds it with:" >&2
+    echo "#   $PY -m venv $ROOT/.venv_new && $ROOT/.venv_new/bin/pip install -e '$ROOT[lane]'" >&2
+  else
+    echo "install_coderadar_mcp.sh: building $ROOT/.venv_new with $("$PY" --version 2>&1) (a minute or two; dash, plotly and mypy are the big ones)"
+    "$PY" -m venv "$ROOT/.venv_new"
+    "$ROOT/.venv_new/bin/pip" install --quiet --upgrade pip
+    "$ROOT/.venv_new/bin/pip" install --quiet -e "$ROOT[lane]"
+    [ -x "$ROOT/.venv_new/bin/coderadar-mcp" ] || { echo "install_coderadar_mcp.sh: the venv built but $ROOT/.venv_new/bin/coderadar-mcp is still missing" >&2; exit 1; }
+    echo "install_coderadar_mcp.sh: venv built; self-test next"
+    (cd "$ROOT" && PYTHONDONTWRITEBYTECODE=1 "$ROOT/.venv_new/bin/python" system_scripts/health_check.py >/dev/null 2>&1) \
+      && echo "install_coderadar_mcp.sh: self-test passed" \
+      || echo "install_coderadar_mcp.sh: self-test reported issues (the first cr_watch runs it again and shows each step)"
+  fi
 fi
 
 JSON=$(printf '{"type":"stdio","command":"%s","args":[],"timeout":%s}' "$ENTRY" "$TIMEOUT_MS")
