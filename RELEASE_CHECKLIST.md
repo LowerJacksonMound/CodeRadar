@@ -24,15 +24,19 @@ The measured record (trial rounds, stress cases, the clean-clone rehearsal) is k
 - [x] Licence PolyForm Noncommercial since the first code commit; pyproject carries it as an SPDX expression.
 - [x] SECURITY.md and the README's "Reporting a problem" section present.
 - [ ] Second-machine run from a clone (a friend's Mac): every step that needs knowledge not in the files is written in.
-- [ ] GitHub private vulnerability reporting on; discussions, wiki, projects off (repo settings, the owner's).
+- [x] Discussions, wiki, projects off; issues on (2026-11-04). Private vulnerability reporting is offered by GitHub only on a
+      public repo: first action after the flip.
 
 ## Rung 1: tag and GitHub release, repo still private
 
-- [ ] Version bumped in both places; annotated tag pushed; release text: install, verify, known limits.
-- [ ] Working tree clean at the tag; `git status` empty.
+- [x] Version 0.1.0 in pyproject.toml and `coderadar_mcp/__init__.py`; annotated tag `v0.1.0` pushed 2026-11-04; draft
+      prerelease "CodeRadar 0.1.0" on GitHub with install, verify and known limits.
+- [x] Working tree clean at the tag (`.archive/` census TSVs are untracked by design).
 
 ## Rung 3: public
 
-- [ ] Full-history scan clean; author identity on every commit as intended.
+- [x] Full-history scan 2026-11-04: no secrets (the one `password = "hunter2"` is a fixture plant), no blob over the
+      tracked census ledger, no home paths in tracked code (the calibration scripts' hardcoded root fixed the same day).
+      Author identity: two owner addresses across 21 commits, ruled to stay.
 - [ ] The flip is the owner's action: `gh repo edit LowerJacksonMound/CodeRadar --visibility public --accept-visibility-change-consequences`.
 - [ ] After the flip versions only go forward; no tag is ever moved again. Issues open, pull requests not taken.
