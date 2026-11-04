@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # run_live.sh TARGET_DIR DUMP_LIB RUN_NO PURPOSE POOL_FILE|-  — one B8 live proof: launch → MONITORING → capture → Chrome → live delta → teardown → md5 → archive → pool mark
 set -u
-ROOT=/Users/ian/Desktop/CODE_RADAR_REFURBISH; CAL=${CAL:-$ROOT/ARCHIVE/health/calibration_20260906_slice3}; PY=$ROOT/.venv_new/bin/python3
+ROOT=$(cd "$(dirname "$0")/../.." && pwd); CAL=${CAL:-$ROOT/ARCHIVE/health/calibration_20260906_slice3}; PY=$ROOT/.venv_new/bin/python3
 TARGET="$1"; DUMP="$2"; RUN="$3"; PURPOSE="$4"; POOL="$5"; NAME=$(basename "$TARGET"); RUNDIR=$ROOT/ARCHIVE/runs/$NAME; mkdir -p "$RUNDIR/state_during_run"
 cd "$ROOT"
 pkill -f "gearbox.py|circuit_daemon.py|NOAI_VALIDATOR_DAEMON.py|proof_dashboard.py" 2>/dev/null; sleep 2

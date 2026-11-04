@@ -4,7 +4,7 @@
 # (no timings.json race): A = 10 cal libs + 4 sdists, B = held-out 4 + real 2 + pydantic, C = numpy. `--merge` folds them into
 # CAL/precision once all three logs say done.  Template: slice3_open.sh.
 set -u
-ROOT=/Users/ian/Desktop/CODE_RADAR_REFURBISH; PY=$ROOT/.venv_new/bin/python; C=$ROOT/system_scripts/calibration
+ROOT=$(cd "$(dirname "$0")/../.." && pwd); PY=$ROOT/.venv_new/bin/python; C=$ROOT/system_scripts/calibration
 S3=$ROOT/ARCHIVE/health/calibration_20260906_slice3; CAL=$ROOT/ARCHIVE/health/calibration_20260906_bodyshape
 SITE=$ROOT/.venv_new/lib/python3.14/site-packages; SD=$ROOT/ARCHIVE/corpus_sdists; LOG=$ROOT/ARCHIVE/health/calibration_20260906_bodyshape
 cd "$ROOT"

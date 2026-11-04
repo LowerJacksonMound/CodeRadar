@@ -4,7 +4,7 @@
 # admitted AND no plant lost in either half — the owner may overrule; backup taken), apply (gate inside), record evidence,
 # dump corpus A, three live proofs (runs 40-42), kept-sites delta, freeze --slice 5, final gate.  Template: slice3_close.sh.
 set -u
-ROOT=/Users/ian/Desktop/CODE_RADAR_REFURBISH; PY=$ROOT/.venv_new/bin/python; C=$ROOT/system_scripts/calibration
+ROOT=$(cd "$(dirname "$0")/../.." && pwd); PY=$ROOT/.venv_new/bin/python; C=$ROOT/system_scripts/calibration
 export CAL=$ROOT/ARCHIVE/health/calibration_20260906_slice5; RUSH=$ROOT/ARCHIVE/naming/rush_track_pool.txt
 CALLIBS=click,jinja2,flask,werkzeug,requests,urllib3,packaging,pathspec,watchdog,idna,numpy,attrs,rich,more_itertools,tomli_w,pandas
 HELD=aiofiles,itsdangerous,importlib_metadata,zipp,pydantic; REAL=chets_shirt_20260905_211140,mels_offer

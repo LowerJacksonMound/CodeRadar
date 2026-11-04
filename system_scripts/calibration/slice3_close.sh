@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # slice3_close.sh — B7..B10 for slice 3 (2026-09-06): apply the ruling (gate inside), record evidence, dump corpus A, three live proofs, kept-sites delta, freeze, final gate.
 set -u
-ROOT=/Users/ian/Desktop/CODE_RADAR_REFURBISH; PY=$ROOT/.venv_new/bin/python; C=$ROOT/system_scripts/calibration
+ROOT=$(cd "$(dirname "$0")/../.." && pwd); PY=$ROOT/.venv_new/bin/python; C=$ROOT/system_scripts/calibration
 export CAL=$ROOT/ARCHIVE/health/calibration_20260906_slice3; RUSH=$ROOT/ARCHIVE/naming/rush_track_pool.txt
 cd "$ROOT"; echo "close start ($(date +%H:%M:%S))"
 cp system_scripts/rule_dispositions.json ARCHIVE/rule_dispositions_pre_slice3_ruling_20260906.json

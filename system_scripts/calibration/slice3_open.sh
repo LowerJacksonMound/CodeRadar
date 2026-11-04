@@ -2,7 +2,7 @@
 # slice3_open.sh — slice 3 B0 + B2 (2026-09-06): new CAL dir, stamp, carry-over of slice-2 labels + numpy's dump (same stamp),
 # re-dump 10 cal libs + 4 sdists (job A) ; held-out 4 + real 2 + pydantic (job B, --held) ; sheets for the 40 unconfirmed families.
 set -u
-ROOT=/Users/ian/Desktop/CODE_RADAR_REFURBISH; PY=$ROOT/.venv_new/bin/python; C=$ROOT/system_scripts/calibration
+ROOT=$(cd "$(dirname "$0")/../.." && pwd); PY=$ROOT/.venv_new/bin/python; C=$ROOT/system_scripts/calibration
 S2=$ROOT/ARCHIVE/health/calibration_20260906_slice2; CAL=$ROOT/ARCHIVE/health/calibration_20260906_slice3
 SITE=$ROOT/.venv_new/lib/python3.14/site-packages; SD=$ROOT/ARCHIVE/corpus_sdists
 UNC=HR-002,NAI-005,NAI-006,NAI-010,NAI-016,NAI-020,NAI-022,NAI-024,NAI-034,NAI-041,NAI-043,NAI-044,NAI-050,NAI-055,NAI-058,NAI-062,NAI-075,NAI-076,NAI-088,NAI-094,NAI-098,NAI-109,NAI-110,NAI-116,NAI-125,NAI-127,NAI-130,NAI-137,NAI-138,NAI-141,NAI-147,NAI-152,NAI-167,NAI-174,NAI-200,NAI-201,NAI-206,NAI-209,NAI-211,NAI-213
