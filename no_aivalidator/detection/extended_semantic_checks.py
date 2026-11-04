@@ -910,7 +910,13 @@ class ExtendedSemanticChecksMixin:
 
         has_accumulator = False
         for node in ast.walk(self.func):
-            if isinstance(node, ast.AugAssign) and isinstance(node.op, ast.Add):
+            # cr_trials round three (2026-11-04): `-=` (a count-down), `x = x + 1` and `d[k] = d.get(k, 0) + 1` are
+            # accumulation too; the test saw only `+=` and flagged three honest counters (counter.count_down,
+            # wordfreq.count_words, the plant's count_up_to). A body that never adds or subtracts is still flagged.
+            if isinstance(node, ast.AugAssign) and isinstance(node.op, (ast.Add, ast.Sub)):
+                has_accumulator = True
+                break
+            if isinstance(node, ast.Assign) and isinstance(node.value, ast.BinOp) and isinstance(node.value.op, (ast.Add, ast.Sub)):
                 has_accumulator = True
                 break
             if isinstance(node, ast.Call):
