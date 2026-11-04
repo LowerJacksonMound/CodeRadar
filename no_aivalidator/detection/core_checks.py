@@ -777,6 +777,11 @@ class CoreChecksMixin:
                 return
             if isinstance(only, ast.Raise):
                 return
+        # cr_trials round three, step 2 (2026-11-04): an `assert` is a control transfer (it raises on failure), the same
+        # class as the lone `raise` above; a body of asserts with no call (`assert tally.__doc__`, the import test of
+        # every honest app) is not side-effect-free. Neither NAI-011 plant (a bare read; a docstring-only body) asserts.
+        if any(isinstance(n, ast.Assert) for n in ast.walk(self.func)):
+            return
 
         if m.returns == 0 and m.yields == 0 and not m.has_side_effects:
             if m.calls == 0 and m.assigns == 0:
