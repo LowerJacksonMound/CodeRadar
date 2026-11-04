@@ -1099,9 +1099,9 @@
    ]
   },
   "NAI-004": {
-   "by": "migration",
+   "by": "owner",
    "class": "unclassified (no S.5 row)",
-   "dated": "2026-09-07",
+   "dated": "2026-11-04",
    "disposition": "deciding",
    "emitted_by": {
     "no_aivalidator/detection/core_checks.py": [
@@ -1110,16 +1110,16 @@
     ]
    },
    "evidence": {
-    "kind": "none (pre-calibration)",
+    "kind": "proof",
     "plants": {
-     "caught_by_id": 0,
-     "caught_in_substance": 0,
-     "held_out": 0,
-     "planted": 0
+     "planted": 1,
+     "caught_by_id": 1,
+     "caught_in_substance": 1,
+     "held_out": 0
     },
     "precision": {
      "libs_hit": [],
-     "libs_total": 0,
+     "libs_total": 3,
      "rows": {
       "alone": 0,
       "anywhere": 0,
@@ -1128,11 +1128,13 @@
      }
     },
     "sample_labels": [],
-    "sources": []
+    "sources": [
+     "ct-live cr_trials round one 2026-11-04: case 02_T2_placeholder caught by id; not fired on 12_honest_counter, 13_honest_connect4, 14_honest_wordfreq"
+    ]
    },
    "meaning": "Non-abstract function with only pass/ellipsis as body",
    "meaning_source": "no_aivalidator/detection/core_checks.py:_check_pass_only_function",
-   "note": "",
+   "note": "Owner ruling 2026-11-04 (round two, control C): a species marker of the four invariants; proof from cr_trials round one, so it vetoes a repair under the Builder's evidence rule (F2).",
    "measured_evidence": {
     "source": "scoring/table.jsonl (blind-tree scoring table, not shipped)",
     "trees": [
@@ -1994,9 +1996,9 @@
    }
   },
   "NAI-017": {
-   "by": "migration",
+   "by": "owner",
    "class": "unclassified (no S.5 row)",
-   "dated": "2026-09-07",
+   "dated": "2026-11-04",
    "disposition": "deciding",
    "emitted_by": {
     "no_aivalidator/detection/core_checks.py": [
@@ -2008,16 +2010,16 @@
     ]
    },
    "evidence": {
-    "kind": "none (pre-calibration)",
+    "kind": "proof",
     "plants": {
-     "caught_by_id": 0,
-     "caught_in_substance": 0,
-     "held_out": 0,
-     "planted": 0
+     "planted": 1,
+     "caught_by_id": 1,
+     "caught_in_substance": 1,
+     "held_out": 0
     },
     "precision": {
      "libs_hit": [],
-     "libs_total": 0,
+     "libs_total": 3,
      "rows": {
       "alone": 0,
       "anywhere": 0,
@@ -2026,11 +2028,13 @@
      }
     },
     "sample_labels": [],
-    "sources": []
+    "sources": [
+     "ct-live cr_trials round one 2026-11-04: case 03_T3_swallowed_failure caught by id; not fired on 12_honest_counter, 13_honest_connect4, 14_honest_wordfreq"
+    ]
    },
    "meaning": "may already catch this, but flag as safety issue too",
    "meaning_source": "no_aivalidator/detection/safety_checks.py:_check_silent_error_swallowing",
-   "note": "",
+   "note": "Owner ruling 2026-11-04 (round two, control C): a species marker of the four invariants; proof from cr_trials round one, so it vetoes a repair under the Builder's evidence rule (F2).",
    "measured_evidence": {
     "source": "scoring/table.jsonl (blind-tree scoring table, not shipped)",
     "trees": [

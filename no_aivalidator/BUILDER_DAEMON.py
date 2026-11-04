@@ -285,6 +285,24 @@ def _gate_lock() -> "asyncio.Lock":
     return _GATE_LOCK
 
 
+def _VR_evidence_kind(rid: str) -> str:
+    """The evidence kind on a rule family's table row ("ruling", "proof", "none (pre-calibration)"); a family with no
+    row reads as pre-calibration. Read once per process from the one disposition table."""
+    global _VR_EVIDENCE
+    if _VR_EVIDENCE is None:
+        try:
+            from .cheatsheets.cheatsheet_intelligence.knowledge_base import RULE_DISPOSITIONS
+            fams = json.loads(Path(RULE_DISPOSITIONS).read_text(encoding="utf-8")).get("families") or {}
+            _VR_EVIDENCE = {k: ((v.get("evidence") or {}).get("kind") if isinstance(v.get("evidence"), dict) else "ruling")
+                            for k, v in fams.items() if isinstance(v, dict)}
+        except Exception:
+            _VR_EVIDENCE = {}
+    return _VR_EVIDENCE.get(rid) or "none (pre-calibration)"
+
+
+_VR_EVIDENCE: dict[str, str] | None = None
+
+
 def _VR_disposition(rid: str) -> str:
     """`deciding` / `context` for a rule id, from the one disposition table (the VerdictRanker's)."""
     try:
@@ -1103,13 +1121,20 @@ class CheatsheetBuilder:
                                       f"(line {e.lineno})")
                 continue
             still = sorted(after_deciding & row_rules)
-            new = sorted(after_deciding - before_deciding)
+            # cr_trials round one, F2 (2026-11-04): a stub fires fewer rules than any real body, so "any new deciding
+            # rule" refused four honest repairs on rules that have never been calibrated (NAI-108, 003, 030, 136). A
+            # new rule vetoes only with evidence (a ruling or a proof); a pre-calibration rule is recorded, not decisive.
+            # shortcut: evidence kind is the only signal; upgrade to the family's class once the slices rule these.
+            newcomers = sorted(after_deciding - before_deciding)
+            new = [r for r in newcomers if _VR_evidence_kind(r) != "none (pre-calibration)"]
+            unruled = [r for r in newcomers if r not in new]
             if still:
                 c.observations.append(f"filter=fail:the row's own rule still fires on the attempt ({', '.join(still)})")
             elif new:
                 c.observations.append(f"filter=fail:the attempt brings a new deciding rule ({', '.join(new)})")
             else:
-                c.observations.append("filter=pass")
+                c.observations.append("filter=pass" + (f":uncalibrated rules fire on the attempt, not decisive ({', '.join(unruled)})"
+                                                       if unruled else ""))
 
     async def _deciding_on(self, source: str, rel: str, function: str) -> set[str]:
         """The deciding rule ids the validator raises on `function` when the file reads `source` — validated in a

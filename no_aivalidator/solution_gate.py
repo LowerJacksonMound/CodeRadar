@@ -97,14 +97,21 @@ def stage_runs(module_src: str, start: int, end: int, function: str, attempt_cod
         out["detail"] = "the sandbox cannot compile the function (I/O or an import it cannot bind) — stage 2 runs it for real"
         return out
     before = _outcomes(before_tree, function, grid) or [(None, None)] * len(grid)
+    # cr_trials round one, F1 (2026-11-04): the original on a row IS the counterfeit, so "raises where the original
+    # returned" graded honest bodies against input-ignoring fakes (T1: read_count([1, 2, 3])). A raise is now detail
+    # only; the line budget still fails; stage 2 (the repo's own tests) is the oracle for behaviour.
+    raised = []
     for args, (b_val, b_exc), (_a_val, a_exc) in zip(grid, before, after):
         if a_exc is not None and b_exc is None:
-            kind = "never returns (the probe's line budget ran out)" if isinstance(a_exc, TimeoutError) \
-                else f"raises {type(a_exc).__name__}: {a_exc}"
             call = f"{function}({', '.join(repr(a) for a in args)})"
-            out.update(verdict="fail", detail=f"{call} {kind} — the original returned {b_val!r} there",
-                       probe={"args": args, "raised": type(a_exc).__name__, "original": repr(b_val)})
-            return out
-    out.update(verdict="pass", detail=f"compiled in the sandbox and returned on all {len(grid)} probe inputs the original did",
-               probe={"inputs": len(grid)})
+            if isinstance(a_exc, TimeoutError):
+                out.update(verdict="fail", detail=f"{call} never returns (the probe's line budget ran out) — the original "
+                                                  f"returned {b_val!r} there",
+                           probe={"args": args, "raised": "TimeoutError", "original": repr(b_val)})
+                return out
+            raised.append(f"{call} raises {type(a_exc).__name__} where the original returned {b_val!r}")
+    note = f"; {len(raised)} probe input(s) raise where the original returned (detail only, the original is the row): " \
+           + "; ".join(raised) if raised else ""
+    out.update(verdict="pass", detail=f"compiled in the sandbox and returned within budget on all {len(grid)} probe inputs{note}",
+               probe={"inputs": len(grid), "raised_where_original_returned": len(raised)})
     return out
