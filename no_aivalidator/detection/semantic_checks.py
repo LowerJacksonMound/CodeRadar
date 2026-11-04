@@ -707,6 +707,11 @@ class SemanticChecksMixin:
         Detects: get_count() returning a string, get_name() returning int.
         """
         name_lower = self.func.name.lower()
+        # cr_trials round three, step 5 (2026-11-04): `reset_count`, `clear_total` name an ACTION on the noun; what
+        # comes back is a status or message, not the noun's type. `get_count` / `word_count` still promise the noun.
+        if any(name_lower.startswith(v) for v in ("reset_", "clear_", "set_", "update_", "apply_", "record_", "add_",
+                                                   "remove_", "save_", "write_", "delete_", "drop_", "mark_")):
+            return
 
         # Map name suffixes/prefixes to expected return types
         type_hints: list[tuple[list[str], set[type]]] = [

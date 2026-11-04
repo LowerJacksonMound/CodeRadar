@@ -396,6 +396,12 @@ class HallucinationChecksMixin:
             if isinstance(stmt, ast.Expr) and isinstance(stmt.value, ast.Constant):
                 if isinstance(stmt.value.value, str):
                     continue
+            # cr_trials round three, step 4 (2026-11-04): a bare call statement repeated (`count_down(s)` twice,
+            # `conn.ping()` twice) is an effect performed twice on purpose; copy-paste is a repeated ASSIGNMENT or block.
+            if isinstance(stmt, ast.Expr) and isinstance(stmt.value, ast.Call):
+                prev_hash = None
+                consecutive_count = 1
+                continue
 
             stmt_hash = hashlib.md5(ast.dump(stmt).encode()).hexdigest()[:12]
 

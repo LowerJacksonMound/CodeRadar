@@ -26,7 +26,7 @@ dist/
 system_scripts/.cr_pycache/
 
 # runtime evidence and per-run data (backed up separately; the engine reads .archive at run time)
-.archive/
+.archive/*
 system_scripts/daemon_log/
 launch*_imgs/
 

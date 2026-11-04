@@ -1119,39 +1119,55 @@ class ExtendedSemanticChecksMixin:
         # Simplified: flag tests where assert compares call result to an inline computation
         # that uses the same args
 
-        has_assert = False
-        inline_compute_in_assert = False
+        # cr_trials round three, step 3 (2026-11-04): the old test ("a BinOp in the comparator") caught neither rigged
+        # test and flagged a property test (len(x) == len(a) + len(b)). A test mirrors the implementation when the
+        # EXPECTED side is built by calling the same callee as the result side, directly or through a local name
+        # assigned from such a call (stress case 10: expected = tally.reset_count(...); assert tally.reset_count(s) == expected).
+        import builtins as _bi
 
+        def callee(node):
+            # a builtin (len, str, sum) on both sides is a property, not a mirror of the code under test
+            if isinstance(node, ast.Call) and not (isinstance(node.func, ast.Name) and hasattr(_bi, node.func.id)):
+                return ast.dump(node.func)
+            return None
+
+        def callees_in(node, env):
+            out = set()
+            for n in ast.walk(node):
+                c = callee(n)
+                if c:
+                    out.add(c)
+                if isinstance(n, ast.Name) and n.id in env:
+                    out |= env[n.id]
+            return out
+
+        env = {}
+        for node in self.func.body:
+            if isinstance(node, ast.Assign):
+                first, *rest = node.targets
+                if not rest and isinstance(first, ast.Name):
+                    env[first.id] = callees_in(node.value, env)
+
+        assert_count = 0
+        recompute_count = 0
         for node in ast.walk(self.func):
-            if isinstance(node, ast.Assert):
-                has_assert = True
-                # Check if assertion contains a BinOp (inline recomputation)
-                if isinstance(node.test, ast.Compare):
-                    for comparator in node.test.comparators:
-                        if isinstance(comparator, ast.BinOp):
-                            # If the comparator is an inline calculation, it might be tautological
-                            inline_compute_in_assert = True
+            if isinstance(node, ast.Assert) and isinstance(node.test, ast.Compare):
+                assert_count += 1
+                left = callees_in(node.test.left, env)
+                right = set()
+                for comp in node.test.comparators:
+                    right |= callees_in(comp, env)
+                if left and right and (left & right):
+                    recompute_count += 1
 
-        if has_assert and inline_compute_in_assert:
-            # Count how many assertions just re-derive the answer
-            recompute_count = 0
-            assert_count = 0
-            for node in ast.walk(self.func):
-                if isinstance(node, ast.Assert):
-                    assert_count += 1
-                    if isinstance(node.test, ast.Compare):
-                        for comp in node.test.comparators:
-                            if isinstance(comp, ast.BinOp):
-                                recompute_count += 1
-
-            if assert_count > 0 and recompute_count == assert_count:
-                self._add_observation({
-                    "tag": "NAI-139",
-                    "line": self.func.lineno,
-                    "func_name": self.func.name,
-                    "assert_count": assert_count,
-                    "recompute_count": recompute_count,
-                })
+        if assert_count > 0 and recompute_count == assert_count:
+            self._add_observation({
+                "tag": "NAI-139",
+                "line": self.func.lineno,
+                "func_name": self.func.name,
+                "assert_count": assert_count,
+                "recompute_count": recompute_count,
+            })
 
     def _check_happy_path_only_test(self) -> None:
         """NAI-149: Test with zero negative/edge/error test cases."""

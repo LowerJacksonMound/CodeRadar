@@ -1048,7 +1048,7 @@
    },
    "meaning": "Parameters declared but never referenced in the function body",
    "meaning_source": "no_aivalidator/detection/core_checks.py:_check_unused_parameters",
-   "note": "",
+   "note": "Known limit (owner 2026-11-04, cr_trials round three): a function in a dispatch table that ignores the table's uniform parameter (counter.say_unknown's state); a context row would need a new emitter fact (called through a module-level table). Not written.",
    "measured_evidence": {
     "source": "scoring/table.jsonl (blind-tree scoring table, not shipped)",
     "trees": [
@@ -1507,7 +1507,7 @@
    },
    "meaning": "NAI-003: Parameters declared but never referenced in the function body. Invariant: Every declared parameter should be used.",
    "meaning_source": "no_aivalidator/detection/core_checks.py:_check_unused_parameters",
-   "note": "strict proof layer (strict_checks.STRICT_CHECKS) — never context; calibrated only in the strict slice with the owner's note",
+   "note": "strict proof layer (strict_checks.STRICT_CHECKS) — never context; calibrated only in the strict slice with the owner's note Known limit (owner 2026-11-04, cr_trials round three): a one-parameter function returning a fixed message (counter.refuse_below_zero) is shape-identical to T1; strict layer, never context.",
    "measured_evidence": {
     "source": "scoring/table.jsonl (blind-tree scoring table, not shipped)",
     "trees": [
@@ -11999,7 +11999,7 @@
    },
    "meaning": "canned_return — the body is a single `return` of a literal container holding structured rows (dicts / lists / tuples of literals): hardcoded sample data shaped",
    "meaning_source": "no_aivalidator/detection/core_checks.py:_check_canned_return",
-   "note": "",
+   "note": "Known limit (owner 2026-11-04, cr_trials round three): a zero-parameter constructor returning a literal initial state (counter.start_counter) is shape-identical to canned data; only the name says otherwise. No context row; revisit if a real repo shows it in volume.",
    "measured_evidence": {
     "source": "scoring/table.jsonl (blind-tree scoring table, not shipped)",
     "trees": [
@@ -13313,7 +13313,7 @@
    },
    "meaning": "(HIGH): {_msg} [withheld: {_v.withheld}]",
    "meaning_source": "no_aivalidator/noai_validator/file_validation.py:_rca_intra_file_sweep",
-   "note": "",
+   "note": "Known limit (owner 2026-11-04, cr_trials round three): a propagation row follows its source; counter.run's row is start_counter's NAI-212.",
    "measured_evidence": {
     "source": "scoring/table.jsonl (blind-tree scoring table, not shipped)",
     "trees": [
