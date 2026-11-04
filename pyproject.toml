@@ -13,7 +13,7 @@
 # Until that changes, the README installs from a git clone. [D4]
 
 [build-system]
-requires = ["setuptools>=64"]
+requires = ["setuptools>=77"]              # 77: SPDX string form of `license` below
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -21,7 +21,8 @@ name = "coderadar-mcp"                    # [D4] `coderadar` is taken on PyPI
 version = "0.1.0"                         # matches coderadar_mcp/__init__.py:14
 description = "Finds counterfeit code in a Python repo and hands an AI agent ranked repairs, over MCP."
 readme = "README.md"
-license = { file = "LICENSE" }
+license = "PolyForm-Noncommercial-1.0.0"  # SPDX string; the table form is deprecated by setuptools (ends 2027-02-18)
+license-files = ["LICENSE"]
 requires-python = ">=3.12"                # unchanged; measured on 3.13
 authors = [{ name = "lowerjacksonmound" }]
 classifiers = [
@@ -61,7 +62,7 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/lowerjacksonmound/coderadar-mcp"
+Homepage = "https://github.com/LowerJacksonMound/CodeRadar"
 
 [project.scripts]
 coderadar-mcp = "coderadar_mcp.server:main"   # unchanged; one stdio process per target
