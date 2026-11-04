@@ -295,6 +295,8 @@ GENERATORS = [
                'def sort_<what>(items):\n    return sorted(items, key=lambda item: <key>, reverse=<bool>)'),
     prescribed('NAI-136', f"{_SRC}:_check_count_without_accumulator", 'Count the thing the name promises — sum(1 for item in items if <condition>) or len(...) — and return the number.',
                'def count_<what>(items):\n    return sum(1 for item in items if <condition(item)>)'),
+    prescribed('NAI-260', f"{_SRC}:_check_answer_table", 'Replace the ladder of per-input cases with one computation over the input that the cases were standing in for; the tests must pass for inputs they never mention.',
+               'def <name>(<input>):\n    <general computation over the input>\n    return <value computed from the input>'),
     prescribed('NAI-137', f"{_SRC}:_check_search_without_comparison", 'Search for the target the name promises: compare each item to it (or use find / index / next with a predicate) and return the match or the documented not-found value.',
                'def find_<what>(items, target):\n    return next((item for item in items if <item matches target>), None)'),
     prescribed('NAI-138', f"{_SRC}:_check_build_without_return", 'Return the object the build_* / create_* / make_* name promises: construct it and hand it back (or yield it when it is a stream).',

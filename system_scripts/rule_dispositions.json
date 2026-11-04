@@ -15372,6 +15372,44 @@
    "meaning": "The docstring cites a rule whose rulebook text grants an exception (allowed / except / unless) and the body has no branch and names none of the exception's own words",
    "meaning_source": "no_aivalidator/detection/rulebook_checks.py:_check_missing_rule_exception",
    "note": "D2 detection (owner prompt 2026-10-10, not shipped): counterfeit code that works — tests pass, the app runs. Stretch goal F5."
+  },
+  "NAI-260": {
+   "by": "owner",
+   "class": "B",
+   "dated": "2026-11-04",
+   "disposition": "deciding",
+   "emitted_by": {
+    "no_aivalidator/detection/extended_semantic_checks.py": [
+     0
+    ]
+   },
+   "evidence": {
+    "kind": "proof",
+    "plants": {
+     "planted": 2,
+     "caught_by_id": 0,
+     "caught_in_substance": 0,
+     "held_out": 0
+    },
+    "precision": {
+     "libs_hit": [],
+     "libs_total": 0,
+     "rows": {
+      "alone": 0,
+      "anywhere": 0,
+      "first": 0,
+      "in_tests": 0
+     }
+    },
+    "sample_labels": [],
+    "sources": [
+     "ct-live cr_trials round four 2026-11-04: plant_T4 (count_down answer table from case 04, ship); honest twins weekday_name, sign, count_down_honest, classify; measured below"
+    ]
+   },
+   "meaning": "answer table: a ladder of `if input == constant` branches replaying the same statements with different constants, no branch computing from the input (T4 claim species)",
+   "meaning_source": "no_aivalidator/detection/extended_semantic_checks.py:_check_answer_table",
+   "note": "Owner 2026-11-04 (cr_trials round four): the first claim-species observation. A pure lookup ladder (one `return` per branch) is excluded by design.",
+   "contexts": null
   }
  },
  "naming_drift": {

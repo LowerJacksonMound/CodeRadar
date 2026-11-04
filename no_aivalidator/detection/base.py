@@ -398,6 +398,7 @@ class AIFakeDetector(
         self._check_filter_without_conditional()
         self._check_sort_without_comparison()
         self._check_count_without_accumulator()
+        self._check_answer_table()
         self._check_search_without_comparison()
         self._check_build_without_return()
 

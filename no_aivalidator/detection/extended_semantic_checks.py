@@ -32,6 +32,8 @@ Def-Use Chains:
 from __future__ import annotations
 
 import ast
+import re as _re
+_re_const = _re.compile(r"Constant\(value=[^)]*\)")
 from typing import Any, Dict, Set, List, Optional, Iterator, TYPE_CHECKING
 from enum import Enum, auto
 import logging
@@ -934,6 +936,55 @@ class ExtendedSemanticChecksMixin:
                 "func_name": self.func.name,
             })
 
+    def _check_answer_table(self) -> None:
+        """NAI-260: an answer table. A ladder of `if <input> == <constant>` branches that each replay the same
+        statements with different constants, and no branch that computes from the input (cr_trials round four,
+        2026-11-04; the T4 claim species: right only for the inputs its tests use). A pure lookup ladder (branches
+        that only `return` a constant) is a table by design and is not this; a branch that does real work is not this."""
+        def strip_constants(node):
+            return ast.dump(node).replace("Constant(value=", "Constant(").__class__ and _re_const.sub("Constant(value=~)", ast.dump(node))
+
+        def is_key_test(test):
+            if not (isinstance(test, ast.Compare) and len(test.ops) == len(test.comparators) and all(isinstance(op, ast.Eq) for op in test.ops)):
+                return None
+            sides = [test.left] + list(test.comparators)
+            consts = [x for x in sides if isinstance(x, ast.Constant)]
+            others = [x for x in sides if not isinstance(x, ast.Constant)]
+            if consts and others and not others[1:]:
+                return ast.dump(others[0])
+            return None
+
+        branches = []
+        for stmt in self.func.body:
+            if isinstance(stmt, ast.If) and not stmt.orelse:
+                keyed = is_key_test(stmt.test)
+                if keyed:
+                    branches.append((keyed, stmt))
+        if not branches[1:]:
+            return
+        keyed_on = branches[0][0]
+        if any(k != keyed_on for k, _ in branches):
+            return
+        shapes = set()
+        for _, stmt in branches:
+            body = [n for n in stmt.body if not (isinstance(n, ast.Expr) and isinstance(n.value, ast.Constant))]
+            if not body[1:]:
+                return  # a lone statement per branch: a lookup, not a replayed recipe
+            if any(not isinstance(n, ast.Return) and any(isinstance(c, ast.Call) for c in ast.walk(n) if c is not n) and
+                   not all(isinstance(a, ast.Constant) for c in ast.walk(n) if isinstance(c, ast.Call) for a in c.args) for n in body):
+                return  # a branch that computes with non-constant arguments is doing work
+            shapes.add("|".join(strip_constants(n) for n in body))
+        _one_shape, *other_shapes = shapes
+        if other_shapes:
+            return
+        self._add_observation({
+            "tag": "NAI-260",
+            "line": self.func.lineno,
+            "func_name": self.func.name,
+            "keyed_on": keyed_on,
+            "branches": len(branches),
+        })
+
     def _check_search_without_comparison(self) -> None:
         """NAI-137: search_*/find_* function without any comparison."""
         name = self.func.name.lower()
@@ -1498,6 +1549,7 @@ class ExtendedSemanticChecksMixin:
         self._check_filter_without_conditional()
         self._check_sort_without_comparison()
         self._check_count_without_accumulator()
+        self._check_answer_table()
         self._check_search_without_comparison()
         self._check_build_without_return()
 
