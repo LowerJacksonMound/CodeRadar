@@ -1,0 +1,87 @@
+/* Dark theme for dcc.Dropdown */
+.Select-control {
+    background-color: #1e1e1e !important;
+    border-color: #444 !important;
+}
+.Select-menu-outer {
+    background-color: #1e1e1e !important;
+    border-color: #444 !important;
+}
+.Select-option {
+    background-color: #1e1e1e !important;
+    color: #e6edf3 !important;
+}
+.Select-option:hover,
+.Select-option.is-focused {
+    background-color: #333 !important;
+}
+.Select-value-label {
+    color: #e6edf3 !important;
+}
+.Select-placeholder {
+    color: #6b7280 !important;
+}
+.Select-input input {
+    color: #e6edf3 !important;
+}
+.Select--multi .Select-value {
+    background-color: #3b82f6 !important;
+    border-color: #2563eb !important;
+    color: #fff !important;
+}
+.Select--multi .Select-value-icon:hover {
+    background-color: #ef4444 !important;
+    color: #fff !important;
+}
+
+/* ── Dash 4 dcc.Dropdown (dash_renderer 4.4): react-select is gone; the
+   component renders its own .dash-dropdown-* classes. Owner ruling
+   2026-09-05: watchlist chips MUST be readable. Measured live: the dropdown
+   root painted white (#fff) under near-white chip text (#e6edf3). ── */
+.dash-dropdown.dash-dark-dropdown,
+.dash-dark-dropdown .dash-dropdown-trigger,
+.dash-dark-dropdown .dash-dropdown-grid-container {
+    background-color: #1e1e1e !important;
+    border-color: #444 !important;
+    color: #e6edf3 !important;
+}
+.dash-dark-dropdown .dash-dropdown-value-item {
+    background-color: #2563eb !important;   /* chip: blue block, white text */
+    color: #ffffff !important;
+    border: 1px solid #3b82f6 !important;
+    border-radius: 4px !important;
+    padding: 1px 6px !important;
+    margin: 2px 4px 2px 0 !important;
+    font-size: 10pt !important;
+}
+.dash-dark-dropdown .dash-dropdown-value-count {
+    background-color: #374151 !important;
+    color: #e6edf3 !important;
+    border-color: #4b5563 !important;
+}
+.dash-dark-dropdown .dash-dropdown-clear,
+.dash-dark-dropdown .dash-dropdown-arrow,
+.dash-dark-dropdown .dash-dropdown-placeholder {
+    color: #9ca3af !important;
+}
+.dash-dark-dropdown .dash-dropdown-clear:hover {
+    color: #ef4444 !important;
+}
+/* the popover menu (rendered in a portal, so no .dash-dark-dropdown ancestor) */
+[class*="dash-dropdown-menu"],
+[class*="dash-dropdown-list"],
+[class*="dash-dropdown-popover"] {
+    background-color: #1e1e1e !important;
+    border-color: #444 !important;
+    color: #e6edf3 !important;
+}
+[class*="dash-dropdown-option"] {
+    background-color: #1e1e1e !important;
+    color: #e6edf3 !important;
+}
+[class*="dash-dropdown-option"]:hover,
+[class*="dash-dropdown-option"][class*="focused"],
+[class*="dash-dropdown-option"][class*="selected"] {
+    background-color: #333 !important;
+    color: #ffffff !important;
+}

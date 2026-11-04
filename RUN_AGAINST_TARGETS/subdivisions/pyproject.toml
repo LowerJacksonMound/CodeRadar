@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "subdivisions"
+version = "0.1.0"
+description = "A small neighbourhood parcel registry with zoning checks, CSV import/export and text reports."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.13"
+authors = [{ name = "Subdivisions maintainers" }]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = []
+
+[project.scripts]
+subdivisions = "subdivisions.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,72 @@
+# virtual environments
+.venv/
+.venv_new/
+venv/
+env/
+
+# caches and build leftovers
+__pycache__/
+*.pyc
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+.DS_Store
+
+# CodeRadar's per-target state mirrors (written into any scanned repo)
+.coderadar/
+
+# per-repo-id state files (<name>_<12 hex>.json / .jsonl)
+*_[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f].json
+*_[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f].jsonl
+
+# from the app's own .gitignore
+system_scripts/.cr_pycache/
+
+# runtime evidence and per-run data (backed up separately; the engine reads .archive at run time)
+.archive/
+system_scripts/daemon_log/
+launch*_imgs/
+
+# per-run state — launch.sh's pre-flight clears exactly these (launch.sh ~L386)
+system_scripts/circuit_state.json
+system_scripts/NOAI_VALIDATION_STATE.json
+system_scripts/BUILDER_STATE.json
+system_scripts/runtime_coverage.json
+system_scripts/running.json
+system_scripts/running.lock
+system_scripts/entry_point_info.json
+system_scripts/runner_info.json
+system_scripts/.noai_state.json
+system_scripts/.monitor_state.json
+system_scripts/poll_config.json
+system_scripts/*.heartbeat.json
+system_scripts/mypy_n_contracts_watcher/baseline.json
+system_scripts/load_proof.json
+system_scripts/launch_progress.json*
+system_scripts/*.lock
+system_scripts/cb_writes_*.json
+system_scripts/gearbox_events.json
+system_scripts/gearbox_pids.json
+system_scripts/last_launch_choice.json
+system_scripts/intent_*.json
+
+# per-repo-id state (launch.sh pre-flight archives other targets' copies to .archive/)
+system_scripts/whitelist_*.json
+system_scripts/return_channel_*.jsonl
+system_scripts/confirmed_ledger_*.jsonl
+system_scripts/apply_lease_*.jsonl
+
+# edit backups — git holds every before-state now (housekeeping 2026-10-08)
+*.pre_*
+
+# per-repo-id run records and locks missed above (first commit, 2026-11-04)
+system_scripts/gate_*.jsonl
+system_scripts/attempts_*.jsonl
+system_scripts/.intent_*.lock
+system_scripts/*.json.lock
+
+# reference material, kept beside the repo, not in it (as the other two gates do)
+NEW_CR_DESIGN_N_SUPPORTING_DOCS/

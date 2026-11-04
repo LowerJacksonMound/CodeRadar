@@ -1,0 +1,1530 @@
+{
+  "_generated": "2026-09-05 late sitting; widened census (validator pkg, daemon, cheatsheets, signature engine, semantic_analysis); every entry reviewed — EXCISION_LIST_2026-09-05.md",
+  "allowed": {
+    "no_aivalidator/BUILDER_DAEMON.py::_build_row::_line > 0": {
+      "class": "P",
+      "why": "structural: I-144/I-40's span writer (session 10, run 174) — `is there a line at all` / `is the end readable`, the two questions Q9 answers; a span is a source coordinate, never a rank (the Builder's one-line fallback; `line` is the row key and never moves)"
+    },
+    "no_aivalidator/BUILDER_DAEMON.py::_digest::hashlib.sha256((before + after).encode()).hexdigest()[:10]": {
+      "class": "P",
+      "why": "plumbing: sha256(before+after)[:10] → the repair digest the tester's return channel names (item 1 / FIX 11, 2026-09-08; re-homed from _schema_best_solution)"
+    },
+    "no_aivalidator/BUILDER_DAEMON.py::_emit_semantic::str(item.get('message', ''))[:80]": {
+      "class": "P",
+      "why": "plumbing: display truncation of a semantic message inside an evidence token — re-homed from NOAI_VALIDATOR_DAEMON.py::_emit_semantic (item 1, 2026-09-08)"
+    },
+    "no_aivalidator/BUILDER_DAEMON.py::_generate::str(e)[:80]": {
+      "class": "P",
+      "why": "plumbing: display truncation of a rewriter exception inside decision.why (item 1, 2026-09-08)"
+    },
+    "no_aivalidator/BUILDER_DAEMON.py::_observe::str(e)[:60]": {
+      "class": "P",
+      "why": "plumbing: display truncation of a parser / analyzer message inside an observation token (item 1 / FIX 11, 2026-09-08)"
+    },
+    "no_aivalidator/BUILDER_DAEMON.py::_observe::str(e)[:80]": {
+      "class": "P",
+      "why": "plumbing: display truncation of a parser / analyzer message inside an observation token (item 1 / FIX 11, 2026-09-08)"
+    },
+    "no_aivalidator/BUILDER_DAEMON.py::_poll_channel::cut < 0": {
+      "class": "P",
+      "why": "plumbing: bytes.rfind sentinel — no complete line in the new chunk of the return channel yet, wait for the next poll (item 5, 2026-09-09)"
+    },
+    "no_aivalidator/BUILDER_DAEMON.py::_read_validator_state::f\"validator phase {phase or 'unknown'}: {state.get('detail', '')}\"[:200]": {
+      "class": "P",
+      "why": "plumbing: display truncation of the validator's phase detail in the Builder's state (item 1, 2026-09-08; re-keyed to _read_validator_state, item 5 2026-09-09)"
+    },
+    "no_aivalidator/BUILDER_DAEMON.py::_row_hash::hashlib.sha256(json.dumps(payload, sort_keys=True, default=str).encode()).hexdigest()[:16]": {
+      "class": "P",
+      "why": "plumbing: sha256 truncation → the finding's identity key (row_hash, 16 hex) — item 1 Builder, 2026-09-08"
+    },
+    "no_aivalidator/BUILDER_DAEMON.py::_span_refusal::end <= 0": {
+      "class": "S",
+      "why": "shape: the same domain test for the span's END — 1-based, so 0 means the writer never measured one (session 8, run 160, I-131)."
+    },
+    "no_aivalidator/BUILDER_DAEMON.py::_span_refusal::line <= 0": {
+      "class": "S",
+      "why": "shape: source lines are 1-based, so `line <= 0` is `not a source line` — the domain of the value, not a policy bound. The publisher's I-131 refusal (session 8, run 160) cannot name a corrupt span without it."
+    },
+    "no_aivalidator/BUILDER_DAEMON.py::run::str(e)[:120]": {
+      "class": "P",
+      "why": "plumbing: display truncation of an exception in the Builder's state detail (item 1, 2026-09-08)"
+    },
+    "no_aivalidator/NOAI_VALIDATOR_DAEMON.py::_finding_lines::ln > 0": {
+      "class": "P",
+      "why": "plumbing: display/hash/id-range truncation or measurement op, not a verdict"
+    },
+    "no_aivalidator/NOAI_VALIDATOR_DAEMON.py::_repo_id::hashlib.sha256(str(repo_path.resolve()).encode()).hexdigest()[:12]": {
+      "class": "P",
+      "why": "plumbing: display/hash/id-range truncation or measurement op, not a verdict"
+    },
+    "no_aivalidator/NOAI_VALIDATOR_DAEMON.py::_riding_sig_line::line > 0": {
+      "class": "P",
+      "why": "structural: I-144/I-40's span writer (session 10, run 174) — `is there a line at all` / `is the end readable`, the two questions Q9 answers; a span is a source coordinate, never a rank (I-40: does the riding SIG hit name a source line?)"
+    },
+    "no_aivalidator/NOAI_VALIDATOR_DAEMON.py::_rule_to_job_type::num <= 119": {
+      "class": "P",
+      "why": "plumbing: display/hash/id-range truncation or measurement op, not a verdict"
+    },
+    "no_aivalidator/NOAI_VALIDATOR_DAEMON.py::_rule_to_job_type::num <= 25": {
+      "class": "P",
+      "why": "plumbing: display/hash/id-range truncation or measurement op, not a verdict"
+    },
+    "no_aivalidator/NOAI_VALIDATOR_DAEMON.py::_rule_to_job_type::num <= 29": {
+      "class": "P",
+      "why": "plumbing: display/hash/id-range truncation or measurement op, not a verdict"
+    },
+    "no_aivalidator/NOAI_VALIDATOR_DAEMON.py::_rule_to_job_type::num <= 39": {
+      "class": "P",
+      "why": "plumbing: display/hash/id-range truncation or measurement op, not a verdict"
+    },
+    "no_aivalidator/NOAI_VALIDATOR_DAEMON.py::_rule_to_job_type::num <= 49": {
+      "class": "P",
+      "why": "plumbing: display/hash/id-range truncation or measurement op, not a verdict"
+    },
+    "no_aivalidator/NOAI_VALIDATOR_DAEMON.py::_rule_to_job_type::num <= 58": {
+      "class": "P",
+      "why": "plumbing: display/hash/id-range truncation or measurement op, not a verdict"
+    },
+    "no_aivalidator/NOAI_VALIDATOR_DAEMON.py::_rule_to_job_type::num <= 69": {
+      "class": "P",
+      "why": "plumbing: display/hash/id-range truncation or measurement op, not a verdict"
+    },
+    "no_aivalidator/NOAI_VALIDATOR_DAEMON.py::_rule_to_job_type::num <= 79": {
+      "class": "P",
+      "why": "plumbing: display/hash/id-range truncation or measurement op, not a verdict"
+    },
+    "no_aivalidator/NOAI_VALIDATOR_DAEMON.py::_rule_to_job_type::num <= 95": {
+      "class": "P",
+      "why": "plumbing: display/hash/id-range truncation or measurement op, not a verdict"
+    },
+    "no_aivalidator/NOAI_VALIDATOR_DAEMON.py::_span_index_for::len(_SPAN_IDX_CACHE) > 4096": {
+      "class": "P",
+      "why": "plumbing: the parsed-span cache is bounded so a long-lived daemon cannot grow one entry per (file, mtime) forever (I-144, run 174) — a cache size, not a verdict"
+    },
+    "no_aivalidator/NOAI_VALIDATOR_DAEMON.py::_writer_span::0 < line <= end": {
+      "class": "P",
+      "why": "structural: I-144/I-40's span writer (session 10, run 174) — `is there a line at all` / `is the end readable`, the two questions Q9 answers; a span is a source coordinate, never a rank (does the `<module>` row already have a span of its own?)"
+    },
+    "no_aivalidator/NOAI_VALIDATOR_DAEMON.py::_writer_span::end <= 0": {
+      "class": "P",
+      "why": "structural: I-144/I-40's span writer (session 10, run 174) — `is there a line at all` / `is the end readable`, the two questions Q9 answers; a span is a source coordinate, never a rank (the 0 end I-144 is about)"
+    },
+    "no_aivalidator/NOAI_VALIDATOR_DAEMON.py::_writer_span::line > 0": {
+      "class": "P",
+      "why": "structural: I-144/I-40's span writer (session 10, run 174) — `is there a line at all` / `is the end readable`, the two questions Q9 answers; a span is a source coordinate, never a rank"
+    },
+    "no_aivalidator/NOAI_VALIDATOR_DAEMON.py::check_incremental::(prev or 'new')[:10]": {
+      "class": "P",
+      "why": "plumbing: display/hash/id-range truncation or measurement op, not a verdict"
+    },
+    "no_aivalidator/NOAI_VALIDATOR_DAEMON.py::check_incremental::h[:10]": {
+      "class": "P",
+      "why": "plumbing: display/hash/id-range truncation or measurement op, not a verdict"
+    },
+    "no_aivalidator/NOAI_VALIDATOR_DAEMON.py::run_baseline::sorted(report.proxies().items())[:20]": {
+      "class": "P",
+      "why": "plumbing: display truncation of the ARTIFACTS phase's substeps (first 20 proxies) in the progress record (Item 3, 2026-09-10)"
+    },
+    "no_aivalidator/artifact_scanner/intent_sources.py::_ci_workflow::line.strip()[:120]": {
+      "class": "P",
+      "why": "plumbing: display truncation of a CI `run:` line carried as an entry_points intent fact (Item 3, 2026-09-10)"
+    },
+    "no_aivalidator/artifact_scanner/intent_sources.py::_readme_docs::blk.strip().splitlines()[:1]": {
+      "class": "P",
+      "why": "plumbing: the first line of a fenced block is the entry-point candidate — a slice, not a threshold (Item 3, 2026-09-10)"
+    },
+    "no_aivalidator/artifact_scanner/intent_sources.py::_readme_docs::first[0].strip()[:120]": {
+      "class": "P",
+      "why": "plumbing: display truncation of the entry-point line carried as an intent fact (Item 3, 2026-09-10)"
+    },
+    "no_aivalidator/artifact_scanner/intent_sources.py::_readme_docs::text.splitlines()[:40]": {
+      "class": "P",
+      "why": "plumbing: the README / doc head (its H1 + first paragraph) is where the domain_keywords intersection is read — an extent, not a threshold (Item 3, 2026-09-10)"
+    },
+    "no_aivalidator/artifact_scanner/proxies.py::_first_arg_is_git::a.value.split()[:1]": {
+      "class": "B",
+      "why": "structural precondition: a species predicate of the ARTIFACT SCANNER (Item 3, 2026-09-10) — CONTENT shape, never a rank; the published `species` fact is read by the disposition table, the predicate decides only whether the shape is present: the first word of a subprocess command string is the program (`git …`)"
+    },
+    "no_aivalidator/artifact_scanner/proxies.py::_is_main_guard::len(test.ops) == 1": {
+      "class": "B",
+      "why": "structural precondition: a species predicate of the ARTIFACT SCANNER (Item 3, 2026-09-10) — CONTENT shape, never a rank; the published `species` fact is read by the disposition table, the predicate decides only whether the shape is present: `if __name__ == \"__main__\":` is a one-operator compare by the language"
+    },
+    "no_aivalidator/artifact_scanner/proxies.py::assertion_only::in_degree != 0": {
+      "class": "B",
+      "why": "structural precondition: a species predicate of the ARTIFACT SCANNER (Item 3, 2026-09-10) — CONTENT shape, never a rank; the published `species` fact is read by the disposition table, the predicate decides only whether the shape is present: an assertion-only file is one nothing imports"
+    },
+    "no_aivalidator/artifact_scanner/proxies.py::entry_shim::len(calls) <= 1": {
+      "class": "B",
+      "why": "structural precondition: a species predicate of the ARTIFACT SCANNER (Item 3, 2026-09-10) — CONTENT shape, never a rank; the published `species` fact is read by the disposition table, the predicate decides only whether the shape is present: an entry shim is imports plus AT MOST ONE call expression (`main()`, `sys.exit(main())`) — the shape, by the plan's definition"
+    },
+    "no_aivalidator/artifact_scanner/proxies.py::git::in_degree != 0": {
+      "class": "B",
+      "why": "structural precondition: a species predicate of the ARTIFACT SCANNER (Item 3, 2026-09-10) — CONTENT shape, never a rank; the published `species` fact is read by the disposition table, the predicate decides only whether the shape is present: a git script is one nothing imports"
+    },
+    "no_aivalidator/artifact_scanner/proxies.py::pathhack::in_degree != 0": {
+      "class": "B",
+      "why": "structural precondition: a species predicate of the ARTIFACT SCANNER (Item 3, 2026-09-10) — CONTENT shape, never a rank; the published `species` fact is read by the disposition table, the predicate decides only whether the shape is present: a path-hack SCRIPT is one nothing imports (in_degree == 0, a whole-set fact measured once); the same mutation in an imported file stays the path-hack detector's infraction"
+    },
+    "no_aivalidator/artifact_scanner/proxies.py::runner::in_degree != 0": {
+      "class": "B",
+      "why": "structural precondition: a species predicate of the ARTIFACT SCANNER (Item 3, 2026-09-10) — CONTENT shape, never a rank; the published `species` fact is read by the disposition table, the predicate decides only whether the shape is present: a runner is one nothing imports"
+    },
+    "no_aivalidator/artifact_scanner/stubs.py::_body_kind::len(stmts) != 1": {
+      "class": "B",
+      "why": "structural precondition: a species predicate of the ARTIFACT SCANNER (Item 3, 2026-09-10) — CONTENT shape, never a rank; the published `species` fact is read by the disposition table, the predicate decides only whether the shape is present: a stub body is exactly one statement (`pass`, `...`, `raise NotImplementedError`) after an optional docstring — the whole-file stub consult (ruling 13)"
+    },
+    "no_aivalidator/artifact_scanner/stubs.py::file_stub_kind::n_defs == 0": {
+      "class": "B",
+      "why": "structural precondition: a species predicate of the ARTIFACT SCANNER (Item 3, 2026-09-10) — CONTENT shape, never a rank; the published `species` fact is read by the disposition table, the predicate decides only whether the shape is present: a file with no def / class is not a stub file (nothing is stubbed) — the consult names FILES whose every def is a stub"
+    },
+    "no_aivalidator/cheatsheets/cheatsheet_reviewer.py::_def_params::seen[n] > 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) — FIX_43b shape reader (2026-09-16, run 122): a parameter name seen a second time in a def header is renamed so the shape parses, never a verdict"
+    },
+    "no_aivalidator/cheatsheets/cheatsheet_reviewer.py::_guard_kinds::len(node.args) == 2": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) — FIX_42 static observation reader (2026-09-15, run 120): the shape the idiom / guard reader recognises, never a verdict"
+    },
+    "no_aivalidator/cheatsheets/cheatsheet_reviewer.py::_hand_rolled::len(body) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) — FIX_42 static observation reader (2026-09-15, run 120): the shape the idiom / guard reader recognises, never a verdict"
+    },
+    "no_aivalidator/cheatsheets/cheatsheet_reviewer.py::_hand_rolled::len(only.body) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) — FIX_42 static observation reader (2026-09-15, run 120): the shape the idiom / guard reader recognises, never a verdict"
+    },
+    "no_aivalidator/cheatsheets/cheatsheet_reviewer.py::_hand_rolled::len(st.test.ops) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) — FIX_42 static observation reader (2026-09-15, run 120): the shape the idiom / guard reader recognises, never a verdict"
+    },
+    "no_aivalidator/cheatsheets/cheatsheet_reviewer.py::_is_cryptic::len(low) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) — FIX_43a readability reader (2026-09-15, run 121): a one-letter name is the shape the cryptic-name heuristic reads, never a verdict"
+    },
+    "no_aivalidator/cheatsheets/cheatsheet_reviewer.py::_shape_to_code::len(stripped) > 3": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) — FIX_43b shape reader (2026-09-16, run 122): a line that is more than the bare `...` between two ellipses is prose (an opaque statement), never a verdict"
+    },
+    "no_aivalidator/detection/advanced_checks.py::_check_closure_no_capture::len(node.body) > 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/advanced_checks.py::_check_identical_method_bodies::hashlib.md5(body_dump.encode()).hexdigest()[:10]": {
+      "class": "P",
+      "why": "plumbing: display/hash/id-range truncation or measurement op, not a verdict"
+    },
+    "no_aivalidator/detection/advanced_checks.py::_check_identical_method_bodies::len(names) > 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/advanced_checks.py::_check_identical_method_bodies::len(nested_funcs) < 2": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/advanced_checks.py::_check_infinite_loop_patterns::len(node.body) == 1": {
+      "class": "B",
+      "why": "structural precondition inside a rule body (one statement / one target / adjacent / name shape / import level) — re-filed 2026-09-07 housekeeping with the census's own key; the calibration-era reason is archived (allowlist_bodyshape_entries_K3.json). NOT a calibration ruling."
+    },
+    "no_aivalidator/detection/advanced_checks.py::_check_infinite_loop_patterns::len(node.items) == 1": {
+      "class": "B",
+      "why": "structural precondition inside a rule body (one statement / one target / adjacent / name shape / import level) — re-filed 2026-09-07 housekeeping with the census's own key; the calibration-era reason is archived (allowlist_bodyshape_entries_K3.json). NOT a calibration ruling."
+    },
+    "no_aivalidator/detection/advanced_checks.py::_check_return_type_inconsistency::len(incompatible) > 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/advanced_checks.py::_check_subtree_duplication::abs(pos_i[1] - pos_j[1]) == 1": {
+      "class": "B",
+      "why": "structural precondition inside a rule body (one statement / one target / adjacent / name shape / import level) — re-filed 2026-09-07 housekeeping with the census's own key; the calibration-era reason is archived (allowlist_bodyshape_entries_K3.json). NOT a calibration ruling."
+    },
+    "no_aivalidator/detection/advanced_checks.py::_check_subtree_duplication::len(locations) < 2": {
+      "class": "B",
+      "why": "structural precondition inside a rule body (one statement / one target / adjacent / name shape / import level) — re-filed 2026-09-07 housekeeping with the census's own key; the calibration-era reason is archived (allowlist_bodyshape_entries_K3.json). NOT a calibration ruling."
+    },
+    "no_aivalidator/detection/advanced_checks.py::_check_subtree_duplication::len(node.body) > 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/advanced_checks.py::_check_subtree_duplication::len(node.orelse) > 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/advanced_checks.py::get_clean_hash::hashlib.md5(dump.encode()).hexdigest()[:8]": {
+      "class": "P",
+      "why": "plumbing: display/hash/id-range truncation or measurement op, not a verdict"
+    },
+    "no_aivalidator/detection/base.py::<module>::len(sys.argv) < 2": {
+      "class": "P",
+      "why": "plumbing: display/hash/id-range truncation or measurement op, not a verdict"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_canned_return::len(body) != 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_constant_returns::len(constant_returns) >= 2": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_constant_returns::len(set(constant_returns)) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_constant_returns::m.branches == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_exception_swallow::len(node.body) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_fake_iteration::len(node.body) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_input_output_disconnect::effective_params == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_input_output_disconnect::effective_params > 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_input_output_disconnect::len(m.params_used) == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_input_output_disconnect::len(node.value.elts) == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_input_output_disconnect::len(node.value.keys) == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_input_output_disconnect::m.params == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_input_output_disconnect::m.returns == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_logging_only::m.loops > 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_logging_only::other_calls == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_logging_only::print_calls > 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_loop_overwrite::len(node.targets) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_loop_patterns::len(node.body) >= 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_meaningless_operations::len(node.targets) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_noop_operations::len(node.targets) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_noop_operations::value.right.value == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_noop_operations::value.right.value == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_redundant_else_after_return::len(node.orelse) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_redundant_else_after_return::len(node.orelse) > 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_return_input_unchanged::len(node.targets) != 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_return_input_unchanged::len(node.targets) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_return_input_unchanged::len(val.args) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_return_input_unchanged::m.branches == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_return_input_unchanged::m.branches > 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_return_input_unchanged::m.calls <= 0": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_return_input_unchanged::m.comprehensions == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_return_input_unchanged::m.comprehensions > 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_return_input_unchanged::m.loops == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_return_input_unchanged::m.loops > 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_side_effect_free::len(rest) == 1": {
+      "class": "B",
+      "why": "structural precondition inside a rule body (one statement / one target / adjacent / name shape / import level) — re-filed 2026-09-07 housekeeping with the census's own key; the calibration-era reason is archived (allowlist_bodyshape_entries_K3.json). NOT a calibration ruling."
+    },
+    "no_aivalidator/detection/core_checks.py::_check_side_effect_free::m.assigns == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_side_effect_free::m.calls == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_side_effect_free::m.returns == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_side_effect_free::m.yields == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_test_fakes::len(test.ops) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_variable_immediate_overwrite::len(body) < 2": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_check_variable_immediate_overwrite::len(stmt.targets) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/core_checks.py::_is_trivial_tail::len(stmts) == 1": {
+      "class": "B",
+      "why": "structural precondition inside a rule body (one statement / one target / adjacent / name shape / import level) — re-filed 2026-09-07 housekeeping with the census's own key; the calibration-era reason is archived (allowlist_bodyshape_entries_K3.json). NOT a calibration ruling."
+    },
+    "no_aivalidator/detection/extended_semantic_checks.py::_build_def_use_info::len(names) > 1": {
+      "class": "B",
+      "why": "structural precondition inside a rule body (one statement / one target / adjacent / name shape / import level) — re-filed 2026-09-07 housekeeping with the census's own key; the calibration-era reason is archived (allowlist_bodyshape_entries_K3.json). NOT a calibration ruling."
+    },
+    "no_aivalidator/detection/extended_semantic_checks.py::_build_def_use_info::len(tgt.elts) > 1": {
+      "class": "B",
+      "why": "structural precondition inside a rule body (one statement / one target / adjacent / name shape / import level) — re-filed 2026-09-07 housekeeping with the census's own key; the calibration-era reason is archived (allowlist_bodyshape_entries_K3.json). NOT a calibration ruling."
+    },
+    "no_aivalidator/detection/extended_semantic_checks.py::_check_assertion_free_test_with_calls::call_count >= 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/extended_semantic_checks.py::_check_boundary_value_blindness::len(node.elts) == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/extended_semantic_checks.py::_check_boundary_value_blindness::len(node.keys) == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/extended_semantic_checks.py::_check_boundary_value_blindness::value_count >= 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/extended_semantic_checks.py::_check_copy_paste_test_proliferation::len(stmts) < 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/extended_semantic_checks.py::_check_copy_paste_test_proliferation::most_common_count >= 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/extended_semantic_checks.py::_check_empty_function_body::i == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/extended_semantic_checks.py::_check_empty_function_body::len(real_body) == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/extended_semantic_checks.py::_check_empty_function_body::len(real_body) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/extended_semantic_checks.py::_check_excessive_parameters::total > 0": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/extended_semantic_checks.py::_check_happy_path_only_test::assert_count >= 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/extended_semantic_checks.py::_check_mock_everything_test::call_count > 0": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/extended_semantic_checks.py::_check_mock_everything_test::mock_count >= 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/extended_semantic_checks.py::_check_process_without_iteration::call_count == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/extended_semantic_checks.py::_check_silent_error_suppression_in_test::len(body) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/extended_semantic_checks.py::_check_silent_error_suppression_in_test::len(body) >= 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/extended_semantic_checks.py::_check_tautological_test::assert_count > 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/extended_semantic_checks.py::_is_key_callable::len(args) != 1": {
+      "class": "S",
+      "why": "shape: a `key=` callable takes exactly ONE item and returns the value the sort is ordered by — the arity IS the shape, not a threshold. NAI-135's exemption (Q4, session 8, run 160: click.core.sort_key) is refused for anything else."
+    },
+    "no_aivalidator/detection/hallucination_checks.py::_check_duplicate_statements::consecutive_count >= 2": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/hallucination_checks.py::_check_duplicate_statements::hashlib.md5(ast.dump(stmt).encode()).hexdigest()[:12]": {
+      "class": "P",
+      "why": "plumbing: display/hash/id-range truncation or measurement op, not a verdict"
+    },
+    "no_aivalidator/detection/hallucination_checks.py::_check_duplicate_statements::len(body) < 2": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/hallucination_checks.py::_check_fake_dunder_methods::len(m.name) > 4": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/hallucination_checks.py::_check_fake_dunder_methods::self.dunder_counts.get(m.name, 0) > 1": {
+      "class": "B",
+      "why": "structural precondition inside a rule body (one statement / one target / adjacent / name shape / import level) — re-filed 2026-09-07 housekeeping with the census's own key; the calibration-era reason is archived (allowlist_bodyshape_entries_K3.json). NOT a calibration ruling. — re-keyed FIX_34 2026-09-15: the site moved (the NAI-058 whole-set fact is computed once per directory in file_validation; the per-file body is the gathered batch's `_one`); same site, same class."
+    },
+    "no_aivalidator/detection/hallucination_checks.py::_check_repetitive_branches::count > 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/hallucination_checks.py::_check_repetitive_branches::hashlib.md5(ast.dump(ast.Module(body=current.orelse, type_ignores=[])).encode()).hexdigest()[:8]": {
+      "class": "P",
+      "why": "plumbing: hash / id truncation for a display key, not a verdict — re-filed 2026-09-07 (my exact-substring stale check removed it in error)"
+    },
+    "no_aivalidator/detection/hallucination_checks.py::_check_repetitive_branches::hashlib.md5(ast.dump(ast.Module(body=elif_node.body, type_ignores=[])).encode()).hexdigest()[:8]": {
+      "class": "P",
+      "why": "plumbing: hash / id truncation for a display key, not a verdict — re-filed 2026-09-07 (my exact-substring stale check removed it in error)"
+    },
+    "no_aivalidator/detection/hallucination_checks.py::_check_repetitive_branches::hashlib.md5(ast.dump(ast.Module(body=node.body, type_ignores=[])).encode()).hexdigest()[:8]": {
+      "class": "P",
+      "why": "plumbing: hash / id truncation for a display key, not a verdict — re-filed 2026-09-07 (my exact-substring stale check removed it in error)"
+    },
+    "no_aivalidator/detection/hallucination_checks.py::_check_repetitive_branches::len(current.orelse) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/hallucination_checks.py::_is_sentinel_only_branch_body::len(body) != 1": {
+      "class": "B",
+      "why": "structural precondition inside a rule body (one statement / one target / adjacent / name shape / import level) — re-filed 2026-09-07 housekeeping with the census's own key; the calibration-era reason is archived (allowlist_bodyshape_entries_K3.json). NOT a calibration ruling."
+    },
+    "no_aivalidator/detection/hallucination_checks.py::dunder_names_in_tree::len(n.attr) > 4": {
+      "class": "B",
+      "why": "structural precondition inside a rule body (one statement / one target / adjacent / name shape / import level) — re-filed 2026-09-07 housekeeping with the census's own key; the calibration-era reason is archived (allowlist_bodyshape_entries_K3.json). NOT a calibration ruling. — re-keyed FIX_34 2026-09-15: the site moved (the NAI-058 whole-set fact is computed once per directory in file_validation; the per-file body is the gathered batch's `_one`); same site, same class."
+    },
+    "no_aivalidator/detection/hallucination_checks.py::dunder_names_in_tree::len(n.name) > 4": {
+      "class": "B",
+      "why": "structural precondition inside a rule body (one statement / one target / adjacent / name shape / import level) — re-filed 2026-09-07 housekeeping with the census's own key; the calibration-era reason is archived (allowlist_bodyshape_entries_K3.json). NOT a calibration ruling. — re-keyed FIX_34 2026-09-15: the site moved (the NAI-058 whole-set fact is computed once per directory in file_validation; the per-file body is the gathered batch's `_one`); same site, same class."
+    },
+    "no_aivalidator/detection/hallucination_checks.py::dunder_names_in_tree::len(nm) > 4": {
+      "class": "B",
+      "why": "structural precondition inside a rule body (one statement / one target / adjacent / name shape / import level) — re-filed 2026-09-07 housekeeping with the census's own key; the calibration-era reason is archived (allowlist_bodyshape_entries_K3.json). NOT a calibration ruling. — re-keyed FIX_34 2026-09-15: the site moved (the NAI-058 whole-set fact is computed once per directory in file_validation; the per-file body is the gathered batch's `_one`); same site, same class."
+    },
+    "no_aivalidator/detection/math_checks.py::_check_comprehension_identity::len(node.generators) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/math_checks.py::_check_data_flow_disconnect::m.returns > 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/math_checks.py::_check_docstring_only_body::len(body) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/math_checks.py::_check_dunder_fakes::m.branches == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/math_checks.py::_check_dunder_fakes::m.comparisons == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/math_checks.py::_is_one::node.n == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/math_checks.py::_is_one::node.value == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/math_checks.py::_is_zero::node.n == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/math_checks.py::_is_zero::node.value == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/redundancy_checks.py::_check_len_zero_comparison::comparator.value == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/redundancy_checks.py::_check_self_assignment::len(node.targets) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/redundancy_checks.py::_check_unnecessary_list_wrapping::len(node.args) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/redundancy_checks.py::_check_while_true_immediate_break::len(first_stmt.body) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/safety_checks.py::_check_assert_for_validation::len(hit_names) != 1": {
+      "class": "B",
+      "why": "structural precondition inside a rule body (one statement / one target / adjacent / name shape / import level) — re-filed 2026-09-07 housekeeping with the census's own key; the calibration-era reason is archived (allowlist_bodyshape_entries_K3.json). NOT a calibration ruling."
+    },
+    "no_aivalidator/detection/safety_checks.py::_check_division_by_variable::divisor.value == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/safety_checks.py::_check_division_by_variable::divisor.value == 0.0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/safety_checks.py::_check_division_by_variable::e.value != 0": {
+      "class": "B",
+      "why": "structural precondition inside a rule body (one statement / one target / adjacent / name shape / import level) — re-filed 2026-09-07 housekeeping with the census's own key; the calibration-era reason is archived (allowlist_bodyshape_entries_K3.json). NOT a calibration ruling."
+    },
+    "no_aivalidator/detection/safety_checks.py::_check_hardcoded_secrets::len(node.value.value) > 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/safety_checks.py::_check_silent_error_swallowing::len(body) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/safety_checks.py::_check_unguarded_external_calls::len(external_calls) >= 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/safety_checks.py::_check_unguarded_file_ops::len(parent.targets) == 1": {
+      "class": "B",
+      "why": "structural precondition inside a rule body (one statement / one target / adjacent / name shape / import level) — re-filed 2026-09-07 housekeeping with the census's own key; the calibration-era reason is archived (allowlist_bodyshape_entries_K3.json). NOT a calibration ruling."
+    },
+    "no_aivalidator/detection/safety_checks.py::_is_excluded::len(p.targets) == 1": {
+      "class": "B",
+      "why": "structural precondition inside a rule body (one statement / one target / adjacent / name shape / import level) — re-filed 2026-09-07 housekeeping with the census's own key; the calibration-era reason is archived (allowlist_bodyshape_entries_K3.json). NOT a calibration ruling."
+    },
+    "no_aivalidator/detection/safety_checks.py::_path_kind::len(val) > 2": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/semantic_checks.py::_check_boolean_logic_inversion::comp.value == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/semantic_checks.py::_check_hardcoded_collection_return::len(ret.elts) > 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/semantic_checks.py::_check_hardcoded_collection_return::len(ret.keys) > 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/semantic_checks.py::_check_hedging_comments::len(node.value.value) > 0": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/semantic_checks.py::_check_inconsistent_naming::camel_count >= 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/semantic_checks.py::_check_inconsistent_naming::len(local_names) < 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/semantic_checks.py::_check_inconsistent_naming::len(name) > 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/semantic_checks.py::_check_inconsistent_naming::snake_count >= 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/semantic_checks.py::_check_name_operation_mismatch::len(body) == 1": {
+      "class": "B",
+      "why": "structural precondition inside a rule body (one statement / one target / adjacent / name shape / import level) — re-filed 2026-09-07 housekeeping with the census's own key; the calibration-era reason is archived (allowlist_bodyshape_entries_K3.json). NOT a calibration ruling."
+    },
+    "no_aivalidator/detection/semantic_checks.py::_check_name_operation_mismatch::self.metrics.calls == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/semantic_checks.py::_check_no_transform_passthrough::len(call.args) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/semantic_checks.py::_check_validation_missing_error::len(returns) >= 2": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/semantic_checks.py::_check_validation_missing_error::return_count > 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/semantic_checks.py::_is_freshly_rebound_in_loop::len(n.targets) == 1": {
+      "class": "B",
+      "why": "structural precondition inside a rule body (one statement / one target / adjacent / name shape / import level) — re-filed 2026-09-07 housekeeping with the census's own key; the calibration-era reason is archived (allowlist_bodyshape_entries_K3.json). NOT a calibration ruling."
+    },
+    "no_aivalidator/detection/structural_checks.py::_check_identical_branches::len(node.orelse) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/structural_checks.py::_check_inverse_operations::len(node.targets) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/structural_checks.py::_check_inverse_operations::len(ops) >= 2": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/structural_checks.py::_check_mutation_theater::len(node.value.elts) == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/structural_checks.py::_check_mutation_theater::len(node.value.keys) == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_append_loop_to_comprehension::len(node.body) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_cognitive_complexity::score > 0": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_comment_code_ratio::code_lines < 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_comment_code_ratio::doc_lines >= 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_comment_to_code_ratio_source::code_lines < 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_comment_to_code_ratio_source::m.comment_lines == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_comment_to_code_ratio_source::m.comment_lines >= 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_comment_to_code_ratio_source::m.lines == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_commented_out_code::indicator_count >= 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_commented_out_code_blocks::len(text) >= 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_commented_out_code_blocks::max_consecutive >= 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_commented_out_code_blocks::string_code_blocks >= 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_commented_out_code_blocks::sum((1 for kw in code_keywords if kw in text)) >= 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_compulsive_modularization::len(nested_funcs) < 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_concat_in_loop_extended::len(child.targets) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_cyclomatic_complexity::complexity > 0": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_deep_nesting::depth > 0": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_excessive_params::effective_params > 0": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_feature_envy::count >= 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_function_length::stmt_count > 0": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_generic_naming::len(assigned_vars) >= 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_god_class_method::len(self_attrs) >= 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_hyper_descriptive_naming::avg_len > 0": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_hyper_descriptive_naming::len(all_names) < 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_hyper_descriptive_naming::len(all_names) >= 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_hyper_descriptive_naming::len(long_names) >= 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_hyper_descriptive_naming::len(name) > 0": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_loop_invariant::len(stmt.targets) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_membership_test_on_list::len(comparator.elts) >= 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_noqa_type_ignore_overuse::suppress_count >= 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_numbered_variables::len(unique_nums) >= 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_repeated_attribute_access::chain.count('.') >= 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_repeated_attribute_access::count >= 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_repeated_attribute_access::len(chain_parts) >= 2": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_repeated_lookups_in_loop::count >= 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_single_letter_vars::len(single_letter) >= 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_single_letter_vars::len(target.id) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_structural_over_engineering::stmt_count < 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_structural_over_engineering::try_count == 0": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/detection/style_checks.py::_check_structural_over_engineering::try_count >= 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/noai_validator/collector.py::visit_Lambda::len(node.args.args) == 1": {
+      "class": "B",
+      "why": "structural fact / plumbing — reviewed 2026-09-05 (widened census)"
+    },
+    "no_aivalidator/noai_validator/extractor.py::_extract_sync::len(body_stmts) == 1": {
+      "class": "B",
+      "why": "structural fact / plumbing — reviewed 2026-09-05 (widened census)"
+    },
+    "no_aivalidator/noai_validator/extractor.py::_extract_sync::params > 0": {
+      "class": "B",
+      "why": "structural fact / plumbing — reviewed 2026-09-05 (widened census)"
+    },
+    "no_aivalidator/noai_validator/file_validation.py::_check_cross_file_duplicates::fp[:16]": {
+      "class": "P",
+      "why": "plumbing: display / hash / parsing / schema floor / repair-side sanity — not a code verdict"
+    },
+    "no_aivalidator/noai_validator/file_validation.py::_check_cross_file_duplicates::len(files) > 1": {
+      "class": "B",
+      "why": "structural fact / plumbing — reviewed 2026-09-05 (widened census)"
+    },
+    "no_aivalidator/noai_validator/file_validation.py::_check_cross_file_duplicates::len(locations) > 1": {
+      "class": "B",
+      "why": "structural fact / plumbing — reviewed 2026-09-05 (widened census)"
+    },
+    "no_aivalidator/noai_validator/file_validation.py::_check_directory_symmetry::len(files) > 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2"
+    },
+    "no_aivalidator/noai_validator/file_validation.py::_find_symbol_overlap::len(files) > 1": {
+      "class": "B",
+      "why": "structural fact / plumbing — reviewed 2026-09-05 (widened census)"
+    },
+    "no_aivalidator/noai_validator/file_validation.py::_is_stub_method_body::len(stmts) != 1": {
+      "class": "B",
+      "why": "structural precondition inside a rule body (one statement / one target / adjacent / name shape / import level) — re-filed 2026-09-07 housekeeping with the census's own key; the calibration-era reason is archived (allowlist_bodyshape_entries_K3.json). NOT a calibration ruling."
+    },
+    "no_aivalidator/noai_validator/file_validation.py::_module_dunder_all::len(n.targets) == 1": {
+      "class": "B",
+      "why": "structural precondition inside a rule body (one statement / one target / adjacent / name shape / import level) — re-filed 2026-09-07 housekeeping with the census's own key; the calibration-era reason is archived (allowlist_bodyshape_entries_K3.json). NOT a calibration ruling."
+    },
+    "no_aivalidator/noai_validator/file_validation.py::_one::passed=False :: failure_reason=f'Cannot read file: {e}',": {
+      "class": "proof",
+      "why": "file unreadable / unparseable — a fact, not a ranking — re-keyed FIX_34 2026-09-15: the site moved (the NAI-058 whole-set fact is computed once per directory in file_validation; the per-file body is the gathered batch's `_one`); same site, same class."
+    },
+    "no_aivalidator/noai_validator/file_validation.py::_resolve_import_target::level > 1": {
+      "class": "B",
+      "why": "structural precondition inside a rule body (one statement / one target / adjacent / name shape / import level) — re-filed 2026-09-07 housekeeping with the census's own key; the calibration-era reason is archived (allowlist_bodyshape_entries_K3.json). NOT a calibration ruling."
+    },
+    "no_aivalidator/noai_validator/file_validation.py::_run_dead_function_scan::info.nesting_depth != 0": {
+      "class": "B",
+      "why": "structural fact / plumbing — reviewed 2026-09-05 (widened census)"
+    },
+    "no_aivalidator/noai_validator/file_validation.py::_validate_ast::info.nesting_depth > 0": {
+      "class": "B",
+      "why": "structural fact / plumbing — reviewed 2026-09-05 (widened census)"
+    },
+    "no_aivalidator/noai_validator/file_validation.py::_validate_ast::passed=True :: warnings=['No functions found in module.']": {
+      "class": "B",
+      "why": "structural: a module with no functions has nothing to fail; the row publishes that fact (key re-filed cut 3 batch 5 addendum, line split for the FILE-ROLE fact)"
+    },
+    "no_aivalidator/noai_validator/file_validation.py::_validate_file_from_ast::info.nesting_depth > 0": {
+      "class": "B",
+      "why": "structural fact / plumbing — reviewed 2026-09-05 (widened census)"
+    },
+    "no_aivalidator/noai_validator/file_validation.py::_validate_file_from_ast::norm_fp[:16]": {
+      "class": "P",
+      "why": "plumbing: display / hash / parsing / schema floor / repair-side sanity — not a code verdict"
+    },
+    "no_aivalidator/noai_validator/file_validation.py::_validate_file_from_ast::passed=True :: passed=True, warnings=[f'FILE-ROLE (INFO): {_role}']))": {
+      "class": "B",
+      "why": "structural: an empty lexical marker (no functions, no warnings) gets its module row so no file is silent; nothing was measured that could fail (cut 3 batch 5 addendum, 2026-09-06)"
+    },
+    "no_aivalidator/noai_validator/file_validation.py::_validate_file_from_ast::passed=True :: warnings=[_species_line(_sp, _sp_reason, _sp_prior)], species=_sp))": {
+      "class": "B",
+      "why": "the module row for a file with no other rows so the FILE-SPECIES fact is published (same class as FILE-ROLE) — re-filed 2026-09-07 (was the calibrator A4 entry; archived reason in allowlist_bodyshape_entries_K3.json)"
+    },
+    "no_aivalidator/noai_validator/file_validation.py::_validate_file_from_ast::passed=True :: warnings=[msg],": {
+      "class": "placeholder",
+      "why": "module/file placeholder result carrying warnings only — no verdict taken"
+    },
+    "no_aivalidator/noai_validator/file_validation.py::_validate_string_impl::passed=False :: failure_reason=f'Syntax Error: {e.msg} at line {e.lineno}',": {
+      "class": "proof",
+      "why": "file unreadable / unparseable — a fact, not a ranking"
+    },
+    "no_aivalidator/noai_validator/file_validation.py::_validate_string_impl::passed=False :: failure_reason=first_failure.failure_reason or 'Validation failed',": {
+      "class": "aggregation",
+      "why": "aggregates function verdicts the ranker already took"
+    },
+    "no_aivalidator/noai_validator/file_validation.py::_validate_string_impl::passed=True :: failure_reason=None,": {
+      "class": "placeholder",
+      "why": "module/file placeholder result carrying warnings only — no verdict taken"
+    },
+    "no_aivalidator/noai_validator/file_validation.py::validate_directory_async::len(cycle) < 3": {
+      "class": "B",
+      "why": "structural fact / plumbing — reviewed 2026-09-05 (widened census)"
+    },
+    "no_aivalidator/noai_validator/file_validation.py::validate_directory_async::len(path) > 1": {
+      "class": "B",
+      "why": "structural fact / plumbing — reviewed 2026-09-05 (widened census)"
+    },
+    "no_aivalidator/noai_validator/file_validation.py::validate_directory_async::level > 0": {
+      "class": "B",
+      "why": "structural fact / plumbing — reviewed 2026-09-05 (widened census)"
+    },
+    "no_aivalidator/noai_validator/file_validation.py::validate_file_async::passed=False :: failure_reason=f'Cannot read file: {e}',": {
+      "class": "proof",
+      "why": "file unreadable / unparseable — a fact, not a ranking"
+    },
+    "no_aivalidator/noai_validator/file_validation.py::validate_file_async::passed=False :: failure_reason=f'NAI-208 (HIGH): Syntax error in {filepath.name}:{e.li": {
+      "class": "proof",
+      "why": "file unreadable / unparseable — a fact, not a ranking"
+    },
+    "no_aivalidator/noai_validator/identifier.py::_present::m.assigns >= 1": {
+      "class": "B-floor",
+      "why": "structural presence (≥1 / == 0) in the §S.7 feature vector P(f) / role constraint — cut 2b (2026-09-06); never a magnitude"
+    },
+    "no_aivalidator/noai_validator/identifier.py::_present::m.branches >= 1": {
+      "class": "B-floor",
+      "why": "structural presence (≥1 / == 0) in the §S.7 feature vector P(f) / role constraint — cut 2b (2026-09-06); never a magnitude"
+    },
+    "no_aivalidator/noai_validator/identifier.py::_present::m.calls >= 1": {
+      "class": "B-floor",
+      "why": "structural presence (≥1 / == 0) in the §S.7 feature vector P(f) / role constraint — cut 2b (2026-09-06); never a magnitude"
+    },
+    "no_aivalidator/noai_validator/identifier.py::_present::m.comparisons >= 1": {
+      "class": "B-floor",
+      "why": "structural presence (≥1 / == 0) in the §S.7 feature vector P(f) / role constraint — cut 2b (2026-09-06); never a magnitude"
+    },
+    "no_aivalidator/noai_validator/identifier.py::_present::m.comprehensions >= 1": {
+      "class": "B-floor",
+      "why": "structural presence (≥1 / == 0) in the §S.7 feature vector P(f) / role constraint — cut 2b (2026-09-06); never a magnitude"
+    },
+    "no_aivalidator/noai_validator/identifier.py::_present::m.loops >= 1": {
+      "class": "B-floor",
+      "why": "structural presence (≥1 / == 0) in the §S.7 feature vector P(f) / role constraint — cut 2b (2026-09-06); never a magnitude"
+    },
+    "no_aivalidator/noai_validator/identifier.py::_present::m.params >= 1": {
+      "class": "B-floor",
+      "why": "structural presence (≥1 / == 0) in the §S.7 feature vector P(f) / role constraint — cut 2b (2026-09-06); never a magnitude"
+    },
+    "no_aivalidator/noai_validator/identifier.py::_present::m.returns >= 1": {
+      "class": "B-floor",
+      "why": "structural presence (≥1 / == 0) in the §S.7 feature vector P(f) / role constraint — cut 2b (2026-09-06); never a magnitude"
+    },
+    "no_aivalidator/noai_validator/identifier.py::_present::m.yields >= 1": {
+      "class": "B-floor",
+      "why": "structural presence (≥1 / == 0) in the §S.7 feature vector P(f) / role constraint — cut 2b (2026-09-06); never a magnitude"
+    },
+    "no_aivalidator/noai_validator/identifier.py::identify::m.params == 0": {
+      "class": "B-floor",
+      "why": "structural presence (≥1 / == 0) in the §S.7 feature vector P(f) / role constraint — cut 2b (2026-09-06); never a magnitude"
+    },
+    "no_aivalidator/noai_validator/identifier.py::identify::m.returns >= 1": {
+      "class": "B-floor",
+      "why": "structural presence (≥1 / == 0) in the §S.7 feature vector P(f) / role constraint — cut 2b (2026-09-06); never a magnitude"
+    },
+    "no_aivalidator/noai_validator/identifier.py::identify::m.yields == 0": {
+      "class": "B-floor",
+      "why": "structural presence (≥1 / == 0) in the §S.7 feature vector P(f) / role constraint — cut 2b (2026-09-06); never a magnitude"
+    },
+    "no_aivalidator/noai_validator/strict_checks.py::_is_for_loop_append::len(call.args) != 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/noai_validator/strict_checks.py::_is_for_loop_append::len(for_node.body) != 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/noai_validator/strict_checks.py::_is_identity_expr::len(node.args) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/noai_validator/strict_checks.py::_is_identity_expr::len(node.generators) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/noai_validator/strict_checks.py::_is_noop_branch::len(stmt.targets) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/noai_validator/strict_checks.py::_is_noop_while::stmt.value.value == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/noai_validator/strict_checks.py::_is_while_loop_copy::len(call.args) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/noai_validator/strict_checks.py::_is_while_loop_copy::stmt.value.value == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/noai_validator/strict_checks.py::has_dead_zero_arithmetic::len(stmt.targets) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/noai_validator/strict_checks.py::has_self_canceling_arithmetic::len(stmt.targets) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/noai_validator/strict_checks.py::is_alias_identity_chain::len(func.body) < 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/noai_validator/strict_checks.py::is_canned_static_dict::len(func.body) != 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/noai_validator/strict_checks.py::is_exact_identity::len(func.body) != 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/noai_validator/strict_checks.py::is_for_loop_identity_accumulator::len(func.body) < 1": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/noai_validator/strict_checks.py::is_for_loop_identity_accumulator::len(stmt.targets) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/noai_validator/strict_checks.py::is_for_loop_identity_accumulator::len(val.elts) == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/noai_validator/strict_checks.py::is_for_loop_identity_accumulator::val.value == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/noai_validator/strict_checks.py::is_naive_constant_ignore::len(func.body) != 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/noai_validator/strict_checks.py::is_param_ignored_delegator::len(func.body) < 2": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/noai_validator/strict_checks.py::is_sophisticated_identity_chain::len(func.body) < 2": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/noai_validator/strict_checks.py::is_sophisticated_identity_chain::len(stmt.targets) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/noai_validator/utils.py::check_duplicate_functions::len(funcs) > 1": {
+      "class": "B",
+      "why": "structural fact / plumbing — reviewed 2026-09-05 (widened census)"
+    },
+    "no_aivalidator/noai_validator/utils.py::fingerprint_function::hashlib.sha256(structure.encode()).hexdigest()[:16]": {
+      "class": "P",
+      "why": "plumbing: display / hash / parsing / schema floor / repair-side sanity — not a code verdict"
+    },
+    "no_aivalidator/noai_validator/utils.py::normalized_fingerprint::hashlib.md5(structure.encode()).hexdigest()[:16]": {
+      "class": "P",
+      "why": "plumbing: display / hash / parsing / schema floor / repair-side sanity — not a code verdict"
+    },
+    "no_aivalidator/noai_validator/validator.py::<module>::len(sys.argv) < 2": {
+      "class": "P",
+      "why": "plumbing: display/hash/id-range truncation or measurement op, not a verdict"
+    },
+    "no_aivalidator/noai_validator/validator.py::<module>::r.failure_reason[:80]": {
+      "class": "P",
+      "why": "plumbing: display/hash/id-range truncation or measurement op, not a verdict"
+    },
+    "no_aivalidator/noai_validator/validator.py::_analyze_comment_density_for_range::total_lines > 0": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/noai_validator/validator.py::_check_hard_requirements::metrics.assigns == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/noai_validator/validator.py::_check_hard_requirements::metrics.branches == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/noai_validator/validator.py::_check_hard_requirements::metrics.calls == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/noai_validator/validator.py::_check_hard_requirements::metrics.comparisons == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/noai_validator/validator.py::_check_hard_requirements::metrics.loops == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/noai_validator/validator.py::_check_hard_requirements::metrics.params == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/noai_validator/validator.py::_check_hard_requirements::metrics.returns == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/noai_validator/validator.py::_check_hard_requirements::metrics.yields == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/noai_validator/validator.py::_check_type_hint_issues::hints_missing > 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/noai_validator/validator.py::_check_type_hint_issues::hints_present > 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/noai_validator/validator.py::_resolve_import::level == 0": {
+      "class": "P",
+      "why": "plumbing: display/hash/id-range truncation or measurement op, not a verdict"
+    },
+    "no_aivalidator/noai_validator/validator.py::_resolve_import_file::level > 0": {
+      "class": "P",
+      "why": "plumbing: display/hash/id-range truncation or measurement op, not a verdict"
+    },
+    "no_aivalidator/noai_validator/validator.py::validate_classes::passed=False :: failure_reason=verdict.reason,": {
+      "class": "ranker-routed",
+      "why": "writes the value VerdictRanker returned"
+    },
+    "no_aivalidator/noai_validator/validator.py::validate_comprehension::info.filter_count > 0": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/noai_validator/validator.py::validate_comprehension::info.nesting_level > 0": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "no_aivalidator/noai_validator/validator.py::validate_function::passed=False :: failure_reason=self._format_observation(first_obs),": {
+      "class": "ranker-routed",
+      "why": "writes the value VerdictRanker returned"
+    },
+    "no_aivalidator/noai_validator/validator.py::validate_function::passed=False :: failure_reason=verdict.reason,": {
+      "class": "ranker-routed",
+      "why": "writes the value VerdictRanker returned"
+    },
+    "no_aivalidator/noai_validator/validator.py::validate_function::passed=True :: warnings=[self._format_observation(obs) for obs in observations],": {
+      "class": "ranker-routed",
+      "why": "writes the value VerdictRanker returned"
+    },
+    "no_aivalidator/noai_validator/validator.py::validate_lambda::len(node.args.args) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "no_aivalidator/noai_validator/validator.py::validate_lambda::passed=True :: warnings = []": {
+      "class": "ranker-routed",
+      "why": "writes the value VerdictRanker returned"
+    },
+    "no_aivalidator/repair_generators/_finite.py::dedent_rows::delta <= 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) — FIX_43 (b) finite-set rewriter plumbing (2026-09-16, run 124): the shape a rewriter recognises or a row/column bound of its line edit, never a verdict; every candidate is offered, the Ranker decides"
+    },
+    "no_aivalidator/repair_generators/_finite.py::whole_rows::a < 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) — FIX_43 (b) finite-set rewriter plumbing (2026-09-16, run 124): the shape a rewriter recognises or a row/column bound of its line edit, never a verdict; every candidate is offered, the Ranker decides"
+    },
+    "no_aivalidator/repair_generators/advanced.py::fix_duplicate_subtrees::len(a.body) > 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) — FIX_43 (b) finite-set rewriter plumbing (2026-09-16, run 124): the shape a rewriter recognises or a row/column bound of its line edit, never a verdict; every candidate is offered, the Ranker decides"
+    },
+    "no_aivalidator/repair_generators/advanced.py::fix_duplicate_subtrees::len(b.body) > 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) — FIX_43 (b) finite-set rewriter plumbing (2026-09-16, run 124): the shape a rewriter recognises or a row/column bound of its line edit, never a verdict; every candidate is offered, the Ranker decides"
+    },
+    "no_aivalidator/repair_generators/advanced.py::fix_duplicate_subtrees::len(n.body) > 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) — FIX_43 (b) finite-set rewriter plumbing (2026-09-16, run 124): the shape a rewriter recognises or a row/column bound of its line edit, never a verdict; every candidate is offered, the Ranker decides"
+    },
+    "no_aivalidator/repair_generators/advanced.py::fix_duplicate_subtrees::len(n.orelse) > 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) — FIX_43 (b) finite-set rewriter plumbing (2026-09-16, run 124): the shape a rewriter recognises or a row/column bound of its line edit, never a verdict; every candidate is offered, the Ranker decides"
+    },
+    "no_aivalidator/repair_generators/core.py::_remove_dict_entries::j >= 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) — FIX_43 (b) finite-set rewriter plumbing (2026-09-16, run 123): a precondition of the rewrite's shape, never a rank; the Ranker decides between the variants"
+    },
+    "no_aivalidator/repair_generators/core.py::dead_local_variants::len(st.targets) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) — FIX_43 (b) finite-set rewriter plumbing (2026-09-16, run 123): a precondition of the rewrite's shape, never a rank; the Ranker decides between the variants"
+    },
+    "no_aivalidator/repair_generators/core.py::fix_immediate_overwrite::len(cur) > 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) — FIX_43 (b) finite-set rewriter plumbing (2026-09-16, run 123): a precondition of the rewrite's shape, never a rank; the Ranker decides between the variants"
+    },
+    "no_aivalidator/repair_generators/core.py::fix_import_in_function::snippet_pad(broken_code) != 0": {
+      "class": "B",
+      "why": "structural precondition: the def is at module level (snippet indent 0) — hoisting an import from a method / nested def would land in class or enclosing scope, not module scope (item 4 NAI-008 rewriter, 2026-09-08)"
+    },
+    "no_aivalidator/repair_generators/core.py::fix_redundant_else::delta <= 0": {
+      "class": "B",
+      "why": "structural precondition: the else statements must sit deeper than the if for there to be a dedent; a non-positive delta is not a layout the rewrite can edit (set 4b-19, 2026-09-10)"
+    },
+    "no_aivalidator/repair_generators/core.py::fix_redundant_else::len(else_rows) != 1": {
+      "class": "B",
+      "why": "structural precondition: exactly one `else:` line at the if's column between the body and the else statements is the line the rewrite deletes; none or several → decline (set 4b-19, 2026-09-10)"
+    },
+    "no_aivalidator/repair_generators/core.py::fix_redundant_else::len(orelse) == 1": {
+      "class": "B",
+      "why": "structural precondition: an else holding exactly one `if` is an `elif` — not the detector's shape, skipped (set 4b-19, 2026-09-10)"
+    },
+    "no_aivalidator/repair_generators/core.py::fix_unused_nested_def::_required(d) == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) — FIX_43 (b) finite-set rewriter plumbing (2026-09-16, run 123): a precondition of the rewrite's shape, never a rank; the Ranker decides between the variants"
+    },
+    "no_aivalidator/repair_generators/core.py::fix_unused_nested_def::len(unused) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) — FIX_43 (b) finite-set rewriter plumbing (2026-09-16, run 123): a precondition of the rewrite's shape, never a rank; the Ranker decides between the variants"
+    },
+    "no_aivalidator/repair_generators/extended_semantic.py::fix_none_compare::len(node.ops) != 1": {
+      "class": "B",
+      "why": "structural precondition: a compare with one operator is the only shape whose operator token sits between the operand and None; a chained compare (`a == None == b`) is another expression and the rewrite declines it (set 4b-13, 2026-09-10)"
+    },
+    "no_aivalidator/repair_generators/gate.py::_branch_bodies::len(n.orelse) == 1": {
+      "class": "B",
+      "why": "structural precondition: an `else` holding exactly one `if` is an `elif` and belongs to the chain, not a branch body — the same precondition core.py::fix_redundant_else carries (S5-1 G0, 2026-09-17)"
+    },
+    "no_aivalidator/repair_generators/gate.py::_foreign_bindings::len(node.targets) == 1": {
+      "class": "B",
+      "why": "structural precondition: a single-target `NAME = windll.<handle>` binding is the only module-level shape that names a foreign handle — a tuple assignment is not it (S5-1 G0, 2026-09-17)"
+    },
+    "no_aivalidator/repair_generators/gate.py::_not_implemented::gained <= 0": {
+      "class": "B",
+      "why": "structural precondition: the rewrite introduced no `NotImplementedError`, so it is not the `*_not_implemented` shape the owner's ruling 2 binds — the predicate has nothing to say (S5-1 G0, 2026-09-17)"
+    },
+    "no_aivalidator/repair_generators/gate.py::_p_self_assignment::len(n.targets) != 1": {
+      "class": "B",
+      "why": "structural precondition: a single-target `x = x` is the statement the NAI-064 detector observes — the same precondition redundancy.py::fix_self_assignment already carries (S5-1 G0, 2026-09-17)"
+    },
+    "no_aivalidator/repair_generators/gate.py::_store_events::len(node.targets) == 1": {
+      "class": "B",
+      "why": "structural precondition: a single-target `name = <expr>` is the store the last-live check reads; `a = b = x` is not the overwrite pair NAI-006 observes (S5-1 G0, 2026-09-17)"
+    },
+    "no_aivalidator/repair_generators/hallucination.py::_chain::len(cur.orelse) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) — FIX_43 (b) finite-set rewriter plumbing (2026-09-16, run 124): the shape a rewriter recognises or a row/column bound of its line edit, never a verdict; every candidate is offered, the Ranker decides"
+    },
+    "no_aivalidator/repair_generators/hallucination.py::fix_redundant_nesting::delta <= 0": {
+      "class": "B",
+      "why": "structural precondition: the inner if's body must sit deeper than its header to be dedented into the outer; a non-positive delta is a shape the rewriter refuses (set 4b-36, 2026-09-10)"
+    },
+    "no_aivalidator/repair_generators/math_family.py::fix_algebraic_identity::node.right.value == 1": {
+      "class": "B",
+      "why": "structural precondition: a `/ 1` anywhere in the snippet is the detector's div_one shape, which the rewrite declines whole (`4 / 1` is `4.0` — a value-type change on the normal path) (set 4b-32, 2026-09-10)"
+    },
+    "no_aivalidator/repair_generators/math_family.py::fix_dead_store::len(s.targets) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) — FIX_43 (b) finite-set rewriter plumbing (2026-09-16, run 124): the shape a rewriter recognises or a row/column bound of its line edit, never a verdict; every candidate is offered, the Ranker decides"
+    },
+    "no_aivalidator/repair_generators/math_family.py::fix_identity_comprehension::len(node.generators) != 1": {
+      "class": "B",
+      "why": "structural precondition: the detector's shape is a comprehension with exactly one generator; a nested comprehension is another expression and is skipped (set 4b-32, 2026-09-10)"
+    },
+    "no_aivalidator/repair_generators/redundancy.py::fix_bool_literal_compare::len(node.comparators) == 1": {
+      "class": "B",
+      "why": "structural precondition: exactly one comparator — a chained compare is not the shape the NAI-061 detector observes (item 4, 2026-09-08)"
+    },
+    "no_aivalidator/repair_generators/redundancy.py::fix_bool_literal_compare::len(node.ops) == 1": {
+      "class": "B",
+      "why": "structural precondition: exactly one comparison operator — a chained compare is not the shape the NAI-061 detector observes (item 4, 2026-09-08)"
+    },
+    "no_aivalidator/repair_generators/redundancy.py::fix_len_zero_compare::len(call.args) == 1": {
+      "class": "B",
+      "why": "structural precondition: `len` with exactly one positional argument is the call whose argument becomes the truth test; any other call → decline (set 4b-30, 2026-09-10)"
+    },
+    "no_aivalidator/repair_generators/redundancy.py::fix_len_zero_compare::len(node.comparators) != 1": {
+      "class": "B",
+      "why": "structural precondition: exactly one comparator — the `0` the NAI-062 detector reads; a chained compare → decline (set 4b-30, 2026-09-10)"
+    },
+    "no_aivalidator/repair_generators/redundancy.py::fix_len_zero_compare::len(node.ops) != 1": {
+      "class": "B",
+      "why": "structural precondition: a compare with one operator is the only shape whose `len(x) <op> 0` the NAI-062 detector observes; a chained compare is another expression → decline (set 4b-30, 2026-09-10)"
+    },
+    "no_aivalidator/repair_generators/redundancy.py::fix_len_zero_compare::lit.value == 0": {
+      "class": "B",
+      "why": "structural precondition: the comparator is the literal 0 the NAI-062 detector observes (`comparator.value == 0`, its own test); anything else → decline (set 4b-30, 2026-09-10)"
+    },
+    "no_aivalidator/repair_generators/redundancy.py::fix_self_assignment::len(n.targets) == 1": {
+      "class": "B",
+      "why": "structural precondition: a single-target `x = x` is the statement the NAI-064 detector observes (`len(node.targets) == 1`, its own test); a tuple / chained target → not the shape (set 4b-30, 2026-09-10)"
+    },
+    "no_aivalidator/repair_generators/redundancy.py::fix_unnecessary_list_wrapping::len(n.args) == 1": {
+      "class": "B",
+      "why": "structural precondition (_is_list_call): `list` with exactly one positional argument is the wrapping the NAI-180 detector observes (`len(node.args) == 1`, its own test); any other call → not the shape (set 4b-31, 2026-09-10)"
+    },
+    "no_aivalidator/repair_generators/redundancy.py::fix_while_true_break::len(first.body) == 1": {
+      "class": "B",
+      "why": "structural precondition: an `if` whose body is exactly one `break` is the statement the NAI-068 detector observes (`len(first_stmt.body) == 1`, its own test); any other if → not the shape (set 4b-31, 2026-09-10)"
+    },
+    "no_aivalidator/repair_generators/redundancy.py::fix_while_true_break::len(n.body) == 1": {
+      "class": "B",
+      "why": "structural precondition: a loop holding nothing but the `if …: break` would become `while not x: pass` — a spin, another program → decline (set 4b-31, 2026-09-10)"
+    },
+    "no_aivalidator/repair_generators/redundancy.py::one_pass::len(n.args) != 1": {
+      "class": "B",
+      "why": "structural precondition (redundant_conversion_fix): the outer `T(...)` call with that one argument is the only call whose text can be replaced by its inner call; `int(int(s), 16)` is another expression → decline (set 4b-30, 2026-09-10)"
+    },
+    "no_aivalidator/repair_generators/safety.py::fix_unguarded_open::len(st.targets) == 1": {
+      "class": "B",
+      "why": "structural precondition: a single-target `name = open(...)` assignment is the only shape the with-statement rewrite can name (`with open(...) as name:`); a tuple target is a different statement (set 4b-07, 2026-09-10)"
+    },
+    "no_aivalidator/repair_generators/safety.py::fix_unsafe_deserialization::len(node.args) > 1": {
+      "class": "B",
+      "why": "structural precondition: yaml.load with a positional Loader argument is not the Loader-less call NAI-093 observes (moved verbatim from knowledge_base.py, plan item 5 2026-09-05; re-keyed item 4 2026-09-08)"
+    },
+    "no_aivalidator/repair_generators/semantic.py::fix_string_concat_loop::len(aug.targets) == 1": {
+      "class": "B",
+      "why": "structural precondition: the NAI-179 spelling `acc = acc + <v>` must assign one bare name; a tuple target is a shape the join role refuses (set 4b-43, 2026-09-10)"
+    },
+    "no_aivalidator/repair_generators/semantic.py::fix_string_concat_loop::len(prev.targets) == 1": {
+      "class": "B",
+      "why": "structural precondition: the accumulator's init must be a plain single-target `acc = \"<str>\"` directly above the loop; a chained or tuple assignment is not the shape and the rewrite declines it (set 4b-29, 2026-09-10)"
+    },
+    "no_aivalidator/repair_generators/semantic.py::fix_string_concat_loop::len(stmt.body) != 1": {
+      "class": "B",
+      "why": "structural precondition: the join role rewrites a for loop whose ONLY statement is the `+=`; any other statement in the body is another loop, skipped (set 4b-29, 2026-09-10)"
+    },
+    "no_aivalidator/repair_generators/strict.py::fix_alias_chain::len(roots) != 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) — FIX_43 (b) finite-set rewriter plumbing (2026-09-16, run 123): a precondition of the rewrite's shape, never a rank; the Ranker decides between the variants"
+    },
+    "no_aivalidator/repair_generators/strict.py::fix_alias_chain::len(st.targets) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) — FIX_43 (b) finite-set rewriter plumbing (2026-09-16, run 123): a precondition of the rewrite's shape, never a rank; the Ranker decides between the variants"
+    },
+    "no_aivalidator/repair_generators/structural.py::fix_identical_branches::len(n.orelse) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) — FIX_43 (b) finite-set rewriter plumbing (2026-09-16, run 124): the shape a rewriter recognises or a row/column bound of its line edit, never a verdict; every candidate is offered, the Ranker decides"
+    },
+    "no_aivalidator/repair_generators/structural.py::fix_identical_branches::len(n.targets) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) — FIX_43 (b) finite-set rewriter plumbing (2026-09-16, run 124): the shape a rewriter recognises or a row/column bound of its line edit, never a verdict; every candidate is offered, the Ranker decides"
+    },
+    "no_aivalidator/repair_generators/structural.py::fix_loop_else_without_break::delta <= 0": {
+      "class": "B",
+      "why": "structural precondition: the else block must sit deeper than the loop header to be dedented after it; a non-positive delta is a shape the rewriter refuses (set 4b-42, 2026-09-10)"
+    },
+    "no_aivalidator/repair_generators/structural.py::fix_loop_else_without_break::len(else_rows) != 1": {
+      "class": "B",
+      "why": "structural precondition: exactly one `else` line must sit between the loop body and the else block; any other count is a shape the rewriter refuses (set 4b-42, 2026-09-10)"
+    },
+    "no_aivalidator/repair_generators/style.py::fix_append_loop_extend::len(call.args) == 1": {
+      "class": "B",
+      "why": "structural precondition: the detector's `append(<x>)` takes the loop target alone; another arity is not the shape (set 4b-43, 2026-09-10)"
+    },
+    "no_aivalidator/repair_generators/style.py::fix_append_loop_extend::len(n.body) == 1": {
+      "class": "B",
+      "why": "structural precondition: the detector's identity append loop has the append as its ONLY statement; any other body is not the shape (set 4b-43, 2026-09-10)"
+    },
+    "semantic_analysis/api_compliance.py::visit_Call::len(node.args) >= 2": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "semantic_analysis/cfg_analysis.py::visit_If::len(node.orelse) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "semantic_analysis/cfg_analysis.py::visit_Try::len(handler.body) == 1": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "semantic_analysis/def_use_chains.py::visit_Name::self._loop_depth == 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "semantic_analysis/module_handling.py::visit_ClassDef::len(self._class_stack) > 0": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "semantic_analysis/module_handling.py::visit_FunctionDef::len(self._function_stack) > 0": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "semantic_analysis/module_handling.py::visit_ImportFrom::node.level > 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "semantic_analysis/module_handling.py::visit_Nonlocal::len(self._function_stack) < 2": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "semantic_analysis/parameter_usage.py::visit_FunctionDef::len(kwarg_accesses) > 0": {
+      "class": "B-floor",
+      "why": "definedness floor left by cut 2 (was a magnitude gate; see EXCISION_LIST)"
+    },
+    "signature_engine/builtins_registry.py::<module>::len(sys.argv) > 1": {
+      "class": "P",
+      "why": "plumbing: display / hash / parsing / schema floor / repair-side sanity — not a code verdict"
+    },
+    "signature_engine/canonicals.py::<module>::canon.description[:60]": {
+      "class": "P",
+      "why": "plumbing: display/hash/id-range truncation or measurement op, not a verdict"
+    },
+    "signature_engine/canonicals.py::<module>::len(sys.argv) > 1": {
+      "class": "P",
+      "why": "plumbing: display/hash/id-range truncation or measurement op, not a verdict"
+    },
+    "signature_engine/canonicals.py::validate_against_canonical::reqs.min_calls > 0": {
+      "class": "B",
+      "why": "structural fact (one target / two to compare / more than one / presence) or plumbing — reviewed 2026-09-05"
+    },
+    "signature_engine/dunders.py::<module>::len(sys.argv) > 1": {
+      "class": "P",
+      "why": "plumbing: display / hash / parsing / schema floor / repair-side sanity — not a code verdict"
+    },
+    "signature_engine/hallucinations.py::<module>::len(sys.argv) > 1": {
+      "class": "P",
+      "why": "plumbing: display / hash / parsing / schema floor / repair-side sanity — not a code verdict"
+    },
+    "signature_engine/packages.py::<module>::len(sys.argv) > 1": {
+      "class": "P",
+      "why": "plumbing: display / hash / parsing / schema floor / repair-side sanity — not a code verdict"
+    },
+    "signature_engine/signatures.py::<module>::len(sys.argv) < 2": {
+      "class": "P",
+      "why": "plumbing: display/hash/id-range truncation or measurement op, not a verdict"
+    },
+    "signature_engine/signatures.py::<module>::result.matches[:10]": {
+      "class": "P",
+      "why": "plumbing: display/hash/id-range truncation or measurement op, not a verdict"
+    },
+    "signature_engine/signatures.py::match_line::line[:80]": {
+      "class": "P",
+      "why": "plumbing: display/hash/id-range truncation or measurement op, not a verdict"
+    },
+    "signature_engine/stdlib.py::<module>::len(sys.argv) > 1": {
+      "class": "P",
+      "why": "plumbing: display / hash / parsing / schema floor / repair-side sanity — not a code verdict"
+    },
+    "no_aivalidator/solution_gate_integrate.py::_live_function_span::start < 1": {
+      "class": "S",
+      "why": "shape: source lines are 1-based, so `start < 1` is `not a source line` — the live-span re-base of fix plan 2026-10-23 B3 (the same domain test as BUILDER_DAEMON._span_refusal's `line <= 0`); a span is a coordinate, never a rank."
+    }
+  },
+  "exempt": {}
+}

@@ -1,0 +1,19 @@
+# Requirements for system_scripts
+# Install with: pip install -r requirements.txt
+
+# Dashboard dependencies (proof_dashboard.py)
+dash>=2.0.0
+dash-bootstrap-components>=1.0.0
+plotly>=5.0.0
+networkx>=2.6.0
+
+# Daemon runtime dependencies (slot 18, H17 — used but previously unlisted)
+mypy>=1.8,<2.4    # 2026-10-23: <2.4 — see pyproject; # circuit_daemon.run_mypy_scan (live every 8th cycle) via engine interpreter; exit-code contract (0=clean, 1=errors, 2=usage/config) verified on mypy 2.3.1, 2026-08-28 (C5)
+watchdog>=3.0     # mypy_n_contracts_watcher/watcher.py filesystem observer
+aiofiles>=23.0    # utils/code_analysis/fingerprint.py + no_aivalidator/noai_validator/utils.py
+
+# Dormant optionals — no live import path today; uncomment only if revived.
+# vulture>=2.10   # circuit_daemon.run_vulture_scan (dead path, F25)
+# rich>=13.0      # mypy_n_contracts_watcher/harness.py (contracts subsystem, dormant)
+# NOTE: the stricken-framework tracker is ARCHIVED; its framework dep is
+# deliberately not listed here, even commented — vocabulary law.

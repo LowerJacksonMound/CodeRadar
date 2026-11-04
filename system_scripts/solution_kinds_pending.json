@@ -1,0 +1,9 @@
+{
+ "_what": "FIX_41 (owner ruling 2026-09-15): the only ids step 19 allows to stay no_fix_by_design.",
+ "finite_set_fix43": [
+  "NAI-211"
+ ],
+ "_finite_set_fix43": "FIX_43 (b) merged 2026-09-16 (runs 122/123/124): 25 of the 26 'which one's right' rows are finite-set rewriters (every candidate offered, the Ranker decides). NAI-211 stays: module-scope, validator-emitted — the Builder's module-scope path calls no rewriter and step 19's per-function plant proof cannot fire it; needs a module-scope candidate path (I-79).",
+ "prescription_pending": [],
+ "_prescription_pending": "EMPTY since the merge of runs 118 + 119 (2026-09-15 close): every group-A id is prescribed in the original; a lane may list ids here again only while its prescriptions are being written in a copy."
+}

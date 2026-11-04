@@ -1,0 +1,68 @@
+{
+ "closed": "2026-09-06",
+ "by": "owner",
+ "why_short": "~85-90% of the pre-ranker rankers removed; diminishing returns; the real end is the item-5 read on real repos",
+ "ledger": ".archive/PRERANKER_HUNT_2026-10-23.tsv",
+ "kept_list": "KEPT_SITES_LIST_2026-09-06.md",
+ "hunter_hits_on_tree": 2045,
+ "statused": 2045,
+ "open": 0,
+ "not_in_ledger": 0,
+ "standing": {
+  "KEPT": 1856,
+  "ENDED": 83,
+  "retired: file gone": 192,
+  "DEFERRED": 47,
+  "CUT": 310,
+  "KEPT:": 3,
+  "RESTORED": 2,
+  "ENDED→DESCOPED": 206,
+  "STRUCTURAL:": 58
+ },
+ "note": "step 17 joins hunter hits to the ledger by file::variety::expr (never line); FAIL only if not_in_ledger rises above the frozen count (creep).",
+ "ledger_rows": 2757,
+ "refrozen": "2026-09-17 (MERGED original, lanes A+B+C): lane C's 205 rows appended (run 131 — 166 mypy suppressors (V93), 26 step-15 unit assertions (V59), the restarter's window/hang constants and the band's read); creep back to 0. Lane A's 10 rows (run 126) and lane B's 32 (run 129) already in. FIX_48's four-kind split frozen here; the 2026-09-17 ledger (re-keyed at lane B's close, FIX_30/I-20) stays the record — a second --rekey today is refused by design (a dated file is never overwritten) and is not needed: the join is by expression, and step 17 reports creep 0. || RE-FROZEN 2026-09-20 (T4, owner Q7 / I-104, run 156 `moto_perpetuo`, copy3): orphan_rows 513 → 518 and the four kinds re-derived from step 17's own reading of this tree (cut 228 · file gone 153 · superseded 12 → 13 · blind 120 → 124; sum 518 = orphan_keys), so step 17 reads +0 with creep 0. The +5 over 513 is I-104's FOUR blind RUN_136 rows (health_check.py V59 asserts whose join keys the mypy pass renamed) PLUS ONE superseded row that arrived after session 3's reading — the 517 named in the session-6 packet's Q7 was session 3's number and is one short of what this tree derives; the number here is the measured one, never a hand-set one. I-110's 153 `file gone` orphans are NOT retired (Q7, same ruling): the ledger is append-only, they are classified, they cost nothing. `standing`, `hunter_hits_on_tree` (1356), `statused` (1356) and `ledger_rows` (2389) were NOT re-derived here — Q7 moves nothing else in the ledger — although the live readings are 1934 / 1934 / 2426; the gate compares `not_in_ledger` and `orphan_rows` only. || RE-FROZEN 2026-09-22 (triage sitting 2 lane L2, run 171, copy1): after I-110's retirement of 147 `file gone` keys with no successor, orphan_rows 518 → 538 and the four kinds re-derived from step 17's own reading of this tree, so step 17 reads +0. I-142's three counters refreshed in the same pass (hunter_hits_on_tree 1356 → 2045, statused 1356 → 2045, ledger_rows 2389 → 2757), `standing` re-derived beside the 2026-09-06 block, and the `ledger` field pointed at the migrated ledger. Frozen on the LAUNCHED side.",
+ "orphan_rows": 538,
+ "rekeyed": "2026-09-15 (FIX_30: line refreshed from the live hunt; rows with no live site carry status orphan:<old>; join stays by expression; 494 orphan keys frozen in the ORIGINAL after the R-F transplant (copy3 froze 491 on its own tree; the original re-keyed 1963 rows incl. Item 3 + FIX_34 sites, +12 R-F rows = 1975) — 7 of them the run-106 FIX_21 rows superseded by a variable rename)",
+ "orphan_kinds": {
+  "cut": 400,
+  "file_gone": 0,
+  "superseded": 26,
+  "blind": 112,
+  "descoped": 179,
+  "retired": 147,
+  "orphan_keys": 538,
+  "note": "FIX_48 (owner Q8, 2026-09-17), re-derived 2026-09-22 by triage sitting 2 lane L2 after the I-110 retirement. `cut + file_gone + superseded + blind == orphan_keys == orphan_rows`. `descoped` (I-111) is an informational sub-count INSIDE `cut`; `retired` (I-110) is counted BESIDE the four kinds and is NOT an orphan — those rows are kept in the TSV as history only."
+ },
+ "ledger_note": "informational ONLY — step 17 resolves the ledger of record with `preranker_census.newest_ledger()` (the newest dated `.archive/PRERANKER_HUNT_*.tsv`) and never reads this field. It named `PRERANKER_HUNT_2026-09-17.tsv` until 2026-09-22 (I-142); it is kept, pointed at the migrated ledger, rather than dropped, so a reader can see which file the frozen numbers below were derived from.",
+ "key_scheme": "v2",
+ "frozen_on": {
+  "launched_side": true,
+  "witness": "system_scripts/poll_config.json",
+  "why": "launched — `system_scripts/poll_config.json` is present, so its three rows read BLIND",
+  "frozen_at": "2026-09-22",
+  "rule": "read the frozen number on the SAME side of a launch it was frozen on; on the other side the three `system_scripts/poll_config.json` rows move between `file gone` and `BLIND` and, since `file gone` retires, the total moves with them"
+ },
+ "standing_2026_09_06": {
+  "KEPT": 1167,
+  "ENDED": 95,
+  "DEFERRED": 65,
+  "CUT": 280,
+  "RESTORED": 2,
+  "REVERTED": 16
+ },
+ "frozen_from": {
+  "orphan_rows": 518,
+  "hunter_hits_on_tree": 1356,
+  "statused": 1356,
+  "ledger_rows": 2389,
+  "ledger": ".archive/PRERANKER_HUNT_2026-09-17.tsv",
+  "orphan_kinds": {
+   "cut": 228,
+   "file_gone": 153,
+   "superseded": 13,
+   "blind": 124
+  },
+  "note": "the close as it stood before triage sitting 2 lane L2 (I-110 / I-104 / I-142)"
+ }
+}

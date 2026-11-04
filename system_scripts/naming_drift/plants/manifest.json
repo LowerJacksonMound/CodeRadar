@@ -1,0 +1,129 @@
+{
+ "target": "system_scripts/naming_drift/plants",
+ "built": "2026-10-01",
+ "by": "lane ND1 (naming-drift tracker build, PLAN_NAMING_DRIFT_TRACKER_2026-09-29 §F.1)",
+ "base": "hand-written 12-file plant repo (no upstream): 3 T1 groups, 2 T2 groups, 1 T3 pair, 2 pre-existing three-spelling groups, 1 red herring (locals i/idx/index + __init__ vs initialize: must NOT fire), 1 accepted variant (buf_size ruled a variant of buffer_size in accepted_<repoid>.json: no row), 1 watch file (watch_me.py: user_id only, §F.2 introduces userId)",
+ "expected_rows": "expected_rows.json — the launch-pass rows projected to (key, spelling, tier, kind, sites), compared byte-for-byte by the §F.1 proof",
+ "accepted_ruling": {
+  "spelling": "buf_size",
+  "key": "buffer size",
+  "ruling": "variant",
+  "note": "written to system_scripts/naming_drift/accepted_<repoid>.json by the proof driver (repo id = get_repo_id(plant path)); not shipped inside the plant"
+ },
+ "red_herrings": [
+  {
+   "file": "red_herring_locals.py",
+   "what": "locals i / idx / index and a nested def: not names; __init__ beside initialize: dunders are not names"
+  },
+  {
+   "file": "accepted_variant.py",
+   "what": "buf_size: accepted as a variant, so no row"
+  },
+  {
+   "file": "watch_me.py",
+   "what": "user_id alone: one spelling, no row until §F.2 introduces userId"
+  }
+ ],
+ "planted_findings": [
+  {
+   "file": "pre_err_msg.py",
+   "line": 10,
+   "function": "errMsg",
+   "family": "NAMING_DRIFT",
+   "accept_any_of": [
+    "NAMING_DRIFT"
+   ],
+   "what": "planted naming drift T1 (pre_existing): spelling `errMsg` of key `error message` (expected_rows.json row; §F.1 of PLAN_NAMING_DRIFT_TRACKER_2026-09-29)"
+  },
+  {
+   "file": "t1_file_path.py",
+   "line": 12,
+   "function": "filePath",
+   "family": "NAMING_DRIFT",
+   "accept_any_of": [
+    "NAMING_DRIFT"
+   ],
+   "what": "planted naming drift T1 (pre_existing): spelling `filePath` of key `file path` (expected_rows.json row; §F.1 of PLAN_NAMING_DRIFT_TRACKER_2026-09-29)"
+  },
+  {
+   "file": "t1_get_config.py",
+   "line": 8,
+   "function": "getConfig",
+   "family": "NAMING_DRIFT",
+   "accept_any_of": [
+    "NAMING_DRIFT"
+   ],
+   "what": "planted naming drift T1 (pre_existing): spelling `getConfig` of key `get config` (expected_rows.json row; §F.1 of PLAN_NAMING_DRIFT_TRACKER_2026-09-29)"
+  },
+  {
+   "file": "t1_max_retries.py",
+   "line": 10,
+   "function": "maxRetries",
+   "family": "NAMING_DRIFT",
+   "accept_any_of": [
+    "NAMING_DRIFT"
+   ],
+   "what": "planted naming drift T1 (pre_existing): spelling `maxRetries` of key `max retry` (expected_rows.json row; §F.1 of PLAN_NAMING_DRIFT_TRACKER_2026-09-29)"
+  },
+  {
+   "file": "pre_tmp_dir.py",
+   "line": 10,
+   "function": "tmpDir",
+   "family": "NAMING_DRIFT",
+   "accept_any_of": [
+    "NAMING_DRIFT"
+   ],
+   "what": "planted naming drift T1 (pre_existing): spelling `tmpDir` of key `temporary directory` (expected_rows.json row; §F.1 of PLAN_NAMING_DRIFT_TRACKER_2026-09-29)"
+  },
+  {
+   "file": "pre_err_msg.py",
+   "line": 16,
+   "function": "error_message",
+   "family": "NAMING_DRIFT",
+   "accept_any_of": [
+    "NAMING_DRIFT"
+   ],
+   "what": "planted naming drift T2 (pre_existing): spelling `error_message` of key `error message` (expected_rows.json row; §F.1 of PLAN_NAMING_DRIFT_TRACKER_2026-09-29)"
+  },
+  {
+   "file": "t2_load_cfg.py",
+   "line": 8,
+   "function": "load_cfg",
+   "family": "NAMING_DRIFT",
+   "accept_any_of": [
+    "NAMING_DRIFT"
+   ],
+   "what": "planted naming drift T2 (pre_existing): spelling `load_cfg` of key `load config` (expected_rows.json row; §F.1 of PLAN_NAMING_DRIFT_TRACKER_2026-09-29)"
+  },
+  {
+   "file": "t2_msg_cnt.py",
+   "line": 10,
+   "function": "msg_cnt",
+   "family": "NAMING_DRIFT",
+   "accept_any_of": [
+    "NAMING_DRIFT"
+   ],
+   "what": "planted naming drift T2 (pre_existing): spelling `msg_cnt` of key `message count` (expected_rows.json row; §F.1 of PLAN_NAMING_DRIFT_TRACKER_2026-09-29)"
+  },
+  {
+   "file": "pre_tmp_dir.py",
+   "line": 13,
+   "function": "temp_dir",
+   "family": "NAMING_DRIFT",
+   "accept_any_of": [
+    "NAMING_DRIFT"
+   ],
+   "what": "planted naming drift T2 (pre_existing): spelling `temp_dir` of key `temporary directory` (expected_rows.json row; §F.1 of PLAN_NAMING_DRIFT_TRACKER_2026-09-29)"
+  },
+  {
+   "file": "t3_recieve.py",
+   "line": 12,
+   "function": "recieve_message",
+   "family": "NAMING_DRIFT",
+   "accept_any_of": [
+    "NAMING_DRIFT"
+   ],
+   "what": "planted naming drift T3 (pre_existing): spelling `recieve_message` of key `receive message` (expected_rows.json row; §F.1 of PLAN_NAMING_DRIFT_TRACKER_2026-09-29)"
+  }
+ ]
+}

@@ -1,0 +1,754 @@
+{
+  "_meta": {
+    "purpose": "What to look for: most-used detritus + stub species in the wild. Drives run-against target construction; feeds taxonomy/rules expansion.",
+    "built": "2026-08-27",
+    "sources": "gitignore corpus guides (Atlassian/DataCamp/Boot.dev), sindresorhus/junk, backup-file exposure writeups, Python stub-convention refs, arXiv 2508.14727 / 2510.03029 / 2409.01382 (LLM stub smells)",
+    "stricken_rule": "Species whose canonical wild names carry the stricken t-word are cataloged here as wild facts but are NEVER reproduced in fixtures; their proxy is expressed by content under Zeppelin names.",
+    "updated": "2026-08-28 — breadth-audit top-ups written (owner review Gap 1); rung-0 F13 dotfile-blind-spot note added — 2026-09-05: case_collision (wild-only) added per owner rule 10; venv-by-size reference sizes recorded in rule 9 — 2026-09-05: filters block added (code reads it; H25 closed by construction) -- 2026-09-05 evening: PYTHON-ONLY doctrine (filters._doctrine_python_only): non-.py = artifact by construction; F13-c/d species named (CACHEDIR.TAG, *-checkpoint.ipynb, SQLite header sniff, .ipynb, images, fonts); rules-hardening sources in .archive/rules_hardening_sources_2026-09-05/"
+  },
+  "detritus": {
+    "build_artifacts": {
+      "signatures": [
+        "dist/",
+        "build/",
+        "target/",
+        "*.pyc",
+        "*.class",
+        "*.egg-info/",
+        "pip-wheel-metadata/"
+      ],
+      "freq": "near-universal in built repos"
+    },
+    "dependency_dirs": {
+      "signatures": [
+        "node_modules/",
+        "vendor/",
+        "venv/",
+        "env/",
+        ".venv/"
+      ],
+      "freq": "top gitignore entries globally"
+    },
+    "tool_caches": {
+      "signatures": [
+        "__pycache__/",
+        ".mypy_cache/",
+        ".ruff_cache/",
+        ".tox/",
+        ".cache/",
+        ".nox/"
+      ],
+      "freq": "any Python/JS repo",
+      "stricken_name_wild_only": [
+        ".pytest_cache/"
+      ]
+    },
+    "os_droppings": {
+      "signatures": [
+        ".DS_Store",
+        "._* (AppleDouble)",
+        "Thumbs.db",
+        "desktop.ini",
+        ".Spotlight-V100",
+        ".Trashes",
+        ".fseventsd",
+        "__MACOSX/",
+        ".LSOverride",
+        "Icon\r",
+        "ehthumbs.db",
+        "@eaDir/"
+      ],
+      "freq": "macOS/Windows Finder+Explorer, every browsed dir"
+    },
+    "editor_droppings": {
+      "signatures": [
+        "*.swp",
+        "*.swo",
+        "*~ (tilde)",
+        ".idea/",
+        ".vscode/"
+      ],
+      "freq": "vim/emacs/JetBrains/VSCode"
+    },
+    "backup_temp": {
+      "signatures": [
+        "*.bak",
+        "*.orig",
+        "*.old",
+        "*.tmp",
+        "*.save",
+        "*.rej",
+        "*.inc",
+        "*.src",
+        "*.dev",
+        "'Copy of ' prefix",
+        "archive dumps (*.zip,*.sql,*.tar.gz in-tree)"
+      ],
+      "freq": "manual hot-fix + patch/merge tools"
+    },
+    "log_data_leftovers": {
+      "signatures": [
+        "*.log",
+        "npm-debug.log",
+        "yarn-error.log",
+        "*.csv",
+        "*.tsv",
+        "exports"
+      ],
+      "freq": "runtime + debug sessions"
+    },
+    "vcs_internals": {
+      "signatures": [
+        ".git/",
+        ".gitignore",
+        ".gitattributes"
+      ],
+      "freq": "every repo; PROXY overlap (git = claim about code)"
+    },
+    "secrets_env": {
+      "signatures": [
+        ".env",
+        "config leftovers",
+        "*.pem-ish tokens"
+      ],
+      "freq": "top security-smell entry"
+    },
+    "unreachable_modules": {
+      "signatures": [
+        "orphan .py never imported from any entry point"
+      ],
+      "freq": "grows with repo age; code-detritus"
+    },
+    "in_file_dead_code": {
+      "signatures": [
+        "functions never called",
+        "assigned-never-used vars",
+        "unreachable branches",
+        "commented-out code blocks"
+      ],
+      "freq": "universal; NAI-202/010/031 territory"
+    },
+    "stricken_name_wild_species": {
+      "signatures": [
+        ".pytest_cache/",
+        "conftest.py",
+        "t*st_*.py naming convention"
+      ],
+      "note": "dict-only; never built in our fixtures"
+    },
+    "coverage_artifacts": {
+      "signatures": [
+        ".coverage",
+        "htmlcov/",
+        "coverage.xml",
+        ".hypothesis/"
+      ],
+      "freq": "any measured Python repo"
+    },
+    "notebook_droppings": {
+      "signatures": [
+        ".ipynb_checkpoints/"
+      ],
+      "freq": "any Jupyter-touched repo"
+    },
+    "_f13_note": "RUNG-0 FINDING F13: dot-prefixed files (.env, .DS_Store, .*.swp) are currently classified by NOTHING in the engine (dotfile-skip = silent blind spot incl. the secrets species). Classification must be content+shape based and DISCLOSE the dotfile class.",
+    "case_collision": {
+      "signatures": [
+        "two entries in one directory whose names differ only by case (Repo/ vs repo/, Darlene.py vs darlene.py)"
+      ],
+      "freq": "case-sensitive filesystems only (Linux); impossible on default macOS/Windows volumes",
+      "note": "dict-only — cannot be built on a case-insensitive disk. Owner ruling 2026-09-05 (rule 10): one name per directory, case-blind; the engine normalizes case so a case-variant path is the same entity."
+    }
+  },
+  "stubs": {
+    "pass_only": {
+      "signature": "def f(...): pass",
+      "freq": "the classic scaffold"
+    },
+    "ellipsis_body": {
+      "signature": "def f(...): ...",
+      "freq": "typed code, protocols, .pyi convention"
+    },
+    "docstring_only": {
+      "signature": "def f():\\n    \\\"docstring\\\"  # no code",
+      "freq": "self-documenting scaffold; parses as no-op"
+    },
+    "not_implemented_error": {
+      "signature": "raise NotImplementedError",
+      "freq": "fail-loud stub; abstract-method bodies"
+    },
+    "todo_gap": {
+      "signature": "# TODO/FIXME + pass, or 'implementation goes here'",
+      "freq": "the LLM incompleteness marker (arXiv 2409.01382)"
+    },
+    "return_constant": {
+      "signature": "return None/0/[]/{}/True hardcoded regardless of inputs",
+      "freq": "silent stub; borderline counterfeit"
+    },
+    "canned_return": {
+      "code": "NAI-212",
+      "signature": "returns hardcoded sample/mock data shaped like real output",
+      "freq": "demo-ware; borderline counterfeit"
+    },
+    "abstract_shell": {
+      "code": "NAI-214",
+      "signature": "ABC with @abstractmethod ... and no concrete subclass",
+      "freq": "architecture theater when never implemented"
+    },
+    "empty_class": {
+      "code": "NAI-213",
+      "signature": "class X: pass / empty methods",
+      "freq": "measured LLM smell: 531x GPT-4o, 661x OpenCoder-8B (arXiv 2508.14727)"
+    },
+    "empty_nested_blocks": {
+      "signature": "if/else/except branches containing only pass",
+      "freq": "training-data smell (Empty Nested Code Blocks)"
+    },
+    "pyi_stub_file": {
+      "signature": "*.pyi typed signatures, bodies elided",
+      "freq": "legit tooling artifact; detritus when orphaned"
+    },
+    "not_implemented_singleton": {
+      "signature": "return NotImplemented outside operator dunders",
+      "freq": "misuse; silently truthy sentinel"
+    }
+  },
+  "proxies": {
+    "_doctrine": "Proxies for not running the src code. Species signal = CONTENT, never name.",
+    "assertion_proxy": "bare assert-based check functions (frameworkless)",
+    "demo": "scripted showcase mainloop performing canned output",
+    "runner": "wrapper that invokes other scripts instead of being the app",
+    "pathhack": "sys.path.insert/append to fake the import environment",
+    "git": ".git/ internals — recorded claims about code, not code",
+    "predicates": {
+      "_note": "Item 3 (2026-09-10): prose mirror of no_aivalidator/artifact_scanner/proxies.py — CONTENT only; `in_degree` = importers within the target, measured once by the scanner; 'top level' = module body + the `if __name__ == '__main__':` block. Precedence: test > pathhack > git > runner > entry_shim > demo > assertion_only > setup > package_marker; every match kept in `also`. Published as the `species` fact: '' | 'test' | 'proxy:<kind>' — the disposition table's context fact.",
+      "pathhack": "sys.path.insert/append/extend, sys.path[...] = or os.environ['PYTHONPATH'] = at top level PRECEDING an import, and in_degree == 0 (the same mutation inside an imported file stays the path-hack detector's infraction, never a species)",
+      "git": "imports git | pygit2 | dulwich, or a subprocess.* call whose first argument is a Constant/List starting 'git'; in_degree == 0",
+      "runner": "a top-level call to subprocess.run/call/check_call/check_output/Popen, os.system, os.exec*, runpy.run_path/run_module, pytest.main, unittest.main; in_degree == 0",
+      "entry_shim": "no def / class; the body is imports and at most one call expression (main(), sys.exit(main()), cli())",
+      "demo": "every top-level call has only Constant / f-string-of-constant arguments (>= 1 such call) and no def / class of the file is referenced by another file",
+      "assertion_only": "no test-framework import; every top-level def contains an assert and none returns a value; in_degree == 0",
+      "setup": "a top-level setup(...) call imported from setuptools / distutils",
+      "package_marker": "__init__.py whose body is only imports / __all__ / __version__ (or a docstring)"
+    }
+  },
+  "filters": {
+    "_doctrine": "Owner 2026-09-05: filter 1 = DETRITUS (unreachable modules), filter 2 = ARTIFACTS (everything below). Both feed ONE whitelist. The code reads this block; nothing here is hand-copied into code. Venvs are recognised by SHAPE + SIZE, never by name (rule 9). Stricken-name species are read from the existing dict-only lists at runtime and are never spelled in code.",
+    "sources": [
+      "github/gitignore: Python, Node, Global/{macOS,Windows,Linux,JetBrains,VisualStudioCode,Vim,Emacs,SublimeText,Backup,Patch,Archives,Diff} (fetched 2026-09-05, .archive/species_sources_2026-09-05/)",
+      "sindresorhus/junk index.js (fetched 2026-09-05)"
+    ],
+    "artifact_extensions": [
+      ".7z",
+      ".aof",
+      ".back",
+      ".backup",
+      ".bak",
+      ".bash",
+      ".bat",
+      ".bmp",
+      ".bz2",
+      ".bzip",
+      ".bzip2",
+      ".c",
+      ".cab",
+      ".cc",
+      ".cfg",
+      ".cjs",
+      ".class",
+      ".cmake",
+      ".cmd",
+      ".conf",
+      ".cover",
+      ".cpp",
+      ".css",
+      ".csv",
+      ".db",
+      ".deb",
+      ".diff",
+      ".dmg",
+      ".egg",
+      ".elc",
+      ".env",
+      ".eot",
+      ".flf",
+      ".gem",
+      ".gho",
+      ".gif",
+      ".go",
+      ".gz",
+      ".h",
+      ".h5",
+      ".hdf5",
+      ".hpp",
+      ".htm",
+      ".html",
+      ".ico",
+      ".iml",
+      ".in",
+      ".ini",
+      ".ipynb",
+      ".iso",
+      ".iws",
+      ".j2",
+      ".jar",
+      ".java",
+      ".jinja",
+      ".jl",
+      ".jpeg",
+      ".jpg",
+      ".js",
+      ".json",
+      ".kt",
+      ".lcov",
+      ".lnk",
+      ".log",
+      ".lua",
+      ".lzma",
+      ".mako",
+      ".manifest",
+      ".md",
+      ".mjs",
+      ".mk",
+      ".mo",
+      ".mp3",
+      ".mp4",
+      ".msi",
+      ".msix",
+      ".msm",
+      ".msp",
+      ".npy",
+      ".npz",
+      ".old",
+      ".ori",
+      ".orig",
+      ".original",
+      ".otf",
+      ".parquet",
+      ".patch",
+      ".pdf",
+      ".php",
+      ".pickle",
+      ".pid",
+      ".pkl",
+      ".pl",
+      ".png",
+      ".po",
+      ".pot",
+      ".ps1",
+      ".pyc",
+      ".pyd",
+      ".pyi",
+      ".pyo",
+      ".r",
+      ".rar",
+      ".rb",
+      ".rdb",
+      ".rej",
+      ".rpm",
+      ".rs",
+      ".rst",
+      ".save",
+      ".scala",
+      ".seed",
+      ".sh",
+      ".so",
+      ".spec",
+      ".sql",
+      ".sqlite",
+      ".sqlite3",
+      ".stackdump",
+      ".svg",
+      ".swift",
+      ".swn",
+      ".swo",
+      ".swp",
+      ".tar",
+      ".temp",
+      ".temporary",
+      ".tgz",
+      ".tmp",
+      ".toml",
+      ".tpl",
+      ".ts",
+      ".tsbuildinfo",
+      ".tsv",
+      ".ttf",
+      ".txt",
+      ".txz",
+      ".typed",
+      ".tzst",
+      ".vsix",
+      ".wav",
+      ".webp",
+      ".whl",
+      ".woff",
+      ".woff2",
+      ".xar",
+      ".xml",
+      ".xpi",
+      ".xz",
+      ".yaml",
+      ".yml",
+      ".zip",
+      ".zsh",
+      ".zst"
+    ],
+    "artifact_filenames": [
+      ".AppleDouble",
+      ".DS_Store",
+      ".LSOverride",
+      ".Python",
+      ".VolumeIcon.icns",
+      ".apdisk",
+      ".com.apple.timemachine.donotpresent",
+      ".coverage",
+      ".coveragerc",
+      ".dir-locals.el",
+      ".directory",
+      ".dmypy.json",
+      ".editorconfig",
+      ".env",
+      ".envrc",
+      ".eslintcache",
+      ".flake8",
+      ".gitattributes",
+      ".gitignore",
+      ".installed.cfg",
+      ".isort.cfg",
+      ".localized",
+      ".lock-wscript",
+      ".mailmap",
+      ".netrwhist",
+      ".node_repl_history",
+      ".pdm-python",
+      ".projectile",
+      ".pylintrc",
+      ".pypirc",
+      ".python-version",
+      ".readthedocs.yaml",
+      ".readthedocs.yml",
+      ".spyderproject",
+      ".spyproject",
+      ".stylelintcache",
+      ".tern-port",
+      ".yarn-integrity",
+      "AUTHORS",
+      "CACHEDIR.TAG",
+      "CHANGELOG",
+      "CHANGES",
+      "CONTRIBUTORS",
+      "COPYING",
+      "Desktop.ini",
+      "Dockerfile",
+      "Icon\r",
+      "LICENSE",
+      "LICENSE.rst",
+      "LICENSE.txt",
+      "MANIFEST",
+      "MANIFEST.in",
+      "Makefile",
+      "NOTICE",
+      "Pipfile",
+      "Pipfile.lock",
+      "README",
+      "Session.vim",
+      "Sessionx.vim",
+      "Thumbs.db",
+      "Thumbs.db:encryptable",
+      "celerybeat-schedule",
+      "celerybeat.pid",
+      "coverage.xml",
+      "db.sqlite3",
+      "db.sqlite3-journal",
+      "desktop.ini",
+      "dmypy.json",
+      "ehthumbs.db",
+      "ehthumbs_vista.db",
+      "lerna-debug.log",
+      "nohup.out",
+      "npm-debug.log",
+      "pip-delete-this-directory.txt",
+      "pip-log.txt",
+      "poetry.lock",
+      "py.typed",
+      "pyvenv.cfg",
+      "tempCodeRunnerFile.py",
+      "tox.ini",
+      "uv.lock",
+      "yarn-debug.log",
+      "yarn-error.log"
+    ],
+    "artifact_globs": [
+      "#*#",
+      "*$py.class",
+      "*-checkpoint.ipynb",
+      "*.pid.lock",
+      "*.py,cover",
+      "*.py[cod]",
+      "*.sage.py",
+      "*.stTheme.cache",
+      "*.sublime-workspace",
+      "*.tmPreferences.cache",
+      "*.tmlanguage.cache",
+      "*_flymake.*",
+      "*~",
+      ".#*",
+      ".*.swn",
+      ".*.swo",
+      ".*.swp",
+      ".*.un~",
+      ".Trash-*",
+      "._*",
+      ".coverage.*",
+      ".disk_label*",
+      ".env.*",
+      ".fuse_hidden*",
+      ".nfs*",
+      "Copy of *",
+      "celerybeat-schedule*",
+      "flycheck_*.el",
+      "report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json",
+      "vite.config.*.timestamp-*"
+    ],
+    "artifact_dirs": [
+      "$RECYCLE.BIN",
+      ".AppleDB",
+      ".AppleDesktop",
+      ".DocumentRevisions-V100",
+      ".MobileBackups",
+      ".Spotlight-V100",
+      ".TemporaryItems",
+      ".Trashes",
+      ".abstra",
+      ".cache",
+      ".cask",
+      ".docusaurus",
+      ".dynamodb",
+      ".eggs",
+      ".firebase",
+      ".fseventsd",
+      ".git",
+      ".grunt",
+      ".hg",
+      ".hypothesis",
+      ".idea",
+      ".idea_modules",
+      ".ipynb_checkpoints",
+      ".mypy_cache",
+      ".next",
+      ".nox",
+      ".npm",
+      ".nuxt",
+      ".nyc_output",
+      ".parcel-cache",
+      ".pdm-build",
+      ".pixi",
+      ".pnpm-store",
+      ".pybuilder",
+      ".pyre",
+      ".pytype",
+      ".ropeproject",
+      ".ruff_cache",
+      ".scrapy",
+      ".serverless",
+      ".svelte-kit",
+      ".svn",
+      ".tox",
+      ".vite",
+      ".vs",
+      ".vscode",
+      ".webassets-cache",
+      ".yarn",
+      "@eaDir",
+      "Network Trash Folder",
+      "System Volume Information",
+      "Temporary Items",
+      "__MACOSX",
+      "__marimo__",
+      "__pycache__",
+      "__pypackages__",
+      "auto-save-list",
+      "bower_components",
+      "build",
+      "cmake-build-*",
+      "cover",
+      "cython_debug",
+      "develop-eggs",
+      "dist",
+      "downloads",
+      "eggs",
+      "elpa",
+      "htmlcov",
+      "jspm_packages",
+      "lib-cov",
+      "lib64",
+      "logs",
+      "node_modules",
+      "out",
+      "parts",
+      "pids",
+      "sdist",
+      "target",
+      "var",
+      "web_modules",
+      "wheels"
+    ],
+    "artifact_dir_paths": [
+      "build/lib",
+      "docs/_build",
+      "share/python-wheels",
+      ".vuepress/dist",
+      ".vitepress/cache",
+      ".vitepress/dist"
+    ],
+    "venv_shape": {
+      "markers_any": [
+        "pyvenv.cfg",
+        "bin/python",
+        "bin/python3",
+        "Scripts/python.exe",
+        "Lib/site-packages"
+      ],
+      "site_packages_glob": "lib/python*/site-packages",
+      "min_bytes": 10485760,
+      "owner_reference": "average venv ~15 MB or ~45 MB (owner 2026-09-05); threshold 10 MB (owner 2026-08-28); size decides, shape corroborates, name never"
+    },
+    "deliberately_not_whitelisted": [
+      "local_settings.py",
+      "ipython_config.py",
+      "profile_default/",
+      "instance/",
+      "lib/ (bare)",
+      "site/ (mkdocs)",
+      "tags (ctags file)",
+      "Pipfile.lock",
+      "poetry.lock",
+      "*.ipynb"
+    ],
+    "stricken_name_species": "read at runtime from detritus.tool_caches.stricken_name_wild_only (the cache dir only); the harness-file naming convention is NOT auto-whitelisted — those are proxies, judged by content",
+    "_law": "Two wild names carrying the stricken term were removed from these lists (rule 2). They are not filtered by name; if they matter they are judged by content.",
+    "_doctrine_python_only": "Owner 2026-09-05 (evening): CodeRadar scans 100% PYTHON repos only. The only live source is a .py file; EVERY non-.py file is an artifact by construction (species 'non_python:<ext>' when no finer species matches) and is whitelisted, never drawn, never scanned, never hashed. The launcher discloses the composition (N .py / M non-.py) and refuses a target with zero .py files. Species below refine the disclosure only.",
+    "content_sniff": {
+      "_doctrine": "content beats name: a file whose first bytes carry a known data-format header is that species whatever it is called",
+      "sqlite_data": "SQLite format 3",
+      "coverage_data_hint": "coverage.py stores .coverage as SQLite (header above)"
+    }
+  },
+  "intent_sources": {
+    "_doctrine": "Item 3 (2026-09-10): dot-dir / packaging / docs sources are read for INTENT and classified as artifacts for scanning; looked up by explicit path signatures from the target root (no dot-skip — FIX_13; no walk of their own — FIX_15). Facts are discrete; domain_keywords is an INTERSECTION (README / docs identifier tokens ∩ the target's module / def names), never a count threshold. Stubs are NOT intent sources: unimplemented, they may change. Handed to the intent file (Item 8) as IntentFact{fact, value, source, evidence}; published in the whitelist payload under intent_facts until that file exists.",
+    "ci_workflow": {
+      "paths": [
+        ".github/workflows/*.y?ml",
+        ".gitlab-ci.yml",
+        ".circleci/config.yml",
+        "azure-pipelines.yml",
+        ".travis.yml"
+      ],
+      "facts": [
+        "runner",
+        "python_version",
+        "entry_points (run: lines)"
+      ]
+    },
+    "lint_config": {
+      "paths": [
+        "ruff.toml",
+        ".ruff.toml",
+        ".flake8",
+        ".pylintrc",
+        "setup.cfg#[flake8]",
+        "pyproject.toml#[tool.ruff|pylint]"
+      ],
+      "facts": [
+        "lint_tool",
+        "python_version"
+      ]
+    },
+    "type_config": {
+      "paths": [
+        "mypy.ini",
+        "setup.cfg#[mypy]",
+        "pyproject.toml#[tool.mypy|pyright]",
+        "pyrightconfig.json"
+      ],
+      "facts": [
+        "typing_style",
+        "python_version"
+      ]
+    },
+    "packaging": {
+      "paths": [
+        "pyproject.toml",
+        "setup.py",
+        "setup.cfg",
+        "requirements*.txt",
+        "Pipfile",
+        "environment.yml"
+      ],
+      "facts": [
+        "frameworks",
+        "dependencies",
+        "entry_points",
+        "python_version",
+        "package_name"
+      ],
+      "note": "dependencies = the feed FIX_16's declared-dependencies parser reads for the path-hack detector"
+    },
+    "docs": {
+      "paths": [
+        "docs/**/*.md|rst",
+        "mkdocs.yml"
+      ],
+      "facts": [
+        "domain_keywords",
+        "entry_points",
+        "docs_tool"
+      ]
+    },
+    "readme": {
+      "paths": [
+        "README*"
+      ],
+      "facts": [
+        "domain_keywords",
+        "runner",
+        "entry_points (fenced blocks)"
+      ]
+    },
+    "changelog": {
+      "paths": [
+        "CHANGELOG*"
+      ],
+      "facts": [
+        "runner"
+      ]
+    },
+    "contributing": {
+      "paths": [
+        "CONTRIBUTING*"
+      ],
+      "facts": [
+        "runner",
+        "lint_tool"
+      ]
+    },
+    "pre_commit": {
+      "paths": [
+        ".pre-commit-config.yaml"
+      ],
+      "facts": [
+        "lint_tool"
+      ]
+    },
+    "tox": {
+      "paths": [
+        "tox.ini"
+      ],
+      "facts": [
+        "runner",
+        "python_version"
+      ]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "note": "FIX_53 (owner Q5 / I-47, 2026-09-15; built 2026-09-17). Repo-relative glob patterns naming .py files a target ships IN ORDER to be unparsable — lexer / parser test fixtures. A file matching one of these is STILL a node, STILL walked and STILL hashed: only its syntax breakage is EXPECTED, so it is reported under SYNTAX_FIXTURE_FILES instead of SYNTAX_BROKEN_FILES and never stops the launch at the circuit WIRING gate (FIX_36). A file that does NOT match and does not parse still stops the launch and names the node. Matched with fnmatch against the POSIX repo-relative path. A target that needs another pattern gets a row here — never a code edit.",
+  "join": "scan_scope.syntax_fixture(rel_posix) is the ONE reader (rule 15: one scan-surface module); circuit_daemon and gearbox both consult it.",
+  "patterns": [
+    {"glob": "tests/examplefiles/**", "why": "pygments' lexer corpus: files written to exercise a lexer, not to run (I-47: unicodedoc.py, switch_case.py)"},
+    {"glob": "test/examplefiles/**", "why": "the same corpus under the singular directory name"},
+    {"glob": "**/examplefiles/**", "why": "the same corpus nested under a package"},
+    {"glob": "tests/snippets/**", "why": "pygments' per-lexer snippet corpus, same purpose"},
+    {"glob": "**/tests/fixtures/**", "why": "the conventional fixture directory of a parser / linter test suite"},
+    {"glob": "**/test/fixtures/**", "why": "the same, singular directory name"},
+    {"glob": "**/testdata/**", "why": "the Go-style corpus directory, used by several Python parsers"},
+    {"glob": "**/*_fixture.py", "why": "a file named as a fixture at any depth"},
+    {"glob": "**/*_fixtures.py", "why": "the plural form"}
+  ]
+}

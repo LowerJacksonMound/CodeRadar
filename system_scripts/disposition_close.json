@@ -1,0 +1,9 @@
+{
+ "by": "owner 2026-09-07 \u2014 fresh start (all old calibration trashed; the new car is calibrated on the tester's confirmations)",
+ "frozen": "2026-09-07",
+ "mode": {
+  "unevidenced_deciding": "REPORT"
+ },
+ "note": "No evidence exists yet by design. Mode REPORT until the tester seat supplies confirmations; the recall guard has no planted targets (trashed 2026-09-07).",
+ "recall": {}
+}

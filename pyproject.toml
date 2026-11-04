@@ -1,0 +1,79 @@
+# How the dependencies were found (2026-10-10):
+#   1. Parsed every shipped .py file (CR_SHIP_FILES.txt) with `ast`. Every import whose top-level name is neither the
+#      standard library (sys.stdlib_module_names) nor a shipped module was recorded, with how it is reached: at module
+#      level, inside a function, inside try/except, or under `if TYPE_CHECKING:`.
+#   2. Checked subprocess calls that run a package through CodeRadar's own interpreter (`sys.executable -m <pkg>`).
+#   3. Installed the current `.[lane]` into a fresh Python 3.13 venv, imported all 192 shipped modules, and ran the
+#      launch health check (Steps 1-22): PASSED. Versions below are the ones that venv resolved.
+#   Each dependency's comment names a file:line where it is used.
+#
+# Before publishing to PyPI: CodeRadar runs from its checkout, not from site-packages. launch.sh:40 and
+# coderadar-mcp.sh:37 expect `<checkout>/.venv_new/`, and launch.sh, replay_gates.sh and SPECIES_DICT.json are not
+# package data. A wheel gives you the `coderadar-mcp` command, but its first `cr_watch` has no launch.sh to run.
+# Until that changes, the README installs from a git clone. [D4]
+
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "coderadar-mcp"                    # [D4] `coderadar` is taken on PyPI
+version = "0.1.0"                         # matches coderadar_mcp/__init__.py:14
+description = "Finds counterfeit code in a Python repo and hands an AI agent ranked repairs, over MCP."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.12"                # unchanged; measured on 3.13
+authors = [{ name = "lowerjacksonmound" }]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: MacOS",          # tracer is lsof only (coderadar_mcp/server.py:67); not tested elsewhere
+    "Topic :: Software Development :: Quality Assurance",
+]
+dependencies = [
+    # MCP transport
+    "mcp==2.2.0",                         # coderadar_mcp/server.py:30, module level; pinned as today
+    "anyio>=4",                           # coderadar_mcp/server.py:29, module level (was only in [lane]; resolved 4.15.1)
+    # engine and daemons
+    "aiofiles>=25",                       # no_aivalidator/cheatsheets/cheatsheet_intelligence/knowledge_base.py:464 and 10 more files
+    "typing_extensions>=4",               # system_scripts/engine_utils.py:60, module level
+    "networkx>=3",                        # system_scripts/circuit_views.py:20, module level
+    # dashboard (served on the dashboard port during every run)
+    "dash>=4",                            # system_scripts/proof_dashboard.py:1, module level
+    "dash-bootstrap-components>=2",       # system_scripts/proof_dashboard.py:3, module level
+    "plotly>=7",                          # system_scripts/circuit_views.py:21, module level
+    "flask>=3",                           # system_scripts/proof_dashboard.py:283, inside a function (dash needs it anyway)
+    # run by CodeRadar's own interpreter, so they are runtime dependencies, not dev extras
+    "pytest>=9",                          # no_aivalidator/noai_validator/test_blame.py:59 `sys.executable -m pytest`; was only in [lane]
+    "mypy>=1.8,<2.4",                     # 2026-10-23: 2.4 turns the pinned-version abort (rc 2) into an error (rc 1), failing finished_proof part vi; verified on 2.3.1. system_scripts/health_check.py:2933 `sys.executable -m mypy`; the launch gate runs it; was only in [lane]
+    # kept although off the launch path: declared today, and health step 20 reads this list
+    "watchdog>=6",                        # system_scripts/mypy_n_contracts_watcher/watcher.py:13
+]
+# Dropped: "requests" is imported only by system_scripts/generator_plants/NAI-162.py:3, a test fixture. Health step 20
+# skips plant folders (system_scripts/venv_check.py:42).
+# Not declared, all guarded or never run: PyYAML (knowledge_base.py:46, try), tqdm (file_validation.py:113, try),
+# tomli (detritus_cleaner/utils.py:67, try; only needed before 3.11), plus artifact_detector / flow_tracer /
+# schemas / shared / executor / orchestrator (try or TYPE_CHECKING, and none exists).
+
+[project.optional-dependencies]
+lane = []                                 # kept empty so the README's `pip install '.[lane]'` and refresh_copies.sh still resolve
+dev = [
+    "rich",                               # system_scripts/mypy_n_contracts_watcher/harness.py:16; not on the launch path
+]
+
+[project.urls]
+Homepage = "https://github.com/lowerjacksonmound/coderadar-mcp"
+
+[project.scripts]
+coderadar-mcp = "coderadar_mcp.server:main"   # unchanged; one stdio process per target
+
+[tool.setuptools.packages.find]
+include = [
+    "coderadar_mcp*",
+    "no_aivalidator*",
+    "rca_main*",
+    "detritus_cleaner*",
+    "semantic_analysis*",
+    "signature_engine*",
+    "utils*",
+    "system_scripts*",
+]

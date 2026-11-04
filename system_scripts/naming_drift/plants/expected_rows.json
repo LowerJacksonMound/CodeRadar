@@ -1,0 +1,142 @@
+[
+ {
+  "key": "error message",
+  "kind": "pre_existing",
+  "sites": [
+   {
+    "col": 15,
+    "file": "pre_err_msg.py",
+    "line": 10,
+    "name_kind": "parameter"
+   }
+  ],
+  "spelling": "errMsg",
+  "tier": "T1"
+ },
+ {
+  "key": "file path",
+  "kind": "pre_existing",
+  "sites": [
+   {
+    "col": 21,
+    "file": "t1_file_path.py",
+    "line": 12,
+    "name_kind": "parameter"
+   }
+  ],
+  "spelling": "filePath",
+  "tier": "T1"
+ },
+ {
+  "key": "get config",
+  "kind": "pre_existing",
+  "sites": [
+   {
+    "col": 0,
+    "file": "t1_get_config.py",
+    "line": 8,
+    "name_kind": "function"
+   }
+  ],
+  "spelling": "getConfig",
+  "tier": "T1"
+ },
+ {
+  "key": "max retry",
+  "kind": "pre_existing",
+  "sites": [
+   {
+    "col": 20,
+    "file": "t1_max_retries.py",
+    "line": 10,
+    "name_kind": "parameter"
+   }
+  ],
+  "spelling": "maxRetries",
+  "tier": "T1"
+ },
+ {
+  "key": "temporary directory",
+  "kind": "pre_existing",
+  "sites": [
+   {
+    "col": 23,
+    "file": "pre_tmp_dir.py",
+    "line": 10,
+    "name_kind": "parameter"
+   }
+  ],
+  "spelling": "tmpDir",
+  "tier": "T1"
+ },
+ {
+  "key": "error message",
+  "kind": "pre_existing",
+  "sites": [
+   {
+    "col": 8,
+    "file": "pre_err_msg.py",
+    "line": 16,
+    "name_kind": "attribute"
+   }
+  ],
+  "spelling": "error_message",
+  "tier": "T2"
+ },
+ {
+  "key": "load config",
+  "kind": "pre_existing",
+  "sites": [
+   {
+    "col": 0,
+    "file": "t2_load_cfg.py",
+    "line": 8,
+    "name_kind": "function"
+   }
+  ],
+  "spelling": "load_cfg",
+  "tier": "T2"
+ },
+ {
+  "key": "message count",
+  "kind": "pre_existing",
+  "sites": [
+   {
+    "col": 20,
+    "file": "t2_msg_cnt.py",
+    "line": 10,
+    "name_kind": "parameter"
+   }
+  ],
+  "spelling": "msg_cnt",
+  "tier": "T2"
+ },
+ {
+  "key": "temporary directory",
+  "kind": "pre_existing",
+  "sites": [
+   {
+    "col": 30,
+    "file": "pre_tmp_dir.py",
+    "line": 13,
+    "name_kind": "parameter"
+   }
+  ],
+  "spelling": "temp_dir",
+  "tier": "T2"
+ },
+ {
+  "key": "receive message",
+  "kind": "pre_existing",
+  "sites": [
+   {
+    "col": 4,
+    "file": "t3_recieve.py",
+    "line": 12,
+    "name_kind": "method"
+   }
+  ],
+  "spelling": "recieve_message",
+  "tier": "T3"
+ }
+]

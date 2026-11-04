@@ -1,0 +1,21 @@
+{
+ "_about": "Owner 2026-10-08 (M-128): the adaptive `flow=` valuation. A row whose deciding rule maps to a category here has its candidates' control-flow change scored by that category's table (0-100, the scale RANKER_METHOD_WEIGHTS weighs); a rule with no category keeps the original flow table unchanged. combine: `min` = lowest part wins (the original rule); `best_capped` = the best relevant part wins unless a destructive part is present, which caps the score at the lowest part. `bound_changed` is then multiplied by the direction verdict: the function's own docstring threshold (boundary_probes._WORDS, same number as the changed comparison) says which operator is right. Values are the owner's; edit here, never in code.",
+ "rule_category": {
+  "NAI-078": "SWALLOWED_FAILURE_FIX",
+  "NAI-017": "SWALLOWED_FAILURE_FIX"
+ },
+ "categories": {
+  "SWALLOWED_FAILURE_FIX": {
+   "combine": "min",
+   "values": {"same_paths": 100, "unreadable": 50, "opaque": 50, "placeholder": 0, "other": 33}
+  },
+  "BOUNDARY_CLAMP": {
+   "combine": "best_capped",
+   "values": {"bound_changed": 95, "early_exit_added": 85, "branch_added": 50, "same_paths": 100,
+              "unreadable": 50, "opaque": 50, "placeholder": 0,
+              "loop_removed": 15, "terminal_lost": 10, "return_moved_into_loop": 15, "other": 33}
+  }
+ },
+ "destructive": ["loop_removed", "terminal_lost", "return_moved_into_loop"],
+ "direction": {"aligned": 1.0, "reversed": 0.15, "neutral": 1.0}
+}
