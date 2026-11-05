@@ -1,0 +1,72 @@
+==============================================================================
+T2 — READ TOOLS + THE STDIO SERVER (RELEASE_FORM_MCP_PACKET_2026-09-17 §C, T2)
+tree /Users/dev/Desktop/CODE_RADAR_REFURBISH
+state /Users/dev/Desktop/CODE_RADAR_REFURBISH/.archive/runs/the_big_money/state_during_run
+==============================================================================
+
+1. THE SURFACE — T1's registry, filled by this lane only
+  ✓ T2's six tools are bound — cr_data_types, cr_infractions, cr_intent, cr_row, cr_status, cr_wiring
+  ✓ the three lanes partition the surface and every tool is bound — 13 of 13 tools bound — T2=6, T3=3, T4=4
+  ✓ the server publishes the WHOLE surface, bound or not — 13 tool names
+  ✓ every published tool carries a JSON-Schema input
+  ✓ the page default is the ruled 50 (Q9) — page_size=50
+
+2. THE ANSWERS — every read tool over /Users/dev/Desktop/CODE_RADAR_REFURBISH/.archive/runs/the_big_money/state_during_run
+   target /Users/dev/Desktop/the_big_money  repo_id 7f4b9bb8102b
+  ✓ cr_status: phase, cycle and the two summaries — MONITORING cycle 1; 98 failed / 574 mypy errors
+  ✓ cr_status: answer validates against T1's output schema — 14 keys
+  ✓ cr_infractions: the rows, page 1 — 98 rows over 2 pages; page 1 carries 50
+  ✓ cr_infractions: answer validates against T1's output schema — 8 keys
+  ✓ cr_row: the row in full, by cr_infractions' own id — 35 published keys; decision.why present
+  ✓ cr_row carries the return channel T3 will write to — /Users/dev/Desktop/CODE_RADAR_REFURBISH/system_scripts/return_channel_7f4b9bb8102b.jsonl
+  ✓ cr_row: answer validates against T1's output schema — 3 keys
+  ✓ cr_wiring: every edge carries a state from the fixed set (Q7) — 64 nodes, 29 edges, counts {'possible': 29, 'live': 0, 'severed': 0}
+  ✓ severed_since is non-null only on a severed edge
+  ✓ cr_wiring: answer validates against T1's output schema — 9 keys
+  ✓ cr_data_types: all four trackers plus the contract violations are REPORTED — chosen ['io', 'mypy'], not run ['crc', 'vulture'], issues 574
+  ✓ `issues` is the dash mirror's mypy_errors, not a tracker's own count — 574 vs circuit mypy total_errors 92
+  ✓ cr_data_types: answer validates against T1's output schema — 9 keys
+  ✓ cr_intent: the derived facts the Ranker reads — 7 facts, by source {'changelog': 3, 'packaging': 2, 'readme': 2}
+  ✓ cr_intent: answer validates against T1's output schema — 8 keys
+
+3. PAGING (Q9) — by file, 50 rows, a page never splits a file
+  ✓ page 1 fills to the page size without exceeding it — 50 rows
+  ✓ page 2 is a different set of rows — 48 rows, first file colorama/repair_plant_dynamic.py
+  ✓ every row is on exactly one page — 98 rows over 2 pages
+  ✓ no file is split across pages — 44 files
+  ✓ a page past the end is empty, not an error
+  ✓ filter `file` — 2 rows in colorama/repair_plant_invented.py
+  ✓ filter `rule` — 1 rows carry NAI-057
+  ✓ filter `has_solution` partitions the default view — 90 with a vetted fix + 8 without = 98
+  ✓ a row without a vetted fix carries no digest — statuses ['declined']
+  ✓ filter `withheld` is its own view (FIX_51) and never carries a solution — 83 withheld rows, species e.g. proxy:package_marker
+  ✓ the default view excludes withheld rows
+  ✓ the page size is the client's to set — page_size 1 → 44 pages
+
+4. `finished` (Q5, B7-5) — the mirror's word when it has one, else the formula
+  ✓ the source names where the verdict came from, and agrees with the mirror — finished=False source=mirror · not finished: counterfeit_failed=98, mypy_errors=574
+  ✓ withheld rows are not in the count the formula reads — repairs 90 + no_vetted_fix 8 = failed 98, while withheld 83 is disjoint
+  ✓ T4's `monitor.summary.finished` IS the answer when it is published — finished=True source=mirror
+  ✓ a published `false` is carried with the mirror's own reason
+  ✓ with no `finished` in the mirror the formula decides — finished=False · 98 infractions; 586 data-type issues
+
+5. THE THREE EDGE STATES (Q7) — possible · live · severed
+  ✓ an import edge not proven by a flow is `possible` (the dash's indigo)
+  ✓ an edge into a node proven loaded at runtime is `live`
+  ✓ a pair in severed_links is `severed`
+  ✓ counts tally the whole set — {'possible': 1, 'live': 1, 'severed': 1}
+  ✓ `severed_since` is carried on the severed edge and nowhere else — severed since 2026-09-17T10:00:00+00:00
+  ✓ the `state` filter returns that state alone, with the counts unchanged
+  ✓ `include_dataflows=false` drops Item 10's list and keeps everything else
+
+6. REFUSALS — what the server says instead of guessing
+  ✓ a tree on another target refuses, it does not answer with that target's rows — this tree is on '/Users/dev/Desktop/the_big_money', not '/Users/dev/Desktop/not_this_repo' — sta
+  ✓ an unknown row id says what an id is
+  ✓ a word outside a fixed set is refused, not coerced
+  ✓ a tool no lane has bound would say so plainly — and none is left unbound — 0 unbound of 13
+  ✓ a name outside the surface is refused
+  ✓ an argument outside T1's input schema is refused before the handler runs
+  ✓ a bound tool answers through the server exactly as through the module
+
+==============================================================================
+T2 read-tools proof: PASS

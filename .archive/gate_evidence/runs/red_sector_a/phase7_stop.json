@@ -1,0 +1,36 @@
+{
+  "stopped": true,
+  "daemons_exited": [
+    {
+      "name": "circuit_daemon",
+      "pid": 41580,
+      "exit_code": 0,
+      "signal": "SIGTERM"
+    },
+    {
+      "name": "noai_validator",
+      "pid": 41585,
+      "exit_code": 0,
+      "signal": "SIGTERM"
+    },
+    {
+      "name": "cheatsheets",
+      "pid": 41586,
+      "exit_code": 0,
+      "signal": "SIGTERM"
+    },
+    {
+      "name": "dashboard",
+      "pid": 41587,
+      "exit_code": 0,
+      "signal": "SIGTERM"
+    }
+  ],
+  "residue_clean": true,
+  "byte_identical": false,
+  "files_compared": 77,
+  "client_edits": 1,
+  "unexpected_changes": [],
+  "run_dir": "/Users/dev/Desktop/CODE_RADAR_REFURBISH_copy1/.archive/runs/red_sector_a",
+  "error": null
+}

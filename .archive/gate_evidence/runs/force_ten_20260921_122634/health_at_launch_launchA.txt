@@ -1,0 +1,246 @@
+12:27:04 [cheatsheets] INFO Building import graph...
+12:27:04 [cheatsheets] INFO Indexed 1 modules
+12:27:04 [cheatsheets] INFO Scanned 1 files, found 0 import relationships
+12:27:04 [cheatsheets] INFO Building caller map...
+12:27:04 [cheatsheets] INFO Scanned 1 functions
+12:27:04 [cheatsheets] INFO Context calculator ready (repo size: small)
+12:27:04 [cheatsheets] INFO Building import graph...
+12:27:04 [cheatsheets] INFO Indexed 1 modules
+12:27:04 [cheatsheets] INFO Scanned 1 files, found 0 import relationships
+12:27:04 [cheatsheets] INFO Building caller map...
+12:27:04 [cheatsheets] INFO Scanned 1 functions
+12:27:04 [cheatsheets] INFO Context calculator ready (repo size: small)
+12:27:04 [cheatsheets] INFO Scanning repository: /private/var/folders/pq/bv7b8vw93c1f2_2zxbkplz4w0000gn/T/tmp5bj6n1za
+12:27:04 [cheatsheets] INFO Found 1 Python files
+12:27:04 [cheatsheets] INFO Using 9 entry points
+12:27:04 [cheatsheets] INFO Reachable from entry points: 0 files
+12:27:04 [cheatsheets] INFO Whitelisted (implicit active): 0 files
+12:27:04 [cheatsheets] INFO [filter 2 · artifacts] 0 files: none
+12:27:04 [cheatsheets] INFO Scan complete in 0.00s: {'total_scanned': 1, 'live_files': 0, 'whitelisted_files': 0, 'detritus_files': 1, 'excluded_files': 0, 'moved_files': 0, 'failed_files': 0, 'circular_imports': 0, 'scan_duration_seconds': 0.0, 'clean_duration_seconds': 0.0}
+12:27:05 [cheatsheets] INFO Process scan: 4 python processes seen, none matched monitored set (0 scripts, repo=/Users/dev/Desktop/CODE_RADAR_REFURBISH_copy1/system_scripts)
+12:27:05 [cheatsheets] INFO Observability health endpoint: http://127.0.0.1:0/health
+12:27:05 [cheatsheets] INFO Observability HTTP server stopped
+12:27:05 [cheatsheets] INFO [obs] observability_stopped
+12:27:06 [cheatsheets] INFO [DISCOVERY] 1 Python files in /var/folders/pq/bv7b8vw93c1f2_2zxbkplz4w0000gn/T/tmp26gjljin (0 excluded, 0 detritus filtered)
+12:27:06 [cheatsheets] INFO NoAIMathValidator initialized with config: {'max_files': None, 'async_requires_await': True, 'docstring_style': None, 'include_snippets': False, 'parallel_workers': None, 'detect_circular_imports': True, 'enable_cache': True, 'show_progress': True, 'vuln_check_enabled': True, 'include_fix_suggestions': True, 'enable_agent_detection': True, 'enable_pii_detection': True}
+<before>:11: SyntaxWarning: 'return' in a 'finally' block
+<before>:11: SyntaxWarning: 'return' in a 'finally' block
+<before>:9: SyntaxWarning: 'return' in a 'finally' block
+<before>:9: SyntaxWarning: 'return' in a 'finally' block
+============================================================
+HEALTH CHECK — Steps 1-20
+============================================================
+
+▶ Step 1: Duplicate
+  Tier 1: 2/2 functions OK
+  Tier 2: ✓
+  Tier 3: ✓
+
+▶ Step 2: Fingerprint
+  Tier 1: 4/4 functions OK
+  Tier 2: ✓; fingerprint does not mutate its input (FIX_47): ✓
+  Tier 3: ✓
+
+▶ Step 3: Extractor
+  Tier 1: 2/2 OK
+  Tier 2: ✓
+  Tier 3: ✓
+
+▶ Step 4: Graph
+  Tier 1: 11/11 functions:
+    • build_dependency_graph: ✓
+    • reverse_graph: ✓
+    • dfs_reachability: ✓
+    • bfs_shortest_path: ✓
+    • find_all_paths: ✓
+    • topological_sort: ✓
+    • find_cycles: ✓
+    • build_data_flow_graph: ✓
+    • find_unused_assignments: ✓
+    • find_undefined_uses: ✓
+    • is_identity_chain: ✓
+  Tier 2: ✓
+  Tier 3: ✓
+
+▶ Step 5: Symmetry
+  Tier 1: 6/6 functions OK
+  Tier 2: ✓
+
+▶ Step 6: RootCause
+  Tier 1: 7/7 functions OK
+  Tier 2: ✓
+
+▶ Step 7: Signature engine
+  Tier 1: 9/9 modules OK
+  Tier 2: ✓
+
+▶ Step 8: Detection
+  Tier 1: 12/12 OK (11 classes + the package-level lazy export, FIX_25)
+  Tier 2: ✓
+  ✓ VariableTracker bound lazily; NAI-010 observed `total_unused` — nai010_decides_in_process (I-01)
+
+▶ Step 9: NoAI Validator
+  Tier 1: 13/13 checks OK
+  Tier 2: ✓; determinism + timing (FIX_34): ✓; RCA-001 observation -> ranker (FIX_47): ✓
+
+▶ Step 10: RootCause Main
+  Tier 1: 12/12 checks OK
+  Tier 2: ✓
+
+▶ Step 11: cheatsheets daemon
+  Tier 1: 12/12 components OK
+  Tier 2: ✓ one NAI-071 plant → pick mutable_default_fix, digest 07a3e8a1fb, observations ['parse=ok', 'differs=yes', 'safety=clean', 'rule=NAI-071', 'flow=branch_added:1', 'complexity=same', 'idiom=same', 'deps=none_added', 'defensive=adds_guard:None', 'readability=deeper:2+more_branches:1', 'traps=removed:mutable_default:items'], mirror repair digest matches, no review_status; FIX_51: mirror.withheld carries the 1 withheld row with its reason, summary matches
+  Item 8: ✓ five facts (cli, orders, csv, json, pytest); profile fields; entry-point kept > dropped
+  Item 9: ✓ six facts from a pytest log (AssertionError, orders/__init__.py::total, 4 vs 3, pytest); nothing from an empty log or a confirmed line
+
+▶ Step 12: Detritus Cleaner
+  Tier 1: 6/6 components OK
+  Tier 2: ✓
+
+▶ Step 12b: Artifact scanner
+  Tier 1: 5/5 names OK
+  Tier 2: ✓ (demo → proxy:demo, app → '', shim → proxy:entry_shim, proto → stub:ellipsis_body, ci_workflow + readme runner facts)
+
+▶ Step 13: Finding Ordering + CB Context
+  Tier 1: 2/2 components OK
+  Tier 2: ✓
+
+▶ Step 14: Semantic Analysis
+  Tier 1: 7/7 checks OK
+  Tier 2: ✓
+
+▶ Step 15: Circuit Daemon
+  Tier 1: 17/17 checks OK
+  Tier 2: ✓
+  ✓ 503 before the first poll, 200 tracer ok after record_poll + record_kernel_tracer — observability_health (FIX_19)
+  ✓ dead PID [], reused PID [], live matching PID 1 (stat + lstart checked) — running_entries (FIX_20)
+  ✓ RESPAWNING blocks, older-mtime MONITORING blocks, newer write passes; Child carries its gate — respawn_gate (FIX_21)
+  ✓ window drops old stamps and fills at 3; SIGSTOP reads T -> hung; on-change state files are not heartbeats; dashboard judged by its gate; feed written/gated/removed — restarter (FIX_52)
+  ✓ fixtures matched by pattern and dropped from the wiring break set; a genuine break still stops the launch and names its line; check_syntax parses bytes — syntax_fixture (FIX_53)
+  ✓ live needs both ends proven or a dataflow; dropped -> severed, held with its first time, restored when live, dropped with its node; FIX_45/I-54: only an import-live pair may sever, a flow ending never does, a held pair stays held — severed_links (ITEM_11)
+  ✓ 5 nodes, 2 edges (pkg/a -> pkg/__init__, run -> pkg/a), 1 BROKEN (bad: Syntax error) — circuit.graph_on_fixture (FIX_38)
+  ✓ one text band above the graph (alerts + events), no bottom banner; Loading overlay visible; both legends anchored inside a 24-px margin; uirevision fixed — status_band (FIX_40)
+
+▶ Step 16: NOAI Validator Daemon
+  Tier 1: 7/7 checks OK
+  Tier 2: ✓
+
+▶ Step 17: Pre-ranker ranking census (no ranking before the ranker)
+  398 numeric sites scanned — allowed 398, exempt 0, DISALLOWED 0
+  ✓ no disallowed pre-ranker ranking (literal-comparison census)
+  extended hunter (joined to the ledger by file::kind::expr): 1934 sites on the tree — 1934 with a filed status, 0 open, 0 not in the ledger
+  ledger 2026-09-17: joined 1934 · orphan 518 (cut 228 · file gone 150 · superseded 13 · BLIND 127) · creep 0
+  ▣ pre-ranker excursion CLOSED 2026-09-06 by owner — ~85-90% of the pre-ranker rankers removed; diminishing returns; the real end is the item-5 read on real repos; kept list: KEPT_SITES_LIST_2026-09-06.md; frozen: open=0 not_in_ledger=0
+  ✓ no pre-ranker creep since the close (every hunter hit has a ledger row)
+  orphan rows: 518 (frozen 518, +0)
+
+▶ Step 18: Rule-disposition table + recall guard (dispositions are data; nothing inferred)
+  257 emitted ids / 257 rows — missing 0, strict∩context 0, stale 0, deciding without evidence 199 (REPORT)
+  recall guard: 50 archived targets / 204 plants — 204 caught in substance, 204 by id; controls 23/23 clean; lost families 0
+  ✓ every emitted id has a row; no strict family is context; no frozen plant lost
+
+▶ Step 19: Repair-generator registry + plants (one row per deciding id; rewriters proven on their plants)
+  212 registry rows / 212 deciding ids — rewriter 65, prescribed 146, no_fix (pending FIX_43 finite set) 1, no_fix (pending another lane) 0, no_fix UNLISTED 0, UNBUILT 0
+  ✓ NAI-070 bare_except_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-071 mutable_default_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-092 subprocess_argv_fix: fires=True meaning_quiet=True equivalent=None
+  ✓ NAI-093 yaml_safe_load_fix: fires=True meaning_quiet=True equivalent=None
+  ✓ NAI-078 fallback_return_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-075 open_with_fix: fires=True meaning_quiet=True equivalent=None
+  ✓ NAI-091 param_mutation_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-096 assert_guard_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-159 deprecated_alias_fix: fires=True meaning_quiet=True equivalent=None
+  ✓ NAI-162 verify_true_fix: fires=True meaning_quiet=True equivalent=None
+  ✓ NAI-166 not_implemented_error_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-172 except_order_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-173 return_in_finally_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-008 import_hoist_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-002 unreachable_code_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-005 redundant_else_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-006 immediate_overwrite_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-007 unused_nested_def_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-010 dead_local_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-017 exception_swallow_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-022 discarded_call_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-170 pre_increment_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-175 duplicate_key_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-177 semantic_duplicate_key_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-061 bool_literal_compare_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-060 double_negation_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-062 len_zero_compare_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-063 or_chain_dedupe_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-064 self_assignment_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-065 redundant_conversion_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-067 empty_string_concat_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-068 while_true_break_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-176 fstring_prefix_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-180 list_wrapping_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-051 misspelled_builtin_fix: fires=True meaning_quiet=True equivalent=None
+  ✓ NAI-052 redundant_nesting_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-053 repetitive_branches_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-056 misspelled_module_fix: fires=True meaning_quiet=True equivalent=None
+  ✓ NAI-040 duplicate_subtrees_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-042 exception_alias_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-045 return_type_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-047 assert_side_effect_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-048 identical_defs_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-021S alias_chain_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-026 identical_branches_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-028 top_level_unreachable_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-171 loop_else_splice_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-031 dead_store_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-032 algebraic_identity_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-033 identity_comprehension_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-088 join_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-089 append_loop_extend_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-179 join_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-110 cross_language_fix: fires=True meaning_quiet=True equivalent=None
+  ✓ NAI-116 join_fix: fires=True meaning_quiet=True equivalent=True
+  ≡ NAI-122 bare_except_fix: alias of NAI-070 — proven by NAI-070's plant; NAI-122 absent from its tags
+  ✓ NAI-124 none_identity_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-125 init_return_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-131 setter_return_fix: fires=True meaning_quiet=True equivalent=None
+  ✓ NAI-140 after_terminal_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-143 finally_return_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ NAI-147 unused_local_fix: fires=True meaning_quiet=True equivalent=True
+  ✓ SEC-004 yaml_safe_load_fix: fires=True meaning_quiet=True equivalent=None
+  ✓ SEC-005 subprocess_argv_fix: fires=True meaning_quiet=True equivalent=None
+  ✓ SEC-010 subprocess_argv_fix: fires=True meaning_quiet=True equivalent=None
+  ✓ every deciding id has a registry row; every rewriter proven on its plant
+  ✓ schema; confirmed_fraction null at 0 solutions, null at 2 solutions with no tester run (I-14), 0.5 at 1 of 2; NOT MEASURED on an unreadable state (item 6)
+
+▶ Step 20: venv compatibility (interpreter inside every Requires-Python; pip check; declared deps present; no absent module-level import)
+  python 3.14.7 at /Users/dev/Desktop/CODE_RADAR_REFURBISH_copy1/.venv_new/bin/python; 68 distributions; pip check clean; declared 10; import walk 153 files over no_aivalidator, coderadar_mcp, rca_main, detritus_cleaner, semantic_analysis, signature_engine, utils, system_scripts; third-party names 21 (present 10)
+  · annotated-types 0.7.0 tested through Python 3.12 (running 3.14.7)
+  · dash 4.4.0 tested through Python 3.12 (running 3.14.7)
+  · dash-bootstrap-components 2.0.4 tested through Python 3.13 (running 3.14.7)
+  · h11 0.16.0 tested through Python 3.12 (running 3.14.7)
+  · janus 2.0.0 tested through Python 3.13 (running 3.14.7)
+  · jsonschema-specifications 2025.9.1 tested through Python 3.13 (running 3.14.7)
+  · mypy_extensions 1.1.0 tested through Python 3.13 (running 3.14.7)
+  · nest-asyncio 1.6.0 tested through Python 3.12 (running 3.14.7)
+  · plotly 6.9.0 tested through Python 3.13 (running 3.14.7)
+  · pluggy 1.6.0 tested through Python 3.13 (running 3.14.7)
+  · python-dateutil 2.9.0.post0 tested through Python 3.12 (running 3.14.7)
+  · retrying 1.4.2 tested through Python 3.13 (running 3.14.7)
+  · sse-starlette 3.4.11 tested through Python 3.13 (running 3.14.7)
+  · truststore 0.10.4 tested through Python 3.13 (running 3.14.7)
+  · watchdog 6.0.0 tested through Python 3.13 (running 3.14.7)
+  · dashboard_graphs absent, imported at call time (latent — to-do when the path is wired): system_scripts/proof_dashboard.py:2109
+  · rich absent, imported unguarded only off the daemon route: system_scripts/mypy_n_contracts_watcher/harness.py:16, system_scripts/mypy_n_contracts_watcher/harness.py:17, system_scripts/mypy_n_contracts_watcher/harness.py:18, system_scripts/mypy_n_contracts_watcher/harness.py:19, system_scripts/mypy_n_contracts_watcher/harness.py:20, system_scripts/mypy_n_contracts_watcher/harness.py:21
+  · schemas absent, imported at call time (latent — to-do when the path is wired): system_scripts/engine_utils.py:603
+  · artifact_detector absent, guarded (optional): rca_main/rca_unit.py:54, detritus_cleaner/workflows.py:387
+  · executor absent, guarded (optional): rca_main/context_calculator.py:66, rca_main/onion_peeler.py:42, rca_main/rca_unit.py:676, detritus_cleaner/hub.py:30, detritus_cleaner/workflows.py:37
+  · flow_tracer absent, guarded (optional): no_aivalidator/cheatsheets/cheatsheet_reviewer.py:45, no_aivalidator/noai_validator/collector.py:22, no_aivalidator/noai_validator/extractor.py:22, no_aivalidator/noai_validator/identifier.py:22, no_aivalidator/noai_validator/utils.py:35, no_aivalidator/noai_validator/validator.py:64, rca_main/analyzers/ast_cache.py:24, rca_main/analyzers/bias_checker.py:17, rca_main/analyzers/import_tracer.py:31, rca_main/analyzers/symbol_analyzer.py:30, rca_main/caller_map.py:29, rca_main/context_calculator.py:44, rca_main/context_gathering_manager.py:37, rca_main/import_graph.py:26, rca_main/onion_peeler.py:36, rca_main/origin_tracer.py:48, rca_main/rca_unit.py:41, rca_main/session_state.py:44, detritus_cleaner/utils.py:54
+  · orchestrator absent, guarded (optional): no_aivalidator/cheatsheets/cheatsheet_intelligence/knowledge_base.py:2340, no_aivalidator/cheatsheets/cheatsheet_intelligence/knowledge_base.py:2358, no_aivalidator/detection/base.py:31, rca_main/onion_peeler.py:50, rca_main/onion_peeler.py:550, rca_main/rca_unit.py:60
+  · shared absent, guarded (optional): no_aivalidator/cheatsheets/__init__.py:13, no_aivalidator/cheatsheets/__init__.py:14, no_aivalidator/cheatsheets/__init__.py:15, no_aivalidator/cheatsheets/cheatsheet_intelligence/knowledge_base.py:53, no_aivalidator/cheatsheets/cheatsheet_reviewer.py:50, rca_main/__init__.py:10, rca_main/__init__.py:11, rca_main/__init__.py:12
+  · tomli absent, guarded (optional): detritus_cleaner/utils.py:67
+  · tqdm absent, guarded (optional): no_aivalidator/noai_validator/file_validation.py:112
+  · yaml absent, guarded (optional): no_aivalidator/cheatsheets/cheatsheet_intelligence/knowledge_base.py:45
+  ✓ venv matches what the app needs
+
+============================================================
+engine mypy: 0 errors in 0 files (217 checked)
+HEALTH CHECK: ✓ PASSED — All measured steps ready
+STRUCK: step_9_noai_validator: always-pass repair validation: LOST 2026-09-06 (owner) — always-pass repair verdict from the 'atomic' era; premise (an upstream agent validated the repair) false here; the TESTER seat replaces it (REPAIR_LOOP_AND_TESTER_2026-09-07.md; owner 2026-09-07); calibrator: STRUCK 2026-09-05 (plan item 9) — no working example in any copy; binary-verdict doctrine leaves no place for a tolerance scorer
+============================================================

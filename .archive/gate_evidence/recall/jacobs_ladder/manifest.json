@@ -1,0 +1,38 @@
+{
+ "target": "/Users/dev/Desktop/jacobs_ladder",
+ "built": "2026-09-10",
+ "by": "set 4b-07 (run 61)",
+ "base": "freewill tree + colorama/repair_plant_guards.py",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_guards.py",
+   "line": 9,
+   "function": "parse",
+   "family": "NAI-074",
+   "accept_any_of": [
+    "NAI-074"
+   ],
+   "what": "`json.loads(text)` with no try in the function (set 4b-07, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_guards.py",
+   "line": 13,
+   "function": "read_all",
+   "family": "NAI-075",
+   "accept_any_of": [
+    "NAI-075"
+   ],
+   "what": "`fh = open(path)` \u2026 `fh.close()` in one block \u2014 rewritten live by open_with_fix to `with open(path) as fh:` (set 4b-07)"
+  },
+  {
+   "file": "colorama/repair_plant_guards.py",
+   "line": 23,
+   "function": "pick",
+   "family": "NAI-077",
+   "accept_any_of": [
+    "NAI-077"
+   ],
+   "what": "`row[\"value\"]` unguarded while `\"name\" in row` guards the sibling key (set 4b-07, no-fix-by-design)"
+  }
+ ]
+}

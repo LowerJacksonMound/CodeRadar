@@ -1,0 +1,111 @@
+{
+ "target": "/Users/dev/Desktop/stick_it_out",
+ "built": "2026-09-10",
+ "by": "FIX_17 (run 102, app copy 1): per-(rule, context) dispositions \u2014 NAI-229 / NAI-230 wired, context by default, deciding above magnitude N (229: 18, 230: 8) for non-test files",
+ "base": "limelight tree + colorama/repair_plant_context.py + colorama/repair_plant_context_control.py (below N: context, rows PASS) + colorama/repair_plant_context_twin.py (test species file: only test_ladder_table_has_twenty_rungs is withheld; ladder_table is judged \u2014 owner 2026-10-07)",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_context.py",
+   "line": 10,
+   "function": "weights_table",
+   "family": "NAI-229",
+   "accept_any_of": [
+    "NAI-229"
+   ],
+   "what": "twenty `Assign` statements of twenty-one \u2014 NAI-229 magnitude 20 >= the table's N 18 in a non-test file: the first per-(rule, context) row DECIDES (FIX_17)"
+  },
+  {
+   "file": "colorama/repair_plant_context.py",
+   "line": 34,
+   "function": "scale_alpha",
+   "family": "NAI-230",
+   "accept_any_of": [
+    "NAI-230"
+   ],
+   "what": "one of eight functions sharing a normalized fingerprint \u2014 NAI-230 magnitude 8 >= the table's N 8 in a non-test file: its context row DECIDES each member's row (FIX_17)"
+  },
+  {
+   "file": "colorama/repair_plant_context.py",
+   "line": 41,
+   "function": "scale_beta",
+   "family": "NAI-230",
+   "accept_any_of": [
+    "NAI-230"
+   ],
+   "what": "one of eight functions sharing a normalized fingerprint \u2014 NAI-230 magnitude 8 >= the table's N 8 in a non-test file: its context row DECIDES each member's row (FIX_17)"
+  },
+  {
+   "file": "colorama/repair_plant_context.py",
+   "line": 48,
+   "function": "scale_gamma",
+   "family": "NAI-230",
+   "accept_any_of": [
+    "NAI-230"
+   ],
+   "what": "one of eight functions sharing a normalized fingerprint \u2014 NAI-230 magnitude 8 >= the table's N 8 in a non-test file: its context row DECIDES each member's row (FIX_17)"
+  },
+  {
+   "file": "colorama/repair_plant_context.py",
+   "line": 55,
+   "function": "scale_delta",
+   "family": "NAI-230",
+   "accept_any_of": [
+    "NAI-230"
+   ],
+   "what": "one of eight functions sharing a normalized fingerprint \u2014 NAI-230 magnitude 8 >= the table's N 8 in a non-test file: its context row DECIDES each member's row (FIX_17)"
+  },
+  {
+   "file": "colorama/repair_plant_context.py",
+   "line": 62,
+   "function": "scale_epsilon",
+   "family": "NAI-230",
+   "accept_any_of": [
+    "NAI-230"
+   ],
+   "what": "one of eight functions sharing a normalized fingerprint \u2014 NAI-230 magnitude 8 >= the table's N 8 in a non-test file: its context row DECIDES each member's row (FIX_17)"
+  },
+  {
+   "file": "colorama/repair_plant_context.py",
+   "line": 69,
+   "function": "scale_zeta",
+   "family": "NAI-230",
+   "accept_any_of": [
+    "NAI-230"
+   ],
+   "what": "one of eight functions sharing a normalized fingerprint \u2014 NAI-230 magnitude 8 >= the table's N 8 in a non-test file: its context row DECIDES each member's row (FIX_17)"
+  },
+  {
+   "file": "colorama/repair_plant_context.py",
+   "line": 76,
+   "function": "scale_eta",
+   "family": "NAI-230",
+   "accept_any_of": [
+    "NAI-230"
+   ],
+   "what": "one of eight functions sharing a normalized fingerprint \u2014 NAI-230 magnitude 8 >= the table's N 8 in a non-test file: its context row DECIDES each member's row (FIX_17)"
+  },
+  {
+   "file": "colorama/repair_plant_context.py",
+   "line": 83,
+   "function": "scale_theta",
+   "family": "NAI-230",
+   "accept_any_of": [
+    "NAI-230"
+   ],
+   "what": "one of eight functions sharing a normalized fingerprint \u2014 NAI-230 magnitude 8 >= the table's N 8 in a non-test file: its context row DECIDES each member's row (FIX_17)"
+  },
+  {
+   "file": "colorama/repair_plant_context_twin.py",
+   "line": 6,
+   "function": "ladder_table",
+   "family": "NAI-229",
+   "accept_any_of": [
+    "NAI-229"
+   ],
+   "what": "owner 2026-10-07 (M-90): a test-species FILE withholds only its test code \u2014 ladder_table is real code beside a test_ function, so its twenty Assigns of twenty-one decide like weights_table's (was a control under the 09-06 whole-file reading)"
+  }
+ ],
+ "controls": [
+  "colorama/repair_plant_context_control.py"
+ ]
+}

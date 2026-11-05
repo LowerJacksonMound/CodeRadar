@@ -1,0 +1,14 @@
+{
+  "kind": "diff",
+  "diff": "--- colorama/repair_plant_shape.py:L13-L18\n+++ colorama/repair_plant_shape.py:L13-L18\n@@ -1,6 +1,7 @@\n def merge_tags(tags, extra):\n+    new_tags = list(tags)\n     merged = []\n     for tag in extra:\n         merged.append(tag.strip())\n-    tags.extend(merged)\n-    return tags\n+    new_tags.extend(merged)\n+    return new_tags\n",
+  "shape": null,
+  "placeholders": [],
+  "reason": "`new_tags = list(tags)` built first; every use of `tags` reads `new_tags`; `new_tags` returned \u2014 a new list, never the caller's object",
+  "row": "colorama/repair_plant_shape.py::merge_tags::13",
+  "file": "colorama/repair_plant_shape.py",
+  "replace_span": "colorama/repair_plant_shape.py:L13-L18",
+  "digest": "84e0cae05f",
+  "selected_role": "alias_chain_fix:new_sequence",
+  "applies_cleanly": true,
+  "error": null
+}

@@ -1,0 +1,58 @@
+{
+ "target": "/Users/dev/Desktop/driven",
+ "built": "2026-09-10",
+ "by": "set 4b-38 (run 92, app copy 2)",
+ "base": "everyday_glory tree + colorama/repair_plant_alias.py",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_alias.py",
+   "line": 7,
+   "function": "describe_level",
+   "family": "NAI-040",
+   "accept_any_of": [
+    "NAI-040"
+   ],
+   "what": "two back-to-back ifs with the same two-statement block (set 4b-38, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_alias.py",
+   "line": 19,
+   "function": "scale_all",
+   "family": "NAI-041",
+   "accept_any_of": [
+    "NAI-041"
+   ],
+   "what": "parameter `factor` overwritten by the first statement before any read (set 4b-38, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_alias.py",
+   "line": 28,
+   "function": "parse_port",
+   "family": "NAI-042",
+   "accept_any_of": [
+    "NAI-042"
+   ],
+   "what": "`except ValueError as err:` with `err` never read (set 4b-38, rewritten live by exception_alias_fix → `except ValueError:`)"
+  },
+  {
+   "file": "colorama/repair_plant_alias.py",
+   "line": 34,
+   "function": "render_footer",
+   "family": "NAI-043",
+   "accept_any_of": [
+    "NAI-043"
+   ],
+   "what": "a `TODO` placeholder inside a returned string (set 4b-38, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_alias.py",
+   "line": 38,
+   "function": "size_label",
+   "family": "NAI-045",
+   "accept_any_of": [
+    "NAI-045"
+   ],
+   "what": "`return \"large\"` beside `return 0` (set 4b-38, no-fix-by-design)"
+  }
+ ]
+}

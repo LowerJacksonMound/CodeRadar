@@ -1,0 +1,23 @@
+=== target before the runner ===
+      89
+
+=== pytest through the wrapper (no hand-added flag — the wrapper adds -p no:cacheprovider itself) ===
+...........................ssssssssss........sss....s                    [100%]
+39 passed, 14 skipped in 0.08s
+
+=== target after the runner ===
+      89
+--- files ADDED by the runner ---
+(end — nothing above means no residue)
+
+--- any .pytest_cache / __pycache__ under the target ---
+(end)
+
+=== BEFORE / AFTER on an identical copy of the target's package, same command ===
+  BASE wrapper (.archive/lane_base/) left:
+    ./.pytest_cache/.gitignore
+    ./.pytest_cache/CACHEDIR.TAG
+    ./.pytest_cache/README.md
+    ./.pytest_cache/v/cache/nodeids
+  FIXED wrapper (I-55) left:
+    (nothing)

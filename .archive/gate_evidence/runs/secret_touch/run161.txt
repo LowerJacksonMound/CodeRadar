@@ -1,0 +1,71 @@
+
+  cr_status [before anything — the baseline reading] cycle 2
+      severed_links 0 · severed_by_repair 0
+      mypy_ran True · mypy_rc 1 · mypy_files_checked 54 · mypy_errors 1313
+      finished False (bool) — not finished: counterfeit_failed=198, mypy_errors=1313
+
+  suite [baseline, before any edit] exit=0 in 6.83s
+      ........................................................................ [ 96%]
+      ........................................................................ [100%]
+      1990 passed, 25 skipped, 31000 deselected, 1 xfailed in 5.33s
+
+entry point click._termui_impl: exit=0 error=None
+  the wrapper recorded 13 target file(s)
+
+the frame that lights the import edges: 60 live edge(s) after 10.0s
+
+chosen: 4 rewriter row(s) in src/click/_termui_impl.py — src/click/_termui_impl.py::_resolve_pager_command::423, src/click/_termui_impl.py::_pipepager::549, src/click/_termui_impl.py::_tempfilepager::636, src/click/_termui_impl.py::open_url::799
+
+APPLY PASS — 3 rows in src/click/_termui_impl.py, ascending, each one leased
+  src/click/_termui_impl.py::_resolve_pager_command::423
+      span src/click/_termui_impl.py:L423-L448 live src/click/_termui_impl.py:L423-L448 clean=True leased=True
+      the client wrote it: 26 line(s) out, 27 in
+  src/click/_termui_impl.py::_pipepager::549
+      span src/click/_termui_impl.py:L548-L632 live src/click/_termui_impl.py:L549-L633 clean=True leased=True
+      the client wrote it: 85 line(s) out, 86 in
+  src/click/_termui_impl.py::_tempfilepager::636
+      span src/click/_termui_impl.py:L635-L667 live src/click/_termui_impl.py:L637-L669 clean=True leased=True
+      the client wrote it: 33 line(s) out, 34 in
+
+THE NEGATIVE — one edit to src/click/decorators.py, which no `cr_apply` ever touched
+  appended one comment line; leased=False
+
+the first frame that buckets a repair-severed edge: {'severed_links': 5, 'severed_by_repair': 5, 'cycle': 3} after 10.1s
+
+waiting 1 Builder cycle(s) from 3 — one more Builder cycle over the edited file
+  cycle 3 -> 4 (1 of 1 wanted) after 10.1s
+
+  suite [after the apply pass and the unleased edit] exit=0 in 7.088s
+      ........................................................................ [ 96%]
+      ........................................................................ [100%]
+      1990 passed, 25 skipped, 31000 deselected, 1 xfailed in 5.34s
+
+  cr_status [after the apply pass — §D.3's reading] cycle 4
+      severed_links 5 · severed_by_repair 5
+      mypy_ran True · mypy_rc 1 · mypy_files_checked 54 · mypy_errors 1313
+      finished False (bool) — not finished: counterfeit_failed=197, mypy_errors=1313, severed_links=5
+
+mirror wiring: severed 10 · severed_by_repair 5
+    BY REPAIR  src/click/_termui_impl -> src/click/_compat  since 2026-09-21T16:06:55.519058
+    BY REPAIR  src/click/_termui_impl -> src/click/exceptions  since 2026-09-21T16:06:55.519058
+    BY REPAIR  src/click/_termui_impl -> src/click/types  since 2026-09-21T16:06:55.519058
+    BY REPAIR  src/click/_termui_impl -> src/click/utils  since 2026-09-21T16:06:55.519058
+    BY REPAIR  src/click/termui -> src/click/_termui_impl  since 2026-09-21T16:06:55.519058
+mypy: {'files_checked': 54, 'total_errors': 1313, 'type_errors': None, 'annotation_notes': None, 'mypy_rc': 1, 'mypy_ran': True, 'mypy_config': None, 'mypy_python_version': None}
+
+6 lease record(s) in apply_lease_480405eb45ce.jsonl
+
+§D.3: {"severed_by_repair_ge_1": true, "repair_severed_absent_from_the_finished_input": true, "mypy_ran_true_with_files": true, "finished_is_a_boolean": true, "suite_unmoved": true}
+
+BACKING OUT — the bytes the client kept, in reverse order
+  src/click/_termui_impl.py src/click/_termui_impl.py:L637-L669 found_where_written=True
+  src/click/_termui_impl.py src/click/_termui_impl.py:L549-L633 found_where_written=True
+  src/click/_termui_impl.py src/click/_termui_impl.py:L423-L448 found_where_written=True
+  src/click/decorators.py restored=True
+
+  cr_status [after the back-out] cycle 4
+      severed_links 5 · severed_by_repair 5
+      mypy_ran True · mypy_rc 1 · mypy_files_checked 54 · mypy_errors 1313
+      finished False (bool) — not finished: counterfeit_failed=197, mypy_errors=1313, severed_links=5
+
+run 161 recorded in run161.json

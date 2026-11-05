@@ -1,0 +1,22 @@
+[
+  {
+    "cycle": 6,
+    "finished": false,
+    "finished_reason": "not finished: counterfeit_failed=98, mypy_errors=574",
+    "finished_inputs": {
+      "counterfeit_failed": 98,
+      "mypy_errors": 574,
+      "severed_links": 0
+    },
+    "infractions": {
+      "total_functions": 355,
+      "passed": 174,
+      "failed": 98,
+      "files_scanned": 64,
+      "repairs": 88,
+      "no_vetted_fix": 10,
+      "whitelisted": 0,
+      "withheld": 83
+    }
+  }
+]

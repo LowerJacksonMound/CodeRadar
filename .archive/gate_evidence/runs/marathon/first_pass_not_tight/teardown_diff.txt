@@ -1,0 +1,24 @@
+21,22c21,22
+< 4d4da7b7d64b3bdd3203450a1da40de6 ./colorama/repair_plant_branches.py
+< 001e9757858988dee5096cc020b4cf22 ./colorama/repair_plant_chains.py
+---
+> 4dcff6afbf29c23c8ee9c8b34ceda5ac ./colorama/repair_plant_branches.py
+> 99bd2ba4b818551b8794f8757254a39a ./colorama/repair_plant_chains.py
+43c43
+< 381f8544b7d69f696105b3572c771447 ./colorama/repair_plant_noop.py
+---
+> 9fd204370a76753dcacd8aa62a32ea69 ./colorama/repair_plant_noop.py
+50c50
+< a69e0f55e17e737ae37ac120acb73fba ./colorama/repair_plant_shape.py
+---
+> dfc451e0bb87d1be99f8a17b0d0cbe41 ./colorama/repair_plant_shape.py
+59c59
+< fbacd4b791c36217db56141c6ad992a7 ./colorama/repair_plant_typos.py
+---
+> a82839aa123fcc88a417cafc6f85ef96 ./colorama/repair_plant_typos.py
+74,75c74,75
+< 0af1249cc740b035c9018a878510ee8e ./colorama/win32.py
+< a52a65aeedfbf43c54d6302f0d2809cb ./colorama/winterm.py
+---
+> 8fc4ba442bc1efff05022195e20dc3fb ./colorama/win32.py
+> 33f84be844008319bbd257be4a83a985 ./colorama/winterm.py

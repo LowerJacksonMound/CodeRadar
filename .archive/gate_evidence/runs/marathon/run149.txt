@@ -1,0 +1,110 @@
+cr_watch started=True phase=MONITORING repo_id=d4da70e9348f gate_budget_s=2318
+    circuit READY/RUNNING        PASS  1.5
+    circuit WIRING               PASS  None
+    NOAI MONITORING              PASS  5.6
+    CHEATSHEETS MONITORING       PASS  1.0
+    dashboard HTTP 200           PASS  0.0
+
+cr_status cycle=1 finished=False (mirror)
+  not finished: counterfeit_failed=104, mypy_errors=574
+  infractions {"total_functions": 355, "passed": 168, "failed": 104, "files_scanned": 64, "repairs": 94, "no_vetted_fix": 10, "whitelisted": 0, "withheld": 84, "withheld_gate": 1}
+  cr_infractions(withheld) total=84
+
+rows in the mirror: 104
+
+THE TWELVE, through cr_row
+  #21  colorama/ansi.py::set_title
+       expect 'no row' · AS SEEN: no row (the file holds 0 row(s))
+  #30  colorama/repair_plant_branches.py::stamp::24
+       expect 'keep_second' · AS SEEN 'immediate_overwrite_fix:keep_second' (kind=rewriter, cands=2)
+  #33  colorama/repair_plant_chains.py::stamp::21
+       expect 'keep_second' · AS SEEN 'immediate_overwrite_fix:keep_second' (kind=rewriter, cands=1)
+  #35  colorama/repair_plant_checks.py::push::12
+       expect 'withheld, no candidates' · AS SEEN 'declined' (kind=None, cands=0)
+       why: declined: param_mutation_fix found nothing to rewrite; no candidates offered
+  #53  colorama/repair_plant_noop.py::tally::23
+       expect 'algebraic_identity_fix (statement deleted)' · AS SEEN 'algebraic_identity_fix' (kind=rewriter, cands=2)
+  #57  colorama/repair_plant_quietly.py::hushed::9
+       expect 'withheld by design, with the sentence' · AS SEEN 'withheld (gate)' (kind=None, cands=1)
+       why: gate: withheld: no-fix-by-design — NAI-017: what happens on a swallowed exception — propagate it, narrow the catch, log it, return a value — is the dev's decision about this call site; every candidate
+  #61  colorama/repair_plant_shape.py::pick_label::5
+       expect 'body_once' · AS SEEN 'identical_branches_fix:body_once' (kind=rewriter, cands=1)
+  #70  colorama/repair_plant_typos.py::code_word::20
+       expect 'merge_conditions' · AS SEEN 'repetitive_branches_fix:merge_conditions' (kind=rewriter, cands=1)
+  #71  colorama/repair_plant_typos.py::mark_twice::30
+       expect 'prescribed' · AS SEEN 'solution_NAI-054' (kind=prescribed, cands=1)
+  #73  colorama/win32.py::GetConsoleScreenBufferInfo::118
+       expect 'keep_call_effect' · AS SEEN 'dead_local_fix:keep_call_effect' (kind=rewriter, cands=4)
+  #74  colorama/win32.py::FillConsoleOutputCharacter::147
+       expect 'keep_call_effect' · AS SEEN 'dead_local_fix:keep_call_effect' (kind=rewriter, cands=4)
+  #75  colorama/winterm.py::enable_vt_processing::178
+       expect 'log_and_return' · AS SEEN 'fallback_return_fix:log_and_return' (kind=rewriter, cands=1)
+
+cr_apply on 8 rows: [30, 33, 53, 61, 70, 73, 74, 75]
+  #30  kind=diff applies_cleanly=True span=colorama/repair_plant_branches.py:L24-L27 error=None
+  #33  kind=diff applies_cleanly=True span=colorama/repair_plant_chains.py:L21-L24 error=None
+  #53  kind=diff applies_cleanly=True span=colorama/repair_plant_noop.py:L23-L26 error=None
+  #61  kind=diff applies_cleanly=True span=colorama/repair_plant_shape.py:L5-L10 error=None
+  #70  kind=diff applies_cleanly=True span=colorama/repair_plant_typos.py:L20-L27 error=None
+  #73  kind=diff applies_cleanly=True span=colorama/win32.py:L118-L123 error=None
+  #74  kind=diff applies_cleanly=True span=colorama/win32.py:L147-L155 error=None
+  #75  kind=diff applies_cleanly=True span=colorama/winterm.py:L178-L195 error=None
+
+CLIENT APPLIED 8 rows over 7 files
+  #30  colorama/repair_plant_branches.py colorama/repair_plant_branches.py:L24-L27 [immediate_overwrite_fix:keep_second]
+  #33  colorama/repair_plant_chains.py colorama/repair_plant_chains.py:L21-L24 [immediate_overwrite_fix:keep_second]
+  #53  colorama/repair_plant_noop.py colorama/repair_plant_noop.py:L23-L26 [algebraic_identity_fix]
+  #61  colorama/repair_plant_shape.py colorama/repair_plant_shape.py:L5-L10 [identical_branches_fix:body_once]
+  #70  colorama/repair_plant_typos.py colorama/repair_plant_typos.py:L20-L27 [repetitive_branches_fix:merge_conditions]
+  #73  colorama/win32.py colorama/win32.py:L118-L123 [dead_local_fix:keep_call_effect]
+  #74  colorama/win32.py colorama/win32.py:L147-L155 [dead_local_fix:keep_call_effect]
+  #75  colorama/winterm.py colorama/winterm.py:L178-L195 [fallback_return_fix:log_and_return]
+
+cr_run_module SUITE  exit=0 in 0.707s · files_added=None
+    38 passed, 14 skipped in 0.06s
+cr_run_module ENTRY  exit=0 in 0.062s · files_added=None · stdout 2506 bytes
+cr_wiring 64 nodes · 29 edges · {'possible': 29}
+
+cr_report_outcome(confirmed) on every applied row
+  #30  written=True bytes=None error=None
+  #33  written=True bytes=None error=None
+  #53  written=True bytes=None error=None
+  #61  written=True bytes=None error=None
+  #70  written=True bytes=None error=None
+  #73  written=True bytes=None error=None
+  #74  written=True bytes=None error=None
+  #75  written=True bytes=None error=None
+
+waiting one Builder cycle (from 1) …
+cr_status cycle=3 finished=False (mirror)
+  finished_inputs {"counterfeit_failed": 96, "mypy_errors": 574, "severed_links": 0}
+  infractions     {"total_functions": 355, "passed": 176, "failed": 96, "files_scanned": 64, "repairs": 86, "no_vetted_fix": 10, "whitelisted": 0, "withheld": 84, "withheld_gate": 1}
+  counterfeit_failed 104 → 96
+
+cr_stop with a client manifest of 7 paths
+  stopped              true
+  residue_clean        true
+  byte_identical       false
+  files_compared       78
+  client_edits         7
+  unexpected_changes   []
+  run_dir              "/Users/dev/Desktop/CODE_RADAR_REFURBISH/.archive/runs/marathon"
+  error                null
+    circuit_daemon pid 71909 exit 0 (SIGTERM)
+    noai_validator pid 71918 exit 0 (SIGTERM)
+    cheatsheets pid 71919 exit 0 (SIGTERM)
+    dashboard pid 71920 exit 0 (SIGTERM)
+  report_path            "/Users/dev/Desktop/CODE_RADAR_REFURBISH/.archive/runs/marathon/tester_report.json"
+  builder_cycles         3
+  infractions            96
+  solutions              86
+  confirmed              9
+  confirmed_from_ledger  9
+  confirmed_fraction     0.10465116279069768
+  tester_ran             true
+  status                 "MEASURED"
+  return_channel_lines   8
+  orphans                0
+  unparsed               0
+  finished               false
+  error                  null

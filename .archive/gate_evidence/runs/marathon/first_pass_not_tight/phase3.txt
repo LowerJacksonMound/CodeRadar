@@ -1,0 +1,33 @@
+cr_wiring BEFORE: 64 nodes · 29 edges · null
+
+cr_run_module — the SUITE (pytest colorama/tests -q)
+  module               "colorama/tests"
+  exit_code            1
+  duration_s           0.062
+  files_added          null
+  error                null
+  stdout tail:
+
+cr_run_module — the APP ENTRY (demos/demo01.py, as run 143 did)
+  module               "demos/demo01.py"
+  exit_code            0
+  duration_s           0.061
+  files_added          null
+  error                null
+  stdout tail:
+    '\x1b[44mblue   \x1b[49m \x1b[44m\x1b[30m\x1b[2mX \x1b[22mX \x1b[1mX \x1b[0m \x1b[44m\x1b[31m\x1b[2mX \x1b[22mX \x1b[1mX \x1b[0m \x1b[44m\x1b[32m\x1b[2mX \x1b[22mX \x1b[1mX \x1b[0m \x1b[44m\x1b[33m\x1b[2mX \x1b[22mX \x1b[1mX \x1b[0m \x1b[44m\x1b[34m\x1b[2mX \x1b[22mX \x1b[1mX \x1b[0m \x1b[44m\x1b[35m\x1b[2mX \x1b[22mX \x1b[1mX \x1b[0m \x1b[44m\x1b[36m\x1b[2mX \x1b[22mX \x1b[1mX \x1b[0m \x1b[44m\x1b[37m\x1b[2mX \x1b[22mX \x1b[1mX \x1b[0m \x1b[44m\x1b[0m'
+    '\x1b[45mmagenta\x1b[49m \x1b[45m\x1b[30m\x1b[2mX \x1b[22mX \x1b[1mX \x1b[0m \x1b[45m\x1b[31m\x1b[2mX \x1b[22mX \x1b[1mX \x1b[0m \x1b[45m\x1b[32m\x1b[2mX \x1b[22mX \x1b[1mX \x1b[0m \x1b[45m\x1b[33m\x1b[2mX \x1b[22mX \x1b[1mX \x1b[0m \x1b[45m\x1b[34m\x1b[2mX \x1b[22mX \x1b[1mX \x1b[0m \x1b[45m\x1b[35m\x1b[2mX \x1b[22mX \x1b[1mX \x1b[0m \x1b[45m\x1b[36m\x1b[2mX \x1b[22mX \x1b[1mX \x1b[0m \x1b[45m\x1b[37m\x1b[2mX \x1b[22mX \x1b[1mX \x1b[0m \x1b[45m\x1b[0m'
+    '\x1b[46mcyan   \x1b[49m \x1b[46m\x1b[30m\x1b[2mX \x1b[22mX \x1b[1mX \x1b[0m \x1b[46m\x1b[31m\x1b[2mX \x1b[22mX \x1b[1mX \x1b[0m \x1b[46m\x1b[32m\x1b[2mX \x1b[22mX \x1b[1mX \x1b[0m \x1b[46m\x1b[33m\x1b[2mX \x1b[22mX \x1b[1mX \x1b[0m \x1b[46m\x1b[34m\x1b[2mX \x1b[22mX \x1b[1mX \x1b[0m \x1b[46m\x1b[35m\x1b[2mX \x1b[22mX \x1b[1mX \x1b[0m \x1b[46m\x1b[36m\x1b[2mX \x1b[22mX \x1b[1mX \x1b[0m \x1b[46m\x1b[37m\x1b[2mX \x1b[22mX \x1b[1mX \x1b[0m \x1b[46m\x1b[0m'
+    '\x1b[47mwhite  \x1b[49m \x1b[47m\x1b[30m\x1b[2mX \x1b[22mX \x1b[1mX \x1b[0m \x1b[47m\x1b[31m\x1b[2mX \x1b[22mX \x1b[1mX \x1b[0m \x1b[47m\x1b[32m\x1b[2mX \x1b[22mX \x1b[1mX \x1b[0m \x1b[47m\x1b[33m\x1b[2mX \x1b[22mX \x1b[1mX \x1b[0m \x1b[47m\x1b[34m\x1b[2mX \x1b[22mX \x1b[1mX \x1b[0m \x1b[47m\x1b[35m\x1b[2mX \x1b[22mX \x1b[1mX \x1b[0m \x1b[47m\x1b[36m\x1b[2mX \x1b[22mX \x1b[1mX \x1b[0m \x1b[47m\x1b[37m\x1b[2mX \x1b[22mX \x1b[1mX \x1b[0m \x1b[47m\x1b[0m'
+
+cr_wiring AFTER: 64 nodes · 29 edges · null
+
+cr_report_outcome(confirmed) on every applied row
+  #30  written=False bytes=None error=cr_report_outcome: row 'colorama/repair_plant_branches.py::stamp::24' — not found
+  #33  written=False bytes=None error=cr_report_outcome: row 'colorama/repair_plant_chains.py::stamp::21' — not found
+  #53  written=False bytes=None error=cr_report_outcome: row 'colorama/repair_plant_noop.py::tally::23' — not found
+  #61  written=True bytes=None error=None
+  #70  written=False bytes=None error=cr_report_outcome: row 'colorama/repair_plant_typos.py::code_word::20' — not found
+  #73  written=False bytes=None error=cr_report_outcome: row 'colorama/win32.py::GetConsoleScreenBufferInfo::118' — not found
+  #74  written=False bytes=None error=cr_report_outcome: row 'colorama/win32.py::FillConsoleOutputCharacter::147' — not found
+  #75  written=False bytes=None error=cr_report_outcome: row 'colorama/winterm.py::enable_vt_processing::178' — not found

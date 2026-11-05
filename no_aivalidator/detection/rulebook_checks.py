@@ -434,6 +434,7 @@ class RulebookChecksMixin:
         # The rulebook binds every number; the function's own docstring binds only the literals it assigns here (a
         # docstring's "90 minutes is 1.5" is an example of its arithmetic, not a rule for the constants it reads).
         rulebook: Dict[str, List[Tuple[float, Dict[str, Any]]]] = {}
+        v: Optional[float]
         for c in facts.get("rules", []):
             for v, noun in _statements(c["text"]):
                 rulebook.setdefault(noun, []).append((v, c))
@@ -506,7 +507,7 @@ class RulebookChecksMixin:
             side = _sole(sides)   # a compare on exactly one axis; one mixing x and y is not a mirror of anything
             if side is not _NONE:
                 groups.setdefault(tuple(masked), []).append((n, side, tuple(_OP[type(o)] for o in n.ops)))
-        for masked, members in groups.items():
+        for masked_key, members in groups.items():
             if _sole(side for _, side, _ in members) is not _NONE or _sole(ops for _, _, ops in members) is not _NONE:
                 continue   # all on one axis, or all alike: nothing mirrored disagrees
             tally = Counter(ops for _, _, ops in members).most_common()
@@ -515,7 +516,7 @@ class RulebookChecksMixin:
             else:
                 a, b = members[0], members[1]
                 k = next(i for i, (x, y) in enumerate(zip(a[2], b[2])) if x != y)
-                lo, hi = masked[k], masked[k + 1]
+                lo, hi = masked_key[k], masked_key[k + 1]
                 canon = "<=" if lo == "0" else ">=" if hi == "0" else "<" if set(_tokens(hi.split(".")[-1])) & _SIZE_WORDS else None
                 odd = [m for m in (a, b) if canon and m[2][k] != canon]
                 if _only(odd) is _NONE:   # no plurality and no convention names the odd one: not decided, not flagged
@@ -625,8 +626,8 @@ class RulebookChecksMixin:
         if not body or any(isinstance(n, branchy) for s in body for n in ast.walk(s)):
             return
         said: Set[str] = set()
-        for s in body:
-            for n in ast.walk(s):
+        for st in body:
+            for n in ast.walk(st):
                 ident = _leaf(n) or (n.value if isinstance(n, ast.Constant) and isinstance(n.value, str) else "")
                 said |= {_stem(t) for t in _tokens(ident)} if ident else set()
         said |= {_stem(t) for p in self.func.args.args for t in _tokens(p.arg)}

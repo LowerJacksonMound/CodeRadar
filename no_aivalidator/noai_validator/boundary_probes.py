@@ -20,7 +20,7 @@ import ast
 import math
 import re
 import sys
-from typing import Any, Callable, Dict, List, Optional, Tuple
+from typing import Any, Callable, Dict, List, Optional, Tuple, cast
 
 from .intent_claims import _LINE_BUDGET, _compile, last_return_line, slice_lines
 
@@ -84,7 +84,7 @@ def _kind(fn: ast.FunctionDef, p: str) -> str:
 
 
 _NOMINAL = {"seq": [1.0, 2.0, 3.0], "num": 2.0, "str": "abc", "other": 2.0}
-_CORNERS = {"seq": [("empty", []), ("single", [4.0])], "num": [("zero", 0.0), ("negative", -3.0)],
+_CORNERS: Dict[str, List[Tuple[str, Any]]] = {"seq": [("empty", []), ("single", [4.0])], "num": [("zero", 0.0), ("negative", -3.0)],
             "str": [("empty", "")], "other": []}
 
 
@@ -164,7 +164,7 @@ def _module_cases(tree: Any) -> Dict[str, List[str]]:
             elts = v.elts if isinstance(v, (ast.Tuple, ast.List, ast.Set)) else v.keys if isinstance(v, ast.Dict) else []
             strs = [e.value for e in elts if isinstance(e, ast.Constant) and isinstance(e.value, str)]
             if strs and strs[1:] and [type(e) for e in elts] == [ast.Constant] * len(strs):
-                out[tgts[0].id] = strs
+                out[cast(ast.Name, tgts[0]).id] = strs
     return out
 
 

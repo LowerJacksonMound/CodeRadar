@@ -1,0 +1,3119 @@
+[
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_071.py:L4-L6\n+++ colorama/repair_plant_071.py:L4-L6\n@@ -1,3 +1,4 @@\n-def collect(items=[]):\n-    items.append(1)\n-    return items\n+def collect(items=None):\n+    new_items = list(items) if items is not None else []\n+    new_items.append(1)\n+    return new_items\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`items=[]` \u2192 `items=None`; `new_items = list(items) if items is not None else []` built first; every use of `items` reads `new_items`; `new_items` returned \u2014 a new list, never the caller's object",
+    "row": "colorama/repair_plant_071.py::collect::4",
+    "file": "colorama/repair_plant_071.py",
+    "replace_span": "colorama/repair_plant_071.py:L4-L6",
+    "digest": "8f9a25700f",
+    "selected_role": "alias_chain_fix:new_sequence",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_061.py:L5-L8\n+++ colorama/repair_plant_061.py:L5-L8\n@@ -1,4 +1,4 @@\n def label(flag):\n-    if flag == True:\n+    if flag:\n         return \"on\"\n     return \"off\"\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`flag == True` (snippet line 2) \u2192 `flag`",
+    "row": "colorama/repair_plant_061.py::label::5",
+    "file": "colorama/repair_plant_061.py",
+    "replace_span": "colorama/repair_plant_061.py:L5-L8",
+    "digest": "2da1222e69",
+    "selected_role": "bool_literal_compare_fix",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_070.py:L5-L12\n+++ colorama/repair_plant_070.py:L5-L12\n@@ -3,6 +3,6 @@\n     for v in values:\n         try:\n             total += int(v)\n-        except:\n+        except Exception:\n             continue\n     return total\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`except:` (snippet line 6) \u2192 `except Exception:` \u2014 SystemExit / KeyboardInterrupt / GeneratorExit now propagate",
+    "row": "colorama/repair_plant_070.py::count_ints::5",
+    "file": "colorama/repair_plant_070.py",
+    "replace_span": "colorama/repair_plant_070.py:L5-L12",
+    "digest": "c312a6a098",
+    "selected_role": "bare_except_fix",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "from <real.package.module> import <names actually used>",
+    "placeholders": [
+      {
+        "name": "real.package.module",
+        "meaning": "the project's own module by its real path, or the installed package the intent's dependencies list"
+      },
+      {
+        "name": "names actually used",
+        "meaning": "Import the module that actually holds the names used"
+      }
+    ],
+    "reason": "Import the module that actually holds the names used \u2014 the project's own module by its real path, or the installed package the intent's dependencies list; delete the import when nothing from it is used.",
+    "row": "colorama/repair_plant_invented.py::read_stage::5",
+    "file": "colorama/repair_plant_invented.py",
+    "replace_span": "colorama/repair_plant_invented.py:L5-L11",
+    "digest": "01d0eccb83",
+    "selected_role": "solution_NAI-057",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def <plain_name>(self, ...):   # was __<name>__\n    ...\nobj.<plain_name>()",
+    "placeholders": [
+      {
+        "name": "plain_name",
+        "meaning": "Rename the method to a plain name (serialize, validate) and call it explicitly, or implement the real protocol hook Python calls (__repr__, __iter__, __eq__ \u2026) when that is what was meant"
+      },
+      {
+        "name": "name",
+        "meaning": "Rename the method to a plain name (serialize, validate) and call it explicitly, or implement the real protocol hook Python calls (__repr__, __iter__, __eq__ \u2026) when that is what was meant"
+      }
+    ],
+    "reason": "Rename the method to a plain name (serialize, validate) and call it explicitly, or implement the real protocol hook Python calls (__repr__, __iter__, __eq__ \u2026) when that is what was meant.",
+    "row": "colorama/repair_plant_invented.py::__serialize__::18",
+    "file": "colorama/repair_plant_invented.py",
+    "replace_span": "colorama/repair_plant_invented.py:L18-L19",
+    "digest": "7c55f3e702",
+    "selected_role": "solution_NAI-058",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "<CONSTANT> = <real value>   # module level\n...\n<receiver>.<existing attribute>  /  <CONSTANT>",
+    "placeholders": [
+      {
+        "name": "CONSTANT",
+        "meaning": "Use the constant the module actually defines (or define it once at module level with its real value) and reference that name"
+      },
+      {
+        "name": "real value",
+        "meaning": "Use the constant the module actually defines (or define it once at module level with its real value) and reference that name"
+      },
+      {
+        "name": "receiver",
+        "meaning": "receiver"
+      },
+      {
+        "name": "existing attribute",
+        "meaning": "existing attribute"
+      }
+    ],
+    "reason": "Use the constant the module actually defines (or define it once at module level with its real value) and reference that name; never an attribute that does not exist.",
+    "row": "colorama/repair_plant_invented.py::verbosity::22",
+    "file": "colorama/repair_plant_invented.py",
+    "replace_span": "colorama/repair_plant_invented.py:L22-L25",
+    "digest": "8ff09d14bb",
+    "selected_role": "solution_NAI-059",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "value = call()\nfor item in items:\n    use(value, item)",
+    "placeholders": [],
+    "reason": "Hoist the loop-invariant call above the loop into a local and read the local inside the loop; a call whose side effect is meant to repeat stays, with a comment saying so.",
+    "row": "colorama/repair_plant_loops.py::spacer::5",
+    "file": "colorama/repair_plant_loops.py",
+    "replace_span": "colorama/repair_plant_loops.py:L5-L10",
+    "digest": "aa3c40d3f2",
+    "selected_role": "solution_NAI-087",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_loops.py:L13-L17\n+++ colorama/repair_plant_loops.py:L13-L17\n@@ -1,5 +1,3 @@\n def dashes(parts):\n-    text = \"\"\n-    for part in parts:\n-        text += \"-\"\n+    text = \"\".join(\"-\" for part in parts)\n     return text\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`text = \"\"` + `for part in parts: text += \"-\"` (snippet lines 2-4) \u2192 `text = \"\".join(\"-\" for part in parts)` \u2014 the string is built once by join, the same characters in the same order",
+    "row": "colorama/repair_plant_loops.py::dashes::13",
+    "file": "colorama/repair_plant_loops.py",
+    "replace_span": "colorama/repair_plant_loops.py:L13-L17",
+    "digest": "5bc25d0d44",
+    "selected_role": "join_fix",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_loops.py:L20-L24\n+++ colorama/repair_plant_loops.py:L20-L24\n@@ -1,5 +1,4 @@\n def gather(header, items):\n     out = [header]\n-    for item in items:\n-        out.append(item)\n+    out.extend(items)\n     return out\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`for item in items: out.append(item)` (snippet lines 3-4) \u2192 `out.extend(items)` \u2014 the receiver is a list the function binds; extend appends the same items in the same order",
+    "row": "colorama/repair_plant_loops.py::gather::20",
+    "file": "colorama/repair_plant_loops.py",
+    "replace_span": "colorama/repair_plant_loops.py:L20-L24",
+    "digest": "1bf8761d51",
+    "selected_role": "append_loop_extend_fix",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_loops.py:L27-L31\n+++ colorama/repair_plant_loops.py:L27-L31\n@@ -1,5 +1,3 @@\n def glue(parts):\n-    text = \"\"\n-    for part in parts:\n-        text = text + str(part)\n+    text = \"\".join(str(part) for part in parts)\n     return text\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`text = \"\"` + `for part in parts: text = text + str(part)` (snippet lines 2-4) \u2192 `text = \"\".join(str(part) for part in parts)` \u2014 the string is built once by join, the same characters in the same order",
+    "row": "colorama/repair_plant_loops.py::glue::27",
+    "file": "colorama/repair_plant_loops.py",
+    "replace_span": "colorama/repair_plant_loops.py:L27-L31",
+    "digest": "63ceefdcbb",
+    "selected_role": "join_fix",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_shape.py:L5-L10\n+++ colorama/repair_plant_shape.py:L5-L10\n@@ -2,5 +2,5 @@\n     if flag:\n         label = str(value)\n     else:\n-        label = str(value)\n+        raise NotImplementedError(\"pick_label: else of `if flag` not implemented\")\n     return label\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`if flag:` (snippet line 2) had identical if / else blocks \u2014 the if block kept, the else block replaced by an explicit NotImplementedError stub so the branch that was meant to differ is named, not invented (NAI-026)",
+    "row": "colorama/repair_plant_shape.py::pick_label::5",
+    "file": "colorama/repair_plant_shape.py",
+    "replace_span": "colorama/repair_plant_shape.py:L5-L10",
+    "digest": "4c260b4508",
+    "selected_role": "identical_branches_fix:else_not_implemented",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_shape.py:L13-L18\n+++ colorama/repair_plant_shape.py:L13-L18\n@@ -1,6 +1,7 @@\n def merge_tags(tags, extra):\n+    new_tags = list(tags)\n     merged = []\n     for tag in extra:\n         merged.append(tag.strip())\n-    tags.extend(merged)\n-    return tags\n+    new_tags.extend(merged)\n+    return new_tags\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`new_tags = list(tags)` built first; every use of `tags` reads `new_tags`; `new_tags` returned \u2014 a new list, never the caller's object",
+    "row": "colorama/repair_plant_shape.py::merge_tags::13",
+    "file": "colorama/repair_plant_shape.py",
+    "replace_span": "colorama/repair_plant_shape.py:L13-L18",
+    "digest": "84e0cae05f",
+    "selected_role": "alias_chain_fix:new_sequence",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_shape.py:L21-L25\n+++ colorama/repair_plant_shape.py:L21-L25\n@@ -1,5 +1,3 @@\n def size_of(items):\n     total = len(items)\n     return total\n-    total += 1\n-    return total\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "2 statement(s) after the `return` at snippet line 3 deleted",
+    "row": "colorama/repair_plant_shape.py::size_of::21",
+    "file": "colorama/repair_plant_shape.py",
+    "replace_span": "colorama/repair_plant_shape.py:L21-L25",
+    "digest": "00988edf98",
+    "selected_role": "unreachable_code_fix:drop_dead",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "if <real condition>:\n    <body>",
+    "placeholders": [
+      {
+        "name": "real condition",
+        "meaning": "Write the real condition the branch was waiting for (the flag, the state, the comparison from the intent) in place of True / False"
+      },
+      {
+        "name": "body",
+        "meaning": "when the branch is unconditional, flatten it to its body and delete the dead arm"
+      }
+    ],
+    "reason": "Write the real condition the branch was waiting for (the flag, the state, the comparison from the intent) in place of True / False; when the branch is unconditional, flatten it to its body and delete the dead arm.",
+    "row": "colorama/repair_plant_shape.py::guarded::28",
+    "file": "colorama/repair_plant_shape.py",
+    "replace_span": "colorama/repair_plant_shape.py:L28-L31",
+    "digest": "42fa66ce2a",
+    "selected_role": "solution_NAI-029",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_shape.py:L34-L40\n+++ colorama/repair_plant_shape.py:L34-L40\n@@ -2,6 +2,5 @@\n     total = 0\n     for row in rows:\n         total += len(row)\n-    else:\n-        total += 1\n+    total += 1\n     return total\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`else:` (snippet line 5) after a `for` with no `break` dropped, its 1 statement(s) spliced after the loop \u2014 with no break the else block always ran after the loop; the same statements run in the same order",
+    "row": "colorama/repair_plant_shape.py::seal::34",
+    "file": "colorama/repair_plant_shape.py",
+    "replace_span": "colorama/repair_plant_shape.py:L34-L40",
+    "digest": "d85df3cb4f",
+    "selected_role": "loop_else_splice_fix",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "from X import <name X defines>",
+    "placeholders": [
+      {
+        "name": "name X defines",
+        "meaning": "Import the name X actually defines (fix the spelling), define Y in X, or import from the module that defines Y"
+      }
+    ],
+    "reason": "Import the name X actually defines (fix the spelling), define Y in X, or import from the module that defines Y.",
+    "row": "colorama/repair_plant_stubs.py::<module>::5",
+    "file": "colorama/repair_plant_stubs.py",
+    "replace_span": "colorama/repair_plant_stubs.py:L5-L5",
+    "digest": "f9916fda64",
+    "selected_role": "solution_NAI-217",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "class Name(Base):\n    \"\"\"<what it represents>\"\"\"\n    <attributes / methods>",
+    "placeholders": [
+      {
+        "name": "what it represents",
+        "meaning": "what it represents"
+      },
+      {
+        "name": "attributes / methods",
+        "meaning": "Write the class body the intent calls for (its attributes, methods or base)"
+      }
+    ],
+    "reason": "Write the class body the intent calls for (its attributes, methods or base); an empty class kept as a marker or exception gets a docstring saying so and, for an exception, its base.",
+    "row": "colorama/repair_plant_stubs.py::<class Placeholder>::10",
+    "file": "colorama/repair_plant_stubs.py",
+    "replace_span": "colorama/repair_plant_stubs.py:L10-L11",
+    "digest": "cb223c1bca",
+    "selected_role": "solution_NAI-213",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_typos.py:L5-L10\n+++ colorama/repair_plant_typos.py:L5-L10\n@@ -1,6 +1,6 @@\n def widest_row(rows):\n     best = 0\n     for row in rows:\n-        if lenght(row) > best:\n-            best = lenght(row)\n+        if len(row) > best:\n+            best = len(row)\n     return best\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`lenght` (snippet line 4) \u2192 `len`; `lenght` (snippet line 5) \u2192 `len` \u2014 the builtin the misspelling names, unbound in the function",
+    "row": "colorama/repair_plant_typos.py::widest_row::5",
+    "file": "colorama/repair_plant_typos.py",
+    "replace_span": "colorama/repair_plant_typos.py:L5-L10",
+    "digest": "6fe5e2af5f",
+    "selected_role": "misspelled_builtin_fix",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_typos.py:L13-L20\n+++ colorama/repair_plant_typos.py:L13-L20\n@@ -1,8 +1,5 @@\n def setting_for(table, key):\n     if key in table:\n-        if key in table:\n-            value = table[key]\n-            return value\n-        else:\n-            return -1\n+        value = table[key]\n+        return value\n     return None\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "the inner `if key in table:` (snippet line 3) under the same `if key in table:` goes, its body dedented into the outer, its dead `else` (1 statement(s)) with it \u2014 the same pure condition was just evaluated true; every reachable statement runs as before",
+    "row": "colorama/repair_plant_typos.py::setting_for::13",
+    "file": "colorama/repair_plant_typos.py",
+    "replace_span": "colorama/repair_plant_typos.py:L13-L20",
+    "digest": "ce2bf31b0b",
+    "selected_role": "redundant_nesting_fix",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_typos.py:L23-L30\n+++ colorama/repair_plant_typos.py:L23-L30\n@@ -2,7 +2,7 @@\n     if code == 1:\n         word = \"one\"\n     elif code == 2:\n-        word = \"one\"\n+        raise NotImplementedError(\"code_word: `elif code == 2` not implemented\")\n     else:\n         word = \"many\"\n     return word\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "branch(es) at snippet line 4 repeated the body of the branch at line 2 \u2014 each repeat's body an explicit NotImplementedError stub naming its test, so the branch meant to differ is named, not invented (NAI-053)",
+    "row": "colorama/repair_plant_typos.py::code_word::23",
+    "file": "colorama/repair_plant_typos.py",
+    "replace_span": "colorama/repair_plant_typos.py:L23-L30",
+    "digest": "fbfd803a6d",
+    "selected_role": "repetitive_branches_fix:later_not_implemented",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_typos.py:L33-L36\n+++ colorama/repair_plant_typos.py:L33-L36\n@@ -1,4 +1,5 @@\n def mark_twice(marks, value):\n+    marks = marks.copy()\n     marks.append(value)\n     marks.append(value)\n     return len(marks)\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`marks` is mutated in place at snippet line 2 with another parameter's value \u2014 `marks = marks.copy()` as the first statement; the caller's object is untouched (NAI-091)",
+    "row": "colorama/repair_plant_typos.py::mark_twice::33",
+    "file": "colorama/repair_plant_typos.py",
+    "replace_span": "colorama/repair_plant_typos.py:L33-L36",
+    "digest": "7f143267a6",
+    "selected_role": "param_mutation_fix:shallow_copy",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_typos.py:L39-L46\n+++ colorama/repair_plant_typos.py:L39-L46\n@@ -1,8 +1,8 @@\n def ordered_table(name):\n     try:\n-        import colections\n+        import collections\n     except ImportError:\n         raise\n-    table = colections.OrderedDict()\n+    table = collections.OrderedDict()\n     table[name] = 0\n     return table\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`import colections` (snippet line 3) \u2192 `import collections`; `colections` (snippet line 6) \u2192 `collections` \u2014 the module the misspelling names",
+    "row": "colorama/repair_plant_typos.py::ordered_table::39",
+    "file": "colorama/repair_plant_typos.py",
+    "replace_span": "colorama/repair_plant_typos.py:L39-L46",
+    "digest": "097b063dbe",
+    "selected_role": "misspelled_module_fix",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def get_<thing>(self):\n    return self._<thing>",
+    "placeholders": [
+      {
+        "name": "thing",
+        "meaning": "thing"
+      }
+    ],
+    "reason": "Return the value the getter is named for: read it from self / the source and return it; a getter that only sets or prints is renamed to what it does.",
+    "row": "colorama/winterm.py::get_osfhandle::5",
+    "file": "colorama/winterm.py",
+    "replace_span": "colorama/winterm.py:L5-L6",
+    "digest": "16c1c2d933",
+    "selected_role": "solution_NAI-130",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def <name>(<param>, ...):\n    <result> = <computation that reads <param>>",
+    "placeholders": [
+      {
+        "name": "name",
+        "meaning": "name"
+      },
+      {
+        "name": "param",
+        "meaning": "Use the parameter as the signature promises"
+      },
+      {
+        "name": "result",
+        "meaning": "result"
+      }
+    ],
+    "reason": "Use the parameter as the signature promises \u2014 feed it into the computation the intent's expected input describes; if it is genuinely obsolete, remove it and its arguments at every call site in one change.",
+    "row": "colorama/winterm.py::reset_all::50",
+    "file": "colorama/winterm.py",
+    "replace_span": "colorama/winterm.py:L50-L53",
+    "digest": "0e19548348",
+    "selected_role": "solution_NAI-003",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/winterm.py:L178-L195\n+++ colorama/winterm.py:L178-L195\n@@ -15,4 +15,4 @@\n             return True\n     # Can get TypeError in testsuite where 'fd' is a Mock()\n     except (OSError, TypeError):\n-        return False\n+        raise\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "fallback `return False` (line 18) in an except block replaced by a bare `raise` \u2014 the error propagates instead of a dummy value (NAI-078)",
+    "row": "colorama/winterm.py::enable_vt_processing::178",
+    "file": "colorama/winterm.py",
+    "replace_span": "colorama/winterm.py:L178-L195",
+    "digest": "1b72f48093",
+    "selected_role": "fallback_return_fix:re_raise",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_008.py:L6-L9\n+++ colorama/repair_plant_008.py:L6-L9\n@@ -1,4 +1,5 @@\n+import os\n+import posixpath as pp\n+\n def join_parts(a, b):\n-    import os\n-    import posixpath as pp\n     return pp.join(a, b) + os.sep\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`import os` (body line 2) hoisted to module scope above `def join_parts`; `import posixpath as pp` (body line 3) hoisted to module scope above `def join_parts`",
+    "row": "colorama/repair_plant_008.py::join_parts::6",
+    "file": "colorama/repair_plant_008.py",
+    "replace_span": "colorama/repair_plant_008.py:L6-L9",
+    "digest": "9e9b136122",
+    "selected_role": "import_hoist_fix",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_092.py:L6-L7\n+++ colorama/repair_plant_092.py:L6-L7\n@@ -1,2 +1,2 @@\n def run_echo():\n-    return subprocess.run(\"echo hi\", shell=True, capture_output=True).stdout\n+    return subprocess.run(['echo', 'hi'], capture_output=True).stdout\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`subprocess.run('echo hi', shell=True)` \u2192 `subprocess.run(['echo', 'hi'])` \u2014 argv list, no shell",
+    "row": "colorama/repair_plant_092.py::run_echo::6",
+    "file": "colorama/repair_plant_092.py",
+    "replace_span": "colorama/repair_plant_092.py:L6-L7",
+    "digest": "d484f81b5f",
+    "selected_role": "subprocess_argv_fix",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_093.py:L6-L7\n+++ colorama/repair_plant_093.py:L6-L7\n@@ -1,2 +1,2 @@\n def read_doc(text):\n-    return yaml.load(text)\n+    return yaml.safe_load(text)\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`yaml.load(...)` (snippet line 2) \u2192 `yaml.safe_load(...)`",
+    "row": "colorama/repair_plant_093.py::read_doc::6",
+    "file": "colorama/repair_plant_093.py",
+    "replace_span": "colorama/repair_plant_093.py:L6-L7",
+    "digest": "bd0b0d8d46",
+    "selected_role": "yaml_safe_load_fix",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def <name>(...):\n    result = <computed value>\n    return result   # the entry point prints",
+    "placeholders": [
+      {
+        "name": "name",
+        "meaning": "Return the value the function computes (the text, structure or status the intent's expected output names) and leave printing to the caller or the entry point"
+      },
+      {
+        "name": "computed value",
+        "meaning": "computed value"
+      }
+    ],
+    "reason": "Return the value the function computes (the text, structure or status the intent's expected output names) and leave printing to the caller or the entry point.",
+    "row": "demos/demo08.py::main::6",
+    "file": "demos/demo08.py",
+    "replace_span": "demos/demo08.py:L6-L12",
+    "digest": "2a8adf97bf",
+    "selected_role": "solution_NAI-098",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_branches.py:L7-L11\n+++ colorama/repair_plant_branches.py:L7-L11\n@@ -1,5 +1,4 @@\n def guarded(value):\n     if value < 0:\n         raise ValueError(\"negative\")\n-        value = 0\n     return value * 2\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "1 statement(s) after the `raise` at snippet line 3 deleted",
+    "row": "colorama/repair_plant_branches.py::guarded::7",
+    "file": "colorama/repair_plant_branches.py",
+    "replace_span": "colorama/repair_plant_branches.py:L7-L11",
+    "digest": "dea465b4bd",
+    "selected_role": "unreachable_code_fix:drop_dead",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def <name>(<param>, ...):\n    <result> = <computation that reads <param>>",
+    "placeholders": [
+      {
+        "name": "name",
+        "meaning": "name"
+      },
+      {
+        "name": "param",
+        "meaning": "Use the parameter as the signature promises"
+      },
+      {
+        "name": "result",
+        "meaning": "result"
+      }
+    ],
+    "reason": "Use the parameter as the signature promises \u2014 feed it into the computation the intent's expected input describes; if it is genuinely obsolete, remove it and its arguments at every call site in one change.",
+    "row": "colorama/repair_plant_branches.py::render::14",
+    "file": "colorama/repair_plant_branches.py",
+    "replace_span": "colorama/repair_plant_branches.py:L14-L15",
+    "digest": "945e345507",
+    "selected_role": "solution_NAI-003",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_branches.py:L18-L23\n+++ colorama/repair_plant_branches.py:L18-L23\n@@ -1,6 +1,5 @@\n def pick(flag, first, second):\n     if flag:\n         return first\n-    else:\n-        value = second * 2\n-        return value\n+    value = second * 2\n+    return value\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`else:` (snippet line 4) dropped \u2014 `value = \u2026; return value` dedented to the if's level",
+    "row": "colorama/repair_plant_branches.py::pick::18",
+    "file": "colorama/repair_plant_branches.py",
+    "replace_span": "colorama/repair_plant_branches.py:L18-L23",
+    "digest": "c40245ec59",
+    "selected_role": "redundant_else_fix",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_branches.py:L26-L29\n+++ colorama/repair_plant_branches.py:L26-L29\n@@ -1,4 +1,3 @@\n def stamp(value):\n     width = len(str(value))\n-    width = 8\n     return str(value).rjust(width)\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`width`: the first assignment (snippet line 2) kept, 1 overwrite(s) deleted",
+    "row": "colorama/repair_plant_branches.py::stamp::26",
+    "file": "colorama/repair_plant_branches.py",
+    "replace_span": "colorama/repair_plant_branches.py:L26-L29",
+    "digest": "d1eccb3e0a",
+    "selected_role": "immediate_overwrite_fix:keep_first",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_branches.py:L32-L35\n+++ colorama/repair_plant_branches.py:L32-L35\n@@ -1,4 +1,2 @@\n def outer(items):\n-    def helper(x):\n-        return x * 2\n     return len(items)\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "nested `helper` (snippet line 2) deleted \u2014 never called, returned or read",
+    "row": "colorama/repair_plant_branches.py::outer::32",
+    "file": "colorama/repair_plant_branches.py",
+    "replace_span": "colorama/repair_plant_branches.py:L32-L35",
+    "digest": "6468cc69ca",
+    "selected_role": "unused_nested_def_fix:delete_nested",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "<domain_name> = <value>   # was: list = ... / id = ... / len = ...",
+    "placeholders": [
+      {
+        "name": "domain_name",
+        "meaning": "Rename the local to a domain name (items, mapping, ident, length) so the builtin the function calls stays reachable, changing every read of the local in the function"
+      },
+      {
+        "name": "value",
+        "meaning": "value"
+      }
+    ],
+    "reason": "Rename the local to a domain name (items, mapping, ident, length) so the builtin the function calls stays reachable, changing every read of the local in the function.",
+    "row": "colorama/repair_plant_keys.py::widths::7",
+    "file": "colorama/repair_plant_keys.py",
+    "replace_span": "colorama/repair_plant_keys.py:L7-L10",
+    "digest": "80375513a2",
+    "selected_role": "solution_NAI-174",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_keys.py:L13-L15\n+++ colorama/repair_plant_keys.py:L13-L15\n@@ -1,3 +1,3 @@\n def palette():\n-    colours = {\"red\": 1, \"green\": 2, \"red\": 3}\n+    colours = {\"red\": 1, \"green\": 2}\n     return colours[\"green\"] * 2\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "duplicate key entry(ies) 'red' removed \u2014 the first value for each key kept",
+    "row": "colorama/repair_plant_keys.py::palette::13",
+    "file": "colorama/repair_plant_keys.py",
+    "replace_span": "colorama/repair_plant_keys.py:L13-L15",
+    "digest": "1d5953d9bf",
+    "selected_role": "duplicate_key_fix:keep_first",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_keys.py:L18-L20\n+++ colorama/repair_plant_keys.py:L18-L20\n@@ -1,3 +1,3 @@\n def flags():\n-    table = {1: \"on\", True: \"off\", 0: \"zero\"}\n+    table = {1: \"on\", 0: \"zero\"}\n     return len(table) + 1\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "duplicate key entry(ies) True removed \u2014 the first value for each key kept",
+    "row": "colorama/repair_plant_keys.py::flags::18",
+    "file": "colorama/repair_plant_keys.py",
+    "replace_span": "colorama/repair_plant_keys.py:L18-L20",
+    "digest": "359135fdd3",
+    "selected_role": "semantic_duplicate_key_fix:keep_first",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def <name>(<source>):\n    rows = <read from <source>>\n    return [<shape(r)> for r in rows]",
+    "placeholders": [
+      {
+        "name": "name",
+        "meaning": "Return data from its real source: read it from the parameter, the store or the external system the intent names and shape it into the rows"
+      },
+      {
+        "name": "source",
+        "meaning": "Return data from its real source: read it from the parameter, the store or the external system the intent names and shape it into the rows"
+      },
+      {
+        "name": "shape(r)",
+        "meaning": "Return data from its real source: read it from the parameter, the store or the external system the intent names and shape it into the rows"
+      }
+    ],
+    "reason": "Return data from its real source: read it from the parameter, the store or the external system the intent names and shape it into the rows; sample rows live only in tests / fixtures.",
+    "row": "colorama/repair_plant_keys.py::sample_rows::23",
+    "file": "colorama/repair_plant_keys.py",
+    "replace_span": "colorama/repair_plant_keys.py:L23-L24",
+    "digest": "427fb47cc5",
+    "selected_role": "solution_NAI-212",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def process_<what>(items):\n    return [<transform(item)> for item in items]",
+    "placeholders": [
+      {
+        "name": "what",
+        "meaning": "what"
+      },
+      {
+        "name": "transform(item)",
+        "meaning": "Process the input: iterate its items (or call the transformer) and return the processed value the name promises"
+      }
+    ],
+    "reason": "Process the input: iterate its items (or call the transformer) and return the processed value the name promises; a delegating call to the real worker is fine.",
+    "row": "colorama/repair_plant_names.py::process_rows::7",
+    "file": "colorama/repair_plant_names.py",
+    "replace_span": "colorama/repair_plant_names.py:L7-L8",
+    "digest": "ebc30c1957",
+    "selected_role": "solution_NAI-133",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def filter_<what>(items):\n    return [item for item in items if <condition(item)>]",
+    "placeholders": [
+      {
+        "name": "what",
+        "meaning": "what"
+      },
+      {
+        "name": "condition(item)",
+        "meaning": "Filter by the condition the name promises: keep the items for which the predicate from the intent holds and return them"
+      }
+    ],
+    "reason": "Filter by the condition the name promises: keep the items for which the predicate from the intent holds and return them.",
+    "row": "colorama/repair_plant_names.py::filter_rows::11",
+    "file": "colorama/repair_plant_names.py",
+    "replace_span": "colorama/repair_plant_names.py:L11-L12",
+    "digest": "4fa4ae3eb4",
+    "selected_role": "solution_NAI-134",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def sort_<what>(items):\n    return sorted(items, key=lambda item: <key>, reverse=<bool>)",
+    "placeholders": [
+      {
+        "name": "what",
+        "meaning": "what"
+      },
+      {
+        "name": "key",
+        "meaning": "Sort by the key and direction the name promises: sorted(items, key=<key>, reverse=<bool>)"
+      },
+      {
+        "name": "bool",
+        "meaning": "Sort by the key and direction the name promises: sorted(items, key=<key>, reverse=<bool>)"
+      }
+    ],
+    "reason": "Sort by the key and direction the name promises: sorted(items, key=<key>, reverse=<bool>).",
+    "row": "colorama/repair_plant_names.py::sort_rows::15",
+    "file": "colorama/repair_plant_names.py",
+    "replace_span": "colorama/repair_plant_names.py:L15-L16",
+    "digest": "f23a5e3813",
+    "selected_role": "solution_NAI-135",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def count_<what>(items):\n    return sum(1 for item in items if <condition(item)>)",
+    "placeholders": [
+      {
+        "name": "what",
+        "meaning": "what"
+      },
+      {
+        "name": "condition(item)",
+        "meaning": "sum(1 for item in items if <condition>) or len(...)"
+      }
+    ],
+    "reason": "Count the thing the name promises \u2014 sum(1 for item in items if <condition>) or len(...) \u2014 and return the number.",
+    "row": "colorama/repair_plant_names.py::count_rows::19",
+    "file": "colorama/repair_plant_names.py",
+    "replace_span": "colorama/repair_plant_names.py:L19-L20",
+    "digest": "8872118191",
+    "selected_role": "solution_NAI-136",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def find_<what>(items, target):\n    return next((item for item in items if <item matches target>), None)",
+    "placeholders": [
+      {
+        "name": "what",
+        "meaning": "what"
+      },
+      {
+        "name": "item matches target",
+        "meaning": "Search for the target the name promises: compare each item to it (or use find / index / next with a predicate) and return the match or the documented not-found value"
+      }
+    ],
+    "reason": "Search for the target the name promises: compare each item to it (or use find / index / next with a predicate) and return the match or the documented not-found value.",
+    "row": "colorama/repair_plant_names.py::find_row::23",
+    "file": "colorama/repair_plant_names.py",
+    "replace_span": "colorama/repair_plant_names.py:L23-L24",
+    "digest": "52a977f3dc",
+    "selected_role": "solution_NAI-137",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def <name>(<param>, ...):\n    <result> = <computation that reads <param>>",
+    "placeholders": [
+      {
+        "name": "name",
+        "meaning": "name"
+      },
+      {
+        "name": "param",
+        "meaning": "Use the parameter as the signature promises"
+      },
+      {
+        "name": "result",
+        "meaning": "result"
+      }
+    ],
+    "reason": "Use the parameter as the signature promises \u2014 feed it into the computation the intent's expected input describes; if it is genuinely obsolete, remove it and its arguments at every call site in one change.",
+    "row": "colorama/repair_plant_ops.py::lookup::7",
+    "file": "colorama/repair_plant_ops.py",
+    "replace_span": "colorama/repair_plant_ops.py:L7-L8",
+    "digest": "6f27432230",
+    "selected_role": "solution_NAI-003",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_ops.py:L11-L13\n+++ colorama/repair_plant_ops.py:L11-L13\n@@ -1,3 +1,2 @@\n def total(items):\n-    count = len(items)\n     return sum(items)\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`count` (snippet line 2) never read \u2014 its assignment deleted",
+    "row": "colorama/repair_plant_ops.py::total::11",
+    "file": "colorama/repair_plant_ops.py",
+    "replace_span": "colorama/repair_plant_ops.py:L11-L13",
+    "digest": "025b65d162",
+    "selected_role": "dead_local_fix:drop_assignment",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def <name>(...):\n    <action | return <value>>",
+    "placeholders": [
+      {
+        "name": "name",
+        "meaning": "Give the function its effect: return the value or perform the action the name and the intent promise (a write, a call, a state change) and make the caller use it"
+      },
+      {
+        "name": "value",
+        "meaning": "Give the function its effect: return the value or perform the action the name and the intent promise (a write, a call, a state change) and make the caller use it"
+      }
+    ],
+    "reason": "Give the function its effect: return the value or perform the action the name and the intent promise (a write, a call, a state change) and make the caller use it.",
+    "row": "colorama/repair_plant_ops.py::note::16",
+    "file": "colorama/repair_plant_ops.py",
+    "replace_span": "colorama/repair_plant_ops.py:L16-L17",
+    "digest": "a77a509cb3",
+    "selected_role": "solution_NAI-011",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "<delete `x = x`>\n# or\nresult = <expr>   # the value was meant\n# or\nif <compare>:\n    ...",
+    "placeholders": [
+      {
+        "name": "delete `x = x`",
+        "meaning": "Delete the statement, or, when a value was meant to be kept, assign the expression to the name that uses it: a self-assignment goes, a discarded compare / operation becomes the assignment or the condition it was written for"
+      },
+      {
+        "name": "expr",
+        "meaning": "Delete the statement, or, when a value was meant to be kept, assign the expression to the name that uses it: a self-assignment goes, a discarded compare / operation becomes the assignment or the condition it was written for"
+      },
+      {
+        "name": "compare",
+        "meaning": "Delete the statement, or, when a value was meant to be kept, assign the expression to the name that uses it: a self-assignment goes, a discarded compare / operation becomes the assignment or the condition it was written for"
+      }
+    ],
+    "reason": "Delete the statement, or, when a value was meant to be kept, assign the expression to the name that uses it: a self-assignment goes, a discarded compare / operation becomes the assignment or the condition it was written for.",
+    "row": "colorama/repair_plant_ops.py::check::20",
+    "file": "colorama/repair_plant_ops.py",
+    "replace_span": "colorama/repair_plant_ops.py:L20-L22",
+    "digest": "c29a16c935",
+    "selected_role": "solution_NAI-014",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def f(param):\n    return <transform>(param)",
+    "placeholders": [
+      {
+        "name": "transform",
+        "meaning": "Replace `return param` with the transformation the name and the intent promise, applied to param"
+      }
+    ],
+    "reason": "Replace `return param` with the transformation the name and the intent promise, applied to param.",
+    "row": "colorama/repair_plant_ops.py::same::25",
+    "file": "colorama/repair_plant_ops.py",
+    "replace_span": "colorama/repair_plant_ops.py:L25-L26",
+    "digest": "9c48b57007",
+    "selected_role": "solution_NAI-016S",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "url = os.environ['<SERVICE>_URL']\nresp = requests.get(url, timeout=<TIMEOUT>)",
+    "placeholders": [
+      {
+        "name": "SERVICE",
+        "meaning": "SERVICE"
+      },
+      {
+        "name": "TIMEOUT",
+        "meaning": "Take the endpoint from the environment variable the intent's external systems name for it and give the call the timeout / retry policy that system needs"
+      }
+    ],
+    "reason": "Take the endpoint from the environment variable the intent's external systems name for it and give the call the timeout / retry policy that system needs; no literal URL and no unbounded call.",
+    "row": "colorama/repair_plant_order.py::endpoint::7",
+    "file": "colorama/repair_plant_order.py",
+    "replace_span": "colorama/repair_plant_order.py:L7-L8",
+    "digest": "c0355ee2a6",
+    "selected_role": "solution_NAI-167",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_order.py:L11-L18\n+++ colorama/repair_plant_order.py:L11-L18\n@@ -1,8 +1,8 @@\n def parse(text):\n     try:\n         value = int(text)\n+    except ValueError:\n+        value = 0\n     except Exception:\n         value = -1\n-    except ValueError:\n-        value = 0\n     return value\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "try at snippet line 2: except Exception: / except ValueError: \u2192 except ValueError: / except Exception: \u2014 a child exception now reaches its own handler; the set of exceptions caught is unchanged",
+    "row": "colorama/repair_plant_order.py::parse::11",
+    "file": "colorama/repair_plant_order.py",
+    "replace_span": "colorama/repair_plant_order.py:L11-L18",
+    "digest": "2ee3144e25",
+    "selected_role": "except_order_fix",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_order.py:L21-L25\n+++ colorama/repair_plant_order.py:L21-L25\n@@ -2,4 +2,4 @@\n     try:\n         handle.close()\n     finally:\n-        return True\n+        pass\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`return True` (snippet line 5) deleted from the finally block \u2014 the try's own return value and any exception propagate (NAI-173)",
+    "row": "colorama/repair_plant_order.py::close_quietly::21",
+    "file": "colorama/repair_plant_order.py",
+    "replace_span": "colorama/repair_plant_order.py:L21-L25",
+    "digest": "99eea6e27f",
+    "selected_role": "return_in_finally_fix:drop_return",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "try:\n    <result> = <call>\nexcept <ExpectedError> as e:\n    <return <fallback> | raise <ModuleError>(f'<source>: {e}') from e>",
+    "placeholders": [
+      {
+        "name": "result",
+        "meaning": "result"
+      },
+      {
+        "name": "call",
+        "meaning": "Wrap the call (open, json / yaml load, import_module, csv reader, config getter) in try/except for its documented exception and do what the intent says for that failure: return the fallback or raise the module's error naming the source"
+      },
+      {
+        "name": "ExpectedError",
+        "meaning": "ExpectedError"
+      },
+      {
+        "name": "fallback",
+        "meaning": "Wrap the call (open, json / yaml load, import_module, csv reader, config getter) in try/except for its documented exception and do what the intent says for that failure: return the fallback or raise the module's error naming the source"
+      },
+      {
+        "name": "ModuleError",
+        "meaning": "ModuleError"
+      },
+      {
+        "name": "source",
+        "meaning": "Wrap the call (open, json / yaml load, import_module, csv reader, config getter) in try/except for its documented exception and do what the intent says for that failure: return the fallback or raise the module's error naming the source"
+      }
+    ],
+    "reason": "Wrap the call (open, json / yaml load, import_module, csv reader, config getter) in try/except for its documented exception and do what the intent says for that failure: return the fallback or raise the module's error naming the source.",
+    "row": "colorama/repair_plant_order.py::port_of::28",
+    "file": "colorama/repair_plant_order.py",
+    "replace_span": "colorama/repair_plant_order.py:L28-L29",
+    "digest": "bedb5e7991",
+    "selected_role": "solution_NAI-200",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "try:\n    n = int(<value>)\nexcept (ValueError, TypeError):\n    <continue | n = <default> | raise ValueError(f'not a number: {<value>!r}')>",
+    "placeholders": [
+      {
+        "name": "value",
+        "meaning": "Guard the int() / float() conversion: catch ValueError / TypeError (or check the input first) and handle malformed data as the intent's expected input allows"
+      },
+      {
+        "name": "default",
+        "meaning": "skip it, use the documented default, or raise with the offending value"
+      }
+    ],
+    "reason": "Guard the int() / float() conversion: catch ValueError / TypeError (or check the input first) and handle malformed data as the intent's expected input allows \u2014 skip it, use the documented default, or raise with the offending value.",
+    "row": "colorama/repair_plant_order.py::to_port::32",
+    "file": "colorama/repair_plant_order.py",
+    "replace_span": "colorama/repair_plant_order.py:L32-L33",
+    "digest": "e2400448f1",
+    "selected_role": "solution_NAI-201",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_chains.py:L8-L12\n+++ colorama/repair_plant_chains.py:L8-L12\n@@ -2,4 +2,4 @@\n     try:\n         handle.close()\n     finally:\n-        return True\n+        pass\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`return True` (snippet line 5) deleted from the finally block \u2014 the try's own return value and any exception propagate (NAI-173)",
+    "row": "colorama/repair_plant_chains.py::close_quietly::8",
+    "file": "colorama/repair_plant_chains.py",
+    "replace_span": "colorama/repair_plant_chains.py:L8-L12",
+    "digest": "99eea6e27f",
+    "selected_role": "return_in_finally_fix:drop_return",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "<name> = <initial value>\n... <first read of <name>> ...",
+    "placeholders": [
+      {
+        "name": "name",
+        "meaning": "Assign the name before its first read: move the assignment above the read when the same value was meant, or initialise it (None / empty / the parameter) at the top of the function"
+      },
+      {
+        "name": "initial value",
+        "meaning": "Assign the name before its first read: move the assignment above the read when the same value was meant, or initialise it (None / empty / the parameter) at the top of the function"
+      }
+    ],
+    "reason": "Assign the name before its first read: move the assignment above the read when the same value was meant, or initialise it (None / empty / the parameter) at the top of the function.",
+    "row": "colorama/repair_plant_chains.py::label_for::15",
+    "file": "colorama/repair_plant_chains.py",
+    "replace_span": "colorama/repair_plant_chains.py:L15-L18",
+    "digest": "4b0e73f1af",
+    "selected_role": "solution_NAI-145",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_chains.py:L21-L24\n+++ colorama/repair_plant_chains.py:L21-L24\n@@ -1,4 +1,3 @@\n def stamp(value):\n     width = 4\n-    width = 8\n     return str(value).rjust(width)\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`width`: the first assignment (snippet line 2) kept, 1 overwrite(s) deleted",
+    "row": "colorama/repair_plant_chains.py::stamp::21",
+    "file": "colorama/repair_plant_chains.py",
+    "replace_span": "colorama/repair_plant_chains.py:L21-L24",
+    "digest": "0bf0ac4099",
+    "selected_role": "immediate_overwrite_fix:keep_first",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_chains.py:L27-L30\n+++ colorama/repair_plant_chains.py:L27-L30\n@@ -1,4 +1,3 @@\n def total_width(cells):\n-    widths = [len(c) for c in cells]\n     total = sum(len(c) for c in cells)\n     return total\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`widths` (snippet line 2) never read \u2014 its assignment deleted",
+    "row": "colorama/repair_plant_chains.py::total_width::27",
+    "file": "colorama/repair_plant_chains.py",
+    "replace_span": "colorama/repair_plant_chains.py:L27-L30",
+    "digest": "7dd01b0499",
+    "selected_role": "dead_local_fix:drop_assignment",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def <name>(<params>):\n    <mod>_value = <expr>   # the in-function `import <mod>` dropped when nothing else used it; else keep it and rename the value",
+    "placeholders": [
+      {
+        "name": "name",
+        "meaning": "Give the value its own name and keep the imported name for the module: rename the assignment target"
+      },
+      {
+        "name": "params",
+        "meaning": "params"
+      },
+      {
+        "name": "mod",
+        "meaning": "Give the value its own name and keep the imported name for the module: rename the assignment target"
+      },
+      {
+        "name": "expr",
+        "meaning": "expr"
+      }
+    ],
+    "reason": "Give the value its own name and keep the imported name for the module: rename the assignment target \u2014 or, when the in-function import has no other use, drop the import and keep the value under its own name (the owner's form, hand check #10, 2026-09-16) \u2014 so no name means two things.",
+    "row": "colorama/repair_plant_chains.py::data_dir::33",
+    "file": "colorama/repair_plant_chains.py",
+    "replace_span": "colorama/repair_plant_chains.py:L33-L36",
+    "digest": "3bedf09dc4",
+    "selected_role": "solution_NAI-148",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "path = Path(<parameter | config['<key>'] | os.environ['<VAR>'] | importlib.resources.files(__package__) / '<name>'>)",
+    "placeholders": [
+      {
+        "name": "key",
+        "meaning": "a parameter, a config key, an environment variable or a package resource (importlib.resources)"
+      },
+      {
+        "name": "VAR",
+        "meaning": "a parameter, a config key, an environment variable or a package resource (importlib.resources)"
+      },
+      {
+        "name": "name",
+        "meaning": "name"
+      }
+    ],
+    "reason": "Take the path from where the intent says it comes \u2014 a parameter, a config key, an environment variable or a package resource (importlib.resources) \u2014 never an absolute or climbing literal.",
+    "row": "colorama/repair_plant_checks.py::hosts_present::8",
+    "file": "colorama/repair_plant_checks.py",
+    "replace_span": "colorama/repair_plant_checks.py:L8-L9",
+    "digest": "a743fda5c9",
+    "selected_role": "solution_NAI-079",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_checks.py:L12-L13\n+++ colorama/repair_plant_checks.py:L12-L13\n@@ -1,2 +1,3 @@\n def push(items, value):\n+    items = items.copy()\n     items.append(value)\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`items` is mutated in place at snippet line 2 with another parameter's value \u2014 `items = items.copy()` as the first statement; the caller's object is untouched (NAI-091)",
+    "row": "colorama/repair_plant_checks.py::push::12",
+    "file": "colorama/repair_plant_checks.py",
+    "replace_span": "colorama/repair_plant_checks.py:L12-L13",
+    "digest": "82754f160d",
+    "selected_role": "param_mutation_fix:shallow_copy",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "if math.isclose(<a>, <b>, rel_tol=<REL_TOL>, abs_tol=<ABS_TOL>):",
+    "placeholders": [
+      {
+        "name": "a",
+        "meaning": "a"
+      },
+      {
+        "name": "b",
+        "meaning": "Compare with a tolerance the domain sets: math.isclose(a, b, rel_tol=<r>, abs_tol=<a>) with the tolerance from the module's own constant or the intent's precision, not a default"
+      },
+      {
+        "name": "REL_TOL",
+        "meaning": "Compare with a tolerance the domain sets: math.isclose(a, b, rel_tol=<r>, abs_tol=<a>) with the tolerance from the module's own constant or the intent's precision, not a default"
+      },
+      {
+        "name": "ABS_TOL",
+        "meaning": "Compare with a tolerance the domain sets: math.isclose(a, b, rel_tol=<r>, abs_tol=<a>) with the tolerance from the module's own constant or the intent's precision, not a default"
+      }
+    ],
+    "reason": "Compare with a tolerance the domain sets: math.isclose(a, b, rel_tol=<r>, abs_tol=<a>) with the tolerance from the module's own constant or the intent's precision, not a default.",
+    "row": "colorama/repair_plant_checks.py::near_tenth::16",
+    "file": "colorama/repair_plant_checks.py",
+    "replace_span": "colorama/repair_plant_checks.py:L16-L17",
+    "digest": "68a1321628",
+    "selected_role": "solution_NAI-095",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_checks.py:L20-L22\n+++ colorama/repair_plant_checks.py:L20-L22\n@@ -1,3 +1,4 @@\n def scale(n):\n-    assert n > 0, \"n must be positive\"\n+    if not (n > 0):\n+        raise AssertionError(\"n must be positive\")\n     return n * 2\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`assert n > 0` (snippet line 2) \u2192 `if not (n > 0): raise AssertionError(\"n must be positive\")` \u2014 the same AssertionError, and the check survives python -O",
+    "row": "colorama/repair_plant_checks.py::scale::20",
+    "file": "colorama/repair_plant_checks.py",
+    "replace_span": "colorama/repair_plant_checks.py:L20-L22",
+    "digest": "b83ffc71ec",
+    "selected_role": "assert_guard_fix",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def <name>(...):\n    result = <computed value>\n    return result   # the entry point prints",
+    "placeholders": [
+      {
+        "name": "name",
+        "meaning": "Return the value the function computes (the text, structure or status the intent's expected output names) and leave printing to the caller or the entry point"
+      },
+      {
+        "name": "computed value",
+        "meaning": "computed value"
+      }
+    ],
+    "reason": "Return the value the function computes (the text, structure or status the intent's expected output names) and leave printing to the caller or the entry point.",
+    "row": "colorama/repair_plant_checks.py::show::25",
+    "file": "colorama/repair_plant_checks.py",
+    "replace_span": "colorama/repair_plant_checks.py:L25-L26",
+    "digest": "58ab7fdd2d",
+    "selected_role": "solution_NAI-098",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_graph.py:L8-L11\n+++ colorama/repair_plant_graph.py:L8-L11\n@@ -1,4 +1,3 @@\n def dead_store(items):\n-    unused = 42\n     total = sum(items)\n     return total * 2\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "dead store(s) `unused` (line 2) deleted \u2014 the name was never read; its right side no longer runs (NAI-031)",
+    "row": "colorama/repair_plant_graph.py::dead_store::8",
+    "file": "colorama/repair_plant_graph.py",
+    "replace_span": "colorama/repair_plant_graph.py:L8-L11",
+    "digest": "829daac99a",
+    "selected_role": "dead_store_fix:drop_store",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "try:\n    data = json.loads(<text>)\nexcept json.JSONDecodeError as e:\n    <return <fallback> | raise <ModuleError>(f'<source>: {e}') from e>",
+    "placeholders": [
+      {
+        "name": "text",
+        "meaning": "text"
+      },
+      {
+        "name": "fallback",
+        "meaning": "Wrap the json.load(s) call in try/except json.JSONDecodeError and do what the intent's expected output says for malformed input: return the documented fallback or raise the module's own error naming the source"
+      },
+      {
+        "name": "ModuleError",
+        "meaning": "ModuleError"
+      },
+      {
+        "name": "source",
+        "meaning": "Wrap the json.load(s) call in try/except json.JSONDecodeError and do what the intent's expected output says for malformed input: return the documented fallback or raise the module's own error naming the source"
+      }
+    ],
+    "reason": "Wrap the json.load(s) call in try/except json.JSONDecodeError and do what the intent's expected output says for malformed input: return the documented fallback or raise the module's own error naming the source.",
+    "row": "colorama/repair_plant_guards.py::parse::8",
+    "file": "colorama/repair_plant_guards.py",
+    "replace_span": "colorama/repair_plant_guards.py:L8-L9",
+    "digest": "941c1a6f40",
+    "selected_role": "solution_NAI-074",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_guards.py:L12-L16\n+++ colorama/repair_plant_guards.py:L12-L16\n@@ -1,5 +1,4 @@\n def read_all(path):\n-    fh = open(path)\n-    data = fh.read()\n-    fh.close()\n+    with open(path) as fh:\n+        data = fh.read()\n     return data\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`fh = open(path)` (snippet line 2) \u2192 `with open(path) as fh:` over 1 statement(s); `fh.close()` (line 4) dropped \u2014 closed on every exit path",
+    "row": "colorama/repair_plant_guards.py::read_all::12",
+    "file": "colorama/repair_plant_guards.py",
+    "replace_span": "colorama/repair_plant_guards.py:L12-L16",
+    "digest": "03d4488851",
+    "selected_role": "open_with_fix",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "value = d.get(<key>, <default from the intent>)\n# or\nif <key> not in d:\n    raise KeyError(f'<what> missing: {<key>}')\nvalue = d[<key>]",
+    "placeholders": [
+      {
+        "name": "key",
+        "meaning": "Replace d[key] with the access the contract implies: d.get(key, <documented default>) when a missing key is normal, or a membership check whose else-arm raises the module's error naming the key when it is not"
+      },
+      {
+        "name": "default from the intent",
+        "meaning": "default from the intent"
+      },
+      {
+        "name": "what",
+        "meaning": "what"
+      }
+    ],
+    "reason": "Replace d[key] with the access the contract implies: d.get(key, <documented default>) when a missing key is normal, or a membership check whose else-arm raises the module's error naming the key when it is not.",
+    "row": "colorama/repair_plant_guards.py::pick::19",
+    "file": "colorama/repair_plant_guards.py",
+    "replace_span": "colorama/repair_plant_guards.py:L19-L23",
+    "digest": "8da12098ed",
+    "selected_role": "solution_NAI-077",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "@property\ndef x(self):\n    return self._x",
+    "placeholders": [],
+    "reason": "Return the backing attribute (or the value computed from it) that the property's name promises.",
+    "row": "colorama/repair_plant_hr.py::level::8",
+    "file": "colorama/repair_plant_hr.py",
+    "replace_span": "colorama/repair_plant_hr.py:L7-L9",
+    "digest": "7c1870b32e",
+    "selected_role": "solution_HR-002",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "@x.setter\ndef x(self, value):\n    self._x = value",
+    "placeholders": [],
+    "reason": "Give the setter its value parameter and assign it to the backing attribute the property reads.",
+    "row": "colorama/repair_plant_hr.py::level::12",
+    "file": "colorama/repair_plant_hr.py",
+    "replace_span": "colorama/repair_plant_hr.py:L11-L13",
+    "digest": "a0dd2ebc66",
+    "selected_role": "solution_HR-001",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "@contextmanager\ndef managed():\n    res = acquire()\n    try:\n        yield res\n    finally:\n        res.release()",
+    "placeholders": [],
+    "reason": "Yield the resource at the point the with-block should run, inside a try / finally that releases it.",
+    "row": "colorama/repair_plant_hr.py::opened::17",
+    "file": "colorama/repair_plant_hr.py",
+    "replace_span": "colorama/repair_plant_hr.py:L16-L19",
+    "digest": "60c31b7784",
+    "selected_role": "solution_HR-003",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "import <dependency>",
+    "placeholders": [
+      {
+        "name": "dependency",
+        "meaning": "Make the dependency hard: import it at module top without the fallback and declare it in the project's requirements"
+      }
+    ],
+    "reason": "Make the dependency hard: import it at module top without the fallback and declare it in the project's requirements; when it is genuinely optional, gate every use on the None check and document the degraded behaviour.",
+    "row": "colorama/repair_plant_imports.py::<module>::8",
+    "file": "colorama/repair_plant_imports.py",
+    "replace_span": "colorama/repair_plant_imports.py:L8-L8",
+    "digest": "853b4154cb",
+    "selected_role": "solution_NAI-209",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_join.py:L8-L12\n+++ colorama/repair_plant_join.py:L8-L12\n@@ -1,5 +1,3 @@\n def render_tags(tags):\n-    text = \"\"\n-    for tag in tags:\n-        text += str(tag)\n+    text = \"\".join(str(tag) for tag in tags)\n     return text\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`text = \"\"` + `for tag in tags: text += str(tag)` (snippet lines 2-4) \u2192 `text = \"\".join(str(tag) for tag in tags)` \u2014 the string is built once by join, the same characters in the same order",
+    "row": "colorama/repair_plant_join.py::render_tags::8",
+    "file": "colorama/repair_plant_join.py",
+    "replace_span": "colorama/repair_plant_join.py:L8-L12",
+    "digest": "f3c7fcc6a9",
+    "selected_role": "join_fix",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def validate_x(value):\n    if <invalid condition>:\n        raise ValueError(f\"<why>: {value!r}\")\n    return True",
+    "placeholders": [
+      {
+        "name": "invalid condition",
+        "meaning": "invalid condition"
+      },
+      {
+        "name": "why",
+        "meaning": "why"
+      }
+    ],
+    "reason": "Have the validator report the failure, not only answer False: raise the domain's exception (or return the failing reason) on each invalid case so callers cannot ignore it.",
+    "row": "colorama/repair_plant_join.py::validate_port::15",
+    "file": "colorama/repair_plant_join.py",
+    "replace_span": "colorama/repair_plant_join.py:L15-L19",
+    "digest": "1f0da9196c",
+    "selected_role": "solution_NAI-118",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def calculate_x(a, b):\n    return <expression over a and b>",
+    "placeholders": [
+      {
+        "name": "expression over a and b",
+        "meaning": "expression over a and b"
+      }
+    ],
+    "reason": "Make the disconnected parameter reach the result: a calculate / compute / sum function returns a value computed from every parameter the signature declares.",
+    "row": "colorama/repair_plant_meaning.py::calculate_total::8",
+    "file": "colorama/repair_plant_meaning.py",
+    "replace_span": "colorama/repair_plant_meaning.py:L8-L10",
+    "digest": "22befb4227",
+    "selected_role": "solution_NAI-100",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "RATE = <constant>\n\ndef calculate_x(a):\n    return a * RATE",
+    "placeholders": [
+      {
+        "name": "constant",
+        "meaning": "a constant that is genuinely part of the formula becomes a named module constant"
+      }
+    ],
+    "reason": "Replace the magic-number return with the calculation the name promises, computed from the parameters; a constant that is genuinely part of the formula becomes a named module constant.",
+    "row": "colorama/repair_plant_meaning.py::calculate_rate::13",
+    "file": "colorama/repair_plant_meaning.py",
+    "replace_span": "colorama/repair_plant_meaning.py:L13-L15",
+    "digest": "30dd97f809",
+    "selected_role": "solution_NAI-101",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def add(a, b):\n    \"\"\"Add two numbers.\"\"\"\n    return a + b",
+    "placeholders": [],
+    "reason": "Make the code match the docstring: return `a + b` and drop the extra constant, unless the intent needs the offset, in which case the docstring names it.",
+    "row": "colorama/repair_plant_meaning.py::add_pair::18",
+    "file": "colorama/repair_plant_meaning.py",
+    "replace_span": "colorama/repair_plant_meaning.py:L18-L20",
+    "digest": "e419339710",
+    "selected_role": "solution_NAI-102",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def is_positive(x):\n    return x > 0",
+    "placeholders": [],
+    "reason": "Make the predicate answer its name: return True on the condition the name states (`is_positive` -> `x > 0`) and False otherwise.",
+    "row": "colorama/repair_plant_meaning.py::is_positive::23",
+    "file": "colorama/repair_plant_meaning.py",
+    "replace_span": "colorama/repair_plant_meaning.py:L23-L26",
+    "digest": "a65a20d7a9",
+    "selected_role": "solution_NAI-103",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def find_<what>(items, target):\n    return next((item for item in items if <item matches target>), None)",
+    "placeholders": [
+      {
+        "name": "what",
+        "meaning": "what"
+      },
+      {
+        "name": "item matches target",
+        "meaning": "Search for the target the name promises: compare each item to it (or use find / index / next with a predicate) and return the match or the documented not-found value"
+      }
+    ],
+    "reason": "Search for the target the name promises: compare each item to it (or use find / index / next with a predicate) and return the match or the documented not-found value.",
+    "row": "colorama/repair_plant_meaning.py::find_row::29",
+    "file": "colorama/repair_plant_meaning.py",
+    "replace_span": "colorama/repair_plant_meaning.py:L29-L30",
+    "digest": "52a977f3dc",
+    "selected_role": "solution_NAI-137",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_noop.py:L8-L10\n+++ colorama/repair_plant_noop.py:L8-L10\n@@ -1,3 +1,2 @@\n def size(items):\n-    len(items)\n     return sum(items) + 1\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "bare `len(items)` (snippet line 2) deleted \u2014 its result was never used",
+    "row": "colorama/repair_plant_noop.py::size::8",
+    "file": "colorama/repair_plant_noop.py",
+    "replace_span": "colorama/repair_plant_noop.py:L8-L10",
+    "digest": "a78e992cb2",
+    "selected_role": "discarded_call_fix:drop_call",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "if <x> == <other>:   # or: if math.isnan(<x>):",
+    "placeholders": [
+      {
+        "name": "x",
+        "meaning": "Compare the name with the operand that was meant (the parameter, the previous value, the expected constant)"
+      },
+      {
+        "name": "other",
+        "meaning": "other"
+      }
+    ],
+    "reason": "Compare the name with the operand that was meant (the parameter, the previous value, the expected constant); when the comparison was a NaN check, write math.isnan(x).",
+    "row": "colorama/repair_plant_noop.py::same_side::13",
+    "file": "colorama/repair_plant_noop.py",
+    "replace_span": "colorama/repair_plant_noop.py:L13-L16",
+    "digest": "3430168a42",
+    "selected_role": "solution_NAI-023",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "for item in <iterable>:\n    if <condition(item)>:\n        return item\nreturn <fallback>",
+    "placeholders": [
+      {
+        "name": "iterable",
+        "meaning": "iterable"
+      },
+      {
+        "name": "condition(item)",
+        "meaning": "Let the loop visit every item: accumulate or test each one and return after the loop, or return inside only under the condition that selects the item the name promises"
+      },
+      {
+        "name": "fallback",
+        "meaning": "fallback"
+      }
+    ],
+    "reason": "Let the loop visit every item: accumulate or test each one and return after the loop, or return inside only under the condition that selects the item the name promises.",
+    "row": "colorama/repair_plant_noop.py::first_wide::19",
+    "file": "colorama/repair_plant_noop.py",
+    "replace_span": "colorama/repair_plant_noop.py:L19-L21",
+    "digest": "8e6f9b94c3",
+    "selected_role": "solution_NAI-024",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_noop.py:L24-L27\n+++ colorama/repair_plant_noop.py:L24-L27\n@@ -1,4 +1,4 @@\n def tally(items):\n     total = sum(items)\n-    total = total + 0\n+    total = total\n     return total * 2\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`total + 0` (snippet line 3) \u2192 `total`",
+    "row": "colorama/repair_plant_noop.py::tally::24",
+    "file": "colorama/repair_plant_noop.py",
+    "replace_span": "colorama/repair_plant_noop.py:L24-L27",
+    "digest": "e69a40fa89",
+    "selected_role": "algebraic_identity_fix",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def test_<what>():\n    result = <unit>(<input>)\n    assert result == <expected>",
+    "placeholders": [
+      {
+        "name": "what",
+        "meaning": "what"
+      },
+      {
+        "name": "unit",
+        "meaning": "Assert the behaviour the test's name promises: call the unit and compare its result (or its raised exception) to the expected literal from the spec / intent"
+      },
+      {
+        "name": "input",
+        "meaning": "input"
+      },
+      {
+        "name": "expected",
+        "meaning": "Assert the behaviour the test's name promises: call the unit and compare its result (or its raised exception) to the expected literal from the spec / intent"
+      }
+    ],
+    "reason": "Assert the behaviour the test's name promises: call the unit and compare its result (or its raised exception) to the expected literal from the spec / intent.",
+    "row": "colorama/repair_plant_quiet.py::test_parse_never_fails::8",
+    "file": "colorama/repair_plant_quiet.py",
+    "replace_span": "colorama/repair_plant_quiet.py:L8-L12",
+    "digest": "6e7a9de2c6",
+    "selected_role": "solution_NAI-020",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "value = ast.literal_eval(<text>)   # or: HANDLERS[<name>](<args>) / json.loads(<text>) / getattr(<obj>, <attr>)",
+    "placeholders": [
+      {
+        "name": "text",
+        "meaning": "Replace eval / exec with the safe form of what it computes: ast.literal_eval for literals, a dict dispatch for names to callables, json / a real parser for structured text, getattr for attribute names"
+      },
+      {
+        "name": "name",
+        "meaning": "Replace eval / exec with the safe form of what it computes: ast.literal_eval for literals, a dict dispatch for names to callables, json / a real parser for structured text, getattr for attribute names"
+      },
+      {
+        "name": "args",
+        "meaning": "args"
+      },
+      {
+        "name": "obj",
+        "meaning": "obj"
+      },
+      {
+        "name": "attr",
+        "meaning": "Replace eval / exec with the safe form of what it computes: ast.literal_eval for literals, a dict dispatch for names to callables, json / a real parser for structured text, getattr for attribute names"
+      }
+    ],
+    "reason": "Replace eval / exec with the safe form of what it computes: ast.literal_eval for literals, a dict dispatch for names to callables, json / a real parser for structured text, getattr for attribute names.",
+    "row": "colorama/repair_plant_roles.py::parse_expr::8",
+    "file": "colorama/repair_plant_roles.py",
+    "replace_span": "colorama/repair_plant_roles.py:L8-L9",
+    "digest": "73f37b3ffd",
+    "selected_role": "solution_NAI-127",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def <inner>(<p>=None):\n    if <p> is None:\n        <p> = []",
+    "placeholders": [
+      {
+        "name": "inner",
+        "meaning": "inner"
+      },
+      {
+        "name": "p",
+        "meaning": "On the nested def, replace the mutable default with None and create the container inside the body (the repair NAI-071's rewriter applies on the nested def's own row)"
+      }
+    ],
+    "reason": "On the nested def, replace the mutable default with None and create the container inside the body (the repair NAI-071's rewriter applies on the nested def's own row).",
+    "row": "colorama/repair_plant_roles.py::make_counter::12",
+    "file": "colorama/repair_plant_roles.py",
+    "replace_span": "colorama/repair_plant_roles.py:L12-L16",
+    "digest": "6390cb6f42",
+    "selected_role": "solution_NAI-128",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_roles.py:L13-L15\n+++ colorama/repair_plant_roles.py:L13-L15\n@@ -1,3 +1,5 @@\n-    def bump(seen=[]):\n+    def bump(seen=None):\n+        if seen is None:\n+            seen = []\n         seen.append(1)\n         return len(seen)\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`seen=[]` \u2192 `seen=None` with `if seen is None: seen = []` as the first statement",
+    "row": "colorama/repair_plant_roles.py::bump::13",
+    "file": "colorama/repair_plant_roles.py",
+    "replace_span": "colorama/repair_plant_roles.py:L13-L15",
+    "digest": "4d13c938a2",
+    "selected_role": "mutable_default_fix",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def get_<thing>(self):\n    return self._<thing>",
+    "placeholders": [
+      {
+        "name": "thing",
+        "meaning": "thing"
+      }
+    ],
+    "reason": "Return the value the getter is named for: read it from self / the source and return it; a getter that only sets or prints is renamed to what it does.",
+    "row": "colorama/repair_plant_roles.py::get_width::23",
+    "file": "colorama/repair_plant_roles.py",
+    "replace_span": "colorama/repair_plant_roles.py:L23-L24",
+    "digest": "69f06e3fbb",
+    "selected_role": "solution_NAI-130",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_roles.py:L26-L28\n+++ colorama/repair_plant_roles.py:L26-L28\n@@ -1,3 +1,3 @@\n     def set_width(self, width):\n         self.width = width\n-        return width\n+        return\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`return width` (snippet line 3) \u2192 `return` \u2014 the setter returns nothing",
+    "row": "colorama/repair_plant_roles.py::set_width::26",
+    "file": "colorama/repair_plant_roles.py",
+    "replace_span": "colorama/repair_plant_roles.py:L26-L28",
+    "digest": "a6b805e947",
+    "selected_role": "setter_return_fix:drop_value",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def is_<what>(...) -> bool:\n    return <predicate>",
+    "placeholders": [
+      {
+        "name": "what",
+        "meaning": "Annotate the function -> bool and return a bool (the predicate the name asks), or rename the function to what it actually returns"
+      },
+      {
+        "name": "predicate",
+        "meaning": "Annotate the function -> bool and return a bool (the predicate the name asks), or rename the function to what it actually returns"
+      }
+    ],
+    "reason": "Annotate the function -> bool and return a bool (the predicate the name asks), or rename the function to what it actually returns.",
+    "row": "colorama/repair_plant_roles.py::is_ready::34",
+    "file": "colorama/repair_plant_roles.py",
+    "replace_span": "colorama/repair_plant_roles.py:L34-L35",
+    "digest": "fa96f9b45f",
+    "selected_role": "solution_NAI-132",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def <name>(<param>, ...):\n    <result> = <computation that reads <param>>",
+    "placeholders": [
+      {
+        "name": "name",
+        "meaning": "name"
+      },
+      {
+        "name": "param",
+        "meaning": "Use the parameter as the signature promises"
+      },
+      {
+        "name": "result",
+        "meaning": "result"
+      }
+    ],
+    "reason": "Use the parameter as the signature promises \u2014 feed it into the computation the intent's expected input describes; if it is genuinely obsolete, remove it and its arguments at every call site in one change.",
+    "row": "colorama/repair_plant_split.py::load_table::8",
+    "file": "colorama/repair_plant_split.py",
+    "replace_span": "colorama/repair_plant_split.py:L8-L9",
+    "digest": "3dff4cc92b",
+    "selected_role": "solution_NAI-003",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def caller(a, b):\n    return callee(a, b)",
+    "placeholders": [],
+    "reason": "Forward the caller's own parameters into the failed callee (or stop calling it) so the caller's result depends on its inputs; the flip itself re-routes as Ranker evidence under Q7.",
+    "row": "colorama/repair_plant_split.py::read_config::12",
+    "file": "colorama/repair_plant_split.py",
+    "replace_span": "colorama/repair_plant_split.py:L12-L13",
+    "digest": "6a3e37f41f",
+    "selected_role": "solution_RCA-001",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "# delete: sys.path.insert(0, ...)\nfrom <package>.<module> import <name>   # resolvable through the package, not the path hack",
+    "placeholders": [
+      {
+        "name": "package",
+        "meaning": "an installed package (pyproject) or a relative import inside the package"
+      },
+      {
+        "name": "module",
+        "meaning": "for the module the hack pointed at"
+      },
+      {
+        "name": "name",
+        "meaning": "name"
+      }
+    ],
+    "reason": "Delete the sys.path line and make the import resolvable by packaging \u2014 an installed package (pyproject) or a relative import inside the package \u2014 for the module the hack pointed at.",
+    "row": "demos/fixpath.py::<module>::8",
+    "file": "demos/fixpath.py",
+    "replace_span": "demos/fixpath.py:L8-L8",
+    "digest": "a3d1191687",
+    "selected_role": "solution_NAI-094",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def <name>(...):\n    result = <computed value>\n    return result   # the entry point prints",
+    "placeholders": [
+      {
+        "name": "name",
+        "meaning": "Return the value the function computes (the text, structure or status the intent's expected output names) and leave printing to the caller or the entry point"
+      },
+      {
+        "name": "computed value",
+        "meaning": "computed value"
+      }
+    ],
+    "reason": "Return the value the function computes (the text, structure or status the intent's expected output names) and leave printing to the caller or the entry point.",
+    "row": "colorama/repair_plant_flow.py::build_label::9",
+    "file": "colorama/repair_plant_flow.py",
+    "replace_span": "colorama/repair_plant_flow.py:L9-L10",
+    "digest": "0255e2c0c9",
+    "selected_role": "solution_NAI-098",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_flow.py:L13-L17\n+++ colorama/repair_plant_flow.py:L13-L17\n@@ -1,5 +1,4 @@\n def checked(value):\n     if value < 0:\n         raise ValueError(\"negative\")\n-        value = 0\n     return value * 2\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "1 statement(s) after the `raise` at snippet line 3 deleted",
+    "row": "colorama/repair_plant_flow.py::checked::13",
+    "file": "colorama/repair_plant_flow.py",
+    "replace_span": "colorama/repair_plant_flow.py:L13-L17",
+    "digest": "e7314b0412",
+    "selected_role": "unreachable_code_fix:drop_dead",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "while True:\n    <work>\n    if <done condition>:\n        break",
+    "placeholders": [
+      {
+        "name": "work",
+        "meaning": "work"
+      },
+      {
+        "name": "done condition",
+        "meaning": "done condition"
+      }
+    ],
+    "reason": "Give the loop its exit: break / return when the condition the intent describes is met (the queue is empty, the response arrives, the count is reached), or bound it with a maximum.",
+    "row": "colorama/repair_plant_flow.py::spin::20",
+    "file": "colorama/repair_plant_flow.py",
+    "replace_span": "colorama/repair_plant_flow.py:L20-L22",
+    "digest": "fc82f1023b",
+    "selected_role": "solution_NAI-044",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "if <cond>:\n    return <value>\nreturn <value for the other case>   # or raise <Error>",
+    "placeholders": [
+      {
+        "name": "cond",
+        "meaning": "cond"
+      },
+      {
+        "name": "value",
+        "meaning": "Return on every path: give the missing branch / fall-through the value the annotation promises or raise the documented error"
+      },
+      {
+        "name": "value for the other case",
+        "meaning": "value for the other case"
+      },
+      {
+        "name": "Error",
+        "meaning": "Return on every path: give the missing branch / fall-through the value the annotation promises or raise the documented error"
+      }
+    ],
+    "reason": "Return on every path: give the missing branch / fall-through the value the annotation promises or raise the documented error; a function that may return nothing is annotated Optional and returns None explicitly.",
+    "row": "colorama/repair_plant_flow.py::sign::25",
+    "file": "colorama/repair_plant_flow.py",
+    "replace_span": "colorama/repair_plant_flow.py:L25-L27",
+    "digest": "be73feda36",
+    "selected_role": "solution_NAI-142",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_quietly.py:L9-L11\n+++ colorama/repair_plant_quietly.py:L9-L11\n@@ -1,3 +1,2 @@\n def hushed(fn):\n-    with suppress(Exception):\n-        fn()\n+    fn()\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`with suppress(...)` at snippet line 2 removed \u2014 its body runs unwrapped, an exception propagates",
+    "row": "colorama/repair_plant_quietly.py::hushed::9",
+    "file": "colorama/repair_plant_quietly.py",
+    "replace_span": "colorama/repair_plant_quietly.py:L9-L11",
+    "digest": "96a3d4a508",
+    "selected_role": "exception_swallow_fix:drop_suppress",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "async def <name>(...):\n    result = await <awaitable>\n    return result",
+    "placeholders": [
+      {
+        "name": "name",
+        "meaning": "name"
+      },
+      {
+        "name": "awaitable",
+        "meaning": "awaitable"
+      }
+    ],
+    "reason": "Await the I/O the function performs (or the coroutine it calls); when there is nothing to await, drop async and let the callers call it synchronously.",
+    "row": "colorama/repair_plant_quietly.py::fetch::14",
+    "file": "colorama/repair_plant_quietly.py",
+    "replace_span": "colorama/repair_plant_quietly.py:L14-L15",
+    "digest": "a294881f46",
+    "selected_role": "solution_NAI-018",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "if <cond>:\n    return <value for this case>\nreturn <value for the other case>",
+    "placeholders": [
+      {
+        "name": "cond",
+        "meaning": "the outcome the condition distinguishes (the value, an error, a status) per the intent"
+      },
+      {
+        "name": "value for this case",
+        "meaning": "value for this case"
+      },
+      {
+        "name": "value for the other case",
+        "meaning": "value for the other case"
+      }
+    ],
+    "reason": "Return a different value on each branch \u2014 the outcome the condition distinguishes (the value, an error, a status) per the intent; when the branches truly agree, remove the branching.",
+    "row": "colorama/repair_plant_quietly.py::flag::18",
+    "file": "colorama/repair_plant_quietly.py",
+    "replace_span": "colorama/repair_plant_quietly.py:L18-L21",
+    "digest": "4a9d6098f4",
+    "selected_role": "solution_NAI-019",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def test_<what>():\n    result = <unit>(<input>)\n    assert result == <expected>",
+    "placeholders": [
+      {
+        "name": "what",
+        "meaning": "what"
+      },
+      {
+        "name": "unit",
+        "meaning": "Assert the behaviour the test's name promises: call the unit and compare its result (or its raised exception) to the expected literal from the spec / intent"
+      },
+      {
+        "name": "input",
+        "meaning": "input"
+      },
+      {
+        "name": "expected",
+        "meaning": "Assert the behaviour the test's name promises: call the unit and compare its result (or its raised exception) to the expected literal from the spec / intent"
+      }
+    ],
+    "reason": "Assert the behaviour the test's name promises: call the unit and compare its result (or its raised exception) to the expected literal from the spec / intent.",
+    "row": "colorama/repair_plant_quietly.py::test_render::24",
+    "file": "colorama/repair_plant_quietly.py",
+    "replace_span": "colorama/repair_plant_quietly.py:L24-L25",
+    "digest": "ef9c2f3936",
+    "selected_role": "solution_NAI-020",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def <name>(...):\n    result = <work>\n    logger.info('<what>', ...)\n    return result",
+    "placeholders": [
+      {
+        "name": "name",
+        "meaning": "Do the work the function is named for and return or act on it"
+      },
+      {
+        "name": "work",
+        "meaning": "Do the work the function is named for and return or act on it"
+      },
+      {
+        "name": "what",
+        "meaning": "what"
+      }
+    ],
+    "reason": "Do the work the function is named for and return or act on it; the log line stays as a side note, never as the function's only effect.",
+    "row": "colorama/repair_plant_quietly.py::report::28",
+    "file": "colorama/repair_plant_quietly.py",
+    "replace_span": "colorama/repair_plant_quietly.py:L28-L30",
+    "digest": "ed31a0df11",
+    "selected_role": "solution_NAI-021",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_secrets.py:L9-L10\n+++ colorama/repair_plant_secrets.py:L9-L10\n@@ -1,2 +1,2 @@\n def load_settings(text):\n-    return yaml.load(text)\n+    return yaml.safe_load(text)\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`yaml.load(...)` (snippet line 2) \u2192 `yaml.safe_load(...)`",
+    "row": "colorama/repair_plant_secrets.py::load_settings::9",
+    "file": "colorama/repair_plant_secrets.py",
+    "replace_span": "colorama/repair_plant_secrets.py:L9-L10",
+    "digest": "6c3cce5093",
+    "selected_role": "yaml_safe_load_fix",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "if not <check(<param>)>:\n    raise ValueError(f'<param>: <what was expected>')\n<sink>(<param>)",
+    "placeholders": [
+      {
+        "name": "param",
+        "meaning": "Validate the boundary parameter before the sink against the contract the intent gives it (type, pattern, allow-list, path inside the root) and raise ValueError naming the parameter when it fails"
+      },
+      {
+        "name": "what was expected",
+        "meaning": "what was expected"
+      },
+      {
+        "name": "sink",
+        "meaning": "Validate the boundary parameter before the sink against the contract the intent gives it (type, pattern, allow-list, path inside the root) and raise ValueError naming the parameter when it fails"
+      }
+    ],
+    "reason": "Validate the boundary parameter before the sink against the contract the intent gives it (type, pattern, allow-list, path inside the root) and raise ValueError naming the parameter when it fails.",
+    "row": "colorama/repair_plant_secrets.py::list_dir::13",
+    "file": "colorama/repair_plant_secrets.py",
+    "replace_span": "colorama/repair_plant_secrets.py:L13-L14",
+    "digest": "9d4b4413e5",
+    "selected_role": "solution_NAI-158",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "<NAME> = os.environ.get('<ENV_NAME>')\nif not <NAME>:\n    raise RuntimeError('<ENV_NAME> is not set')",
+    "placeholders": [
+      {
+        "name": "NAME",
+        "meaning": "Read the secret from the environment variable (or the secret store) the intent's external systems name, and fail loudly when it is absent"
+      },
+      {
+        "name": "ENV_NAME",
+        "meaning": "Read the secret from the environment variable (or the secret store) the intent's external systems name, and fail loudly when it is absent"
+      }
+    ],
+    "reason": "Read the secret from the environment variable (or the secret store) the intent's external systems name, and fail loudly when it is absent; the literal never stays in code.",
+    "row": "colorama/repair_plant_secrets.py::connect::17",
+    "file": "colorama/repair_plant_secrets.py",
+    "replace_span": "colorama/repair_plant_secrets.py:L17-L20",
+    "digest": "c2a5e9a959",
+    "selected_role": "solution_NAI-072",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "cursor.execute('<SELECT ... WHERE <col> = %s>', (<value>,))   # placeholder style per the driver: %s / ? / :name",
+    "placeholders": [
+      {
+        "name": "col",
+        "meaning": "col"
+      },
+      {
+        "name": "value",
+        "meaning": "Parametrise the statement with the driver's placeholders and pass the values as the execute call's second argument"
+      }
+    ],
+    "reason": "Parametrise the statement with the driver's placeholders and pass the values as the execute call's second argument; no interpolated value stays in the query text.",
+    "row": "colorama/repair_plant_secrets.py::find_user::23",
+    "file": "colorama/repair_plant_secrets.py",
+    "replace_span": "colorama/repair_plant_secrets.py:L23-L25",
+    "digest": "f33c8086f6",
+    "selected_role": "solution_NAI-073",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "class Concrete(Shell):\n    def method(self, ...):\n        <implementation>",
+    "placeholders": [
+      {
+        "name": "implementation",
+        "meaning": "implementation"
+      }
+    ],
+    "reason": "Give the abstract shell a concrete subclass implementing every abstract method the intent needs, or remove the ABC when nothing is meant to implement it.",
+    "row": "colorama/repair_plant_shells.py::<class Port>::9",
+    "file": "colorama/repair_plant_shells.py",
+    "replace_span": "colorama/repair_plant_shells.py:L9",
+    "digest": "dcb74db523",
+    "selected_role": "solution_NAI-214",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def f(a, b):\n    <use a and b>\n    return <value computed from a, b>",
+    "placeholders": [
+      {
+        "name": "use a and b",
+        "meaning": "use a and b"
+      },
+      {
+        "name": "value computed from a, b",
+        "meaning": "value computed from a, b"
+      }
+    ],
+    "reason": "Replace the literal return with a computation that reads every parameter; the value returned must depend on the inputs the signature promises.",
+    "row": "colorama/tests/utils.py::isatty::9",
+    "file": "colorama/tests/utils.py",
+    "replace_span": "colorama/tests/utils.py:L9-L10",
+    "digest": "2f5b24c546",
+    "selected_role": "solution_NAI-009S",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def f(a, b):\n    <use a and b>\n    return <value computed from a, b>",
+    "placeholders": [
+      {
+        "name": "use a and b",
+        "meaning": "use a and b"
+      },
+      {
+        "name": "value computed from a, b",
+        "meaning": "value computed from a, b"
+      }
+    ],
+    "reason": "Replace the literal return with a computation that reads every parameter; the value returned must depend on the inputs the signature promises.",
+    "row": "colorama/tests/utils.py::isatty::13",
+    "file": "colorama/tests/utils.py",
+    "replace_span": "colorama/tests/utils.py:L13-L14",
+    "digest": "55e1725906",
+    "selected_role": "solution_NAI-009S",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "# delete: sys.path.insert(0, ...)\nfrom <package>.<module> import <name>   # resolvable through the package, not the path hack",
+    "placeholders": [
+      {
+        "name": "package",
+        "meaning": "an installed package (pyproject) or a relative import inside the package"
+      },
+      {
+        "name": "module",
+        "meaning": "for the module the hack pointed at"
+      },
+      {
+        "name": "name",
+        "meaning": "name"
+      }
+    ],
+    "reason": "Delete the sys.path line and make the import resolvable by packaging \u2014 an installed package (pyproject) or a relative import inside the package \u2014 for the module the hack pointed at.",
+    "row": "colorama/tests/utils.py::pycharm::44",
+    "file": "colorama/tests/utils.py",
+    "replace_span": "colorama/tests/utils.py:L43-L49",
+    "digest": "632243da1a",
+    "selected_role": "solution_NAI-094",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "for value in (<v1>, <v2>, ...):\n    <the one statement>",
+    "placeholders": [
+      {
+        "name": "v1",
+        "meaning": "v1"
+      },
+      {
+        "name": "v2",
+        "meaning": "v2"
+      },
+      {
+        "name": "the one statement",
+        "meaning": "the one statement"
+      }
+    ],
+    "reason": "Replace the repeated statements with a loop or a data table over the values they differ in; a body that was only padding gets the real implementation the intent calls for.",
+    "row": "colorama/repair_plant_context.py::weights_table::10",
+    "file": "colorama/repair_plant_context.py",
+    "replace_span": "colorama/repair_plant_context.py:L10-L31",
+    "digest": "bf7be4ffa8",
+    "selected_role": "solution_NAI-229",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def shared(x, <difference>):\n    ...",
+    "placeholders": [
+      {
+        "name": "difference",
+        "meaning": "difference"
+      }
+    ],
+    "reason": "Collapse the fingerprint-identical group into one function parameterised by what the copies differ in, and route callers to it.",
+    "row": "colorama/repair_plant_context.py::scale_alpha::34",
+    "file": "colorama/repair_plant_context.py",
+    "replace_span": "colorama/repair_plant_context.py:L34-L38",
+    "digest": "4db5649fac",
+    "selected_role": "solution_NAI-230",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def shared(x, <difference>):\n    ...",
+    "placeholders": [
+      {
+        "name": "difference",
+        "meaning": "difference"
+      }
+    ],
+    "reason": "Collapse the fingerprint-identical group into one function parameterised by what the copies differ in, and route callers to it.",
+    "row": "colorama/repair_plant_context.py::scale_beta::41",
+    "file": "colorama/repair_plant_context.py",
+    "replace_span": "colorama/repair_plant_context.py:L41-L45",
+    "digest": "ea187e8736",
+    "selected_role": "solution_NAI-230",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def shared(x, <difference>):\n    ...",
+    "placeholders": [
+      {
+        "name": "difference",
+        "meaning": "difference"
+      }
+    ],
+    "reason": "Collapse the fingerprint-identical group into one function parameterised by what the copies differ in, and route callers to it.",
+    "row": "colorama/repair_plant_context.py::scale_gamma::48",
+    "file": "colorama/repair_plant_context.py",
+    "replace_span": "colorama/repair_plant_context.py:L48-L52",
+    "digest": "ceb30be3cb",
+    "selected_role": "solution_NAI-230",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def shared(x, <difference>):\n    ...",
+    "placeholders": [
+      {
+        "name": "difference",
+        "meaning": "difference"
+      }
+    ],
+    "reason": "Collapse the fingerprint-identical group into one function parameterised by what the copies differ in, and route callers to it.",
+    "row": "colorama/repair_plant_context.py::scale_delta::55",
+    "file": "colorama/repair_plant_context.py",
+    "replace_span": "colorama/repair_plant_context.py:L55-L59",
+    "digest": "f6ef0b0b99",
+    "selected_role": "solution_NAI-230",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def shared(x, <difference>):\n    ...",
+    "placeholders": [
+      {
+        "name": "difference",
+        "meaning": "difference"
+      }
+    ],
+    "reason": "Collapse the fingerprint-identical group into one function parameterised by what the copies differ in, and route callers to it.",
+    "row": "colorama/repair_plant_context.py::scale_epsilon::62",
+    "file": "colorama/repair_plant_context.py",
+    "replace_span": "colorama/repair_plant_context.py:L62-L66",
+    "digest": "ed2d32b850",
+    "selected_role": "solution_NAI-230",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def shared(x, <difference>):\n    ...",
+    "placeholders": [
+      {
+        "name": "difference",
+        "meaning": "difference"
+      }
+    ],
+    "reason": "Collapse the fingerprint-identical group into one function parameterised by what the copies differ in, and route callers to it.",
+    "row": "colorama/repair_plant_context.py::scale_zeta::69",
+    "file": "colorama/repair_plant_context.py",
+    "replace_span": "colorama/repair_plant_context.py:L69-L73",
+    "digest": "8a6d6a27bd",
+    "selected_role": "solution_NAI-230",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def shared(x, <difference>):\n    ...",
+    "placeholders": [
+      {
+        "name": "difference",
+        "meaning": "difference"
+      }
+    ],
+    "reason": "Collapse the fingerprint-identical group into one function parameterised by what the copies differ in, and route callers to it.",
+    "row": "colorama/repair_plant_context.py::scale_eta::76",
+    "file": "colorama/repair_plant_context.py",
+    "replace_span": "colorama/repair_plant_context.py:L76-L80",
+    "digest": "d01e0b2f91",
+    "selected_role": "solution_NAI-230",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def shared(x, <difference>):\n    ...",
+    "placeholders": [
+      {
+        "name": "difference",
+        "meaning": "difference"
+      }
+    ],
+    "reason": "Collapse the fingerprint-identical group into one function parameterised by what the copies differ in, and route callers to it.",
+    "row": "colorama/repair_plant_context.py::scale_theta::83",
+    "file": "colorama/repair_plant_context.py",
+    "replace_span": "colorama/repair_plant_context.py:L83-L87",
+    "digest": "308b052376",
+    "selected_role": "solution_NAI-230",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "from <module> import <real_name>\n...\n<real_name>(<args>)",
+    "placeholders": [
+      {
+        "name": "module",
+        "meaning": "Call the function that exists for this job: import or define it under the name used, or change the call to the real name in this module / the intent's external systems"
+      },
+      {
+        "name": "real_name",
+        "meaning": "Call the function that exists for this job: import or define it under the name used, or change the call to the real name in this module / the intent's external systems"
+      },
+      {
+        "name": "args",
+        "meaning": "args"
+      }
+    ],
+    "reason": "Call the function that exists for this job: import or define it under the name used, or change the call to the real name in this module / the intent's external systems; no undefined name stays.",
+    "row": "colorama/repair_plant_dynamic.py::total::10",
+    "file": "colorama/repair_plant_dynamic.py",
+    "replace_span": "colorama/repair_plant_dynamic.py:L10-L11",
+    "digest": "bc8d020016",
+    "selected_role": "solution_NAI-050",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "value = ast.literal_eval(<text>)   # or: HANDLERS[<name>](<args>) / json.loads(<text>) / getattr(<obj>, <attr>)",
+    "placeholders": [
+      {
+        "name": "text",
+        "meaning": "Replace eval / exec with the safe form of what it computes: ast.literal_eval for literals, a dict dispatch for names to callables, json / a real parser for structured text, getattr for attribute names"
+      },
+      {
+        "name": "name",
+        "meaning": "Replace eval / exec with the safe form of what it computes: ast.literal_eval for literals, a dict dispatch for names to callables, json / a real parser for structured text, getattr for attribute names"
+      },
+      {
+        "name": "args",
+        "meaning": "args"
+      },
+      {
+        "name": "obj",
+        "meaning": "obj"
+      },
+      {
+        "name": "attr",
+        "meaning": "Replace eval / exec with the safe form of what it computes: ast.literal_eval for literals, a dict dispatch for names to callables, json / a real parser for structured text, getattr for attribute names"
+      }
+    ],
+    "reason": "Replace eval / exec with the safe form of what it computes: ast.literal_eval for literals, a dict dispatch for names to callables, json / a real parser for structured text, getattr for attribute names.",
+    "row": "colorama/repair_plant_dynamic.py::evaluate::14",
+    "file": "colorama/repair_plant_dynamic.py",
+    "replace_span": "colorama/repair_plant_dynamic.py:L14-L15",
+    "digest": "cf7efc96f3",
+    "selected_role": "solution_NAI-127",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "value = ast.literal_eval(<text>)   # or: HANDLERS[<name>](<args>) / json.loads(<text>) / getattr(<obj>, <attr>)",
+    "placeholders": [
+      {
+        "name": "text",
+        "meaning": "Replace eval / exec with the safe form of what it computes: ast.literal_eval for literals, a dict dispatch for names to callables, json / a real parser for structured text, getattr for attribute names"
+      },
+      {
+        "name": "name",
+        "meaning": "Replace eval / exec with the safe form of what it computes: ast.literal_eval for literals, a dict dispatch for names to callables, json / a real parser for structured text, getattr for attribute names"
+      },
+      {
+        "name": "args",
+        "meaning": "args"
+      },
+      {
+        "name": "obj",
+        "meaning": "obj"
+      },
+      {
+        "name": "attr",
+        "meaning": "Replace eval / exec with the safe form of what it computes: ast.literal_eval for literals, a dict dispatch for names to callables, json / a real parser for structured text, getattr for attribute names"
+      }
+    ],
+    "reason": "Replace eval / exec with the safe form of what it computes: ast.literal_eval for literals, a dict dispatch for names to callables, json / a real parser for structured text, getattr for attribute names.",
+    "row": "colorama/repair_plant_dynamic.py::run::18",
+    "file": "colorama/repair_plant_dynamic.py",
+    "replace_span": "colorama/repair_plant_dynamic.py:L18-L19",
+    "digest": "449ec758c3",
+    "selected_role": "solution_NAI-127",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def <name>(<params>):\n    \"\"\"<existing docstring>\"\"\"\n    raise NotImplementedError(\"<name>: not implemented\")",
+    "placeholders": [
+      {
+        "name": "name",
+        "meaning": "Implement the body: compute and return what the name and the intent's expected output promise"
+      },
+      {
+        "name": "params",
+        "meaning": "params"
+      },
+      {
+        "name": "existing docstring",
+        "meaning": "existing docstring"
+      }
+    ],
+    "reason": "Implement the body: compute and return what the name and the intent's expected output promise; a declared-but-unimplemented member (a reserved hook whose only meaning is 'not yet') raises NotImplementedError naming the missing piece \u2014 give the function an effect without inventing one (the owner's form, hand check #17, 2026-09-16).",
+    "row": "colorama/repair_plant_extended.py::reserved::10",
+    "file": "colorama/repair_plant_extended.py",
+    "replace_span": "colorama/repair_plant_extended.py:L10-L11",
+    "digest": "33d0e38910",
+    "selected_role": "solution_NAI-120",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_extended.py:L14-L15\n+++ colorama/repair_plant_extended.py:L14-L15\n@@ -1,2 +1,2 @@\n def is_unset(value):\n-    return value == None\n+    return value is None\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`value == None` (snippet line 2) \u2192 `value is None`",
+    "row": "colorama/repair_plant_extended.py::is_unset::14",
+    "file": "colorama/repair_plant_extended.py",
+    "replace_span": "colorama/repair_plant_extended.py:L14-L15",
+    "digest": "ec66c104c9",
+    "selected_role": "none_identity_fix",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_extended.py:L18-L25\n+++ colorama/repair_plant_extended.py:L18-L25\n@@ -3,6 +3,6 @@\n     for c in cells:\n         try:\n             out.append(len(c))\n-        except:\n+        except Exception:\n             continue\n     return out\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`except:` (snippet line 6) \u2192 `except Exception:` \u2014 SystemExit / KeyboardInterrupt / GeneratorExit now propagate",
+    "row": "colorama/repair_plant_extended.py::widths::18",
+    "file": "colorama/repair_plant_extended.py",
+    "replace_span": "colorama/repair_plant_extended.py:L18-L25",
+    "digest": "ccb09d0cf2",
+    "selected_role": "bare_except_fix",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_extended.py:L29-L31\n+++ colorama/repair_plant_extended.py:L29-L31\n@@ -1,3 +1,3 @@\n     def __init__(self, column):\n         self.column = column\n-        return column\n+        return\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`return column` (snippet line 3) \u2192 `return` \u2014 __init__ returns nothing",
+    "row": "colorama/repair_plant_extended.py::__init__::29",
+    "file": "colorama/repair_plant_extended.py",
+    "replace_span": "colorama/repair_plant_extended.py:L29-L31",
+    "digest": "6e9d23c297",
+    "selected_role": "init_return_fix:drop_value",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_foreign.py:L10-L15\n+++ colorama/repair_plant_foreign.py:L10-L15\n@@ -1,6 +1,5 @@\n def convert_rows(rows):\n     out = []\n-    for row in rows:\n-        out.append(row)\n+    out.extend(rows)\n     out.reverse()\n     return out\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`for row in rows: out.append(row)` (snippet lines 3-4) \u2192 `out.extend(rows)` \u2014 the receiver is a list the function binds; extend appends the same items in the same order",
+    "row": "colorama/repair_plant_foreign.py::convert_rows::10",
+    "file": "colorama/repair_plant_foreign.py",
+    "replace_span": "colorama/repair_plant_foreign.py:L10-L15",
+    "digest": "d396516706",
+    "selected_role": "append_loop_extend_fix",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def get_item_count(items):\n    return len(items)",
+    "placeholders": [],
+    "reason": "Return the type the name suffix promises (`_count` -> int, `_name` -> str, `_list` -> list, `_dict` -> dict), computed from the inputs; or rename the function to what it returns.",
+    "row": "colorama/repair_plant_foreign.py::item_count::18",
+    "file": "colorama/repair_plant_foreign.py",
+    "replace_span": "colorama/repair_plant_foreign.py:L18-L20",
+    "digest": "5eadc7d7eb",
+    "selected_role": "solution_NAI-108",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def add_item(self, item):\n    self.items.append(item)\n    return self.items",
+    "placeholders": [],
+    "reason": "Make the action match the verb: `add_x` calls the adding method (`.add` / `.append`), `remove_x` the removing one; the name and the call must agree.",
+    "row": "colorama/repair_plant_foreign.py::add_entry::23",
+    "file": "colorama/repair_plant_foreign.py",
+    "replace_span": "colorama/repair_plant_foreign.py:L23-L25",
+    "digest": "e28ab29f45",
+    "selected_role": "solution_NAI-109",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_foreign.py:L28-L30\n+++ colorama/repair_plant_foreign.py:L28-L30\n@@ -1,3 +1,3 @@\n def label_upper(rows):\n     label = f\"id:{rows[0]}\"\n-    return label.toUpperCase()\n+    return label.upper()\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`label.toUpperCase` (snippet line 3) \u2192 `label.upper` \u2014 the receiver is bound in the function to the kind the rename is exact for",
+    "row": "colorama/repair_plant_foreign.py::label_upper::28",
+    "file": "colorama/repair_plant_foreign.py",
+    "replace_span": "colorama/repair_plant_foreign.py:L28-L30",
+    "digest": "cc5941414b",
+    "selected_role": "cross_language_fix",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def get_items(store):\n    return store.query(<what the name promises>)",
+    "placeholders": [
+      {
+        "name": "what the name promises",
+        "meaning": "what the name promises"
+      }
+    ],
+    "reason": "Fetch the data from the source the intent names (the external system, file or store) instead of returning a literal list / dict; a genuine fixture moves to a constant named as one.",
+    "row": "colorama/repair_plant_foreign.py::get_users::33",
+    "file": "colorama/repair_plant_foreign.py",
+    "replace_span": "colorama/repair_plant_foreign.py:L33-L35",
+    "digest": "84475b6eed",
+    "selected_role": "solution_NAI-115",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_trust.py:L10-L11\n+++ colorama/repair_plant_trust.py:L10-L11\n@@ -1,2 +1,2 @@\n def fetch(url):\n-    return requests.get(url, timeout=5, verify=False)\n+    return requests.get(url, timeout=5, verify=True)\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`requests.get(..., verify=False)` (snippet line 2) \u2192 `verify=True` \u2014 the certificate is now validated (the library's default)",
+    "row": "colorama/repair_plant_trust.py::fetch::10",
+    "file": "colorama/repair_plant_trust.py",
+    "replace_span": "colorama/repair_plant_trust.py:L10-L11",
+    "digest": "34ecc50578",
+    "selected_role": "verify_true_fix",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "host = os.environ.get('<APP>_HOST', '127.0.0.1')",
+    "placeholders": [
+      {
+        "name": "APP",
+        "meaning": "APP"
+      }
+    ],
+    "reason": "Bind to the address the deployment names: read it from config or an environment variable with 127.0.0.1 as the default; '0.0.0.0' only when the intent's external systems require every interface.",
+    "row": "colorama/repair_plant_trust.py::serve::14",
+    "file": "colorama/repair_plant_trust.py",
+    "replace_span": "colorama/repair_plant_trust.py:L14-L15",
+    "digest": "1ab43b2c66",
+    "selected_role": "solution_NAI-163",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "with tempfile.NamedTemporaryFile(delete=<bool>, suffix='<ext>') as tmp:\n    <use tmp.name / tmp.write(...)>",
+    "placeholders": [
+      {
+        "name": "bool",
+        "meaning": "bool"
+      },
+      {
+        "name": "ext",
+        "meaning": "ext"
+      },
+      {
+        "name": "use tmp.name / tmp.write(...)",
+        "meaning": "Replace mktemp with tempfile.NamedTemporaryFile (or mkstemp) and use the file object / descriptor it returns for the file's whole lifetime, closing or deleting it when done"
+      }
+    ],
+    "reason": "Replace mktemp with tempfile.NamedTemporaryFile (or mkstemp) and use the file object / descriptor it returns for the file's whole lifetime, closing or deleting it when done.",
+    "row": "colorama/repair_plant_trust.py::scratch_path::18",
+    "file": "colorama/repair_plant_trust.py",
+    "replace_span": "colorama/repair_plant_trust.py:L18-L19",
+    "digest": "4299bacb6c",
+    "selected_role": "solution_NAI-164",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "<NAME> = '<the intended visible text \u2014 no U+202A..U+202E / U+2066..U+2069 controls>'",
+    "placeholders": [
+      {
+        "name": "NAME",
+        "meaning": "NAME"
+      },
+      {
+        "name": "the intended visible text \u2014 no U+202A..U+202E / U+2066..U+2069 controls",
+        "meaning": "a right-to-left segment, if intended, is marked in data, not with control characters in source"
+      }
+    ],
+    "reason": "Remove the bidi control characters and write the visible text the string is meant to carry; a right-to-left segment, if intended, is marked in data, not with control characters in source.",
+    "row": "colorama/repair_plant_trust.py::label::22",
+    "file": "colorama/repair_plant_trust.py",
+    "replace_span": "colorama/repair_plant_trust.py:L22-L23",
+    "digest": "24666a8404",
+    "selected_role": "solution_NAI-165",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_trust.py:L26-L29\n+++ colorama/repair_plant_trust.py:L26-L29\n@@ -1,4 +1,4 @@\n def area(shape):\n     if shape == \"circle\":\n         return 3\n-    raise NotImplemented\n+    raise NotImplementedError\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`raise NotImplemented` (snippet line 4) \u2192 `raise NotImplementedError` \u2014 NotImplementedError instead of the TypeError the singleton raised",
+    "row": "colorama/repair_plant_trust.py::area::26",
+    "file": "colorama/repair_plant_trust.py",
+    "replace_span": "colorama/repair_plant_trust.py:L26-L29",
+    "digest": "f463211828",
+    "selected_role": "not_implemented_error_fix",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "@lru_cache\ndef <compute>(...):\n    return <pure value>\n\ndef <name>(...):\n    value = <compute>(...)\n    <side effect with value>",
+    "placeholders": [
+      {
+        "name": "compute",
+        "meaning": "compute"
+      },
+      {
+        "name": "pure value",
+        "meaning": "pure value"
+      },
+      {
+        "name": "name",
+        "meaning": "name"
+      },
+      {
+        "name": "side effect with value",
+        "meaning": "Separate the pure computation from the side effect: cache the computation in its own function and perform the print / write / send in the caller every time"
+      }
+    ],
+    "reason": "Separate the pure computation from the side effect: cache the computation in its own function and perform the print / write / send in the caller every time; the cache decorator comes off the effectful function.",
+    "row": "colorama/repair_plant_launch.py::describe::12",
+    "file": "colorama/repair_plant_launch.py",
+    "replace_span": "colorama/repair_plant_launch.py:L11-L14",
+    "digest": "ee6ed63d4a",
+    "selected_role": "solution_NAI-203",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "async def <name>(...):\n    result = await <coroutine>(...)\n    return result",
+    "placeholders": [
+      {
+        "name": "name",
+        "meaning": "name"
+      },
+      {
+        "name": "coroutine",
+        "meaning": "Make the function async and await the coroutine directly, with its caller awaiting it (the entry point runs asyncio.run once at the top level)"
+      }
+    ],
+    "reason": "Make the function async and await the coroutine directly, with its caller awaiting it (the entry point runs asyncio.run once at the top level); no event loop started inside library code.",
+    "row": "colorama/repair_plant_launch.py::run_sync::17",
+    "file": "colorama/repair_plant_launch.py",
+    "replace_span": "colorama/repair_plant_launch.py:L17-L18",
+    "digest": "f35592d8ff",
+    "selected_role": "solution_NAI-204",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "base = Path(__file__).resolve().parent   # or Path(<param>) / config['<key>']\npath = base / '<relative>'",
+    "placeholders": [
+      {
+        "name": "param",
+        "meaning": "the module's directory (Path(__file__).parent), a parameter or a config key"
+      },
+      {
+        "name": "key",
+        "meaning": "the module's directory (Path(__file__).parent), a parameter or a config key"
+      },
+      {
+        "name": "relative",
+        "meaning": "relative"
+      }
+    ],
+    "reason": "Anchor the path to what it is meant against \u2014 the module's directory (Path(__file__).parent), a parameter or a config key; the launch directory only when the intent says the user's cwd is the base.",
+    "row": "colorama/repair_plant_launch.py::data_path::21",
+    "file": "colorama/repair_plant_launch.py",
+    "replace_span": "colorama/repair_plant_launch.py:L21-L23",
+    "digest": "91bfd7b6de",
+    "selected_role": "solution_NAI-206",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "with ThreadPoolExecutor() as pool:\n    future = pool.submit(<work>, <args>)\n    return future.result()",
+    "placeholders": [
+      {
+        "name": "work",
+        "meaning": "Run the work where the intent's runner puts it: submit it to a concurrent.futures executor (or the running event loop) and return the future / result, or run it inline when the caller waits anyway"
+      },
+      {
+        "name": "args",
+        "meaning": "args"
+      }
+    ],
+    "reason": "Run the work where the intent's runner puts it: submit it to a concurrent.futures executor (or the running event loop) and return the future / result, or run it inline when the caller waits anyway; no bare Thread from a sync function.",
+    "row": "colorama/repair_plant_launch.py::spawn::26",
+    "file": "colorama/repair_plant_launch.py",
+    "replace_span": "colorama/repair_plant_launch.py:L26-L29",
+    "digest": "4258bda84b",
+    "selected_role": "solution_NAI-210",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def __init__(self, ...):\n    self.<name> = []   # or {} / set()",
+    "placeholders": [
+      {
+        "name": "name",
+        "meaning": "name"
+      }
+    ],
+    "reason": "Make the container instance-owned: assign a fresh list / dict / set in __init__ and mutate it through self; keep it at class level only when the intent says every instance shares it.",
+    "row": "colorama/repair_plant_stale.py::__init__::12",
+    "file": "colorama/repair_plant_stale.py",
+    "replace_span": "colorama/repair_plant_stale.py:L12-L13",
+    "digest": "a402a63fe7",
+    "selected_role": "solution_NAI-152",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "if not <check(<param>)>:\n    raise ValueError(f'<param>: <what was expected>')\n<sink>(<param>)",
+    "placeholders": [
+      {
+        "name": "param",
+        "meaning": "Validate the parameter before it reaches open / exec / system / execute"
+      },
+      {
+        "name": "what was expected",
+        "meaning": "what was expected"
+      },
+      {
+        "name": "sink",
+        "meaning": "never hand a raw parameter to the sink"
+      }
+    ],
+    "reason": "Validate the parameter before it reaches open / exec / system / execute \u2014 a path under the allowed root, a known command, a typed value per the intent \u2014 and raise on failure; never hand a raw parameter to the sink.",
+    "row": "colorama/repair_plant_stale.py::read_file::16",
+    "file": "colorama/repair_plant_stale.py",
+    "replace_span": "colorama/repair_plant_stale.py:L16-L17",
+    "digest": "f7acf9df42",
+    "selected_role": "solution_NAI-160",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_stale.py:L20-L22\n+++ colorama/repair_plant_stale.py:L20-L22\n@@ -1,3 +1,3 @@\n def warn_twice(message):\n-    logging.warn(message)\n-    logging.warn(\"again: %s\", message)\n+    logging.warning(message)\n+    logging.warning(\"again: %s\", message)\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`.warn(` (snippet line 2) \u2192 `.warning(`; `.warn(` (snippet line 3) \u2192 `.warning(` \u2014 the deprecated alias and the current name are the same callable",
+    "row": "colorama/repair_plant_stale.py::warn_twice::20",
+    "file": "colorama/repair_plant_stale.py",
+    "replace_span": "colorama/repair_plant_stale.py:L20-L22",
+    "digest": "ff57c2eb24",
+    "selected_role": "deprecated_alias_fix",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "if not <check(<param>)>:\n    raise ValueError(f'<param>: <what was expected>')\n<sink>(<param>)",
+    "placeholders": [
+      {
+        "name": "param",
+        "meaning": "Validate the parameter before it reaches open / exec / system / execute"
+      },
+      {
+        "name": "what was expected",
+        "meaning": "what was expected"
+      },
+      {
+        "name": "sink",
+        "meaning": "never hand a raw parameter to the sink"
+      }
+    ],
+    "reason": "Validate the parameter before it reaches open / exec / system / execute \u2014 a path under the allowed root, a known command, a typed value per the intent \u2014 and raise on failure; never hand a raw parameter to the sink.",
+    "row": "colorama/repair_plant_stale.py::run_query::25",
+    "file": "colorama/repair_plant_stale.py",
+    "replace_span": "colorama/repair_plant_stale.py:L25-L26",
+    "digest": "5c59f40635",
+    "selected_role": "solution_NAI-160",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "requests.<method>(<url>, ..., timeout=<TIMEOUT_SECONDS>)",
+    "placeholders": [
+      {
+        "name": "method",
+        "meaning": "method"
+      },
+      {
+        "name": "url",
+        "meaning": "url"
+      },
+      {
+        "name": "TIMEOUT_SECONDS",
+        "meaning": "Pass timeout= on every requests call, taken from the module's TIMEOUT constant or config, so the call gives up after the seconds the intent's external system allows"
+      }
+    ],
+    "reason": "Pass timeout= on every requests call, taken from the module's TIMEOUT constant or config, so the call gives up after the seconds the intent's external system allows.",
+    "row": "colorama/repair_plant_stale.py::fetch::29",
+    "file": "colorama/repair_plant_stale.py",
+    "replace_span": "colorama/repair_plant_stale.py:L29-L30",
+    "digest": "f4e44136b0",
+    "selected_role": "solution_NAI-161",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def <name>(...):\n    result = <computed value>\n    return result   # the entry point prints",
+    "placeholders": [
+      {
+        "name": "name",
+        "meaning": "Return the value the function computes (the text, structure or status the intent's expected output names) and leave printing to the caller or the entry point"
+      },
+      {
+        "name": "computed value",
+        "meaning": "computed value"
+      }
+    ],
+    "reason": "Return the value the function computes (the text, structure or status the intent's expected output names) and leave printing to the caller or the entry point.",
+    "row": "demos/demo07.py::main::12",
+    "file": "demos/demo07.py",
+    "replace_span": "demos/demo07.py:L12-L23",
+    "digest": "ad876d55d3",
+    "selected_role": "solution_NAI-098",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/repair_plant_dynamic_two.py:L13-L14\n+++ colorama/repair_plant_dynamic_two.py:L13-L14\n@@ -1,2 +1,2 @@\n def host():\n-    return subprocess.Popen(\"hostname -s\", shell=True)\n+    return subprocess.Popen(['hostname', '-s'])\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`subprocess.Popen('hostname -s', shell=True)` \u2192 `subprocess.Popen(['hostname', '-s'])` \u2014 argv list, no shell",
+    "row": "colorama/repair_plant_dynamic_two.py::host::13",
+    "file": "colorama/repair_plant_dynamic_two.py",
+    "replace_span": "colorama/repair_plant_dynamic_two.py:L13-L14",
+    "digest": "dfea2ffe13",
+    "selected_role": "subprocess_argv_fix",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "<NAME> = os.environ.get('<ENV_NAME>')\nif not <NAME>:\n    raise RuntimeError('<ENV_NAME> is not set')",
+    "placeholders": [
+      {
+        "name": "NAME",
+        "meaning": "Read the secret from the environment variable (or the secret store) the intent's external systems name, and fail loudly when it is absent"
+      },
+      {
+        "name": "ENV_NAME",
+        "meaning": "Read the secret from the environment variable (or the secret store) the intent's external systems name, and fail loudly when it is absent"
+      }
+    ],
+    "reason": "Read the secret from the environment variable (or the secret store) the intent's external systems name, and fail loudly when it is absent; the literal never stays in code.",
+    "row": "colorama/repair_plant_dynamic_two.py::credentials::17",
+    "file": "colorama/repair_plant_dynamic_two.py",
+    "replace_span": "colorama/repair_plant_dynamic_two.py:L17-L19",
+    "digest": "d6a7639213",
+    "selected_role": "solution_NAI-072",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "if not <check(<param>)>:\n    raise ValueError(f'<param>: <what was expected>')\n<sink>(<param>)",
+    "placeholders": [
+      {
+        "name": "param",
+        "meaning": "Validate the parameter before it reaches open / exec / system / execute"
+      },
+      {
+        "name": "what was expected",
+        "meaning": "what was expected"
+      },
+      {
+        "name": "sink",
+        "meaning": "never hand a raw parameter to the sink"
+      }
+    ],
+    "reason": "Validate the parameter before it reaches open / exec / system / execute \u2014 a path under the allowed root, a known command, a typed value per the intent \u2014 and raise on failure; never hand a raw parameter to the sink.",
+    "row": "colorama/repair_plant_dynamic_two.py::prepare::26",
+    "file": "colorama/repair_plant_dynamic_two.py",
+    "replace_span": "colorama/repair_plant_dynamic_two.py:L26-L27",
+    "digest": "f028a3f932",
+    "selected_role": "solution_NAI-160",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/ansi.py:L15-L16\n+++ colorama/ansi.py:L15-L16\n@@ -1,2 +1,2 @@\n def set_title(title):\n-    return OSC + '2;' + title + BEL\n+    return\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`return OSC + '2;' + title + BEL` (snippet line 2) \u2192 `return` \u2014 the setter returns nothing",
+    "row": "colorama/ansi.py::set_title::15",
+    "file": "colorama/ansi.py",
+    "replace_span": "colorama/ansi.py:L15-L16",
+    "digest": "15cd246791",
+    "selected_role": "setter_return_fix:drop_value",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "import <dependency>",
+    "placeholders": [
+      {
+        "name": "dependency",
+        "meaning": "Make the dependency hard: import it at module top without the fallback and declare it in the project's requirements"
+      }
+    ],
+    "reason": "Make the dependency hard: import it at module top without the fallback and declare it in the project's requirements; when it is genuinely optional, gate every use on the None check and document the degraded behaviour.",
+    "row": "colorama/win32.py::<module>::15",
+    "file": "colorama/win32.py",
+    "replace_span": "colorama/win32.py:L15-L15",
+    "digest": "853b4154cb",
+    "selected_role": "solution_NAI-209",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/win32.py:L118-L123\n+++ colorama/win32.py:L118-L123\n@@ -1,6 +1,4 @@\n     def GetConsoleScreenBufferInfo(stream_id=STDOUT):\n         handle = _GetStdHandle(stream_id)\n         csbi = CONSOLE_SCREEN_BUFFER_INFO()\n-        success = _GetConsoleScreenBufferInfo(\n-            handle, byref(csbi))\n         return csbi\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`success` (snippet line 4) never read \u2014 its assignment deleted",
+    "row": "colorama/win32.py::GetConsoleScreenBufferInfo::118",
+    "file": "colorama/win32.py",
+    "replace_span": "colorama/win32.py:L118-L123",
+    "digest": "47399d20b7",
+    "selected_role": "dead_local_fix:drop_assignment",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def caller(a, b):\n    return callee(a, b)",
+    "placeholders": [],
+    "reason": "Forward the caller's own parameters into the failed callee (or stop calling it) so the caller's result depends on its inputs; the flip itself re-routes as Ranker evidence under Q7.",
+    "row": "colorama/win32.py::SetConsoleCursorPosition::129",
+    "file": "colorama/win32.py",
+    "replace_span": "colorama/win32.py:L129-L145",
+    "digest": "250e1d00b0",
+    "selected_role": "solution_RCA-001",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/win32.py:L147-L155\n+++ colorama/win32.py:L147-L155\n@@ -4,6 +4,4 @@\n         length = wintypes.DWORD(length)\n         num_written = wintypes.DWORD(0)\n         # Note that this is hard-coded for ANSI (vs wide) bytes.\n-        success = _FillConsoleOutputCharacterA(\n-            handle, char, length, start, byref(num_written))\n         return num_written.value\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "`success` (snippet line 7) never read \u2014 its assignment deleted",
+    "row": "colorama/win32.py::FillConsoleOutputCharacter::147",
+    "file": "colorama/win32.py",
+    "replace_span": "colorama/win32.py:L147-L155",
+    "digest": "75b073a6b7",
+    "selected_role": "dead_local_fix:drop_assignment",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "shape",
+    "diff": null,
+    "shape": "def <name>(...):\n    result = <computed value>\n    return result   # the entry point prints",
+    "placeholders": [
+      {
+        "name": "name",
+        "meaning": "Return the value the function computes (the text, structure or status the intent's expected output names) and leave printing to the caller or the entry point"
+      },
+      {
+        "name": "computed value",
+        "meaning": "computed value"
+      }
+    ],
+    "reason": "Return the value the function computes (the text, structure or status the intent's expected output names) and leave printing to the caller or the entry point.",
+    "row": "demos/demo06.py::main::26",
+    "file": "demos/demo06.py",
+    "replace_span": "demos/demo06.py:L26-L39",
+    "digest": "553122fef6",
+    "selected_role": "solution_NAI-098",
+    "applies_cleanly": null,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/ansitowin32.py:L49-L59\n+++ colorama/ansitowin32.py:L49-L59\n@@ -5,7 +5,7 @@\n                 return True\n         try:\n             stream_isatty = stream.isatty\n-        except AttributeError:\n-            return False\n+        except AttributeError as err:\n+            raise RuntimeError(\"isatty failed\") from err\n         else:\n             return stream_isatty()\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "fallback `return False` (line 9) in an except block replaced by `raise RuntimeError('isatty failed') from err` \u2014 the error is named at this level and chained (NAI-078)",
+    "row": "colorama/ansitowin32.py::isatty::49",
+    "file": "colorama/ansitowin32.py",
+    "replace_span": "colorama/ansitowin32.py:L49-L59",
+    "digest": "8cab17f075",
+    "selected_role": "fallback_return_fix:raise_named",
+    "applies_cleanly": true,
+    "error": null
+  },
+  {
+    "kind": "diff",
+    "diff": "--- colorama/ansitowin32.py:L61-L69\n+++ colorama/ansitowin32.py:L61-L69\n@@ -6,4 +6,4 @@\n         # AttributeError in the case that the stream doesn't support being closed\n         # ValueError for the case that the stream has already been detached when atexit runs\n         except (AttributeError, ValueError):\n-            return True\n+            raise\n",
+    "shape": null,
+    "placeholders": [],
+    "reason": "fallback `return True` (line 9) in an except block replaced by a bare `raise` \u2014 the error propagates instead of a dummy value (NAI-078)",
+    "row": "colorama/ansitowin32.py::closed::62",
+    "file": "colorama/ansitowin32.py",
+    "replace_span": "colorama/ansitowin32.py:L61-L69",
+    "digest": "3ba74f0b6d",
+    "selected_role": "fallback_return_fix:re_raise",
+    "applies_cleanly": true,
+    "error": null
+  }
+]

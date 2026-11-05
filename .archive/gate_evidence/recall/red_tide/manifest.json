@@ -1,0 +1,49 @@
+{
+ "target": "/Users/dev/Desktop/red_tide",
+ "built": "2026-09-10",
+ "by": "set 4b-21 (run 75)",
+ "base": "anagram tree + colorama/repair_plant_quietly.py",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_quietly.py",
+   "line": 10,
+   "function": "hushed",
+   "family": "NAI-017",
+   "accept_any_of": [
+    "NAI-017"
+   ],
+   "what": "a `with suppress(Exception):` around a call — the swallow form that carries NAI-017 alone (set 4b-21, no-fix-by-design)",
+   "no_fix_by_design": true
+  },
+  {
+   "file": "colorama/repair_plant_quietly.py",
+   "line": 18,
+   "function": "flag",
+   "family": "NAI-019",
+   "accept_any_of": [
+    "NAI-019"
+   ],
+   "what": "a branching function whose every return is the same literal (set 4b-21, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_quietly.py",
+   "line": 24,
+   "function": "test_render",
+   "family": "NAI-020",
+   "accept_any_of": [
+    "NAI-020"
+   ],
+   "what": "a test that asserts nothing (not the test species, so the id reaches the row; the row also carries NAI-022) (set 4b-21, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_quietly.py",
+   "line": 28,
+   "function": "report",
+   "family": "NAI-021",
+   "accept_any_of": [
+    "NAI-021"
+   ],
+   "what": "a loop that only prints (the row also carries NAI-098) (set 4b-21, no-fix-by-design)"
+  }
+ ]
+}

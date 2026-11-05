@@ -1,0 +1,81 @@
+[launch] control: tracer=lsof pmc=0 trackers=io,mypy
+=== CodeRadar launch ===
+Target: /Users/dev/Desktop/ceiling_unlimited
+[step 0] COPY-FIRST: /Users/dev/Desktop/ceiling_unlimited -> /Users/dev/CodeRadar_snapshots/ceiling_unlimited_20260917_025231
+[step 0] snapshot verified: 79 files, file lists identical
+[pre-flight] stopping stale daemons (this tree's only)
+[pre-flight] clearing ALL engine state in system_scripts/ (every scan is a brand-new scan)
+[pre-flight] cleared: runtime_coverage.json running.lock runner_info.json .monitor_state.json daemon_log/change_tags_state.json
+[launch] control written: poll_config.json.launch_control = {"tracer": "lsof", "pmc": false, "trackers": ["io", "mypy"], "chosen_at": "2026-09-17T07:52:32.681514+00:00"}
+[pre-flight] clearing engine bytecode cache system_scripts/.cr_pycache/
+[pre-flight] pruning per-run gearbox logs older than the previous run
+[pre-flight] per-run logs: pruned 3, kept 4 (previous run)
+[pre-flight] archiving per-repo-id artifacts from other targets
+[pre-flight] archived cb_writes_2763b1424f94.json -> .archive/cb_writes_2763b1424f94.json
+[pre-flight] archived intent_2763b1424f94.json -> .archive/intent_2763b1424f94.json
+[pre-flight] archived whitelist_2763b1424f94.json -> .archive/whitelist_2763b1424f94.json
+[pre-flight] port 8082: free
+[health check] running health_check.py (steps 1-18) — aborts on failure
+[health check] HEALTH CHECK — Steps 1-20
+[health check] HEALTH CHECK: ✓ PASSED — All measured steps ready
+[health check] PASS — report: /Users/dev/Desktop/CODE_RADAR_REFURBISH_copy2/.archive/health/health_20260917_025232.txt
+[whitelist] running detritus scan (pre-daemon stage, seam S1)
+Detected 11 circular import chain(s)
+Detected 11 circular import chain(s)
+[intent file] intent_4fd707688a44.json: statement none · facts by source {'changelog': 3, 'packaging': 2, 'readme': 2}
+[artifact scanner] proxies: package_marker 2, demo 1 (1 proxy + 0 test file(s) withdrawn from filter 1 — neither is detritus: scanned, withheld; tests tracked, Item 10) · stubs: none · intent sources: changelog, packaging, readme (7 facts) · 0 stub file(s) added to the whitelist
+[python-only] 74 .py file(s) = 66 live + 3 markers + 5 detritus + 0 artifact-class .py | 8 non-.py file(s) -> artifact by construction
+[filter 1 · detritus]  5 unreachable module(s)
+[filter 2 · artifacts] 8 file(s): ext:.rst 2, file:.gitignore 1, file:LICENSE.txt 1, non_python:noext 1, ext:.bat 1, ext:.sh 1, ext:.toml 1
+[whitelist] system_scripts/whitelist_4fd707688a44.json written: 13 entries (66 live, 3 package markers)
+[launch] exec gearbox
+[gearbox 02:53:46] target=/Users/dev/Desktop/ceiling_unlimited  repo_id=4fd707688a44  python=/Users/dev/Desktop/CODE_RADAR_REFURBISH_copy2/.venv_new/bin/python
+[gearbox 02:53:46] CADENCE TABLE (FIX_46) — one turn 2.5s / 8 slots of 0.3125s, 4 blades (circuit=0, noai_validator=1, cheatsheets=2, dashboard=3)
+[gearbox 02:53:46] daemon          duty                   period  phase  slot       at  touches
+[gearbox 02:53:46] circuit         graph_scan            1c/2.5s      0     0  0.0000s  circuit_state.json,.monitor_state.json
+[gearbox 02:53:46] circuit         dir_rescan            by size      -     0  0.0000s  target .py
+[gearbox 02:53:46] circuit         crc                    8c/20s      0     0  0.0000s  baseline.json
+[gearbox 02:53:46] circuit         io                     8c/20s      2     0  0.0000s  -
+[gearbox 02:53:46] circuit         mypy                   8c/20s      4     0  0.0000s  .mypy_cache
+[gearbox 02:53:46] circuit         vulture                8c/20s      6     0  0.0000s  -
+[gearbox 02:53:46] noai_validator  validate              1c/2.5s      0     2  0.6250s  NOAI_VALIDATION_STATE.json,circuit_state.json
+[gearbox 02:53:46] cheatsheets     build                 1c/2.5s      0     4  1.2500s  BUILDER_STATE.json,.noai_state.json,NOAI_VALIDATION_STATE.json
+[gearbox 02:53:46] dashboard       circuit_interval      1c/2.5s      0     6  1.8750s  circuit_state.json,NOAI_VALIDATION_STATE.json,BUILDER_STATE.json,poll_config.json
+[gearbox 02:53:46] dashboard       verdict_interval      1c/2.5s      0     7  2.1875s  NOAI_VALIDATION_STATE.json,BUILDER_STATE.json
+[gearbox 02:53:46] dashboard       frame_stale_floor     by size      -     -        -  circuit_state.json
+[gearbox 02:53:46] gearbox         manifest_scan         12c/30s      0     1  0.3125s  target mirror files
+[gearbox 02:53:46] gearbox         stale_warn            12c/30s      6     5  1.5625s  circuit_state.json
+[gearbox 02:53:46]                 dir_rescan sizing                                    8 files/cycle, cap 240 cycles (600s)
+[gearbox 02:53:46]                 I-11 declared                                        dash frame-stale floor 10s · gearbox stale warn 30s — two questions, two rows, NOT unified (owner Q6)
+[gearbox 02:53:46] CADENCE CONFLICTS: none
+[gearbox 02:53:46] pre-flight sweep: target clean (no leftover mirror dotfiles)
+[gearbox 02:53:46] started circuit_daemon PID 80027 -> circuit_daemon_20260917_025346.log
+[gearbox 02:53:46] GATE [circuit READY/RUNNING] waiting (timeout 120s)...
+[gearbox 02:53:48] GATE [circuit READY/RUNNING] PASS in 1.5s
+[gearbox 02:53:48] GATE [circuit WIRING] PASS — every node connected
+[gearbox 02:53:48] started noai_validator PID 80046 -> noai_validator_20260917_025346.log
+[gearbox 02:53:48] started cheatsheets PID 80047 -> cheatsheets_20260917_025346.log
+[gearbox 02:53:48] started dashboard PID 80048 -> dashboard_20260917_025346.log
+[gearbox 02:53:48] NOAI gate timeout scaled to 258s (69 live .py files per the whitelist stage)
+[gearbox 02:53:48] GATE [NOAI MONITORING] waiting (timeout 258s)...
+[gearbox 02:53:53] GATE [NOAI MONITORING] PASS in 5.7s
+[gearbox 02:53:54] CHEATSHEETS gate timeout scaled to 388s (164 failed rows per the validator state)
+[gearbox 02:53:54] GATE [CHEATSHEETS MONITORING] waiting (timeout 388s)...
+[gearbox 02:53:55] GATE [CHEATSHEETS MONITORING] PASS in 1.0s
+[gearbox 02:53:55] GATE [dashboard HTTP 200] waiting (timeout 30s)...
+[gearbox 02:53:55] GATE [dashboard HTTP 200] PASS in 0.0s
+[gearbox 02:53:55] ALL GATES PASSED — stack is up. Dashboard: http://127.0.0.1:8082
+[gearbox 02:53:55] gate_states = {"circuit_ready": true, "noai_monitoring": true, "builder_monitoring": true, "dashboard_up": true}
+[gearbox 02:54:25] manifest: recorded 10 new mirror write(s) (10 total) -> cb_writes_4fd707688a44.json
+[gearbox 03:00:49] received signal 15 — shutting down
+[gearbox 03:00:49] === TEARDOWN ===
+[gearbox 03:00:49] tester report: 164 infractions, 156 solutions, 0 confirmed; confirmed_fraction=null (no tester ran); 0 channel line(s) copied -> .archive/runs/ceiling_unlimited/tester_report.json
+[gearbox 03:00:49]   circuit_daemon: stopped (SIGTERM), exit code 0
+[gearbox 03:00:49]   noai_validator: stopped (SIGTERM), exit code 0
+[gearbox 03:00:49]   cheatsheets: stopped (SIGTERM), exit code 0
+[gearbox 03:00:49]   dashboard: stopped (SIGTERM), exit code 0
+[gearbox 03:00:49] mirror sweep: deleted 10 CodeRadar dotfile(s) from target
+[gearbox 03:00:49] RESIDUE CHECK: zero CodeRadar mirror files remain in target
+[gearbox 03:00:49] manifest -> cb_writes_4fd707688a44.json (entries cleared, teardown_verified=True)
+[gearbox 03:00:49] restart events -> gearbox_events.json removed (0 restart(s) this run)
+[gearbox 03:00:49] === TEARDOWN COMPLETE ===

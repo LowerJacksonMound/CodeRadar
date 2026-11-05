@@ -1,0 +1,58 @@
+{
+ "target": "/Users/dev/Desktop/different_strings",
+ "built": "2026-09-10",
+ "by": "set 4b-09 (run 63)",
+ "base": "entre_nous tree + colorama/repair_plant_stale.py",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_stale.py",
+   "line": 12,
+   "function": "__init__",
+   "family": "NAI-152",
+   "accept_any_of": [
+    "NAI-152"
+   ],
+   "what": "`self.items.append(...)` in __init__ with `items` never assigned \u2014 a class-level list (set 4b-09, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_stale.py",
+   "line": 16,
+   "function": "read_file",
+   "family": "NAI-158",
+   "accept_any_of": [
+    "NAI-158"
+   ],
+   "what": "`open(path)` with a boundary-named parameter and no validation (set 4b-09, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_stale.py",
+   "line": 21,
+   "function": "warn_twice",
+   "family": "NAI-159",
+   "accept_any_of": [
+    "NAI-159"
+   ],
+   "what": "`logging.warn(...)` twice \u2014 rewritten live by deprecated_alias_fix to logging.warning (set 4b-09)"
+  },
+  {
+   "file": "colorama/repair_plant_stale.py",
+   "line": 25,
+   "function": "run_query",
+   "family": "NAI-160",
+   "accept_any_of": [
+    "NAI-160"
+   ],
+   "what": "`cursor.execute(statement)` with no validation (set 4b-09, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_stale.py",
+   "line": 30,
+   "function": "fetch",
+   "family": "NAI-161",
+   "accept_any_of": [
+    "NAI-161"
+   ],
+   "what": "`requests.get(address)` with no timeout (set 4b-09, no-fix-by-design)"
+  }
+ ]
+}

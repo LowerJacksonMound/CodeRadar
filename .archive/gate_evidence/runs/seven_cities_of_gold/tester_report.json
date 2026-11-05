@@ -1,0 +1,586 @@
+{
+  "target": "/Users/dev/Desktop/seven_cities_of_gold",
+  "repo_id": "b8beb28d80c2",
+  "run_started": "2026-09-28T21:46:11.026503+00:00",
+  "run_ended": "2026-09-28T21:46:58.426828+00:00",
+  "builder_cycles": 4,
+  "infractions": 47,
+  "solutions": 2,
+  "confirmed": 0,
+  "status": "MEASURED",
+  "confirmed_fraction": 0.0,
+  "tester_ran": true,
+  "per_infraction": [
+    {
+      "file": "six.py",
+      "function": "__len__",
+      "line": 62,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "_add_doc",
+      "line": 80,
+      "rule_ids": [
+        "NAI-104"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "_import_module",
+      "line": 85,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "__get__",
+      "line": 96,
+      "rule_ids": [
+        "NAI-003",
+        "NAI-078"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "_resolve",
+      "line": 119,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "_resolve",
+      "line": 164,
+      "rule_ids": [
+        "RCA-001"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "_get_module",
+      "line": 186,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "find_module",
+      "line": 189,
+      "rule_ids": [
+        "NAI-003",
+        "NAI-030"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "find_spec",
+      "line": 194,
+      "rule_ids": [
+        "NAI-003",
+        "NAI-030"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "load_module",
+      "line": 205,
+      "rule_ids": [
+        "NAI-078"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "is_package",
+      "line": 219,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "get_code",
+      "line": 228,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "create_module",
+      "line": 236,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "exec_module",
+      "line": 239,
+      "rule_ids": [
+        "NAI-004",
+        "NAI-120"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "__dir__",
+      "line": 508,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "advance_iterator",
+      "line": 552,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "get_unbound_function",
+      "line": 565,
+      "rule_ids": [
+        "NAI-016S"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "create_unbound_method",
+      "line": 570,
+      "rule_ids": [
+        "NAI-026S"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "get_unbound_function",
+      "line": 575,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "create_bound_method",
+      "line": 578,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "create_unbound_method",
+      "line": 581,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "next",
+      "line": 586,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "iterkeys",
+      "line": 603,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "itervalues",
+      "line": 606,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "iteritems",
+      "line": 609,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "iterlists",
+      "line": 612,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "iterkeys",
+      "line": 621,
+      "rule_ids": [
+        "NAI-159",
+        "NAI-230"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "itervalues",
+      "line": 624,
+      "rule_ids": [
+        "NAI-159",
+        "NAI-230"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "iteritems",
+      "line": 627,
+      "rule_ids": [
+        "NAI-159",
+        "NAI-230"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "iterlists",
+      "line": 630,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "b",
+      "line": 648,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "u",
+      "line": 651,
+      "rule_ids": [
+        "NAI-016S"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "b",
+      "line": 674,
+      "rule_ids": [
+        "NAI-016S"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "u",
+      "line": 678,
+      "rule_ids": [
+        "NAI-050",
+        "NAI-230"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "byte2int",
+      "line": 683,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "indexbytes",
+      "line": 686,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "assertCountEqual",
+      "line": 699,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "assertRaisesRegex",
+      "line": 703,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "assertRegex",
+      "line": 707,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "assertNotRegex",
+      "line": 711,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "exec_",
+      "line": 730,
+      "rule_ids": [
+        "NAI-127"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "raise_from",
+      "line": 758,
+      "rule_ids": [
+        "NAI-003"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "print_",
+      "line": 764,
+      "rule_ids": [
+        "NAI-050"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "_update_wrapper",
+      "line": 835,
+      "rule_ids": [
+        "NAI-021S"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "wraps",
+      "line": 851,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "__prepare__",
+      "line": 880,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "six.py",
+      "function": "add_metaclass",
+      "line": 885,
+      "rule_ids": [
+        "NAI-100"
+      ],
+      "digest": null,
+      "confirmed": false
+    }
+  ],
+  "return_channel_lines": 2,
+  "return_channel": "/Users/dev/Desktop/CODE_RADAR_REFURBISH_copy3/system_scripts/return_channel_b8beb28d80c2.jsonl",
+  "builder_state_sha256": "d6c493b5a126af30e8f4f0c286a20f592ec0e33d8785713f0678270a36ceba3b",
+  "confirmed_joined": 0,
+  "confirmed_from_ledger": 0,
+  "confirmed_ledger_rows": [],
+  "confirmed_ledger": "/Users/dev/Desktop/CODE_RADAR_REFURBISH_copy3/system_scripts/confirmed_ledger_b8beb28d80c2.jsonl",
+  "rule_outcomes": {
+    "MEASURED-NOTHING": {
+      "confirmed_for": 0,
+      "failed_against": {
+        "solution_NAI-120": 1,
+        "solution_RCA-001": 1
+      }
+    },
+    "NAI-004": {
+      "confirmed_for": 0,
+      "failed_against": {
+        "solution_NAI-120": 1
+      }
+    },
+    "NAI-084": {
+      "confirmed_for": 0,
+      "failed_against": {
+        "solution_NAI-120": 1,
+        "solution_RCA-001": 1
+      }
+    },
+    "NAI-086": {
+      "confirmed_for": 0,
+      "failed_against": {
+        "solution_RCA-001": 1
+      }
+    },
+    "NAI-114": {
+      "confirmed_for": 0,
+      "failed_against": {
+        "solution_RCA-001": 1
+      }
+    },
+    "NAI-120": {
+      "confirmed_for": 0,
+      "failed_against": {
+        "solution_NAI-120": 1
+      }
+    },
+    "NAI-121": {
+      "confirmed_for": 0,
+      "failed_against": {
+        "solution_NAI-120": 1
+      }
+    },
+    "NAI-183": {
+      "confirmed_for": 0,
+      "failed_against": {
+        "solution_RCA-001": 1
+      }
+    },
+    "NAI-185": {
+      "confirmed_for": 0,
+      "failed_against": {
+        "solution_NAI-120": 1,
+        "solution_RCA-001": 1
+      }
+    },
+    "NAI-229": {
+      "confirmed_for": 0,
+      "failed_against": {
+        "solution_NAI-120": 1,
+        "solution_RCA-001": 1
+      }
+    },
+    "NAI-230": {
+      "confirmed_for": 0,
+      "failed_against": {
+        "solution_NAI-120": 1
+      }
+    },
+    "RCA-001": {
+      "confirmed_for": 0,
+      "failed_against": {
+        "solution_RCA-001": 1
+      }
+    }
+  },
+  "solutions_live": 0,
+  "solutions_retired_confirmed": 0,
+  "solutions_withdrawn_failed": 2,
+  "infractions_retired_confirmed": 0,
+  "infractions_seen": 47,
+  "orphans": 0,
+  "orphans_channel": 0,
+  "unparsed": 0
+}

@@ -1,0 +1,111 @@
+cr_attach (run_proof.sh up launched): attached=True phase=MONITORING repo_id=0cb5ea90e0ac
+cr_status cycle=1 infractions={"total_functions": 355, "passed": 109, "failed": 163, "files_scanned": 64, "repairs": 153, "no_vetted_fix": 10, "whitelisted": 0, "withheld": 84, "withheld_gate": 1, "withheld_by_design": 0, "rule_outcomes": {}}
+  channel return_channel_0cb5ea90e0ac.jsonl · lease apply_lease_0cb5ea90e0ac.jsonl · ledger confirmed_ledger_0cb5ea90e0ac.jsonl
+
+5 rows in colorama/repair_plant_branches.py; taking 3: ['colorama/repair_plant_branches.py::guarded::7', 'colorama/repair_plant_branches.py::pick::18', 'colorama/repair_plant_branches.py::stamp::26']
+  suite [baseline, before any edit] exit=0 0.766s  '38 passed, 14 skipped in 0.06s'
+      baseline 38 passed True · 14 skipped True
+
+cr_apply on all three — each one leases, and each one after the first is RE-BASED
+  colorama/repair_plant_branches.py::guarded::7
+      span colorama/repair_plant_branches.py:L7-L11  live colorama/repair_plant_branches.py:L7-L11  rebased=False
+      digest dea465b4bd  variant unreachable_code_fix:drop_dead  clean=True  leased=True
+      the client wrote it: {"file": "colorama/repair_plant_branches.py", "span_live": "colorama/repair_plant_branches.py:L7-L11", "lines_out": 5, "lines_in": 4}
+  colorama/repair_plant_branches.py::pick::18
+      span colorama/repair_plant_branches.py:L18-L23  live colorama/repair_plant_branches.py:L17-L22  rebased=True
+      digest c40245ec59  variant redundant_else_fix  clean=True  leased=True
+      the client wrote it: {"file": "colorama/repair_plant_branches.py", "span_live": "colorama/repair_plant_branches.py:L17-L22", "lines_out": 6, "lines_in": 5}
+  colorama/repair_plant_branches.py::stamp::26
+      span colorama/repair_plant_branches.py:L26-L29  live colorama/repair_plant_branches.py:L24-L27  rebased=True
+      digest 9404d6a9f0  variant immediate_overwrite_fix:keep_second  clean=True  leased=True
+      the client wrote it: {"file": "colorama/repair_plant_branches.py", "span_live": "colorama/repair_plant_branches.py:L24-L27", "lines_out": 4, "lines_in": 3}
+
+3 lease record(s) in apply_lease_0cb5ea90e0ac.jsonl
+    colorama/repair_plant_branches.py::guarded::7        digest dea465b4bd variant unreachable_code_fix:drop_dead span colorama/repair_plant_branches.py:L7-L11 live colorama/repair_plant_branches.py:L7-L11
+    colorama/repair_plant_branches.py::pick::18          digest c40245ec59 variant redundant_else_fix span colorama/repair_plant_branches.py:L18-L23 live colorama/repair_plant_branches.py:L17-L22
+    colorama/repair_plant_branches.py::stamp::26         digest 9404d6a9f0 variant immediate_overwrite_fix:keep_second span colorama/repair_plant_branches.py:L26-L29 live colorama/repair_plant_branches.py:L24-L27
+  suite [after the three edits] exit=0 0.765s  '38 passed, 14 skipped in 0.06s'
+      baseline 38 passed True · 14 skipped True
+
+waiting 2 Builder cycle(s) from 1 — I-119's retirement window, waited out ON PURPOSE before a single outcome is reported
+  cycle 1 -> 2 after 601.6s
+  colorama/repair_plant_branches.py::guarded::7: same id False · digest dea465b4bd -> None
+  colorama/repair_plant_branches.py::pick::18: same id False · digest c40245ec59 -> None
+  colorama/repair_plant_branches.py::stamp::26: same id False · digest 9404d6a9f0 -> None
+
+cr_report_outcome for all three, AFTER the window
+  colorama/repair_plant_branches.py::guarded::7 -> confirmed
+      written=True resolved_by='lease' ledger_written=True error=None
+      line: {"digest": "dea465b4bd", "replace_span": "colorama/repair_plant_branches.py:L7-L11", "outcome": "confirmed", "failure_log": "suite unmoved from baseline", "tester": "coderadar-mcp", "timestamp": "2026-09-21T17:40:30.906949+00:00", "row_key": "colorama/repair_plant_branches.py::guarded::7", "rule_ids": ["NAI-002", "NAI-082", "NAI-083", "NAI-084", "NAI-114", "NAI-185", "NAI-186", "NAI-121", "NAI-140", "MEASURED-NOTHING", "NAI-229"], "variant": "unreachable_code_fix:drop_dead", "file": "colorama/repair_plant_branches.py", "function": "guarded"}
+  colorama/repair_plant_branches.py::pick::18 -> confirmed
+      written=True resolved_by='lease' ledger_written=True error=None
+      line: {"digest": "c40245ec59", "replace_span": "colorama/repair_plant_branches.py:L18-L23", "outcome": "confirmed", "failure_log": "suite unmoved from baseline", "tester": "coderadar-mcp", "timestamp": "2026-09-21T17:40:30.913887+00:00", "row_key": "colorama/repair_plant_branches.py::pick::18", "rule_ids": ["NAI-005", "NAI-082", "NAI-083", "NAI-084", "NAI-114", "NAI-185", "NAI-186", "NAI-121", "MEASURED-NOTHING", "NAI-229"], "variant": "redundant_else_fix", "file": "colorama/repair_plant_branches.py", "function": "pick"}
+  colorama/repair_plant_branches.py::stamp::26 -> failed
+      written=True resolved_by='lease' ledger_written=False error=None
+      line: {"digest": "9404d6a9f0", "replace_span": "colorama/repair_plant_branches.py:L26-L29", "outcome": "failed", "failure_log": "AssertionError: the repair did not preserve behaviour \u2014 reverted", "tester": "coderadar-mcp", "timestamp": "2026-09-21T17:40:30.919354+00:00", "row_key": "colorama/repair_plant_branches.py::stamp::26", "rule_ids": ["NAI-006", "NAI-082", "NAI-084", "NAI-114", "NAI-185", "NAI-121", "MEASURED-NOTHING", "NAI-229"], "variant": "immediate_overwrite_fix:keep_second", "file": "colorama/repair_plant_branches.py", "function": "stamp"}
+
+reverting the edit of the `failed` row colorama/repair_plant_branches.py::stamp::26 (I-125's shape)
+  {"row": "colorama/repair_plant_branches.py::stamp::26", "restored_from": "cr_row(...).before_code", "bytes": 0}
+  suite [after the failed edit was reverted] exit=0 0.801s  '38 passed, 14 skipped in 0.07s'
+      baseline 38 passed True · 14 skipped True
+
+waiting 2 Builder cycle(s) from 2 — two more cycles, so the Builder has polled the channel and re-decided before (vii) is asserted
+  cycle 2 -> 4 after 5.0s
+
+§C.6 (vii) — read back off the channel, the ledger and the mirror
+  channel lines 3 · ledger records 2
+    confirmed colorama/repair_plant_branches.py::guarded::7 digest dea465b4bd variant 'unreachable_code_fix:drop_dead' rules 11
+    confirmed colorama/repair_plant_branches.py::pick::18 digest c40245ec59 variant 'redundant_else_fix' rules 10
+    failed    colorama/repair_plant_branches.py::stamp::26 digest 9404d6a9f0 variant 'immediate_overwrite_fix:keep_second' rules 8
+  rule_outcomes: 13 rules · `?` in []
+  failed_against: {"MEASURED-NOTHING": {"immediate_overwrite_fix:keep_second": 1}, "NAI-006": {"immediate_overwrite_fix:keep_second": 1}, "NAI-082": {"immediate_overwrite_fix:keep_second": 1}, "NAI-084": {"immediate_overwrite_fix:keep_second": 1}, "NAI-114": {"immediate_overwrite_fix:keep_second": 1}, "NAI-121": {"immediate_overwrite_fix:keep_second": 1}, "NAI-185": {"immediate_overwrite_fix:keep_second": 1}, "NAI-229": {"immediate_overwrite_fix:keep_second": 1}}
+  (vii) so far: {
+ "every_report_written": true,
+ "every_report_says_how_it_resolved": true,
+ "resolved_by_values": [
+  "lease"
+ ],
+ "failed_against_without_question_mark": true,
+ "leases_written": true,
+ "at_least_one_rebase": true
+}
+
+cr_stop(expected_changes=[colorama/repair_plant_branches.py])
+  stopped              true
+  residue_clean        true
+  byte_identical       false
+  files_compared       77
+  client_edits         1
+  unexpected_changes   []
+  run_dir              "/Users/dev/Desktop/CODE_RADAR_REFURBISH_copy1/.archive/runs/force_ten_20260921_122634"
+  error                null
+  report_path              "/Users/dev/Desktop/CODE_RADAR_REFURBISH_copy1/.archive/runs/force_ten_20260921_122634/tester_report.json"
+  builder_cycles           4
+  infractions              160
+  solutions                150
+  confirmed                2
+  confirmed_from_ledger    2
+  confirmed_ledger_rows    [{"digest": "dea465b4bd", "replace_span": "colorama/repair_plant_branches.py:L7-L11", "rule_ids": ["NAI-002", "NAI-082", "NAI-083", "NAI-084", "NAI-114", "NAI-1
+  return_channel_lines     3
+  tester_ran               true
+  status                   "MEASURED"
+  orphans                  1
+  orphans_channel          3
+  unparsed                 0
+  finished                 false
+  error                    null
+
+(vii) FINAL: {
+ "every_report_written": true,
+ "every_report_says_how_it_resolved": true,
+ "resolved_by_values": [
+  "lease"
+ ],
+ "failed_against_without_question_mark": true,
+ "leases_written": true,
+ "at_least_one_rebase": true,
+ "orphans_channel_zero": false,
+ "orphans_zero": false,
+ "residue_clean": true,
+ "unexpected_changes_empty": true
+}

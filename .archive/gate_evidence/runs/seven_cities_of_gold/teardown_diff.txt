@@ -1,0 +1,5 @@
+0a1,4
+> f208cd6545ac3b83ab0f89df6430c04f ./.coderadar/.monitor_state.json
+> e27166ba04ec48771329a237e339b363 ./.coderadar/.noai_state.json
+> f208cd6545ac3b83ab0f89df6430c04f ./.coderadar/documentation/.monitor_state.json
+> e27166ba04ec48771329a237e339b363 ./.coderadar/documentation/.noai_state.json

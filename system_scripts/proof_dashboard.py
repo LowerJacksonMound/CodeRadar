@@ -3149,8 +3149,8 @@ def _noai_plain_lines(failures: list, withheld: list) -> list:
         out.append(html.Div("no counterfeit code found", style={'color': '#22c55e', 'fontSize': '9.5pt'}))
     for item in sorted(failures, key=lambda x: (x.get('file') or '', x.get('line') or 0)):
         raw = str(item.get('infraction') or item.get('failure_reason') or '')
-        rid = (_re.search(r"NAI-\d{3}", raw) or _re.search(r"NAI-\d{3}", str(item.get('rule_ids') or '')))
-        rid = rid.group(0) if rid else ''
+        rid_m = (_re.search(r"NAI-\d{3}", raw) or _re.search(r"NAI-\d{3}", str(item.get('rule_ids') or '')))
+        rid = rid_m.group(0) if rid_m else ''
         facts = _noai_plain_facts(raw[raw.find(rid):] if rid else raw)
         tmpl = _NOAI_PLAIN.get(rid)
         if tmpl:

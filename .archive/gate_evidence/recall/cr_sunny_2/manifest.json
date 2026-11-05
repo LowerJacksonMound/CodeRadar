@@ -1,0 +1,152 @@
+{
+ "target": "/Users/dev/Desktop/CODE_RADAR_REFURBISH/RUN_AGAINST_DIRS_recall_targets/cr_sunny_2",
+ "built": "2026-10-07",
+ "by": "owner (cr_sunny_2, 20 L1\u2013L5 plants, ANSWER_SHEET.md beside the frozen copy)",
+ "base": "guarded: the 14 plants caught as infractions on 2026-10-07. NOT guarded (known gaps): compare_scores (L5), miles_home (L5), cult_band (L5), is_open (L5), descent_rate (L5), stage_hit (L5) \u2014 four of them are NAI-238 review notes (context, never an infraction), the rest are misses.",
+ "planted_findings": [
+  {
+   "file": "the_gang_tends_bar.py",
+   "line": 8,
+   "function": "pour_round",
+   "family": "NAI-004",
+   "accept_any_of": [
+    "NAI-004"
+   ],
+   "what": "L1: correct is `return len(orders)` (ANSWER_SHEET.md)"
+  },
+  {
+   "file": "being_frank.py",
+   "line": 8,
+   "function": "count_schemes",
+   "family": "NAI-010",
+   "accept_any_of": [
+    "NAI-010"
+   ],
+   "what": "L1: correct is `return sum(stakes), not None` (ANSWER_SHEET.md)"
+  },
+  {
+   "file": "the_gang_recycles_their_trash.py",
+   "line": 8,
+   "function": "weigh_bin",
+   "family": "NAI-017",
+   "accept_any_of": [
+    "NAI-017"
+   ],
+   "what": "L1: correct is `empty bin is 0; do not swallow` (ANSWER_SHEET.md)"
+  },
+  {
+   "file": "the_gang_tries_desperately_to_win_an_award.py",
+   "line": 8,
+   "function": "judge_sketch",
+   "family": "NAI-004",
+   "accept_any_of": [
+    "NAI-004"
+   ],
+   "what": "L1: correct is `return f\"{name}-ok\"; test_judge_sketch has no assert` (ANSWER_SHEET.md)"
+  },
+  {
+   "file": "how_mac_got_fat.py",
+   "line": 8,
+   "function": "weigh_in",
+   "family": "NAI-010",
+   "accept_any_of": [
+    "NAI-010",
+    "NAI-009"
+   ],
+   "what": "L2: correct is `return 150 + eggs * 2 + months` (ANSWER_SHEET.md)"
+  },
+  {
+   "file": "wolf_cola.py",
+   "line": 10,
+   "function": "units_sold",
+   "family": "NAI-009",
+   "accept_any_of": [
+    "NAI-009"
+   ],
+   "what": "L2: correct is `return stores * cases, not SAMPLE_UNITS` (ANSWER_SHEET.md)"
+  },
+  {
+   "file": "the_gang_misses_the_boat.py",
+   "line": 17,
+   "function": "right_engine_online",
+   "family": "NAI-236",
+   "accept_any_of": [
+    "NAI-236"
+   ],
+   "what": "L3: correct is `fuel check, no early return on side == right` (ANSWER_SHEET.md)"
+  },
+  {
+   "file": "hero_or_hate_crime.py",
+   "line": 8,
+   "function": "review_bit",
+   "family": "NAI-036",
+   "accept_any_of": [
+    "NAI-036"
+   ],
+   "what": "L3: correct is `return len(text) <= limit; do not discard the check` (ANSWER_SHEET.md)"
+  },
+  {
+   "file": "the_gang_saves_the_day.py",
+   "line": 8,
+   "function": "civilian_count",
+   "family": "NAI-236",
+   "accept_any_of": [
+    "NAI-236",
+    "NAI-237"
+   ],
+   "what": "L4: correct is `return seen; no branch on n == 7` (ANSWER_SHEET.md)"
+  },
+  {
+   "file": "thunder_gun_express.py",
+   "line": 10,
+   "function": "box_office",
+   "family": "NAI-237",
+   "accept_any_of": [
+    "NAI-237"
+   ],
+   "what": "L4: correct is `return screens * tickets; no call counter` (ANSWER_SHEET.md)"
+  },
+  {
+   "file": "the_gang_dances_their_asses_off.py",
+   "line": 8,
+   "function": "hits_mark",
+   "family": "NAI-003",
+   "accept_any_of": [
+    "NAI-003",
+    "NAI-102"
+   ],
+   "what": "L5: correct is `compare x to mark_x` (ANSWER_SHEET.md)"
+  },
+  {
+   "file": "frank_s_back_in_business.py",
+   "line": 8,
+   "function": "quarter_index",
+   "family": "NAI-016",
+   "accept_any_of": [
+    "NAI-016"
+   ],
+   "what": "L5: correct is `return quarter - 1` (ANSWER_SHEET.md)"
+  },
+  {
+   "file": "the_gang_broke_dee.py",
+   "line": 8,
+   "function": "apology_lands",
+   "family": "NAI-003",
+   "accept_any_of": [
+    "NAI-003"
+   ],
+   "what": "L5: correct is `speaker != target, not Dee-only` (ANSWER_SHEET.md)"
+  },
+  {
+   "file": "the_gang_goes_to_hell.py",
+   "line": 17,
+   "function": "hell_gate",
+   "family": "NAI-102",
+   "accept_any_of": [
+    "NAI-102"
+   ],
+   "what": "L5: correct is `0 <= y <= 40, not an 8px band` (ANSWER_SHEET.md)"
+  }
+ ],
+ "controls": []
+}

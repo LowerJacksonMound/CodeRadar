@@ -1,0 +1,59 @@
+{
+ "target": "/Users/dev/Desktop/scars",
+ "built": "2026-09-10",
+ "by": "set 4b-17 (run 71)",
+ "base": "war_paint tree + colorama/repair_plant_chains.py",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_chains.py",
+   "line": 8,
+   "function": "close_quietly",
+   "family": "NAI-143",
+   "accept_any_of": [
+    "NAI-143"
+   ],
+   "what": "a return inside finally (the row also carries NAI-173) (set 4b-17)"
+  },
+  {
+   "file": "colorama/repair_plant_chains.py",
+   "line": 15,
+   "function": "label_for",
+   "family": "NAI-145",
+   "accept_any_of": [
+    "NAI-145"
+   ],
+   "what": "a local read before its first assignment (set 4b-17)"
+  },
+  {
+   "file": "colorama/repair_plant_chains.py",
+   "line": 21,
+   "function": "stamp",
+   "family": "NAI-146",
+   "accept_any_of": [
+    "NAI-146",
+    "NAI-006"
+   ],
+   "what": "a local reassigned before its first value is read — NAI-146 is never emitted (uncalled); NAI-006 decides the row (set 4b-17)"
+  },
+  {
+   "file": "colorama/repair_plant_chains.py",
+   "line": 27,
+   "function": "total_width",
+   "family": "NAI-147",
+   "accept_any_of": [
+    "NAI-147"
+   ],
+   "what": "a local never read (the row also carries NAI-010 / NAI-031) (set 4b-17)"
+  },
+  {
+   "file": "colorama/repair_plant_chains.py",
+   "line": 33,
+   "function": "data_dir",
+   "family": "NAI-148",
+   "accept_any_of": [
+    "NAI-148"
+   ],
+   "what": "an imported name reassigned (the row also carries NAI-008, rewritten live by import_hoist_fix) (set 4b-17)"
+  }
+ ]
+}

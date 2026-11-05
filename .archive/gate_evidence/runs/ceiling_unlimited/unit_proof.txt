@@ -1,0 +1,21 @@
+
+Part 1 — I-03: normalized_fingerprint reads, never writes
+  params before ['alpha', 'beta'] -> after ['alpha', 'beta']
+  fingerprint 16ffb23f8597c6bf…
+
+Part 2 — FIX_47: the split-fake fact as evidence into the Ranker
+  helper   load_table  passed=False  NAI-003 (line 5): func_name=load_table, unused_params=['name
+  PLANT    read_config passed=False  layer=ValidationLayer.AI_FAKE_DETECTOR  source='ranker'
+           token: {'tag': 'RCA-001', 'line': 10, 'description': "Calls failed function 'load_table' without forwarding params ['path', 'strict']", 'callee': 'load_table', 'magnitude': 1}
+           reason: RCA-001 (line 10): Calls failed function 'load_table' without forwarding params ['path', 'strict']
+  CONTROL  describe    passed=True  RCA-001 tokens=0
+
+Part 3 — I-53: a ps-proven runner is scoped to the target by cwd
+  same command line, cwd under the target : [(51, 'ps', 'tests/test_ansi.py')]
+  same command line, cwd another tree     : []
+  same command line, cwd unreadable       : []
+
+Part 4 — I-55: the wrapper's pytest leaves no cache in the target
+  wrapper -m pytest exit 0; files added to the target: none
+
+FIX_47 + I-53 + I-55 unit proof: PASS

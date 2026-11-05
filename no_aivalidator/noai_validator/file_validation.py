@@ -625,7 +625,7 @@ async def _validate_file_from_ast(
     # holds, docstring excluded. A table of one-line conversions (`return x * 25.4`) shares a fingerprint by nature;
     # the disposition table's context row reads this fact, the rule keeps firing (ranker decides FPs, 09-30)
     _stmts = {f"{n.name}@{n.lineno}": len([b for b in n.body if not (isinstance(b, ast.Expr) and isinstance(
-        getattr(b, 'value', None), ast.Constant) and isinstance(b.value.value, str))])
+        b.value, ast.Constant) and isinstance(b.value.value, str))])
               for n in ast.walk(tree) if isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef))}
     for _o in _obs230.values():
         _o["body_statements"] = max(_stmts.get(m, 0) for m in _o.get("group") or [])

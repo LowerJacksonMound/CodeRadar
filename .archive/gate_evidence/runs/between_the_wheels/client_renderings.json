@@ -1,0 +1,54 @@
+{
+  "colorama/repair_plant_meaning.py::calculate_total::8": {
+    "after": "def calculate_total(items, tax):\n    return sum(items) * (1 + tax)\n",
+    "rationale": "shape `def calculate_x(a, b): return <expression over a and b>`. `<expression over a and b>` = `sum(items) * (1 + tax)`: the row's fix says the disconnected parameter must reach the result, and the planted `tax = tax + 1` (a rebinding nothing reads) names `tax` as a RATE, not an amount — so the subtotal is multiplied by `1 + tax`. The dead rebinding goes with it."
+  },
+  "colorama/repair_plant_meaning.py::calculate_rate::13": {
+    "after": "RATE = 42\n\n\ndef calculate_rate(amount):\n    return amount * RATE\n",
+    "rationale": "shape `RATE = <constant>\\n\\ndef calculate_x(a):\\n    return a * RATE`. `<constant>` = 42, the magic number the body returned; the fix says a constant genuinely part of the formula becomes a named module constant and the result is computed from the parameter, so `amount * RATE`."
+  },
+  "colorama/repair_plant_meaning.py::add_pair::18": {
+    "after": "def add_pair(a, b):\n    \"\"\"Add two numbers.\"\"\"\n    return a + b\n",
+    "rationale": "shape `def add(a, b): \"\"\"Add two numbers.\"\"\" return a + b` — fully determined. The fix rules between the docstring and the code: the docstring stays, the `+ 1` offset goes (no intent fact names an offset)."
+  },
+  "colorama/repair_plant_meaning.py::is_positive::23": {
+    "after": "def is_positive(n):\n    return n > 0\n",
+    "rationale": "shape `def is_positive(x): return x > 0`. The name states the condition, so nothing is under-determined; the inverted branch (`n <= 0 -> True`) collapses to the predicate. Parameter kept as `n`, the file's own name."
+  },
+  "colorama/repair_plant_names.py::count_rows::19": {
+    "after": "def count_rows(rows):\n    return len(rows)\n",
+    "rationale": "shape `def count_<what>(items): return sum(1 for item in items if <condition(item)>)`. The name promises the count of the rows themselves, so `<condition(item)>` is empty — and the fix names `len(...)` as an allowed rendering of the same count. `int(bool(rows))` answered 0 or 1 for any input."
+  },
+  "colorama/repair_plant_foreign.py::item_count::18": {
+    "after": "def item_count(items):\n    return len(list(items))\n",
+    "rationale": "shape `def get_item_count(items): return len(items)`. The `_count` suffix promises an int computed from the input; the body's own `items = list(items)` says the parameter may be an iterator, so the list() survives inside the len()."
+  },
+  "colorama/repair_plant_foreign.py::add_entry::23": {
+    "after": "def add_entry(entries, entry):\n    entries.append(entry)\n    return len(entries)\n",
+    "rationale": "shape `def add_item(self, item): self.items.append(item); return self.items`. The verb decides: `add_*` must call the adding method, so `.remove` becomes `.append`. The existing `return len(entries)` is honest about what it returns and stays."
+  },
+  "colorama/repair_plant_hr.py::level::8": {
+    "after": "    @property\n    def level(self):\n        return self._level\n",
+    "rationale": "shape `@property def x(self): return self._x` — the placeholder `x` is the property's own name, `level`, so the backing attribute is `self._level`. The `print` was the whole body; a property that prints and returns None does not answer its role."
+  },
+  "colorama/repair_plant_hr.py::level::12": {
+    "after": "    @level.setter\n    def level(self, value):\n        self._level = value\n",
+    "rationale": "shape `@x.setter def x(self, value): self._x = value`. `x` = `level`; the setter had no `value` parameter at all (a TypeError on every assignment), so the parameter is added and assigned to the same `_level` the getter above now reads — the two renderings are one contract."
+  },
+  "colorama/repair_plant_roles.py::get_width::23": {
+    "after": "    def get_width(self):\n        return self.width\n",
+    "rationale": "shape `def get_<thing>(self): return self._<thing>`. `<thing>` = `width`, and the backing attribute this class actually keeps is `self.width` (set in `__init__`), not `self._width` — the shape's underscore is its example, the fix's words are 'read it from self and return it'. The dropped `self.refresh()` is `self.width = self.width`, a self-assignment that changes nothing, so the return is the whole behaviour."
+  },
+  "colorama/repair_plant_roles.py::is_ready::34": {
+    "after": "def is_ready(flag) -> bool:\n    return bool(flag)\n",
+    "rationale": "shape `def is_<what>(...) -> bool: return <predicate>`. The fix offers two readings — annotate `-> bool` and return a bool, or rename to what it returns; the name `is_ready` is the honest one, so the annotation moves from `int` to `bool` and `1 if flag else 0` becomes the predicate `bool(flag)`."
+  },
+  "colorama/repair_plant_keys.py::widths::7": {
+    "after": "def widths(items):\n    length = len(items)\n    return length + 1\n",
+    "rationale": "shape `<domain_name> = <value>   # was: list = ... / id = ... / len = ...`. `<domain_name>` = `length`, one of the four names the fix itself offers. The local `len` made `len` local for the whole function, so `count = len(items)` on the line above raised UnboundLocalError; with the rename the builtin is reachable again. `count` and `len` held the same number, so the two bindings collapse into the one renamed local and the return reads it."
+  },
+  "colorama/repair_plant_ops.py::check::20": {
+    "after": "def check(a, b):\n    return a + b\n",
+    "rationale": "shape `<delete `x = x`> / # or / result = <expr> / # or / if <compare>: ...` — three readings, and the surrounding code picks one: `a == b` is a compare whose value nothing reads, and the function's only terminal already returns `a + b`, so no name wants the compare's value and no branch wants its condition. The first reading applies: delete the discarded statement."
+  }
+}

@@ -1,0 +1,1408 @@
+{
+ "phase": "MONITORING",
+ "detail": "cycle 4: 189 findings, 126 with fix, no fix 63 (no_generator 1, declined 50, ranker_none 12), 0 whitelisted; tester confirmed 0 of 126 solutions \u2014 1.0s",
+ "cycle": 4,
+ "target": "/Users/dev/CodeRadar_snapshots/secret_touch_20260921_150336",
+ "repo_id": "480405eb45ce",
+ "gates": {
+  "all_passed": false,
+  "seconds": 0,
+  "gates": []
+ },
+ "band": {
+  "cadence": {
+   "cycle": 11,
+   "scripts": 54,
+   "rescanned": 37,
+   "reused": 17,
+   "viewed_dirs": [
+    "."
+   ]
+  },
+  "restarts": [],
+  "runners": {
+   "status": "MEASURED",
+   "presence": {
+    "pytest": {
+     "files": [
+      "tests/conftest.py",
+      "tests/test_arguments.py",
+      "tests/test_basic.py",
+      "tests/test_chain.py",
+      "tests/test_command_decorators.py",
+      "tests/test_commands.py",
+      "tests/test_compat.py",
+      "tests/test_context.py",
+      "tests/test_defaults.py",
+      "tests/test_deprecations.py",
+      "tests/test_formatting.py",
+      "tests/test_info_dict.py",
+      "tests/test_options.py",
+      "tests/test_parser.py",
+      "tests/test_shell_completion.py",
+      "tests/test_stream_lifecycle.py",
+      "tests/test_termui.py",
+      "tests/test_testing.py",
+      "tests/test_types.py",
+      "tests/test_utils/test__detect_program_name.py",
+      "tests/test_utils/test_echo.py",
+      "tests/test_utils/test_echo_via_pager.py",
+      "tests/test_utils/test_make_default_short_help.py",
+      "tests/test_utils/test_open_file.py",
+      "tests/test_utils/test_prompt.py",
+      "tests/test_utils/test_style.py"
+     ],
+     "evidence": [
+      {
+       "file": "tests/conftest.py",
+       "line": 1,
+       "kind": "import"
+      },
+      {
+       "file": "tests/conftest.py",
+       "line": 6,
+       "kind": "fixture"
+      },
+      {
+       "file": "tests/conftest.py",
+       "line": 1,
+       "kind": "conftest"
+      },
+      {
+       "file": "tests/test_arguments.py",
+       "line": 4,
+       "kind": "import"
+      },
+      {
+       "file": "tests/test_arguments.py",
+       "line": 37,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_arguments.py",
+       "line": 170,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_arguments.py",
+       "line": 245,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_arguments.py",
+       "line": 350,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_arguments.py",
+       "line": 376,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_arguments.py",
+       "line": 406,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_arguments.py",
+       "line": 410,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_arguments.py",
+       "line": 420,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_arguments.py",
+       "line": 489,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_arguments.py",
+       "line": 533,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_arguments.py",
+       "line": 686,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_arguments.py",
+       "line": 706,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_basic.py",
+       "line": 6,
+       "kind": "import"
+      },
+      {
+       "file": "tests/test_basic.py",
+       "line": 31,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_basic.py",
+       "line": 191,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_basic.py",
+       "line": 216,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_basic.py",
+       "line": 239,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_basic.py",
+       "line": 267,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_basic.py",
+       "line": 290,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_basic.py",
+       "line": 317,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_basic.py",
+       "line": 340,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_basic.py",
+       "line": 360,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_basic.py",
+       "line": 942,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_chain.py",
+       "line": 3,
+       "kind": "import"
+      },
+      {
+       "file": "tests/test_chain.py",
+       "line": 37,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_chain.py",
+       "line": 88,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_chain.py",
+       "line": 127,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_chain.py",
+       "line": 221,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_command_decorators.py",
+       "line": 1,
+       "kind": "import"
+      },
+      {
+       "file": "tests/test_command_decorators.py",
+       "line": 76,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_commands.py",
+       "line": 3,
+       "kind": "import"
+      },
+      {
+       "file": "tests/test_commands.py",
+       "line": 120,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_commands.py",
+       "line": 231,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_commands.py",
+       "line": 302,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_commands.py",
+       "line": 359,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_commands.py",
+       "line": 422,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_commands.py",
+       "line": 557,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_commands.py",
+       "line": 558,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_commands.py",
+       "line": 571,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_commands.py",
+       "line": 572,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_commands.py",
+       "line": 587,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_commands.py",
+       "line": 659,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_commands.py",
+       "line": 677,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_compat.py",
+       "line": 6,
+       "kind": "import"
+      },
+      {
+       "file": "tests/test_compat.py",
+       "line": 85,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_compat.py",
+       "line": 89,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_compat.py",
+       "line": 97,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_compat.py",
+       "line": 124,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_compat.py",
+       "line": 132,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_compat.py",
+       "line": 133,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_compat.py",
+       "line": 142,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_compat.py",
+       "line": 183,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_compat.py",
+       "line": 202,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_compat.py",
+       "line": 224,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_compat.py",
+       "line": 242,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_compat.py",
+       "line": 251,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_context.py",
+       "line": 6,
+       "kind": "import"
+      },
+      {
+       "file": "tests/test_context.py",
+       "line": 380,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_context.py",
+       "line": 730,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_defaults.py",
+       "line": 3,
+       "kind": "import"
+      },
+      {
+       "file": "tests/test_defaults.py",
+       "line": 11,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_defaults.py",
+       "line": 170,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_defaults.py",
+       "line": 234,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_defaults.py",
+       "line": 472,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_defaults.py",
+       "line": 510,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_deprecations.py",
+       "line": 3,
+       "kind": "import"
+      },
+      {
+       "file": "tests/test_deprecations.py",
+       "line": 12,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_deprecations.py",
+       "line": 53,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_formatting.py",
+       "line": 1,
+       "kind": "import"
+      },
+      {
+       "file": "tests/test_formatting.py",
+       "line": 252,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_formatting.py",
+       "line": 439,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_formatting.py",
+       "line": 520,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_formatting.py",
+       "line": 606,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_info_dict.py",
+       "line": 1,
+       "kind": "import"
+      },
+      {
+       "file": "tests/test_info_dict.py",
+       "line": 95,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_info_dict.py",
+       "line": 217,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_info_dict.py",
+       "line": 279,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 12,
+       "kind": "import"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 47,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 61,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 65,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 75,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 150,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 161,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 192,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 261,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 409,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 457,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 533,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 680,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 858,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 1041,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 1105,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 1106,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 1180,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 1214,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 1249,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 1301,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 1341,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 1364,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 1430,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 1542,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 1564,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 1629,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 1729,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 1754,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 1811,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 1872,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 1927,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 1972,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 1973,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 2093,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 2197,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 2333,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 2440,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 2566,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 2598,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 2853,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 2887,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 2912,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 2974,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 3253,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 3363,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 3386,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 3450,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_options.py",
+       "line": 3511,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_parser.py",
+       "line": 1,
+       "kind": "import"
+      },
+      {
+       "file": "tests/test_parser.py",
+       "line": 8,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_shell_completion.py",
+       "line": 6,
+       "kind": "import"
+      },
+      {
+       "file": "tests/test_shell_completion.py",
+       "line": 49,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_shell_completion.py",
+       "line": 192,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_shell_completion.py",
+       "line": 342,
+       "kind": "fixture"
+      },
+      {
+       "file": "tests/test_shell_completion.py",
+       "line": 349,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_shell_completion.py",
+       "line": 350,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_shell_completion.py",
+       "line": 368,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_shell_completion.py",
+       "line": 386,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_shell_completion.py",
+       "line": 408,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_shell_completion.py",
+       "line": 458,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_shell_completion.py",
+       "line": 481,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_shell_completion.py",
+       "line": 496,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_shell_completion.py",
+       "line": 506,
+       "kind": "fixture"
+      },
+      {
+       "file": "tests/test_shell_completion.py",
+       "line": 515,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_shell_completion.py",
+       "line": 535,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_shell_completion.py",
+       "line": 561,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_shell_completion.py",
+       "line": 577,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_stream_lifecycle.py",
+       "line": 49,
+       "kind": "import"
+      },
+      {
+       "file": "tests/test_stream_lifecycle.py",
+       "line": 493,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_stream_lifecycle.py",
+       "line": 494,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_stream_lifecycle.py",
+       "line": 510,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_stream_lifecycle.py",
+       "line": 511,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_stream_lifecycle.py",
+       "line": 526,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_stream_lifecycle.py",
+       "line": 527,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 15,
+       "kind": "import"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 112,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 113,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 143,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 149,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 155,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 172,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 179,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 193,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 216,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 282,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 302,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 303,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 387,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 388,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 389,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 397,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 400,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 412,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 415,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 424,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 430,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 451,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 452,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 464,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 569,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 570,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 620,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 710,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 714,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 752,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 756,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 777,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 778,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 806,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 842,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 1063,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 1198,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 1199,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 1222,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 1223,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 1245,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 1261,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 1317,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 1336,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 1368,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 1397,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 1459,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 1672,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 1821,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_testing.py",
+       "line": 8,
+       "kind": "import"
+      },
+      {
+       "file": "tests/test_testing.py",
+       "line": 386,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_testing.py",
+       "line": 443,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_testing.py",
+       "line": 451,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_testing.py",
+       "line": 629,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_testing.py",
+       "line": 808,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_testing.py",
+       "line": 809,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_types.py",
+       "line": 9,
+       "kind": "import"
+      },
+      {
+       "file": "tests/test_types.py",
+       "line": 15,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_types.py",
+       "line": 38,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_types.py",
+       "line": 57,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_types.py",
+       "line": 87,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_types.py",
+       "line": 111,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_types.py",
+       "line": 167,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_types.py",
+       "line": 204,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_types.py",
+       "line": 264,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_types.py",
+       "line": 297,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_utils/test__detect_program_name.py",
+       "line": 3,
+       "kind": "import"
+      },
+      {
+       "file": "tests/test_utils/test__detect_program_name.py",
+       "line": 15,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_utils/test_echo.py",
+       "line": 5,
+       "kind": "import"
+      },
+      {
+       "file": "tests/test_utils/test_echo.py",
+       "line": 91,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_utils/test_echo_via_pager.py",
+       "line": 9,
+       "kind": "import"
+      },
+      {
+       "file": "tests/test_utils/test_echo_via_pager.py",
+       "line": 55,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_utils/test_echo_via_pager.py",
+       "line": 56,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_utils/test_echo_via_pager.py",
+       "line": 59,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_utils/test_echo_via_pager.py",
+       "line": 193,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_utils/test_echo_via_pager.py",
+       "line": 228,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_utils/test_echo_via_pager.py",
+       "line": 229,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_utils/test_echo_via_pager.py",
+       "line": 230,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_utils/test_make_default_short_help.py",
+       "line": 1,
+       "kind": "import"
+      },
+      {
+       "file": "tests/test_utils/test_make_default_short_help.py",
+       "line": 6,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_utils/test_make_default_short_help.py",
+       "line": 23,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_utils/test_open_file.py",
+       "line": 5,
+       "kind": "import"
+      },
+      {
+       "file": "tests/test_utils/test_open_file.py",
+       "line": 83,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_utils/test_open_file.py",
+       "line": 84,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_utils/test_open_file.py",
+       "line": 100,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_utils/test_prompt.py",
+       "line": 4,
+       "kind": "import"
+      },
+      {
+       "file": "tests/test_utils/test_prompt.py",
+       "line": 43,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_utils/test_prompt.py",
+       "line": 60,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_utils/test_prompt.py",
+       "line": 61,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_utils/test_style.py",
+       "line": 1,
+       "kind": "import"
+      },
+      {
+       "file": "tests/test_utils/test_style.py",
+       "line": 6,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_utils/test_style.py",
+       "line": 81,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_utils/test_style.py",
+       "line": 82,
+       "kind": "mark"
+      },
+      {
+       "file": "tests/test_utils/test_style.py",
+       "line": 110,
+       "kind": "mark"
+      }
+     ]
+    },
+    "unittest": {
+     "files": [
+      "tests/test_arguments.py",
+      "tests/test_termui.py",
+      "tests/test_utils/test_echo_via_pager.py"
+     ],
+     "evidence": [
+      {
+       "file": "tests/test_arguments.py",
+       "line": 2,
+       "kind": "import"
+      },
+      {
+       "file": "tests/test_termui.py",
+       "line": 13,
+       "kind": "import"
+      },
+      {
+       "file": "tests/test_utils/test_echo_via_pager.py",
+       "line": 7,
+       "kind": "import"
+      }
+     ]
+    },
+    "config": [
+     {
+      "file": "pyproject.toml",
+      "kind": "pyproject[tool.pytest]"
+     }
+    ],
+    "scanned_at": "2026-09-21T16:05:46.480431"
+   },
+   "execution": {
+    "entries": [],
+    "sources": {
+     "wrapper": "MEASURED",
+     "ps": "MEASURED",
+     "kernel": "not run \u2014 tracer is lsof"
+    }
+   }
+  }
+ },
+ "health": {
+  "ok": true,
+  "url": "http://127.0.0.1:8053/health",
+  "status": "ok"
+ },
+ "summary": {
+  "broken_imports": 0,
+  "path_hacks": 72,
+  "mypy_errors": 1313,
+  "mypy_ran": true,
+  "mypy_rc": 1,
+  "mypy_files_checked": 54,
+  "sync_needs_review": 87,
+  "dead_code_items": 0,
+  "dead_code_actionable": 0,
+  "severed_links": 5,
+  "severed_by_repair": 5,
+  "finished": false,
+  "finished_reason": "not finished: counterfeit_failed=197, mypy_errors=1313, severed_links=5",
+  "finished_gates": [
+   "counterfeit_failed",
+   "mypy_errors",
+   "severed_links"
+  ],
+  "finished_inputs": {
+   "counterfeit_failed": 197,
+   "mypy_errors": 1313,
+   "severed_links": 5
+  },
+  "counterfeit_failed": 197
+ },
+ "infractions": {
+  "total_functions": 1768,
+  "passed": 400,
+  "failed": 197,
+  "files_scanned": 54,
+  "repairs": 126,
+  "no_vetted_fix": 63,
+  "whitelisted": 0,
+  "withheld": 1183,
+  "withheld_gate": 12,
+  "withheld_by_design": 0,
+  "rule_outcomes": {}
+ },
+ "error": null,
+ "rule_outcomes": {},
+ "severed_by_repair": 5,
+ "mypy_ran": true,
+ "mypy_rc": 1,
+ "mypy_files_checked": 54,
+ "finished": false,
+ "finished_reason": "not finished: counterfeit_failed=197, mypy_errors=1313, severed_links=5",
+ "finished_source": "mirror"
+}

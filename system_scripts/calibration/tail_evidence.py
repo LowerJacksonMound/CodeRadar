@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse, collections, json, sys
 from datetime import date
 from pathlib import Path
+from typing import Any
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from calib_common import ROOT, TABLE, load_table, table_dispositions, deciding_ids, recomputed_failed, load_dump, dump_libs
 
@@ -14,7 +15,7 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(); ap.add_argument("cal"); ap.add_argument("--rare-max", type=int, default=2); ap.add_argument("--apply", action="store_true")
     a = ap.parse_args(argv); cal = Path(a.cal).resolve(); table = load_table(); disp = table_dispositions(table)
     libs = [l for l in dump_libs(cal) if not (l.startswith("chets_shirt") or l == "mels_offer")]
-    P = collections.defaultdict(lambda: {"libs": set(), "anywhere": 0, "alone": 0, "in_tests": 0})
+    P: dict[str, dict[str, Any]] = collections.defaultdict(lambda: {"libs": set(), "anywhere": 0, "alone": 0, "in_tests": 0})
     for lib in libs:
         for r in load_dump(cal, lib)["rows"]:
             if r.get("species") == "test":
@@ -25,7 +26,7 @@ def main(argv=None) -> int:
             for i in dd:
                 P[i]["libs"].add(lib); P[i]["anywhere"] += 1
                 if len(dd) == 1: P[i]["alone"] += 1
-    rare, left, dormant = [], [], set(table.get("_dormant") or {})
+    rare: list[tuple[str, int, int, int]] = []; left: list[tuple[str, int, int, int]] = []; dormant = set(table.get("_dormant") or {})
     for rid, row in table["families"].items():
         if row["disposition"] != "deciding" or row.get("class") == "strict" or row["evidence"]["kind"] != "none (pre-calibration)" or rid in dormant: continue
         n = len(P[rid]["libs"])

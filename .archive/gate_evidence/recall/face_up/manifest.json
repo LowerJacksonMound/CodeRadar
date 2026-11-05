@@ -1,0 +1,58 @@
+{
+ "target": "/Users/dev/Desktop/face_up",
+ "built": "2026-09-10",
+ "by": "set 4b-27 (run 81)",
+ "base": "roll_the_bones tree + colorama/repair_plant_meaning.py",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_meaning.py",
+   "line": 10,
+   "function": "calculate_total",
+   "family": "NAI-100",
+   "accept_any_of": [
+    "NAI-100"
+   ],
+   "what": "a calculate_* whose parameter tax never reaches the return (set 4b-27, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_meaning.py",
+   "line": 15,
+   "function": "calculate_rate",
+   "family": "NAI-101",
+   "accept_any_of": [
+    "NAI-101"
+   ],
+   "what": "a calculate_* returning the magic number 42 (set 4b-27, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_meaning.py",
+   "line": 20,
+   "function": "add_pair",
+   "family": "NAI-102",
+   "accept_any_of": [
+    "NAI-102"
+   ],
+   "what": "an 'add two' docstring over a + b + 1 (set 4b-27, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_meaning.py",
+   "line": 25,
+   "function": "is_positive",
+   "family": "NAI-103",
+   "accept_any_of": [
+    "NAI-103"
+   ],
+   "what": "is_positive returning True for n <= 0 (set 4b-27, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_meaning.py",
+   "line": 29,
+   "function": "find_row",
+   "family": "NAI-104",
+   "accept_any_of": [
+    "NAI-104"
+   ],
+   "what": "a find_* with no comparison or lookup (the row also carries NAI-137) (set 4b-27, no-fix-by-design)"
+  }
+ ]
+}

@@ -1,0 +1,48 @@
+{
+ "target": "/Users/dev/Desktop/red_barchetta",
+ "built": "2026-09-10",
+ "by": "set 4b-12 (run 66)",
+ "base": "tom_sawyer tree + colorama/repair_plant_launch.py",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_launch.py",
+   "line": 13,
+   "function": "describe",
+   "family": "NAI-203",
+   "accept_any_of": [
+    "NAI-203"
+   ],
+   "what": "a cached function with a logging side effect (set 4b-12, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_launch.py",
+   "line": 18,
+   "function": "run_sync",
+   "family": "NAI-204",
+   "accept_any_of": [
+    "NAI-204"
+   ],
+   "what": "`asyncio.run(coro)` inside a sync function; the row also carries NAI-160 (set 4b-12, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_launch.py",
+   "line": 22,
+   "function": "data_path",
+   "family": "NAI-206",
+   "accept_any_of": [
+    "NAI-206"
+   ],
+   "what": "`os.path.join(os.getcwd(), ...)` bound and used beyond chdir (set 4b-12, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_launch.py",
+   "line": 27,
+   "function": "spawn",
+   "family": "NAI-210",
+   "accept_any_of": [
+    "NAI-210"
+   ],
+   "what": "`threading.Thread(...)` inside a sync function (set 4b-12, no-fix-by-design)"
+  }
+ ]
+}

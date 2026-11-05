@@ -1,0 +1,18 @@
+{
+ "target": "/Users/dev/Desktop/presto",
+ "built": "2026-09-10",
+ "by": "set 4b-18 (run 72)",
+ "base": "scars tree + colorama/repair_plant_quiet.py",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_quiet.py",
+   "line": 8,
+   "function": "test_parse_never_fails",
+   "family": "NAI-157",
+   "accept_any_of": [
+    "NAI-157"
+   ],
+   "what": "a test_* that swallows the exception and asserts nothing — not the test species, so the id reaches the row (the row also carries NAI-020 / NAI-078) (set 4b-18, no-fix-by-design)"
+  }
+ ]
+}

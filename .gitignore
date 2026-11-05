@@ -73,3 +73,8 @@ NEW_CR_DESIGN_N_SUPPORTING_DOCS/
 
 # the census ledger of record lives under .archive (preranker_census.newest_ledger); it is tracked, the rest of .archive is not
 !.archive/PRERANKER_HUNT_*.tsv
+
+# the gate evidence the 17 replay gates read (2026-11-05); home paths inside it are scrubbed to /Users/dev
+!.archive/gate_evidence/
+!.archive/gate_evidence/**
+.archive/gate_evidence/**/__pycache__/

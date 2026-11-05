@@ -451,6 +451,8 @@ def _import_roots(target_root: str) -> List[str]:
     try:
         import importlib.util as _ilu
         _spec = _ilu.spec_from_file_location("_cr_scan_scope", Path(__file__).with_name("scan_scope.py"))
+        if _spec is None or _spec.loader is None:   # same outcome as before: caught below, target root only
+            raise ImportError(f"no loader for {Path(__file__).with_name('scan_scope.py')}")
         _ss = _ilu.module_from_spec(_spec)
         _spec.loader.exec_module(_ss)
         root = Path(target_root)

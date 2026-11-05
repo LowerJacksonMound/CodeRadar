@@ -1,0 +1,58 @@
+{
+ "target": "/Users/dev/Desktop/the_pass",
+ "built": "2026-09-10",
+ "by": "set 4b-15 (run 69)",
+ "base": "chain_lightning tree + colorama/repair_plant_names.py",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_names.py",
+   "line": 7,
+   "function": "process_rows",
+   "family": "NAI-133",
+   "accept_any_of": [
+    "NAI-133"
+   ],
+   "what": "a process_* function with no loop and no call (set 4b-15, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_names.py",
+   "line": 11,
+   "function": "filter_rows",
+   "family": "NAI-134",
+   "accept_any_of": [
+    "NAI-134"
+   ],
+   "what": "a filter_* function with no condition (set 4b-15, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_names.py",
+   "line": 15,
+   "function": "sort_rows",
+   "family": "NAI-135",
+   "accept_any_of": [
+    "NAI-135"
+   ],
+   "what": "a sort_* function with no sort or compare (set 4b-15, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_names.py",
+   "line": 19,
+   "function": "count_rows",
+   "family": "NAI-136",
+   "accept_any_of": [
+    "NAI-136"
+   ],
+   "what": "a count_* function with no accumulator (set 4b-15, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_names.py",
+   "line": 23,
+   "function": "find_row",
+   "family": "NAI-137",
+   "accept_any_of": [
+    "NAI-137"
+   ],
+   "what": "a find_* function with no comparison or lookup call (the row also carries NAI-104) (set 4b-15, no-fix-by-design)"
+  }
+ ]
+}

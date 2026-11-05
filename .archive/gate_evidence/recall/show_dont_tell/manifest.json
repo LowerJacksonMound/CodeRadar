@@ -1,0 +1,40 @@
+{
+ "target": "/Users/dev/Desktop/show_dont_tell",
+ "built": "2026-09-10",
+ "by": "set 4b-13 (run 67)",
+ "base": "red_barchetta tree + colorama/repair_plant_extended.py",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_extended.py",
+   "line": 10,
+   "function": "reserved",
+   "family": "NAI-120",
+   "accept_any_of": ["NAI-120"],
+   "what": "a function whose body is only its docstring (set 4b-13, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_extended.py",
+   "line": 15,
+   "function": "is_unset",
+   "family": "NAI-124",
+   "accept_any_of": ["NAI-124"],
+   "what": "`value == None` where `is None` is meant (set 4b-13, rewritten live by none_identity_fix)"
+  },
+  {
+   "file": "colorama/repair_plant_extended.py",
+   "line": 23,
+   "function": "widths",
+   "family": "NAI-122",
+   "accept_any_of": ["NAI-122", "NAI-070"],
+   "what": "a bare except — the construct NAI-122 names; NAI-070 decides it, NAI-122 is its alias and is never emitted (set 4b-13)"
+  },
+  {
+   "file": "colorama/repair_plant_extended.py",
+   "line": 31,
+   "function": "Cursor.__init__",
+   "family": "NAI-125",
+   "accept_any_of": ["NAI-125"],
+   "what": "`return column` inside __init__ (set 4b-13, no-fix-by-design)"
+  }
+ ]
+}

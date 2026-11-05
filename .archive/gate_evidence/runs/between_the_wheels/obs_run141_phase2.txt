@@ -1,0 +1,79 @@
+coderadar-mcp 0.1.0: target /Users/dev/Desktop/between_the_wheels (repo_id a32f4c124796); state /Users/dev/Desktop/CODE_RADAR_REFURBISH/system_scripts; 13/13 tools bound
+
+CALL cr_attach({})
+  {"attached": true, "target": "/Users/dev/Desktop/between_the_wheels", "phase": "MONITORING", "cycle": 2, "error": null}
+
+CALL cr_run_module({"path": "pytest", "args": ["colorama/tests", "-q"]})
+  {"exit_code": 1, "duration_s": 0.832, "args": ["colorama/tests", "-q", "-p", "no:cacheprovider"], "seen_on_band": true, "timed_out": false, "error": null}
+  stdout tail: ched_stream | FAILED colorama/tests/ansitowin32_test.py::AnsiToWin32Test::test_wrap_shouldnt_raise_on_missing_closed_attr | FAILED colorama/tests/isatty_test.py::IsattyTest::test_withPycharmNoneOverride | 3 failed, 35 passed, 14 skipped in 0.10s | 
+
+cr_report_outcome ×70 → written 5, refused 65 · outcome=failed
+    REFUSED colorama/ansitowin32.py::isatty::49: cr_report_outcome: row 'colorama/ansitowin32.py::isatty::49' — not found
+    REFUSED colorama/ansitowin32.py::closed::62: cr_report_outcome: row 'colorama/ansitowin32.py::closed::62' — not found
+    REFUSED colorama/repair_plant_008.py::join_parts::6: cr_report_outcome: row 'colorama/repair_plant_008.py::join_parts::6' — not found
+    REFUSED colorama/repair_plant_061.py::label::5: cr_report_outcome: row 'colorama/repair_plant_061.py::label::5' — not found
+    REFUSED colorama/repair_plant_070.py::count_ints::5: cr_report_outcome: row 'colorama/repair_plant_070.py::count_ints::5' — not found
+    REFUSED colorama/repair_plant_071.py::collect::4: cr_report_outcome: row 'colorama/repair_plant_071.py::collect::4' — not found
+    REFUSED colorama/repair_plant_092.py::run_echo::6: cr_report_outcome: row 'colorama/repair_plant_092.py::run_echo::6' — not found
+    REFUSED colorama/repair_plant_branches.py::guarded::7: cr_report_outcome: row 'colorama/repair_plant_branches.py::guarded::7' — not found
+    REFUSED colorama/repair_plant_branches.py::pick::18: cr_report_outcome: row 'colorama/repair_plant_branches.py::pick::18' — not found
+    REFUSED colorama/repair_plant_branches.py::stamp::26: cr_report_outcome: row 'colorama/repair_plant_branches.py::stamp::26' — not found
+    REFUSED colorama/repair_plant_branches.py::outer::32: cr_report_outcome: row 'colorama/repair_plant_branches.py::outer::32' — not found
+    REFUSED colorama/repair_plant_chains.py::close_quietly::8: cr_report_outcome: row 'colorama/repair_plant_chains.py::close_quietly::8' — not found
+    REFUSED colorama/repair_plant_chains.py::stamp::21: cr_report_outcome: row 'colorama/repair_plant_chains.py::stamp::21' — not found
+    REFUSED colorama/repair_plant_chains.py::total_width::27: cr_report_outcome: row 'colorama/repair_plant_chains.py::total_width::27' — not found
+    REFUSED colorama/repair_plant_checks.py::push::12: cr_report_outcome: row 'colorama/repair_plant_checks.py::push::12' — not found
+    REFUSED colorama/repair_plant_checks.py::scale::20: cr_report_outcome: row 'colorama/repair_plant_checks.py::scale::20' — not found
+    REFUSED colorama/repair_plant_dynamic_two.py::host::13: cr_report_outcome: row 'colorama/repair_plant_dynamic_two.py::host::13' — not found
+    REFUSED colorama/repair_plant_extended.py::is_unset::14: cr_report_outcome: row 'colorama/repair_plant_extended.py::is_unset::14' — not found
+    REFUSED colorama/repair_plant_extended.py::widths::18: cr_report_outcome: row 'colorama/repair_plant_extended.py::widths::18' — not found
+    REFUSED colorama/repair_plant_extended.py::__init__::29: cr_report_outcome: row 'colorama/repair_plant_extended.py::__init__::29' — not found
+    REFUSED colorama/repair_plant_flow.py::checked::13: cr_report_outcome: row 'colorama/repair_plant_flow.py::checked::13' — not found
+    REFUSED colorama/repair_plant_foreign.py::convert_rows::10: cr_report_outcome: row 'colorama/repair_plant_foreign.py::convert_rows::10' — not found
+    REFUSED colorama/repair_plant_foreign.py::item_count::18: cr_report_outcome: row 'colorama/repair_plant_foreign.py::item_count::18' — not found
+    REFUSED colorama/repair_plant_foreign.py::add_entry::23: cr_report_outcome: row 'colorama/repair_plant_foreign.py::add_entry::23' — not found
+    REFUSED colorama/repair_plant_foreign.py::label_upper::28: cr_report_outcome: row 'colorama/repair_plant_foreign.py::label_upper::28' — not found
+    REFUSED colorama/repair_plant_graph.py::dead_store::8: cr_report_outcome: row 'colorama/repair_plant_graph.py::dead_store::8' — not found
+    REFUSED colorama/repair_plant_hr.py::level::8: cr_report_outcome: row 'colorama/repair_plant_hr.py::level::8' — not found
+    REFUSED colorama/repair_plant_hr.py::level::12: cr_report_outcome: row 'colorama/repair_plant_hr.py::level::12' — not found
+    REFUSED colorama/repair_plant_join.py::render_tags::8: cr_report_outcome: row 'colorama/repair_plant_join.py::render_tags::8' — not found
+    REFUSED colorama/repair_plant_keys.py::widths::7: cr_report_outcome: row 'colorama/repair_plant_keys.py::widths::7' — not found
+    REFUSED colorama/repair_plant_keys.py::palette::13: cr_report_outcome: row 'colorama/repair_plant_keys.py::palette::13' — not found
+    REFUSED colorama/repair_plant_keys.py::flags::18: cr_report_outcome: row 'colorama/repair_plant_keys.py::flags::18' — not found
+    REFUSED colorama/repair_plant_loops.py::dashes::13: cr_report_outcome: row 'colorama/repair_plant_loops.py::dashes::13' — not found
+    REFUSED colorama/repair_plant_loops.py::gather::20: cr_report_outcome: row 'colorama/repair_plant_loops.py::gather::20' — not found
+    REFUSED colorama/repair_plant_loops.py::glue::27: cr_report_outcome: row 'colorama/repair_plant_loops.py::glue::27' — not found
+    REFUSED colorama/repair_plant_meaning.py::calculate_total::8: cr_report_outcome: row 'colorama/repair_plant_meaning.py::calculate_total::8' — not found
+    REFUSED colorama/repair_plant_meaning.py::calculate_rate::13: cr_report_outcome: row 'colorama/repair_plant_meaning.py::calculate_rate::13' — not found
+    REFUSED colorama/repair_plant_meaning.py::add_pair::18: cr_report_outcome: row 'colorama/repair_plant_meaning.py::add_pair::18' — not found
+    REFUSED colorama/repair_plant_meaning.py::is_positive::23: cr_report_outcome: row 'colorama/repair_plant_meaning.py::is_positive::23' — not found
+    REFUSED colorama/repair_plant_names.py::count_rows::19: cr_report_outcome: row 'colorama/repair_plant_names.py::count_rows::19' — not found
+    REFUSED colorama/repair_plant_noop.py::size::8: cr_report_outcome: row 'colorama/repair_plant_noop.py::size::8' — not found
+    REFUSED colorama/repair_plant_noop.py::tally::24: cr_report_outcome: row 'colorama/repair_plant_noop.py::tally::24' — not found
+    REFUSED colorama/repair_plant_ops.py::total::11: cr_report_outcome: row 'colorama/repair_plant_ops.py::total::11' — not found
+    REFUSED colorama/repair_plant_ops.py::check::20: cr_report_outcome: row 'colorama/repair_plant_ops.py::check::20' — not found
+    REFUSED colorama/repair_plant_order.py::parse::11: cr_report_outcome: row 'colorama/repair_plant_order.py::parse::11' — not found
+    REFUSED colorama/repair_plant_order.py::close_quietly::21: cr_report_outcome: row 'colorama/repair_plant_order.py::close_quietly::21' — not found
+    REFUSED colorama/repair_plant_quietly.py::hushed::9: cr_report_outcome: row 'colorama/repair_plant_quietly.py::hushed::9' — not found
+    REFUSED colorama/repair_plant_roles.py::bump::13: cr_report_outcome: row 'colorama/repair_plant_roles.py::bump::13' — not found
+    REFUSED colorama/repair_plant_roles.py::get_width::23: cr_report_outcome: row 'colorama/repair_plant_roles.py::get_width::23' — not found
+    REFUSED colorama/repair_plant_roles.py::set_width::26: cr_report_outcome: row 'colorama/repair_plant_roles.py::set_width::26' — not found
+    REFUSED colorama/repair_plant_roles.py::is_ready::34: cr_report_outcome: row 'colorama/repair_plant_roles.py::is_ready::34' — not found
+    REFUSED colorama/repair_plant_shape.py::pick_label::5: cr_report_outcome: row 'colorama/repair_plant_shape.py::pick_label::5' — not found
+    REFUSED colorama/repair_plant_shape.py::merge_tags::13: cr_report_outcome: row 'colorama/repair_plant_shape.py::merge_tags::13' — not found
+    REFUSED colorama/repair_plant_shape.py::size_of::21: cr_report_outcome: row 'colorama/repair_plant_shape.py::size_of::21' — not found
+    REFUSED colorama/repair_plant_shape.py::seal::34: cr_report_outcome: row 'colorama/repair_plant_shape.py::seal::34' — not found
+    REFUSED colorama/repair_plant_stale.py::warn_twice::20: cr_report_outcome: row 'colorama/repair_plant_stale.py::warn_twice::20' — not found
+    REFUSED colorama/repair_plant_trust.py::fetch::10: cr_report_outcome: row 'colorama/repair_plant_trust.py::fetch::10' — not found
+    REFUSED colorama/repair_plant_trust.py::area::26: cr_report_outcome: row 'colorama/repair_plant_trust.py::area::26' — not found
+    REFUSED colorama/repair_plant_typos.py::widest_row::5: cr_report_outcome: row 'colorama/repair_plant_typos.py::widest_row::5' — not found
+    REFUSED colorama/repair_plant_typos.py::setting_for::13: cr_report_outcome: row 'colorama/repair_plant_typos.py::setting_for::13' — not found
+    REFUSED colorama/repair_plant_typos.py::code_word::23: cr_report_outcome: row 'colorama/repair_plant_typos.py::code_word::23' — not found
+    REFUSED colorama/repair_plant_typos.py::mark_twice::33: cr_report_outcome: row 'colorama/repair_plant_typos.py::mark_twice::33' — not found
+    REFUSED colorama/repair_plant_typos.py::ordered_table::39: cr_report_outcome: row 'colorama/repair_plant_typos.py::ordered_table::39' — not found
+    REFUSED colorama/win32.py::FillConsoleOutputCharacter::147: cr_report_outcome: row 'colorama/win32.py::FillConsoleOutputCharacter::147' — not found
+    REFUSED colorama/winterm.py::enable_vt_processing::178: cr_report_outcome: row 'colorama/winterm.py::enable_vt_processing::178' — not found
+
+waiting for the Builder to re-poll the edited files …
+  cycle 3: counterfeit_failed=103 mypy_errors=577 severed_links=0 · rows {"total_functions": 355, "passed": 169, "failed": 103, "files_scanned": 64, "repairs": 93, "no_vetted_fix": 10, "whitelisted": 0, "withheld": 83}
+  cycle 3: counterfeit_failed=103 mypy_errors=577 severed_links=0 · rows {"total_functions": 355, "passed": 169, "failed": 103, "files_scanned": 64, "repairs": 93, "no_vetted_fix": 10, "whitelisted": 0, "withheld": 83}

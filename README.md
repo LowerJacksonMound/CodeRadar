@@ -97,7 +97,8 @@ checkout. This project does not take outside code; issues are welcome.
 Private, under measurement. Version 0.1.0. The engine is run from its checkout; see [HOW_CODERADAR_WORKS.md](HOW_CODERADAR_WORKS.md)
 for the mechanism and [QUICKSTART.md](QUICKSTART.md) for the first run. The replay gates
 (`./replay_gates.sh <name>`, 17 proofs) and the self-test (`system_scripts/health_check.py`, 23 steps) are the
-release bar.
+release bar. The gates replay recorded runs from `.archive/gate_evidence/`, which ships in the checkout (the
+scanned targets' paths inside it are scrubbed to `/Users/dev`); a fresh clone runs the full bar.
 
 ## License
 

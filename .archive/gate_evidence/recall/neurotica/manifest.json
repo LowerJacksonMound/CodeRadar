@@ -1,0 +1,59 @@
+{
+ "target": "/Users/dev/Desktop/neurotica",
+ "built": "2026-09-10",
+ "by": "set 4b-42 (run 96)",
+ "base": "ghost_of_a_chance tree + colorama/repair_plant_shape.py",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_shape.py",
+   "line": 6,
+   "function": "pick_label",
+   "family": "NAI-026",
+   "accept_any_of": [
+    "NAI-026"
+   ],
+   "what": "an if / else with identical bodies (`label = str(value)` twice) — the detector's identical_branches shape (set 4b-42, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_shape.py",
+   "line": 16,
+   "function": "merge_tags",
+   "family": "NAI-027",
+   "accept_any_of": [
+    "NAI-027",
+    "NAI-021S"
+   ],
+   "what": "a local empty list appended to while the parameter `tags` is what the function returns — mutation theater on the append line; the row is NAI-021S's on the daemon route (the strict alias-chain rule takes `return <parameter>` first, whatever is mutated beside it — probed twice) (set 4b-42, no-fix-by-design, never decides)"
+  },
+  {
+   "file": "colorama/repair_plant_shape.py",
+   "line": 22,
+   "function": "size_of",
+   "family": "NAI-028",
+   "accept_any_of": [
+    "NAI-028"
+   ],
+   "what": "two statements after an unconditional top-level `return`, observed on the return line (set 4b-42, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_shape.py",
+   "line": 28,
+   "function": "guarded",
+   "family": "NAI-029",
+   "accept_any_of": [
+    "NAI-029"
+   ],
+   "what": "`if True:` — a constant condition, observed on the if line (set 4b-42, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_shape.py",
+   "line": 35,
+   "function": "seal",
+   "family": "NAI-171",
+   "accept_any_of": [
+    "NAI-171"
+   ],
+   "what": "a for-loop `else:` with no `break` in the loop body, observed on the for line (set 4b-42, REWRITER loop_else_splice_fix)"
+  }
+ ]
+}

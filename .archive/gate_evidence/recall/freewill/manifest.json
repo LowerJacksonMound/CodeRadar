@@ -1,0 +1,13 @@
+{
+ "target": "/Users/dev/Desktop/freewill",
+ "built": "2026-09-10",
+ "by": "set 4b-06 (run 60)",
+ "base": "the_spirit_of_radio tree + colorama/repair_plant_dynamic_two.py",
+ "note": "SEC ids come from the regex scan off the daemon's route; each plant accepts the neighbouring id that decides its site. The SEC-012 construct (`__import__(name)`, plugin_for, line 23) is in the file but NOT listed: no AST rule decides it on the daemon route (the row passes), so it can be caught by no id.",
+ "planted_findings": [
+  {"file": "colorama/repair_plant_dynamic_two.py", "line": 10, "function": "clear", "family": "SEC-009", "accept_any_of": ["SEC-009", "NAI-092"], "what": "`os.system('clear')` — decided as NAI-092 (call_type os_system); the rewriter refuses os.system by design (set 4b-06, no-fix-by-design)"},
+  {"file": "colorama/repair_plant_dynamic_two.py", "line": 14, "function": "host", "family": "SEC-010", "accept_any_of": ["SEC-010", "NAI-092"], "what": "`subprocess.Popen('hostname -s', shell=True)` — decided as NAI-092, rewritten by subprocess_argv_fix which SEC-010 aliases (set 4b-06)"},
+  {"file": "colorama/repair_plant_dynamic_two.py", "line": 18, "function": "credentials", "family": "SEC-011", "accept_any_of": ["SEC-011", "NAI-072"], "what": "`token = 'abc123def456'` — decided as NAI-072 (set 4b-06, no-fix-by-design)"},
+  {"file": "colorama/repair_plant_dynamic_two.py", "line": 27, "function": "prepare", "family": "SEC-013", "accept_any_of": ["SEC-013", "NAI-160"], "what": "`compile(source, '<string>', 'exec')` — decided as NAI-160 (set 4b-06, no-fix-by-design)"}
+ ]
+}

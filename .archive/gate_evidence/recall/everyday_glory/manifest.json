@@ -1,0 +1,58 @@
+{
+ "target": "/Users/dev/Desktop/everyday_glory",
+ "built": "2026-09-10",
+ "by": "set 4b-31 (run 85, app copy 2)",
+ "base": "cold_fire tree + colorama/repair_plant_redundant_two.py",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_redundant_two.py",
+   "line": 8,
+   "function": "grade",
+   "family": "NAI-066",
+   "accept_any_of": [
+    "NAI-066"
+   ],
+   "what": "a conditional expression nested in another's else (set 4b-31, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_redundant_two.py",
+   "line": 13,
+   "function": "as_label",
+   "family": "NAI-067",
+   "accept_any_of": [
+    "NAI-067"
+   ],
+   "what": "`str(value) + \"\"` (set 4b-31, rewritten live by empty_string_concat_fix → `str(value)`)"
+  },
+  {
+   "file": "colorama/repair_plant_redundant_two.py",
+   "line": 19,
+   "function": "count_up",
+   "family": "NAI-068",
+   "accept_any_of": [
+    "NAI-068"
+   ],
+   "what": "`while True:` with an immediate `if n >= limit: break` (set 4b-31, rewritten live by while_true_break_fix → `while not (n >= limit):`)"
+  },
+  {
+   "file": "colorama/repair_plant_redundant_two.py",
+   "line": 27,
+   "function": "banner",
+   "family": "NAI-176",
+   "accept_any_of": [
+    "NAI-176"
+   ],
+   "what": "`f\"ready\"` with no placeholder (set 4b-31, rewritten live by fstring_prefix_fix → `\"ready\"`)"
+  },
+  {
+   "file": "colorama/repair_plant_redundant_two.py",
+   "line": 33,
+   "function": "triangle",
+   "family": "NAI-180",
+   "accept_any_of": [
+    "NAI-180"
+   ],
+   "what": "`for i in list(range(n))` (set 4b-31, rewritten live by list_wrapping_fix → `range(n)`)"
+  }
+ ]
+}

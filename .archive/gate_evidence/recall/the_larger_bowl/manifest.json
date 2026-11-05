@@ -1,0 +1,12 @@
+{
+ "target": "/Users/dev/Desktop/the_larger_bowl",
+ "built": "2026-09-10",
+ "by": "set 4b-33 (run 87, app copy 3)",
+ "base": "workin_them_angels tree + colorama/repair_plant_constants.py",
+ "planted_findings": [
+  {"file": "colorama/repair_plant_constants.py", "line": 12, "function": "__eq__", "family": "NAI-035", "accept_any_of": ["NAI-035"], "what": "an __eq__ that returns True (a statement beside it keeps NAI-009S off) (set 4b-33, no-fix-by-design)"},
+  {"file": "colorama/repair_plant_constants.py", "line": 18, "function": "differs_from_self", "family": "NAI-036", "accept_any_of": ["NAI-036"], "what": "`value != value`, a tautology (the row also carries NAI-023) (set 4b-33, no-fix-by-design)"},
+  {"file": "colorama/repair_plant_constants.py", "line": 23, "function": "last_width", "family": "NAI-037", "accept_any_of": ["NAI-037"], "what": "a for loop overwriting width without accumulation (set 4b-33, no-fix-by-design)"},
+  {"file": "colorama/repair_plant_constants.py", "line": 29, "function": "banner", "family": "NAI-038", "accept_any_of": ["NAI-038"], "what": "`if True:` — a constant conditional (the row also carries NAI-029) (set 4b-33, no-fix-by-design)"}
+ ]
+}

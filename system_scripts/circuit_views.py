@@ -319,7 +319,7 @@ def _ring_texts(nodes, view: str = ''):
     its name + '/' at 11 px on a _FOLDER_PX square; any other node: at 12 px on a 30-px circle, a missing module's
     name without its mark, a file's the shortest tail of its path no other ring file ends with (its file name,
     unless two share one — the drill line names the view's folder; the node's hover keeps the full path)."""
-    tails = {}
+    tails: Dict[str, int] = {}
     for n in nodes:
         if not n.startswith('\U0001f4c1') and not n.startswith(MISSING_MARK):
             parts = n.split('/')
@@ -328,7 +328,7 @@ def _ring_texts(nodes, view: str = ''):
                 tails[tail] = tails.get(tail, 0) + 1
     # item 3 (2026-10-07): a folder off the view's path (a sibling branch) is named by its own folder name,
     # not its whole path — lengthened upward only when two such boxes would read the same
-    off_tails = {}
+    off_tails: Dict[str, int] = {}
     for n in nodes:
         if n.startswith('\U0001f4c1'):
             path = n[len(FOLDER):]

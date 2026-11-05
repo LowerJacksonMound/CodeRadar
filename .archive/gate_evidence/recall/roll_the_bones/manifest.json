@@ -1,0 +1,23 @@
+{
+ "target": "/Users/dev/Desktop/roll_the_bones",
+ "built": "2026-09-10",
+ "by": "set 4b-26 (run 80)",
+ "base": "bravado tree + colorama/repair_plant_split.py + colorama/repair_plant_split_control.py",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_split.py",
+   "line": 8,
+   "function": "load_table",
+   "family": "RCA-001",
+   "accept_any_of": [
+    "RCA-001",
+    "NAI-009",
+    "NAI-003"
+   ],
+   "what": "the split-fake pair's helper (canned data, inputs unread) — RCA-001 would flip its caller read_config; the sweep runs before this row's verdict exists, so the caller passes and RCA-001 decides no row (set 4b-26, never decides today)"
+  }
+ ],
+ "controls": [
+  "colorama/repair_plant_split_control.py"
+ ]
+}

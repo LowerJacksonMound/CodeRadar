@@ -1,0 +1,40 @@
+{
+  "wiring": {
+    "counts": {
+      "possible": 29,
+      "live": 0,
+      "severed": 0
+    },
+    "all_connected": true,
+    "cycles": [],
+    "severed_links": []
+  },
+  "nodes": 64,
+  "edges": 29,
+  "data_types": {
+    "chosen": [
+      "io",
+      "mypy"
+    ],
+    "not_run": [
+      "crc",
+      "vulture"
+    ],
+    "issues": 586,
+    "contract_violations": {
+      "total": 0,
+      "recent_count": 0,
+      "violations": [],
+      "disabled": true
+    }
+  },
+  "intent": {
+    "statement": null,
+    "facts_by_source": {
+      "changelog": 3,
+      "packaging": 2,
+      "readme": 2
+    },
+    "file": "/Users/dev/Desktop/CODE_RADAR_REFURBISH/system_scripts/intent_a32f4c124796.json"
+  }
+}

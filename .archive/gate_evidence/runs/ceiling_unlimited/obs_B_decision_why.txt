@@ -1,0 +1,26 @@
+builder summary: {"rewriter": 57, "prescribed": 99} findings 164 with_fix 156 no_fix {"no_generator": 0, "declined": 8, "no_fix_by_design": 0, "ranker_none": 0, "unbuilt": 0}
+
+ROW colorama/repair_plant_split.py::read_config::12
+  rule_ids           : ['RCA-001']
+  context_ids        : ['NAI-082', 'NAI-084', 'NAI-185', 'NAI-186', 'NAI-121', 'NAI-229', 'MEASURED-NOTHING']
+  failure_reason     : RCA-001 (line 12): Calls failed function 'load_table' without forwarding params ['encoding', 'path']
+  generators_consulted: [{"rule_id": "RCA-001", "kind": "prescribed", "role": "solution_RCA-001", "reason": "Forward the caller's own parameters into the failed callee (or stop calling it) so the caller's result depends on its inputs; the flip itself re-routes as Ranker evidence under Q7."}]
+  candidates_considered: 1  selection: {"solution_RCA-001": 84.57}
+  observations       : {"solution_RCA-001": ["kind=prescribed", "parse=shape", "differs=yes", "rule=RCA-001", "flow=same_paths", "complexity=same", "idiom=same", "deps=none_added", "defensive=same", "readability=fewer_branches:1", "traps=none"]}
+  solution_kind      : prescribed  pick_role: solution_RCA-001
+  DECISION.WHY       : picked solution_RCA-001 over 0 other pickable candidate(s) of 1 offered; deciding method: n/a (one candidate); solution_RCA-001[kind=prescribed, parse=shape, differs=yes, rule=RCA-001, flow=same_paths, complexity=same, idiom=same, deps=none_added, defensive=same, readability=fewer_branches:1, traps=none, answers=row]; profile: no intent fact matched
+  fix                : Forward the caller's own parameters into the failed callee (or stop calling it) so the caller's result depends on its inputs; the flip itself re-routes as Ranker evidence under Q7.
+  after_code         : "def caller(a, b):\n    return callee(a, b)"
+
+ROW colorama/win32.py::SetConsoleCursorPosition::129
+  rule_ids           : ['RCA-001']
+  context_ids        : ['NAI-082', 'NAI-083', 'NAI-084', 'NAI-086', 'NAI-114', 'NAI-185', 'NAI-186', 'NAI-121', 'NAI-229', 'MEASURED-NOTHING']
+  failure_reason     : RCA-001 (line 129): Calls failed function 'GetConsoleScreenBufferInfo' without forwarding params ['adjust', 'position', 'stream_id']
+  generators_consulted: [{"rule_id": "RCA-001", "kind": "prescribed", "role": "solution_RCA-001", "reason": "Forward the caller's own parameters into the failed callee (or stop calling it) so the caller's result depends on its inputs; the flip itself re-routes as Ranker evidence under Q7."}]
+  candidates_considered: 1  selection: {"solution_RCA-001": 76.75}
+  observations       : {"solution_RCA-001": ["kind=prescribed", "parse=shape", "differs=yes", "rule=RCA-001", "flow=branch_removed:2", "complexity=same", "idiom=same", "deps=none_added", "defensive=same", "readability=flatter:1+fewer_branches:3", "traps=none"]}
+  solution_kind      : prescribed  pick_role: solution_RCA-001
+  DECISION.WHY       : picked solution_RCA-001 over 0 other pickable candidate(s) of 1 offered; deciding method: n/a (one candidate); solution_RCA-001[kind=prescribed, parse=shape, differs=yes, rule=RCA-001, flow=branch_removed:2, complexity=same, idiom=same, deps=none_added, defensive=same, readability=flatter:1+fewer_branches:3, traps=none, answers=row]; profile: no intent fact matched
+  fix                : Forward the caller's own parameters into the failed callee (or stop calling it) so the caller's result depends on its inputs; the flip itself re-routes as Ranker evidence under Q7.
+  after_code         : "def caller(a, b):\n    return callee(a, b)"
+

@@ -1,0 +1,13 @@
+{
+ "target": "/Users/dev/Desktop/workin_them_angels",
+ "built": "2026-09-10",
+ "by": "set 4b-32 (run 86, app copy 3)",
+ "base": "face_up tree + colorama/repair_plant_identity.py",
+ "planted_findings": [
+  {"file": "colorama/repair_plant_identity.py", "line": 7, "function": "scale_all", "family": "NAI-030", "accept_any_of": ["NAI-030"], "what": "a parameter (factor) that reaches no return and no call — disconnected; the row also carries NAI-003 (set 4b-32, no-fix-by-design)"},
+  {"file": "colorama/repair_plant_identity.py", "line": 12, "function": "measure", "family": "NAI-031", "accept_any_of": ["NAI-031"], "what": "a store (count) read nowhere in the function (set 4b-32, no-fix-by-design)"},
+  {"file": "colorama/repair_plant_identity.py", "line": 19, "function": "widen", "family": "NAI-032", "accept_any_of": ["NAI-032"], "what": "`total + 0`, an algebraic identity (set 4b-32, rewriter algebraic_identity_fix)"},
+  {"file": "colorama/repair_plant_identity.py", "line": 23, "function": "copy_rows", "family": "NAI-033", "accept_any_of": ["NAI-033"], "what": "`[row for row in rows]`, an identity comprehension (set 4b-32, rewriter identity_comprehension_fix)"},
+  {"file": "colorama/repair_plant_identity.py", "line": 26, "function": "rotate_logs", "family": "NAI-034", "accept_any_of": ["NAI-034"], "what": "a docstring-only body; the row also carries NAI-120 and NAI-011 (set 4b-32, no-fix-by-design)"}
+ ]
+}

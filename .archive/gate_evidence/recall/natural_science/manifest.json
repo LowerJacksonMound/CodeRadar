@@ -1,0 +1,58 @@
+{
+ "target": "/Users/dev/Desktop/natural_science",
+ "built": "2026-09-10",
+ "by": "set 4b-10 (run 64)",
+ "base": "different_strings tree + colorama/repair_plant_trust.py",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_trust.py",
+   "line": 11,
+   "function": "fetch",
+   "family": "NAI-162",
+   "accept_any_of": [
+    "NAI-162"
+   ],
+   "what": "`requests.get(url, timeout=5, verify=False)` \u2014 rewritten live by verify_true_fix to verify=True (set 4b-10)"
+  },
+  {
+   "file": "colorama/repair_plant_trust.py",
+   "line": 15,
+   "function": "serve",
+   "family": "NAI-163",
+   "accept_any_of": [
+    "NAI-163"
+   ],
+   "what": "`sock.bind((\"0.0.0.0\", 8080))` \u2014 a literal all-interfaces address (set 4b-10, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_trust.py",
+   "line": 19,
+   "function": "scratch_path",
+   "family": "NAI-164",
+   "accept_any_of": [
+    "NAI-164"
+   ],
+   "what": "`tempfile.mktemp()` (set 4b-10, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_trust.py",
+   "line": 23,
+   "function": "label",
+   "family": "NAI-165",
+   "accept_any_of": [
+    "NAI-165"
+   ],
+   "what": "a string constant carrying U+202E RIGHT-TO-LEFT OVERRIDE (set 4b-10, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_trust.py",
+   "line": 29,
+   "function": "area",
+   "family": "NAI-166",
+   "accept_any_of": [
+    "NAI-166"
+   ],
+   "what": "`raise NotImplemented` \u2014 rewritten live by not_implemented_error_fix to NotImplementedError (set 4b-10)"
+  }
+ ]
+}

@@ -14,7 +14,7 @@ from calib_common import ROOT, TABLE, load_table
 def read_ruling(p: Path) -> dict:
     if p.suffix == ".json":
         return json.load(open(p))
-    out = {"by": "owner", "dated": date.today().isoformat(), "rulings": {}}
+    out: dict = {"by": "owner", "dated": date.today().isoformat(), "rulings": {}}
     for line in p.read_text(encoding="utf-8").splitlines():
         m = re.match(r"^\|\s*([A-Z]+-[A-Za-z0-9*]+)\s*\|\s*(deciding|context)\s*\|\s*(.*?)\s*\|\s*$", line)
         if m: out["rulings"][m.group(1)] = {"disposition": m.group(2), "reason": m.group(3)}

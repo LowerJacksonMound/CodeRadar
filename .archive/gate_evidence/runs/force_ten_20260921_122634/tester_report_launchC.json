@@ -1,0 +1,1782 @@
+{
+  "target": "/Users/dev/CodeRadar_snapshots/force_ten_20260921_122634",
+  "repo_id": "0cb5ea90e0ac",
+  "run_started": "2026-09-21T18:27:00.116795+00:00",
+  "run_ended": "2026-09-21T18:27:33.189002+00:00",
+  "builder_cycles": 5,
+  "infractions": 161,
+  "solutions": 151,
+  "confirmed": 1,
+  "status": "MEASURED",
+  "confirmed_fraction": 0.006622516556291391,
+  "tester_ran": true,
+  "per_infraction": [
+    {
+      "file": "colorama/repair_plant_071.py",
+      "function": "collect",
+      "line": 4,
+      "rule_ids": [
+        "NAI-021S",
+        "NAI-071"
+      ],
+      "digest": "8f9a25700f",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_061.py",
+      "function": "label",
+      "line": 5,
+      "rule_ids": [
+        "NAI-061"
+      ],
+      "digest": "2da1222e69",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_070.py",
+      "function": "count_ints",
+      "line": 5,
+      "rule_ids": [
+        "NAI-070"
+      ],
+      "digest": "c312a6a098",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_invented.py",
+      "function": "read_stage",
+      "line": 5,
+      "rule_ids": [
+        "NAI-057"
+      ],
+      "digest": "01d0eccb83",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_loops.py",
+      "function": "spacer",
+      "line": 5,
+      "rule_ids": [
+        "NAI-087"
+      ],
+      "digest": "aa3c40d3f2",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_shape.py",
+      "function": "pick_label",
+      "line": 5,
+      "rule_ids": [
+        "NAI-026"
+      ],
+      "digest": "4a88e33a69",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_stubs.py",
+      "function": "<module>",
+      "line": 5,
+      "rule_ids": [
+        "NAI-217"
+      ],
+      "digest": "f9916fda64",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_typos.py",
+      "function": "widest_row",
+      "line": 5,
+      "rule_ids": [
+        "NAI-050",
+        "NAI-051"
+      ],
+      "digest": "6fe5e2af5f",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/winterm.py",
+      "function": "get_osfhandle",
+      "line": 5,
+      "rule_ids": [
+        "NAI-130"
+      ],
+      "digest": "16c1c2d933",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_008.py",
+      "function": "join_parts",
+      "line": 6,
+      "rule_ids": [
+        "NAI-008"
+      ],
+      "digest": "9e9b136122",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_092.py",
+      "function": "run_echo",
+      "line": 6,
+      "rule_ids": [
+        "NAI-092"
+      ],
+      "digest": "d484f81b5f",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_093.py",
+      "function": "read_doc",
+      "line": 6,
+      "rule_ids": [
+        "NAI-093"
+      ],
+      "digest": "bd0b0d8d46",
+      "confirmed": false
+    },
+    {
+      "file": "demos/demo08.py",
+      "function": "main",
+      "line": 6,
+      "rule_ids": [
+        "NAI-098"
+      ],
+      "digest": "2a8adf97bf",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_keys.py",
+      "function": "widths",
+      "line": 7,
+      "rule_ids": [
+        "NAI-174",
+        "NAI-145"
+      ],
+      "digest": "80375513a2",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_names.py",
+      "function": "process_rows",
+      "line": 7,
+      "rule_ids": [
+        "NAI-133"
+      ],
+      "digest": "ebc30c1957",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_ops.py",
+      "function": "lookup",
+      "line": 7,
+      "rule_ids": [
+        "NAI-003",
+        "NAI-009",
+        "NAI-030"
+      ],
+      "digest": "6f27432230",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_order.py",
+      "function": "endpoint",
+      "line": 7,
+      "rule_ids": [
+        "NAI-167"
+      ],
+      "digest": "c0355ee2a6",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_chains.py",
+      "function": "close_quietly",
+      "line": 8,
+      "rule_ids": [
+        "NAI-173",
+        "NAI-143"
+      ],
+      "digest": "99eea6e27f",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_checks.py",
+      "function": "hosts_present",
+      "line": 8,
+      "rule_ids": [
+        "NAI-079"
+      ],
+      "digest": "a743fda5c9",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_graph.py",
+      "function": "dead_store",
+      "line": 8,
+      "rule_ids": [
+        "NAI-031",
+        "NAI-147"
+      ],
+      "digest": "829daac99a",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_guards.py",
+      "function": "parse",
+      "line": 8,
+      "rule_ids": [
+        "NAI-074",
+        "NAI-200"
+      ],
+      "digest": "941c1a6f40",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_hr.py",
+      "function": "level",
+      "line": 8,
+      "rule_ids": [
+        "HR-002",
+        "NAI-098"
+      ],
+      "digest": "7c1870b32e",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_imports.py",
+      "function": "<module>",
+      "line": 8,
+      "rule_ids": [
+        "NAI-209",
+        "NAI-211"
+      ],
+      "digest": "853b4154cb",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_join.py",
+      "function": "render_tags",
+      "line": 8,
+      "rule_ids": [
+        "NAI-088",
+        "NAI-116"
+      ],
+      "digest": "f3c7fcc6a9",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_meaning.py",
+      "function": "calculate_total",
+      "line": 8,
+      "rule_ids": [
+        "NAI-100"
+      ],
+      "digest": "22befb4227",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_noop.py",
+      "function": "size",
+      "line": 8,
+      "rule_ids": [
+        "NAI-022"
+      ],
+      "digest": "a78e992cb2",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_quiet.py",
+      "function": "test_parse_never_fails",
+      "line": 8,
+      "rule_ids": [
+        "NAI-020",
+        "NAI-078",
+        "NAI-157"
+      ],
+      "digest": "6e7a9de2c6",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_roles.py",
+      "function": "parse_expr",
+      "line": 8,
+      "rule_ids": [
+        "NAI-160",
+        "NAI-127"
+      ],
+      "digest": "73f37b3ffd",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_split.py",
+      "function": "load_table",
+      "line": 8,
+      "rule_ids": [
+        "NAI-003",
+        "NAI-009",
+        "NAI-030"
+      ],
+      "digest": "3dff4cc92b",
+      "confirmed": false
+    },
+    {
+      "file": "demos/fixpath.py",
+      "function": "<module>",
+      "line": 8,
+      "rule_ids": [
+        "NAI-094"
+      ],
+      "digest": "a3d1191687",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/initialise.py",
+      "function": "_wipe_internal_state_for_tests",
+      "line": 9,
+      "rule_ids": [
+        "NAI-078"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_dynamic_two.py",
+      "function": "clear",
+      "line": 9,
+      "rule_ids": [
+        "NAI-092",
+        "NAI-159"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_flow.py",
+      "function": "build_label",
+      "line": 9,
+      "rule_ids": [
+        "NAI-098",
+        "NAI-138"
+      ],
+      "digest": "0255e2c0c9",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_quietly.py",
+      "function": "hushed",
+      "line": 9,
+      "rule_ids": [
+        "NAI-017"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_secrets.py",
+      "function": "load_settings",
+      "line": 9,
+      "rule_ids": [
+        "NAI-093"
+      ],
+      "digest": "6c3cce5093",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_shells.py",
+      "function": "<class Port>",
+      "line": 9,
+      "rule_ids": [
+        "NAI-214"
+      ],
+      "digest": "dcb74db523",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/tests/utils.py",
+      "function": "isatty",
+      "line": 9,
+      "rule_ids": [
+        "NAI-009S"
+      ],
+      "digest": "2f5b24c546",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_context.py",
+      "function": "weights_table",
+      "line": 10,
+      "rule_ids": [
+        "NAI-229"
+      ],
+      "digest": "bf7be4ffa8",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_dynamic.py",
+      "function": "total",
+      "line": 10,
+      "rule_ids": [
+        "NAI-050"
+      ],
+      "digest": "bc8d020016",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_extended.py",
+      "function": "reserved",
+      "line": 10,
+      "rule_ids": [
+        "NAI-011",
+        "NAI-034",
+        "NAI-120"
+      ],
+      "digest": "33d0e38910",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_foreign.py",
+      "function": "convert_rows",
+      "line": 10,
+      "rule_ids": [
+        "NAI-089",
+        "NAI-105"
+      ],
+      "digest": "d396516706",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_stubs.py",
+      "function": "<class Placeholder>",
+      "line": 10,
+      "rule_ids": [
+        "NAI-213"
+      ],
+      "digest": "cb223c1bca",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_trust.py",
+      "function": "fetch",
+      "line": 10,
+      "rule_ids": [
+        "NAI-162"
+      ],
+      "digest": "34ecc50578",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_names.py",
+      "function": "filter_rows",
+      "line": 11,
+      "rule_ids": [
+        "NAI-134"
+      ],
+      "digest": "4fa4ae3eb4",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_ops.py",
+      "function": "total",
+      "line": 11,
+      "rule_ids": [
+        "NAI-010",
+        "NAI-031",
+        "NAI-147"
+      ],
+      "digest": "025b65d162",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_order.py",
+      "function": "parse",
+      "line": 11,
+      "rule_ids": [
+        "NAI-172"
+      ],
+      "digest": "2ee3144e25",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_checks.py",
+      "function": "push",
+      "line": 12,
+      "rule_ids": [
+        "NAI-091"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_guards.py",
+      "function": "read_all",
+      "line": 12,
+      "rule_ids": [
+        "NAI-075",
+        "NAI-200",
+        "NAI-160",
+        "NAI-158"
+      ],
+      "digest": "03d4488851",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_hr.py",
+      "function": "level",
+      "line": 12,
+      "rule_ids": [
+        "HR-001",
+        "NAI-098"
+      ],
+      "digest": "a0dd2ebc66",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_launch.py",
+      "function": "describe",
+      "line": 12,
+      "rule_ids": [
+        "NAI-203"
+      ],
+      "digest": "ee6ed63d4a",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_roles.py",
+      "function": "make_counter",
+      "line": 12,
+      "rule_ids": [
+        "NAI-128"
+      ],
+      "digest": "6390cb6f42",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_split.py",
+      "function": "read_config",
+      "line": 12,
+      "rule_ids": [
+        "RCA-001"
+      ],
+      "digest": "6a3e37f41f",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_stale.py",
+      "function": "__init__",
+      "line": 12,
+      "rule_ids": [
+        "NAI-152"
+      ],
+      "digest": "a402a63fe7",
+      "confirmed": false
+    },
+    {
+      "file": "demos/demo07.py",
+      "function": "main",
+      "line": 12,
+      "rule_ids": [
+        "NAI-054",
+        "NAI-098"
+      ],
+      "digest": "ad876d55d3",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_branches.py",
+      "function": "render",
+      "line": 13,
+      "rule_ids": [
+        "NAI-003",
+        "NAI-030"
+      ],
+      "digest": "945e345507",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_dynamic_two.py",
+      "function": "host",
+      "line": 13,
+      "rule_ids": [
+        "NAI-092"
+      ],
+      "digest": "dfea2ffe13",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_flow.py",
+      "function": "checked",
+      "line": 13,
+      "rule_ids": [
+        "NAI-002",
+        "NAI-140"
+      ],
+      "digest": "e7314b0412",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_keys.py",
+      "function": "palette",
+      "line": 13,
+      "rule_ids": [
+        "NAI-175"
+      ],
+      "digest": "5cde30496f",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_loops.py",
+      "function": "dashes",
+      "line": 13,
+      "rule_ids": [
+        "NAI-088",
+        "NAI-116"
+      ],
+      "digest": "5bc25d0d44",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_meaning.py",
+      "function": "calculate_rate",
+      "line": 13,
+      "rule_ids": [
+        "NAI-101"
+      ],
+      "digest": "e9dda5588a",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_noop.py",
+      "function": "same_side",
+      "line": 13,
+      "rule_ids": [
+        "NAI-023",
+        "NAI-036"
+      ],
+      "digest": "3430168a42",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_roles.py",
+      "function": "bump",
+      "line": 13,
+      "rule_ids": [
+        "NAI-071"
+      ],
+      "digest": "4d13c938a2",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_secrets.py",
+      "function": "list_dir",
+      "line": 13,
+      "rule_ids": [
+        "NAI-092",
+        "NAI-158"
+      ],
+      "digest": "9d4b4413e5",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_shape.py",
+      "function": "merge_tags",
+      "line": 13,
+      "rule_ids": [
+        "NAI-021S"
+      ],
+      "digest": "84e0cae05f",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_typos.py",
+      "function": "setting_for",
+      "line": 13,
+      "rule_ids": [
+        "NAI-052"
+      ],
+      "digest": "ce2bf31b0b",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/tests/utils.py",
+      "function": "isatty",
+      "line": 13,
+      "rule_ids": [
+        "NAI-009S"
+      ],
+      "digest": "55e1725906",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_dynamic.py",
+      "function": "evaluate",
+      "line": 14,
+      "rule_ids": [
+        "NAI-160",
+        "NAI-127"
+      ],
+      "digest": "cf7efc96f3",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_extended.py",
+      "function": "is_unset",
+      "line": 14,
+      "rule_ids": [
+        "NAI-124"
+      ],
+      "digest": "ec66c104c9",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_graph.py",
+      "function": "chain",
+      "line": 14,
+      "rule_ids": [
+        "NAI-021S"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_quietly.py",
+      "function": "fetch",
+      "line": 14,
+      "rule_ids": [
+        "NAI-018"
+      ],
+      "digest": "a294881f46",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_trust.py",
+      "function": "serve",
+      "line": 14,
+      "rule_ids": [
+        "NAI-163"
+      ],
+      "digest": "1ab43b2c66",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_chains.py",
+      "function": "label_for",
+      "line": 15,
+      "rule_ids": [
+        "NAI-145"
+      ],
+      "digest": "4b0e73f1af",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_join.py",
+      "function": "validate_port",
+      "line": 15,
+      "rule_ids": [
+        "NAI-118"
+      ],
+      "digest": "1f0da9196c",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_names.py",
+      "function": "sort_rows",
+      "line": 15,
+      "rule_ids": [
+        "NAI-135"
+      ],
+      "digest": "f23a5e3813",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/win32.py",
+      "function": "<module>",
+      "line": 15,
+      "rule_ids": [
+        "NAI-211",
+        "NAI-209"
+      ],
+      "digest": "853b4154cb",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_checks.py",
+      "function": "near_tenth",
+      "line": 16,
+      "rule_ids": [
+        "NAI-095"
+      ],
+      "digest": "68a1321628",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_ops.py",
+      "function": "note",
+      "line": 16,
+      "rule_ids": [
+        "NAI-011"
+      ],
+      "digest": "a77a509cb3",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_stale.py",
+      "function": "read_file",
+      "line": 16,
+      "rule_ids": [
+        "NAI-075",
+        "NAI-200",
+        "NAI-160",
+        "NAI-158"
+      ],
+      "digest": "f7acf9df42",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_dynamic_two.py",
+      "function": "credentials",
+      "line": 17,
+      "rule_ids": [
+        "NAI-072"
+      ],
+      "digest": "d6a7639213",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_hr.py",
+      "function": "opened",
+      "line": 17,
+      "rule_ids": [
+        "HR-003",
+        "NAI-075",
+        "NAI-200",
+        "NAI-160",
+        "NAI-158"
+      ],
+      "digest": "60c31b7784",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_launch.py",
+      "function": "run_sync",
+      "line": 17,
+      "rule_ids": [
+        "NAI-204",
+        "NAI-160"
+      ],
+      "digest": "f35592d8ff",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_secrets.py",
+      "function": "connect",
+      "line": 17,
+      "rule_ids": [
+        "NAI-072"
+      ],
+      "digest": "c2a5e9a959",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_dynamic.py",
+      "function": "run",
+      "line": 18,
+      "rule_ids": [
+        "NAI-160",
+        "NAI-127"
+      ],
+      "digest": "449ec758c3",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_extended.py",
+      "function": "widths",
+      "line": 18,
+      "rule_ids": [
+        "NAI-070"
+      ],
+      "digest": "ccb09d0cf2",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_foreign.py",
+      "function": "item_count",
+      "line": 18,
+      "rule_ids": [
+        "NAI-108"
+      ],
+      "digest": "5eadc7d7eb",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_invented.py",
+      "function": "__serialize__",
+      "line": 18,
+      "rule_ids": [
+        "NAI-058"
+      ],
+      "digest": "7c55f3e702",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_keys.py",
+      "function": "flags",
+      "line": 18,
+      "rule_ids": [
+        "NAI-177"
+      ],
+      "digest": "cd5a557ef8",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_meaning.py",
+      "function": "add_pair",
+      "line": 18,
+      "rule_ids": [
+        "NAI-102"
+      ],
+      "digest": "e419339710",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_quietly.py",
+      "function": "flag",
+      "line": 18,
+      "rule_ids": [
+        "NAI-019"
+      ],
+      "digest": "4a9d6098f4",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_trust.py",
+      "function": "scratch_path",
+      "line": 18,
+      "rule_ids": [
+        "NAI-164"
+      ],
+      "digest": "4299bacb6c",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_guards.py",
+      "function": "pick",
+      "line": 19,
+      "rule_ids": [
+        "NAI-077"
+      ],
+      "digest": "8da12098ed",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_names.py",
+      "function": "count_rows",
+      "line": 19,
+      "rule_ids": [
+        "NAI-136"
+      ],
+      "digest": "8872118191",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_noop.py",
+      "function": "first_wide",
+      "line": 19,
+      "rule_ids": [
+        "NAI-024"
+      ],
+      "digest": "8e6f9b94c3",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_checks.py",
+      "function": "scale",
+      "line": 20,
+      "rule_ids": [
+        "NAI-096"
+      ],
+      "digest": "b83ffc71ec",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_flow.py",
+      "function": "spin",
+      "line": 20,
+      "rule_ids": [
+        "NAI-044",
+        "NAI-141"
+      ],
+      "digest": "fc82f1023b",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_loops.py",
+      "function": "gather",
+      "line": 20,
+      "rule_ids": [
+        "NAI-089"
+      ],
+      "digest": "1bf8761d51",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_ops.py",
+      "function": "check",
+      "line": 20,
+      "rule_ids": [
+        "NAI-014"
+      ],
+      "digest": "c29a16c935",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_stale.py",
+      "function": "warn_twice",
+      "line": 20,
+      "rule_ids": [
+        "NAI-159"
+      ],
+      "digest": "ff57c2eb24",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_chains.py",
+      "function": "stamp",
+      "line": 21,
+      "rule_ids": [
+        "NAI-006"
+      ],
+      "digest": "20d7bb0324",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_launch.py",
+      "function": "data_path",
+      "line": 21,
+      "rule_ids": [
+        "NAI-206"
+      ],
+      "digest": "91bfd7b6de",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_order.py",
+      "function": "close_quietly",
+      "line": 21,
+      "rule_ids": [
+        "NAI-173",
+        "NAI-143"
+      ],
+      "digest": "99eea6e27f",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_shape.py",
+      "function": "size_of",
+      "line": 21,
+      "rule_ids": [
+        "NAI-002",
+        "NAI-028",
+        "NAI-140"
+      ],
+      "digest": "00988edf98",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_dynamic.py",
+      "function": "restore",
+      "line": 22,
+      "rule_ids": [
+        "NAI-093"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_invented.py",
+      "function": "verbosity",
+      "line": 22,
+      "rule_ids": [
+        "NAI-059"
+      ],
+      "digest": "8ff09d14bb",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_trust.py",
+      "function": "label",
+      "line": 22,
+      "rule_ids": [
+        "NAI-165"
+      ],
+      "digest": "24666a8404",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_foreign.py",
+      "function": "add_entry",
+      "line": 23,
+      "rule_ids": [
+        "NAI-091",
+        "NAI-100",
+        "NAI-109"
+      ],
+      "digest": "e28ab29f45",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_keys.py",
+      "function": "sample_rows",
+      "line": 23,
+      "rule_ids": [
+        "NAI-212"
+      ],
+      "digest": "427fb47cc5",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_meaning.py",
+      "function": "is_positive",
+      "line": 23,
+      "rule_ids": [
+        "NAI-103"
+      ],
+      "digest": "a65a20d7a9",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_names.py",
+      "function": "find_row",
+      "line": 23,
+      "rule_ids": [
+        "NAI-104",
+        "NAI-137"
+      ],
+      "digest": "52a977f3dc",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_roles.py",
+      "function": "get_width",
+      "line": 23,
+      "rule_ids": [
+        "NAI-130"
+      ],
+      "digest": "69f06e3fbb",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_secrets.py",
+      "function": "find_user",
+      "line": 23,
+      "rule_ids": [
+        "NAI-073",
+        "NAI-160",
+        "NAI-137"
+      ],
+      "digest": "f33c8086f6",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_typos.py",
+      "function": "code_word",
+      "line": 23,
+      "rule_ids": [
+        "NAI-053"
+      ],
+      "digest": "da48d030ee",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_branches.py",
+      "function": "stamp",
+      "line": 24,
+      "rule_ids": [
+        "NAI-006"
+      ],
+      "digest": "9404d6a9f0",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_noop.py",
+      "function": "tally",
+      "line": 24,
+      "rule_ids": [
+        "NAI-025",
+        "NAI-032"
+      ],
+      "digest": "dfc4c0d50e",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_quietly.py",
+      "function": "test_render",
+      "line": 24,
+      "rule_ids": [
+        "NAI-020",
+        "NAI-022"
+      ],
+      "digest": "ef9c2f3936",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_checks.py",
+      "function": "show",
+      "line": 25,
+      "rule_ids": [
+        "NAI-098"
+      ],
+      "digest": "58ab7fdd2d",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_flow.py",
+      "function": "sign",
+      "line": 25,
+      "rule_ids": [
+        "NAI-142"
+      ],
+      "digest": "be73feda36",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_ops.py",
+      "function": "same",
+      "line": 25,
+      "rule_ids": [
+        "NAI-016S"
+      ],
+      "digest": "9c48b57007",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_stale.py",
+      "function": "run_query",
+      "line": 25,
+      "rule_ids": [
+        "NAI-160"
+      ],
+      "digest": "5c59f40635",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_dynamic_two.py",
+      "function": "prepare",
+      "line": 26,
+      "rule_ids": [
+        "NAI-160"
+      ],
+      "digest": "f028a3f932",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_launch.py",
+      "function": "spawn",
+      "line": 26,
+      "rule_ids": [
+        "NAI-210"
+      ],
+      "digest": "4258bda84b",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_roles.py",
+      "function": "set_width",
+      "line": 26,
+      "rule_ids": [
+        "NAI-131"
+      ],
+      "digest": "a6b805e947",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_trust.py",
+      "function": "area",
+      "line": 26,
+      "rule_ids": [
+        "NAI-166"
+      ],
+      "digest": "f463211828",
+      "confirmed": false
+    },
+    {
+      "file": "demos/demo06.py",
+      "function": "main",
+      "line": 26,
+      "rule_ids": [
+        "NAI-098"
+      ],
+      "digest": "553122fef6",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_chains.py",
+      "function": "total_width",
+      "line": 27,
+      "rule_ids": [
+        "NAI-010",
+        "NAI-031",
+        "NAI-147"
+      ],
+      "digest": "7dd01b0499",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_loops.py",
+      "function": "glue",
+      "line": 27,
+      "rule_ids": [
+        "NAI-179"
+      ],
+      "digest": "63ceefdcbb",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_foreign.py",
+      "function": "label_upper",
+      "line": 28,
+      "rule_ids": [
+        "NAI-110"
+      ],
+      "digest": "cc5941414b",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_order.py",
+      "function": "port_of",
+      "line": 28,
+      "rule_ids": [
+        "NAI-200"
+      ],
+      "digest": "bedb5e7991",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_quietly.py",
+      "function": "report",
+      "line": 28,
+      "rule_ids": [
+        "NAI-021",
+        "NAI-098"
+      ],
+      "digest": "ed31a0df11",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_shape.py",
+      "function": "guarded",
+      "line": 28,
+      "rule_ids": [
+        "NAI-029",
+        "NAI-038"
+      ],
+      "digest": "42fa66ce2a",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_extended.py",
+      "function": "__init__",
+      "line": 29,
+      "rule_ids": [
+        "NAI-125"
+      ],
+      "digest": "6e9d23c297",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_meaning.py",
+      "function": "find_row",
+      "line": 29,
+      "rule_ids": [
+        "NAI-104",
+        "NAI-137"
+      ],
+      "digest": "52a977f3dc",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_stale.py",
+      "function": "fetch",
+      "line": 29,
+      "rule_ids": [
+        "NAI-161",
+        "NAI-167"
+      ],
+      "digest": "f4e44136b0",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_branches.py",
+      "function": "outer",
+      "line": 30,
+      "rule_ids": [
+        "NAI-007"
+      ],
+      "digest": "6468cc69ca",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_noop.py",
+      "function": "bump",
+      "line": 30,
+      "rule_ids": [
+        "NAI-170"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_order.py",
+      "function": "to_port",
+      "line": 32,
+      "rule_ids": [
+        "NAI-201"
+      ],
+      "digest": "e2400448f1",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_chains.py",
+      "function": "data_dir",
+      "line": 33,
+      "rule_ids": [
+        "NAI-008",
+        "NAI-148"
+      ],
+      "digest": "3bedf09dc4",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_foreign.py",
+      "function": "get_users",
+      "line": 33,
+      "rule_ids": [
+        "NAI-115"
+      ],
+      "digest": "84475b6eed",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_typos.py",
+      "function": "mark_twice",
+      "line": 33,
+      "rule_ids": [
+        "NAI-054",
+        "NAI-091"
+      ],
+      "digest": "0d0b6293e7",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_context.py",
+      "function": "scale_alpha",
+      "line": 34,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": "4db5649fac",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_roles.py",
+      "function": "is_ready",
+      "line": 34,
+      "rule_ids": [
+        "NAI-104",
+        "NAI-132"
+      ],
+      "digest": "fa96f9b45f",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_shape.py",
+      "function": "seal",
+      "line": 34,
+      "rule_ids": [
+        "NAI-171"
+      ],
+      "digest": "d85df3cb4f",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_typos.py",
+      "function": "ordered_table",
+      "line": 39,
+      "rule_ids": [
+        "NAI-056"
+      ],
+      "digest": "097b063dbe",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_context.py",
+      "function": "scale_beta",
+      "line": 41,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": "ea187e8736",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/tests/utils.py",
+      "function": "pycharm",
+      "line": 44,
+      "rule_ids": [
+        "NAI-094"
+      ],
+      "digest": "632243da1a",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_context.py",
+      "function": "scale_gamma",
+      "line": 48,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": "ceb30be3cb",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/ansitowin32.py",
+      "function": "isatty",
+      "line": 49,
+      "rule_ids": [
+        "NAI-078"
+      ],
+      "digest": "b615c57180",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/winterm.py",
+      "function": "reset_all",
+      "line": 50,
+      "rule_ids": [
+        "NAI-003"
+      ],
+      "digest": "0e19548348",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_context.py",
+      "function": "scale_delta",
+      "line": 55,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": "f6ef0b0b99",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/ansitowin32.py",
+      "function": "closed",
+      "line": 62,
+      "rule_ids": [
+        "NAI-078"
+      ],
+      "digest": "5c8dafec40",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_context.py",
+      "function": "scale_epsilon",
+      "line": 62,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": "ed2d32b850",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_context.py",
+      "function": "scale_zeta",
+      "line": 69,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": "8a6d6a27bd",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_context.py",
+      "function": "scale_eta",
+      "line": 76,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": "d01e0b2f91",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/repair_plant_context.py",
+      "function": "scale_theta",
+      "line": 83,
+      "rule_ids": [
+        "NAI-230"
+      ],
+      "digest": "308b052376",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/initialise.py",
+      "function": "wrap_stream",
+      "line": 111,
+      "rule_ids": [
+        "NAI-021S"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "colorama/win32.py",
+      "function": "GetConsoleScreenBufferInfo",
+      "line": 118,
+      "rule_ids": [
+        "NAI-010",
+        "NAI-031",
+        "NAI-147"
+      ],
+      "digest": "8fa44230d8",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/win32.py",
+      "function": "SetConsoleCursorPosition",
+      "line": 129,
+      "rule_ids": [
+        "RCA-001"
+      ],
+      "digest": "250e1d00b0",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/win32.py",
+      "function": "FillConsoleOutputCharacter",
+      "line": 147,
+      "rule_ids": [
+        "NAI-010",
+        "NAI-031",
+        "NAI-147"
+      ],
+      "digest": "f4353a1796",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/winterm.py",
+      "function": "enable_vt_processing",
+      "line": 178,
+      "rule_ids": [
+        "NAI-078"
+      ],
+      "digest": "f5f1cc69ce",
+      "confirmed": false
+    },
+    {
+      "file": "colorama/ansitowin32.py",
+      "function": "extract_params",
+      "line": 220,
+      "rule_ids": [
+        "NAI-179"
+      ],
+      "digest": null,
+      "confirmed": false
+    },
+    {
+      "file": "colorama/ansitowin32.py",
+      "function": "convert_osc",
+      "line": 260,
+      "rule_ids": [
+        "NAI-021S"
+      ],
+      "digest": null,
+      "confirmed": false
+    }
+  ],
+  "return_channel_lines": 1,
+  "return_channel": "/Users/dev/Desktop/CODE_RADAR_REFURBISH_copy1/system_scripts/return_channel_0cb5ea90e0ac.jsonl",
+  "builder_state_sha256": "443766dc58f15ebc64a87552ea98b1dd41ba75b9851c4b8617c1a0857025b419",
+  "confirmed_joined": 0,
+  "confirmed_from_ledger": 1,
+  "confirmed_ledger_rows": [
+    {
+      "digest": "dea465b4bd",
+      "replace_span": "colorama/repair_plant_branches.py:L7-L11",
+      "rule_ids": [
+        "NAI-002",
+        "NAI-082",
+        "NAI-083",
+        "NAI-084",
+        "NAI-114",
+        "NAI-185",
+        "NAI-186",
+        "NAI-121",
+        "NAI-140",
+        "MEASURED-NOTHING",
+        "NAI-229"
+      ],
+      "file": "colorama/repair_plant_branches.py",
+      "function": "guarded",
+      "line": 7,
+      "seat": "coderadar-mcp",
+      "note": "suite unmoved from baseline",
+      "edit_kind": "diff",
+      "timestamp": "2026-09-21T18:27:26.230494+00:00"
+    }
+  ],
+  "confirmed_ledger": "/Users/dev/Desktop/CODE_RADAR_REFURBISH_copy1/system_scripts/confirmed_ledger_0cb5ea90e0ac.jsonl",
+  "rule_outcomes": {
+    "MEASURED-NOTHING": {
+      "confirmed_for": 1,
+      "failed_against": {}
+    },
+    "NAI-002": {
+      "confirmed_for": 1,
+      "failed_against": {}
+    },
+    "NAI-082": {
+      "confirmed_for": 1,
+      "failed_against": {}
+    },
+    "NAI-083": {
+      "confirmed_for": 1,
+      "failed_against": {}
+    },
+    "NAI-084": {
+      "confirmed_for": 1,
+      "failed_against": {}
+    },
+    "NAI-114": {
+      "confirmed_for": 1,
+      "failed_against": {}
+    },
+    "NAI-121": {
+      "confirmed_for": 1,
+      "failed_against": {}
+    },
+    "NAI-140": {
+      "confirmed_for": 1,
+      "failed_against": {}
+    },
+    "NAI-185": {
+      "confirmed_for": 1,
+      "failed_against": {}
+    },
+    "NAI-186": {
+      "confirmed_for": 1,
+      "failed_against": {}
+    },
+    "NAI-229": {
+      "confirmed_for": 1,
+      "failed_against": {}
+    }
+  },
+  "orphans": 0,
+  "orphans_channel": 0,
+  "unparsed": 0,
+  "finished": false,
+  "finished_reason": "not finished: mypy_errors=NOT MEASURED, counterfeit_failed=161",
+  "finished_inputs": {
+    "counterfeit_failed": 161,
+    "mypy_errors": null,
+    "severed_links": 0
+  },
+  "note": "run 158 \u2014 T1, the drift fix (session 7 \u00a7C): three rewriter rows in ONE file applied and measured, the retirement window waited out ON PURPOSE, and every outcome still reported \u2014 the apply lease carries the pre-edit identity (I-119/125/138), the diff is re-based (I-130), the channel line carries the variant (I-122), and an HTML-escaped or stale id resolves (I-137). Driver-driven, not mounted."
+}

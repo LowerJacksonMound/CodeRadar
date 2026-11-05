@@ -45,9 +45,9 @@ def headless_command(root: Path) -> Optional[List[str]]:
            if not (set(p.relative_to(root).parts) & _SKIP_DIRS)):
         return None
     if readme is not None:   # no GUI anywhere: the README's own run line is safe to execute as-is
-        m = re.search(r"python3?\s+-m\s+([A-Za-z_][\w.]*)([^\n`]*)", readme.read_text(errors="replace"))
-        if m:
-            return [m.group(1), *m.group(2).split()]
+        hit = re.search(r"python3?\s+-m\s+([A-Za-z_][\w.]*)([^\n`]*)", readme.read_text(errors="replace"))
+        if hit:
+            return [hit.group(1), *hit.group(2).split()]
     mains = sorted(p.parent for p in root.glob("*/__main__.py"))
     return [mains[0].name] if mains else None
 
@@ -110,12 +110,12 @@ def _defs(trees_by_rel: Dict[str, ast.AST]) -> List[Dict[str, Any]]:
     return out
 
 
-def _differing_lines(mine: ast.AST, other: ast.AST) -> List[int]:
+def _differing_lines(mine: ast.FunctionDef, other: ast.FunctionDef) -> List[int]:
     """Lines of `mine`'s body whose statement text (after normalising the parameter names) has no match in `other`."""
-    def stmts(fn: ast.AST) -> List[Tuple[int, str]]:
-        names = [a.arg for a in fn.args.args]   # type: ignore[attr-defined]
+    def stmts(fn: ast.FunctionDef) -> List[Tuple[int, str]]:
+        names = [a.arg for a in fn.args.args]
         out: List[Tuple[int, str]] = []
-        body = fn.body[1:] if ast.get_docstring(fn) else fn.body   # type: ignore[attr-defined]
+        body = fn.body[1:] if ast.get_docstring(fn) else fn.body
         for st in (n for b in body for n in ast.walk(b) if isinstance(n, ast.stmt)):
             if isinstance(st, (ast.If, ast.For, ast.While, ast.With, ast.Try)):   # the header only, not the body
                 head = getattr(st, "test", None) or getattr(st, "iter", None)

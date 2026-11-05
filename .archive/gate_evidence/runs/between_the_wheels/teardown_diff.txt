@@ -1,0 +1,92 @@
+7c7
+< f781d59416d57343be4fa5aa95675f57 ./colorama/ansi.py
+---
+> 0f2092c10e540b04692a66ed2f78b81f ./colorama/ansi.py
+11,19c11,19
+< 9c2418c33cfd1b8bb64bfa0777261d76 ./colorama/repair_plant_008.py
+< 966aa637c158a347c21580d6ef5cf3eb ./colorama/repair_plant_061.py
+< b2abfab00a10545ac717d86136aa92fe ./colorama/repair_plant_070.py
+< f258d37640ea19351d87138cadea14ef ./colorama/repair_plant_071.py
+< 579e392a79959bf74f9fb27d1620f5a0 ./colorama/repair_plant_092.py
+< 15da7fed7df83eca49ee3838f9c33888 ./colorama/repair_plant_093.py
+< bcb7e3db7963428e42c3820216643551 ./colorama/repair_plant_branches.py
+< 0af6ebc428d09fe34dbbb18baa3a6202 ./colorama/repair_plant_chains.py
+< 05a0d0fe84b7a1925c2ce77d27c7de65 ./colorama/repair_plant_checks.py
+---
+> 53e85766366a2bc8326abcb604018387 ./colorama/repair_plant_008.py
+> 2a31e292bb5b282f6d4a46e7a10396de ./colorama/repair_plant_061.py
+> a87875d3f9cfa44b56219f8f9b8abef0 ./colorama/repair_plant_070.py
+> 93f9d39d0acfcbd0457564bacf547b7c ./colorama/repair_plant_071.py
+> 61c6dd5ff60b9c235a94fb5974323c3a ./colorama/repair_plant_092.py
+> 8cb00bd740e9b8cab8264eb76f34a2f4 ./colorama/repair_plant_093.py
+> 3f96e223c57e3f2187cea15f600ef821 ./colorama/repair_plant_branches.py
+> 5d3c8e4b36276e780a00e64373dbda64 ./colorama/repair_plant_chains.py
+> 7e91649d873ef33c276b6539a121bd08 ./colorama/repair_plant_checks.py
+22,23c22,23
+< e7af29aff9d62fe509d56a8da3f7c7a1 ./colorama/repair_plant_dynamic_two.py
+< 6a743ec1d83d9fc066c8a54e262300dc ./colorama/repair_plant_extended.py
+---
+> e6df3ae160a064744349cbe49c87c560 ./colorama/repair_plant_dynamic_two.py
+> 094d24ae463ef931e55d21206c26141f ./colorama/repair_plant_extended.py
+25,27c25,27
+< de2705bfe7a5d59a64cf853607784c9f ./colorama/repair_plant_flow.py
+< f4137c0a77c455f8f64f118bfe1b1868 ./colorama/repair_plant_foreign.py
+< a96ea4aaa16e903d37044b1913b29fa6 ./colorama/repair_plant_graph.py
+---
+> dbc1e6508e0aa71bac8efe2b6e2db4c8 ./colorama/repair_plant_flow.py
+> 1dd357efd82de2817ff597ed274c007d ./colorama/repair_plant_foreign.py
+> c3e309c00d694f3f2d2928b6a7adab15 ./colorama/repair_plant_graph.py
+29,30c29,30
+< 502d085513b3a4203bb3a6602dfe338d ./colorama/repair_plant_guards.py
+< fd2a6387d4c343b0931e914e17cd4453 ./colorama/repair_plant_hr.py
+---
+> 7ebec2dd260311bb8f0d2e706092c44f ./colorama/repair_plant_guards.py
+> 50acd28b027ee06e17768a9128734fe5 ./colorama/repair_plant_hr.py
+32,34c32,34
+< c39c43a19be0f8d26815986e3215ce14 ./colorama/repair_plant_invented.py
+< 33c07f9ae562b2282b8cd65c4d98cab9 ./colorama/repair_plant_join.py
+< c1d8b860de2e38a25f1fa398e84b1153 ./colorama/repair_plant_keys.py
+---
+> 460416a624d55fd3b51a2e4e80502aa1 ./colorama/repair_plant_invented.py
+> d76444aa047c5f56b719575b2e3c5bdb ./colorama/repair_plant_join.py
+> 50a4c5fa2a35f932492ec60f25407848 ./colorama/repair_plant_keys.py
+36,41c36,41
+< 718c200370c133e954ee14f2d427800b ./colorama/repair_plant_loops.py
+< 12715c4bc038b6061d31f9aae449840d ./colorama/repair_plant_meaning.py
+< 1bb2d5395b205ab848920dfebaf91272 ./colorama/repair_plant_names.py
+< eebe9a71f21695a8e942d716e5cf7e3f ./colorama/repair_plant_noop.py
+< c694ee3ba881adfd1294b163f0ac9ad2 ./colorama/repair_plant_ops.py
+< dd6553feffdc1dadaaa35aa747b8cebb ./colorama/repair_plant_order.py
+---
+> 1f58f8e96c005c2af5dad1ac84c3f98b ./colorama/repair_plant_loops.py
+> 8927001db9e04c41bb8aebdb7085e911 ./colorama/repair_plant_meaning.py
+> 38c39afdd25456022391ca37f0e7ebec ./colorama/repair_plant_names.py
+> f69f5a65eedbee568db533a92daa4e3c ./colorama/repair_plant_noop.py
+> d449618c46ff1eada3618be71365f0d3 ./colorama/repair_plant_ops.py
+> 703e38f9ff42a37d1eb90e79622867e9 ./colorama/repair_plant_order.py
+43,46c43,46
+< 909fba303f60fd73eef3eb91dbe2a4d6 ./colorama/repair_plant_quietly.py
+< 8a5d8c7099a406a73e732dbe424358d8 ./colorama/repair_plant_roles.py
+< c205f18bfb86566759927fe44d3bf919 ./colorama/repair_plant_secrets.py
+< 17ddd3e935286ca76f54d6c453032f47 ./colorama/repair_plant_shape.py
+---
+> da82cf1f513c3b7ff1fa3d865076bd93 ./colorama/repair_plant_quietly.py
+> 6ccf1c37748274f628ad28d32b8f8b05 ./colorama/repair_plant_roles.py
+> 4cc424119203c78776eb74cda9509f1b ./colorama/repair_plant_secrets.py
+> 36398010da8221b6d2cc9b99c8a2f9ae ./colorama/repair_plant_shape.py
+51c51
+< 12d8c32c2abb96e34f2168731d6e0fa2 ./colorama/repair_plant_stale.py
+---
+> 31fe8684ad3cdd2ac7a6b284288294b0 ./colorama/repair_plant_stale.py
+54,55c54,55
+< 419d0e3b98f2a47dd726bac6e5b118fe ./colorama/repair_plant_trust.py
+< 61395706e8df3a867b4c7670af82349b ./colorama/repair_plant_typos.py
+---
+> 31be97eabfe665dd85169c5493c2bbeb ./colorama/repair_plant_trust.py
+> ccb6f41f0bf08bb2949d29b45f6c6f4c ./colorama/repair_plant_typos.py
+63,64c63,64
+< 0af1249cc740b035c9018a878510ee8e ./colorama/win32.py
+< a52a65aeedfbf43c54d6302f0d2809cb ./colorama/winterm.py
+---
+> 7b2624e8d413b9e93398c96d622a2716 ./colorama/win32.py
+> 6b7f6bb285001b8a39722ce446071beb ./colorama/winterm.py

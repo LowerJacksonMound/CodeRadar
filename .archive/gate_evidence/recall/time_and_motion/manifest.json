@@ -1,0 +1,32 @@
+{
+ "target": "/Users/dev/Desktop/time_and_motion",
+ "built": "2026-09-10",
+ "by": "set 4b-41 (run 95, app copy 2)",
+ "base": "the_color_of_right tree + colorama/repair_plant_zeroed.py",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_zeroed.py",
+   "line": 4,
+   "function": "adjusted",
+   "family": "NAI-024S",
+   "accept_any_of": ["NAI-024S"],
+   "what": "`factor = amount * 0; return factor` — the parameter read and cancelled (set 4b-41, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_zeroed.py",
+   "line": 9,
+   "function": "noise_level",
+   "family": "NAI-025S",
+   "accept_any_of": ["NAI-025S"],
+   "what": "`noise = unique - unique` on a parameter-derived name — always zero (set 4b-41, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_zeroed.py",
+   "line": 15,
+   "function": "collect",
+   "family": "NAI-026S",
+   "accept_any_of": ["NAI-026S"],
+   "what": "`buffer = []; for item in items: buffer.append(item); return buffer` — the loop identity accumulator (set 4b-41, no-fix-by-design)"
+  }
+ ]
+}

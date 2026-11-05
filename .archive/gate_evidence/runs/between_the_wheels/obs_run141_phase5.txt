@@ -1,0 +1,32 @@
+coderadar-mcp 0.1.0: target /Users/dev/Desktop/between_the_wheels (repo_id a32f4c124796); state /Users/dev/Desktop/CODE_RADAR_REFURBISH/system_scripts; 13/13 tools bound
+cr_status at close: cycle 6 · finished False (mirror) · not finished: counterfeit_failed=98, mypy_errors=574
+  finished_inputs {"counterfeit_failed": 98, "mypy_errors": 574, "severed_links": 0}
+  infractions     {"total_functions": 355, "passed": 174, "failed": 98, "files_scanned": 64, "repairs": 88, "no_vetted_fix": 10, "whitelisted": 0, "withheld": 83}
+
+cr_stop with a client manifest of 35 paths
+  stopped              true
+  residue_clean        true
+  byte_identical       false
+  files_compared       77
+  client_edits         35
+  unexpected_changes   []
+  run_dir              "/Users/dev/Desktop/CODE_RADAR_REFURBISH/.archive/runs/between_the_wheels"
+  error                null
+    circuit_daemon pid 18230 exit 0 (SIGTERM)
+    noai_validator pid 18239 exit 0 (SIGTERM)
+    cheatsheets pid 18240 exit 0 (SIGTERM)
+    dashboard pid 18241 exit 0 (SIGTERM)
+  report_path            "/Users/dev/Desktop/CODE_RADAR_REFURBISH/.archive/runs/between_the_wheels/tester_report.json"
+  builder_cycles         6
+  infractions            98
+  solutions              88
+  confirmed              0
+  confirmed_fraction     0.0
+  tester_ran             true
+  status                 "MEASURED"
+  return_channel_lines   14
+  orphans                7
+  unparsed               0
+  finished               false
+  error                  null
+  per_infraction rows: 98

@@ -1,0 +1,68 @@
+06:56:53 [cheatsheets] INFO Initializing cheatsheets
+fixture: /var/folders/pq/bv7b8vw93c1f2_2zxbkplz4w0000gn/T/mcp_write_path_405vwjpm
+  mirror + BUILDER_STATE of run 136, target copy target
+
+Part 1 — cr_apply: the edit, and nothing written to the target (Q3)
+  ✓ 3 rewriter rows taken from the mirror
+  ✓ colorama/repair_plant_071.py::collect::4 → diff, applies_cleanly=True, 288 chars, digest 8f9a25700f
+  ✓ colorama/repair_plant_061.py::label::5 → diff, applies_cleanly=True, 187 chars, digest 2da1222e69
+  ✓ colorama/repair_plant_070.py::count_ints::5 → diff, applies_cleanly=True, 245 chars, digest c312a6a098
+    ── the rendered diff, verbatim ──
+    --- colorama/repair_plant_071.py:L4-L6
+    +++ colorama/repair_plant_071.py:L4-L6
+    @@ -1,3 +1,4 @@
+    -def collect(items=[]):
+    -    items.append(1)
+    -    return items
+    +def collect(items=None):
+    +    new_items = list(items) if items is not None else []
+    +    new_items.append(1)
+    +    return new_items
+  ✓ 2 prescribed rows with <placeholders>
+  ✓ colorama/repair_plant_invented.py::read_stage::5 → shape, placeholders ['real.package.module', 'names actually used']
+  ✓ colorama/repair_plant_stubs.py::<module>::5 → shape, placeholders ['name X defines']
+    ── the rendered shape, verbatim ──
+    shape: from <real.package.module> import <names actually used>
+      <real.package.module> — the project's own module by its real path, or the installed package the intent's dependencies list
+      <names actually used> — Import the module that actually holds the names used
+  ✓ colorama/initialise.py::_wipe_internal_state_for_tests::9 → none, reason 'declined' (T1 decision 6)
+  ✓ an unknown row is refused, not guessed
+  ✓ the target copy is byte-identical after 9 renders (8546669f4e8b)
+
+Part 2 — cr_report_outcome: the one write, read back by the ENGINE
+  ✓ two rows that exist in BUILDER_STATE.rows
+  ✓ two lines appended to return_channel_4fd707688a44.jsonl
+  ✓ digest AND replace_span came off the ROW, not the caller
+  ✓ the client cannot supply either: neither is in the input schema
+    ── the line, verbatim ──
+    {"digest": "8f9a25700f", "replace_span": "colorama/repair_plant_071.py:L4-L6", "outcome": "failed", "failure_log": "AssertionError: collect() returned an alias", "tester": "coderadar-mcp", "timestamp": "2026-09-17T11:56:53.803628+00:00"}
+  ✓ two newline-terminated lines on disk
+  ✓ the engine's _parse_channel_line accepts both
+  ✓ joined: failed=['colorama/repair_plant_071.py::collect::4'] confirmed=['colorama/repair_plant_061.py::label::5'] orphans=0
+  ✓ rows[].tester = {"confirmed": true, "tester": "coderadar-mcp", "timestamp": "2026-09-17T11:56:53.804595+00:00"}
+  ✓ the LAST line on a digest supersedes the earlier one (_join_channel keeps matching[-1])
+  ✓ append-only: the first two lines are unchanged, byte for byte
+  ✓ the right digest with the wrong span is a silent ORPHAN — hence the row read
+  ✓ refused before the file: outcome `refuted`
+  ✓ refused before the file: an unknown row
+  ✓ refused before the file: a declined row
+  ✓ three lines on disk — no refusal reached it
+
+Part 3 — cr_run_module: the target's runner THROUGH the wrapper
+  ✓ -m pytest colorama/tests -q → exit 0 in 0.817s
+  ✓ I-55 flag reported: ['colorama/tests', '-q', '-p', 'no:cacheprovider']
+  ✓ the wrapper's pid was on the band (running.json) while it ran
+  ✓ no .pytest_cache left in the target (I-55)
+    stdout tail: 39 passed, 14 skipped in 0.08s
+  ✓ the runner's own record landed in the fixture tree, not the live one
+  ✓ a run past its timeout is killed → exit 124, timed_out True
+  ✓ a FILE path runs as a script, not `-m` (as_module auto-picked): exit 0, wrapper recorded entry_point 'crproof_script.py'
+
+Part 4 — the payloads against T1's schemas, and the registry
+  ✓ 18 payloads validated against their output schema (success AND error), 0 bad
+  ✓ HANDLERS['cr_apply'] is write_tools.cr_apply
+  ✓ HANDLERS['cr_run_module'] is write_tools.cr_run_module
+  ✓ HANDLERS['cr_report_outcome'] is write_tools.cr_report_outcome
+  ✓ the only writer in the surface: ['cr_report_outcome']
+
+T3 write-path proof: PASS

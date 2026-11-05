@@ -385,6 +385,7 @@ class SemanticChecksMixin:
         self._docstring_claims_vs_body(docstring, docstring_lower)
         # owner 2026-10-07 ~09:10: the stated intent, read once (intent_claims) and checked against the body —
         # by probe when the body is pure arithmetic, by shape otherwise; a claim that cannot be checked stays silent
+        _ic: Any
         try:
             from no_aivalidator.noai_validator import intent_claims as _ic
         except ImportError:

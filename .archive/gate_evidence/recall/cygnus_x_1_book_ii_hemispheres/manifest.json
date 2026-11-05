@@ -1,0 +1,38 @@
+{
+ "target": "/Users/dev/Desktop/cygnus_x_1_book_ii_hemispheres",
+ "built": "2026-09-10",
+ "by": "set 4b-01 (run 54)",
+ "base": "colorama-0.4.6 sdist + the 6 run-48 rewriter plants (a_farewell_to_kings snapshot) + colorama/repair_plant_hr.py",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_hr.py",
+   "line": 8,
+   "function": "level",
+   "family": "HR-002",
+   "accept_any_of": [
+    "HR-002"
+   ],
+   "what": "@property whose body returns nothing \u2014 declared GETTER lacks its return (set 4b-01, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_hr.py",
+   "line": 12,
+   "function": "level",
+   "family": "HR-001",
+   "accept_any_of": [
+    "HR-001"
+   ],
+   "what": "@level.setter with no parameter beside the receiver \u2014 declared SETTER lacks its parameter (set 4b-01, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_hr.py",
+   "line": 17,
+   "function": "opened",
+   "family": "HR-003",
+   "accept_any_of": [
+    "HR-003"
+   ],
+   "what": "@contextmanager whose body never yields \u2014 declared CONTEXT_MANAGER lacks its yield (set 4b-01, no-fix-by-design)"
+  }
+ ]
+}

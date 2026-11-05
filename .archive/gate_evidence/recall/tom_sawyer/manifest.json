@@ -1,0 +1,58 @@
+{
+ "target": "/Users/dev/Desktop/tom_sawyer",
+ "built": "2026-09-10",
+ "by": "set 4b-11 (run 65)",
+ "base": "natural_science tree + colorama/repair_plant_order.py",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_order.py",
+   "line": 7,
+   "function": "endpoint",
+   "family": "NAI-167",
+   "accept_any_of": [
+    "NAI-167"
+   ],
+   "what": "a hardcoded https:// URL with no os.environ lookup (set 4b-11, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_order.py",
+   "line": 12,
+   "function": "parse",
+   "family": "NAI-172",
+   "accept_any_of": [
+    "NAI-172"
+   ],
+   "what": "`except Exception:` before `except ValueError:` \u2014 rewritten live by except_order_fix, the handlers reordered (set 4b-11)"
+  },
+  {
+   "file": "colorama/repair_plant_order.py",
+   "line": 25,
+   "function": "close_quietly",
+   "family": "NAI-173",
+   "accept_any_of": [
+    "NAI-173"
+   ],
+   "what": "`return True` inside finally; the same row also fires NAI-143 (set 4b-11, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_order.py",
+   "line": 28,
+   "function": "port_of",
+   "family": "NAI-200",
+   "accept_any_of": [
+    "NAI-200"
+   ],
+   "what": "`parser.getint(...)` with no try in the function (set 4b-11, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_order.py",
+   "line": 33,
+   "function": "to_port",
+   "family": "NAI-201",
+   "accept_any_of": [
+    "NAI-201"
+   ],
+   "what": "`int(value)` on a parameter with no guard (set 4b-11, no-fix-by-design)"
+  }
+ ]
+}

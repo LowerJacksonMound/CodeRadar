@@ -10,7 +10,7 @@ import hashlib
 import logging
 import tokenize
 from pathlib import Path
-from typing import Any, Callable, Dict, List, Optional, Set, Tuple, TypeVar, Union
+from typing import Any, Callable, Dict, List, Optional, Set, Tuple, TypeVar, Union, cast
 
 _F = TypeVar('_F', bound=Callable[..., Any])
 
@@ -231,7 +231,7 @@ def disabled_case_236_observations(functions: List[Any]) -> Dict[str, Dict[str, 
     without the guard) is never flagged — only the one carrying the extra case."""
     def _body(fn: Any) -> list:
         b = list(getattr(fn, "body", []) or [])
-        if b and isinstance(b[0], ast.Expr) and isinstance(getattr(b[0], "value", None), ast.Constant) \
+        if b and isinstance(b[0], ast.Expr) and isinstance(b[0].value, ast.Constant) \
                 and isinstance(b[0].value.value, str):
             b = b[1:]                                   # the docstring is not behaviour
         return b
@@ -239,7 +239,7 @@ def disabled_case_236_observations(functions: List[Any]) -> Dict[str, Dict[str, 
     def _guard(stmt: Any) -> Optional[str]:
         if not (isinstance(stmt, ast.If) and not stmt.orelse and [type(x) for x in stmt.body] == [ast.Return]):
             return None
-        t, r = stmt.test, stmt.body[0].value
+        t, r = stmt.test, cast(ast.Return, stmt.body[0]).value
         if not (isinstance(t, ast.Compare) and [type(o) for o in t.ops] in ([ast.Eq], [ast.NotEq], [ast.Is])
                 and isinstance(t.comparators[0], ast.Constant) and isinstance(r, ast.Constant)):
             return None
@@ -296,7 +296,7 @@ def _asserted_calls(fns: List[Any]) -> Dict[str, List[Tuple[tuple, Any]]]:
                 call, want = want, call
             if (isinstance(call, ast.Call) and isinstance(call.func, ast.Name) and isinstance(want, ast.Constant)
                     and all(isinstance(x, ast.Constant) for x in call.args)):
-                asserted.setdefault(call.func.id, []).append((tuple(x.value for x in call.args), want.value))
+                asserted.setdefault(call.func.id, []).append((tuple(cast(ast.Constant, x).value for x in call.args), want.value))
     return asserted
 
 
@@ -305,7 +305,7 @@ def _other_table_row(fn: Any, this: ast.AST, params: List[str], keyed: Set[int])
     of a lookup table written as ifs (a mapping), where each row is the rule, not a special case."""
     for x in ast.walk(fn):
         if (x is not this and isinstance(x, ast.If) and [type(b) for b in x.body] == [ast.Return]
-                and isinstance(x.body[0].value, ast.Constant)):
+                and isinstance(cast(ast.Return, x.body[0]).value, ast.Constant)):
             g = _literal_guards(x.test, params)
             if g is not None and set(g) == keyed:
                 return True
@@ -374,9 +374,9 @@ def _test_gaming_237(fns: List[Any], asserted: Dict[str, List[Tuple[tuple, Any]]
                     counter_names.add(base.id)
         for x in ast.walk(n):
             if not (isinstance(x, ast.If) and [type(b) for b in x.body] == [ast.Return]
-                    and isinstance(x.body[0].value, ast.Constant)):
+                    and isinstance(cast(ast.Return, x.body[0]).value, ast.Constant)):
                 continue
-            ret = x.body[0].value.value
+            ret = cast(ast.Constant, cast(ast.Return, x.body[0]).value).value
             t = x.test
             guards = _literal_guards(t, params)
             if guards and not counters and all(_boundary(v) for v in guards.values()):
@@ -417,7 +417,7 @@ def sibling_divergence_238_observations(functions: List[Any]) -> Dict[str, Dict[
 
     def _body(fn: Any) -> list:
         b = list(fn.body)
-        if b and isinstance(b[0], ast.Expr) and isinstance(getattr(b[0], "value", None), ast.Constant) \
+        if b and isinstance(b[0], ast.Expr) and isinstance(b[0].value, ast.Constant) \
                 and isinstance(b[0].value.value, str):
             b = b[1:]
         return b
@@ -450,7 +450,8 @@ def sibling_divergence_238_observations(functions: List[Any]) -> Dict[str, Dict[
                     if ast.dump(stripped) == ast.dump(ast.Module(body=_body(y), type_ignores=[])):
                         return f"`{x.name}` adds a `not` that `{y.name}` does not have"
             return None
-        diffs, where = [], []
+        diffs: List[str] = []
+        where = []
         for x, y in zip(fa, fb):
             n_before = len(diffs)
             if hasattr(x, "op") and type(x.op) is not type(y.op):

@@ -1,0 +1,48 @@
+snapshot : /Users/dev/CodeRadar_snapshots/between_the_wheels_20260917_062701   (77 files)
+target   : /Users/dev/Desktop/between_the_wheels   (77 files)
+
+files only in the snapshot : 0  []
+files only in the target   : 0  []
+files with different bytes : 35
+   colorama/ansi.py                                     1 edit(s) in the client's log
+   colorama/repair_plant_008.py                         1 edit(s) in the client's log
+   colorama/repair_plant_061.py                         1 edit(s) in the client's log
+   colorama/repair_plant_070.py                         1 edit(s) in the client's log
+   colorama/repair_plant_071.py                         1 edit(s) in the client's log
+   colorama/repair_plant_092.py                         1 edit(s) in the client's log
+   colorama/repair_plant_093.py                         1 edit(s) in the client's log
+   colorama/repair_plant_branches.py                    4 edit(s) in the client's log
+   colorama/repair_plant_chains.py                      4 edit(s) in the client's log
+   colorama/repair_plant_checks.py                      2 edit(s) in the client's log
+   colorama/repair_plant_dynamic_two.py                 1 edit(s) in the client's log
+   colorama/repair_plant_extended.py                    4 edit(s) in the client's log
+   colorama/repair_plant_flow.py                        2 edit(s) in the client's log
+   colorama/repair_plant_foreign.py                     4 edit(s) in the client's log
+   colorama/repair_plant_graph.py                       1 edit(s) in the client's log
+   colorama/repair_plant_guards.py                      1 edit(s) in the client's log
+   colorama/repair_plant_hr.py                          2 edit(s) in the client's log
+   colorama/repair_plant_invented.py                    1 edit(s) in the client's log
+   colorama/repair_plant_join.py                        1 edit(s) in the client's log
+   colorama/repair_plant_keys.py                        3 edit(s) in the client's log
+   colorama/repair_plant_loops.py                       3 edit(s) in the client's log
+   colorama/repair_plant_meaning.py                     4 edit(s) in the client's log
+   colorama/repair_plant_names.py                       1 edit(s) in the client's log
+   colorama/repair_plant_noop.py                        2 edit(s) in the client's log
+   colorama/repair_plant_ops.py                         3 edit(s) in the client's log
+   colorama/repair_plant_order.py                       2 edit(s) in the client's log
+   colorama/repair_plant_quietly.py                     1 edit(s) in the client's log
+   colorama/repair_plant_roles.py                       4 edit(s) in the client's log
+   colorama/repair_plant_secrets.py                     1 edit(s) in the client's log
+   colorama/repair_plant_shape.py                       4 edit(s) in the client's log
+   colorama/repair_plant_stale.py                       2 edit(s) in the client's log
+   colorama/repair_plant_trust.py                       3 edit(s) in the client's log
+   colorama/repair_plant_typos.py                       5 edit(s) in the client's log
+   colorama/win32.py                                    2 edit(s) in the client's log
+   colorama/winterm.py                                  1 edit(s) in the client's log
+
+the client's edit log claims 35 files
+  moved but NOT in the log (residue, CodeRadar or otherwise): 0  []
+  in the log but NOT moved                                  : 0  []
+  backed out (in the log, restored to snapshot bytes)       : 1  ['colorama/ansitowin32.py']
+
+Q3 IDENTITY PROOF: PASS — the difference set IS exactly the client's edit log

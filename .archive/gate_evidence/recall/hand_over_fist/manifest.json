@@ -1,0 +1,58 @@
+{
+ "target": "/Users/dev/Desktop/hand_over_fist",
+ "built": "2026-09-10",
+ "by": "set 4b-22 (run 76)",
+ "base": "red_tide tree + colorama/repair_plant_noop.py",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_noop.py",
+   "line": 8,
+   "function": "size",
+   "family": "NAI-022",
+   "accept_any_of": [
+    "NAI-022"
+   ],
+   "what": "a pure call (len) whose result is dropped (set 4b-22, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_noop.py",
+   "line": 14,
+   "function": "same_side",
+   "family": "NAI-023",
+   "accept_any_of": [
+    "NAI-023"
+   ],
+   "what": "a name compared to itself (the row also carries NAI-036) (set 4b-22, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_noop.py",
+   "line": 20,
+   "function": "first_wide",
+   "family": "NAI-024",
+   "accept_any_of": [
+    "NAI-024"
+   ],
+   "what": "a loop returning on its first item with nothing after it (set 4b-22, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_noop.py",
+   "line": 26,
+   "function": "tally",
+   "family": "NAI-025",
+   "accept_any_of": [
+    "NAI-025"
+   ],
+   "what": "`total = total + 0` (the row also carries NAI-032) (set 4b-22, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_noop.py",
+   "line": 31,
+   "function": "bump",
+   "family": "NAI-170",
+   "accept_any_of": [
+    "NAI-170"
+   ],
+   "what": "`++count`, a C-style pre-increment that is a no-op (set 4b-22, no-fix-by-design)"
+  }
+ ]
+}

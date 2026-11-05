@@ -1,0 +1,36 @@
+{
+  "stopped": true,
+  "daemons_exited": [
+    {
+      "name": "circuit_daemon",
+      "pid": 18230,
+      "exit_code": 0,
+      "signal": "SIGTERM"
+    },
+    {
+      "name": "noai_validator",
+      "pid": 18239,
+      "exit_code": 0,
+      "signal": "SIGTERM"
+    },
+    {
+      "name": "cheatsheets",
+      "pid": 18240,
+      "exit_code": 0,
+      "signal": "SIGTERM"
+    },
+    {
+      "name": "dashboard",
+      "pid": 18241,
+      "exit_code": 0,
+      "signal": "SIGTERM"
+    }
+  ],
+  "residue_clean": true,
+  "byte_identical": false,
+  "files_compared": 77,
+  "client_edits": 35,
+  "unexpected_changes": [],
+  "run_dir": "/Users/dev/Desktop/CODE_RADAR_REFURBISH/.archive/runs/between_the_wheels",
+  "error": null
+}

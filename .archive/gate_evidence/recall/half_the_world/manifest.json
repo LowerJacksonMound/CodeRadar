@@ -1,0 +1,38 @@
+{
+ "target": "/Users/dev/Desktop/half_the_world",
+ "built": "2026-09-10",
+ "by": "set 4b-39 (run 93, app copy 2)",
+ "base": "driven tree + colorama/repair_plant_nested.py",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_nested.py",
+   "line": 6,
+   "function": "report",
+   "family": "NAI-046",
+   "accept_any_of": [
+    "NAI-046"
+   ],
+   "what": "nested `stamp` whose every read is a builtin of the detector's table (the only shape NAI-046 decides — its `sub == node` skip leaves the inner subtree in `outer_names`); reported at the inner def's line 7, carried on `report`'s row L6 (set 4b-39, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_nested.py",
+   "line": 14,
+   "function": "record",
+   "family": "NAI-047",
+   "accept_any_of": [
+    "NAI-047"
+   ],
+   "what": "`assert store.register(key)` — a call outside the pure table inside an assert (set 4b-39, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_nested.py",
+   "line": 18,
+   "function": "pick_handler",
+   "family": "NAI-048",
+   "accept_any_of": [
+    "NAI-048"
+   ],
+   "what": "nested `first` and `second` with identical bodies (set 4b-39, no-fix-by-design)"
+  }
+ ]
+}

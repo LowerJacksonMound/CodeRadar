@@ -1,0 +1,24 @@
+{
+ "target": "/Users/dev/Desktop/circumstances",
+ "built": "2026-09-10",
+ "by": "set 4b-02 (run 55)",
+ "base": "colorama-0.4.6 sdist + the 6 run-48 rewriter plants + colorama/repair_plant_hr.py (cygnus_x_1_book_ii_hemispheres snapshot) + colorama/repair_plant_imports.py",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_imports.py",
+   "line": 8,
+   "function": "<module>",
+   "family": "NAI-209",
+   "accept_any_of": ["NAI-209"],
+   "what": "`dumps = None` in an except ImportError after `from json import dumps` — silent import failure (set 4b-02, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_imports.py",
+   "line": 13,
+   "function": "<module>",
+   "family": "NAI-211",
+   "accept_any_of": ["NAI-211"],
+   "what": "`parse_json = None` in an except ImportError after `from json import loads` — the fallback name matches nothing the try imported (set 4b-02, no-fix-by-design)"
+  }
+ ]
+}

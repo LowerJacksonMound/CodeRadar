@@ -4,6 +4,7 @@ usage: precision_table.py CAL [--prev ARCHIVE/health/calibration_20260906]"""
 from __future__ import annotations
 import argparse, collections, json, sys
 from pathlib import Path
+from typing import Any
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from calib_common import ROOT, load_table, table_dispositions, deciding_ids, recomputed_failed
 
@@ -12,7 +13,7 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(); ap.add_argument("cal"); ap.add_argument("--prev", default="")
     a = ap.parse_args(argv); cal = Path(a.cal); disp = table_dispositions(load_table())
     timings = json.load(open(cal / "precision" / "timings.json")) if (cal / "precision" / "timings.json").exists() else {}
-    per = []; fam = collections.defaultdict(lambda: {"libs": set(), "first": 0, "anywhere": 0, "alone": 0, "in_tests": 0, "examples": []})
+    per = []; fam: dict[str, dict[str, Any]] = collections.defaultdict(lambda: {"libs": set(), "first": 0, "anywhere": 0, "alone": 0, "in_tests": 0, "examples": []})
     for f in sorted((cal / "precision").glob("*.json")):
         d = json.load(open(f))
         if not (isinstance(d, dict) and "lib" in d and "rows" in d): continue
@@ -42,7 +43,7 @@ def main(argv=None) -> int:
         if p.get("timed_out"): L.append(f"| {p['lib']} | — | — | — | TIMED OUT | — | {p['seconds']} |")
         else: L.append(f"| {p['lib']} | {p['files']} | {p['rows']} | {p['test_rows']} | {p['failed']} | {100 * p['rate']:.0f} % | {p['seconds']} |")
     if a.prev:
-        prev = Path(a.prev); po = collections.Counter(); pn = collections.Counter(); libs = 0; of = nf = 0
+        prev = Path(a.prev); po: collections.Counter[str] = collections.Counter(); pn: collections.Counter[str] = collections.Counter(); libs = 0; of = nf = 0
         for f in sorted((cal / "precision").glob("*.json")):
             d = json.load(open(f))
             if not (isinstance(d, dict) and "lib" in d and "rows" in d): continue

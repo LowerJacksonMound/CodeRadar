@@ -1,0 +1,71 @@
+{
+ "target": "/Users/dev/Desktop/a_farewell_to_kings",
+ "built": "2026-09-08",
+ "by": "item 4 first batch (run 48)",
+ "base": "colorama-0.4.6 sdist (31 files) unpacked under the Rush-pool name a_farewell_to_kings; internal names kept (rule 15)",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_008.py",
+   "line": 6,
+   "function": "join_parts",
+   "family": "NAI-008",
+   "accept_any_of": [
+    "NAI-008"
+   ],
+   "what": "planted counterfeit for NAI-008 \u2014 the same source as system_scripts/generator_plants/NAI-008.py (item 4 first batch, run 48)"
+  },
+  {
+   "file": "colorama/repair_plant_070.py",
+   "line": 5,
+   "function": "count_ints",
+   "family": "NAI-070",
+   "accept_any_of": [
+    "NAI-070"
+   ],
+   "what": "planted counterfeit for NAI-070 \u2014 the same source as system_scripts/generator_plants/NAI-070.py (item 4 first batch, run 48)"
+  },
+  {
+   "file": "colorama/repair_plant_061.py",
+   "line": 5,
+   "function": "label",
+   "family": "NAI-061",
+   "accept_any_of": [
+    "NAI-061"
+   ],
+   "what": "planted counterfeit for NAI-061 \u2014 the same source as system_scripts/generator_plants/NAI-061.py (item 4 first batch, run 48)"
+  },
+  {
+   "file": "colorama/repair_plant_071.py",
+   "line": 4,
+   "function": "collect",
+   "family": "NAI-071",
+   "accept_any_of": [
+    "NAI-071"
+   ],
+   "what": "planted counterfeit for NAI-071 \u2014 the same source as system_scripts/generator_plants/NAI-071.py (item 4 first batch, run 48)"
+  },
+  {
+   "file": "colorama/repair_plant_092.py",
+   "line": 6,
+   "function": "run_echo",
+   "family": "NAI-092",
+   "accept_any_of": [
+    "NAI-092"
+   ],
+   "what": "planted counterfeit for NAI-092 \u2014 the same source as system_scripts/generator_plants/NAI-092.py (item 4 first batch, run 48)"
+  },
+  {
+   "file": "colorama/repair_plant_093.py",
+   "line": 6,
+   "function": "read_doc",
+   "family": "NAI-093",
+   "accept_any_of": [
+    "NAI-093"
+   ],
+   "what": "planted counterfeit for NAI-093 \u2014 the same source as system_scripts/generator_plants/NAI-093.py (item 4 first batch, run 48)"
+  }
+ ],
+ "honest_twins": [],
+ "controls": [],
+ "note": "one planted file per REWRITER (six: the three new NAI-008/070/061 and the three moved NAI-071/092/093) so the live run puts a before/after on the dashboard for every rewriter; the 20 colorama findings of run 46 are the real-code baseline"
+}

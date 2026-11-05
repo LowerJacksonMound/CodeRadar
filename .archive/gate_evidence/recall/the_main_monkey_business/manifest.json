@@ -1,0 +1,15 @@
+{
+ "target": "/Users/dev/Desktop/the_main_monkey_business",
+ "built": "2026-09-10",
+ "by": "set 4b-35 (run 89, app copy 3)",
+ "base": "spindrift tree + colorama/repair_plant_symmetry.py + colorama/repair_plant_symmetry_control.py",
+ "planted_findings": [
+  {"file": "colorama/repair_plant_symmetry.py", "line": 7, "function": "pick_side", "family": "NAI-232", "accept_any_of": ["NAI-232", "NAI-026", "NAI-003"], "what": "identical if / else branches — NAI-232 is a warning line on the row; NAI-026 (identical_branches) and NAI-003 decide it (set 4b-35, never decides)"},
+  {"file": "colorama/repair_plant_symmetry.py", "line": 14, "function": "grade", "family": "NAI-233", "accept_any_of": ["NAI-233", "NAI-232", "NAI-026", "NAI-003"], "what": "three identical if / elif / else branches — NAI-233 (and NAI-232 on the chain's last if / else) are warning lines; NAI-026 and NAI-003 decide it (set 4b-35, never decides)"},
+  {"file": "colorama/repair_plant_symmetry.py", "line": 23, "function": "sum_twice", "family": "NAI-234", "accept_any_of": ["NAI-234", "NAI-003"], "what": "two loops with identical bodies — NAI-234 is a warning line on the row; NAI-003 decides it (set 4b-35, never decides)"},
+  {"file": "colorama/repair_plant_symmetry.py", "line": 32, "function": "widths_twice", "family": "NAI-235", "accept_any_of": ["NAI-235", "NAI-003"], "what": "two identical list comprehensions — NAI-235 is an INFO warning line on the row; NAI-003 decides it (set 4b-35, never decides)"}
+ ],
+ "controls": [
+  "colorama/repair_plant_symmetry_control.py"
+ ]
+}

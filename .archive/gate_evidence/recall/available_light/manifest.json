@@ -1,0 +1,48 @@
+{
+ "target": "/Users/dev/Desktop/available_light",
+ "built": "2026-09-10",
+ "by": "set 4b-23 (run 77)",
+ "base": "hand_over_fist tree + colorama/repair_plant_keys.py",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_keys.py",
+   "line": 9,
+   "function": "widths",
+   "family": "NAI-174",
+   "accept_any_of": [
+    "NAI-174"
+   ],
+   "what": "`len` assigned over and then called (set 4b-23, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_keys.py",
+   "line": 14,
+   "function": "palette",
+   "family": "NAI-175",
+   "accept_any_of": [
+    "NAI-175"
+   ],
+   "what": "the key 'red' twice in one dict literal (set 4b-23, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_keys.py",
+   "line": 19,
+   "function": "flags",
+   "family": "NAI-177",
+   "accept_any_of": [
+    "NAI-177"
+   ],
+   "what": "keys 1 and True in one dict literal (set 4b-23, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_keys.py",
+   "line": 23,
+   "function": "sample_rows",
+   "family": "NAI-212",
+   "accept_any_of": [
+    "NAI-212"
+   ],
+   "what": "a single return of a literal list of literal rows (set 4b-23, no-fix-by-design)"
+  }
+ ]
+}

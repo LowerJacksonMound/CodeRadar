@@ -1,0 +1,2525 @@
+{
+ "driver": "stdio / in-process driver in a run record \u2014 NOT a mounted MCP client (the packet's line for T1 and T2; T3/run 162 is the only mounted seat)",
+ "item": "T2, the `finished` inputs (session 8 \u00a7D): `severed_by_repair` (I-127 / Q1) and the forced mypy `--python-version` (I-128 / Q2)",
+ "target": "/Users/dev/CodeRadar_snapshots/secret_touch_20260921_150336",
+ "run155": {
+  "suite": "1990 passed \u00b7 25 skipped \u00b7 1 xfailed",
+  "mypy_ran": false,
+  "mypy_rc": 2,
+  "mypy_files_checked": 0,
+  "mypy_forced_by_hand": "rc 1 \u00b7 65 source files checked \u00b7 1285 errors",
+  "severed_links_after_the_apply_pass": 16
+ },
+ "watch": {
+  "attached": true,
+  "target": "/Users/dev/CodeRadar_snapshots/secret_touch_20260921_150336",
+  "repo_id": "480405eb45ce",
+  "phase": "MONITORING",
+  "cycle": 2,
+  "since": "2026-09-21T21:06:23.586728+00:00",
+  "dashboard_url": "http://127.0.0.1:8082",
+  "health_url": "http://127.0.0.1:8053/health",
+  "error": null
+ },
+ "bound_by": "cr_attach (run_proof.sh up launched)",
+ "status": [
+  {
+   "label": "before anything \u2014 the baseline reading",
+   "cycle": 2,
+   "severed_links": 0,
+   "severed_by_repair": 0,
+   "mypy_ran": true,
+   "mypy_rc": 1,
+   "mypy_files_checked": 54,
+   "mypy_errors": 1313,
+   "finished": false,
+   "finished_type": "bool",
+   "finished_reason": "not finished: counterfeit_failed=198, mypy_errors=1313",
+   "finished_inputs": {
+    "counterfeit_failed": 198,
+    "mypy_errors": 1313,
+    "severed_links": 0
+   },
+   "counterfeit_failed": 198
+  },
+  {
+   "label": "after the apply pass \u2014 \u00a7D.3's reading",
+   "cycle": 4,
+   "severed_links": 5,
+   "severed_by_repair": 5,
+   "mypy_ran": true,
+   "mypy_rc": 1,
+   "mypy_files_checked": 54,
+   "mypy_errors": 1313,
+   "finished": false,
+   "finished_type": "bool",
+   "finished_reason": "not finished: counterfeit_failed=197, mypy_errors=1313, severed_links=5",
+   "finished_inputs": {
+    "counterfeit_failed": 197,
+    "mypy_errors": 1313,
+    "severed_links": 5
+   },
+   "counterfeit_failed": 197
+  },
+  {
+   "label": "after the back-out",
+   "cycle": 4,
+   "severed_links": 5,
+   "severed_by_repair": 5,
+   "mypy_ran": true,
+   "mypy_rc": 1,
+   "mypy_files_checked": 54,
+   "mypy_errors": 1313,
+   "finished": false,
+   "finished_type": "bool",
+   "finished_reason": "not finished: counterfeit_failed=197, mypy_errors=1313, severed_links=5",
+   "finished_inputs": {
+    "counterfeit_failed": 197,
+    "mypy_errors": 1313,
+    "severed_links": 5
+   },
+   "counterfeit_failed": 197
+  }
+ ],
+ "suite": [
+  {
+   "label": "baseline, before any edit",
+   "exit_code": 0,
+   "duration_s": 6.83,
+   "seen_on_band": true,
+   "tail": [
+    "........................................................................ [ 96%]",
+    "........................................................................ [100%]",
+    "1990 passed, 25 skipped, 31000 deselected, 1 xfailed in 5.33s"
+   ],
+   "error": null
+  },
+  {
+   "label": "after the apply pass and the unleased edit",
+   "exit_code": 0,
+   "duration_s": 7.088,
+   "seen_on_band": true,
+   "tail": [
+    "........................................................................ [ 96%]",
+    "........................................................................ [100%]",
+    "1990 passed, 25 skipped, 31000 deselected, 1 xfailed in 5.34s"
+   ],
+   "error": null
+  }
+ ],
+ "entry_point_run": {
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "duration_s": 0.178,
+  "module": "click._termui_impl",
+  "args": [],
+  "seen_on_band": true,
+  "timed_out": false,
+  "error": null
+ },
+ "entry_point_proof": {
+  "/Users/dev/CodeRadar_snapshots/secret_touch_20260921_150336/src/click/_compat.py": "sha256:8db1da2965cf3e5dc66c6c53833cbc613ea1cd2440b9d0eb6aa8360eb46d4913",
+  "/Users/dev/CodeRadar_snapshots/secret_touch_20260921_150336/src/click/globals.py": "sha256:80cf8d87a0383341c1fd2824685e4ce2770618c0c773f7e51d7bbdfe88781845",
+  "/Users/dev/CodeRadar_snapshots/secret_touch_20260921_150336/src/click/utils.py": "sha256:f43d5743dc07240e612feefa0a69d2b1697b6900149f8f809ffcd97ecb482dbf",
+  "/Users/dev/CodeRadar_snapshots/secret_touch_20260921_150336/src/click/exceptions.py": "sha256:1ef498df81b86ae8ff6d8451f3e4fc094f09c2aff5f8e72c454e1ecdfa337849",
+  "/Users/dev/CodeRadar_snapshots/secret_touch_20260921_150336/src/click/__init__.py": "sha256:5abfc54d37d47cc788b7e7a05e9514787f8c5a0b7db429d0f24d748ac89964ca",
+  "/Users/dev/CodeRadar_snapshots/secret_touch_20260921_150336/src/click/types.py": "sha256:1e988904a7a7f68abad630c7fb9c038a4345fa2e6701c976a6e51f10bdfb52dd",
+  "/Users/dev/CodeRadar_snapshots/secret_touch_20260921_150336/src/click/_utils.py": "sha256:782642b7026db180f941892435627c318ffc001223cbc31cce030cc95637dab4",
+  "/Users/dev/CodeRadar_snapshots/secret_touch_20260921_150336/src/click/parser.py": "sha256:a09f9f53fde6bf1ba022e36d1da0804d9e7a9601261d18208c9892a84818ae30",
+  "/Users/dev/CodeRadar_snapshots/secret_touch_20260921_150336/src/click/formatting.py": "sha256:f125b628692f8dfcfd43535b7a88cc1ee64137471f9d0243b389aa0cfea85e6b",
+  "/Users/dev/CodeRadar_snapshots/secret_touch_20260921_150336/src/click/termui.py": "sha256:8ec8022b8e4528f873ec413194a5d1614e96da50b6c4a71f6260b326762a7e9c",
+  "/Users/dev/CodeRadar_snapshots/secret_touch_20260921_150336/src/click/core.py": "sha256:4c65a613c1c407dce907a4e123b12cec5fe0f62088a8b9f86fabd4b60c4b6d78",
+  "/Users/dev/CodeRadar_snapshots/secret_touch_20260921_150336/src/click/decorators.py": "sha256:16069357615691fcdfc9c794bb515f6009eb35aad6f7a76c017bdce06dae8d55",
+  "/Users/dev/CodeRadar_snapshots/secret_touch_20260921_150336/src/click/_termui_impl.py": "sha256:88b97d9b7a5b947b10a16d8ab269837bc84c7e55c28ba72ea5f2fb339112336a"
+ },
+ "live_wait": {
+  "why": "the frame that lights the import edges",
+  "seconds": 10.0,
+  "live_edges": 60
+ },
+ "row_census": {
+  "src/click/shell_completion.py": 1,
+  "src/click/_termui_impl.py": 4
+ },
+ "chosen_file": "src/click/_termui_impl.py",
+ "chosen": [
+  {
+   "id": "src/click/_termui_impl.py::_resolve_pager_command::423",
+   "line": 423,
+   "line_end": 448,
+   "function": "_resolve_pager_command",
+   "rule_ids": [
+    "NAI-008",
+    "NAI-082",
+    "NAI-083",
+    "NAI-084",
+    "NAI-086",
+    "NAI-113",
+    "NAI-114",
+    "NAI-185",
+    "NAI-186",
+    "NAI-121",
+    "MEASURED-NOTHING",
+    "NAI-229"
+   ]
+  },
+  {
+   "id": "src/click/_termui_impl.py::_pipepager::549",
+   "line": 549,
+   "line_end": 632,
+   "function": "_pipepager",
+   "rule_ids": [
+    "NAI-008",
+    "NAI-078",
+    "NAI-082",
+    "NAI-083",
+    "NAI-084",
+    "NAI-086",
+    "NAI-113",
+    "NAI-114",
+    "NAI-178",
+    "NAI-185",
+    "NAI-186",
+    "NAI-168",
+    "NAI-121",
+    "MEASURED-NOTHING",
+    "NAI-229",
+    "SIG-silent_exception"
+   ]
+  },
+  {
+   "id": "src/click/_termui_impl.py::_tempfilepager::636",
+   "line": 636,
+   "line_end": 667,
+   "function": "_tempfilepager",
+   "rule_ids": [
+    "NAI-008",
+    "NAI-158",
+    "NAI-082",
+    "NAI-083",
+    "NAI-084",
+    "NAI-086",
+    "NAI-113",
+    "NAI-114",
+    "NAI-185",
+    "NAI-168",
+    "NAI-121",
+    "MEASURED-NOTHING",
+    "NAI-229"
+   ]
+  },
+  {
+   "id": "src/click/_termui_impl.py::open_url::799",
+   "line": 799,
+   "line_end": 866,
+   "function": "open_url",
+   "rule_ids": [
+    "NAI-008",
+    "NAI-078",
+    "NAI-079",
+    "NAI-167",
+    "NAI-082",
+    "NAI-083",
+    "NAI-084",
+    "NAI-086",
+    "NAI-114",
+    "NAI-185",
+    "NAI-186",
+    "NAI-168",
+    "NAI-169",
+    "NAI-121",
+    "MEASURED-NOTHING",
+    "NAI-229"
+   ]
+  }
+ ],
+ "applies": [
+  {
+   "row": "src/click/_termui_impl.py::_resolve_pager_command::423",
+   "kind": "diff",
+   "digest": "6a5d9d526d",
+   "selected_role": "import_hoist_fix",
+   "replace_span": "src/click/_termui_impl.py:L423-L448",
+   "replace_span_live": "src/click/_termui_impl.py:L423-L448",
+   "rebased": false,
+   "applies_cleanly": true,
+   "lease": "/Users/dev/Desktop/CODE_RADAR_REFURBISH_copy2/system_scripts/apply_lease_480405eb45ce.jsonl",
+   "lease_written": true,
+   "resolved_by": "row",
+   "error": null
+  },
+  {
+   "row": "src/click/_termui_impl.py::_pipepager::549",
+   "kind": "diff",
+   "digest": "b0f6d4a038",
+   "selected_role": "import_hoist_fix",
+   "replace_span": "src/click/_termui_impl.py:L548-L632",
+   "replace_span_live": "src/click/_termui_impl.py:L549-L633",
+   "rebased": true,
+   "applies_cleanly": true,
+   "lease": "/Users/dev/Desktop/CODE_RADAR_REFURBISH_copy2/system_scripts/apply_lease_480405eb45ce.jsonl",
+   "lease_written": true,
+   "resolved_by": "row",
+   "error": null
+  },
+  {
+   "row": "src/click/_termui_impl.py::_tempfilepager::636",
+   "kind": "diff",
+   "digest": "12e624c0e3",
+   "selected_role": "import_hoist_fix",
+   "replace_span": "src/click/_termui_impl.py:L635-L667",
+   "replace_span_live": "src/click/_termui_impl.py:L637-L669",
+   "rebased": true,
+   "applies_cleanly": true,
+   "lease": "/Users/dev/Desktop/CODE_RADAR_REFURBISH_copy2/system_scripts/apply_lease_480405eb45ce.jsonl",
+   "lease_written": true,
+   "resolved_by": "row",
+   "error": null
+  }
+ ],
+ "edits": [
+  {
+   "file": "src/click/_termui_impl.py",
+   "span_live": "src/click/_termui_impl.py:L423-L448",
+   "start": 423,
+   "end": 448,
+   "lines_out": 26,
+   "lines_in": 27,
+   "replaced_text": "def _resolve_pager_command(cmd_parts: list[str]) -> tuple[Path, list[str]] | None:\n    \"\"\"Resolve a pager ``argv`` to an absolute command path and its parameters.\n\n    The command is looked up with :func:`shutil.which`, which the\n    :mod:`subprocess` docs recommend on every platform for an unqualified name:\n    https://docs.python.org/3/library/subprocess.html#popen-constructor\n\n    Returns ``None`` when there is no command to run or it is not on the path,\n    leaving the caller to pick a fallback.\n    \"\"\"\n    if not cmd_parts:\n        return None\n\n    import shutil\n\n    cmd_filepath = shutil.which(cmd_parts[0])\n\n    if not cmd_filepath:\n        return None\n\n    # Normalize to an absolute path without resolving symlinks: multi-call\n    # binaries such as busybox derive their identity from the link they are\n    # invoked through, so resolving less -> busybox makes them misbehave.\n    # See https://github.com/pallets/click/issues/2943 and\n    # https://github.com/pallets/click/pull/2944\n    return Path(cmd_filepath).absolute(), cmd_parts[1:]\n",
+   "wrote_text": "import shutil\n\ndef _resolve_pager_command(cmd_parts: list[str]) -> tuple[Path, list[str]] | None:\n    \"\"\"Resolve a pager ``argv`` to an absolute command path and its parameters.\n\n    The command is looked up with :func:`shutil.which`, which the\n    :mod:`subprocess` docs recommend on every platform for an unqualified name:\n    https://docs.python.org/3/library/subprocess.html#popen-constructor\n\n    Returns ``None`` when there is no command to run or it is not on the path,\n    leaving the caller to pick a fallback.\n    \"\"\"\n    if not cmd_parts:\n        return None\n\n\n    cmd_filepath = shutil.which(cmd_parts[0])\n\n    if not cmd_filepath:\n        return None\n\n    # Normalize to an absolute path without resolving symlinks: multi-call\n    # binaries such as busybox derive their identity from the link they are\n    # invoked through, so resolving less -> busybox makes them misbehave.\n    # See https://github.com/pallets/click/issues/2943 and\n    # https://github.com/pallets/click/pull/2944\n    return Path(cmd_filepath).absolute(), cmd_parts[1:]\n",
+   "replaced_sha256": "a0eb26a5e99bb5a4c31f25f585145be8456483b46ed1b07a06967118c6a7de73",
+   "wrote_sha256": "7c8c439c79a1f81765ddfc8b2eca43d1da1fcabd7e51f9a5b2e9df3a119ae660"
+  },
+  {
+   "file": "src/click/_termui_impl.py",
+   "span_live": "src/click/_termui_impl.py:L549-L633",
+   "start": 549,
+   "end": 633,
+   "lines_out": 85,
+   "lines_in": 86,
+   "replaced_text": "@contextlib.contextmanager\ndef _pipepager(\n    cmd_path: Path, cmd_params: list[str], color: bool | None = None\n) -> t.Iterator[tuple[t.TextIO, bool | None]]:\n    \"\"\"Page through text by feeding it to another program.\n\n    Invokes the pager via :class:`subprocess.Popen` with an ``argv`` list.\n\n    Invoking a pager through this might support colors: if piping to\n    ``less`` and the user hasn't decided on colors, ``LESS=-R`` is set\n    automatically.\n    \"\"\"\n    import subprocess\n\n    # Make a local copy of the environment to not affect the global one.\n    env = dict(os.environ)\n\n    # If we're piping to less and the user hasn't decided on colors, we enable\n    # them: either the invocation already requests raw control characters, or\n    # ``LESS=-R`` is injected. Match on the stem so a resolved ``less.exe`` is\n    # recognized like bare ``less``, case-insensitively on Windows since its\n    # filesystems are. POSIX keeps an exact match.\n    cmd_name = cmd_path.stem\n    if WIN:\n        # ``_pager_contextmanager`` currently routes every Windows invocation\n        # to ``_tempfilepager``, so this branch is not reachable on Windows\n        # today: it keeps the detection correct should that routing ever\n        # change.\n        cmd_name = cmd_name.casefold()\n\n    if color is None and cmd_name == \"less\":\n        less_env = os.environ.get(\"LESS\", \"\")\n        if _less_uses_raw_mode(less_env, cmd_params):\n            color = True\n        elif not less_env and not cmd_params:\n            env[\"LESS\"] = \"-R\"\n            color = True\n\n    c = subprocess.Popen(\n        [str(cmd_path)] + cmd_params,\n        shell=False,\n        stdin=subprocess.PIPE,\n        env=env,\n        errors=\"replace\",\n        text=True,\n    )\n    # With ``text=True``, ``c.stdin`` is already a text stream that encodes\n    # writes for the pager process (honoring ``errors=\"replace\"``).\n    stdin = t.cast(t.TextIO, c.stdin)\n    try:\n        yield stdin, color\n    except BrokenPipeError:\n        # In case the pager exited unexpectedly, ignore the broken pipe error.\n        pass\n    except Exception as e:\n        # In case there is an exception we want to close the pager immediately\n        # and let the caller handle it.\n        # Otherwise the pager will keep running, and the user may not notice\n        # the error message, or worse yet it may leave the terminal in a broken state.\n        c.terminate()\n        raise e\n    finally:\n        # We must close stdin and wait for the pager to exit before we continue\n        try:\n            stdin.close()\n        # Close implies flush, so it might throw a BrokenPipeError if the pager\n        # process exited already.\n        except BrokenPipeError:\n            pass\n\n        # Less doesn't respect ^C, but catches it for its own UI purposes (aborting\n        # search or other commands inside less).\n        #\n        # That means when the user hits ^C, the parent process (click) terminates,\n        # but less is still alive, paging the output and messing up the terminal.\n        #\n        # If the user wants to make the pager exit on ^C, they should set\n        # `LESS='-K'`. It's not our decision to make.\n        while True:\n            try:\n                c.wait()\n            except KeyboardInterrupt:\n                pass\n            else:\n                break\n",
+   "wrote_text": "import subprocess\n\n@contextlib.contextmanager\ndef _pipepager(\n    cmd_path: Path, cmd_params: list[str], color: bool | None = None\n) -> t.Iterator[tuple[t.TextIO, bool | None]]:\n    \"\"\"Page through text by feeding it to another program.\n\n    Invokes the pager via :class:`subprocess.Popen` with an ``argv`` list.\n\n    Invoking a pager through this might support colors: if piping to\n    ``less`` and the user hasn't decided on colors, ``LESS=-R`` is set\n    automatically.\n    \"\"\"\n\n    # Make a local copy of the environment to not affect the global one.\n    env = dict(os.environ)\n\n    # If we're piping to less and the user hasn't decided on colors, we enable\n    # them: either the invocation already requests raw control characters, or\n    # ``LESS=-R`` is injected. Match on the stem so a resolved ``less.exe`` is\n    # recognized like bare ``less``, case-insensitively on Windows since its\n    # filesystems are. POSIX keeps an exact match.\n    cmd_name = cmd_path.stem\n    if WIN:\n        # ``_pager_contextmanager`` currently routes every Windows invocation\n        # to ``_tempfilepager``, so this branch is not reachable on Windows\n        # today: it keeps the detection correct should that routing ever\n        # change.\n        cmd_name = cmd_name.casefold()\n\n    if color is None and cmd_name == \"less\":\n        less_env = os.environ.get(\"LESS\", \"\")\n        if _less_uses_raw_mode(less_env, cmd_params):\n            color = True\n        elif not less_env and not cmd_params:\n            env[\"LESS\"] = \"-R\"\n            color = True\n\n    c = subprocess.Popen(\n        [str(cmd_path)] + cmd_params,\n        shell=False,\n        stdin=subprocess.PIPE,\n        env=env,\n        errors=\"replace\",\n        text=True,\n    )\n    # With ``text=True``, ``c.stdin`` is already a text stream that encodes\n    # writes for the pager process (honoring ``errors=\"replace\"``).\n    stdin = t.cast(t.TextIO, c.stdin)\n    try:\n        yield stdin, color\n    except BrokenPipeError:\n        # In case the pager exited unexpectedly, ignore the broken pipe error.\n        pass\n    except Exception as e:\n        # In case there is an exception we want to close the pager immediately\n        # and let the caller handle it.\n        # Otherwise the pager will keep running, and the user may not notice\n        # the error message, or worse yet it may leave the terminal in a broken state.\n        c.terminate()\n        raise e\n    finally:\n        # We must close stdin and wait for the pager to exit before we continue\n        try:\n            stdin.close()\n        # Close implies flush, so it might throw a BrokenPipeError if the pager\n        # process exited already.\n        except BrokenPipeError:\n            pass\n\n        # Less doesn't respect ^C, but catches it for its own UI purposes (aborting\n        # search or other commands inside less).\n        #\n        # That means when the user hits ^C, the parent process (click) terminates,\n        # but less is still alive, paging the output and messing up the terminal.\n        #\n        # If the user wants to make the pager exit on ^C, they should set\n        # `LESS='-K'`. It's not our decision to make.\n        while True:\n            try:\n                c.wait()\n            except KeyboardInterrupt:\n                pass\n            else:\n                break\n",
+   "replaced_sha256": "dab07f51e746b520e15e5b2ebd1d3dfec0976673fca7a9aa9a6bb49bbf5d85d2",
+   "wrote_sha256": "48f6c06681fc2d707eab7d2ce009170e0b7d90a55227a127e3bc9b34a0272e3e"
+  },
+  {
+   "file": "src/click/_termui_impl.py",
+   "span_live": "src/click/_termui_impl.py:L637-L669",
+   "start": 637,
+   "end": 669,
+   "lines_out": 33,
+   "lines_in": 34,
+   "replaced_text": "@contextlib.contextmanager\ndef _tempfilepager(\n    cmd_path: Path, cmd_params: list[str], color: bool | None = None\n) -> t.Iterator[tuple[t.TextIO, bool | None]]:\n    \"\"\"Page through text by invoking a program on a temporary file.\n\n    Used as the primary pager strategy on Windows (where piping to\n    ``more`` adds spurious ``\\\\r\\\\n``), and as a fallback on other\n    platforms. The command is invoked with any parameters from ``PAGER``\n    followed by the temporary file name.\n    \"\"\"\n    import subprocess\n    import tempfile\n\n    encoding = get_best_encoding(sys.stdout)\n    # On Windows, NamedTemporaryFile cannot be opened by another process\n    # while Python still has it open, so we use delete=False and clean up manually\n    # rather than using a contextmanager here.\n    f = tempfile.NamedTemporaryFile(\n        mode=\"w\", encoding=encoding, errors=\"replace\", delete=False\n    )\n    try:\n        yield t.cast(t.TextIO, f), color\n        f.flush()\n        f.close()\n        subprocess.call([str(cmd_path), *cmd_params, f.name])\n    finally:\n        # An error raised while paging skips the close() above, and Windows\n        # refuses to unlink a file the process still holds open. Closing here\n        # keeps that PermissionError from replacing the original exception.\n        # close() is idempotent, so this is a no-op on the success path.\n        f.close()\n        os.unlink(f.name)\n",
+   "wrote_text": "import subprocess\nimport tempfile\n\n@contextlib.contextmanager\ndef _tempfilepager(\n    cmd_path: Path, cmd_params: list[str], color: bool | None = None\n) -> t.Iterator[tuple[t.TextIO, bool | None]]:\n    \"\"\"Page through text by invoking a program on a temporary file.\n\n    Used as the primary pager strategy on Windows (where piping to\n    ``more`` adds spurious ``\\\\r\\\\n``), and as a fallback on other\n    platforms. The command is invoked with any parameters from ``PAGER``\n    followed by the temporary file name.\n    \"\"\"\n\n    encoding = get_best_encoding(sys.stdout)\n    # On Windows, NamedTemporaryFile cannot be opened by another process\n    # while Python still has it open, so we use delete=False and clean up manually\n    # rather than using a contextmanager here.\n    f = tempfile.NamedTemporaryFile(\n        mode=\"w\", encoding=encoding, errors=\"replace\", delete=False\n    )\n    try:\n        yield t.cast(t.TextIO, f), color\n        f.flush()\n        f.close()\n        subprocess.call([str(cmd_path), *cmd_params, f.name])\n    finally:\n        # An error raised while paging skips the close() above, and Windows\n        # refuses to unlink a file the process still holds open. Closing here\n        # keeps that PermissionError from replacing the original exception.\n        # close() is idempotent, so this is a no-op on the success path.\n        f.close()\n        os.unlink(f.name)\n",
+   "replaced_sha256": "0b554dbc779b81dbc5ad7c34008cd6fafee644424648494b8c5edc790733dfff",
+   "wrote_sha256": "1adca7dc983f31714b1fd9696e6a6441a67ecd0aa601053aff6dec8227ae3c77"
+  }
+ ],
+ "leased_rows": [
+  "src/click/_termui_impl.py::_resolve_pager_command::423",
+  "src/click/_termui_impl.py::_pipepager::549",
+  "src/click/_termui_impl.py::_tempfilepager::636"
+ ],
+ "unleased_before_sha256": "16069357615691fcdfc9c794bb515f6009eb35aad6f7a76c017bdce06dae8d55",
+ "unleased_edit": {
+  "file": "src/click/decorators.py",
+  "appended": "# run 161: an edit the server never handed out (I-127's negative)",
+  "leased": false
+ },
+ "wait": [
+  {
+   "why": "the first frame that buckets a repair-severed edge",
+   "seconds": 10.1,
+   "severed_links": 5,
+   "severed_by_repair": 5,
+   "cycle": 3
+  }
+ ],
+ "cycles": [
+  {
+   "from": 3,
+   "to": 4,
+   "wanted": 1,
+   "got": 1,
+   "seconds": 10.1,
+   "reached_the_ceiling": false,
+   "why": "one more Builder cycle over the edited file"
+  }
+ ],
+ "wiring": {
+  "severed": [
+   [
+    "src/click/__init__",
+    "src/click/decorators"
+   ],
+   [
+    "src/click/_termui_impl",
+    "src/click/_compat"
+   ],
+   [
+    "src/click/_termui_impl",
+    "src/click/exceptions"
+   ],
+   [
+    "src/click/_termui_impl",
+    "src/click/types"
+   ],
+   [
+    "src/click/_termui_impl",
+    "src/click/utils"
+   ],
+   [
+    "src/click/core",
+    "src/click/decorators"
+   ],
+   [
+    "src/click/decorators",
+    "src/click/core"
+   ],
+   [
+    "src/click/decorators",
+    "src/click/globals"
+   ],
+   [
+    "src/click/decorators",
+    "src/click/utils"
+   ],
+   [
+    "src/click/termui",
+    "src/click/_termui_impl"
+   ]
+  ],
+  "severed_by_repair": [
+   [
+    "src/click/_termui_impl",
+    "src/click/_compat"
+   ],
+   [
+    "src/click/_termui_impl",
+    "src/click/exceptions"
+   ],
+   [
+    "src/click/_termui_impl",
+    "src/click/types"
+   ],
+   [
+    "src/click/_termui_impl",
+    "src/click/utils"
+   ],
+   [
+    "src/click/termui",
+    "src/click/_termui_impl"
+   ]
+  ],
+  "severed_since": {
+   "src/click/__init__->src/click/decorators": "2026-09-21T16:06:55.519058",
+   "src/click/_termui_impl->src/click/_compat": "2026-09-21T16:06:55.519058",
+   "src/click/_termui_impl->src/click/exceptions": "2026-09-21T16:06:55.519058",
+   "src/click/_termui_impl->src/click/types": "2026-09-21T16:06:55.519058",
+   "src/click/_termui_impl->src/click/utils": "2026-09-21T16:06:55.519058",
+   "src/click/core->src/click/decorators": "2026-09-21T16:06:55.519058",
+   "src/click/decorators->src/click/core": "2026-09-21T16:06:55.519058",
+   "src/click/decorators->src/click/globals": "2026-09-21T16:06:55.519058",
+   "src/click/decorators->src/click/utils": "2026-09-21T16:06:55.519058",
+   "src/click/termui->src/click/_termui_impl": "2026-09-21T16:06:55.519058"
+  }
+ },
+ "mirror_summary": {
+  "severed_links": 5,
+  "severed_by_repair": 5,
+  "mypy_errors": 1313,
+  "mypy_ran": true,
+  "mypy_rc": 1,
+  "mypy_files_checked": 54,
+  "finished": false,
+  "finished_reason": "not finished: counterfeit_failed=197, mypy_errors=1313, severed_links=5",
+  "finished_inputs": {
+   "counterfeit_failed": 197,
+   "mypy_errors": 1313,
+   "severed_links": 5
+  }
+ },
+ "mypy_block": {
+  "files_checked": 54,
+  "total_errors": 1313,
+  "type_errors": null,
+  "annotation_notes": null,
+  "mypy_rc": 1,
+  "mypy_ran": true,
+  "mypy_config": null,
+  "mypy_python_version": null
+ },
+ "leases_on_disk": [
+  {
+   "row_key": "src/click/_termui_impl.py::_resolve_pager_command::423",
+   "digest": "6a5d9d526d",
+   "replace_span": "src/click/_termui_impl.py:L423-L448",
+   "replace_span_live": "src/click/_termui_impl.py:L423-L448",
+   "file": "src/click/_termui_impl.py",
+   "variant": "import_hoist_fix",
+   "after_sha256": "7c8c439c79a1f81765ddfc8b2eca43d1da1fcabd7e51f9a5b2e9df3a119ae660",
+   "timestamp": "2026-09-21T21:01:09.717904+00:00"
+  },
+  {
+   "row_key": "src/click/_termui_impl.py::_pipepager::549",
+   "digest": "b0f6d4a038",
+   "replace_span": "src/click/_termui_impl.py:L548-L632",
+   "replace_span_live": "src/click/_termui_impl.py:L548-L632",
+   "file": "src/click/_termui_impl.py",
+   "variant": "import_hoist_fix",
+   "after_sha256": "48f6c06681fc2d707eab7d2ce009170e0b7d90a55227a127e3bc9b34a0272e3e",
+   "timestamp": "2026-09-21T21:01:09.740351+00:00"
+  },
+  {
+   "row_key": "src/click/_termui_impl.py::_tempfilepager::636",
+   "digest": "12e624c0e3",
+   "replace_span": "src/click/_termui_impl.py:L635-L667",
+   "replace_span_live": "src/click/_termui_impl.py:L635-L667",
+   "file": "src/click/_termui_impl.py",
+   "variant": "import_hoist_fix",
+   "after_sha256": "1adca7dc983f31714b1fd9696e6a6441a67ecd0aa601053aff6dec8227ae3c77",
+   "timestamp": "2026-09-21T21:01:09.761978+00:00"
+  },
+  {
+   "row_key": "src/click/_termui_impl.py::_resolve_pager_command::423",
+   "digest": "6a5d9d526d",
+   "replace_span": "src/click/_termui_impl.py:L423-L448",
+   "replace_span_live": "src/click/_termui_impl.py:L423-L448",
+   "file": "src/click/_termui_impl.py",
+   "variant": "import_hoist_fix",
+   "after_sha256": "7c8c439c79a1f81765ddfc8b2eca43d1da1fcabd7e51f9a5b2e9df3a119ae660",
+   "timestamp": "2026-09-21T21:06:47.977634+00:00"
+  },
+  {
+   "row_key": "src/click/_termui_impl.py::_pipepager::549",
+   "digest": "b0f6d4a038",
+   "replace_span": "src/click/_termui_impl.py:L548-L632",
+   "replace_span_live": "src/click/_termui_impl.py:L549-L633",
+   "file": "src/click/_termui_impl.py",
+   "variant": "import_hoist_fix",
+   "after_sha256": "48f6c06681fc2d707eab7d2ce009170e0b7d90a55227a127e3bc9b34a0272e3e",
+   "timestamp": "2026-09-21T21:06:48.003083+00:00"
+  },
+  {
+   "row_key": "src/click/_termui_impl.py::_tempfilepager::636",
+   "digest": "12e624c0e3",
+   "replace_span": "src/click/_termui_impl.py:L635-L667",
+   "replace_span_live": "src/click/_termui_impl.py:L637-L669",
+   "file": "src/click/_termui_impl.py",
+   "variant": "import_hoist_fix",
+   "after_sha256": "1adca7dc983f31714b1fd9696e6a6441a67ecd0aa601053aff6dec8227ae3c77",
+   "timestamp": "2026-09-21T21:06:48.028453+00:00"
+  }
+ ],
+ "lease_file": "/Users/dev/Desktop/CODE_RADAR_REFURBISH_copy2/system_scripts/apply_lease_480405eb45ce.jsonl",
+ "verdict": {
+  "severed_by_repair_ge_1": true,
+  "repair_severed_absent_from_the_finished_input": true,
+  "mypy_ran_true_with_files": true,
+  "finished_is_a_boolean": true,
+  "suite_unmoved": true
+ },
+ "back_out": [
+  {
+   "file": "src/click/_termui_impl.py",
+   "span": "src/click/_termui_impl.py:L637-L669",
+   "found_where_written": true
+  },
+  {
+   "file": "src/click/_termui_impl.py",
+   "span": "src/click/_termui_impl.py:L549-L633",
+   "found_where_written": true
+  },
+  {
+   "file": "src/click/_termui_impl.py",
+   "span": "src/click/_termui_impl.py:L423-L448",
+   "found_where_written": true
+  }
+ ],
+ "unleased_after_sha256": "16069357615691fcdfc9c794bb515f6009eb35aad6f7a76c017bdce06dae8d55",
+ "unleased_restored": true,
+ "stop": {
+  "stopped": true,
+  "daemons_exited": [
+   {
+    "name": "circuit_daemon",
+    "pid": 56529,
+    "exit_code": 0,
+    "signal": "SIGTERM"
+   },
+   {
+    "name": "noai_validator",
+    "pid": 56547,
+    "exit_code": 0,
+    "signal": "SIGTERM"
+   },
+   {
+    "name": "cheatsheets",
+    "pid": 56548,
+    "exit_code": 0,
+    "signal": "SIGTERM"
+   },
+   {
+    "name": "dashboard",
+    "pid": 56549,
+    "exit_code": 0,
+    "signal": "SIGTERM"
+   }
+  ],
+  "residue_clean": true,
+  "byte_identical": true,
+  "files_compared": 113,
+  "client_edits": 0,
+  "unexpected_changes": [],
+  "run_dir": "/Users/dev/Desktop/CODE_RADAR_REFURBISH_copy2/.archive/runs/secret_touch_20260921_150336",
+  "error": null
+ },
+ "hand_back": {
+  "report_path": "/Users/dev/Desktop/CODE_RADAR_REFURBISH_copy2/.archive/runs/secret_touch_20260921_150336/tester_report.json",
+  "target": "/Users/dev/CodeRadar_snapshots/secret_touch_20260921_150336",
+  "repo_id": "480405eb45ce",
+  "run_started": "2026-09-21T21:05:38.872033+00:00",
+  "run_ended": "2026-09-21T21:07:16.448377+00:00",
+  "builder_cycles": 4,
+  "infractions": 189,
+  "solutions": 126,
+  "confirmed": 0,
+  "confirmed_joined": 0,
+  "confirmed_from_ledger": 0,
+  "confirmed_ledger_rows": [],
+  "confirmed_ledger": "/Users/dev/Desktop/CODE_RADAR_REFURBISH_copy2/system_scripts/confirmed_ledger_480405eb45ce.jsonl",
+  "confirmed_fraction": null,
+  "tester_ran": false,
+  "status": "MEASURED",
+  "per_infraction": [
+   {
+    "file": "src/click/globals.py",
+    "function": "get_current_context",
+    "line": 13,
+    "rule_ids": [
+     "NAI-130"
+    ],
+    "digest": "d7255b0154",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/globals.py",
+    "function": "get_current_context",
+    "line": 17,
+    "rule_ids": [
+     "NAI-130"
+    ],
+    "digest": "b4f8e19bc6",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/shell_completion.py",
+    "function": "shell_complete",
+    "line": 19,
+    "rule_ids": [
+     "RCA-001"
+    ],
+    "digest": "240399febf",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/formatting.py",
+    "function": "wrap_text",
+    "line": 31,
+    "rule_ids": [
+     "NAI-008"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/utils.py",
+    "function": "_safecall",
+    "line": 36,
+    "rule_ids": [
+     "NAI-078"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/utils.py",
+    "function": "wrapper",
+    "line": 42,
+    "rule_ids": [
+     "NAI-078"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_compat.py",
+    "function": "is_ascii_encoding",
+    "line": 43,
+    "rule_ids": [
+     "NAI-078"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_compat.py",
+    "function": "get_best_encoding",
+    "line": 51,
+    "rule_ids": [
+     "RCA-001"
+    ],
+    "digest": "1b97a4a7ee",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/testing.py",
+    "function": "read",
+    "line": 51,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "0e05c2e3d4",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/globals.py",
+    "function": "resolve_color_default",
+    "line": 54,
+    "rule_ids": [
+     "RCA-001"
+    ],
+    "digest": "d7f5868f7e",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/testing.py",
+    "function": "read1",
+    "line": 54,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "9145e11b50",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/testing.py",
+    "function": "readline",
+    "line": 57,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "0419a47912",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/testing.py",
+    "function": "readlines",
+    "line": 60,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "4b70cf0061",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/termui.py",
+    "function": "_mask_hidden_input",
+    "line": 61,
+    "rule_ids": [
+     "NAI-021S"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/testing.py",
+    "function": "__iter__",
+    "line": 63,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "f9b2fe7e55",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_textwrap.py",
+    "function": "_wrap_chunks",
+    "line": 66,
+    "rule_ids": [
+     "NAI-043"
+    ],
+    "digest": "b89deba6c5",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_compat.py",
+    "function": "__del__",
+    "line": 74,
+    "rule_ids": [
+     "NAI-078"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/__init__.py",
+    "function": "__getattr__",
+    "line": 76,
+    "rule_ids": [
+     "NAI-008",
+     "NAI-057"
+    ],
+    "digest": "f9004a74fa",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/termui.py",
+    "function": "hidden_prompt_func",
+    "line": 79,
+    "rule_ids": [
+     "NAI-008"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_compat.py",
+    "function": "isatty",
+    "line": 80,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "9c0c84bec8",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_winconsole.py",
+    "function": "<module>",
+    "line": 85,
+    "rule_ids": [
+     "NAI-211",
+     "NAI-209"
+    ],
+    "digest": "853b4154cb",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/termui.py",
+    "function": "_readline_prompt",
+    "line": 85,
+    "rule_ids": [
+     "NAI-021S"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_compat.py",
+    "function": "__getattr__",
+    "line": 105,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "57b7130e5a",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_termui_impl.py",
+    "function": "__enter__",
+    "line": 115,
+    "rule_ids": [
+     "NAI-021S"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_compat.py",
+    "function": "readable",
+    "line": 116,
+    "rule_ids": [
+     "NAI-078"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_termui_impl.py",
+    "function": "__exit__",
+    "line": 120,
+    "rule_ids": [
+     "NAI-003"
+    ],
+    "digest": "48b249ed42",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_compat.py",
+    "function": "writable",
+    "line": 128,
+    "rule_ids": [
+     "NAI-078"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_termui_impl.py",
+    "function": "__iter__",
+    "line": 128,
+    "rule_ids": [
+     "NAI-021S"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_winconsole.py",
+    "function": "readable",
+    "line": 129,
+    "rule_ids": [
+     "NAI-009S"
+    ],
+    "digest": "fff24d0eed",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/utils.py",
+    "function": "__init__",
+    "line": 132,
+    "rule_ids": [
+     "NAI-075"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/types.py",
+    "function": "__call__",
+    "line": 133,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "a71b374483",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/types.py",
+    "function": "__call__",
+    "line": 141,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "4df8aa15fb",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_compat.py",
+    "function": "seekable",
+    "line": 143,
+    "rule_ids": [
+     "NAI-078"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "sort_key",
+    "line": 158,
+    "rule_ids": [
+     "NAI-135"
+    ],
+    "digest": "1d0613ca72",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/types.py",
+    "function": "get_metavar",
+    "line": 158,
+    "rule_ids": [
+     "NAI-034",
+     "NAI-130",
+     "NAI-230"
+    ],
+    "digest": "24f90fd7bb",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/types.py",
+    "function": "get_missing_message",
+    "line": 161,
+    "rule_ids": [
+     "NAI-034",
+     "NAI-130",
+     "NAI-230"
+    ],
+    "digest": "6224143f16",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_compat.py",
+    "function": "_is_binary_writer",
+    "line": 163,
+    "rule_ids": [
+     "NAI-021S"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_winconsole.py",
+    "function": "writable",
+    "line": 164,
+    "rule_ids": [
+     "NAI-009S"
+    ],
+    "digest": "79f5e35f4d",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/decorators.py",
+    "function": "command",
+    "line": 168,
+    "rule_ids": [
+     "NAI-078"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/termui.py",
+    "function": "prompt",
+    "line": 168,
+    "rule_ids": [
+     "NAI-142"
+    ],
+    "digest": "ae5d41ff16",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/types.py",
+    "function": "convert",
+    "line": 168,
+    "rule_ids": [
+     "NAI-030"
+    ],
+    "digest": "804709a80b",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/testing.py",
+    "function": "close",
+    "line": 184,
+    "rule_ids": [
+     "NAI-034",
+     "NAI-120"
+    ],
+    "digest": "8462bda28c",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/utils.py",
+    "function": "__enter__",
+    "line": 195,
+    "rule_ids": [
+     "NAI-016S"
+    ],
+    "digest": "de37b30073",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/utils.py",
+    "function": "__exit__",
+    "line": 198,
+    "rule_ids": [
+     "NAI-003"
+    ],
+    "digest": "0c49bf8312",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_winconsole.py",
+    "function": "write",
+    "line": 204,
+    "rule_ids": [
+     "NAI-021S"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_compat.py",
+    "function": "_stream_is_misconfigured",
+    "line": 212,
+    "rule_ids": [
+     "RCA-001"
+    ],
+    "digest": "926c9889e3",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/types.py",
+    "function": "shell_complete",
+    "line": 213,
+    "rule_ids": [
+     "NAI-009",
+     "NAI-030",
+     "NAI-230"
+    ],
+    "digest": "bf7529318b",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/formatting.py",
+    "function": "write_dl",
+    "line": 229,
+    "rule_ids": [
+     "NAI-087"
+    ],
+    "digest": "7ec8787d56",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/utils.py",
+    "function": "__enter__",
+    "line": 234,
+    "rule_ids": [
+     "NAI-016S"
+    ],
+    "digest": "0ef8f2e5b1",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/types.py",
+    "function": "arity",
+    "line": 236,
+    "rule_ids": [
+     "HR-002",
+     "NAI-230"
+    ],
+    "digest": "2db85c56f1",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/utils.py",
+    "function": "__exit__",
+    "line": 237,
+    "rule_ids": [
+     "NAI-004",
+     "NAI-120"
+    ],
+    "digest": "d326b413d3",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_winconsole.py",
+    "function": "_is_console",
+    "line": 264,
+    "rule_ids": [
+     "NAI-078"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/types.py",
+    "function": "convert",
+    "line": 264,
+    "rule_ids": [
+     "NAI-021S"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/testing.py",
+    "function": "output",
+    "line": 283,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "62a900688e",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/types.py",
+    "function": "convert",
+    "line": 284,
+    "rule_ids": [
+     "NAI-026S"
+    ],
+    "digest": "9f0fa4f66a",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_compat.py",
+    "function": "_force_correct_text_reader",
+    "line": 287,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "a3d7800e08",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/termui.py",
+    "function": "confirm",
+    "line": 289,
+    "rule_ids": [
+     "NAI-021S"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/types.py",
+    "function": "__repr__",
+    "line": 289,
+    "rule_ids": [
+     "NAI-009S"
+    ],
+    "digest": "3ce3017b29",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/decorators.py",
+    "function": "group",
+    "line": 293,
+    "rule_ids": [],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/testing.py",
+    "function": "stdout",
+    "line": 295,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "5823c6fab0",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_termui_impl.py",
+    "function": "make_step",
+    "line": 296,
+    "rule_ids": [
+     "NAI-138"
+    ],
+    "digest": "dc0d971557",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/types.py",
+    "function": "convert",
+    "line": 296,
+    "rule_ids": [
+     "NAI-030"
+    ],
+    "digest": "f52f4dc0b0",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/testing.py",
+    "function": "stderr",
+    "line": 302,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "d5d067d400",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_compat.py",
+    "function": "_force_correct_text_writer",
+    "line": 303,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "79124cc512",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/types.py",
+    "function": "__repr__",
+    "line": 314,
+    "rule_ids": [
+     "NAI-009S"
+    ],
+    "digest": "d0f6ca7c75",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "__init__",
+    "line": 340,
+    "rule_ids": [
+     "NAI-229"
+    ],
+    "digest": "1d4ee5ebb8",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/shell_completion.py",
+    "function": "get_completion_args",
+    "line": 347,
+    "rule_ids": [
+     "NAI-130"
+    ],
+    "digest": "332ba45e26",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/termui.py",
+    "function": "get_pager_file",
+    "line": 348,
+    "rule_ids": [
+     "NAI-008"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_compat.py",
+    "function": "_wrap_io_open",
+    "line": 361,
+    "rule_ids": [
+     "NAI-200",
+     "NAI-158"
+    ],
+    "digest": "19c3aba7bf",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/decorators.py",
+    "function": "decorator",
+    "line": 373,
+    "rule_ids": [
+     "NAI-078"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_compat.py",
+    "function": "open_stream",
+    "line": 374,
+    "rule_ids": [
+     "NAI-008",
+     "NAI-087"
+    ],
+    "digest": "f105c1c5be",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/shell_completion.py",
+    "function": "_check_version",
+    "line": 396,
+    "rule_ids": [
+     "NAI-008"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/testing.py",
+    "function": "isolation",
+    "line": 399,
+    "rule_ids": [
+     "NAI-078",
+     "NAI-094",
+     "NAI-229"
+    ],
+    "digest": "c19cff7c50",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_termui_impl.py",
+    "function": "write",
+    "line": 401,
+    "rule_ids": [
+     "NAI-021S"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/types.py",
+    "function": "get_missing_message",
+    "line": 433,
+    "rule_ids": [
+     "NAI-030"
+    ],
+    "digest": "301b89dca6",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/utils.py",
+    "function": "format_filename",
+    "line": 442,
+    "rule_ids": [
+     "NAI-021S"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/termui.py",
+    "function": "progressbar",
+    "line": 443,
+    "rule_ids": [
+     "NAI-008"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_compat.py",
+    "function": "close",
+    "line": 466,
+    "rule_ids": [
+     "NAI-003"
+    ],
+    "digest": "75241dde81",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_compat.py",
+    "function": "__getattr__",
+    "line": 473,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "17638a4c89",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_compat.py",
+    "function": "__enter__",
+    "line": 476,
+    "rule_ids": [
+     "NAI-016S"
+    ],
+    "digest": "4e4c8360c2",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_compat.py",
+    "function": "__exit__",
+    "line": 479,
+    "rule_ids": [
+     "NAI-003"
+    ],
+    "digest": "a8852bd7ef",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/types.py",
+    "function": "shell_complete",
+    "line": 484,
+    "rule_ids": [
+     "NAI-008",
+     "NAI-030"
+    ],
+    "digest": "41563a9c04",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/utils.py",
+    "function": "get_app_dir",
+    "line": 484,
+    "rule_ids": [
+     "NAI-079"
+    ],
+    "digest": "c8f58ee864",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_compat.py",
+    "function": "__repr__",
+    "line": 487,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "6943534f7d",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_compat.py",
+    "function": "strip_ansi",
+    "line": 491,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "96044f8307",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_compat.py",
+    "function": "_is_jupyter_kernel_output",
+    "line": 495,
+    "rule_ids": [
+     "NAI-021S"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/decorators.py",
+    "function": "callback",
+    "line": 501,
+    "rule_ids": [
+     "NAI-003"
+    ],
+    "digest": "06d0f51c3b",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/parser.py",
+    "function": "__getattr__",
+    "line": 503,
+    "rule_ids": [
+     "NAI-008"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/testing.py",
+    "function": "should_strip_ansi",
+    "line": 506,
+    "rule_ids": [
+     "NAI-003",
+     "NAI-030"
+    ],
+    "digest": "7059699c92",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "protected_args",
+    "line": 517,
+    "rule_ids": [
+     "NAI-021S"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_compat.py",
+    "function": "_get_argv_encoding",
+    "line": 520,
+    "rule_ids": [
+     "NAI-008",
+     "NAI-230"
+    ],
+    "digest": "6ed4c986aa",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "to_info_dict",
+    "line": 528,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "20d8594b5f",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_compat.py",
+    "function": "_get_windows_console_stream",
+    "line": 530,
+    "rule_ids": [
+     "NAI-009S"
+    ],
+    "digest": "34fd5d024d",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/shell_completion.py",
+    "function": "get_completion_args",
+    "line": 530,
+    "rule_ids": [
+     "RCA-001"
+    ],
+    "digest": "db96758cc9",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_compat.py",
+    "function": "isatty",
+    "line": 540,
+    "rule_ids": [
+     "NAI-078"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/types.py",
+    "function": "get_metavar",
+    "line": 546,
+    "rule_ids": [
+     "NAI-003",
+     "NAI-030"
+    ],
+    "digest": "7535e869e0",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_compat.py",
+    "function": "_make_cached_stream_func",
+    "line": 547,
+    "rule_ids": [
+     "NAI-078"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "__enter__",
+    "line": 549,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "5bbcffa51d",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/types.py",
+    "function": "_try_to_convert_date",
+    "line": 549,
+    "rule_ids": [
+     "NAI-078"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_termui_impl.py",
+    "function": "_pipepager",
+    "line": 552,
+    "rule_ids": [
+     "NAI-078"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_compat.py",
+    "function": "func",
+    "line": 553,
+    "rule_ids": [
+     "NAI-078"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/decorators.py",
+    "function": "custom_version_option",
+    "line": 561,
+    "rule_ids": [
+     "RCA-001"
+    ],
+    "digest": "60cfcd8d5c",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/shell_completion.py",
+    "function": "add_completion_class",
+    "line": 565,
+    "rule_ids": [
+     "NAI-021S"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "scope",
+    "line": 569,
+    "rule_ids": [
+     "NAI-026"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/types.py",
+    "function": "__repr__",
+    "line": 578,
+    "rule_ids": [
+     "NAI-009S"
+    ],
+    "digest": "02e2a33d65",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/decorators.py",
+    "function": "show_version",
+    "line": 585,
+    "rule_ids": [
+     "NAI-003"
+    ],
+    "digest": "d66207bc43",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/shell_completion.py",
+    "function": "get_completion_class",
+    "line": 586,
+    "rule_ids": [
+     "NAI-130"
+    ],
+    "digest": "936860eba3",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/types.py",
+    "function": "convert",
+    "line": 587,
+    "rule_ids": [
+     "NAI-021S"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/shell_completion.py",
+    "function": "get_completion_class",
+    "line": 588,
+    "rule_ids": [
+     "NAI-130"
+    ],
+    "digest": "f61becac41",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/shell_completion.py",
+    "function": "get_completion_class",
+    "line": 590,
+    "rule_ids": [
+     "NAI-130"
+    ],
+    "digest": "50e6a5d57d",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/shell_completion.py",
+    "function": "get_completion_class",
+    "line": 592,
+    "rule_ids": [
+     "NAI-130"
+    ],
+    "digest": "ac22502f53",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/shell_completion.py",
+    "function": "split_arg_string",
+    "line": 603,
+    "rule_ids": [
+     "NAI-008"
+    ],
+    "digest": "158e570409",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/decorators.py",
+    "function": "show_help",
+    "line": 612,
+    "rule_ids": [
+     "NAI-003"
+    ],
+    "digest": "0de4c8846e",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/utils.py",
+    "function": "_expand_args",
+    "line": 617,
+    "rule_ids": [
+     "NAI-008"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "make_formatter",
+    "line": 634,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "8873a46d99",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_termui_impl.py",
+    "function": "_tempfilepager",
+    "line": 641,
+    "rule_ids": [
+     "NAI-158"
+    ],
+    "digest": "e913872a2c",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "with_resource",
+    "line": 648,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "d8e88673f6",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/types.py",
+    "function": "convert",
+    "line": 655,
+    "rule_ids": [
+     "NAI-008"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/utils.py",
+    "function": "__getattr__",
+    "line": 669,
+    "rule_ids": [
+     "NAI-008"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "call_on_close",
+    "line": 677,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "c13860f777",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/types.py",
+    "function": "_clamp",
+    "line": 689,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "a0570de420",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_termui_impl.py",
+    "function": "get_editor",
+    "line": 699,
+    "rule_ids": [
+     "NAI-008"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_termui_impl.py",
+    "function": "edit_files",
+    "line": 716,
+    "rule_ids": [
+     "NAI-008"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/types.py",
+    "function": "__repr__",
+    "line": 729,
+    "rule_ids": [
+     "NAI-009S"
+    ],
+    "digest": "6e2b6c1c1e",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/testing.py",
+    "function": "isolated_filesystem",
+    "line": 742,
+    "rule_ids": [
+     "NAI-008",
+     "NAI-078"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_termui_impl.py",
+    "function": "edit",
+    "line": 754,
+    "rule_ids": [
+     "NAI-008"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/types.py",
+    "function": "__repr__",
+    "line": 761,
+    "rule_ids": [
+     "NAI-009S"
+    ],
+    "digest": "7da7b45702",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "lookup_default",
+    "line": 776,
+    "rule_ids": [
+     "NAI-137",
+     "NAI-230"
+    ],
+    "digest": "afba0ff612",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "lookup_default",
+    "line": 781,
+    "rule_ids": [
+     "NAI-137",
+     "NAI-230"
+    ],
+    "digest": "8ef6d63bff",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/types.py",
+    "function": "_clamp",
+    "line": 798,
+    "rule_ids": [
+     "NAI-030"
+    ],
+    "digest": "724ecb6ca6",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_termui_impl.py",
+    "function": "open_url",
+    "line": 802,
+    "rule_ids": [
+     "NAI-008",
+     "NAI-078",
+     "NAI-079",
+     "NAI-167"
+    ],
+    "digest": "12028261ce",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_termui_impl.py",
+    "function": "_unquote_file",
+    "line": 805,
+    "rule_ids": [
+     "NAI-021S"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "get_usage",
+    "line": 829,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "ebc937ad1c",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "get_help",
+    "line": 835,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "fcb7981d85",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/termui.py",
+    "function": "edit",
+    "line": 848,
+    "rule_ids": [
+     "NAI-008"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "invoke",
+    "line": 850,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "067fc3c9dc",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "invoke",
+    "line": 855,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "3660655fde",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/types.py",
+    "function": "__repr__",
+    "line": 873,
+    "rule_ids": [
+     "NAI-009S"
+    ],
+    "digest": "c99a0c12a2",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/types.py",
+    "function": "__repr__",
+    "line": 895,
+    "rule_ids": [
+     "NAI-009S"
+    ],
+    "digest": "b43b80ae3e",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/termui.py",
+    "function": "launch",
+    "line": 913,
+    "rule_ids": [
+     "NAI-008"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "get_parameter_source",
+    "line": 940,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "ccb94c5d99",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_termui_impl.py",
+    "function": "raw_terminal",
+    "line": 941,
+    "rule_ids": [
+     "NAI-078",
+     "NAI-079"
+    ],
+    "digest": "501a638cf4",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/_termui_impl.py",
+    "function": "getchar",
+    "line": 967,
+    "rule_ids": [
+     "RCA-001"
+    ],
+    "digest": "89550df149",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/termui.py",
+    "function": "raw_terminal",
+    "line": 977,
+    "rule_ids": [
+     "NAI-008"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/termui.py",
+    "function": "pause",
+    "line": 983,
+    "rule_ids": [
+     "NAI-078"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/types.py",
+    "function": "shell_complete",
+    "line": 1018,
+    "rule_ids": [
+     "NAI-008",
+     "NAI-030"
+    ],
+    "digest": "a47ca9d2a1",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "get_help_option",
+    "line": 1192,
+    "rule_ids": [
+     "NAI-021S"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/types.py",
+    "function": "shell_complete",
+    "line": 1220,
+    "rule_ids": [
+     "NAI-008",
+     "NAI-030"
+    ],
+    "digest": "f509415123",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/types.py",
+    "function": "__init__",
+    "line": 1257,
+    "rule_ids": [
+     "RCA-001"
+    ],
+    "digest": "7e117c8039",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "format_help_text",
+    "line": 1277,
+    "rule_ids": [
+     "NAI-003"
+    ],
+    "digest": "ff6ca55053",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "format_epilog",
+    "line": 1319,
+    "rule_ids": [
+     "NAI-003"
+    ],
+    "digest": "d9857d883d",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/types.py",
+    "function": "convert_type",
+    "line": 1332,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "63514d77eb",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/types.py",
+    "function": "convert_type",
+    "line": 1334,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "6fa327c771",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/types.py",
+    "function": "convert_type",
+    "line": 1338,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "e6267186f5",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/types.py",
+    "function": "convert_type",
+    "line": 1341,
+    "rule_ids": [
+     "NAI-078"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "parse_args",
+    "line": 1365,
+    "rule_ids": [
+     "NAI-021S"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "invoke",
+    "line": 1401,
+    "rule_ids": [
+     "NAI-021S"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "shell_complete",
+    "line": 1417,
+    "rule_ids": [
+     "NAI-008"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "main",
+    "line": 1465,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "51e90b4d69",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "main",
+    "line": 1475,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "866d7ca452",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "_main_shell_completion",
+    "line": 1597,
+    "rule_ids": [
+     "NAI-008"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "__call__",
+    "line": 1629,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "bede0a3b74",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "__subclasscheck__",
+    "line": 1635,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "dcd8538478",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "__instancecheck__",
+    "line": 1638,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "610f006be2",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "command",
+    "line": 1792,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "23c7849aa8",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "command",
+    "line": 1795,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "f960a34144",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "command",
+    "line": 1799,
+    "rule_ids": [
+     "NAI-008"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "group",
+    "line": 1841,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "a9f63bb2e9",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "group",
+    "line": 1844,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "1f4595be62",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "group",
+    "line": 1848,
+    "rule_ids": [
+     "NAI-008"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "get_command",
+    "line": 1937,
+    "rule_ids": [
+     "NAI-030",
+     "NAI-230"
+    ],
+    "digest": "720a11f0df",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "list_commands",
+    "line": 1943,
+    "rule_ids": [
+     "NAI-022S"
+    ],
+    "digest": "93ec193c76",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "parse_args",
+    "line": 1984,
+    "rule_ids": [
+     "NAI-021S"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "invoke",
+    "line": 1998,
+    "rule_ids": [
+     "RCA-001"
+    ],
+    "digest": "583e68b30f",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "_process_result",
+    "line": 1999,
+    "rule_ids": [
+     "NAI-021S"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "shell_complete",
+    "line": 2092,
+    "rule_ids": [
+     "NAI-008"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "_parse_decls",
+    "line": 2410,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "e2bc93761b",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "get_default",
+    "line": 2436,
+    "rule_ids": [
+     "NAI-130",
+     "NAI-230"
+    ],
+    "digest": "419d7cc142",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "get_default",
+    "line": 2441,
+    "rule_ids": [
+     "NAI-130",
+     "NAI-230"
+    ],
+    "digest": "35da2a7497",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "add_to_parser",
+    "line": 2479,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "b666b419d6",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "convert",
+    "line": 2554,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "d48129d901",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "process_value",
+    "line": 2603,
+    "rule_ids": [
+     "NAI-021S"
+    ],
+    "digest": null,
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "resolve_envvar_value",
+    "line": 2669,
+    "rule_ids": [
+     "NAI-022S"
+    ],
+    "digest": "db10f5823e",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "get_help_record",
+    "line": 2818,
+    "rule_ids": [
+     "NAI-009S"
+    ],
+    "digest": "8a17dd9efd",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "get_usage_pieces",
+    "line": 2821,
+    "rule_ids": [
+     "NAI-030"
+    ],
+    "digest": "d9076cdb0f",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "get_error_hint",
+    "line": 2824,
+    "rule_ids": [
+     "NAI-022S"
+    ],
+    "digest": "9144730815",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "is_bool_flag",
+    "line": 3033,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "184313c167",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "get_usage_pieces",
+    "line": 3760,
+    "rule_ids": [
+     "NAI-230"
+    ],
+    "digest": "d5a7d6465e",
+    "confirmed": false
+   },
+   {
+    "file": "src/click/core.py",
+    "function": "__getattr__",
+    "line": 3778,
+    "rule_ids": [
+     "NAI-008"
+    ],
+    "digest": null,
+    "confirmed": false
+   }
+  ],
+  "return_channel_lines": 0,
+  "return_channel": "/Users/dev/Desktop/CODE_RADAR_REFURBISH_copy2/system_scripts/return_channel_480405eb45ce.jsonl",
+  "orphans": 0,
+  "orphans_channel": 0,
+  "unparsed": 0,
+  "builder_state_sha256": "dbaef034a356db7eba5131b84d0d30fbb06bf912a54b37905885cfc2190fe332",
+  "finished": false,
+  "error": null
+ }
+}

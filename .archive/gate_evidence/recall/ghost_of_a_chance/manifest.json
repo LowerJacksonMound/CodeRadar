@@ -1,0 +1,14 @@
+{
+ "target": "/Users/dev/Desktop/ghost_of_a_chance",
+ "built": "2026-09-10",
+ "by": "set 4b-37 (run 91)",
+ "base": "heresy tree + colorama/repair_plant_invented.py",
+ "planted_findings": [
+  {"file": "colorama/repair_plant_invented.py", "line": 7, "function": "read_stage", "family": "NAI-057", "accept_any_of": ["NAI-057"],
+   "what": "`import file_handler`, a name from the detector's HALLUCINATION_MODULE_PATTERNS, inside a try so NAI-008 stays out of the row (set 4b-37, no-fix-by-design)"},
+  {"file": "colorama/repair_plant_invented.py", "line": 18, "function": "__serialize__", "family": "NAI-058", "accept_any_of": ["NAI-058"],
+   "what": "a fake dunder method `__serialize__` on class Bucket, defined once in the directory (set 4b-37, no-fix-by-design)"},
+  {"file": "colorama/repair_plant_invented.py", "line": 23, "function": "verbosity", "family": "NAI-059", "accept_any_of": ["NAI-059"],
+   "what": "`settings.MODE_VERBOSE`, one of the detector's invented constant names on a non-self receiver (set 4b-37, no-fix-by-design)"}
+ ]
+}

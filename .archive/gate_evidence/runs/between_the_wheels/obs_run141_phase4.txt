@@ -1,0 +1,38 @@
+coderadar-mcp 0.1.0: target /Users/dev/Desktop/between_the_wheels (repo_id a32f4c124796); state /Users/dev/Desktop/CODE_RADAR_REFURBISH/system_scripts; 13/13 tools bound
+watching from cycle 6 …
+  cycle 6: counterfeit_failed=98 mypy_errors=574 severed_links=0 · {"total_functions": 355, "passed": 174, "failed": 98, "files_scanned": 64, "repairs": 88, "no_vetted_fix": 10, "whitelisted": 0, "withheld": 83}
+
+ROW colorama/repair_plant_flow.py::sign::24
+   found False · kind None · digest None · status None
+   tester   null
+   evidence null
+   why      None …
+
+ROW colorama/repair_plant_trust.py::label::22
+   found False · kind None · digest None · status None
+   tester   null
+   evidence null
+   why      None …
+
+ROW colorama/repair_plant_invented.py::__serialize__::18
+   found False · kind None · digest None · status None
+   tester   null
+   evidence null
+   why      None …
+
+ROW colorama/ansitowin32.py::isatty::49
+   found True · kind rewriter · digest 2891d4b3a3 · status None
+   tester   {"confirmed": false, "tester": "", "timestamp": ""}
+   evidence null
+   why      tester failed 8cab17f075: run 141: applied, then BACKED OUT by the client. The target's own runner failed — isatty_test.py::IsattyTest::test_withPycharmNoneOverride: RuntimeError('isatty failed') where the test asserts False. The rewriter turned a documented `return False` fallback into a raise.; pi …
+
+ROW colorama/ansitowin32.py::closed::62
+   found True · kind rewriter · digest 2ad90aa8f1 · status None
+   tester   {"confirmed": false, "tester": "", "timestamp": ""}
+   evidence null
+   why      tester failed 3ba74f0b6d: run 141: applied, then BACKED OUT by the client. The target's own runner failed — ansitowin32_test.py::StreamWrapperTest::test_closed_shouldnt_raise_on_detached_stream and AnsiToWin32Test::test_wrap_shouldnt_raise_on_missing_closed_attr: AttributeError escapes where the tes …
+
+final cycle 6 · finished False (mirror) · not finished: counterfeit_failed=98, mypy_errors=574
+  summary  {"broken_imports": 0, "path_hacks": 1, "mypy_errors": 574, "mypy_ran": true, "sync_needs_review": 8, "dead_code_items": 0, "dead_code_actionable": 0, "severed_links": 0, "finished": false, "finished_reason": "not finished: counterfeit_failed=98, mypy_errors=574", "finished_gates": ["counterfeit_failed", "mypy_errors", "severed_links"], "finished_inputs": {"counterfeit_failed": 98, "mypy_errors": 574, "severed_links": 0}, "counterfeit_failed": 98}
+  rows     {"total_functions": 355, "passed": 174, "failed": 98, "files_scanned": 64, "repairs": 88, "no_vetted_fix": 10, "whitelisted": 0, "withheld": 83}
+PHASE 4 DONE

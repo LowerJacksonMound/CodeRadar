@@ -1,0 +1,24 @@
+{
+ "target": "/Users/dev/Desktop/la_villa_strangiato",
+ "built": "2026-09-10",
+ "by": "set 4b-03 (run 57)",
+ "base": "the_trees tree (colorama-0.4.6 sdist + the 6 run-48 rewriter plants + repair_plant_hr.py + repair_plant_imports.py) + colorama/repair_plant_stubs.py",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_stubs.py",
+   "line": 5,
+   "function": "<module>",
+   "family": "NAI-217",
+   "accept_any_of": ["NAI-217"],
+   "what": "`from .ansi import clear_display` — ansi.py defines no clear_display (set 4b-03, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_stubs.py",
+   "line": 10,
+   "function": "<class Placeholder>",
+   "family": "NAI-213",
+   "accept_any_of": ["NAI-213"],
+   "what": "bare class Placeholder whose body is only pass, never referenced again in its module (set 4b-03, no-fix-by-design)"
+  }
+ ]
+}

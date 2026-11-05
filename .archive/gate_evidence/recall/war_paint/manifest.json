@@ -1,0 +1,59 @@
+{
+ "target": "/Users/dev/Desktop/war_paint",
+ "built": "2026-09-10",
+ "by": "set 4b-16 (run 70)",
+ "base": "the_pass tree + colorama/repair_plant_flow.py + colorama/repair_plant_tautology.py",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_flow.py",
+   "line": 9,
+   "function": "build_label",
+   "family": "NAI-138",
+   "accept_any_of": [
+    "NAI-138"
+   ],
+   "what": "a build_* function with no valued return (the row also carries NAI-098) (set 4b-16, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_flow.py",
+   "line": 13,
+   "function": "checked",
+   "family": "NAI-140",
+   "accept_any_of": [
+    "NAI-140"
+   ],
+   "what": "a statement after a raise in the same block (the row also carries NAI-002) (set 4b-16, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_flow.py",
+   "line": 20,
+   "function": "spin",
+   "family": "NAI-141",
+   "accept_any_of": [
+    "NAI-141"
+   ],
+   "what": "a `while True` with nothing to end it (the row also carries NAI-044) (set 4b-16, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_flow.py",
+   "line": 25,
+   "function": "sign",
+   "family": "NAI-142",
+   "accept_any_of": [
+    "NAI-142"
+   ],
+   "what": "an `-> int` def that returns on one path only (set 4b-16, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_tautology.py",
+   "line": 6,
+   "function": "test_double",
+   "family": "NAI-139",
+   "accept_any_of": [
+    "NAI-139"
+   ],
+   "what": "owner 2026-10-07 ~13:45 (tests are judged like any file): a test whose only assert compares against an inline recomputation (`2 * 3 == 3 * 2`) can never fail \u2014 was a control only under the 09-06 test withhold"
+  }
+ ],
+ "controls": []
+}

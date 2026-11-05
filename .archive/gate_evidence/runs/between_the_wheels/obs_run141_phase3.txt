@@ -1,0 +1,54 @@
+coderadar-mcp 0.1.0: target /Users/dev/Desktop/between_the_wheels (repo_id a32f4c124796); state /Users/dev/Desktop/CODE_RADAR_REFURBISH/system_scripts; 13/13 tools bound
+
+CALL cr_attach({})
+  {"attached": true, "phase": "MONITORING", "cycle": 4, "error": null}
+
+CALL cr_apply({"row": "colorama/repair_plant_extended.py::reserved::10"})
+  {"kind": "shape", "row": "colorama/repair_plant_extended.py::reserved::10", "file": "colorama/repair_plant_extended.py", "replace_span": "colorama/repair_plant_extended.py:L10-L11", "digest": "33d0e38910", "selected_role": "solution_NAI-120", "error": null}
+    shape: def <name>(<params>): |     """<existing docstring>""" |     raise NotImplementedError("<name>: not implemente
+    EDITED colorama/repair_plant_extended.py:L10-L11
+
+CALL cr_apply({"row": "colorama/repair_plant_flow.py::sign::24"})
+  {"kind": "shape", "row": "colorama/repair_plant_flow.py::sign::24", "file": "colorama/repair_plant_flow.py", "replace_span": "colorama/repair_plant_flow.py:L24-L26", "digest": "be73feda36", "selected_role": "solution_NAI-142", "error": null}
+    shape: if <cond>: |     return <value> | return <value for the other case>   # or raise <Error>
+    EDITED colorama/repair_plant_flow.py:L24-L26
+
+CALL cr_apply({"row": "colorama/repair_plant_stale.py::__init__::12"})
+  {"kind": "shape", "row": "colorama/repair_plant_stale.py::__init__::12", "file": "colorama/repair_plant_stale.py", "replace_span": "colorama/repair_plant_stale.py:L12-L13", "digest": "a402a63fe7", "selected_role": "solution_NAI-152", "error": null}
+    shape: def __init__(self, ...): |     self.<name> = []   # or {} / set()
+    EDITED colorama/repair_plant_stale.py:L12-L13
+
+CALL cr_apply({"row": "colorama/repair_plant_chains.py::label_for::15"})
+  {"kind": "shape", "row": "colorama/repair_plant_chains.py::label_for::15", "file": "colorama/repair_plant_chains.py", "replace_span": "colorama/repair_plant_chains.py:L15-L18", "digest": "4b0e73f1af", "selected_role": "solution_NAI-145", "error": null}
+    shape: <name> = <initial value> | ... <first read of <name>> ...
+    EDITED colorama/repair_plant_chains.py:L15-L18
+
+CALL cr_apply({"row": "colorama/repair_plant_ops.py::note::15"})
+  {"kind": "shape", "row": "colorama/repair_plant_ops.py::note::15", "file": "colorama/repair_plant_ops.py", "replace_span": "colorama/repair_plant_ops.py:L15-L16", "digest": "a77a509cb3", "selected_role": "solution_NAI-011", "error": null}
+    shape: def <name>(...): |     <action | return <value>>
+    EDITED colorama/repair_plant_ops.py:L15-L16
+
+CALL cr_apply({"row": "colorama/repair_plant_trust.py::label::22"})
+  {"kind": "shape", "row": "colorama/repair_plant_trust.py::label::22", "file": "colorama/repair_plant_trust.py", "replace_span": "colorama/repair_plant_trust.py:L22-L23", "digest": "24666a8404", "selected_role": "solution_NAI-165", "error": null}
+    shape: <NAME> = '<the intended visible text — no U+202A..U+202E / U+2066..U+2069 controls>'
+    EDITED colorama/repair_plant_trust.py:L22-L23
+
+CALL cr_apply({"row": "colorama/repair_plant_invented.py::__serialize__::18"})
+  {"kind": "shape", "row": "colorama/repair_plant_invented.py::__serialize__::18", "file": "colorama/repair_plant_invented.py", "replace_span": "colorama/repair_plant_invented.py:L18-L19", "digest": "7c55f3e702", "selected_role": "solution_NAI-058", "error": null}
+    shape: def <plain_name>(self, ...):   # was __<name>__ |     ... | obj.<plain_name>()
+    EDITED colorama/repair_plant_invented.py:L18-L19
+
+CALL cr_run_module({"path": "pytest", "args": ["colorama/tests", "-q"]})
+  {"exit_code": 0, "duration_s": 0.831, "args": ["colorama/tests", "-q", "-p", "no:cacheprovider"], "seen_on_band": true, "timed_out": false, "error": null}
+  stdout tail: ..........................ssssssssss........sss....s                     [100%] | 38 passed, 14 skipped in 0.09s | 
+
+cr_report_outcome ×9 → written 9, refused 0
+   ok  confirmed colorama/repair_plant_extended.py::reserved::10  33d0e38910
+   ok  confirmed colorama/repair_plant_flow.py::sign::24  be73feda36
+   ok  confirmed colorama/repair_plant_stale.py::__init__::12  a402a63fe7
+   ok  confirmed colorama/repair_plant_chains.py::label_for::15  4b0e73f1af
+   ok  confirmed colorama/repair_plant_ops.py::note::15  a77a509cb3
+   ok  confirmed colorama/repair_plant_trust.py::label::22  24666a8404
+   ok  confirmed colorama/repair_plant_invented.py::__serialize__::18  7c55f3e702
+   ok  failed    colorama/ansitowin32.py::isatty::49  8cab17f075
+   ok  failed    colorama/ansitowin32.py::closed::62  3ba74f0b6d

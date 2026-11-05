@@ -1,0 +1,71 @@
+cr_watch started=True phase=MONITORING repo_id=d4da70e9348f gates=[{'gate': 'circuit READY/RUNNING', 'status': 'PASS', 'seconds': 1.5}, {'gate': 'circuit WIRING', 'status': 'PASS', 'seconds': None}, {'gate': 'NOAI MONITORING', 'status': 'PASS', 'seconds': 5.6}, {'gate': 'CHEATSHEETS MONITORING', 'status': 'PASS', 'seconds': 1.0}, {'gate': 'dashboard HTTP 200', 'status': 'PASS', 'seconds': 0.0}] error=None
+cr_status cycle=1 finished=False (mirror) · not finished: counterfeit_failed=104, mypy_errors=574
+  infractions {"total_functions": 355, "passed": 168, "failed": 104, "files_scanned": 64, "repairs": 94, "no_vetted_fix": 10, "whitelisted": 0, "withheld": 84, "withheld_gate": 1}
+cr_infractions(withheld) total=84
+
+#21  colorama/ansi.py::set_title::15
+     error=no row 'colorama/ansi.py::set_title::15' — the id is `<file>::<function>::<line>`, as `cr_infractions` returns it withheld_by=None kind=None cands=None
+     pick=None no_fix_status=None
+
+#30  colorama/repair_plant_branches.py::stamp::26
+     error=no row 'colorama/repair_plant_branches.py::stamp::26' — the id is `<file>::<function>::<line>`, as `cr_infractions` returns it withheld_by=None kind=None cands=None
+     pick=None no_fix_status=None
+
+#33  colorama/repair_plant_chains.py::stamp::21
+     error=None withheld_by=None kind=rewriter cands=1
+     pick=immediate_overwrite_fix:keep_second no_fix_status=None
+     why: picked immediate_overwrite_fix:keep_second over 0 other pickable candidate(s) of 1 offered; deciding method: n/a (one candidate); immediate_overwrite_fix:keep_second[parse=ok, differs=yes, safety=clean, rule=NAI-006, flo
+
+#35  colorama/repair_plant_checks.py::push::12
+     error=None withheld_by=None kind=None cands=0
+     pick=None no_fix_status=declined
+     why: declined: param_mutation_fix found nothing to rewrite; no candidates offered
+
+#53  colorama/repair_plant_noop.py::tally::24
+     error=no row 'colorama/repair_plant_noop.py::tally::24' — the id is `<file>::<function>::<line>`, as `cr_infractions` returns it withheld_by=None kind=None cands=None
+     pick=None no_fix_status=None
+
+#57  colorama/repair_plant_quietly.py::hushed::9
+     error=None withheld_by=gate kind=None cands=1
+     pick=None no_fix_status=ranker_none
+     why: gate: withheld: no-fix-by-design — NAI-017: what happens on a swallowed exception — propagate it, narrow the catch, log it, return a value — is the dev's decision about this call site; every candidate here changes what t
+
+#61  colorama/repair_plant_shape.py::pick_label::5
+     error=None withheld_by=None kind=rewriter cands=1
+     pick=identical_branches_fix:body_once no_fix_status=None
+     why: picked identical_branches_fix:body_once over 0 other pickable candidate(s) of 1 offered; deciding method: n/a (one candidate); identical_branches_fix:body_once[parse=ok, differs=yes, safety=clean, rule=NAI-026, flow=bran
+
+#70  colorama/repair_plant_typos.py::code_word::23
+     error=no row 'colorama/repair_plant_typos.py::code_word::23' — the id is `<file>::<function>::<line>`, as `cr_infractions` returns it withheld_by=None kind=None cands=None
+     pick=None no_fix_status=None
+
+#71  colorama/repair_plant_typos.py::mark_twice::33
+     error=no row 'colorama/repair_plant_typos.py::mark_twice::33' — the id is `<file>::<function>::<line>`, as `cr_infractions` returns it withheld_by=None kind=None cands=None
+     pick=None no_fix_status=None
+
+#73  colorama/win32.py::GetConsoleScreenBufferInfo::118
+     error=None withheld_by=None kind=rewriter cands=4
+     pick=dead_local_fix:keep_call_effect no_fix_status=None
+     why: gate: `_GetConsoleScreenBufferInfo` is a side-effecting call — deleting it changes what the program does, not what it says. [dead_store_fix:drop_store]; picked dead_local_fix:keep_call_effect over 2 other pickable candid
+
+#74  colorama/win32.py::FillConsoleOutputCharacter::147
+     error=None withheld_by=None kind=rewriter cands=4
+     pick=dead_local_fix:keep_call_effect no_fix_status=None
+     why: gate: `_FillConsoleOutputCharacterA` is a side-effecting call — deleting it changes what the program does, not what it says. [dead_store_fix:drop_store]; picked dead_local_fix:keep_call_effect over 2 other pickable candi
+
+#75  colorama/winterm.py::enable_vt_processing::178
+     error=None withheld_by=None kind=rewriter cands=1
+     pick=fallback_return_fix:log_and_return no_fix_status=None
+     why: picked fallback_return_fix:log_and_return over 0 other pickable candidate(s) of 1 offered; deciding method: n/a (one candidate); fallback_return_fix:log_and_return[parse=ok, differs=yes, safety=clean, rule=NAI-078, flow=
+
+cr_apply colorama/repair_plant_chains.py::stamp::21: kind=diff applies_cleanly=True span=colorama/repair_plant_chains.py:L21-L24 error=None
+
+cr_apply colorama/repair_plant_shape.py::pick_label::5: kind=diff applies_cleanly=True span=colorama/repair_plant_shape.py:L5-L10 error=None
+
+cr_apply colorama/win32.py::GetConsoleScreenBufferInfo::118: kind=diff applies_cleanly=True span=colorama/win32.py:L118-L123 error=None
+
+cr_apply colorama/win32.py::FillConsoleOutputCharacter::147: kind=diff applies_cleanly=True span=colorama/win32.py:L147-L155 error=None
+
+cr_apply colorama/winterm.py::enable_vt_processing::178: kind=diff applies_cleanly=True span=colorama/winterm.py:L178-L195 error=None
+
+phase 1 written to /Users/dev/Desktop/CODE_RADAR_REFURBISH/.archive/runs/marathon/phase1_rows.json

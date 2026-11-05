@@ -1,0 +1,28 @@
+{
+ "target": "/Users/dev/Desktop/the_big_wheel",
+ "built": "2026-09-10",
+ "by": "set 4b-29 (run 83)",
+ "base": "wheres_my_thing tree + colorama/repair_plant_join.py",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_join.py",
+   "line": 11,
+   "function": "render_tags",
+   "family": "NAI-116",
+   "accept_any_of": [
+    "NAI-116"
+   ],
+   "what": "a render_* building its string with += str(tag) inside a for loop, text = '' directly above (set 4b-29, rewriter join_fix)"
+  },
+  {
+   "file": "colorama/repair_plant_join.py",
+   "line": 15,
+   "function": "validate_port",
+   "family": "NAI-118",
+   "accept_any_of": [
+    "NAI-118"
+   ],
+   "what": "a validate_* that only returns True / False, no raise, no error call (set 4b-29, no-fix-by-design)"
+  }
+ ]
+}

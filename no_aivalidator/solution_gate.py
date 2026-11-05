@@ -19,7 +19,7 @@ import ast
 import builtins
 import symtable
 import textwrap
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, cast
 
 #: Owner 2026-10-08: at most this many agent attempts per row; a row that reaches it with none integrated is held
 #: for the owner. ONE home — the Builder and cr_submit both read it.
@@ -54,7 +54,7 @@ def _undefined_names(module_src: str, function: str) -> List[str]:
     fn = next((t for t in top.get_children() if t.get_name() == function and t.get_type() == "function"), None)
     if fn is None:
         return []
-    return sorted(n for n in fn.get_globals() if n not in bound and not hasattr(builtins, n))
+    return sorted(n for n in cast(symtable.Function, fn).get_globals() if n not in bound and not hasattr(builtins, n))
 
 
 def _outcomes(tree: ast.AST, name: str, grid: List[List[Any]]) -> Optional[List[Any]]:

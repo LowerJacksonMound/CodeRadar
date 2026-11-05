@@ -13,7 +13,7 @@ HERE = Path(__file__).resolve().parent; PY = sys.executable
 TEST_PATH = re.compile(r"(^|/)(tests?|testing)/|(^|/)test_[^/]*\.py$|_test\.py$|(^|/)conftest\.py$")
 
 def units(lib: Path):
-    out = []
+    out: list[tuple[str, Path | None]] = []
     for d in sorted(p for p in lib.iterdir() if p.is_dir() and p.name != "__pycache__"):
         if d.name == "tests":
             for s in sorted(p for p in d.iterdir() if p.is_dir() and p.name != "__pycache__"): out.append((f"tests/{s.name}", s))

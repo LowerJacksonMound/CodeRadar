@@ -1,0 +1,19 @@
+{
+  "written": true,
+  "channel": "/Users/dev/Desktop/CODE_RADAR_REFURBISH_copy1/system_scripts/return_channel_7cfe2e71fa83.jsonl",
+  "line": {
+    "digest": "8f9a25700f",
+    "replace_span": "colorama/repair_plant_071.py:L4-L6",
+    "outcome": "failed",
+    "failure_log": "run 144: not applied; reported failed so the Ranker re-decides",
+    "tester": "coderadar-mcp run144",
+    "timestamp": "2026-09-17T12:58:31.787718+00:00"
+  },
+  "digest": "8f9a25700f",
+  "replace_span": "colorama/repair_plant_071.py:L4-L6",
+  "bytes_appended": 264,
+  "ledger": "",
+  "ledger_written": false,
+  "ledger_record": {},
+  "error": null
+}

@@ -93,11 +93,12 @@ def _newest_run_state(tree: Path) -> Path | None:
     still made by ASKING THE TOOLS; no file is opened here (this file's name carries `proof`, so
     a data read written here would be a step-17 hunter site with no ledger row).
     """
-    runs = tree / ".archive" / "runs"
     roles = ("builder", "circuit", "noai")
     dated: list[tuple[float, Path]] = []
-    # F1 (2026-10-01): the kept evidence runs count too — retention prunes .archive/runs, never gate_evidence
-    for where in [*runs.glob("*/state_during_run"), *(tree / ".archive" / "gate_evidence" / "runs").glob("*/state_during_run")]:
+    # F1 (2026-10-01): retention prunes .archive/runs, never gate_evidence. 2026-11-05: ONLY the kept
+    # evidence runs are read, as the other six proofs do — the newest launch record under .archive/runs
+    # (a cr_trials fixture with no withheld rows) was being picked over them and the proof crashed.
+    for where in (tree / ".archive" / "gate_evidence" / "runs").glob("*/state_during_run"):
         found = [_first_named(where, rt.STATE_FILES[r]) for r in roles]
         if all(f is not None for f in found):
             dated.append((found[0].stat().st_mtime, where))   # type: ignore[union-attr]
@@ -272,7 +273,7 @@ def part_three_paging() -> None:
     held = rt.cr_infractions(withheld=True)
     _line("filter `withheld` is its own view (FIX_51) and never carries a solution",
           held["total"] > 0 and all(r["has_solution"] is False for r in held["rows"]),
-          f"{held['total']} withheld rows, species e.g. {held['rows'][0]['species']}")
+          f"{held['total']} withheld rows, species e.g. {held['rows'][0]['species'] if held['rows'] else '-'}")
     # T2 / run 159 (session 7), landed in T1's lane because `coderadar_mcp/*` is T1's footprint.
     # The assertion was written when `species` was the only withholding there was, and a
     # species-withheld row is a TEST row — not an infraction at all. A GATE-withheld row IS an

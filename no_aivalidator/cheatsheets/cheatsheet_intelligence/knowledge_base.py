@@ -1015,7 +1015,7 @@ class SolutionRanker:
             fn = next((n for n in ast.walk(before) if isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef))), None)
             doc = (ast.get_docstring(fn) if fn else "") or ""
         low = doc.lower()
-        side = {ast.Gt: "up", ast.GtE: "up", ast.Lt: "down", ast.LtE: "down"}
+        side: Dict[type, str] = {ast.Gt: "up", ast.GtE: "up", ast.Lt: "down", ast.LtE: "down"}
         flip = {ast.Lt: ast.Gt, ast.LtE: ast.GtE, ast.Gt: ast.Lt, ast.GtE: ast.LtE}
 
         def ops_at(tree: ast.AST, n: float) -> List[type]:

@@ -28,7 +28,7 @@ from __future__ import annotations
 import ast
 import math
 import re
-from typing import Any, Callable, Dict, List, Optional, Tuple
+from typing import Any, Callable, Dict, List, Optional, Tuple, cast
 
 from .intent_claims import _NOT_RUN, _compile, _run, last_return_line, slice_lines
 
@@ -98,7 +98,7 @@ def _inverse(fns: List[ast.FunctionDef]) -> Dict[str, Dict[str, Any]]:
         if not ff or not gg:
             continue
         n = len(_params(f))
-        grids = ([tuple((i >> k) & 1 for k in range(n)) for i in range(1 << n)] if n else []) or [()]
+        grids: List[Tuple[float, ...]] = ([tuple((i >> k) & 1 for k in range(n)) for i in range(1 << n)] if n else []) or [()]
         if word == "from":
             grids = [(x,) for x in (0.0, 1.0, 10.0, 100.0)] if n == 1 and len(_params(g)) == 1 else []
         for args in grids:
@@ -138,7 +138,7 @@ def _bound(fns: List[ast.FunctionDef]) -> Dict[str, Dict[str, Any]]:
         if not inflows:
             continue                                   # nothing flows in (a ratio like soc / capacity): no fill to test
         big: Dict[str, float] = {p: (0.9 if _FRACTION.match(p) else 0.0 if _OUTFLOW.match(p) else 1e9) for p in ps}
-        big[cap], big[state] = 10.0, 9.0
+        big[cap], big[cast(str, state)] = 10.0, 9.0
         r = _run(ff, **big)
         if r is _NOT_RUN or not isinstance(r, (int, float)):
             continue
@@ -170,10 +170,10 @@ def _units(fns: List[ast.FunctionDef]) -> Dict[str, Dict[str, Any]]:
                                    f"0 °C is not zero; a temperature enters a product as a difference (`{s.id} - ref`)"}
                 break
             if isinstance(n.op, (ast.Add, ast.Sub)) and [type(s) for s in sides] == [ast.Name, ast.Name] \
-                    and units[n.left.id] != units[n.right.id]:
+                    and units[cast(ast.Name, n.left).id] != units[cast(ast.Name, n.right).id]:
                 out[f"{f.name}@{f.lineno}"] = {
                     "tag": "NAI-239", "line": n.lineno, "variant": "unit",
-                    "description": f"`{ast.unparse(n)}` adds {units[n.left.id]} to {units[n.right.id]}"}
+                    "description": f"`{ast.unparse(n)}` adds {units[cast(ast.Name, n.left).id]} to {units[cast(ast.Name, n.right).id]}"}
                 break
     return out
 
@@ -250,12 +250,12 @@ def sentinel_observations(tree: ast.AST, functions: List[Any]) -> Dict[str, List
     marks: Dict[str, Any] = {}
     for n in getattr(tree, "body", []):
         if (isinstance(n, ast.Assign) and [type(t) for t in n.targets] == [ast.Name]
-                and _SENTINEL_NAME.match(n.targets[0].id)):
+                and _SENTINEL_NAME.match(cast(ast.Name, n.targets[0]).id)):
             v = n.value
             if isinstance(v, ast.UnaryOp) and isinstance(v.op, ast.USub) and isinstance(v.operand, ast.Constant):
-                marks[n.targets[0].id] = -v.operand.value
+                marks[cast(ast.Name, n.targets[0]).id] = -cast(Any, v.operand.value)
             elif isinstance(v, ast.Constant):
-                marks[n.targets[0].id] = v.value
+                marks[cast(ast.Name, n.targets[0]).id] = v.value
     out: Dict[str, List[Dict[str, Any]]] = {}
     if not marks:
         return out

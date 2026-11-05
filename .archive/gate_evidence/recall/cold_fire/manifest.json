@@ -1,0 +1,58 @@
+{
+ "target": "/Users/dev/Desktop/cold_fire",
+ "built": "2026-09-10",
+ "by": "set 4b-30 (run 84, app copy 2)",
+ "base": "face_up tree + colorama/repair_plant_redundant.py",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_redundant.py",
+   "line": 8,
+   "function": "has_rows",
+   "family": "NAI-060",
+   "accept_any_of": [
+    "NAI-060"
+   ],
+   "what": "`not not count` (set 4b-30, rewritten live by double_negation_fix → `bool(count)`)"
+  },
+  {
+   "file": "colorama/repair_plant_redundant.py",
+   "line": 12,
+   "function": "describe",
+   "family": "NAI-062",
+   "accept_any_of": [
+    "NAI-062"
+   ],
+   "what": "`if len(rows) == 0:` as the whole-body test (set 4b-30, rewritten live by len_zero_compare_fix → `if not rows:`)"
+  },
+  {
+   "file": "colorama/repair_plant_redundant.py",
+   "line": 18,
+   "function": "first_set",
+   "family": "NAI-063",
+   "accept_any_of": [
+    "NAI-063"
+   ],
+   "what": "`primary or fallback or primary or default` (set 4b-30, rewritten live by or_chain_dedupe_fix → `primary or fallback or default`)"
+  },
+  {
+   "file": "colorama/repair_plant_redundant.py",
+   "line": 23,
+   "function": "add_up",
+   "family": "NAI-064",
+   "accept_any_of": [
+    "NAI-064"
+   ],
+   "what": "`left = left`, left a parameter (the row also carries NAI-014) (set 4b-30, rewritten live by self_assignment_fix — the line deleted)"
+  },
+  {
+   "file": "colorama/repair_plant_redundant.py",
+   "line": 29,
+   "function": "as_text",
+   "family": "NAI-065",
+   "accept_any_of": [
+    "NAI-065"
+   ],
+   "what": "`str(str(value))` (set 4b-30, rewritten live by redundant_conversion_fix → `str(value)`)"
+  }
+ ]
+}

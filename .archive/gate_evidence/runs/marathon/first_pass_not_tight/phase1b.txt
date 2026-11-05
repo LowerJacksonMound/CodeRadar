@@ -1,0 +1,138 @@
+rows in the mirror: 104 over 43 files
+
+#21  colorama/ansi.py::set_title  -> 0 row(s) in the mirror
+     file rows: []
+
+#30  colorama/repair_plant_branches.py::stamp  -> 1 row(s) in the mirror
+     id=colorama/repair_plant_branches.py::stamp::24
+     rules=['NAI-006']
+     kind=rewriter pick=immediate_overwrite_fix:keep_second cands=2 withheld_by=None no_fix_status=None
+     why: picked immediate_overwrite_fix:keep_second over 1 other pickable candidate(s) of 2 offered; deciding method: intent alignment & logic soundness (+0.00 over immediate_overwrite_fix:keep_second_effect); immediate_overwrite_fix:keep_second[parse=ok, differs=yes, safety=clean, rule=NAI-006, flow=same_pa
+     after_code:
+       | def stamp(value):
+       |     width = 8
+       |     return str(value).rjust(width)
+
+#33  colorama/repair_plant_chains.py::stamp  -> 1 row(s) in the mirror
+     id=colorama/repair_plant_chains.py::stamp::21
+     rules=['NAI-006']
+     kind=rewriter pick=immediate_overwrite_fix:keep_second cands=1 withheld_by=None no_fix_status=None
+     why: picked immediate_overwrite_fix:keep_second over 0 other pickable candidate(s) of 1 offered; deciding method: n/a (one candidate); immediate_overwrite_fix:keep_second[parse=ok, differs=yes, safety=clean, rule=NAI-006, flow=same_paths, complexity=same, idiom=same, deps=none_added, defensive=same, read
+     after_code:
+       | def stamp(value):
+       |     width = 8
+       |     return str(value).rjust(width)
+
+#35  colorama/repair_plant_checks.py::push  -> 1 row(s) in the mirror
+     id=colorama/repair_plant_checks.py::push::12
+     rules=['NAI-091']
+     kind=None pick=None cands=0 withheld_by=None no_fix_status=declined
+     why: declined: param_mutation_fix found nothing to rewrite; no candidates offered
+
+#53  colorama/repair_plant_noop.py::tally  -> 1 row(s) in the mirror
+     id=colorama/repair_plant_noop.py::tally::23
+     rules=['NAI-025', 'NAI-032']
+     kind=rewriter pick=algebraic_identity_fix cands=2 withheld_by=None no_fix_status=None
+     why: picked algebraic_identity_fix over 1 other pickable candidate(s) of 2 offered; deciding method: built-in function & library leverage (+8.00 over solution_NAI-025); algebraic_identity_fix[parse=ok, differs=yes, safety=clean, rule=NAI-032, flow=same_paths, complexity=same, idiom=same, deps=none_added,
+     after_code:
+       | def tally(items):
+       |     total = sum(items)
+       |     return total * 2
+
+#57  colorama/repair_plant_quietly.py::hushed  -> 1 row(s) in the mirror
+     id=colorama/repair_plant_quietly.py::hushed::9
+     rules=['NAI-017']
+     kind=None pick=None cands=1 withheld_by=gate no_fix_status=ranker_none
+     why: gate: withheld: no-fix-by-design — NAI-017: what happens on a swallowed exception — propagate it, narrow the catch, log it, return a value — is the dev's decision about this call site; every candidate here changes what the caller sees, so none of them is an unattended repair [exception_swallow_fix:d
+
+#61  colorama/repair_plant_shape.py::pick_label  -> 1 row(s) in the mirror
+     id=colorama/repair_plant_shape.py::pick_label::5
+     rules=['NAI-026']
+     kind=rewriter pick=identical_branches_fix:body_once cands=1 withheld_by=None no_fix_status=None
+     why: picked identical_branches_fix:body_once over 0 other pickable candidate(s) of 1 offered; deciding method: n/a (one candidate); identical_branches_fix:body_once[parse=ok, differs=yes, safety=clean, rule=NAI-026, flow=branch_removed:1, complexity=same, idiom=same, deps=none_added, defensive=same, read
+     after_code:
+       | def pick_label(flag, value):
+       |     label = str(value)
+       |     return label
+
+#70  colorama/repair_plant_typos.py::code_word  -> 1 row(s) in the mirror
+     id=colorama/repair_plant_typos.py::code_word::20
+     rules=['NAI-053']
+     kind=rewriter pick=repetitive_branches_fix:merge_conditions cands=1 withheld_by=None no_fix_status=None
+     why: picked repetitive_branches_fix:merge_conditions over 0 other pickable candidate(s) of 1 offered; deciding method: n/a (one candidate); repetitive_branches_fix:merge_conditions[parse=ok, differs=yes, safety=clean, rule=NAI-053, flow=branch_removed:1, complexity=same, idiom=same, deps=none_added, defe
+     after_code:
+       | def code_word(code):
+       |     if (code == 1) or (code == 2):
+       |         word = "one"
+       |     else:
+       |         word = "many"
+       |     return word
+
+#71  colorama/repair_plant_typos.py::mark_twice  -> 1 row(s) in the mirror
+     id=colorama/repair_plant_typos.py::mark_twice::30
+     rules=['NAI-054', 'NAI-091']
+     kind=prescribed pick=solution_NAI-054 cands=1 withheld_by=None no_fix_status=None
+     why: declined: param_mutation_fix found nothing to rewrite; picked solution_NAI-054 over 0 other pickable candidate(s) of 1 offered; deciding method: n/a (one candidate); solution_NAI-054[kind=prescribed, parse=shape, differs=yes, rule=NAI-054, flow=terminal_lost+loop_added+opaque:2, complexity=deeper:1+
+     after_code:
+       | <statement>   # once
+       | # or
+       | for _ in range(<n>):
+       |     <statement>
+
+#73  colorama/win32.py::GetConsoleScreenBufferInfo  -> 1 row(s) in the mirror
+     id=colorama/win32.py::GetConsoleScreenBufferInfo::118
+     rules=['NAI-010', 'NAI-031', 'NAI-147']
+     kind=rewriter pick=dead_local_fix:keep_call_effect cands=4 withheld_by=None no_fix_status=None
+     why: gate: `_GetConsoleScreenBufferInfo` is a side-effecting call — deleting it changes what the program does, not what it says. [dead_store_fix:drop_store]; picked dead_local_fix:keep_call_effect over 2 other pickable candidate(s) of 4 offered; deciding method: intent alignment & logic soundness (+8.65 
+     after_code:
+       |     def GetConsoleScreenBufferInfo(stream_id=STDOUT):
+       |         handle = _GetStdHandle(stream_id)
+       |         csbi = CONSOLE_SCREEN_BUFFER_INFO()
+       |         _GetConsoleScreenBufferInfo(
+       |             handle, byref(csbi))
+       |         return csbi
+
+#74  colorama/win32.py::FillConsoleOutputCharacter  -> 1 row(s) in the mirror
+     id=colorama/win32.py::FillConsoleOutputCharacter::147
+     rules=['NAI-010', 'NAI-031', 'NAI-147']
+     kind=rewriter pick=dead_local_fix:keep_call_effect cands=4 withheld_by=None no_fix_status=None
+     why: gate: `_FillConsoleOutputCharacterA` is a side-effecting call — deleting it changes what the program does, not what it says. [dead_store_fix:drop_store]; picked dead_local_fix:keep_call_effect over 2 other pickable candidate(s) of 4 offered; deciding method: intent alignment & logic soundness (+8.65
+     after_code:
+       |     def FillConsoleOutputCharacter(stream_id, char, length, start):
+       |         handle = _GetStdHandle(stream_id)
+       |         char = c_char(char.encode())
+       |         length = wintypes.DWORD(length)
+       |         num_written = wintypes.DWORD(0)
+       |         # Note that this is hard-coded for ANSI (vs wide) bytes.
+       |         _FillConsoleOutputCharacterA(
+       |             handle, char, length, start, byref(num_written))
+       |         return num_written.value
+
+#75  colorama/winterm.py::enable_vt_processing  -> 1 row(s) in the mirror
+     id=colorama/winterm.py::enable_vt_processing::178
+     rules=['NAI-078']
+     kind=rewriter pick=fallback_return_fix:log_and_return cands=1 withheld_by=None no_fix_status=None
+     why: picked fallback_return_fix:log_and_return over 0 other pickable candidate(s) of 1 offered; deciding method: n/a (one candidate); fallback_return_fix:log_and_return[parse=ok, differs=yes, safety=clean, rule=NAI-078, flow=same_paths, complexity=same, idiom=same, deps=stdlib_only, defensive=same, reada
+     after_code:
+       | def enable_vt_processing(fd):
+       |     if win32.windll is None or not win32.winapi_test():
+       |         return False
+       | 
+       |     try:
+       |         handle = get_osfhandle(fd)
+       |         mode = win32.GetConsoleMode(handle)
+       |         win32.SetConsoleMode(
+       |             handle,
+       |             mode | win32.ENABLE_VIRTUAL_TERMINAL_PROCESSING,
+       |         )
+       | 
+       |         mode = win32.GetConsoleMode(handle)
+       |         if mode & win32.ENABLE_VIRTUAL_TERMINAL_PROCESSING:
+       |             return True
+       |     # Can get TypeError in testsuite where 'fd' is a Mock()
+       |     except (OSError, TypeError):
+       |         import logging
+       |         logging.getLogger(__name__).debug("enable_vt_processing: error swallowed, returning the fallback", exc_info=True)
+       |         return False
+
+written /Users/dev/Desktop/CODE_RADAR_REFURBISH/.archive/runs/marathon/phase1b_twelve.json

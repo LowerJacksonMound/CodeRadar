@@ -1,0 +1,163 @@
+{
+  "repaired_row_present": false,
+  "failed_row": {
+    "row_key": "colorama/repair_plant_071.py::collect::4",
+    "file": "colorama/repair_plant_071.py",
+    "function": "collect",
+    "line": 4,
+    "line_end": 6,
+    "replace_span": "colorama/repair_plant_071.py:L4-L6",
+    "finding_lines": [
+      4
+    ],
+    "rule_ids": [
+      "NAI-021S",
+      "NAI-071"
+    ],
+    "rule_ids_all": [
+      "NAI-021S",
+      "NAI-071"
+    ],
+    "context_ids": [],
+    "species": "",
+    "withheld": "",
+    "failure_layer": "HARD_REQUIREMENTS",
+    "infraction": "[HARD_REQUIREMENTS] NAI-021S: Alias identity chain \u2014 all data flow is copy/alias, no real transformation",
+    "failure_reason": "NAI-021S: Alias identity chain \u2014 all data flow is copy/alias, no real transformation",
+    "row_hash": "b0a374281bb0d15e",
+    "fix_order": 1,
+    "depth": 0,
+    "dependents": 0,
+    "cb_context": {
+      "import_score": 0.0,
+      "caller_score": 0.0,
+      "complexity_score": 0.0
+    },
+    "rca_evidence": [
+      "rule_id=NAI-021S",
+      "caller_score=0.00",
+      "import_score=0.00",
+      "complexity_score=0.00",
+      "depth=0",
+      "dependents=0",
+      "cross_file_duplicate:fingerprint=9b44aab40b6f91fc...,count=28",
+      "semantic_parameter_usage:code=PUA020,line=4,name=items,msg=Mutable default argument for 'items'",
+      "semantic_module:code=MOD020,line=4,msg=Deeply nested function 'collect' (depth 1)",
+      "tester=failed:8f9a25700f",
+      "tester_log=run 144: not applied; reported failed so the Ranker re-decides"
+    ],
+    "exonerated": false,
+    "generators_consulted": [
+      {
+        "rule_id": "NAI-021S",
+        "kind": "rewriter",
+        "role": "alias_chain_fix"
+      },
+      {
+        "rule_id": "NAI-071",
+        "kind": "rewriter",
+        "role": "mutable_default_fix"
+      }
+    ],
+    "candidates_considered": 2,
+    "observations": {
+      "alias_chain_fix:new_sequence": [
+        "parse=ok",
+        "differs=yes",
+        "safety=clean",
+        "rule=NAI-021S",
+        "flow=same_paths",
+        "complexity=copies_input",
+        "idiom=same",
+        "deps=none_added",
+        "defensive=same",
+        "readability=more_branches:1",
+        "traps=removed:mutable_default:items",
+        "tester=failed:8f9a25700f"
+      ],
+      "mutable_default_fix": [
+        "parse=ok",
+        "differs=yes",
+        "safety=clean",
+        "rule=NAI-071",
+        "flow=branch_added:1",
+        "complexity=same",
+        "idiom=same",
+        "deps=none_added",
+        "defensive=adds_guard:None",
+        "readability=deeper:2+more_branches:1",
+        "traps=removed:mutable_default:items"
+      ]
+    },
+    "selection": {
+      "mutable_default_fix": 64.44
+    },
+    "decision": {
+      "pick_role": "mutable_default_fix",
+      "why": "tester failed 8f9a25700f: run 144: not applied; reported failed so the Ranker re-decides; picked mutable_default_fix over 0 other pickable candidate(s) of 2 offered; deciding method: n/a (one candidate); alias_chain_fix:new_sequence[parse=ok, differs=yes, safety=clean, rule=NAI-021S, flow=same_paths, complexity=copies_input, idiom=same, deps=none_added, defensive=same, readability=more_branches:1, traps=removed:mutable_default:items, tester=failed:8f9a25700f]; mutable_default_fix[parse=ok, differs=yes, safety=clean, rule=NAI-071, flow=branch_added:1, complexity=same, idiom=same, deps=none_added, defensive=adds_guard:None, readability=deeper:2+more_branches:1, traps=removed:mutable_default:items, answers=neighbour]; profile: no intent fact matched"
+    },
+    "no_fix_status": null,
+    "solution_kind": "rewriter",
+    "fix": "`items=[]` \u2192 `items=None` with `if items is None: items = []` as the first statement",
+    "before_code": "def collect(items=[]):\n    items.append(1)\n    return items",
+    "after_code": "def collect(items=None):\n    if items is None:\n        items = []\n    items.append(1)\n    return items",
+    "digest": "07a3e8a1fb",
+    "tester": {
+      "confirmed": false,
+      "tester": "",
+      "timestamp": ""
+    },
+    "built_at": "2026-09-17T12:58:34.234400+00:00"
+  },
+  "summary": {
+    "findings": 163,
+    "with_fix": 155,
+    "solution_kinds": {
+      "rewriter": 56,
+      "prescribed": 99
+    },
+    "no_fix": {
+      "no_generator": 0,
+      "declined": 8,
+      "no_fix_by_design": 0,
+      "ranker_none": 0,
+      "unbuilt": 0
+    },
+    "whitelisted": 0,
+    "tester": {
+      "confirmed": 0,
+      "solutions": 155,
+      "orphans": 1,
+      "unparsed": 0,
+      "channel_lines": 2
+    },
+    "validator": {
+      "total_functions": 355,
+      "passed": 109,
+      "failed": 163,
+      "files_scanned": 64,
+      "tracked_test_rows": 83,
+      "withheld": 83,
+      "dispositions_unknown": [],
+      "intent": {
+        "statement": false,
+        "facts_by_source": {
+          "changelog": 3,
+          "packaging": 2,
+          "readme": 2
+        },
+        "file": "intent_7cfe2e71fa83.json"
+      }
+    },
+    "intent": {
+      "statement": false,
+      "facts_by_source": {
+        "changelog": 3,
+        "packaging": 2,
+        "readme": 2
+      },
+      "file": "intent_7cfe2e71fa83.json",
+      "owner": "NOAI_VALIDATION_STATE.summary.intent"
+    }
+  }
+}

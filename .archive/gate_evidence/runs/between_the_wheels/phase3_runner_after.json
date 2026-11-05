@@ -1,0 +1,16 @@
+{
+  "exit_code": 0,
+  "stdout": "..........................ssssssssss........sss....s                     [100%]\n38 passed, 14 skipped in 0.09s\n",
+  "stderr": "",
+  "duration_s": 0.831,
+  "module": "pytest",
+  "args": [
+    "colorama/tests",
+    "-q",
+    "-p",
+    "no:cacheprovider"
+  ],
+  "seen_on_band": true,
+  "timed_out": false,
+  "error": null
+}

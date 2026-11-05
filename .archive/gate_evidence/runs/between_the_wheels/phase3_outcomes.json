@@ -1,0 +1,74 @@
+[
+  {
+    "row": "colorama/repair_plant_extended.py::reserved::10",
+    "outcome": "confirmed",
+    "written": true,
+    "digest": "33d0e38910",
+    "span": "colorama/repair_plant_extended.py:L10-L11",
+    "error": null
+  },
+  {
+    "row": "colorama/repair_plant_flow.py::sign::24",
+    "outcome": "confirmed",
+    "written": true,
+    "digest": "be73feda36",
+    "span": "colorama/repair_plant_flow.py:L24-L26",
+    "error": null
+  },
+  {
+    "row": "colorama/repair_plant_stale.py::__init__::12",
+    "outcome": "confirmed",
+    "written": true,
+    "digest": "a402a63fe7",
+    "span": "colorama/repair_plant_stale.py:L12-L13",
+    "error": null
+  },
+  {
+    "row": "colorama/repair_plant_chains.py::label_for::15",
+    "outcome": "confirmed",
+    "written": true,
+    "digest": "4b0e73f1af",
+    "span": "colorama/repair_plant_chains.py:L15-L18",
+    "error": null
+  },
+  {
+    "row": "colorama/repair_plant_ops.py::note::15",
+    "outcome": "confirmed",
+    "written": true,
+    "digest": "a77a509cb3",
+    "span": "colorama/repair_plant_ops.py:L15-L16",
+    "error": null
+  },
+  {
+    "row": "colorama/repair_plant_trust.py::label::22",
+    "outcome": "confirmed",
+    "written": true,
+    "digest": "24666a8404",
+    "span": "colorama/repair_plant_trust.py:L22-L23",
+    "error": null
+  },
+  {
+    "row": "colorama/repair_plant_invented.py::__serialize__::18",
+    "outcome": "confirmed",
+    "written": true,
+    "digest": "7c55f3e702",
+    "span": "colorama/repair_plant_invented.py:L18-L19",
+    "error": null
+  },
+  {
+    "row": "colorama/ansitowin32.py::isatty::49",
+    "outcome": "failed",
+    "written": true,
+    "digest": "8cab17f075",
+    "span": "colorama/ansitowin32.py:L49-L59",
+    "error": null
+  },
+  {
+    "row": "colorama/ansitowin32.py::closed::62",
+    "outcome": "failed",
+    "written": true,
+    "digest": "3ba74f0b6d",
+    "span": "colorama/ansitowin32.py:L61-L69",
+    "error": null
+  }
+]

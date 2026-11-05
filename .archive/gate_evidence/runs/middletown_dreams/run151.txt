@@ -1,0 +1,74 @@
+cr_watch started=True phase=MONITORING repo_id=e02bde6beaec gate_budget_s=2330
+    circuit READY/RUNNING        PASS  1.5
+    circuit WIRING               PASS  None
+    NOAI MONITORING              PASS  5.6
+    CHEATSHEETS MONITORING       PASS  1.0
+    dashboard HTTP 200           PASS  0.0
+
+cr_status cycle=1 finished=False (mirror)
+  infractions {"total_functions": 361, "passed": 170, "failed": 108, "files_scanned": 65, "repairs": 98, "no_vetted_fix": 10, "whitelisted": 0, "withheld": 84, "withheld_gate": 1}
+
+rows in the mirror: 108
+
+THE PLANT colorama/repair_plant_evidence.py: ['loud', 'noisy', 'shadowed', 'sole'] (4 row(s))
+  ✓ sole colorama/repair_plant_evidence.py::sole::24
+       pick 'dead_local_fix:drop_assignment' (cands=6)
+       NAI-010: span-only ['keep_call_effect'] · with module ['drop_assignment', 'keep_call_effect']  ← the module was decisive
+       NAI-031: span-only ['keep_effect'] · with module ['drop_store', 'keep_effect']  ← the module was decisive
+       NAI-147: span-only ['keep_call_effect'] · with module ['drop_assignment', 'keep_call_effect']  ← the module was decisive
+  ✓ shadowed colorama/repair_plant_evidence.py::shadowed::29
+       pick 'dead_local_fix:keep_call_effect' (cands=3)
+       NAI-010: span-only ['keep_call_effect'] · with module ['keep_call_effect']
+       NAI-031: span-only ['keep_effect'] · with module ['keep_effect']
+       NAI-147: span-only ['keep_call_effect'] · with module ['keep_call_effect']
+  ✓ loud colorama/repair_plant_evidence.py::loud::34
+       pick 'dead_local_fix:keep_call_effect' (cands=3)
+       NAI-010: span-only ['keep_call_effect'] · with module ['keep_call_effect']
+       NAI-031: span-only ['keep_effect'] · with module ['keep_effect']
+       NAI-147: span-only ['keep_call_effect'] · with module ['keep_call_effect']
+
+cr_apply on 3 rows: ['sole', 'shadowed', 'loud']
+  sole      kind=diff applies_cleanly=True role=dead_local_fix:drop_assignment span=colorama/repair_plant_evidence.py:L24-L26 error=None
+  shadowed  kind=diff applies_cleanly=True role=dead_local_fix:keep_call_effect span=colorama/repair_plant_evidence.py:L29-L31 error=None
+  loud      kind=diff applies_cleanly=True role=dead_local_fix:keep_call_effect span=colorama/repair_plant_evidence.py:L34-L36 error=None
+
+CLIENT APPLIED 3 rows over 1 file(s)
+  sole      colorama/repair_plant_evidence.py:L24-L26 [dead_local_fix:drop_assignment]
+  shadowed  colorama/repair_plant_evidence.py:L29-L31 [dead_local_fix:keep_call_effect]
+  loud      colorama/repair_plant_evidence.py:L34-L36 [dead_local_fix:keep_call_effect]
+
+cr_run_module SUITE  exit=0 in 0.706s
+    [32m[32m[1m38 passed[0m, [33m14 skipped[0m[32m in 0.06s[0m[0m
+cr_run_module PLANT  exit=0 (the edited module imports and runs)
+cr_run_module ENTRY  exit=0 in 0.056s
+cr_wiring 65 nodes · 29 edges
+
+cr_report_outcome(confirmed) on every applied row
+  sole      written=True error=None
+  shadowed  written=True error=None
+  loud      written=True error=None
+
+waiting one Builder cycle (from 1) …
+cr_status cycle=3 · counterfeit_failed 108 → 105
+
+cr_stop with a client manifest of 1 path(s)
+  stopped              true
+  residue_clean        true
+  byte_identical       false
+  files_compared       80
+  client_edits         1
+  unexpected_changes   []
+  run_dir              "/Users/dev/Desktop/CODE_RADAR_REFURBISH/.archive/runs/middletown_dreams"
+  error                null
+  report_path            "/Users/dev/Desktop/CODE_RADAR_REFURBISH/.archive/runs/middletown_dreams/tester_report.json"
+  builder_cycles         3
+  infractions            105
+  solutions              95
+  confirmed              3
+  confirmed_from_ledger  3
+  tester_ran             true
+  status                 "MEASURED"
+  orphans                0
+  finished               false
+  error                  null
+driver_exit=0

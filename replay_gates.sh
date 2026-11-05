@@ -83,7 +83,6 @@ run() {
 quote() {
   case $1 in
     health)      grep -oE 'creep [0-9]+|engine mypy: [0-9]+ errors in [0-9]+ files \([0-9]+ checked\)|HEALTH CHECK: .*' "$2" | tr '\n' ' ' ;;
-    conformance) grep -oE 'THROWN-OUT hits: [0-9]+' "$2" | tail -1 ;;
     census)      grep -oE 'DISALLOWED [0-9]+; stale allowlist entries [0-9]+' "$2" | tail -1 ;;
     mypy)        grep -oE '(Success|Found)[^(]*' "$2" | tail -1 ;;   # mypy's line carries terminal escapes; no anchor
     gate_proof)  grep -oE '[0-9]+/[0-9]+ withheld[^·]*|PASSED|FAILED' "$2" | tail -2 | tr '\n' ' ' ;;
@@ -110,12 +109,8 @@ run nai094         600 $PY system_scripts/nai094_entry_proof.py
 run fix42          600 $PY system_scripts/fix42_static_observations_proof.py
 run fix47          600 $PY system_scripts/fix47_rca_reroute_proof.py
 run health        1800 $PY system_scripts/health_check.py
-# the conformance census reads the project's own notes folder, named by $CR_CONFORMANCE_DIR (not shipped)
-if [ -n "${CR_CONFORMANCE_DIR:-}" ] && [ -f TERMINOLOGY_CENSUS_2026-09-09.py ]; then
-  run conformance  300 $PY TERMINOLOGY_CENSUS_2026-09-09.py --conformance "$CR_CONFORMANCE_DIR"
-else
-  echo "conformance: NOT MEASURED (set CR_CONFORMANCE_DIR; needs TERMINOLOGY_CENSUS_2026-09-09.py)"; failed+=("conformance")
-fi
+# 2026-11-05: the `conformance` gate (a terminology census over a private notes folder) is gone — its
+# script was never in the tree, so the gate could only ever read NOT MEASURED. The seventeen `run` gates are the whole bar.
 run census         300 $PY system_scripts/preranker_census.py
 run compileall     300 $PY -m compileall -q no_aivalidator system_scripts rca_main utils signature_engine detritus_cleaner semantic_analysis coderadar_mcp
 run mypy           600 $PY -m mypy no_aivalidator system_scripts rca_main utils signature_engine detritus_cleaner semantic_analysis coderadar_mcp --ignore-missing-imports

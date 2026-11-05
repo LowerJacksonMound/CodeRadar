@@ -1,0 +1,36 @@
+=== validator summary ===
+{'total_files': None, 'total_functions': 359, 'passed': 110, 'failed': 164, 'withheld': 85}
+
+=== every published row carrying an RCA-001 observation ===
+
+  colorama/repair_plant_split.py::read_config line 12
+    passed          : False
+    failure_layer   : AI_FAKE_DETECTOR
+    verdict_source  : ranker
+    failure_reason  : RCA-001 (line 12): Calls failed function 'load_table' without forwarding params ['encoding', 'path']
+    rule_ids        : ['RCA-001']   context_ids: ['NAI-082', 'NAI-084', 'NAI-185', 'NAI-186', 'NAI-121', 'NAI-229', 'MEASURED-NOTHING']
+    dispositions    : {'RCA-001': 'deciding', 'NAI-082': 'context', 'NAI-084': 'context', 'NAI-185': 'context', 'NAI-186': 'context', 'NAI-121': 'context', 'NAI-229': 'context', 'MEASURED-NOTHING': 'context'}
+    OBSERVATION     : {"callee": "load_table", "description": "Calls failed function 'load_table' without forwarding params ['encoding', 'path']", "line": 12, "magnitude": 1, "tag": "RCA-001"}
+
+  colorama/win32.py::SetConsoleCursorPosition line 129
+    passed          : False
+    failure_layer   : AI_FAKE_DETECTOR
+    verdict_source  : ranker
+    failure_reason  : RCA-001 (line 129): Calls failed function 'GetConsoleScreenBufferInfo' without forwarding params ['adjust', 'position', 'stream_id']
+    rule_ids        : ['RCA-001']   context_ids: ['NAI-082', 'NAI-083', 'NAI-084', 'NAI-086', 'NAI-114', 'NAI-185', 'NAI-186', 'NAI-121', 'NAI-229', 'MEASURED-NOTHING']
+    dispositions    : {'RCA-001': 'deciding', 'NAI-082': 'context', 'NAI-083': 'context', 'NAI-084': 'context', 'NAI-086': 'context', 'NAI-114': 'context', 'NAI-185': 'context', 'NAI-186': 'context', 'NAI-121': 'context', 'NAI-229': 'context', 'MEASURED-NOTHING': 'context'}
+    OBSERVATION     : {"callee": "GetConsoleScreenBufferInfo", "description": "Calls failed function 'GetConsoleScreenBufferInfo' without forwarding params ['adjust', 'position', 'stream_id']", "line": 129, "magnitude": 1, "tag": "RCA-001"}
+
+  rows carrying the RCA-001 observation: 2
+
+=== the CONTROL row (a caller of a passing callee, forwarding its params) ===
+  colorama/ceiling_unlimited_control.py::width_of passed=True RCA-001 observations=0 rule_ids=[]
+  colorama/ceiling_unlimited_control.py::pad_to_width passed=True RCA-001 observations=0 rule_ids=[]
+
+=== decision.why for every RCA-001 row ===
+builder summary: {'total': None, 'with_fix': 156, 'no_vetted_fix': None, 'withheld': None, 'rewriter': None, 'prescribed': None}
+Traceback (most recent call last):
+  File "/private/tmp/claude-501/-Users-ian-Desktop-CODE-RADAR-REFURBISH/578c03cc-b552-4cb7-ab25-31c60be8e155/scratchpad/obs_rca.py", line 47, in <module>
+    if "RCA-001" not in json.dumps(row.get("rule_ids") or []):
+                                   ^^^^^^^
+AttributeError: 'str' object has no attribute 'get'

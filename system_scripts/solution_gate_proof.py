@@ -176,7 +176,7 @@ def _run(tmp: Path) -> int:
             r = W.cr_submit(row_key, code, note=label)
             check(bool(r["accepted"]), f"cr_submit accepts attempt {label}")
 
-    def judged(row_key, label):
+    def judged(row_key, label) -> tuple[dict, dict]:
         rws, _ = asyncio.run(build())
         publish(rws)
         return rws, next((a for a in rws[row_key].get("attempts") or [] if label in (a.get("note") or "")), {})

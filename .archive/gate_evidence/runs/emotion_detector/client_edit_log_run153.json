@@ -1,0 +1,44 @@
+{
+  "standing": [
+    {
+      "row": "colorama/repair_plant_071.py::collect::4",
+      "file": "colorama/repair_plant_071.py",
+      "replace_span": "colorama/repair_plant_071.py:L4-L6",
+      "kind": "diff",
+      "selected_role": "alias_chain_fix:new_sequence",
+      "digest": "8f9a25700f",
+      "rule_ids": [
+        "NAI-021S",
+        "NAI-071"
+      ],
+      "before": "def collect(items=[]):\n    items.append(1)\n    return items\n",
+      "after": "def collect(items=None):\n    new_items = list(items) if items is not None else []\n    new_items.append(1)\n    return new_items\n"
+    },
+    {
+      "row": "colorama/repair_plant_061.py::label::5",
+      "file": "colorama/repair_plant_061.py",
+      "replace_span": "colorama/repair_plant_061.py:L5-L8",
+      "kind": "diff",
+      "selected_role": "bool_literal_compare_fix",
+      "digest": "2da1222e69",
+      "rule_ids": [
+        "NAI-061"
+      ],
+      "before": "def label(flag):\n    if flag == True:\n        return \"on\"\n    return \"off\"\n",
+      "after": "def label(flag):\n    if flag:\n        return \"on\"\n    return \"off\"\n"
+    }
+  ],
+  "backed_out": {
+    "row": "colorama/repair_plant_070.py::count_ints::5",
+    "file": "colorama/repair_plant_070.py",
+    "replace_span": "colorama/repair_plant_070.py:L5-L12",
+    "kind": "diff",
+    "selected_role": "bare_except_fix",
+    "digest": "c312a6a098",
+    "rule_ids": [
+      "NAI-070"
+    ],
+    "before": "def count_ints(values):\n    total = 0\n    for v in values:\n        try:\n            total += int(v)\n        except:\n            continue\n    return total\n",
+    "after": "def count_ints(values):\n    total = 0\n    for v in values:\n        try:\n            total += int(v)\n        except Exception:\n            continue\n    return total\n"
+  }
+}

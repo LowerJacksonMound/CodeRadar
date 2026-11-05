@@ -1,0 +1,16 @@
+d47915bcb074f9ddc7ba5fee74f7b087 ./.github/workflows/ci.yml
+a62bd36511f405b9841607c420f62f96 ./.github/workflows/publish.yml
+4d8ffb4c85130fac975f57b87b9a51bf ./.gitignore
+eaa3f6077f2ae20b6074beba9857dcd5 ./CHANGES
+4a90d2f5da7c849f4881c1b3ecb50e18 ./CONTRIBUTORS
+f033898ed422705b00ece903b8ca68b9 ./documentation/conf.py
+965779e576a32a02ed25b85981294e84 ./documentation/index.rst
+1321584ac51c2693ae5b8eb5f7fed84e ./documentation/Makefile
+e50fab7e9501f3dfc920eafeb24b46ea ./LICENSE
+046bbf44865db9479a8be1340b50f836 ./MANIFEST.in
+865bac6e23253252adf16fe075dd7286 ./README.rst
+24587c9a23ebff789d4e14326e7348e5 ./setup.cfg
+6faccc11e891a22f0bc7013e89e24d6b ./setup.py
+031f844e5d0a7f8740722f4f8c63ec08 ./six.py
+171e3b169e39e9796bc509d3d20a0c3d ./test_six.py
+1181cb8d27112962e434a8b23338561e ./tox.ini

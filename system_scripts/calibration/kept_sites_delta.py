@@ -5,6 +5,7 @@ counterfeit label stays. usage: kept_sites_delta.py CAL --families a,b --real x,
 from __future__ import annotations
 import argparse, ast, csv, json, sys, collections
 from pathlib import Path
+from typing import cast
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from calib_common import ROOT, load_table, table_dispositions, deciding_ids, recomputed_failed, load_dump
 LEDGER = ROOT / "ARCHIVE" / "PRERANKER_HUNT_2026-09-05.tsv"
@@ -26,7 +27,7 @@ def family_spans() -> dict[tuple[str, int], str]:
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(); ap.add_argument("cal"); ap.add_argument("--families", required=True); ap.add_argument("--real", default=""); ap.add_argument("--apply", action="store_true")
     a = ap.parse_args(argv); cal = Path(a.cal); disp = table_dispositions(load_table()); fams = [x for x in a.families.split(",") if x]
-    alone = collections.Counter()
+    alone: collections.Counter = collections.Counter()
     for lib in [x for x in a.real.split(",") if x]:
         for r in load_dump(cal, lib)["rows"]:
             if r.get("species") == "test" or not recomputed_failed(r, disp): continue
@@ -51,7 +52,7 @@ def main(argv=None) -> int:
     (cal / "kept_sites_delta.json").write_text(json.dumps({"marked": marked, "stayed": stayed}, indent=1) + "\n")
     if a.apply and marked:
         with open(LEDGER, "w", encoding="utf-8", newline="") as fh:
-            w = csv.DictWriter(fh, fieldnames=fields, delimiter="\t", lineterminator="\n"); w.writeheader(); w.writerows(rows)
+            w = csv.DictWriter(fh, fieldnames=cast(list, fields), delimiter="\t", lineterminator="\n"); w.writeheader(); w.writerows(rows)
         print("ledger statuses updated")
     return 0
 

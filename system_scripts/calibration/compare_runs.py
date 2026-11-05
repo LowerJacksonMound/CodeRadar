@@ -31,7 +31,7 @@ def main(old: Path, new: Path) -> int:
             print(f"  {lib}: {'byte-identical' if same else 'DIFFERS (same stamp!)'}"); rc |= (0 if same else 1)
         return rc
     print("| family | old failed rows | new failed rows | delta |"); print("|---|---|---|---|")
-    fo, fn = collections.Counter(), collections.Counter(); vo = vn = 0
+    fo: collections.Counter[str] = collections.Counter(); fn: collections.Counter[str] = collections.Counter(); vo = vn = 0
     for lib in common:
         do, dn = json.load(open(lo[lib])), json.load(open(ln[lib]))
         for r in do["rows"]:

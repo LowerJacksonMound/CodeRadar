@@ -1,0 +1,512 @@
+{
+ "target": "/Users/dev/Desktop/seven_cities_of_gold",
+ "repo_id": "b8beb28d80c2",
+ "generated_at": "2026-09-28T21:46:19.564592+00:00",
+ "statement": null,
+ "facts": [
+  {
+   "fact": "runner",
+   "value": "tox",
+   "source": "ci_workflow",
+   "evidence": ".github/workflows/ci.yml",
+   "recorded_at": "2026-09-28T21:46:09.984634+00:00"
+  },
+  {
+   "fact": "runner",
+   "value": "python -m",
+   "source": "ci_workflow",
+   "evidence": ".github/workflows/ci.yml",
+   "recorded_at": "2026-09-28T21:46:09.984637+00:00"
+  },
+  {
+   "fact": "entry_points",
+   "value": "python -m pip install -U tox",
+   "source": "ci_workflow",
+   "evidence": ".github/workflows/ci.yml",
+   "recorded_at": "2026-09-28T21:46:09.984639+00:00"
+  },
+  {
+   "fact": "entry_points",
+   "value": "python -m tox",
+   "source": "ci_workflow",
+   "evidence": ".github/workflows/ci.yml",
+   "recorded_at": "2026-09-28T21:46:09.984640+00:00"
+  },
+  {
+   "fact": "python_version",
+   "value": "2.7",
+   "source": "ci_workflow",
+   "evidence": ".github/workflows/ci.yml",
+   "recorded_at": "2026-09-28T21:46:09.984641+00:00"
+  },
+  {
+   "fact": "python_version",
+   "value": "3.6",
+   "source": "ci_workflow",
+   "evidence": ".github/workflows/ci.yml",
+   "recorded_at": "2026-09-28T21:46:09.984641+00:00"
+  },
+  {
+   "fact": "python_version",
+   "value": "3.7",
+   "source": "ci_workflow",
+   "evidence": ".github/workflows/ci.yml",
+   "recorded_at": "2026-09-28T21:46:09.984642+00:00"
+  },
+  {
+   "fact": "python_version",
+   "value": "3.5",
+   "source": "ci_workflow",
+   "evidence": ".github/workflows/ci.yml",
+   "recorded_at": "2026-09-28T21:46:09.984643+00:00"
+  },
+  {
+   "fact": "entry_points",
+   "value": "|",
+   "source": "ci_workflow",
+   "evidence": ".github/workflows/publish.yml",
+   "recorded_at": "2026-09-28T21:46:09.984644+00:00"
+  },
+  {
+   "fact": "python_version",
+   "value": "3.13",
+   "source": "ci_workflow",
+   "evidence": ".github/workflows/publish.yml",
+   "recorded_at": "2026-09-28T21:46:09.984645+00:00"
+  },
+  {
+   "fact": "runner",
+   "value": "tox",
+   "source": "tox",
+   "evidence": "tox.ini",
+   "recorded_at": "2026-09-28T21:46:09.984646+00:00"
+  },
+  {
+   "fact": "lint_tool",
+   "value": "flake8",
+   "source": "lint_config",
+   "evidence": "setup.cfg#[flake8]",
+   "recorded_at": "2026-09-28T21:46:09.984647+00:00"
+  },
+  {
+   "fact": "python_version",
+   "value": "2.7",
+   "source": "packaging",
+   "evidence": "setup.py",
+   "recorded_at": "2026-09-28T21:46:09.984647+00:00"
+  },
+  {
+   "fact": "package_name",
+   "value": "six",
+   "source": "packaging",
+   "evidence": "setup.py",
+   "recorded_at": "2026-09-28T21:46:09.984648+00:00"
+  },
+  {
+   "fact": "domain_keywords",
+   "value": "six",
+   "source": "readme",
+   "evidence": "README.rst",
+   "recorded_at": "2026-09-28T21:46:09.984649+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "six",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:1 Six: Python 2 and 3 Compatibility Library",
+   "recorded_at": "2026-09-28T21:46:19.564530+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "create",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:319 Create a new class with base classes *bases* and metaclass *metaclass*.  This",
+   "recorded_at": "2026-09-28T21:46:19.564533+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "structure",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:553 functionality; its structure mimics the structure of the Python 3",
+   "recorded_at": "2026-09-28T21:46:19.564535+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "module",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:4 .. module:: six",
+   "recorded_at": "2026-09-28T21:46:19.564536+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "function",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:115 .. function:: get_unbound_function(meth)",
+   "recorded_at": "2026-09-28T21:46:19.564537+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "unbound",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:117 Get the function out of unbound method *meth*.  In Python 3, unbound methods",
+   "recorded_at": "2026-09-28T21:46:19.564538+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "name",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:19 The name, \"six\", comes from the fact that 2*3 equals 6.  Why not addition?",
+   "recorded_at": "2026-09-28T21:46:19.564539+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "add",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:851 It is possible to add additional names to the :mod:`six.moves` namespace.",
+   "recorded_at": "2026-09-28T21:46:19.564540+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "func",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:60 Possible integer types.  In Python 2, this is :func:`py2:long` and",
+   "recorded_at": "2026-09-28T21:46:19.564541+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "import",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:96 import six",
+   "recorded_at": "2026-09-28T21:46:19.564542+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "byte",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:369 Python 3 enforces the distinction between byte strings and text strings far more",
+   "recorded_at": "2026-09-28T21:46:19.564542+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "method",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:117 Get the function out of unbound method *meth*.  In Python 3, unbound methods",
+   "recorded_at": "2026-09-28T21:46:19.564543+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "itervalues",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:188 .. function:: itervalues(dictionary, **kwargs)",
+   "recorded_at": "2026-09-28T21:46:19.564544+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "int",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:61 :func:`py2:int`, and in Python 3, just :func:`py3:int`.",
+   "recorded_at": "2026-09-28T21:46:19.564545+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "iterlists",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:202 .. function:: iterlists(dictionary, **kwargs)",
+   "recorded_at": "2026-09-28T21:46:19.564546+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "all",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:290 *flush* is true, ``file.flush()`` will be called after all data is written.",
+   "recorded_at": "2026-09-28T21:46:19.564546+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "false",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:286 .. function:: print_(*args, *, file=sys.stdout, end=\"\\\\n\", sep=\" \", flush=False)",
+   "recorded_at": "2026-09-28T21:46:19.564547+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "self",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:124 def method(self):",
+   "recorded_at": "2026-09-28T21:46:19.564548+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "without",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:13 without modification.  six consists of only one Python file, so it is painless",
+   "recorded_at": "2026-09-28T21:46:19.564549+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "calls",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:204 Calls ``dictionary.iterlists()`` on Python 2 and ``dictionary.lists()`` on",
+   "recorded_at": "2026-09-28T21:46:19.564550+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "type",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:54 :data:`py2:types.ClassType` and new-style ``type`` classes.  In Python 3,",
+   "recorded_at": "2026-09-28T21:46:19.564551+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "pass",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:125 pass",
+   "recorded_at": "2026-09-28T21:46:19.564551+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "assertraisesregex",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:502 .. function:: assertRaisesRegex()",
+   "recorded_at": "2026-09-28T21:46:19.564552+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "iteritems",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:195 .. function:: iteritems(dictionary, **kwargs)",
+   "recorded_at": "2026-09-28T21:46:19.564553+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "assertcountequal",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:492 six.assertCountEqual(self, (1, 2), [2, 1])",
+   "recorded_at": "2026-09-28T21:46:19.564554+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "assertnotregex",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:513 .. function:: assertNotRegex()",
+   "recorded_at": "2026-09-28T21:46:19.564555+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "next",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:165 .. function:: next(it)",
+   "recorded_at": "2026-09-28T21:46:19.564556+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "exec",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:282 Python 3's :func:`py3:exec` doesn't take keyword arguments, so calling",
+   "recorded_at": "2026-09-28T21:46:19.564557+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "advance_iterator",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:166 advance_iterator(it)",
+   "recorded_at": "2026-09-28T21:46:19.564558+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "returns",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:118 don't exist, so this function just returns *meth* unchanged.  Example",
+   "recorded_at": "2026-09-28T21:46:19.564559+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "unchanged",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:118 don't exist, so this function just returns *meth* unchanged.  Example",
+   "recorded_at": "2026-09-28T21:46:19.564559+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "input",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:638 | ``input``                    | :func:`py2:raw_input`                 | :func:`py3:input`                     |",
+   "recorded_at": "2026-09-28T21:46:19.564560+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "get_unbound_function",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:115 .. function:: get_unbound_function(meth)",
+   "recorded_at": "2026-09-28T21:46:19.564561+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "buf",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:428 .. function:: indexbytes(buf, i)",
+   "recorded_at": "2026-09-28T21:46:19.564562+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "create_unbound_method",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:240 .. function:: create_unbound_method(func, cls)",
+   "recorded_at": "2026-09-28T21:46:19.564563+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "create_bound_method",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:232 .. function:: create_bound_method(func, obj)",
+   "recorded_at": "2026-09-28T21:46:19.564564+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "iterkeys",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:181 .. function:: iterkeys(dictionary, **kwargs)",
+   "recorded_at": "2026-09-28T21:46:19.564564+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "keys",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:183 Returns an iterator over *dictionary*\\'s keys. This replaces",
+   "recorded_at": "2026-09-28T21:46:19.564565+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "replacement",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:169 the iterator is exhausted.  This is a replacement for calling ``it.next()``",
+   "recorded_at": "2026-09-28T21:46:19.564566+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "values",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:190 Returns an iterator over *dictionary*\\'s values. This replaces",
+   "recorded_at": "2026-09-28T21:46:19.564567+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "items",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:197 Returns an iterator over *dictionary*\\'s items. This replaces",
+   "recorded_at": "2026-09-28T21:46:19.564568+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "unicode",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:72 Type for representing (Unicode) textual data.  This is :func:`py2:unicode` in",
+   "recorded_at": "2026-09-28T21:46:19.564568+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "byte2int",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:422 .. function:: byte2int(bs)",
+   "recorded_at": "2026-09-28T21:46:19.564569+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "indexbytes",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:428 .. function:: indexbytes(buf, i)",
+   "recorded_at": "2026-09-28T21:46:19.564570+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "assertregex",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:508 .. function:: assertRegex()",
+   "recorded_at": "2026-09-28T21:46:19.564572+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "exec_",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:273 .. function:: exec_(code, globals=None, locals=None)",
+   "recorded_at": "2026-09-28T21:46:19.564574+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "value",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:98 def dispatch_types(value):",
+   "recorded_at": "2026-09-28T21:46:19.564575+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "raise",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:261 ``__wrapped__`` attribute on what it decorates.  It doesn't raise an error if",
+   "recorded_at": "2026-09-28T21:46:19.564576+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "raise_from",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:299 .. function:: raise_from(exc_value, exc_value_from)",
+   "recorded_at": "2026-09-28T21:46:19.564576+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "print",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:288 Print *args* into *file*.  Each argument will be separated with *sep* and",
+   "recorded_at": "2026-09-28T21:46:19.564577+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "print_",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:286 .. function:: print_(*args, *, file=sys.stdout, end=\"\\\\n\", sep=\" \", flush=False)",
+   "recorded_at": "2026-09-28T21:46:19.564578+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "copy",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:14 to copy into a project.",
+   "recorded_at": "2026-09-28T21:46:19.564579+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "data",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:34 .. data:: PY2",
+   "recorded_at": "2026-09-28T21:46:19.564580+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "alias",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:80 builtin alias of ``str``, so six’s version is only necessary for Python 2.5",
+   "recorded_at": "2026-09-28T21:46:19.564581+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "wraps",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:258 .. decorator:: wraps(wrapped, assigned=functools.WRAPPER_ASSIGNMENTS, updated=functools.WRAPPER_UPDATES)",
+   "recorded_at": "2026-09-28T21:46:19.564582+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "metaclass",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:317 .. function:: with_metaclass(metaclass, *bases)",
+   "recorded_at": "2026-09-28T21:46:19.564582+00:00"
+  },
+  {
+   "fact": "doc_mention",
+   "value": "add_metaclass",
+   "source": "doc_mention",
+   "evidence": "documentation/index.rst:333 Another way to set a metaclass on a class is with the :func:`add_metaclass`",
+   "recorded_at": "2026-09-28T21:46:19.564583+00:00"
+  }
+ ]
+}

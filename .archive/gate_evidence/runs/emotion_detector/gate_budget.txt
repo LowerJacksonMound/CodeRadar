@@ -1,0 +1,2 @@
+run_proof: gate budget 2328s = health ≤900 + circuit 120 + noai 258 (n_py=69) + cheatsheets ≤900 + dashboard 30 + slack 120
+gates passed after 184 s (budget 2328 s)

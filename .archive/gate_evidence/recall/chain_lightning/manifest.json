@@ -1,0 +1,58 @@
+{
+ "target": "/Users/dev/Desktop/chain_lightning",
+ "built": "2026-09-10",
+ "by": "set 4b-14 (run 68)",
+ "base": "show_dont_tell tree + colorama/repair_plant_roles.py",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_roles.py",
+   "line": 9,
+   "function": "parse_expr",
+   "family": "NAI-127",
+   "accept_any_of": [
+    "NAI-127"
+   ],
+   "what": "a bare `eval(text)` of the parameter (set 4b-14, no-fix-by-design; the row also carries NAI-160)"
+  },
+  {
+   "file": "colorama/repair_plant_roles.py",
+   "line": 12,
+   "function": "make_counter",
+   "family": "NAI-128",
+   "accept_any_of": [
+    "NAI-128"
+   ],
+   "what": "a nested def with a list default, observed at the nested def's line (13) which lies inside the nested `bump` row — the enclosing row is named by its def line (set 4b-14, no-fix-by-design; the `bump` row carries NAI-071 and is rewritten live)"
+  },
+  {
+   "file": "colorama/repair_plant_roles.py",
+   "line": 23,
+   "function": "Panel.get_width",
+   "family": "NAI-130",
+   "accept_any_of": [
+    "NAI-130"
+   ],
+   "what": "a getter with no valued return (set 4b-14, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_roles.py",
+   "line": 28,
+   "function": "Panel.set_width",
+   "family": "NAI-131",
+   "accept_any_of": [
+    "NAI-131"
+   ],
+   "what": "a setter returning its value (set 4b-14, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_roles.py",
+   "line": 34,
+   "function": "is_ready",
+   "family": "NAI-132",
+   "accept_any_of": [
+    "NAI-132"
+   ],
+   "what": "an `is_*` function annotated `int` (set 4b-14, no-fix-by-design; the row also carries NAI-104)"
+  }
+ ]
+}

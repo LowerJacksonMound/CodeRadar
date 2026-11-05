@@ -1,0 +1,4782 @@
+[
+  {
+    "id": "colorama/repair_plant_071.py::collect::4",
+    "file": "colorama/repair_plant_071.py",
+    "function": "collect",
+    "line": 4,
+    "line_end": 6,
+    "replace_span": "colorama/repair_plant_071.py:L4-L6",
+    "finding_lines": [
+      4
+    ],
+    "rule_ids": [
+      "NAI-021S",
+      "NAI-071"
+    ],
+    "infraction": "[HARD_REQUIREMENTS] NAI-021S: Alias identity chain \u2014 all data flow is copy/alias, no real transformation",
+    "solution_kind": "rewriter",
+    "digest": "8f9a25700f",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_061.py::label::5",
+    "file": "colorama/repair_plant_061.py",
+    "function": "label",
+    "line": 5,
+    "line_end": 8,
+    "replace_span": "colorama/repair_plant_061.py:L5-L8",
+    "finding_lines": [
+      5,
+      6
+    ],
+    "rule_ids": [
+      "NAI-061",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-185",
+      "NAI-186",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-061 (line 6): func_name=label, compared_to=True, op_type=Eq",
+    "solution_kind": "rewriter",
+    "digest": "2da1222e69",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_070.py::count_ints::5",
+    "file": "colorama/repair_plant_070.py",
+    "function": "count_ints",
+    "line": 5,
+    "line_end": 12,
+    "replace_span": "colorama/repair_plant_070.py:L5-L12",
+    "finding_lines": [
+      5,
+      10
+    ],
+    "rule_ids": [
+      "NAI-070",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-186",
+      "NAI-168",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-070 (line 10): handler_type=bare_except",
+    "solution_kind": "rewriter",
+    "digest": "c312a6a098",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_invented.py::read_stage::5",
+    "file": "colorama/repair_plant_invented.py",
+    "function": "read_stage",
+    "line": 5,
+    "line_end": 11,
+    "replace_span": "colorama/repair_plant_invented.py:L5-L11",
+    "finding_lines": [
+      5,
+      7
+    ],
+    "rule_ids": [
+      "NAI-057",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-086",
+      "NAI-114",
+      "NAI-185",
+      "NAI-186",
+      "NAI-168",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-057 (line 7): func_name=read_stage, hallucinated_module=file_handler",
+    "solution_kind": "prescribed",
+    "digest": "01d0eccb83",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_invented.py::__serialize__::18",
+    "file": "colorama/repair_plant_invented.py",
+    "function": "__serialize__",
+    "line": 18,
+    "line_end": 19,
+    "replace_span": "colorama/repair_plant_invented.py:L18-L19",
+    "finding_lines": [
+      18
+    ],
+    "rule_ids": [
+      "NAI-058",
+      "NAI-084",
+      "NAI-086",
+      "NAI-183",
+      "NAI-185",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-058 (line 18): func_name=__serialize__, dunder_name=__serialize__",
+    "solution_kind": "prescribed",
+    "digest": "7c55f3e702",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_invented.py::verbosity::22",
+    "file": "colorama/repair_plant_invented.py",
+    "function": "verbosity",
+    "line": 22,
+    "line_end": 25,
+    "replace_span": "colorama/repair_plant_invented.py:L22-L25",
+    "finding_lines": [
+      22,
+      23
+    ],
+    "rule_ids": [
+      "NAI-059",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-086",
+      "NAI-185",
+      "NAI-186",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-059 (line 23): func_name=verbosity, object_name=settings, constant_name=MODE_VERBOSE",
+    "solution_kind": "prescribed",
+    "digest": "8ff09d14bb",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_loops.py::spacer::5",
+    "file": "colorama/repair_plant_loops.py",
+    "function": "spacer",
+    "line": 5,
+    "line_end": 10,
+    "replace_span": "colorama/repair_plant_loops.py:L5-L10",
+    "finding_lines": [
+      5,
+      8
+    ],
+    "rule_ids": [
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-087",
+      "NAI-114",
+      "NAI-185",
+      "NAI-186",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-087 (line 8): target_var=width",
+    "solution_kind": "prescribed",
+    "digest": "aa3c40d3f2",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_loops.py::dashes::13",
+    "file": "colorama/repair_plant_loops.py",
+    "function": "dashes",
+    "line": 13,
+    "line_end": 17,
+    "replace_span": "colorama/repair_plant_loops.py:L13-L17",
+    "finding_lines": [
+      13,
+      16
+    ],
+    "rule_ids": [
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-088",
+      "NAI-114",
+      "NAI-185",
+      "NAI-186",
+      "NAI-116",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-088 (line 16): target_var=text",
+    "solution_kind": "rewriter",
+    "digest": "5bc25d0d44",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_loops.py::gather::20",
+    "file": "colorama/repair_plant_loops.py",
+    "function": "gather",
+    "line": 20,
+    "line_end": 24,
+    "replace_span": "colorama/repair_plant_loops.py:L20-L24",
+    "finding_lines": [
+      20,
+      22
+    ],
+    "rule_ids": [
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-086",
+      "NAI-089",
+      "NAI-114",
+      "NAI-178",
+      "NAI-185",
+      "NAI-186",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-089 (line 22)",
+    "solution_kind": "rewriter",
+    "digest": "1bf8761d51",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_loops.py::glue::27",
+    "file": "colorama/repair_plant_loops.py",
+    "function": "glue",
+    "line": 27,
+    "line_end": 31,
+    "replace_span": "colorama/repair_plant_loops.py:L27-L31",
+    "finding_lines": [
+      27,
+      30
+    ],
+    "rule_ids": [
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-114",
+      "NAI-179",
+      "NAI-185",
+      "NAI-186",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-179 (line 30): target_var=text",
+    "solution_kind": "rewriter",
+    "digest": "63ceefdcbb",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_shape.py::pick_label::5",
+    "file": "colorama/repair_plant_shape.py",
+    "function": "pick_label",
+    "line": 5,
+    "line_end": 10,
+    "replace_span": "colorama/repair_plant_shape.py:L5-L10",
+    "finding_lines": [
+      5,
+      6
+    ],
+    "rule_ids": [
+      "NAI-026",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-186",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-026 (line 6): variant=identical_branches, branch_hash=ab4685c3190be03fe79adedcef36b079",
+    "solution_kind": "rewriter",
+    "digest": "4c260b4508",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_shape.py::merge_tags::13",
+    "file": "colorama/repair_plant_shape.py",
+    "function": "merge_tags",
+    "line": 13,
+    "line_end": 18,
+    "replace_span": "colorama/repair_plant_shape.py:L13-L18",
+    "finding_lines": [],
+    "rule_ids": [
+      "NAI-021S"
+    ],
+    "infraction": "[HARD_REQUIREMENTS] NAI-021S: Alias identity chain \u2014 all data flow is copy/alias, no real transformation",
+    "solution_kind": "rewriter",
+    "digest": "84e0cae05f",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_shape.py::size_of::21",
+    "file": "colorama/repair_plant_shape.py",
+    "function": "size_of",
+    "line": 21,
+    "line_end": 25,
+    "replace_span": "colorama/repair_plant_shape.py:L21-L25",
+    "finding_lines": [
+      21,
+      23,
+      24
+    ],
+    "rule_ids": [
+      "NAI-002",
+      "NAI-028",
+      "NAI-082",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-121",
+      "NAI-140",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-002 (line 24): func_name=size_of, terminal_type=Return",
+    "solution_kind": "rewriter",
+    "digest": "00988edf98",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_shape.py::guarded::28",
+    "file": "colorama/repair_plant_shape.py",
+    "function": "guarded",
+    "line": 28,
+    "line_end": 31,
+    "replace_span": "colorama/repair_plant_shape.py:L28-L31",
+    "finding_lines": [
+      28,
+      29
+    ],
+    "rule_ids": [
+      "NAI-029",
+      "NAI-038",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-186",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "SIG-constant_condition"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-029 (line 29): constant_value=True",
+    "solution_kind": "prescribed",
+    "digest": "42fa66ce2a",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_shape.py::seal::34",
+    "file": "colorama/repair_plant_shape.py",
+    "function": "seal",
+    "line": 34,
+    "line_end": 40,
+    "replace_span": "colorama/repair_plant_shape.py:L34-L40",
+    "finding_lines": [
+      34,
+      36
+    ],
+    "rule_ids": [
+      "NAI-171",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-186",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-171 (line 36): loop_type=for, has_break=False",
+    "solution_kind": "rewriter",
+    "digest": "d85df3cb4f",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_stubs.py::<module>::5",
+    "file": "colorama/repair_plant_stubs.py",
+    "function": "<module>",
+    "line": 5,
+    "line_end": 5,
+    "replace_span": "colorama/repair_plant_stubs.py:L5-L5",
+    "finding_lines": [],
+    "rule_ids": [
+      "NAI-217"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-217: Hallucinated import \u2014 'from .ansi import clear_display' (line 5) but 'clear_display' is not defined in ansi.py",
+    "solution_kind": "prescribed",
+    "digest": "f9916fda64",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_stubs.py::<class Placeholder>::10",
+    "file": "colorama/repair_plant_stubs.py",
+    "function": "<class Placeholder>",
+    "line": 10,
+    "line_end": 11,
+    "replace_span": "colorama/repair_plant_stubs.py:L10-L11",
+    "finding_lines": [],
+    "rule_ids": [
+      "NAI-213"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-213: Empty class 'Placeholder' at line 10 \u2014 body is only pass: no attribute, no method",
+    "solution_kind": "prescribed",
+    "digest": "cb223c1bca",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_typos.py::widest_row::5",
+    "file": "colorama/repair_plant_typos.py",
+    "function": "widest_row",
+    "line": 5,
+    "line_end": 10,
+    "replace_span": "colorama/repair_plant_typos.py:L5-L10",
+    "finding_lines": [
+      5,
+      8
+    ],
+    "rule_ids": [
+      "NAI-050",
+      "NAI-051",
+      "NAI-097",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-186",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "SIG-misspelled_len"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-050 (line 5): func_name=widest_row, undefined_calls=['lenght']",
+    "solution_kind": "rewriter",
+    "digest": "6fe5e2af5f",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_typos.py::setting_for::13",
+    "file": "colorama/repair_plant_typos.py",
+    "function": "setting_for",
+    "line": 13,
+    "line_end": 20,
+    "replace_span": "colorama/repair_plant_typos.py:L13-L20",
+    "finding_lines": [
+      13,
+      14
+    ],
+    "rule_ids": [
+      "NAI-052",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-186",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-052 (line 14): func_name=setting_for, pattern=identical_nested_if, condition_dump=Compare(left=Name(id='key', ctx=Load()), ops=[In()], comparators=[Name(id='table', ctx=Load())])",
+    "solution_kind": "rewriter",
+    "digest": "ce2bf31b0b",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_typos.py::code_word::23",
+    "file": "colorama/repair_plant_typos.py",
+    "function": "code_word",
+    "line": 23,
+    "line_end": 30,
+    "replace_span": "colorama/repair_plant_typos.py:L23-L30",
+    "finding_lines": [
+      23,
+      24,
+      26
+    ],
+    "rule_ids": [
+      "NAI-053",
+      "NAI-099",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-186",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-053 (line 24): func_name=code_word, identical_branch_count=2, body_hash=ad2298dc",
+    "solution_kind": "rewriter",
+    "digest": "fbfd803a6d",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_typos.py::mark_twice::33",
+    "file": "colorama/repair_plant_typos.py",
+    "function": "mark_twice",
+    "line": 33,
+    "line_end": 36,
+    "replace_span": "colorama/repair_plant_typos.py:L33-L36",
+    "finding_lines": [
+      33,
+      34,
+      35
+    ],
+    "rule_ids": [
+      "NAI-054",
+      "NAI-091",
+      "NAI-082",
+      "NAI-084",
+      "NAI-086",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-054 (line 35): func_name=mark_twice, consecutive_count=2, stmt_hash=ec94231f0063",
+    "solution_kind": "rewriter",
+    "digest": "7f143267a6",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_typos.py::ordered_table::39",
+    "file": "colorama/repair_plant_typos.py",
+    "function": "ordered_table",
+    "line": 39,
+    "line_end": 46,
+    "replace_span": "colorama/repair_plant_typos.py:L39-L46",
+    "finding_lines": [
+      39,
+      41
+    ],
+    "rule_ids": [
+      "NAI-056",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-086",
+      "NAI-114",
+      "NAI-185",
+      "NAI-186",
+      "NAI-168",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-056 (line 41): func_name=ordered_table, misspelled_module=colections, correction=collections",
+    "solution_kind": "rewriter",
+    "digest": "097b063dbe",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/winterm.py::get_osfhandle::5",
+    "file": "colorama/winterm.py",
+    "function": "get_osfhandle",
+    "line": 5,
+    "line_end": 6,
+    "replace_span": "colorama/winterm.py:L5-L6",
+    "finding_lines": [
+      5
+    ],
+    "rule_ids": [
+      "HR-NAME",
+      "NAI-082",
+      "NAI-084",
+      "NAI-185",
+      "NAI-121",
+      "NAI-130",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-130 (line 5): func_name=get_osfhandle",
+    "solution_kind": "prescribed",
+    "digest": "16c1c2d933",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/winterm.py::reset_all::50",
+    "file": "colorama/winterm.py",
+    "function": "reset_all",
+    "line": 50,
+    "line_end": 53,
+    "replace_span": "colorama/winterm.py:L50-L53",
+    "finding_lines": [
+      50
+    ],
+    "rule_ids": [
+      "NAI-003",
+      "NAI-084",
+      "NAI-086",
+      "NAI-183",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-003 (line 50): func_name=reset_all, unused_params=['on_stderr'], total_effective_params=1, all_params_ignored=True",
+    "solution_kind": "prescribed",
+    "digest": "0e19548348",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/winterm.py::enable_vt_processing::178",
+    "file": "colorama/winterm.py",
+    "function": "enable_vt_processing",
+    "line": 178,
+    "line_end": 195,
+    "replace_span": "colorama/winterm.py:L178-L195",
+    "finding_lines": [
+      178,
+      194
+    ],
+    "rule_ids": [
+      "NAI-078",
+      "NAI-081",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-086",
+      "NAI-114",
+      "NAI-185",
+      "NAI-186",
+      "NAI-168",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-078 (line 194): swallow_type=fallback_return, return_type=Constant",
+    "solution_kind": "rewriter",
+    "digest": "1b72f48093",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_008.py::join_parts::6",
+    "file": "colorama/repair_plant_008.py",
+    "function": "join_parts",
+    "line": 6,
+    "line_end": 9,
+    "replace_span": "colorama/repair_plant_008.py:L6-L9",
+    "finding_lines": [
+      6,
+      7
+    ],
+    "rule_ids": [
+      "NAI-008",
+      "NAI-082",
+      "NAI-084",
+      "NAI-086",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-008 (line 7): func_name=join_parts, import_type=Import",
+    "solution_kind": "rewriter",
+    "digest": "9e9b136122",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_092.py::run_echo::6",
+    "file": "colorama/repair_plant_092.py",
+    "function": "run_echo",
+    "line": 6,
+    "line_end": 7,
+    "replace_span": "colorama/repair_plant_092.py:L6-L7",
+    "finding_lines": [
+      6,
+      7
+    ],
+    "rule_ids": [
+      "NAI-092",
+      "NAI-084",
+      "NAI-086",
+      "NAI-185",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "SIG-shell_injection"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-092 (line 7): call_type=subprocess_shell_true, subprocess_method=run",
+    "solution_kind": "rewriter",
+    "digest": "d484f81b5f",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_093.py::read_doc::6",
+    "file": "colorama/repair_plant_093.py",
+    "function": "read_doc",
+    "line": 6,
+    "line_end": 7,
+    "replace_span": "colorama/repair_plant_093.py:L6-L7",
+    "finding_lines": [
+      6,
+      7
+    ],
+    "rule_ids": [
+      "NAI-093",
+      "NAI-082",
+      "NAI-084",
+      "NAI-086",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-093 (line 7): module=yaml, method=load, has_loader_kwarg=False",
+    "solution_kind": "rewriter",
+    "digest": "bd0b0d8d46",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "demos/demo08.py::main::6",
+    "file": "demos/demo08.py",
+    "function": "main",
+    "line": 6,
+    "line_end": 12,
+    "replace_span": "demos/demo08.py:L6-L12",
+    "finding_lines": [
+      6
+    ],
+    "rule_ids": [
+      "NAI-098",
+      "NAI-083",
+      "NAI-084",
+      "NAI-086",
+      "NAI-113",
+      "NAI-185",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-098 (line 6): has_print=True, has_return_value=False",
+    "solution_kind": "prescribed",
+    "digest": "2a8adf97bf",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_branches.py::guarded::7",
+    "file": "colorama/repair_plant_branches.py",
+    "function": "guarded",
+    "line": 7,
+    "line_end": 11,
+    "replace_span": "colorama/repair_plant_branches.py:L7-L11",
+    "finding_lines": [
+      7,
+      10
+    ],
+    "rule_ids": [
+      "NAI-002",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-186",
+      "NAI-121",
+      "NAI-140",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-002 (line 10): func_name=guarded, terminal_type=Raise",
+    "solution_kind": "rewriter",
+    "digest": "dea465b4bd",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_branches.py::render::14",
+    "file": "colorama/repair_plant_branches.py",
+    "function": "render",
+    "line": 14,
+    "line_end": 15,
+    "replace_span": "colorama/repair_plant_branches.py:L14-L15",
+    "finding_lines": [
+      14
+    ],
+    "rule_ids": [
+      "NAI-003",
+      "NAI-030",
+      "NAI-082",
+      "NAI-084",
+      "NAI-086",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-003 (line 14): func_name=render, unused_params=['colour'], total_effective_params=3, all_params_ignored=False",
+    "solution_kind": "prescribed",
+    "digest": "945e345507",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_branches.py::pick::18",
+    "file": "colorama/repair_plant_branches.py",
+    "function": "pick",
+    "line": 18,
+    "line_end": 23,
+    "replace_span": "colorama/repair_plant_branches.py:L18-L23",
+    "finding_lines": [
+      18,
+      19
+    ],
+    "rule_ids": [
+      "NAI-005",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-186",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-005 (line 19): func_name=pick, else_body_length=2",
+    "solution_kind": "rewriter",
+    "digest": "c40245ec59",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_branches.py::stamp::26",
+    "file": "colorama/repair_plant_branches.py",
+    "function": "stamp",
+    "line": 26,
+    "line_end": 29,
+    "replace_span": "colorama/repair_plant_branches.py:L26-L29",
+    "finding_lines": [
+      26,
+      28
+    ],
+    "rule_ids": [
+      "NAI-006",
+      "NAI-082",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-006 (line 28): func_name=stamp, variable=width, first_assign_index=0, overwrite_index=1",
+    "solution_kind": "rewriter",
+    "digest": "d1eccb3e0a",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_branches.py::outer::32",
+    "file": "colorama/repair_plant_branches.py",
+    "function": "outer",
+    "line": 32,
+    "line_end": 35,
+    "replace_span": "colorama/repair_plant_branches.py:L32-L35",
+    "finding_lines": [
+      32
+    ],
+    "rule_ids": [
+      "NAI-007",
+      "NAI-082",
+      "NAI-084",
+      "NAI-185",
+      "NAI-186",
+      "NAI-169",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-007 (line 32): func_name=outer, nested_func_name=helper",
+    "solution_kind": "rewriter",
+    "digest": "6468cc69ca",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_keys.py::widths::7",
+    "file": "colorama/repair_plant_keys.py",
+    "function": "widths",
+    "line": 7,
+    "line_end": 10,
+    "replace_span": "colorama/repair_plant_keys.py:L7-L10",
+    "finding_lines": [
+      7,
+      8,
+      9
+    ],
+    "rule_ids": [
+      "NAI-174",
+      "NAI-082",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-121",
+      "NAI-145",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-174 (line 9): func_name=widths, shadowed_builtin=len",
+    "solution_kind": "prescribed",
+    "digest": "80375513a2",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_keys.py::palette::13",
+    "file": "colorama/repair_plant_keys.py",
+    "function": "palette",
+    "line": 13,
+    "line_end": 15,
+    "replace_span": "colorama/repair_plant_keys.py:L13-L15",
+    "finding_lines": [
+      13,
+      14
+    ],
+    "rule_ids": [
+      "NAI-175",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-175 (line 14): func_name=palette, duplicate_key='red', key_repr=Constant(value='red')",
+    "solution_kind": "rewriter",
+    "digest": "1d5953d9bf",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_keys.py::flags::18",
+    "file": "colorama/repair_plant_keys.py",
+    "function": "flags",
+    "line": 18,
+    "line_end": 20,
+    "replace_span": "colorama/repair_plant_keys.py:L18-L20",
+    "finding_lines": [
+      18,
+      19
+    ],
+    "rule_ids": [
+      "NAI-177",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-177 (line 19): func_name=flags, current_key_value=True, current_key_type=bool, collides_with_value=1, collides_with_type=int",
+    "solution_kind": "rewriter",
+    "digest": "359135fdd3",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_keys.py::sample_rows::23",
+    "file": "colorama/repair_plant_keys.py",
+    "function": "sample_rows",
+    "line": 23,
+    "line_end": 24,
+    "replace_span": "colorama/repair_plant_keys.py:L23-L24",
+    "finding_lines": [
+      23
+    ],
+    "rule_ids": [
+      "NAI-212",
+      "NAI-084",
+      "NAI-185",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-212 (line 23): func_name=sample_rows, shape=list of 2 literal row(s)",
+    "solution_kind": "prescribed",
+    "digest": "427fb47cc5",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_names.py::process_rows::7",
+    "file": "colorama/repair_plant_names.py",
+    "function": "process_rows",
+    "line": 7,
+    "line_end": 8,
+    "replace_span": "colorama/repair_plant_names.py:L7-L8",
+    "finding_lines": [
+      7
+    ],
+    "rule_ids": [
+      "NAI-082",
+      "NAI-084",
+      "NAI-185",
+      "NAI-121",
+      "NAI-133",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-133 (line 7): func_name=process_rows",
+    "solution_kind": "prescribed",
+    "digest": "ebc30c1957",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_names.py::filter_rows::11",
+    "file": "colorama/repair_plant_names.py",
+    "function": "filter_rows",
+    "line": 11,
+    "line_end": 12,
+    "replace_span": "colorama/repair_plant_names.py:L11-L12",
+    "finding_lines": [
+      11
+    ],
+    "rule_ids": [
+      "NAI-082",
+      "NAI-084",
+      "NAI-185",
+      "NAI-121",
+      "NAI-134",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-134 (line 11): func_name=filter_rows",
+    "solution_kind": "prescribed",
+    "digest": "4fa4ae3eb4",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_names.py::sort_rows::15",
+    "file": "colorama/repair_plant_names.py",
+    "function": "sort_rows",
+    "line": 15,
+    "line_end": 16,
+    "replace_span": "colorama/repair_plant_names.py:L15-L16",
+    "finding_lines": [
+      15
+    ],
+    "rule_ids": [
+      "NAI-082",
+      "NAI-084",
+      "NAI-185",
+      "NAI-121",
+      "NAI-135",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-135 (line 15): func_name=sort_rows",
+    "solution_kind": "prescribed",
+    "digest": "f23a5e3813",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_names.py::count_rows::19",
+    "file": "colorama/repair_plant_names.py",
+    "function": "count_rows",
+    "line": 19,
+    "line_end": 20,
+    "replace_span": "colorama/repair_plant_names.py:L19-L20",
+    "finding_lines": [
+      19
+    ],
+    "rule_ids": [
+      "NAI-082",
+      "NAI-084",
+      "NAI-185",
+      "NAI-121",
+      "NAI-136",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-136 (line 19): func_name=count_rows",
+    "solution_kind": "prescribed",
+    "digest": "8872118191",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_names.py::find_row::23",
+    "file": "colorama/repair_plant_names.py",
+    "function": "find_row",
+    "line": 23,
+    "line_end": 24,
+    "replace_span": "colorama/repair_plant_names.py:L23-L24",
+    "finding_lines": [
+      23
+    ],
+    "rule_ids": [
+      "NAI-082",
+      "NAI-084",
+      "NAI-185",
+      "NAI-104",
+      "NAI-121",
+      "NAI-137",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-104 (line 23): func_name=find_row, implied_verb=find, expected_ops=['Compare', 'If', 'IfExp']",
+    "solution_kind": "prescribed",
+    "digest": "52a977f3dc",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_ops.py::lookup::7",
+    "file": "colorama/repair_plant_ops.py",
+    "function": "lookup",
+    "line": 7,
+    "line_end": 8,
+    "replace_span": "colorama/repair_plant_ops.py:L7-L8",
+    "finding_lines": [
+      7,
+      8
+    ],
+    "rule_ids": [
+      "NAI-003",
+      "NAI-009",
+      "NAI-030",
+      "NAI-082",
+      "NAI-084",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-003 (line 7): func_name=lookup, unused_params=['key', 'table'], total_effective_params=2, all_params_ignored=True",
+    "solution_kind": "prescribed",
+    "digest": "6f27432230",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_ops.py::total::11",
+    "file": "colorama/repair_plant_ops.py",
+    "function": "total",
+    "line": 11,
+    "line_end": 13,
+    "replace_span": "colorama/repair_plant_ops.py:L11-L13",
+    "finding_lines": [
+      11
+    ],
+    "rule_ids": [
+      "NAI-010",
+      "NAI-031",
+      "NAI-082",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-121",
+      "NAI-147",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-010 (line 11): func_name=total, dead_variables=['count'], dead_count=1",
+    "solution_kind": "rewriter",
+    "digest": "025b65d162",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_ops.py::note::16",
+    "file": "colorama/repair_plant_ops.py",
+    "function": "note",
+    "line": 16,
+    "line_end": 17,
+    "replace_span": "colorama/repair_plant_ops.py:L16-L17",
+    "finding_lines": [
+      16
+    ],
+    "rule_ids": [
+      "NAI-011",
+      "NAI-082",
+      "NAI-084",
+      "NAI-086",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-011 (line 16): func_name=note, returns=0, yields=0, calls=0, assigns=0",
+    "solution_kind": "prescribed",
+    "digest": "a77a509cb3",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_ops.py::check::20",
+    "file": "colorama/repair_plant_ops.py",
+    "function": "check",
+    "line": 20,
+    "line_end": 22,
+    "replace_span": "colorama/repair_plant_ops.py:L20-L22",
+    "finding_lines": [
+      20,
+      21
+    ],
+    "rule_ids": [
+      "NAI-014",
+      "NAI-082",
+      "NAI-084",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-014 (line 21): variant=comparison_as_statement, func_name=check",
+    "solution_kind": "prescribed",
+    "digest": "c29a16c935",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_ops.py::same::25",
+    "file": "colorama/repair_plant_ops.py",
+    "function": "same",
+    "line": 25,
+    "line_end": 26,
+    "replace_span": "colorama/repair_plant_ops.py:L25-L26",
+    "finding_lines": [],
+    "rule_ids": [
+      "NAI-016S"
+    ],
+    "infraction": "[HARD_REQUIREMENTS] NAI-016S: Identity passthrough \u2014 returns exact input unchanged",
+    "solution_kind": "prescribed",
+    "digest": "9c48b57007",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_order.py::endpoint::7",
+    "file": "colorama/repair_plant_order.py",
+    "function": "endpoint",
+    "line": 7,
+    "line_end": 8,
+    "replace_span": "colorama/repair_plant_order.py:L7-L8",
+    "finding_lines": [
+      7
+    ],
+    "rule_ids": [
+      "NAI-167",
+      "NAI-082",
+      "NAI-084",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-167 (line 7): blindness_type=hardcoded_connection, has_env_lookup=False",
+    "solution_kind": "prescribed",
+    "digest": "c0355ee2a6",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_order.py::parse::11",
+    "file": "colorama/repair_plant_order.py",
+    "function": "parse",
+    "line": 11,
+    "line_end": 18,
+    "replace_span": "colorama/repair_plant_order.py:L11-L18",
+    "finding_lines": [
+      11,
+      12
+    ],
+    "rule_ids": [
+      "NAI-172",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-186",
+      "NAI-168",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-172 (line 12): parent_exception=Exception, child_exception=ValueError, parent_level=0, child_level=2",
+    "solution_kind": "rewriter",
+    "digest": "2ee3144e25",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_order.py::close_quietly::21",
+    "file": "colorama/repair_plant_order.py",
+    "function": "close_quietly",
+    "line": 21,
+    "line_end": 25,
+    "replace_span": "colorama/repair_plant_order.py:L21-L25",
+    "finding_lines": [
+      21,
+      25
+    ],
+    "rule_ids": [
+      "NAI-173",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-086",
+      "NAI-185",
+      "NAI-168",
+      "NAI-121",
+      "NAI-143",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-173 (line 25): in_finally=True",
+    "solution_kind": "rewriter",
+    "digest": "99eea6e27f",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_order.py::port_of::28",
+    "file": "colorama/repair_plant_order.py",
+    "function": "port_of",
+    "line": 28,
+    "line_end": 29,
+    "replace_span": "colorama/repair_plant_order.py:L28-L29",
+    "finding_lines": [
+      28
+    ],
+    "rule_ids": [
+      "NAI-200",
+      "NAI-082",
+      "NAI-084",
+      "NAI-086",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-200 (line 28): risky_calls=['parser.getint()'], call_count=1, has_try_except=False",
+    "solution_kind": "prescribed",
+    "digest": "bedb5e7991",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_order.py::to_port::32",
+    "file": "colorama/repair_plant_order.py",
+    "function": "to_port",
+    "line": 32,
+    "line_end": 33,
+    "replace_span": "colorama/repair_plant_order.py:L32-L33",
+    "finding_lines": [
+      32,
+      33
+    ],
+    "rule_ids": [
+      "NAI-201",
+      "NAI-082",
+      "NAI-084",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-201 (line 33): coercion_func=int, arg_type=Name, has_try_except=False",
+    "solution_kind": "prescribed",
+    "digest": "e2400448f1",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_chains.py::close_quietly::8",
+    "file": "colorama/repair_plant_chains.py",
+    "function": "close_quietly",
+    "line": 8,
+    "line_end": 12,
+    "replace_span": "colorama/repair_plant_chains.py:L8-L12",
+    "finding_lines": [
+      8,
+      12
+    ],
+    "rule_ids": [
+      "NAI-173",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-086",
+      "NAI-185",
+      "NAI-168",
+      "NAI-121",
+      "NAI-143",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-173 (line 12): in_finally=True",
+    "solution_kind": "rewriter",
+    "digest": "99eea6e27f",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_chains.py::label_for::15",
+    "file": "colorama/repair_plant_chains.py",
+    "function": "label_for",
+    "line": 15,
+    "line_end": 18,
+    "replace_span": "colorama/repair_plant_chains.py:L15-L18",
+    "finding_lines": [
+      15,
+      16
+    ],
+    "rule_ids": [
+      "NAI-082",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-121",
+      "NAI-145",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-145 (line 16): variable=prefix, use_line=16, def_line=17",
+    "solution_kind": "prescribed",
+    "digest": "4b0e73f1af",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_chains.py::stamp::21",
+    "file": "colorama/repair_plant_chains.py",
+    "function": "stamp",
+    "line": 21,
+    "line_end": 24,
+    "replace_span": "colorama/repair_plant_chains.py:L21-L24",
+    "finding_lines": [
+      21,
+      23
+    ],
+    "rule_ids": [
+      "NAI-006",
+      "NAI-082",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-006 (line 23): func_name=stamp, variable=width, first_assign_index=0, overwrite_index=1",
+    "solution_kind": "rewriter",
+    "digest": "0bf0ac4099",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_chains.py::total_width::27",
+    "file": "colorama/repair_plant_chains.py",
+    "function": "total_width",
+    "line": 27,
+    "line_end": 30,
+    "replace_span": "colorama/repair_plant_chains.py:L27-L30",
+    "finding_lines": [
+      27
+    ],
+    "rule_ids": [
+      "NAI-010",
+      "NAI-031",
+      "NAI-082",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-121",
+      "NAI-147",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-010 (line 27): func_name=total_width, dead_variables=['widths'], dead_count=1",
+    "solution_kind": "rewriter",
+    "digest": "7dd01b0499",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_chains.py::data_dir::33",
+    "file": "colorama/repair_plant_chains.py",
+    "function": "data_dir",
+    "line": 33,
+    "line_end": 36,
+    "replace_span": "colorama/repair_plant_chains.py:L33-L36",
+    "finding_lines": [
+      33,
+      34,
+      35
+    ],
+    "rule_ids": [
+      "NAI-008",
+      "NAI-082",
+      "NAI-084",
+      "NAI-086",
+      "NAI-114",
+      "NAI-185",
+      "NAI-121",
+      "NAI-148",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-008 (line 34): func_name=data_dir, import_type=Import",
+    "solution_kind": "prescribed",
+    "digest": "3bedf09dc4",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_checks.py::hosts_present::8",
+    "file": "colorama/repair_plant_checks.py",
+    "function": "hosts_present",
+    "line": 8,
+    "line_end": 9,
+    "replace_span": "colorama/repair_plant_checks.py:L8-L9",
+    "finding_lines": [
+      8,
+      9
+    ],
+    "rule_ids": [
+      "NAI-079",
+      "NAI-084",
+      "NAI-086",
+      "NAI-185",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-079 (line 9): path_type=absolute, path_value=/etc/hosts, path_func=exists",
+    "solution_kind": "prescribed",
+    "digest": "a743fda5c9",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_checks.py::push::12",
+    "file": "colorama/repair_plant_checks.py",
+    "function": "push",
+    "line": 12,
+    "line_end": 13,
+    "replace_span": "colorama/repair_plant_checks.py:L12-L13",
+    "finding_lines": [
+      12,
+      13
+    ],
+    "rule_ids": [
+      "NAI-091",
+      "NAI-082",
+      "NAI-084",
+      "NAI-086",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-091 (line 13): param_name=items, mutation_type=method_call, method_name=append, via_iterator=False",
+    "solution_kind": "rewriter",
+    "digest": "82754f160d",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_checks.py::near_tenth::16",
+    "file": "colorama/repair_plant_checks.py",
+    "function": "near_tenth",
+    "line": 16,
+    "line_end": 17,
+    "replace_span": "colorama/repair_plant_checks.py:L16-L17",
+    "finding_lines": [
+      16,
+      17
+    ],
+    "rule_ids": [
+      "NAI-095",
+      "NAI-099",
+      "NAI-082",
+      "NAI-084",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-095 (line 17): comparison_op=Eq, left_is_float=False, right_is_float=True",
+    "solution_kind": "prescribed",
+    "digest": "68a1321628",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_checks.py::scale::20",
+    "file": "colorama/repair_plant_checks.py",
+    "function": "scale",
+    "line": 20,
+    "line_end": 22,
+    "replace_span": "colorama/repair_plant_checks.py:L20-L22",
+    "finding_lines": [
+      20,
+      21
+    ],
+    "rule_ids": [
+      "NAI-096",
+      "NAI-082",
+      "NAI-084",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-096 (line 21): param_name=n",
+    "solution_kind": "rewriter",
+    "digest": "b83ffc71ec",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_checks.py::show::25",
+    "file": "colorama/repair_plant_checks.py",
+    "function": "show",
+    "line": 25,
+    "line_end": 26,
+    "replace_span": "colorama/repair_plant_checks.py:L25-L26",
+    "finding_lines": [
+      25
+    ],
+    "rule_ids": [
+      "NAI-098",
+      "NAI-082",
+      "NAI-084",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-098 (line 25): has_print=True, has_return_value=False",
+    "solution_kind": "prescribed",
+    "digest": "58ab7fdd2d",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_graph.py::dead_store::8",
+    "file": "colorama/repair_plant_graph.py",
+    "function": "dead_store",
+    "line": 8,
+    "line_end": 11,
+    "replace_span": "colorama/repair_plant_graph.py:L8-L11",
+    "finding_lines": [
+      8
+    ],
+    "rule_ids": [
+      "NAI-031",
+      "NAI-082",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-121",
+      "NAI-147",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-031 (line 8): func_name=dead_store, dead_vars=['unused'], assigned_vars=['total', 'unused'], read_vars=['total']",
+    "solution_kind": "rewriter",
+    "digest": "829daac99a",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_graph.py::chain::14",
+    "file": "colorama/repair_plant_graph.py",
+    "function": "chain",
+    "line": 14,
+    "line_end": 18,
+    "replace_span": "colorama/repair_plant_graph.py:L14-L18",
+    "finding_lines": [],
+    "rule_ids": [
+      "NAI-021S"
+    ],
+    "infraction": "[HARD_REQUIREMENTS] NAI-021S: Alias identity chain \u2014 all data flow is copy/alias, no real transformation",
+    "solution_kind": null,
+    "digest": null,
+    "has_solution": false,
+    "status": "declined",
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_guards.py::parse::8",
+    "file": "colorama/repair_plant_guards.py",
+    "function": "parse",
+    "line": 8,
+    "line_end": 9,
+    "replace_span": "colorama/repair_plant_guards.py:L8-L9",
+    "finding_lines": [
+      8,
+      9
+    ],
+    "rule_ids": [
+      "NAI-074",
+      "NAI-200",
+      "NAI-082",
+      "NAI-084",
+      "NAI-086",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-074 (line 9): json_method=loads, call_count=1, has_try_except=False",
+    "solution_kind": "prescribed",
+    "digest": "941c1a6f40",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_guards.py::read_all::12",
+    "file": "colorama/repair_plant_guards.py",
+    "function": "read_all",
+    "line": 12,
+    "line_end": 16,
+    "replace_span": "colorama/repair_plant_guards.py:L12-L16",
+    "finding_lines": [
+      12,
+      13
+    ],
+    "rule_ids": [
+      "NAI-075",
+      "NAI-200",
+      "NAI-160",
+      "NAI-158",
+      "NAI-082",
+      "NAI-084",
+      "NAI-086",
+      "NAI-114",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-075 (line 13): operation=open, has_context_manager=False",
+    "solution_kind": "rewriter",
+    "digest": "03d4488851",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_guards.py::pick::19",
+    "file": "colorama/repair_plant_guards.py",
+    "function": "pick",
+    "line": 19,
+    "line_end": 23,
+    "replace_span": "colorama/repair_plant_guards.py:L19-L23",
+    "finding_lines": [
+      19,
+      23
+    ],
+    "rule_ids": [
+      "NAI-077",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-186",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-077 (line 23): dict_name=row, key=value, has_get_or_in_check=False",
+    "solution_kind": "prescribed",
+    "digest": "8da12098ed",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_hr.py::level::8",
+    "file": "colorama/repair_plant_hr.py",
+    "function": "level",
+    "line": 8,
+    "line_end": 9,
+    "replace_span": "colorama/repair_plant_hr.py:L7-L9",
+    "finding_lines": [
+      8
+    ],
+    "rule_ids": [
+      "HR-002",
+      "NAI-098",
+      "NAI-084",
+      "NAI-185",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[HARD_REQUIREMENTS] HR-002 (line 8): GETTER requires return but has none [role established by decorator]",
+    "solution_kind": "prescribed",
+    "digest": "7c1870b32e",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_hr.py::level::12",
+    "file": "colorama/repair_plant_hr.py",
+    "function": "level",
+    "line": 12,
+    "line_end": 13,
+    "replace_span": "colorama/repair_plant_hr.py:L11-L13",
+    "finding_lines": [
+      12
+    ],
+    "rule_ids": [
+      "HR-001",
+      "NAI-098",
+      "NAI-084",
+      "NAI-086",
+      "NAI-185",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[HARD_REQUIREMENTS] HR-001 (line 12): SETTER requires parameters but has none [role established by decorator]",
+    "solution_kind": "prescribed",
+    "digest": "a0dd2ebc66",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_hr.py::opened::17",
+    "file": "colorama/repair_plant_hr.py",
+    "function": "opened",
+    "line": 17,
+    "line_end": 19,
+    "replace_span": "colorama/repair_plant_hr.py:L16-L19",
+    "finding_lines": [
+      17,
+      18
+    ],
+    "rule_ids": [
+      "HR-003",
+      "NAI-075",
+      "NAI-200",
+      "NAI-160",
+      "NAI-158",
+      "NAI-082",
+      "NAI-084",
+      "NAI-086",
+      "NAI-114",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[HARD_REQUIREMENTS] HR-003 (line 17): CONTEXT_MANAGER requires yield but has none [role established by decorator]",
+    "solution_kind": "prescribed",
+    "digest": "60c31b7784",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_imports.py::<module>::8",
+    "file": "colorama/repair_plant_imports.py",
+    "function": "<module>",
+    "line": 8,
+    "line_end": 8,
+    "replace_span": "colorama/repair_plant_imports.py:L8-L8",
+    "finding_lines": [],
+    "rule_ids": [
+      "NAI-209",
+      "NAI-211"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-209: Silent import failure \u2014 'dumps = None' swallows ImportError, downstream code will crash with AttributeError",
+    "solution_kind": "prescribed",
+    "digest": "853b4154cb",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_join.py::render_tags::8",
+    "file": "colorama/repair_plant_join.py",
+    "function": "render_tags",
+    "line": 8,
+    "line_end": 12,
+    "replace_span": "colorama/repair_plant_join.py:L8-L12",
+    "finding_lines": [
+      8,
+      11
+    ],
+    "rule_ids": [
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-088",
+      "NAI-114",
+      "NAI-185",
+      "NAI-186",
+      "NAI-116",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-088 (line 11): target_var=text",
+    "solution_kind": "rewriter",
+    "digest": "f3c7fcc6a9",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_join.py::validate_port::15",
+    "file": "colorama/repair_plant_join.py",
+    "function": "validate_port",
+    "line": 15,
+    "line_end": 19,
+    "replace_span": "colorama/repair_plant_join.py:L15-L19",
+    "finding_lines": [
+      15
+    ],
+    "rule_ids": [
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-186",
+      "NAI-118",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-118 (line 15): func_name=validate_port, return_count=2, has_raise=False, has_error_call=False",
+    "solution_kind": "prescribed",
+    "digest": "1f0da9196c",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_meaning.py::calculate_total::8",
+    "file": "colorama/repair_plant_meaning.py",
+    "function": "calculate_total",
+    "line": 8,
+    "line_end": 10,
+    "replace_span": "colorama/repair_plant_meaning.py:L8-L10",
+    "finding_lines": [
+      8,
+      10
+    ],
+    "rule_ids": [
+      "NAI-082",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-100",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-100 (line 10): unused_param=tax, func_name=calculate_total",
+    "solution_kind": "prescribed",
+    "digest": "22befb4227",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_meaning.py::calculate_rate::13",
+    "file": "colorama/repair_plant_meaning.py",
+    "function": "calculate_rate",
+    "line": 13,
+    "line_end": 15,
+    "replace_span": "colorama/repair_plant_meaning.py:L13-L15",
+    "finding_lines": [
+      13,
+      15
+    ],
+    "rule_ids": [
+      "NAI-082",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-101",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-101 (line 15): magic_value=42, func_name=calculate_rate, param_count=1",
+    "solution_kind": "prescribed",
+    "digest": "30dd97f809",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_meaning.py::add_pair::18",
+    "file": "colorama/repair_plant_meaning.py",
+    "function": "add_pair",
+    "line": 18,
+    "line_end": 20,
+    "replace_span": "colorama/repair_plant_meaning.py:L18-L20",
+    "finding_lines": [
+      18,
+      20
+    ],
+    "rule_ids": [
+      "NAI-082",
+      "NAI-084",
+      "NAI-113",
+      "NAI-185",
+      "NAI-102",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-102 (line 20): func_name=add_pair, extra_constant=1, docstring_claim=add two numbers",
+    "solution_kind": "prescribed",
+    "digest": "e419339710",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_meaning.py::is_positive::23",
+    "file": "colorama/repair_plant_meaning.py",
+    "function": "is_positive",
+    "line": 23,
+    "line_end": 26,
+    "replace_span": "colorama/repair_plant_meaning.py:L23-L26",
+    "finding_lines": [
+      23,
+      25
+    ],
+    "rule_ids": [
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-185",
+      "NAI-186",
+      "NAI-103",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-103 (line 25): func_name=is_positive, matched_prefix=is_positive, returns_true_for=negative/zero",
+    "solution_kind": "prescribed",
+    "digest": "a65a20d7a9",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_meaning.py::find_row::29",
+    "file": "colorama/repair_plant_meaning.py",
+    "function": "find_row",
+    "line": 29,
+    "line_end": 30,
+    "replace_span": "colorama/repair_plant_meaning.py:L29-L30",
+    "finding_lines": [
+      29
+    ],
+    "rule_ids": [
+      "NAI-082",
+      "NAI-084",
+      "NAI-185",
+      "NAI-104",
+      "NAI-121",
+      "NAI-137",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-104 (line 29): func_name=find_row, implied_verb=find, expected_ops=['Compare', 'If', 'IfExp']",
+    "solution_kind": "prescribed",
+    "digest": "52a977f3dc",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_noop.py::size::8",
+    "file": "colorama/repair_plant_noop.py",
+    "function": "size",
+    "line": 8,
+    "line_end": 10,
+    "replace_span": "colorama/repair_plant_noop.py:L8-L10",
+    "finding_lines": [
+      8
+    ],
+    "rule_ids": [
+      "NAI-022",
+      "NAI-082",
+      "NAI-084",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-022 (line 8): func_name=size, discarded_calls=['len'], discarded_count=1",
+    "solution_kind": "rewriter",
+    "digest": "a78e992cb2",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_noop.py::same_side::13",
+    "file": "colorama/repair_plant_noop.py",
+    "function": "same_side",
+    "line": 13,
+    "line_end": 16,
+    "replace_span": "colorama/repair_plant_noop.py:L13-L16",
+    "finding_lines": [
+      13,
+      14
+    ],
+    "rule_ids": [
+      "NAI-023",
+      "NAI-036",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-185",
+      "NAI-186",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "SIG-useless_comparison"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-023 (line 14): func_name=same_side, variable=a, op_type=Eq",
+    "solution_kind": "prescribed",
+    "digest": "3430168a42",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_noop.py::first_wide::19",
+    "file": "colorama/repair_plant_noop.py",
+    "function": "first_wide",
+    "line": 19,
+    "line_end": 21,
+    "replace_span": "colorama/repair_plant_noop.py:L19-L21",
+    "finding_lines": [
+      19,
+      20
+    ],
+    "rule_ids": [
+      "NAI-024",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-185",
+      "NAI-186",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-024 (line 20): variant=immediate_return, func_name=first_wide, loop_type=For",
+    "solution_kind": "prescribed",
+    "digest": "8e6f9b94c3",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_noop.py::tally::24",
+    "file": "colorama/repair_plant_noop.py",
+    "function": "tally",
+    "line": 24,
+    "line_end": 27,
+    "replace_span": "colorama/repair_plant_noop.py:L24-L27",
+    "finding_lines": [
+      24,
+      26
+    ],
+    "rule_ids": [
+      "NAI-025",
+      "NAI-032",
+      "NAI-082",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-025 (line 26): func_name=tally, variable=total, op=Add, identity_value=0",
+    "solution_kind": "rewriter",
+    "digest": "e69a40fa89",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_noop.py::bump::30",
+    "file": "colorama/repair_plant_noop.py",
+    "function": "bump",
+    "line": 30,
+    "line_end": 32,
+    "replace_span": "colorama/repair_plant_noop.py:L30-L32",
+    "finding_lines": [
+      30,
+      31
+    ],
+    "rule_ids": [
+      "NAI-170",
+      "NAI-082",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-170 (line 31): variant=pre_increment, func_name=bump",
+    "solution_kind": null,
+    "digest": null,
+    "has_solution": false,
+    "status": "declined",
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_quiet.py::test_parse_never_fails::8",
+    "file": "colorama/repair_plant_quiet.py",
+    "function": "test_parse_never_fails",
+    "line": 8,
+    "line_end": 12,
+    "replace_span": "colorama/repair_plant_quiet.py:L8-L12",
+    "finding_lines": [
+      8,
+      11
+    ],
+    "rule_ids": [
+      "HR-NAME",
+      "NAI-020",
+      "NAI-078",
+      "NAI-083",
+      "NAI-084",
+      "NAI-185",
+      "NAI-186",
+      "NAI-168",
+      "NAI-150",
+      "NAI-155",
+      "NAI-156",
+      "NAI-157",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "SIG-silent_exception"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-020 (line 8): variant=no_assertions, func_name=test_parse_never_fails",
+    "solution_kind": "prescribed",
+    "digest": "6e7a9de2c6",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_roles.py::parse_expr::8",
+    "file": "colorama/repair_plant_roles.py",
+    "function": "parse_expr",
+    "line": 8,
+    "line_end": 9,
+    "replace_span": "colorama/repair_plant_roles.py:L8-L9",
+    "finding_lines": [
+      8,
+      9
+    ],
+    "rule_ids": [
+      "NAI-160",
+      "NAI-082",
+      "NAI-084",
+      "NAI-185",
+      "NAI-121",
+      "NAI-127",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "SIG-eval_usage"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-160 (line 8): risky_sinks=['text'], has_validation=False",
+    "solution_kind": "prescribed",
+    "digest": "73f37b3ffd",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_roles.py::make_counter::12",
+    "file": "colorama/repair_plant_roles.py",
+    "function": "make_counter",
+    "line": 12,
+    "line_end": 16,
+    "replace_span": "colorama/repair_plant_roles.py:L12-L16",
+    "finding_lines": [
+      12,
+      13
+    ],
+    "rule_ids": [
+      "NAI-084",
+      "NAI-086",
+      "NAI-185",
+      "NAI-186",
+      "NAI-169",
+      "NAI-128",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-128 (line 13): nested_func=bump, outer_func=make_counter, mutable_type=List",
+    "solution_kind": "prescribed",
+    "digest": "6390cb6f42",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_roles.py::bump::13",
+    "file": "colorama/repair_plant_roles.py",
+    "function": "bump",
+    "line": 13,
+    "line_end": 15,
+    "replace_span": "colorama/repair_plant_roles.py:L13-L15",
+    "finding_lines": [
+      13
+    ],
+    "rule_ids": [
+      "NAI-071",
+      "NAI-082",
+      "NAI-084",
+      "NAI-086",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-071 (line 13): mutable_type=list, form=literal",
+    "solution_kind": "rewriter",
+    "digest": "4d13c938a2",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_roles.py::get_width::23",
+    "file": "colorama/repair_plant_roles.py",
+    "function": "get_width",
+    "line": 23,
+    "line_end": 24,
+    "replace_span": "colorama/repair_plant_roles.py:L23-L24",
+    "finding_lines": [
+      23
+    ],
+    "rule_ids": [
+      "HR-NAME",
+      "NAI-084",
+      "NAI-086",
+      "NAI-183",
+      "NAI-185",
+      "NAI-130",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-130 (line 23): func_name=get_width",
+    "solution_kind": "prescribed",
+    "digest": "69f06e3fbb",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_roles.py::set_width::26",
+    "file": "colorama/repair_plant_roles.py",
+    "function": "set_width",
+    "line": 26,
+    "line_end": 28,
+    "replace_span": "colorama/repair_plant_roles.py:L26-L28",
+    "finding_lines": [
+      26,
+      28
+    ],
+    "rule_ids": [
+      "NAI-084",
+      "NAI-086",
+      "NAI-183",
+      "NAI-185",
+      "NAI-121",
+      "NAI-131",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-131 (line 28): func_name=set_width, return_node_type=Name",
+    "solution_kind": "rewriter",
+    "digest": "a6b805e947",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_roles.py::is_ready::34",
+    "file": "colorama/repair_plant_roles.py",
+    "function": "is_ready",
+    "line": 34,
+    "line_end": 35,
+    "replace_span": "colorama/repair_plant_roles.py:L34-L35",
+    "finding_lines": [
+      34
+    ],
+    "rule_ids": [
+      "HR-NAME",
+      "NAI-082",
+      "NAI-084",
+      "NAI-185",
+      "NAI-186",
+      "NAI-104",
+      "NAI-121",
+      "NAI-132",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-104 (line 34): func_name=is_ready, implied_verb=is_, expected_ops=['BoolOp', 'Compare']",
+    "solution_kind": "prescribed",
+    "digest": "fa96f9b45f",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_split.py::load_table::8",
+    "file": "colorama/repair_plant_split.py",
+    "function": "load_table",
+    "line": 8,
+    "line_end": 9,
+    "replace_span": "colorama/repair_plant_split.py:L8-L9",
+    "finding_lines": [
+      8,
+      9
+    ],
+    "rule_ids": [
+      "NAI-003",
+      "NAI-009",
+      "NAI-030",
+      "NAI-082",
+      "NAI-084",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-003 (line 8): func_name=load_table, unused_params=['encoding', 'path'], total_effective_params=2, all_params_ignored=True",
+    "solution_kind": "prescribed",
+    "digest": "3dff4cc92b",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_split.py::read_config::12",
+    "file": "colorama/repair_plant_split.py",
+    "function": "read_config",
+    "line": 12,
+    "line_end": 13,
+    "replace_span": "colorama/repair_plant_split.py:L12-L13",
+    "finding_lines": [
+      12
+    ],
+    "rule_ids": [
+      "NAI-082",
+      "NAI-084",
+      "NAI-185",
+      "NAI-186",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "RCA-001"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] RCA-001 (line 12): Calls failed function 'load_table' without forwarding params ['encoding', 'path']",
+    "solution_kind": "prescribed",
+    "digest": "6a3e37f41f",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "demos/fixpath.py::<module>::8",
+    "file": "demos/fixpath.py",
+    "function": "<module>",
+    "line": 8,
+    "line_end": 8,
+    "replace_span": "demos/fixpath.py:L8-L8",
+    "finding_lines": [],
+    "rule_ids": [
+      "NAI-094"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-094: Module-level sys.path.insert() at line 8 \u2014 runtime path manipulation creates fragile imports",
+    "solution_kind": "prescribed",
+    "digest": "a3d1191687",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_flow.py::build_label::9",
+    "file": "colorama/repair_plant_flow.py",
+    "function": "build_label",
+    "line": 9,
+    "line_end": 10,
+    "replace_span": "colorama/repair_plant_flow.py:L9-L10",
+    "finding_lines": [
+      9
+    ],
+    "rule_ids": [
+      "HR-NAME",
+      "NAI-098",
+      "NAI-082",
+      "NAI-084",
+      "NAI-185",
+      "NAI-121",
+      "NAI-138",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-098 (line 9): has_print=True, has_return_value=False",
+    "solution_kind": "prescribed",
+    "digest": "0255e2c0c9",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_flow.py::checked::13",
+    "file": "colorama/repair_plant_flow.py",
+    "function": "checked",
+    "line": 13,
+    "line_end": 17,
+    "replace_span": "colorama/repair_plant_flow.py:L13-L17",
+    "finding_lines": [
+      13,
+      16
+    ],
+    "rule_ids": [
+      "NAI-002",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-186",
+      "NAI-121",
+      "NAI-140",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-002 (line 16): func_name=checked, terminal_type=Raise",
+    "solution_kind": "rewriter",
+    "digest": "e7314b0412",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_flow.py::spin::20",
+    "file": "colorama/repair_plant_flow.py",
+    "function": "spin",
+    "line": 20,
+    "line_end": 22,
+    "replace_span": "colorama/repair_plant_flow.py:L20-L22",
+    "finding_lines": [
+      20,
+      21
+    ],
+    "rule_ids": [
+      "NAI-044",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-086",
+      "NAI-178",
+      "NAI-185",
+      "NAI-186",
+      "NAI-121",
+      "NAI-141",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-044 (line 21): loop_type=while_true, exit_statements_found=False, func_name=spin",
+    "solution_kind": "prescribed",
+    "digest": "fc82f1023b",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_flow.py::sign::25",
+    "file": "colorama/repair_plant_flow.py",
+    "function": "sign",
+    "line": 25,
+    "line_end": 27,
+    "replace_span": "colorama/repair_plant_flow.py:L25-L27",
+    "finding_lines": [
+      25
+    ],
+    "rule_ids": [
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-185",
+      "NAI-186",
+      "NAI-121",
+      "NAI-142",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-142 (line 25): func_name=sign, return_annotation=Name(id='int', ctx=Load())",
+    "solution_kind": "prescribed",
+    "digest": "be73feda36",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_quietly.py::hushed::9",
+    "file": "colorama/repair_plant_quietly.py",
+    "function": "hushed",
+    "line": 9,
+    "line_end": 11,
+    "replace_span": "colorama/repair_plant_quietly.py:L9-L11",
+    "finding_lines": [
+      9,
+      10
+    ],
+    "rule_ids": [
+      "NAI-017",
+      "NAI-097",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-017 (line 10): variant=suppress_broad_exception, func_name=hushed, suppressed_type=Exception",
+    "solution_kind": "rewriter",
+    "digest": "96a3d4a508",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_quietly.py::fetch::14",
+    "file": "colorama/repair_plant_quietly.py",
+    "function": "fetch",
+    "line": 14,
+    "line_end": 15,
+    "replace_span": "colorama/repair_plant_quietly.py:L14-L15",
+    "finding_lines": [
+      14
+    ],
+    "rule_ids": [
+      "NAI-018",
+      "NAI-082",
+      "NAI-084",
+      "NAI-086",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-018 (line 14): func_name=fetch",
+    "solution_kind": "prescribed",
+    "digest": "a294881f46",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_quietly.py::flag::18",
+    "file": "colorama/repair_plant_quietly.py",
+    "function": "flag",
+    "line": 18,
+    "line_end": 21,
+    "replace_span": "colorama/repair_plant_quietly.py:L18-L21",
+    "finding_lines": [
+      18
+    ],
+    "rule_ids": [
+      "NAI-019",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-185",
+      "NAI-186",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-019 (line 18): func_name=flag, constant_value=0, branch_count=2",
+    "solution_kind": "prescribed",
+    "digest": "4a9d6098f4",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_quietly.py::test_render::24",
+    "file": "colorama/repair_plant_quietly.py",
+    "function": "test_render",
+    "line": 24,
+    "line_end": 25,
+    "replace_span": "colorama/repair_plant_quietly.py:L24-L25",
+    "finding_lines": [
+      24
+    ],
+    "rule_ids": [
+      "HR-NAME",
+      "NAI-020",
+      "NAI-022",
+      "NAI-084",
+      "NAI-185",
+      "NAI-150",
+      "NAI-155",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-020 (line 24): variant=no_assertions, func_name=test_render",
+    "solution_kind": "prescribed",
+    "digest": "ef9c2f3936",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_quietly.py::report::28",
+    "file": "colorama/repair_plant_quietly.py",
+    "function": "report",
+    "line": 28,
+    "line_end": 30,
+    "replace_span": "colorama/repair_plant_quietly.py:L28-L30",
+    "finding_lines": [
+      28
+    ],
+    "rule_ids": [
+      "NAI-021",
+      "NAI-098",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-185",
+      "NAI-186",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-021 (line 28): variant=loop_only_logs, func_name=report, print_calls=1, assigns=0",
+    "solution_kind": "prescribed",
+    "digest": "ed31a0df11",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_secrets.py::load_settings::9",
+    "file": "colorama/repair_plant_secrets.py",
+    "function": "load_settings",
+    "line": 9,
+    "line_end": 10,
+    "replace_span": "colorama/repair_plant_secrets.py:L9-L10",
+    "finding_lines": [
+      9,
+      10
+    ],
+    "rule_ids": [
+      "NAI-093",
+      "NAI-082",
+      "NAI-084",
+      "NAI-086",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-093 (line 10): module=yaml, method=load, has_loader_kwarg=False",
+    "solution_kind": "rewriter",
+    "digest": "6c3cce5093",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_secrets.py::list_dir::13",
+    "file": "colorama/repair_plant_secrets.py",
+    "function": "list_dir",
+    "line": 13,
+    "line_end": 14,
+    "replace_span": "colorama/repair_plant_secrets.py:L13-L14",
+    "finding_lines": [
+      13,
+      14
+    ],
+    "rule_ids": [
+      "NAI-092",
+      "NAI-158",
+      "NAI-082",
+      "NAI-084",
+      "NAI-086",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230",
+      "SIG-shell_injection"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-092 (line 14): call_type=subprocess_shell_true, subprocess_method=run",
+    "solution_kind": "prescribed",
+    "digest": "9d4b4413e5",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_secrets.py::connect::17",
+    "file": "colorama/repair_plant_secrets.py",
+    "function": "connect",
+    "line": 17,
+    "line_end": 20,
+    "replace_span": "colorama/repair_plant_secrets.py:L17-L20",
+    "finding_lines": [
+      17,
+      18
+    ],
+    "rule_ids": [
+      "NAI-072",
+      "NAI-082",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "SIG-hardcoded_password"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-072 (line 18): variable_name=password, matched_pattern=password, value_type=string_literal",
+    "solution_kind": "prescribed",
+    "digest": "c2a5e9a959",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_secrets.py::find_user::23",
+    "file": "colorama/repair_plant_secrets.py",
+    "function": "find_user",
+    "line": 23,
+    "line_end": 25,
+    "replace_span": "colorama/repair_plant_secrets.py:L23-L25",
+    "finding_lines": [
+      23,
+      24
+    ],
+    "rule_ids": [
+      "NAI-073",
+      "NAI-160",
+      "NAI-082",
+      "NAI-084",
+      "NAI-086",
+      "NAI-114",
+      "NAI-185",
+      "NAI-121",
+      "NAI-137",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-073 (line 24): injection_vector=str_format",
+    "solution_kind": "prescribed",
+    "digest": "f33c8086f6",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_shells.py::<class Port>::9",
+    "file": "colorama/repair_plant_shells.py",
+    "function": "<class Port>",
+    "line": 9,
+    "line_end": 0,
+    "replace_span": "colorama/repair_plant_shells.py:L9",
+    "finding_lines": [],
+    "rule_ids": [
+      "NAI-214"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-214: Abstract shell 'Port' at line 9 \u2014 ABC with abstract open, close and no concrete subclass in the 64 scanned files",
+    "solution_kind": "prescribed",
+    "digest": "dcb74db523",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/tests/utils.py::isatty::9",
+    "file": "colorama/tests/utils.py",
+    "function": "isatty",
+    "line": 9,
+    "line_end": 10,
+    "replace_span": "colorama/tests/utils.py:L9-L10",
+    "finding_lines": [],
+    "rule_ids": [
+      "NAI-009S"
+    ],
+    "infraction": "[HARD_REQUIREMENTS] NAI-009S: Params declared but never used, returns constant",
+    "solution_kind": "prescribed",
+    "digest": "2f5b24c546",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/tests/utils.py::isatty::13",
+    "file": "colorama/tests/utils.py",
+    "function": "isatty",
+    "line": 13,
+    "line_end": 14,
+    "replace_span": "colorama/tests/utils.py:L13-L14",
+    "finding_lines": [],
+    "rule_ids": [
+      "NAI-009S"
+    ],
+    "infraction": "[HARD_REQUIREMENTS] NAI-009S: Params declared but never used, returns constant",
+    "solution_kind": "prescribed",
+    "digest": "55e1725906",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/tests/utils.py::pycharm::44",
+    "file": "colorama/tests/utils.py",
+    "function": "pycharm",
+    "line": 44,
+    "line_end": 49,
+    "replace_span": "colorama/tests/utils.py:L43-L49",
+    "finding_lines": [
+      44,
+      45
+    ],
+    "rule_ids": [
+      "NAI-094",
+      "NAI-083",
+      "NAI-084",
+      "NAI-086",
+      "NAI-114",
+      "NAI-185",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-094 (line 45): manipulation_target=os.environ, method=subscript_assignment",
+    "solution_kind": "prescribed",
+    "digest": "632243da1a",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_context.py::weights_table::10",
+    "file": "colorama/repair_plant_context.py",
+    "function": "weights_table",
+    "line": 10,
+    "line_end": 31,
+    "replace_span": "colorama/repair_plant_context.py:L10-L31",
+    "finding_lines": [
+      10
+    ],
+    "rule_ids": [
+      "NAI-081",
+      "NAI-082",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-229 (line 10): repetitive structure: 20x Assign of 21 statements",
+    "solution_kind": "prescribed",
+    "digest": "bf7be4ffa8",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_context.py::scale_alpha::34",
+    "file": "colorama/repair_plant_context.py",
+    "function": "scale_alpha",
+    "line": 34,
+    "line_end": 38,
+    "replace_span": "colorama/repair_plant_context.py:L34-L38",
+    "finding_lines": [
+      34,
+      36
+    ],
+    "rule_ids": [
+      "NAI-099",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-186",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 34): similar function structure (normalized): scale_alpha@34, scale_beta@41, scale_delta@55, scale_epsilon@62, scale_eta@76, scale_gamma@48, scale_theta@83, scale_zeta@69",
+    "solution_kind": "prescribed",
+    "digest": "4db5649fac",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_context.py::scale_beta::41",
+    "file": "colorama/repair_plant_context.py",
+    "function": "scale_beta",
+    "line": 41,
+    "line_end": 45,
+    "replace_span": "colorama/repair_plant_context.py:L41-L45",
+    "finding_lines": [
+      41,
+      43
+    ],
+    "rule_ids": [
+      "NAI-099",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-186",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 41): similar function structure (normalized): scale_alpha@34, scale_beta@41, scale_delta@55, scale_epsilon@62, scale_eta@76, scale_gamma@48, scale_theta@83, scale_zeta@69",
+    "solution_kind": "prescribed",
+    "digest": "ea187e8736",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_context.py::scale_gamma::48",
+    "file": "colorama/repair_plant_context.py",
+    "function": "scale_gamma",
+    "line": 48,
+    "line_end": 52,
+    "replace_span": "colorama/repair_plant_context.py:L48-L52",
+    "finding_lines": [
+      48,
+      50
+    ],
+    "rule_ids": [
+      "NAI-099",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-186",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 48): similar function structure (normalized): scale_alpha@34, scale_beta@41, scale_delta@55, scale_epsilon@62, scale_eta@76, scale_gamma@48, scale_theta@83, scale_zeta@69",
+    "solution_kind": "prescribed",
+    "digest": "ceb30be3cb",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_context.py::scale_delta::55",
+    "file": "colorama/repair_plant_context.py",
+    "function": "scale_delta",
+    "line": 55,
+    "line_end": 59,
+    "replace_span": "colorama/repair_plant_context.py:L55-L59",
+    "finding_lines": [
+      55,
+      57
+    ],
+    "rule_ids": [
+      "NAI-099",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-186",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 55): similar function structure (normalized): scale_alpha@34, scale_beta@41, scale_delta@55, scale_epsilon@62, scale_eta@76, scale_gamma@48, scale_theta@83, scale_zeta@69",
+    "solution_kind": "prescribed",
+    "digest": "f6ef0b0b99",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_context.py::scale_epsilon::62",
+    "file": "colorama/repair_plant_context.py",
+    "function": "scale_epsilon",
+    "line": 62,
+    "line_end": 66,
+    "replace_span": "colorama/repair_plant_context.py:L62-L66",
+    "finding_lines": [
+      62,
+      64
+    ],
+    "rule_ids": [
+      "NAI-099",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-186",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 62): similar function structure (normalized): scale_alpha@34, scale_beta@41, scale_delta@55, scale_epsilon@62, scale_eta@76, scale_gamma@48, scale_theta@83, scale_zeta@69",
+    "solution_kind": "prescribed",
+    "digest": "ed2d32b850",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_context.py::scale_zeta::69",
+    "file": "colorama/repair_plant_context.py",
+    "function": "scale_zeta",
+    "line": 69,
+    "line_end": 73,
+    "replace_span": "colorama/repair_plant_context.py:L69-L73",
+    "finding_lines": [
+      69,
+      71
+    ],
+    "rule_ids": [
+      "NAI-099",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-186",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 69): similar function structure (normalized): scale_alpha@34, scale_beta@41, scale_delta@55, scale_epsilon@62, scale_eta@76, scale_gamma@48, scale_theta@83, scale_zeta@69",
+    "solution_kind": "prescribed",
+    "digest": "8a6d6a27bd",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_context.py::scale_eta::76",
+    "file": "colorama/repair_plant_context.py",
+    "function": "scale_eta",
+    "line": 76,
+    "line_end": 80,
+    "replace_span": "colorama/repair_plant_context.py:L76-L80",
+    "finding_lines": [
+      76,
+      78
+    ],
+    "rule_ids": [
+      "NAI-099",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-186",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 76): similar function structure (normalized): scale_alpha@34, scale_beta@41, scale_delta@55, scale_epsilon@62, scale_eta@76, scale_gamma@48, scale_theta@83, scale_zeta@69",
+    "solution_kind": "prescribed",
+    "digest": "d01e0b2f91",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_context.py::scale_theta::83",
+    "file": "colorama/repair_plant_context.py",
+    "function": "scale_theta",
+    "line": 83,
+    "line_end": 87,
+    "replace_span": "colorama/repair_plant_context.py:L83-L87",
+    "finding_lines": [
+      83,
+      85
+    ],
+    "rule_ids": [
+      "NAI-099",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-186",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 83): similar function structure (normalized): scale_alpha@34, scale_beta@41, scale_delta@55, scale_epsilon@62, scale_eta@76, scale_gamma@48, scale_theta@83, scale_zeta@69",
+    "solution_kind": "prescribed",
+    "digest": "308b052376",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_dynamic.py::total::10",
+    "file": "colorama/repair_plant_dynamic.py",
+    "function": "total",
+    "line": 10,
+    "line_end": 11,
+    "replace_span": "colorama/repair_plant_dynamic.py:L10-L11",
+    "finding_lines": [
+      10
+    ],
+    "rule_ids": [
+      "NAI-050",
+      "NAI-097",
+      "NAI-082",
+      "NAI-084",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-050 (line 10): func_name=total, undefined_calls=['summarise']",
+    "solution_kind": "prescribed",
+    "digest": "bc8d020016",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_dynamic.py::evaluate::14",
+    "file": "colorama/repair_plant_dynamic.py",
+    "function": "evaluate",
+    "line": 14,
+    "line_end": 15,
+    "replace_span": "colorama/repair_plant_dynamic.py:L14-L15",
+    "finding_lines": [
+      14,
+      15
+    ],
+    "rule_ids": [
+      "NAI-160",
+      "NAI-082",
+      "NAI-084",
+      "NAI-185",
+      "NAI-121",
+      "NAI-127",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230",
+      "SIG-eval_usage"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-160 (line 14): risky_sinks=['expr'], has_validation=False",
+    "solution_kind": "prescribed",
+    "digest": "cf7efc96f3",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_dynamic.py::run::18",
+    "file": "colorama/repair_plant_dynamic.py",
+    "function": "run",
+    "line": 18,
+    "line_end": 19,
+    "replace_span": "colorama/repair_plant_dynamic.py:L18-L19",
+    "finding_lines": [
+      18,
+      19
+    ],
+    "rule_ids": [
+      "NAI-160",
+      "NAI-082",
+      "NAI-084",
+      "NAI-185",
+      "NAI-121",
+      "NAI-127",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "SIG-exec_usage"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-160 (line 18): risky_sinks=['code'], has_validation=False",
+    "solution_kind": "prescribed",
+    "digest": "449ec758c3",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_dynamic.py::restore::22",
+    "file": "colorama/repair_plant_dynamic.py",
+    "function": "restore",
+    "line": 22,
+    "line_end": 23,
+    "replace_span": "colorama/repair_plant_dynamic.py:L22-L23",
+    "finding_lines": [
+      22,
+      23
+    ],
+    "rule_ids": [
+      "NAI-093",
+      "NAI-082",
+      "NAI-084",
+      "NAI-086",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-093 (line 23): module=pickle, method=loads",
+    "solution_kind": null,
+    "digest": null,
+    "has_solution": false,
+    "status": "declined",
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_extended.py::reserved::10",
+    "file": "colorama/repair_plant_extended.py",
+    "function": "reserved",
+    "line": 10,
+    "line_end": 11,
+    "replace_span": "colorama/repair_plant_extended.py:L10-L11",
+    "finding_lines": [
+      10
+    ],
+    "rule_ids": [
+      "NAI-011",
+      "NAI-034",
+      "NAI-084",
+      "NAI-113",
+      "NAI-185",
+      "NAI-120",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-011 (line 10): func_name=reserved, returns=0, yields=0, calls=0, assigns=0",
+    "solution_kind": "prescribed",
+    "digest": "33d0e38910",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_extended.py::is_unset::14",
+    "file": "colorama/repair_plant_extended.py",
+    "function": "is_unset",
+    "line": 14,
+    "line_end": 15,
+    "replace_span": "colorama/repair_plant_extended.py:L14-L15",
+    "finding_lines": [
+      14,
+      15
+    ],
+    "rule_ids": [
+      "NAI-082",
+      "NAI-084",
+      "NAI-185",
+      "NAI-121",
+      "NAI-124",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-124 (line 15): op===",
+    "solution_kind": "rewriter",
+    "digest": "ec66c104c9",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_extended.py::widths::18",
+    "file": "colorama/repair_plant_extended.py",
+    "function": "widths",
+    "line": 18,
+    "line_end": 25,
+    "replace_span": "colorama/repair_plant_extended.py:L18-L25",
+    "finding_lines": [
+      18,
+      20,
+      23
+    ],
+    "rule_ids": [
+      "NAI-070",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-086",
+      "NAI-114",
+      "NAI-178",
+      "NAI-185",
+      "NAI-186",
+      "NAI-168",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-070 (line 23): handler_type=bare_except",
+    "solution_kind": "rewriter",
+    "digest": "ccb09d0cf2",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_extended.py::__init__::29",
+    "file": "colorama/repair_plant_extended.py",
+    "function": "__init__",
+    "line": 29,
+    "line_end": 31,
+    "replace_span": "colorama/repair_plant_extended.py:L29-L31",
+    "finding_lines": [
+      29,
+      31
+    ],
+    "rule_ids": [
+      "NAI-084",
+      "NAI-086",
+      "NAI-183",
+      "NAI-185",
+      "NAI-121",
+      "NAI-125",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-125 (line 31): return_node_type=Name",
+    "solution_kind": "rewriter",
+    "digest": "6e9d23c297",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_foreign.py::convert_rows::10",
+    "file": "colorama/repair_plant_foreign.py",
+    "function": "convert_rows",
+    "line": 10,
+    "line_end": 15,
+    "replace_span": "colorama/repair_plant_foreign.py:L10-L15",
+    "finding_lines": [
+      10,
+      12,
+      13
+    ],
+    "rule_ids": [
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-086",
+      "NAI-089",
+      "NAI-114",
+      "NAI-178",
+      "NAI-185",
+      "NAI-186",
+      "NAI-105",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-089 (line 12)",
+    "solution_kind": "rewriter",
+    "digest": "d396516706",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_foreign.py::item_count::18",
+    "file": "colorama/repair_plant_foreign.py",
+    "function": "item_count",
+    "line": 18,
+    "line_end": 20,
+    "replace_span": "colorama/repair_plant_foreign.py:L18-L20",
+    "finding_lines": [
+      18,
+      20
+    ],
+    "rule_ids": [
+      "NAI-082",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-108",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-108 (line 20): func_name=item_count, actual_type=str, expected_types=['float', 'int']",
+    "solution_kind": "prescribed",
+    "digest": "5eadc7d7eb",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_foreign.py::add_entry::23",
+    "file": "colorama/repair_plant_foreign.py",
+    "function": "add_entry",
+    "line": 23,
+    "line_end": 25,
+    "replace_span": "colorama/repair_plant_foreign.py:L23-L25",
+    "finding_lines": [
+      23,
+      24,
+      25
+    ],
+    "rule_ids": [
+      "NAI-091",
+      "NAI-082",
+      "NAI-084",
+      "NAI-086",
+      "NAI-185",
+      "NAI-100",
+      "NAI-109",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-091 (line 24): param_name=entries, mutation_type=method_call, method_name=remove, via_iterator=False",
+    "solution_kind": "prescribed",
+    "digest": "e28ab29f45",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_foreign.py::label_upper::28",
+    "file": "colorama/repair_plant_foreign.py",
+    "function": "label_upper",
+    "line": 28,
+    "line_end": 30,
+    "replace_span": "colorama/repair_plant_foreign.py:L28-L30",
+    "finding_lines": [
+      28,
+      30
+    ],
+    "rule_ids": [
+      "NAI-082",
+      "NAI-084",
+      "NAI-086",
+      "NAI-114",
+      "NAI-185",
+      "NAI-110",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-110 (line 30): func_name=label_upper, foreign_method=toUpperCase, source_lang=JS, python_equiv=.upper()",
+    "solution_kind": "rewriter",
+    "digest": "cc5941414b",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_foreign.py::get_users::33",
+    "file": "colorama/repair_plant_foreign.py",
+    "function": "get_users",
+    "line": 33,
+    "line_end": 35,
+    "replace_span": "colorama/repair_plant_foreign.py:L33-L35",
+    "finding_lines": [
+      33,
+      35
+    ],
+    "rule_ids": [
+      "NAI-082",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-115",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-115 (line 35): func_name=get_users, collection_type=list, element_count=2",
+    "solution_kind": "prescribed",
+    "digest": "84475b6eed",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_trust.py::fetch::10",
+    "file": "colorama/repair_plant_trust.py",
+    "function": "fetch",
+    "line": 10,
+    "line_end": 11,
+    "replace_span": "colorama/repair_plant_trust.py:L10-L11",
+    "finding_lines": [
+      10,
+      11
+    ],
+    "rule_ids": [
+      "NAI-162",
+      "NAI-082",
+      "NAI-084",
+      "NAI-086",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-162 (line 11): verify_value=False",
+    "solution_kind": "rewriter",
+    "digest": "34ecc50578",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_trust.py::serve::14",
+    "file": "colorama/repair_plant_trust.py",
+    "function": "serve",
+    "line": 14,
+    "line_end": 15,
+    "replace_span": "colorama/repair_plant_trust.py:L14-L15",
+    "finding_lines": [
+      14,
+      15
+    ],
+    "rule_ids": [
+      "NAI-163",
+      "NAI-082",
+      "NAI-084",
+      "NAI-086",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-163 (line 15): bind_address=0.0.0.0",
+    "solution_kind": "prescribed",
+    "digest": "1ab43b2c66",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_trust.py::scratch_path::18",
+    "file": "colorama/repair_plant_trust.py",
+    "function": "scratch_path",
+    "line": 18,
+    "line_end": 19,
+    "replace_span": "colorama/repair_plant_trust.py:L18-L19",
+    "finding_lines": [
+      18,
+      19
+    ],
+    "rule_ids": [
+      "NAI-164",
+      "NAI-084",
+      "NAI-086",
+      "NAI-185",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-164 (line 19): method=mktemp",
+    "solution_kind": "prescribed",
+    "digest": "4299bacb6c",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_trust.py::label::22",
+    "file": "colorama/repair_plant_trust.py",
+    "function": "label",
+    "line": 22,
+    "line_end": 23,
+    "replace_span": "colorama/repair_plant_trust.py:L22-L23",
+    "finding_lines": [
+      22,
+      23
+    ],
+    "rule_ids": [
+      "NAI-165",
+      "NAI-084",
+      "NAI-185",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-165 (line 23): bidi_char_codepoint=U+202E",
+    "solution_kind": "prescribed",
+    "digest": "24666a8404",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_trust.py::area::26",
+    "file": "colorama/repair_plant_trust.py",
+    "function": "area",
+    "line": 26,
+    "line_end": 29,
+    "replace_span": "colorama/repair_plant_trust.py:L26-L29",
+    "finding_lines": [
+      26,
+      29
+    ],
+    "rule_ids": [
+      "NAI-166",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-185",
+      "NAI-186",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-166 (line 29): raised_name=NotImplemented",
+    "solution_kind": "rewriter",
+    "digest": "f463211828",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_launch.py::describe::12",
+    "file": "colorama/repair_plant_launch.py",
+    "function": "describe",
+    "line": 12,
+    "line_end": 14,
+    "replace_span": "colorama/repair_plant_launch.py:L11-L14",
+    "finding_lines": [
+      12,
+      13
+    ],
+    "rule_ids": [
+      "NAI-203",
+      "NAI-082",
+      "NAI-084",
+      "NAI-086",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-203 (line 13): side_effect_type=logging_call, side_effect_name=info",
+    "solution_kind": "prescribed",
+    "digest": "ee6ed63d4a",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_launch.py::run_sync::17",
+    "file": "colorama/repair_plant_launch.py",
+    "function": "run_sync",
+    "line": 17,
+    "line_end": 18,
+    "replace_span": "colorama/repair_plant_launch.py:L17-L18",
+    "finding_lines": [
+      17,
+      18
+    ],
+    "rule_ids": [
+      "NAI-204",
+      "NAI-160",
+      "NAI-082",
+      "NAI-084",
+      "NAI-086",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-204 (line 18): call_type=asyncio_run",
+    "solution_kind": "prescribed",
+    "digest": "f35592d8ff",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_launch.py::data_path::21",
+    "file": "colorama/repair_plant_launch.py",
+    "function": "data_path",
+    "line": 21,
+    "line_end": 23,
+    "replace_span": "colorama/repair_plant_launch.py:L21-L23",
+    "finding_lines": [
+      21,
+      22
+    ],
+    "rule_ids": [
+      "NAI-206",
+      "NAI-082",
+      "NAI-084",
+      "NAI-086",
+      "NAI-114",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-206 (line 22): call=os.getcwd",
+    "solution_kind": "prescribed",
+    "digest": "91bfd7b6de",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_launch.py::spawn::26",
+    "file": "colorama/repair_plant_launch.py",
+    "function": "spawn",
+    "line": 26,
+    "line_end": 29,
+    "replace_span": "colorama/repair_plant_launch.py:L26-L29",
+    "finding_lines": [
+      26,
+      27
+    ],
+    "rule_ids": [
+      "NAI-210",
+      "NAI-082",
+      "NAI-084",
+      "NAI-086",
+      "NAI-114",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-210 (line 27): call_form=threading.Thread",
+    "solution_kind": "prescribed",
+    "digest": "4258bda84b",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_stale.py::__init__::12",
+    "file": "colorama/repair_plant_stale.py",
+    "function": "__init__",
+    "line": 12,
+    "line_end": 13,
+    "replace_span": "colorama/repair_plant_stale.py:L12-L13",
+    "finding_lines": [
+      12
+    ],
+    "rule_ids": [
+      "NAI-152",
+      "NAI-084",
+      "NAI-086",
+      "NAI-183",
+      "NAI-185",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-152 (line 12): access_pattern=__init__, shared_mutated_attrs=['items']",
+    "solution_kind": "prescribed",
+    "digest": "a402a63fe7",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_stale.py::read_file::16",
+    "file": "colorama/repair_plant_stale.py",
+    "function": "read_file",
+    "line": 16,
+    "line_end": 17,
+    "replace_span": "colorama/repair_plant_stale.py:L16-L17",
+    "finding_lines": [
+      16,
+      17
+    ],
+    "rule_ids": [
+      "NAI-075",
+      "NAI-200",
+      "NAI-160",
+      "NAI-158",
+      "NAI-082",
+      "NAI-084",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-075 (line 17): operation=open, has_context_manager=False",
+    "solution_kind": "prescribed",
+    "digest": "f7acf9df42",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_stale.py::warn_twice::20",
+    "file": "colorama/repair_plant_stale.py",
+    "function": "warn_twice",
+    "line": 20,
+    "line_end": 22,
+    "replace_span": "colorama/repair_plant_stale.py:L20-L22",
+    "finding_lines": [
+      20,
+      21
+    ],
+    "rule_ids": [
+      "NAI-159",
+      "NAI-082",
+      "NAI-084",
+      "NAI-086",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-159 (line 21): module=logging, method=warn, replacement=logging.warning()",
+    "solution_kind": "rewriter",
+    "digest": "ff57c2eb24",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_stale.py::run_query::25",
+    "file": "colorama/repair_plant_stale.py",
+    "function": "run_query",
+    "line": 25,
+    "line_end": 26,
+    "replace_span": "colorama/repair_plant_stale.py:L25-L26",
+    "finding_lines": [
+      25
+    ],
+    "rule_ids": [
+      "NAI-160",
+      "NAI-082",
+      "NAI-084",
+      "NAI-086",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-160 (line 25): risky_sinks=['statement'], has_validation=False",
+    "solution_kind": "prescribed",
+    "digest": "5c59f40635",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_stale.py::fetch::29",
+    "file": "colorama/repair_plant_stale.py",
+    "function": "fetch",
+    "line": 29,
+    "line_end": 30,
+    "replace_span": "colorama/repair_plant_stale.py:L29-L30",
+    "finding_lines": [
+      29,
+      30
+    ],
+    "rule_ids": [
+      "NAI-161",
+      "NAI-167",
+      "NAI-082",
+      "NAI-084",
+      "NAI-086",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-161 (line 30): http_method=get, has_timeout=False",
+    "solution_kind": "prescribed",
+    "digest": "f4e44136b0",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "demos/demo07.py::main::12",
+    "file": "demos/demo07.py",
+    "function": "main",
+    "line": 12,
+    "line_end": 23,
+    "replace_span": "demos/demo07.py:L12-L23",
+    "finding_lines": [
+      12,
+      21
+    ],
+    "rule_ids": [
+      "NAI-054",
+      "NAI-098",
+      "NAI-084",
+      "NAI-086",
+      "NAI-113",
+      "NAI-185",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-054 (line 21): func_name=main, consecutive_count=2, stmt_hash=4d9a286d8af2",
+    "solution_kind": "prescribed",
+    "digest": "ad876d55d3",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_dynamic_two.py::host::13",
+    "file": "colorama/repair_plant_dynamic_two.py",
+    "function": "host",
+    "line": 13,
+    "line_end": 14,
+    "replace_span": "colorama/repair_plant_dynamic_two.py:L13-L14",
+    "finding_lines": [
+      13,
+      14
+    ],
+    "rule_ids": [
+      "NAI-092",
+      "NAI-084",
+      "NAI-086",
+      "NAI-185",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230",
+      "SIG-shell_injection"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-092 (line 14): call_type=subprocess_shell_true, subprocess_method=Popen",
+    "solution_kind": "rewriter",
+    "digest": "dfea2ffe13",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_dynamic_two.py::credentials::17",
+    "file": "colorama/repair_plant_dynamic_two.py",
+    "function": "credentials",
+    "line": 17,
+    "line_end": 19,
+    "replace_span": "colorama/repair_plant_dynamic_two.py:L17-L19",
+    "finding_lines": [
+      17,
+      18
+    ],
+    "rule_ids": [
+      "NAI-072",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "SIG-hardcoded_password"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-072 (line 18): variable_name=token, matched_pattern=token, value_type=string_literal",
+    "solution_kind": "prescribed",
+    "digest": "d6a7639213",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_dynamic_two.py::prepare::26",
+    "file": "colorama/repair_plant_dynamic_two.py",
+    "function": "prepare",
+    "line": 26,
+    "line_end": 27,
+    "replace_span": "colorama/repair_plant_dynamic_two.py:L26-L27",
+    "finding_lines": [
+      26
+    ],
+    "rule_ids": [
+      "NAI-160",
+      "NAI-082",
+      "NAI-084",
+      "NAI-185",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-160 (line 26): risky_sinks=['source'], has_validation=False",
+    "solution_kind": "prescribed",
+    "digest": "f028a3f932",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/repair_plant_dynamic_two.py::clear::9",
+    "file": "colorama/repair_plant_dynamic_two.py",
+    "function": "clear",
+    "line": 9,
+    "line_end": 10,
+    "replace_span": "colorama/repair_plant_dynamic_two.py:L9-L10",
+    "finding_lines": [
+      9,
+      10
+    ],
+    "rule_ids": [
+      "NAI-092",
+      "NAI-159",
+      "NAI-084",
+      "NAI-086",
+      "NAI-185",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "NAI-230"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-092 (line 10): call_type=os_system",
+    "solution_kind": null,
+    "digest": null,
+    "has_solution": false,
+    "status": "declined",
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/ansi.py::set_title::15",
+    "file": "colorama/ansi.py",
+    "function": "set_title",
+    "line": 15,
+    "line_end": 16,
+    "replace_span": "colorama/ansi.py:L15-L16",
+    "finding_lines": [
+      15,
+      16
+    ],
+    "rule_ids": [
+      "NAI-082",
+      "NAI-084",
+      "NAI-185",
+      "NAI-121",
+      "NAI-131",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-131 (line 16): func_name=set_title, return_node_type=BinOp",
+    "solution_kind": "rewriter",
+    "digest": "15cd246791",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/win32.py::<module>::15",
+    "file": "colorama/win32.py",
+    "function": "<module>",
+    "line": 15,
+    "line_end": 15,
+    "replace_span": "colorama/win32.py:L15-L15",
+    "finding_lines": [],
+    "rule_ids": [
+      "NAI-211",
+      "NAI-209"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-211: Mismatched fallback in except ImportError: assigns 'windll = None' but imported ['ctypes', 'LibraryLoader', 'wintypes', 'byref', 'Structure', 'c_char', 'POINTER'] \u2014 downstream use will crash",
+    "solution_kind": "prescribed",
+    "digest": "853b4154cb",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/win32.py::GetConsoleScreenBufferInfo::118",
+    "file": "colorama/win32.py",
+    "function": "GetConsoleScreenBufferInfo",
+    "line": 118,
+    "line_end": 123,
+    "replace_span": "colorama/win32.py:L118-L123",
+    "finding_lines": [
+      118
+    ],
+    "rule_ids": [
+      "NAI-010",
+      "NAI-031",
+      "NAI-082",
+      "NAI-084",
+      "NAI-114",
+      "NAI-185",
+      "NAI-121",
+      "NAI-147",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-010 (line 118): func_name=GetConsoleScreenBufferInfo, dead_variables=['success'], dead_count=1",
+    "solution_kind": "rewriter",
+    "digest": "47399d20b7",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/win32.py::SetConsoleCursorPosition::129",
+    "file": "colorama/win32.py",
+    "function": "SetConsoleCursorPosition",
+    "line": 129,
+    "line_end": 145,
+    "replace_span": "colorama/win32.py:L129-L145",
+    "finding_lines": [
+      129
+    ],
+    "rule_ids": [
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-086",
+      "NAI-114",
+      "NAI-185",
+      "NAI-186",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229",
+      "RCA-001"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] RCA-001 (line 129): Calls failed function 'GetConsoleScreenBufferInfo' without forwarding params ['adjust', 'position', 'stream_id']",
+    "solution_kind": "prescribed",
+    "digest": "250e1d00b0",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/win32.py::FillConsoleOutputCharacter::147",
+    "file": "colorama/win32.py",
+    "function": "FillConsoleOutputCharacter",
+    "line": 147,
+    "line_end": 155,
+    "replace_span": "colorama/win32.py:L147-L155",
+    "finding_lines": [
+      147
+    ],
+    "rule_ids": [
+      "NAI-010",
+      "NAI-031",
+      "NAI-082",
+      "NAI-084",
+      "NAI-086",
+      "NAI-114",
+      "NAI-185",
+      "NAI-121",
+      "NAI-147",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-010 (line 147): func_name=FillConsoleOutputCharacter, dead_variables=['success'], dead_count=1",
+    "solution_kind": "rewriter",
+    "digest": "75b073a6b7",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "demos/demo06.py::main::26",
+    "file": "demos/demo06.py",
+    "function": "main",
+    "line": 26,
+    "line_end": 39,
+    "replace_span": "demos/demo06.py:L26-L39",
+    "finding_lines": [
+      26
+    ],
+    "rule_ids": [
+      "NAI-098",
+      "NAI-083",
+      "NAI-084",
+      "NAI-086",
+      "NAI-114",
+      "NAI-185",
+      "NAI-186",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-098 (line 26): has_print=True, has_return_value=False",
+    "solution_kind": "prescribed",
+    "digest": "553122fef6",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/ansitowin32.py::isatty::49",
+    "file": "colorama/ansitowin32.py",
+    "function": "isatty",
+    "line": 49,
+    "line_end": 59,
+    "replace_span": "colorama/ansitowin32.py:L49-L59",
+    "finding_lines": [
+      49,
+      56
+    ],
+    "rule_ids": [
+      "NAI-078",
+      "NAI-083",
+      "NAI-084",
+      "NAI-086",
+      "NAI-114",
+      "NAI-183",
+      "NAI-185",
+      "NAI-186",
+      "NAI-168",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-078 (line 56): swallow_type=fallback_return, return_type=Constant",
+    "solution_kind": "rewriter",
+    "digest": "8cab17f075",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/ansitowin32.py::closed::62",
+    "file": "colorama/ansitowin32.py",
+    "function": "closed",
+    "line": 62,
+    "line_end": 69,
+    "replace_span": "colorama/ansitowin32.py:L61-L69",
+    "finding_lines": [
+      62,
+      68
+    ],
+    "rule_ids": [
+      "NAI-078",
+      "NAI-083",
+      "NAI-084",
+      "NAI-086",
+      "NAI-114",
+      "NAI-183",
+      "NAI-185",
+      "NAI-186",
+      "NAI-168",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-078 (line 68): swallow_type=fallback_return, return_type=Constant",
+    "solution_kind": "rewriter",
+    "digest": "3ba74f0b6d",
+    "has_solution": true,
+    "status": null,
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/ansitowin32.py::extract_params::220",
+    "file": "colorama/ansitowin32.py",
+    "function": "extract_params",
+    "line": 220,
+    "line_end": 235,
+    "replace_span": "colorama/ansitowin32.py:L220-L235",
+    "finding_lines": [
+      220,
+      223,
+      225
+    ],
+    "rule_ids": [
+      "NAI-099",
+      "NAI-082",
+      "NAI-083",
+      "NAI-084",
+      "NAI-086",
+      "NAI-114",
+      "NAI-179",
+      "NAI-185",
+      "NAI-186",
+      "NAI-121",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-179 (line 225): target_var=params",
+    "solution_kind": null,
+    "digest": null,
+    "has_solution": false,
+    "status": "declined",
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/ansitowin32.py::convert_osc::260",
+    "file": "colorama/ansitowin32.py",
+    "function": "convert_osc",
+    "line": 260,
+    "line_end": 273,
+    "replace_span": "colorama/ansitowin32.py:L260-L273",
+    "finding_lines": [],
+    "rule_ids": [
+      "NAI-021S"
+    ],
+    "infraction": "[HARD_REQUIREMENTS] NAI-021S: Alias identity chain \u2014 all data flow is copy/alias, no real transformation",
+    "solution_kind": null,
+    "digest": null,
+    "has_solution": false,
+    "status": "declined",
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/initialise.py::_wipe_internal_state_for_tests::9",
+    "file": "colorama/initialise.py",
+    "function": "_wipe_internal_state_for_tests",
+    "line": 9,
+    "line_end": 29,
+    "replace_span": "colorama/initialise.py:L9-L29",
+    "finding_lines": [
+      9,
+      27
+    ],
+    "rule_ids": [
+      "NAI-078",
+      "NAI-083",
+      "NAI-084",
+      "NAI-086",
+      "NAI-114",
+      "NAI-185",
+      "NAI-186",
+      "NAI-168",
+      "MEASURED-NOTHING",
+      "NAI-229"
+    ],
+    "infraction": "[AI_FAKE_DETECTOR] NAI-078 (line 27): swallow_type=bare_pass",
+    "solution_kind": null,
+    "digest": null,
+    "has_solution": false,
+    "status": "declined",
+    "withheld": null,
+    "species": null
+  },
+  {
+    "id": "colorama/initialise.py::wrap_stream::111",
+    "file": "colorama/initialise.py",
+    "function": "wrap_stream",
+    "line": 111,
+    "line_end": 117,
+    "replace_span": "colorama/initialise.py:L111-L117",
+    "finding_lines": [],
+    "rule_ids": [
+      "NAI-021S"
+    ],
+    "infraction": "[HARD_REQUIREMENTS] NAI-021S: Alias identity chain \u2014 all data flow is copy/alias, no real transformation",
+    "solution_kind": null,
+    "digest": null,
+    "has_solution": false,
+    "status": "declined",
+    "withheld": null,
+    "species": null
+  }
+]

@@ -1,0 +1,83 @@
+{
+ "target": "/Users/dev/Desktop/alien_shore",
+ "built": "2026-09-15",
+ "by": "row 23 FIX_35 (run 111, app copy 1): the VERIFY SWEEP — twenty items a–t, each a repair or closed with evidence; one built target carrying the plants for b, e, f, k, m, o, q, r, t",
+ "base": "limelight tree (76 files) + `._apple.py` (AppleDouble magic 00 05 16 07, b) + `venv_shape/` 15 MB with pyvenv.cfg (e) + `a/x.py` and `ba/x.py` substring twins, imported (f) + `colorama/sweep_signature_plant.py` module-level `# TODO` placeholder (k) + `colorama/sweep_handler_plant.py` free `handle_shutdown()` / bound `on_shutdown(self)` (m) + `deep/deeper/deepest/last/leaf.py` four directory levels, imported (o) + `colorama/sweep_abc_plant.py` ABC with one concrete method (r, control) + `colorama/sweep_empty_plant.py` bare empty class, unreferenced (r, NAI-213) + `colorama/sweep_math_plant.py` `x + 0` and `if a == a` (t) + `.env` (q) + `colorama/sweep_twins_plant.py` (the importer); 96 files",
+ "planted_findings": [
+  {
+   "file": "a/x.py",
+   "line": 4,
+   "function": "scale_a",
+   "family": "NAI-003",
+   "accept_any_of": [
+    "NAI-003"
+   ],
+   "what": "an unread parameter in the twin `a/x.py` — the row must be attributed to a/x.py, never to ba/x.py (D27 f)"
+  },
+  {
+   "file": "ba/x.py",
+   "line": 4,
+   "function": "scale_ba",
+   "family": "NAI-003",
+   "accept_any_of": [
+    "NAI-003"
+   ],
+   "what": "an unread parameter in the twin `ba/x.py` (D27 f)"
+  },
+  {
+   "file": "colorama/sweep_math_plant.py",
+   "line": 4,
+   "function": "pad",
+   "family": "NAI-032",
+   "accept_any_of": [
+    "NAI-032"
+   ],
+   "what": "`x + 0` — the algebraic identity observed (E19 t)"
+  },
+  {
+   "file": "colorama/sweep_math_plant.py",
+   "line": 8,
+   "function": "same",
+   "family": "NAI-036",
+   "accept_any_of": [
+    "NAI-036"
+   ],
+   "what": "`if a == a:` — the tautology observed (E19 t)"
+  },
+  {
+   "file": "colorama/sweep_empty_plant.py",
+   "line": 6,
+   "function": "<class Hollow>",
+   "family": "NAI-213",
+   "accept_any_of": [
+    "NAI-213"
+   ],
+   "what": "a bare empty class never referenced in its own module — the class row carries end_line > line (E12 r)"
+  },
+  {
+   "file": "colorama/sweep_signature_plant.py",
+   "line": 7,
+   "function": "first_here",
+   "family": "NAI-003",
+   "accept_any_of": [
+    "NAI-003"
+   ],
+   "what": "an unread parameter beside a module-level placeholder signature — the SIG hit must ride the `<module>` row, not this one (D32 k)"
+  }
+ ],
+ "controls": [
+  "colorama/sweep_abc_plant.py",
+  "colorama/sweep_twins_plant.py",
+  "deep/deeper/deepest/last/leaf.py"
+ ],
+ "controls_note": "sweep_abc_plant.py: an ABC with a concrete method — NAI-214 must NOT fire (E12 r); the importer and the leaf carry no infraction",
+ "observe": {
+  "b": "no SyntaxError log line for ._apple.py in daemon_log/ (whitelisted artifact:glob:._*)",
+  "e": "no .noai_state.json under venv_shape/ after MONITORING; discovery line = whitelist summary",
+  "m": "the HR-001 observation on handle_shutdown() and its verdict",
+  "a": "mirror files under the target vs the whitelist's artifact count (never counted)",
+  "q": ".env whitelisted as file:.env",
+  "o": "the view's node set at slider positions 1/2/3 (offline: 7 / 69 / 78 / 79 / 81 for max_depth 1..5)",
+  "k": "the SIG-todo_placeholder context id on the <module> row of sweep_signature_plant.py"
+ }
+}

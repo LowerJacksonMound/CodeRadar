@@ -1,0 +1,487 @@
+{
+ "21": {
+  "file": "colorama/ansi.py",
+  "function": "set_title",
+  "row_id": null,
+  "detail": null
+ },
+ "30": {
+  "file": "colorama/repair_plant_branches.py",
+  "function": "stamp",
+  "row_id": "colorama/repair_plant_branches.py::stamp::24",
+  "rule_ids": [
+   "NAI-006"
+  ],
+  "withheld_by": null,
+  "withheld_reason": "",
+  "gate_withheld": {},
+  "pick_role": "immediate_overwrite_fix:keep_second",
+  "why": "picked immediate_overwrite_fix:keep_second over 1 other pickable candidate(s) of 2 offered; deciding method: intent alignment & logic soundness (+0.00 over immediate_overwrite_fix:keep_second_effect); immediate_overwrite_fix:keep_second[parse=ok, differs=yes, safety=clean, rule=NAI-006, flow=same_paths, complexity=same, idiom=same, deps=none_added, defensive=same, readability=same, traps=none, answers=row]; immediate_overwrite_fix:keep_second_effect[parse=ok, differs=yes, safety=clean, rule=NAI-006, flow=same_paths, complexity=same, idiom=same, deps=none_added, defensive=same, readability=same, traps=none, answers=row]; profile: no intent fact matched",
+  "solution_kind": "rewriter",
+  "after_code": "def stamp(value):\n    width = 8\n    return str(value).rjust(width)",
+  "digest": "9404d6a9f0",
+  "no_fix_status": null,
+  "candidates_considered": 2,
+  "observations": {
+   "immediate_overwrite_fix:keep_second": [
+    "parse=ok",
+    "differs=yes",
+    "safety=clean",
+    "rule=NAI-006",
+    "flow=same_paths",
+    "complexity=same",
+    "idiom=same",
+    "deps=none_added",
+    "defensive=same",
+    "readability=same",
+    "traps=none"
+   ],
+   "immediate_overwrite_fix:keep_second_effect": [
+    "parse=ok",
+    "differs=yes",
+    "safety=clean",
+    "rule=NAI-006",
+    "flow=same_paths",
+    "complexity=same",
+    "idiom=same",
+    "deps=none_added",
+    "defensive=same",
+    "readability=same",
+    "traps=none"
+   ]
+  },
+  "replace_span": "colorama/repair_plant_branches.py:L24-L27"
+ },
+ "33": {
+  "file": "colorama/repair_plant_chains.py",
+  "function": "stamp",
+  "row_id": "colorama/repair_plant_chains.py::stamp::21",
+  "rule_ids": [
+   "NAI-006"
+  ],
+  "withheld_by": null,
+  "withheld_reason": "",
+  "gate_withheld": {},
+  "pick_role": "immediate_overwrite_fix:keep_second",
+  "why": "picked immediate_overwrite_fix:keep_second over 0 other pickable candidate(s) of 1 offered; deciding method: n/a (one candidate); immediate_overwrite_fix:keep_second[parse=ok, differs=yes, safety=clean, rule=NAI-006, flow=same_paths, complexity=same, idiom=same, deps=none_added, defensive=same, readability=same, traps=none, answers=row]; profile: no intent fact matched",
+  "solution_kind": "rewriter",
+  "after_code": "def stamp(value):\n    width = 8\n    return str(value).rjust(width)",
+  "digest": "20d7bb0324",
+  "no_fix_status": null,
+  "candidates_considered": 1,
+  "observations": {
+   "immediate_overwrite_fix:keep_second": [
+    "parse=ok",
+    "differs=yes",
+    "safety=clean",
+    "rule=NAI-006",
+    "flow=same_paths",
+    "complexity=same",
+    "idiom=same",
+    "deps=none_added",
+    "defensive=same",
+    "readability=same",
+    "traps=none"
+   ]
+  },
+  "replace_span": "colorama/repair_plant_chains.py:L21-L24"
+ },
+ "35": {
+  "file": "colorama/repair_plant_checks.py",
+  "function": "push",
+  "row_id": "colorama/repair_plant_checks.py::push::12",
+  "rule_ids": [
+   "NAI-091"
+  ],
+  "withheld_by": null,
+  "withheld_reason": "",
+  "gate_withheld": {},
+  "pick_role": null,
+  "why": "declined: param_mutation_fix found nothing to rewrite; no candidates offered",
+  "solution_kind": null,
+  "after_code": "",
+  "digest": null,
+  "no_fix_status": "declined",
+  "candidates_considered": 0,
+  "observations": {},
+  "replace_span": "colorama/repair_plant_checks.py:L12-L13"
+ },
+ "53": {
+  "file": "colorama/repair_plant_noop.py",
+  "function": "tally",
+  "row_id": "colorama/repair_plant_noop.py::tally::23",
+  "rule_ids": [
+   "NAI-025",
+   "NAI-032"
+  ],
+  "withheld_by": null,
+  "withheld_reason": "",
+  "gate_withheld": {},
+  "pick_role": "algebraic_identity_fix",
+  "why": "picked algebraic_identity_fix over 1 other pickable candidate(s) of 2 offered; deciding method: built-in function & library leverage (+8.00 over solution_NAI-025); algebraic_identity_fix[parse=ok, differs=yes, safety=clean, rule=NAI-032, flow=same_paths, complexity=same, idiom=same, deps=none_added, defensive=same, readability=same, traps=none, answers=neighbour]; solution_NAI-025[kind=prescribed, parse=shape, differs=yes, rule=NAI-025, flow=unreadable:after, complexity=unreadable:after, idiom=unreadable:after, deps=unreadable:after, defensive=unreadable:after, readability=unreadable:after, traps=unreadable:after, answers=row]; profile: no intent fact matched",
+  "solution_kind": "rewriter",
+  "after_code": "def tally(items):\n    total = sum(items)\n    return total * 2",
+  "digest": "dfc4c0d50e",
+  "no_fix_status": null,
+  "candidates_considered": 2,
+  "observations": {
+   "algebraic_identity_fix": [
+    "parse=ok",
+    "differs=yes",
+    "safety=clean",
+    "rule=NAI-032",
+    "flow=same_paths",
+    "complexity=same",
+    "idiom=same",
+    "deps=none_added",
+    "defensive=same",
+    "readability=same",
+    "traps=none"
+   ],
+   "solution_NAI-025": [
+    "kind=prescribed",
+    "parse=shape",
+    "differs=yes",
+    "rule=NAI-025",
+    "flow=unreadable:after",
+    "complexity=unreadable:after",
+    "idiom=unreadable:after",
+    "deps=unreadable:after",
+    "defensive=unreadable:after",
+    "readability=unreadable:after",
+    "traps=unreadable:after"
+   ]
+  },
+  "replace_span": "colorama/repair_plant_noop.py:L23-L26"
+ },
+ "57": {
+  "file": "colorama/repair_plant_quietly.py",
+  "function": "hushed",
+  "row_id": "colorama/repair_plant_quietly.py::hushed::9",
+  "rule_ids": [
+   "NAI-017"
+  ],
+  "withheld_by": "gate",
+  "withheld_reason": "gate: withheld: no-fix-by-design \u2014 NAI-017: what happens on a swallowed exception \u2014 propagate it, narrow the catch, log it, return a value \u2014 is the dev's decision about this call site; every candidate here changes what the caller sees, so none of them is an unattended repair [exception_swallow_fix:drop_suppress]",
+  "gate_withheld": {
+   "exception_swallow_fix:drop_suppress": "gate=withheld:predicate:NAI-017:drop_suppress"
+  },
+  "pick_role": null,
+  "why": "gate: withheld: no-fix-by-design \u2014 NAI-017: what happens on a swallowed exception \u2014 propagate it, narrow the catch, log it, return a value \u2014 is the dev's decision about this call site; every candidate here changes what the caller sees, so none of them is an unattended repair [exception_swallow_fix:drop_suppress]; no pickable candidate: exception_swallow_fix:drop_suppress[parse=ok, differs=yes, safety=clean, rule=NAI-017, flow=same_paths, complexity=same, idiom=same, deps=none_added, defensive=same, readability=flatter:1, traps=none, gate=withheld:predicate:NAI-017:drop_suppress]",
+  "solution_kind": null,
+  "after_code": "",
+  "digest": null,
+  "no_fix_status": "ranker_none",
+  "candidates_considered": 1,
+  "observations": {
+   "exception_swallow_fix:drop_suppress": [
+    "parse=ok",
+    "differs=yes",
+    "safety=clean",
+    "rule=NAI-017",
+    "flow=same_paths",
+    "complexity=same",
+    "idiom=same",
+    "deps=none_added",
+    "defensive=same",
+    "readability=flatter:1",
+    "traps=none",
+    "gate=withheld:predicate:NAI-017:drop_suppress"
+   ]
+  },
+  "replace_span": "colorama/repair_plant_quietly.py:L9-L11"
+ },
+ "61": {
+  "file": "colorama/repair_plant_shape.py",
+  "function": "pick_label",
+  "row_id": "colorama/repair_plant_shape.py::pick_label::5",
+  "rule_ids": [
+   "NAI-026"
+  ],
+  "withheld_by": null,
+  "withheld_reason": "",
+  "gate_withheld": {},
+  "pick_role": "identical_branches_fix:body_once",
+  "why": "picked identical_branches_fix:body_once over 0 other pickable candidate(s) of 1 offered; deciding method: n/a (one candidate); identical_branches_fix:body_once[parse=ok, differs=yes, safety=clean, rule=NAI-026, flow=branch_removed:1, complexity=same, idiom=same, deps=none_added, defensive=same, readability=flatter:1+fewer_branches:1, traps=none, answers=row]; profile: no intent fact matched",
+  "solution_kind": "rewriter",
+  "after_code": "def pick_label(flag, value):\n    label = str(value)\n    return label",
+  "digest": "4a88e33a69",
+  "no_fix_status": null,
+  "candidates_considered": 1,
+  "observations": {
+   "identical_branches_fix:body_once": [
+    "parse=ok",
+    "differs=yes",
+    "safety=clean",
+    "rule=NAI-026",
+    "flow=branch_removed:1",
+    "complexity=same",
+    "idiom=same",
+    "deps=none_added",
+    "defensive=same",
+    "readability=flatter:1+fewer_branches:1",
+    "traps=none"
+   ]
+  },
+  "replace_span": "colorama/repair_plant_shape.py:L5-L10"
+ },
+ "70": {
+  "file": "colorama/repair_plant_typos.py",
+  "function": "code_word",
+  "row_id": "colorama/repair_plant_typos.py::code_word::20",
+  "rule_ids": [
+   "NAI-053"
+  ],
+  "withheld_by": null,
+  "withheld_reason": "",
+  "gate_withheld": {},
+  "pick_role": "repetitive_branches_fix:merge_conditions",
+  "why": "picked repetitive_branches_fix:merge_conditions over 0 other pickable candidate(s) of 1 offered; deciding method: n/a (one candidate); repetitive_branches_fix:merge_conditions[parse=ok, differs=yes, safety=clean, rule=NAI-053, flow=branch_removed:1, complexity=same, idiom=same, deps=none_added, defensive=same, readability=flatter:2, traps=none, answers=row]; profile: no intent fact matched",
+  "solution_kind": "rewriter",
+  "after_code": "def code_word(code):\n    if (code == 1) or (code == 2):\n        word = \"one\"\n    else:\n        word = \"many\"\n    return word",
+  "digest": "da48d030ee",
+  "no_fix_status": null,
+  "candidates_considered": 1,
+  "observations": {
+   "repetitive_branches_fix:merge_conditions": [
+    "parse=ok",
+    "differs=yes",
+    "safety=clean",
+    "rule=NAI-053",
+    "flow=branch_removed:1",
+    "complexity=same",
+    "idiom=same",
+    "deps=none_added",
+    "defensive=same",
+    "readability=flatter:2",
+    "traps=none"
+   ]
+  },
+  "replace_span": "colorama/repair_plant_typos.py:L20-L27"
+ },
+ "71": {
+  "file": "colorama/repair_plant_typos.py",
+  "function": "mark_twice",
+  "row_id": "colorama/repair_plant_typos.py::mark_twice::30",
+  "rule_ids": [
+   "NAI-054",
+   "NAI-091"
+  ],
+  "withheld_by": null,
+  "withheld_reason": "",
+  "gate_withheld": {},
+  "pick_role": "solution_NAI-054",
+  "why": "declined: param_mutation_fix found nothing to rewrite; picked solution_NAI-054 over 0 other pickable candidate(s) of 1 offered; deciding method: n/a (one candidate); solution_NAI-054[kind=prescribed, parse=shape, differs=yes, rule=NAI-054, flow=terminal_lost+loop_added+opaque:2, complexity=deeper:1+opaque:2, idiom=same+opaque:2, deps=none_added+opaque:2, defensive=same+opaque:2, readability=more_branches:1+opaque:2, traps=none+opaque:2, answers=row]; profile: no intent fact matched",
+  "solution_kind": "prescribed",
+  "after_code": "<statement>   # once\n# or\nfor _ in range(<n>):\n    <statement>",
+  "digest": "0d0b6293e7",
+  "no_fix_status": null,
+  "candidates_considered": 1,
+  "observations": {
+   "solution_NAI-054": [
+    "kind=prescribed",
+    "parse=shape",
+    "differs=yes",
+    "rule=NAI-054",
+    "flow=terminal_lost+loop_added+opaque:2",
+    "complexity=deeper:1+opaque:2",
+    "idiom=same+opaque:2",
+    "deps=none_added+opaque:2",
+    "defensive=same+opaque:2",
+    "readability=more_branches:1+opaque:2",
+    "traps=none+opaque:2"
+   ]
+  },
+  "replace_span": "colorama/repair_plant_typos.py:L30-L33"
+ },
+ "73": {
+  "file": "colorama/win32.py",
+  "function": "GetConsoleScreenBufferInfo",
+  "row_id": "colorama/win32.py::GetConsoleScreenBufferInfo::118",
+  "rule_ids": [
+   "NAI-010",
+   "NAI-031",
+   "NAI-147"
+  ],
+  "withheld_by": null,
+  "withheld_reason": "",
+  "gate_withheld": {
+   "dead_store_fix:drop_store": "gate=withheld:side_effect_call_removed"
+  },
+  "pick_role": "dead_local_fix:keep_call_effect",
+  "why": "gate: `_GetConsoleScreenBufferInfo` is a side-effecting call \u2014 deleting it changes what the program does, not what it says. [dead_store_fix:drop_store]; picked dead_local_fix:keep_call_effect over 2 other pickable candidate(s) of 4 offered; deciding method: intent alignment & logic soundness (+8.65 over dead_store_fix:keep_effect); dead_local_fix:keep_call_effect[parse=ok, differs=yes, safety=clean, rule=NAI-010, flow=same_paths, complexity=same, idiom=same, deps=none_added, defensive=same, readability=same, traps=none, answers=row]; dead_store_fix:drop_store[parse=ok, differs=yes, safety=clean, rule=NAI-031, flow=same_paths, complexity=same, idiom=same, deps=none_added, defensive=same, readability=same, traps=none, gate=withheld:side_effect_call_removed]; dead_store_fix:keep_effect[parse=ok, differs=yes, safety=clean, rule=NAI-031, flow=same_paths, complexity=same, idiom=same, deps=none_added, defensive=same, readability=same, traps=none, answers=neighbour]; unused_local_fix:keep_call_effect[parse=ok, differs=yes, safety=clean, rule=NAI-147, flow=same_paths, complexity=same, idiom=same, deps=none_added, defensive=same, readability=same, traps=none, answers=neighbour]; profile: no intent fact matched",
+  "solution_kind": "rewriter",
+  "after_code": "    def GetConsoleScreenBufferInfo(stream_id=STDOUT):\n        handle = _GetStdHandle(stream_id)\n        csbi = CONSOLE_SCREEN_BUFFER_INFO()\n        _GetConsoleScreenBufferInfo(\n            handle, byref(csbi))\n        return csbi",
+  "digest": "8fa44230d8",
+  "no_fix_status": null,
+  "candidates_considered": 4,
+  "observations": {
+   "dead_local_fix:keep_call_effect": [
+    "parse=ok",
+    "differs=yes",
+    "safety=clean",
+    "rule=NAI-010",
+    "flow=same_paths",
+    "complexity=same",
+    "idiom=same",
+    "deps=none_added",
+    "defensive=same",
+    "readability=same",
+    "traps=none"
+   ],
+   "dead_store_fix:drop_store": [
+    "parse=ok",
+    "differs=yes",
+    "safety=clean",
+    "rule=NAI-031",
+    "flow=same_paths",
+    "complexity=same",
+    "idiom=same",
+    "deps=none_added",
+    "defensive=same",
+    "readability=same",
+    "traps=none",
+    "gate=withheld:side_effect_call_removed"
+   ],
+   "dead_store_fix:keep_effect": [
+    "parse=ok",
+    "differs=yes",
+    "safety=clean",
+    "rule=NAI-031",
+    "flow=same_paths",
+    "complexity=same",
+    "idiom=same",
+    "deps=none_added",
+    "defensive=same",
+    "readability=same",
+    "traps=none"
+   ],
+   "unused_local_fix:keep_call_effect": [
+    "parse=ok",
+    "differs=yes",
+    "safety=clean",
+    "rule=NAI-147",
+    "flow=same_paths",
+    "complexity=same",
+    "idiom=same",
+    "deps=none_added",
+    "defensive=same",
+    "readability=same",
+    "traps=none"
+   ]
+  },
+  "replace_span": "colorama/win32.py:L118-L123"
+ },
+ "74": {
+  "file": "colorama/win32.py",
+  "function": "FillConsoleOutputCharacter",
+  "row_id": "colorama/win32.py::FillConsoleOutputCharacter::147",
+  "rule_ids": [
+   "NAI-010",
+   "NAI-031",
+   "NAI-147"
+  ],
+  "withheld_by": null,
+  "withheld_reason": "",
+  "gate_withheld": {
+   "dead_store_fix:drop_store": "gate=withheld:side_effect_call_removed"
+  },
+  "pick_role": "dead_local_fix:keep_call_effect",
+  "why": "gate: `_FillConsoleOutputCharacterA` is a side-effecting call \u2014 deleting it changes what the program does, not what it says. [dead_store_fix:drop_store]; picked dead_local_fix:keep_call_effect over 2 other pickable candidate(s) of 4 offered; deciding method: intent alignment & logic soundness (+8.65 over dead_store_fix:keep_effect); dead_local_fix:keep_call_effect[parse=ok, differs=yes, safety=clean, rule=NAI-010, flow=same_paths, complexity=same, idiom=same, deps=none_added, defensive=same, readability=same, traps=none, answers=row]; dead_store_fix:drop_store[parse=ok, differs=yes, safety=clean, rule=NAI-031, flow=same_paths, complexity=same, idiom=same, deps=none_added, defensive=same, readability=same, traps=none, gate=withheld:side_effect_call_removed]; dead_store_fix:keep_effect[parse=ok, differs=yes, safety=clean, rule=NAI-031, flow=same_paths, complexity=same, idiom=same, deps=none_added, defensive=same, readability=same, traps=none, answers=neighbour]; unused_local_fix:keep_call_effect[parse=ok, differs=yes, safety=clean, rule=NAI-147, flow=same_paths, complexity=same, idiom=same, deps=none_added, defensive=same, readability=same, traps=none, answers=neighbour]; profile: no intent fact matched",
+  "solution_kind": "rewriter",
+  "after_code": "    def FillConsoleOutputCharacter(stream_id, char, length, start):\n        handle = _GetStdHandle(stream_id)\n        char = c_char(char.encode())\n        length = wintypes.DWORD(length)\n        num_written = wintypes.DWORD(0)\n        # Note that this is hard-coded for ANSI (vs wide) bytes.\n        _FillConsoleOutputCharacterA(\n            handle, char, length, start, byref(num_written))\n        return num_written.value",
+  "digest": "f4353a1796",
+  "no_fix_status": null,
+  "candidates_considered": 4,
+  "observations": {
+   "dead_local_fix:keep_call_effect": [
+    "parse=ok",
+    "differs=yes",
+    "safety=clean",
+    "rule=NAI-010",
+    "flow=same_paths",
+    "complexity=same",
+    "idiom=same",
+    "deps=none_added",
+    "defensive=same",
+    "readability=same",
+    "traps=none"
+   ],
+   "dead_store_fix:drop_store": [
+    "parse=ok",
+    "differs=yes",
+    "safety=clean",
+    "rule=NAI-031",
+    "flow=same_paths",
+    "complexity=same",
+    "idiom=same",
+    "deps=none_added",
+    "defensive=same",
+    "readability=same",
+    "traps=none",
+    "gate=withheld:side_effect_call_removed"
+   ],
+   "dead_store_fix:keep_effect": [
+    "parse=ok",
+    "differs=yes",
+    "safety=clean",
+    "rule=NAI-031",
+    "flow=same_paths",
+    "complexity=same",
+    "idiom=same",
+    "deps=none_added",
+    "defensive=same",
+    "readability=same",
+    "traps=none"
+   ],
+   "unused_local_fix:keep_call_effect": [
+    "parse=ok",
+    "differs=yes",
+    "safety=clean",
+    "rule=NAI-147",
+    "flow=same_paths",
+    "complexity=same",
+    "idiom=same",
+    "deps=none_added",
+    "defensive=same",
+    "readability=same",
+    "traps=none"
+   ]
+  },
+  "replace_span": "colorama/win32.py:L147-L155"
+ },
+ "75": {
+  "file": "colorama/winterm.py",
+  "function": "enable_vt_processing",
+  "row_id": "colorama/winterm.py::enable_vt_processing::178",
+  "rule_ids": [
+   "NAI-078"
+  ],
+  "withheld_by": null,
+  "withheld_reason": "",
+  "gate_withheld": {},
+  "pick_role": "fallback_return_fix:log_and_return",
+  "why": "picked fallback_return_fix:log_and_return over 0 other pickable candidate(s) of 1 offered; deciding method: n/a (one candidate); fallback_return_fix:log_and_return[parse=ok, differs=yes, safety=clean, rule=NAI-078, flow=same_paths, complexity=same, idiom=same, deps=stdlib_only, defensive=same, readability=same, traps=none, answers=row]; profile: no intent fact matched",
+  "solution_kind": "rewriter",
+  "after_code": "def enable_vt_processing(fd):\n    if win32.windll is None or not win32.winapi_test():\n        return False\n\n    try:\n        handle = get_osfhandle(fd)\n        mode = win32.GetConsoleMode(handle)\n        win32.SetConsoleMode(\n            handle,\n            mode | win32.ENABLE_VIRTUAL_TERMINAL_PROCESSING,\n        )\n\n        mode = win32.GetConsoleMode(handle)\n        if mode & win32.ENABLE_VIRTUAL_TERMINAL_PROCESSING:\n            return True\n    # Can get TypeError in testsuite where 'fd' is a Mock()\n    except (OSError, TypeError):\n        import logging\n        logging.getLogger(__name__).debug(\"enable_vt_processing: error swallowed, returning the fallback\", exc_info=True)\n        return False",
+  "digest": "f5f1cc69ce",
+  "no_fix_status": null,
+  "candidates_considered": 1,
+  "observations": {
+   "fallback_return_fix:log_and_return": [
+    "parse=ok",
+    "differs=yes",
+    "safety=clean",
+    "rule=NAI-078",
+    "flow=same_paths",
+    "complexity=same",
+    "idiom=same",
+    "deps=stdlib_only",
+    "defensive=same",
+    "readability=same",
+    "traps=none"
+   ]
+  },
+  "replace_span": "colorama/winterm.py:L178-L195"
+ }
+}

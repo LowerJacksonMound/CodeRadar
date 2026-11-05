@@ -1,0 +1,158 @@
+  #21  NOT APPLIED — no row at all — FIX_59 stopped the detector filing it
+  #35  NOT APPLIED — declined at the source (0 candidates) — FIX_58's three conditions
+  #57  NOT APPLIED — withheld by design — NAI-017 carries the reason as a registry field
+  #71  NOT APPLIED — prescribed; the shape is UNDETERMINED (`<statement> # once` OR `for _ in range(<n>): <statement>`) — which reading is right is the client's call, so nothing is rendered and nothing is applied
+
+cr_apply #30 colorama/repair_plant_branches.py::stamp::24
+  kind=diff applies_cleanly=True span=colorama/repair_plant_branches.py:L24-L27 error=None
+
+cr_apply #33 colorama/repair_plant_chains.py::stamp::21
+  kind=diff applies_cleanly=True span=colorama/repair_plant_chains.py:L21-L24 error=None
+
+cr_apply #53 colorama/repair_plant_noop.py::tally::23
+  kind=diff applies_cleanly=True span=colorama/repair_plant_noop.py:L23-L26 error=None
+
+cr_apply #61 colorama/repair_plant_shape.py::pick_label::5
+  kind=diff applies_cleanly=True span=colorama/repair_plant_shape.py:L5-L10 error=None
+
+cr_apply #70 colorama/repair_plant_typos.py::code_word::20
+  kind=diff applies_cleanly=True span=colorama/repair_plant_typos.py:L20-L27 error=None
+
+cr_apply #73 colorama/win32.py::GetConsoleScreenBufferInfo::118
+  kind=diff applies_cleanly=True span=colorama/win32.py:L118-L123 error=None
+
+cr_apply #74 colorama/win32.py::FillConsoleOutputCharacter::147
+  kind=diff applies_cleanly=True span=colorama/win32.py:L147-L155 error=None
+
+cr_apply #75 colorama/winterm.py::enable_vt_processing::178
+  kind=diff applies_cleanly=True span=colorama/winterm.py:L178-L195 error=None
+
+APPLIED 8 rows over 7 files
+
+  #30  colorama/repair_plant_branches.py colorama/repair_plant_branches.py:L24-L27  [immediate_overwrite_fix:keep_second]
+        - def stamp(value):
+        -     width = len(str(value))
+        -     width = 8
+        -     return str(value).rjust(width)
+        + def stamp(value):
+        +     width = 8
+        +     return str(value).rjust(width)
+
+  #33  colorama/repair_plant_chains.py colorama/repair_plant_chains.py:L21-L24  [immediate_overwrite_fix:keep_second]
+        - def stamp(value):
+        -     width = 4
+        -     width = 8
+        -     return str(value).rjust(width)
+        + def stamp(value):
+        +     width = 8
+        +     return str(value).rjust(width)
+
+  #53  colorama/repair_plant_noop.py colorama/repair_plant_noop.py:L23-L26  [algebraic_identity_fix]
+        - def tally(items):
+        -     total = sum(items)
+        -     total = total + 0
+        -     return total * 2
+        + def tally(items):
+        +     total = sum(items)
+        +     return total * 2
+
+  #61  colorama/repair_plant_shape.py colorama/repair_plant_shape.py:L5-L10  [identical_branches_fix:body_once]
+        - def pick_label(flag, value):
+        -     if flag:
+        -         label = str(value)
+        -     else:
+        -         label = str(value)
+        -     return label
+        + def pick_label(flag, value):
+        +     label = str(value)
+        +     return label
+
+  #70  colorama/repair_plant_typos.py colorama/repair_plant_typos.py:L20-L27  [repetitive_branches_fix:merge_conditions]
+        - def code_word(code):
+        -     if code == 1:
+        -         word = "one"
+        -     elif code == 2:
+        -         word = "one"
+        -     else:
+        -         word = "many"
+        -     return word
+        + def code_word(code):
+        +     if (code == 1) or (code == 2):
+        +         word = "one"
+        +     else:
+        +         word = "many"
+        +     return word
+
+  #73  colorama/win32.py colorama/win32.py:L118-L123  [dead_local_fix:keep_call_effect]
+        -     def GetConsoleScreenBufferInfo(stream_id=STDOUT):
+        -         handle = _GetStdHandle(stream_id)
+        -         csbi = CONSOLE_SCREEN_BUFFER_INFO()
+        -         success = _GetConsoleScreenBufferInfo(
+        -             handle, byref(csbi))
+        -         return csbi
+        +     def GetConsoleScreenBufferInfo(stream_id=STDOUT):
+        +         handle = _GetStdHandle(stream_id)
+        +         csbi = CONSOLE_SCREEN_BUFFER_INFO()
+        +         _GetConsoleScreenBufferInfo(
+        +             handle, byref(csbi))
+        +         return csbi
+
+  #74  colorama/win32.py colorama/win32.py:L147-L155  [dead_local_fix:keep_call_effect]
+        -     def FillConsoleOutputCharacter(stream_id, char, length, start):
+        -         handle = _GetStdHandle(stream_id)
+        -         char = c_char(char.encode())
+        -         length = wintypes.DWORD(length)
+        -         num_written = wintypes.DWORD(0)
+        -         # Note that this is hard-coded for ANSI (vs wide) bytes.
+        -         success = _FillConsoleOutputCharacterA(
+        -             handle, char, length, start, byref(num_written))
+        -         return num_written.value
+        +     def FillConsoleOutputCharacter(stream_id, char, length, start):
+        +         handle = _GetStdHandle(stream_id)
+        +         char = c_char(char.encode())
+        +         length = wintypes.DWORD(length)
+        +         num_written = wintypes.DWORD(0)
+        +         # Note that this is hard-coded for ANSI (vs wide) bytes.
+        +         _FillConsoleOutputCharacterA(
+        +             handle, char, length, start, byref(num_written))
+        +         return num_written.value
+
+  #75  colorama/winterm.py colorama/winterm.py:L178-L195  [fallback_return_fix:log_and_return]
+        - def enable_vt_processing(fd):
+        -     if win32.windll is None or not win32.winapi_test():
+        -         return False
+        - 
+        -     try:
+        -         handle = get_osfhandle(fd)
+        -         mode = win32.GetConsoleMode(handle)
+        -         win32.SetConsoleMode(
+        -             handle,
+        -             mode | win32.ENABLE_VIRTUAL_TERMINAL_PROCESSING,
+        -         )
+        - 
+        -         mode = win32.GetConsoleMode(handle)
+        -         if mode & win32.ENABLE_VIRTUAL_TERMINAL_PROCESSING:
+        -             return True
+        -     # Can get TypeError in testsuite where 'fd' is a Mock()
+        -     except (OSError, TypeError):
+        -         return False
+        + def enable_vt_processing(fd):
+        +     if win32.windll is None or not win32.winapi_test():
+        +         return False
+        + 
+        +     try:
+        +         handle = get_osfhandle(fd)
+        +         mode = win32.GetConsoleMode(handle)
+        +         win32.SetConsoleMode(
+        +             handle,
+        +             mode | win32.ENABLE_VIRTUAL_TERMINAL_PROCESSING,
+        +         )
+        + 
+        +         mode = win32.GetConsoleMode(handle)
+        +         if mode & win32.ENABLE_VIRTUAL_TERMINAL_PROCESSING:
+        +             return True
+        +     # Can get TypeError in testsuite where 'fd' is a Mock()
+        +     except (OSError, TypeError):
+        +         import logging
+        +         logging.getLogger(__name__).debug("enable_vt_processing: error swallowed, returning the fallback", exc_info=True)
+        +         return False

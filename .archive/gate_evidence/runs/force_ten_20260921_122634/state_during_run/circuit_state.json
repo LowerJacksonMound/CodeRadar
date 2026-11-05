@@ -1,0 +1,1530 @@
+{
+  "daemon_phase": "RUNNING",
+  "launch_control": {
+    "tracer": "lsof",
+    "pmc": false,
+    "trackers": [],
+    "chosen_at": "2026-09-21T18:32:28.102935+00:00"
+  },
+  "tracer": {
+    "backend": "lsof",
+    "alive": true,
+    "chosen_at": "2026-09-21T18:32:28.102935+00:00",
+    "reason": "lsof at /usr/sbin/lsof"
+  },
+  "pmc": {
+    "status": "not run",
+    "message": "--pmc not given at launch",
+    "checked_at": null
+  },
+  "trackers": {
+    "chosen": [],
+    "not_run": [
+      "io",
+      "mypy",
+      "crc",
+      "vulture"
+    ]
+  },
+  "repo_id": "0cb5ea90e0ac",
+  "target_repo": "/Users/dev/CodeRadar_snapshots/force_ten_20260921_122634",
+  "scan_timestamp": "2026-09-21T13:33:51.342673",
+  "scan_cadence": {
+    "colorama": {
+      "files": 51,
+      "period_cycles": 7,
+      "period_s": 17.5,
+      "phase": 0,
+      "viewed": false,
+      "due_this_cycle": false,
+      "last_scan_cycle": 1
+    },
+    "colorama/repair_pkg": {
+      "files": 1,
+      "period_cycles": 1,
+      "period_s": 2.5,
+      "phase": 0,
+      "viewed": false,
+      "due_this_cycle": true,
+      "last_scan_cycle": 5
+    },
+    "colorama/tests": {
+      "files": 7,
+      "period_cycles": 1,
+      "period_s": 2.5,
+      "phase": 0,
+      "viewed": false,
+      "due_this_cycle": true,
+      "last_scan_cycle": 5
+    },
+    "demos": {
+      "files": 5,
+      "period_cycles": 1,
+      "period_s": 2.5,
+      "phase": 0,
+      "viewed": false,
+      "due_this_cycle": true,
+      "last_scan_cycle": 5
+    },
+    "_summary": {
+      "cycle": 5,
+      "scripts": 64,
+      "rescanned": 13,
+      "reused": 51,
+      "viewed_dirs": [
+        "."
+      ]
+    }
+  },
+  "sys_path": [
+    "/Users/dev/Desktop/CODE_RADAR_REFURBISH_copy1/system_scripts",
+    "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python314.zip",
+    "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14",
+    "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/lib-dynload",
+    "/Users/dev/Desktop/CODE_RADAR_REFURBISH_copy1/.venv_new/lib/python3.14/site-packages",
+    "__editable__.noai_validator-8.0.0.finder.__path_hook__"
+  ],
+  "nodes": [
+    {
+      "name": "colorama/__init__",
+      "relative_path": "colorama/__init__.py",
+      "connected": true,
+      "imports": [
+        "colorama/ansitowin32",
+        "colorama/initialise",
+        "colorama/ansi"
+      ],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "c1e3d0038536d2d2",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/ansi",
+      "relative_path": "colorama/ansi.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "4e8a7811e12e6907",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/ansitowin32",
+      "relative_path": "colorama/ansitowin32.py",
+      "connected": true,
+      "imports": [
+        "colorama/win32",
+        "colorama/ansi",
+        "colorama/winterm"
+      ],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "bcf3586b73996f18",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/initialise",
+      "relative_path": "colorama/initialise.py",
+      "connected": true,
+      "imports": [
+        "colorama/ansitowin32"
+      ],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "fa1227cbce82957a",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_pkg/__init__",
+      "relative_path": "colorama/repair_pkg/__init__.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "f0ed864765c3e855",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_008",
+      "relative_path": "colorama/repair_plant_008.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "1735a9ea9394165a",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_061",
+      "relative_path": "colorama/repair_plant_061.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "c4b04d2c8ac6e349",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_070",
+      "relative_path": "colorama/repair_plant_070.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "8f73a65895d4661f",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_071",
+      "relative_path": "colorama/repair_plant_071.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "dc2b7ec2401ac151",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_092",
+      "relative_path": "colorama/repair_plant_092.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "82d6b37eaadcbcd0",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_093",
+      "relative_path": "colorama/repair_plant_093.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "8ef9b4063db53179",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_branches",
+      "relative_path": "colorama/repair_plant_branches.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "fcd1105aef231ab3",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_chains",
+      "relative_path": "colorama/repair_plant_chains.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "2a6330edd933f863",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_checks",
+      "relative_path": "colorama/repair_plant_checks.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "41cd43cb11e95284",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_context",
+      "relative_path": "colorama/repair_plant_context.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "7c107349b4f6b184",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_dynamic",
+      "relative_path": "colorama/repair_plant_dynamic.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "7da17b5998e4d3f7",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_dynamic_two",
+      "relative_path": "colorama/repair_plant_dynamic_two.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "c7c3dfb6a93f4935",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_extended",
+      "relative_path": "colorama/repair_plant_extended.py",
+      "connected": true,
+      "imports": [
+        "colorama/ansi"
+      ],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "f22f47f527e58321",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_flag_control",
+      "relative_path": "colorama/repair_plant_flag_control.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "9c2e681739f211ed",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_flow",
+      "relative_path": "colorama/repair_plant_flow.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "d7f45491e5469e0a",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_foreign",
+      "relative_path": "colorama/repair_plant_foreign.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "efedbc2b6c0c3e03",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_graph",
+      "relative_path": "colorama/repair_plant_graph.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "6be00f8b18a7f929",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_graph_control",
+      "relative_path": "colorama/repair_plant_graph_control.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "e310d2c50ba3f6ca",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_guards",
+      "relative_path": "colorama/repair_plant_guards.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "3e1877d1b88b272d",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_hr",
+      "relative_path": "colorama/repair_plant_hr.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "6e6117dacceb6cfd",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_imports",
+      "relative_path": "colorama/repair_plant_imports.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "ffaf035de9bb231b",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_invented",
+      "relative_path": "colorama/repair_plant_invented.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "9aa7ea33f7cebe15",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_join",
+      "relative_path": "colorama/repair_plant_join.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "f0f9a18f3a08506f",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_keys",
+      "relative_path": "colorama/repair_plant_keys.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "6b30fb8a7cb2219f",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_launch",
+      "relative_path": "colorama/repair_plant_launch.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "c7a3d008413682c4",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_loops",
+      "relative_path": "colorama/repair_plant_loops.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "f0b04dce4937a151",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_meaning",
+      "relative_path": "colorama/repair_plant_meaning.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "5fac752b95fda222",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_names",
+      "relative_path": "colorama/repair_plant_names.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "546fe90e07afa1a1",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_noop",
+      "relative_path": "colorama/repair_plant_noop.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "d5ae3045793aab32",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_ops",
+      "relative_path": "colorama/repair_plant_ops.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "e516a4c8197dcbe7",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_order",
+      "relative_path": "colorama/repair_plant_order.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "83a36f429efac902",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_quiet",
+      "relative_path": "colorama/repair_plant_quiet.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "9fdee4586a34bf8e",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_quietly",
+      "relative_path": "colorama/repair_plant_quietly.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "483426a7b6c004e4",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_roles",
+      "relative_path": "colorama/repair_plant_roles.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "cfc5c565cdaeeb62",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_secrets",
+      "relative_path": "colorama/repair_plant_secrets.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "14151c682ae4feef",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_shape",
+      "relative_path": "colorama/repair_plant_shape.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "dd4246cae51fb645",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_shells",
+      "relative_path": "colorama/repair_plant_shells.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "9c1e5a5a675e87f4",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_shells_control",
+      "relative_path": "colorama/repair_plant_shells_control.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "52b1ea1ae9e4ddcf",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_split",
+      "relative_path": "colorama/repair_plant_split.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "f7a0850add5d7d81",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_split_control",
+      "relative_path": "colorama/repair_plant_split_control.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "bb6c377b1d8ce3ec",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_stale",
+      "relative_path": "colorama/repair_plant_stale.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "0a21594352028e14",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_stubs",
+      "relative_path": "colorama/repair_plant_stubs.py",
+      "connected": true,
+      "imports": [
+        "colorama/ansi"
+      ],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "c47667553110f004",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_tautology",
+      "relative_path": "colorama/repair_plant_tautology.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "38aaf5f126627b88",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_trust",
+      "relative_path": "colorama/repair_plant_trust.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "14bdfa6be6148ac3",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/repair_plant_typos",
+      "relative_path": "colorama/repair_plant_typos.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "7adc479fa847ffd9",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/tests/__init__",
+      "relative_path": "colorama/tests/__init__.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "32480f004cc641df",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/tests/ansi_test",
+      "relative_path": "colorama/tests/ansi_test.py",
+      "connected": true,
+      "imports": [
+        "colorama/ansitowin32",
+        "colorama/ansi"
+      ],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "15e5620eb5083486",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/tests/ansitowin32_test",
+      "relative_path": "colorama/tests/ansitowin32_test.py",
+      "connected": true,
+      "imports": [
+        "colorama/ansitowin32",
+        "colorama/win32",
+        "colorama/tests/utils"
+      ],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "44dec0221309e44a",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/tests/initialise_test",
+      "relative_path": "colorama/tests/initialise_test.py",
+      "connected": true,
+      "imports": [
+        "colorama/ansitowin32",
+        "colorama/initialise",
+        "colorama/tests/utils"
+      ],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "05b3f2f977f21f02",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/tests/isatty_test",
+      "relative_path": "colorama/tests/isatty_test.py",
+      "connected": true,
+      "imports": [
+        "colorama/ansitowin32",
+        "colorama/tests/utils"
+      ],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "3e0dba2d1a6fd324",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/tests/utils",
+      "relative_path": "colorama/tests/utils.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "d48211ca51b7f73e",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/tests/winterm_test",
+      "relative_path": "colorama/tests/winterm_test.py",
+      "connected": true,
+      "imports": [
+        "colorama/winterm"
+      ],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "aa85853c48f29b98",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/win32",
+      "relative_path": "colorama/win32.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "61038ac0c4f0b460",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "colorama/winterm",
+      "relative_path": "colorama/winterm.py",
+      "connected": true,
+      "imports": [
+        "colorama/win32"
+      ],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "5c24050c78cf8ba0",
+      "subdir": "colorama",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "demos/demo01",
+      "relative_path": "demos/demo01.py",
+      "connected": true,
+      "imports": [
+        "demos/fixpath",
+        "colorama/__init__"
+      ],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "ef1dbc126edd02d9",
+      "subdir": "demos",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "demos/demo06",
+      "relative_path": "demos/demo06.py",
+      "connected": true,
+      "imports": [
+        "demos/fixpath",
+        "colorama/__init__"
+      ],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "f1c1054a057a0bf9",
+      "subdir": "demos",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "demos/demo07",
+      "relative_path": "demos/demo07.py",
+      "connected": true,
+      "imports": [
+        "demos/fixpath",
+        "colorama/__init__"
+      ],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "2d41adc5907060e4",
+      "subdir": "demos",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "demos/demo08",
+      "relative_path": "demos/demo08.py",
+      "connected": true,
+      "imports": [
+        "demos/fixpath",
+        "colorama/__init__"
+      ],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "07dbe6c365522f42",
+      "subdir": "demos",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    },
+    {
+      "name": "demos/fixpath",
+      "relative_path": "demos/fixpath.py",
+      "connected": true,
+      "imports": [],
+      "syntax_valid": true,
+      "syntax_fixture": false,
+      "import_error": null,
+      "content_hash": "01a9f5bde657ca47",
+      "subdir": "demos",
+      "change_tags": [],
+      "runtime_loaded": false,
+      "runtime_loaded_via": null
+    }
+  ],
+  "edges": [
+    [
+      "colorama/__init__",
+      "colorama/ansitowin32"
+    ],
+    [
+      "colorama/__init__",
+      "colorama/initialise"
+    ],
+    [
+      "colorama/__init__",
+      "colorama/ansi"
+    ],
+    [
+      "colorama/ansitowin32",
+      "colorama/win32"
+    ],
+    [
+      "colorama/ansitowin32",
+      "colorama/ansi"
+    ],
+    [
+      "colorama/ansitowin32",
+      "colorama/winterm"
+    ],
+    [
+      "colorama/initialise",
+      "colorama/ansitowin32"
+    ],
+    [
+      "colorama/repair_plant_extended",
+      "colorama/ansi"
+    ],
+    [
+      "colorama/repair_plant_stubs",
+      "colorama/ansi"
+    ],
+    [
+      "colorama/tests/ansi_test",
+      "colorama/ansitowin32"
+    ],
+    [
+      "colorama/tests/ansi_test",
+      "colorama/ansi"
+    ],
+    [
+      "colorama/tests/ansitowin32_test",
+      "colorama/ansitowin32"
+    ],
+    [
+      "colorama/tests/ansitowin32_test",
+      "colorama/win32"
+    ],
+    [
+      "colorama/tests/ansitowin32_test",
+      "colorama/tests/utils"
+    ],
+    [
+      "colorama/tests/initialise_test",
+      "colorama/ansitowin32"
+    ],
+    [
+      "colorama/tests/initialise_test",
+      "colorama/initialise"
+    ],
+    [
+      "colorama/tests/initialise_test",
+      "colorama/tests/utils"
+    ],
+    [
+      "colorama/tests/isatty_test",
+      "colorama/ansitowin32"
+    ],
+    [
+      "colorama/tests/isatty_test",
+      "colorama/tests/utils"
+    ],
+    [
+      "colorama/tests/winterm_test",
+      "colorama/winterm"
+    ],
+    [
+      "colorama/winterm",
+      "colorama/win32"
+    ],
+    [
+      "demos/demo01",
+      "demos/fixpath"
+    ],
+    [
+      "demos/demo01",
+      "colorama/__init__"
+    ],
+    [
+      "demos/demo06",
+      "demos/fixpath"
+    ],
+    [
+      "demos/demo06",
+      "colorama/__init__"
+    ],
+    [
+      "demos/demo07",
+      "demos/fixpath"
+    ],
+    [
+      "demos/demo07",
+      "colorama/__init__"
+    ],
+    [
+      "demos/demo08",
+      "demos/fixpath"
+    ],
+    [
+      "demos/demo08",
+      "colorama/__init__"
+    ]
+  ],
+  "cycles": [],
+  "all_connected": true,
+  "severed_links": [],
+  "severed_since": {},
+  "runtime_coverage": [],
+  "execution_proof": {
+    "status": "NOT MEASURED \u2014 no execution recorded (run the target through entry_point_wrapper.py)",
+    "via_runner": {
+      "status": "NOT MEASURED \u2014 no runner execution recorded (run pytest / unittest through entry_point_wrapper.py -m \u2026)"
+    }
+  },
+  "runner_coverage": [],
+  "test_runners": {
+    "status": "MEASURED",
+    "presence": {
+      "pytest": {
+        "files": [],
+        "evidence": []
+      },
+      "unittest": {
+        "files": [
+          "colorama/tests/ansi_test.py",
+          "colorama/tests/ansitowin32_test.py",
+          "colorama/tests/initialise_test.py",
+          "colorama/tests/isatty_test.py",
+          "colorama/tests/winterm_test.py"
+        ],
+        "evidence": [
+          {
+            "file": "colorama/tests/ansi_test.py",
+            "line": 3,
+            "kind": "import"
+          },
+          {
+            "file": "colorama/tests/ansi_test.py",
+            "line": 12,
+            "kind": "TestCase"
+          },
+          {
+            "file": "colorama/tests/ansitowin32_test.py",
+            "line": 3,
+            "kind": "import"
+          },
+          {
+            "file": "colorama/tests/ansitowin32_test.py",
+            "line": 20,
+            "kind": "TestCase"
+          },
+          {
+            "file": "colorama/tests/ansitowin32_test.py",
+            "line": 61,
+            "kind": "TestCase"
+          },
+          {
+            "file": "colorama/tests/ansitowin32_test.py",
+            "line": 11,
+            "kind": "import"
+          },
+          {
+            "file": "colorama/tests/initialise_test.py",
+            "line": 3,
+            "kind": "import"
+          },
+          {
+            "file": "colorama/tests/initialise_test.py",
+            "line": 18,
+            "kind": "TestCase"
+          },
+          {
+            "file": "colorama/tests/initialise_test.py",
+            "line": 119,
+            "kind": "TestCase"
+          },
+          {
+            "file": "colorama/tests/initialise_test.py",
+            "line": 6,
+            "kind": "import"
+          },
+          {
+            "file": "colorama/tests/isatty_test.py",
+            "line": 3,
+            "kind": "import"
+          },
+          {
+            "file": "colorama/tests/isatty_test.py",
+            "line": 12,
+            "kind": "TestCase"
+          },
+          {
+            "file": "colorama/tests/winterm_test.py",
+            "line": 3,
+            "kind": "import"
+          },
+          {
+            "file": "colorama/tests/winterm_test.py",
+            "line": 13,
+            "kind": "TestCase"
+          },
+          {
+            "file": "colorama/tests/winterm_test.py",
+            "line": 6,
+            "kind": "import"
+          }
+        ]
+      },
+      "config": [],
+      "scanned_at": "2026-09-21T13:33:43.434904"
+    },
+    "execution": {
+      "entries": [],
+      "sources": {
+        "wrapper": "MEASURED",
+        "ps": "MEASURED",
+        "kernel": "not run \u2014 tracer is lsof"
+      }
+    }
+  },
+  "path_hacks": {
+    "colorama/__init__.py": [
+      {
+        "line": 2,
+        "type": "relative_import",
+        "details": "Relative import: .initialise",
+        "disposition": "context",
+        "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+      },
+      {
+        "line": 3,
+        "type": "relative_import",
+        "details": "Relative import: .ansi",
+        "disposition": "context",
+        "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+      },
+      {
+        "line": 4,
+        "type": "relative_import",
+        "details": "Relative import: .ansitowin32",
+        "disposition": "context",
+        "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+      }
+    ],
+    "colorama/ansitowin32.py": [
+      {
+        "line": 6,
+        "type": "relative_import",
+        "details": "Relative import: .ansi",
+        "disposition": "context",
+        "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+      },
+      {
+        "line": 7,
+        "type": "relative_import",
+        "details": "Relative import: .winterm",
+        "disposition": "context",
+        "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+      },
+      {
+        "line": 8,
+        "type": "relative_import",
+        "details": "Relative import: .win32",
+        "disposition": "context",
+        "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+      }
+    ],
+    "colorama/repair_plant_stubs.py": [
+      {
+        "line": 5,
+        "type": "relative_import",
+        "details": "Relative import: .ansi",
+        "disposition": "context",
+        "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+      }
+    ],
+    "colorama/repair_plant_extended.py": [
+      {
+        "line": 7,
+        "type": "relative_import",
+        "details": "Relative import: .ansi",
+        "disposition": "context",
+        "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+      },
+      {
+        "line": 7,
+        "type": "wildcard_import",
+        "details": "from .ansi import * \u2014 pollutes namespace, breaks traceability",
+        "disposition": "deciding",
+        "warning": ""
+      }
+    ],
+    "colorama/winterm.py": [
+      {
+        "line": 9,
+        "type": "relative_import",
+        "details": "Relative import: .",
+        "disposition": "context",
+        "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+      }
+    ],
+    "colorama/initialise.py": [
+      {
+        "line": 6,
+        "type": "relative_import",
+        "details": "Relative import: .ansitowin32",
+        "disposition": "context",
+        "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+      }
+    ],
+    "demos/fixpath.py": [
+      {
+        "line": 8,
+        "type": "sys_path_insert",
+        "details": "sys.path.insert(local_colorama_module)",
+        "disposition": "deciding",
+        "warning": ""
+      }
+    ],
+    "colorama/tests/isatty_test.py": [
+      {
+        "line": 5,
+        "type": "relative_import",
+        "details": "Relative import: ..ansitowin32",
+        "disposition": "context",
+        "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+      },
+      {
+        "line": 6,
+        "type": "relative_import",
+        "details": "Relative import: .utils",
+        "disposition": "context",
+        "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+      }
+    ],
+    "colorama/tests/initialise_test.py": [
+      {
+        "line": 10,
+        "type": "relative_import",
+        "details": "Relative import: ..ansitowin32",
+        "disposition": "context",
+        "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+      },
+      {
+        "line": 11,
+        "type": "relative_import",
+        "details": "Relative import: ..initialise",
+        "disposition": "context",
+        "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+      },
+      {
+        "line": 12,
+        "type": "relative_import",
+        "details": "Relative import: .utils",
+        "disposition": "context",
+        "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+      }
+    ],
+    "colorama/tests/ansi_test.py": [
+      {
+        "line": 5,
+        "type": "relative_import",
+        "details": "Relative import: ..ansi",
+        "disposition": "context",
+        "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+      },
+      {
+        "line": 6,
+        "type": "relative_import",
+        "details": "Relative import: ..ansitowin32",
+        "disposition": "context",
+        "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+      }
+    ],
+    "colorama/tests/winterm_test.py": [
+      {
+        "line": 10,
+        "type": "relative_import",
+        "details": "Relative import: ..winterm",
+        "disposition": "context",
+        "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+      }
+    ],
+    "colorama/tests/ansitowin32_test.py": [
+      {
+        "line": 15,
+        "type": "relative_import",
+        "details": "Relative import: ..ansitowin32",
+        "disposition": "context",
+        "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+      },
+      {
+        "line": 16,
+        "type": "relative_import",
+        "details": "Relative import: ..win32",
+        "disposition": "context",
+        "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+      },
+      {
+        "line": 17,
+        "type": "relative_import",
+        "details": "Relative import: .utils",
+        "disposition": "context",
+        "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+      }
+    ],
+    "(measurements)": [
+      {
+        "line": 0,
+        "type": "not_measured",
+        "details": "unguarded_external: NOT MEASURED \u2014 no declared dependencies (no [project.dependencies] / requirements*.txt in the target, none in the intent file)",
+        "disposition": "deciding",
+        "warning": ""
+      }
+    ],
+    "demos": [
+      {
+        "line": 0,
+        "type": "missing_init",
+        "details": "Directory has 5 .py files but no __init__.py",
+        "disposition": "context",
+        "warning": "namespace package or script dir \u2014 no __init__.py; informational, not an infraction (owner Q9, 2026-09-15)"
+      }
+    ],
+    "colorama/repair_pkg": [
+      {
+        "line": 0,
+        "type": "empty_package",
+        "details": "Package has __init__.py but no source modules",
+        "disposition": "deciding",
+        "warning": ""
+      },
+      {
+        "line": 0,
+        "type": "unconnected_init",
+        "details": "Package 'colorama.repair_pkg' has __init__.py but is never imported",
+        "disposition": "deciding",
+        "warning": ""
+      }
+    ]
+  },
+  "crc_results": {
+    "status": "not run \u2014 nothing measured"
+  },
+  "mypy_results": {
+    "files_checked": 0,
+    "dirs_checked": 0,
+    "passed": 0,
+    "failed": 0,
+    "total_errors": 0,
+    "errors": [],
+    "errors_by_dir": {},
+    "recent_checks": [],
+    "last_scan": null,
+    "mypy_rc": null,
+    "mypy_ran": false,
+    "status": "not run \u2014 nothing measured"
+  },
+  "contract_violations": {
+    "total": 0,
+    "recent_count": 0,
+    "violations": [],
+    "disabled": true
+  },
+  "contract_decorators": [],
+  "io_tracker_results": {
+    "totals": {
+      "total_functions": 0,
+      "async_count": 0,
+      "sync_count": 0,
+      "io_functions": 0,
+      "sync_exempt_count": 0
+    },
+    "details": [],
+    "status": "not run \u2014 nothing measured"
+  },
+  "dataflows": [],
+  "vulture_results": {
+    "files_scanned": 0,
+    "files_with_dead_code": 0,
+    "total_items": 0,
+    "items_by_category": {},
+    "items": [],
+    "last_scan": null,
+    "status": "not run \u2014 nothing measured"
+  }
+}

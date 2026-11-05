@@ -306,7 +306,7 @@ def _VR_evidence_kind(rid: str) -> str:
     return _VR_EVIDENCE.get(rid) or "none (pre-calibration)"
 
 
-_VR_EVIDENCE: dict[str, str] | None = None
+_VR_EVIDENCE: dict[str, str | None] | None = None
 
 
 def _VR_disposition(rid: str) -> str:
@@ -1620,6 +1620,7 @@ class CheatsheetBuilder:
                                          row_rules=list(f["rule_ids"] or []))   # I-132: the row's rule set
                 row["selection"] = {r["role"]: r["selection_total"] for r in decision.considered if "selection_total" in r}
                 why = ("; ".join(reg_facts) + "; " if reg_facts else "") + decision.why
+                pick: SolutionCandidate | None
                 if decision.pick is not None:
                     pick = decision.pick
                     digest = _candidate_digest(pick)

@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "coderadar": {
+      "type": "stdio",
+      "command": "/Users/dev/Desktop/CODE_RADAR_REFURBISH_copy2/coderadar-mcp.sh",
+      "args": ["--target", "/Users/dev/Desktop/how_it_is"]
+    }
+  }
+}

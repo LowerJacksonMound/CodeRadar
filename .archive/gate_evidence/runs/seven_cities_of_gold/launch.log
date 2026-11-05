@@ -1,0 +1,91 @@
+[launch] control: tracer=lsof pmc=0 trackers=io,mypy
+=== CodeRadar launch ===
+Target: /Users/dev/Desktop/seven_cities_of_gold
+[step 0] COPY-FIRST: /Users/dev/Desktop/seven_cities_of_gold -> /Users/dev/CodeRadar_snapshots/seven_cities_of_gold_20260928_164445
+[step 0] snapshot verified: 45 files, file lists identical (0 of 45 target files skipped: env dirs / node_modules / tool caches); size 336K vs target 336K
+[pre-flight] stopping stale daemons (this tree's only)
+[pre-flight] clearing ALL engine state in system_scripts/ (every scan is a brand-new scan)
+[pre-flight] cleared: circuit_state.json NOAI_VALIDATION_STATE.json BUILDER_STATE.json runtime_coverage.json running.lock runner_info.json .noai_state.json .monitor_state.json poll_config.json NOAI_VALIDATION_STATE.heartbeat.json BUILDER_STATE.heartbeat.json daemon_log/change_tags_state.json
+[launch] control written: poll_config.json.launch_control = {"tracer": "lsof", "pmc": false, "trackers": ["io", "mypy"], "chosen_at": "2026-09-28T21:44:47.273504+00:00"}
+[pre-flight] clearing engine bytecode cache system_scripts/.cr_pycache/
+[pre-flight] pruning per-run gearbox logs older than the previous run
+[pre-flight] per-run logs: pruned 3, kept 3 (previous run)
+[pre-flight] archiving per-repo-id artifacts from other targets
+[pre-flight] archived cb_writes_a0b453a70d10.json -> .archive/cb_writes_a0b453a70d10.json
+[pre-flight] archived confirmed_ledger_a0b453a70d10.jsonl -> .archive/confirmed_ledger_a0b453a70d10_20260928_164447.jsonl
+[pre-flight] archived intent_a0b453a70d10.json -> .archive/intent_a0b453a70d10.json
+[pre-flight] archived return_channel_a0b453a70d10.jsonl -> .archive/return_channel_a0b453a70d10_20260928_164447.jsonl
+[pre-flight] archived whitelist_a0b453a70d10.json -> .archive/whitelist_a0b453a70d10.json
+[pre-flight] port 8083: free
+[health check] running health_check.py (steps 1-18) — aborts on failure
+[health check] HEALTH CHECK — Steps 1-20
+[health check] HEALTH CHECK: ✓ PASSED — All measured steps ready
+[health check] PASS — report: /Users/dev/Desktop/CODE_RADAR_REFURBISH_copy3/.archive/health/health_20260928_164447.txt
+[whitelist] running detritus scan (pre-daemon stage, seam S1)
+[intent file] intent_b8beb28d80c2.json: statement none · facts by source {'ci_workflow': 10, 'lint_config': 1, 'packaging': 2, 'readme': 1, 'tox': 1}
+[artifact scanner] proxies: pathhack 1, setup 1 (1 proxy + 1 test file(s) withdrawn from filter 1 — neither is detritus: scanned, withheld; tests tracked, Item 10) · stubs: none · intent sources: ci_workflow, lint_config, packaging, readme, tox (15 facts) · 0 stub file(s) added to the whitelist
+[whitelist] bytecode rows (I-156, from scan_scope.BYTECODE_WHITELIST_ENTRIES): __pycache__/ -> bytecode:engine-hard-skip, *.pyc -> bytecode:engine-hard-skip — 2 written into the artifact
+[python-only] 4 .py file(s) = 4 live + 0 markers + 0 detritus + 0 artifact-class .py | 41 non-.py file(s) -> artifact by construction
+[filter 1 · detritus]  0 unreachable module(s)
+[filter 2 · artifacts] 41 file(s): dir:.git 29, ext:.yml 2, ext:.rst 2, file:.gitignore 1, file:CHANGES 1, file:CONTRIBUTORS 1, file:LICENSE 1, file:MANIFEST.in 1, file:Makefile 1, ext:.cfg 1, file:tox.ini 1
+[whitelist] system_scripts/whitelist_b8beb28d80c2.json written: 43 entries (4 live, 0 package markers, 2 bytecode rows — I-156)
+[target env] built in 0.94s — installer=uv packages=6 home=/Users/dev/Desktop/CODE_RADAR_REFURBISH_copy3/.archive/target_envs/b8beb28d80c2
+[target env] target dist: installed six 1.17.0 (from the snapshot, --no-deps, non-editable)
+[target env] layout=flat
+[launch] exec gearbox
+[gearbox 16:46:11] target=/Users/dev/Desktop/seven_cities_of_gold  repo_id=b8beb28d80c2  python=/Users/dev/Desktop/CODE_RADAR_REFURBISH_copy3/.venv_new/bin/python
+[gearbox 16:46:11] pyc_preexisting=0
+[gearbox 16:46:11] CADENCE TABLE (FIX_46) — one turn 2.5s / 8 slots of 0.3125s, 4 blades (circuit=0, noai_validator=1, cheatsheets=2, dashboard=3)
+[gearbox 16:46:11] daemon          duty                   period  phase  slot       at  touches
+[gearbox 16:46:11] circuit         graph_scan            1c/2.5s      0     0  0.0000s  circuit_state.json,.monitor_state.json
+[gearbox 16:46:11] circuit         dir_rescan            by size      -     0  0.0000s  target .py
+[gearbox 16:46:11] circuit         crc                    8c/20s      0     0  0.0000s  baseline.json
+[gearbox 16:46:11] circuit         io                     8c/20s      2     0  0.0000s  -
+[gearbox 16:46:11] circuit         mypy                   8c/20s      4     0  0.0000s  .mypy_cache
+[gearbox 16:46:11] circuit         vulture                8c/20s      6     0  0.0000s  -
+[gearbox 16:46:11] noai_validator  validate              1c/2.5s      0     2  0.6250s  NOAI_VALIDATION_STATE.json,circuit_state.json
+[gearbox 16:46:11] noai_validator  heartbeat              4c/10s      1     2  0.6250s  NOAI_VALIDATION_STATE.heartbeat.json
+[gearbox 16:46:11] cheatsheets     build                 1c/2.5s      0     4  1.2500s  BUILDER_STATE.json,.noai_state.json,NOAI_VALIDATION_STATE.json
+[gearbox 16:46:11] cheatsheets     heartbeat              4c/10s      1     4  1.2500s  BUILDER_STATE.heartbeat.json
+[gearbox 16:46:11] dashboard       circuit_interval      1c/2.5s      0     6  1.8750s  circuit_state.json,NOAI_VALIDATION_STATE.json,BUILDER_STATE.json,poll_config.json
+[gearbox 16:46:11] dashboard       verdict_interval      1c/2.5s      0     7  2.1875s  NOAI_VALIDATION_STATE.json,BUILDER_STATE.json
+[gearbox 16:46:11] dashboard       frame_stale_floor   threshold      -     -        -  circuit_state.json
+[gearbox 16:46:11] gearbox         manifest_scan         12c/30s      0     1  0.3125s  target mirror files
+[gearbox 16:46:11] gearbox         stale_warn            12c/30s      6     5  1.5625s  circuit_state.json
+[gearbox 16:46:11] gearbox         hung_state          threshold      -     -        -  child state files
+[gearbox 16:46:11]                 dir_rescan sizing                                    8 files/cycle, cap 240 cycles (600s)
+[gearbox 16:46:11]                 thresholds                                           dash frame-stale floor 10s · gearbox stale warn 30s · gearbox hung state 90s — I-11's two and I-109's third, three questions, three rows, all DECLARED HERE and NOT unified (owner Q6)
+[gearbox 16:46:11]                 I-87 invariant                                       mirror writers: circuit.graph_scan (blade 0, slot 0, 0.0000s) vs cheatsheets.build (blade 2, slot 4, 1.2500s) = 1.2500s apart, opposite blades — every write is tmp+replace, so the separation is THIS TABLE's, tested by CADENCE CONFLICTS below, never by counting file holds
+[gearbox 16:46:11] CADENCE CONFLICTS: none
+[gearbox 16:46:11] pre-flight: no state mirrors in target yet
+[gearbox 16:46:11] started circuit_daemon PID 62640 -> circuit_daemon_20260928_164611.log
+[gearbox 16:46:11] GATE [circuit READY/RUNNING] waiting (timeout 120s)...
+[gearbox 16:46:13] GATE [circuit READY/RUNNING] PASS in 2.0s
+[gearbox 16:46:13] GATE [circuit WIRING] PASS — every node connected
+[gearbox 16:46:13] started noai_validator PID 62657 -> noai_validator_20260928_164611.log
+[gearbox 16:46:13] started cheatsheets PID 62658 -> cheatsheets_20260928_164611.log
+[gearbox 16:46:13] started dashboard PID 62659 -> dashboard_20260928_164611.log
+[gearbox 16:46:13] NOAI gate timeout scaled to 128s (4 live .py files per the whitelist stage)
+[gearbox 16:46:13] GATE [NOAI MONITORING] waiting (timeout 128s)...
+[gearbox 16:46:18] GATE [NOAI MONITORING] PASS in 5.1s
+[gearbox 16:46:18] CHEATSHEETS gate timeout scaled to 154s (47 failed rows per the validator state)
+[gearbox 16:46:18] GATE [CHEATSHEETS MONITORING] waiting (timeout 154s)...
+[gearbox 16:46:19] GATE [CHEATSHEETS MONITORING] PASS in 1.5s
+[gearbox 16:46:19] GATE [dashboard HTTP 200] waiting (timeout 30s)...
+[gearbox 16:46:19] GATE [dashboard HTTP 200] PASS in 0.0s
+[gearbox 16:46:19] ALL GATES PASSED — stack is up. Dashboard: http://127.0.0.1:8083
+[gearbox 16:46:19] gate_states = {"circuit_ready": true, "noai_monitoring": true, "builder_monitoring": true, "dashboard_up": true}
+[gearbox 16:46:50] manifest: recorded 4 new mirror write(s) (4 total) -> cb_writes_b8beb28d80c2.json
+[gearbox 16:46:58] received signal 15 — shutting down
+[gearbox 16:46:58] === TEARDOWN ===
+[gearbox 16:46:58] tester report: 47 infractions, 2 solutions, 0 confirmed; confirmed_fraction=0.000; 2 channel line(s) copied -> .archive/runs/seven_cities_of_gold/tester_report.json
+[gearbox 16:46:58]   circuit_daemon: stopped (SIGTERM), exit code 0
+[gearbox 16:46:58]   noai_validator: stopped (SIGTERM), exit code 0
+[gearbox 16:46:58]   cheatsheets: stopped (SIGTERM), exit code 0
+[gearbox 16:46:58]   dashboard: stopped (SIGTERM), exit code 0
+[gearbox 16:46:58] MIRRORS KEPT: 4 state mirror(s) left in target as the run's log: ['/Users/dev/Desktop/seven_cities_of_gold/.coderadar/.monitor_state.json', '/Users/dev/Desktop/seven_cities_of_gold/.coderadar/.noai_state.json', '/Users/dev/Desktop/seven_cities_of_gold/.coderadar/documentation/.monitor_state.json', '/Users/dev/Desktop/seven_cities_of_gold/.coderadar/documentation/.noai_state.json']
+[gearbox 16:46:58] RESIDUE CHECK: zero CodeRadar files remain in target beyond the kept state mirrors
+[gearbox 16:46:58] VERDICT: polluted=no  pyc_preexisting=0  pyc_at_teardown=0  suite reading CLEAN
+[gearbox 16:46:58] manifest -> cb_writes_b8beb28d80c2.json (entries cleared, teardown_verified=True)
+[gearbox 16:46:58] restart events -> gearbox_events.json removed (0 restart(s) this run)
+[gearbox 16:46:58] === TEARDOWN COMPLETE ===

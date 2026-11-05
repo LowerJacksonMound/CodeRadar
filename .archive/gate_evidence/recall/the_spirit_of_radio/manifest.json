@@ -1,0 +1,14 @@
+{
+ "target": "/Users/dev/Desktop/the_spirit_of_radio",
+ "built": "2026-09-10",
+ "by": "set 4b-05 (run 59)",
+ "base": "sir_gawain_and_the_green_knight tree + colorama/repair_plant_secrets.py",
+ "note": "SEC ids come from the regex scan off the daemon's route; each plant accepts the neighbouring id that decides its site (SEC-004 → NAI-093 whose rewriter SEC-004 aliases; SEC-005 → NAI-092 likewise; SEC-006/007 → NAI-072; SEC-008 → NAI-073)",
+ "planted_findings": [
+  {"file": "colorama/repair_plant_secrets.py", "line": 10, "function": "load_settings", "family": "SEC-004", "accept_any_of": ["SEC-004", "NAI-093"], "what": "`yaml.load(text)` with no Loader — decided as NAI-093, rewritten by yaml_safe_load_fix which SEC-004 aliases (set 4b-05)"},
+  {"file": "colorama/repair_plant_secrets.py", "line": 14, "function": "list_dir", "family": "SEC-005", "accept_any_of": ["SEC-005", "NAI-092"], "what": "`subprocess.run('ls ' + path, shell=True)` — decided as NAI-092; the rewriter declines a non-literal command (set 4b-05)"},
+  {"file": "colorama/repair_plant_secrets.py", "line": 18, "function": "connect", "family": "SEC-006", "accept_any_of": ["SEC-006", "NAI-072"], "what": "`password = 'hunter2'` — decided as NAI-072 (set 4b-05, no-fix-by-design)"},
+  {"file": "colorama/repair_plant_secrets.py", "line": 19, "function": "connect", "family": "SEC-007", "accept_any_of": ["SEC-007", "NAI-072"], "what": "`api_key = 'sk-…'` — the same function row, decided as NAI-072 (set 4b-05, no-fix-by-design)"},
+  {"file": "colorama/repair_plant_secrets.py", "line": 24, "function": "find_user", "family": "SEC-008", "accept_any_of": ["SEC-008", "NAI-073"], "what": "query built with `.format(sql_name)` — decided as NAI-073 (set 4b-05, no-fix-by-design)"}
+ ]
+}

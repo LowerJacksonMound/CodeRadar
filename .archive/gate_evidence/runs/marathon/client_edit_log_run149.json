@@ -1,0 +1,90 @@
+[
+  {
+    "t6_row": 30,
+    "row": "colorama/repair_plant_branches.py::stamp::24",
+    "file": "colorama/repair_plant_branches.py",
+    "replace_span": "colorama/repair_plant_branches.py:L24-L27",
+    "kind": "diff",
+    "selected_role": "immediate_overwrite_fix:keep_second",
+    "digest": "9404d6a9f0",
+    "before": "def stamp(value):\n    width = len(str(value))\n    width = 8\n    return str(value).rjust(width)\n",
+    "after": "def stamp(value):\n    width = 8\n    return str(value).rjust(width)\n"
+  },
+  {
+    "t6_row": 33,
+    "row": "colorama/repair_plant_chains.py::stamp::21",
+    "file": "colorama/repair_plant_chains.py",
+    "replace_span": "colorama/repair_plant_chains.py:L21-L24",
+    "kind": "diff",
+    "selected_role": "immediate_overwrite_fix:keep_second",
+    "digest": "20d7bb0324",
+    "before": "def stamp(value):\n    width = 4\n    width = 8\n    return str(value).rjust(width)\n",
+    "after": "def stamp(value):\n    width = 8\n    return str(value).rjust(width)\n"
+  },
+  {
+    "t6_row": 53,
+    "row": "colorama/repair_plant_noop.py::tally::23",
+    "file": "colorama/repair_plant_noop.py",
+    "replace_span": "colorama/repair_plant_noop.py:L23-L26",
+    "kind": "diff",
+    "selected_role": "algebraic_identity_fix",
+    "digest": "dfc4c0d50e",
+    "before": "def tally(items):\n    total = sum(items)\n    total = total + 0\n    return total * 2\n",
+    "after": "def tally(items):\n    total = sum(items)\n    return total * 2\n"
+  },
+  {
+    "t6_row": 61,
+    "row": "colorama/repair_plant_shape.py::pick_label::5",
+    "file": "colorama/repair_plant_shape.py",
+    "replace_span": "colorama/repair_plant_shape.py:L5-L10",
+    "kind": "diff",
+    "selected_role": "identical_branches_fix:body_once",
+    "digest": "4a88e33a69",
+    "before": "def pick_label(flag, value):\n    if flag:\n        label = str(value)\n    else:\n        label = str(value)\n    return label\n",
+    "after": "def pick_label(flag, value):\n    label = str(value)\n    return label\n"
+  },
+  {
+    "t6_row": 70,
+    "row": "colorama/repair_plant_typos.py::code_word::20",
+    "file": "colorama/repair_plant_typos.py",
+    "replace_span": "colorama/repair_plant_typos.py:L20-L27",
+    "kind": "diff",
+    "selected_role": "repetitive_branches_fix:merge_conditions",
+    "digest": "da48d030ee",
+    "before": "def code_word(code):\n    if code == 1:\n        word = \"one\"\n    elif code == 2:\n        word = \"one\"\n    else:\n        word = \"many\"\n    return word\n",
+    "after": "def code_word(code):\n    if (code == 1) or (code == 2):\n        word = \"one\"\n    else:\n        word = \"many\"\n    return word\n"
+  },
+  {
+    "t6_row": 73,
+    "row": "colorama/win32.py::GetConsoleScreenBufferInfo::118",
+    "file": "colorama/win32.py",
+    "replace_span": "colorama/win32.py:L118-L123",
+    "kind": "diff",
+    "selected_role": "dead_local_fix:keep_call_effect",
+    "digest": "8fa44230d8",
+    "before": "    def GetConsoleScreenBufferInfo(stream_id=STDOUT):\n        handle = _GetStdHandle(stream_id)\n        csbi = CONSOLE_SCREEN_BUFFER_INFO()\n        success = _GetConsoleScreenBufferInfo(\n            handle, byref(csbi))\n        return csbi\n",
+    "after": "    def GetConsoleScreenBufferInfo(stream_id=STDOUT):\n        handle = _GetStdHandle(stream_id)\n        csbi = CONSOLE_SCREEN_BUFFER_INFO()\n        _GetConsoleScreenBufferInfo(\n            handle, byref(csbi))\n        return csbi\n"
+  },
+  {
+    "t6_row": 74,
+    "row": "colorama/win32.py::FillConsoleOutputCharacter::147",
+    "file": "colorama/win32.py",
+    "replace_span": "colorama/win32.py:L147-L155",
+    "kind": "diff",
+    "selected_role": "dead_local_fix:keep_call_effect",
+    "digest": "f4353a1796",
+    "before": "    def FillConsoleOutputCharacter(stream_id, char, length, start):\n        handle = _GetStdHandle(stream_id)\n        char = c_char(char.encode())\n        length = wintypes.DWORD(length)\n        num_written = wintypes.DWORD(0)\n        # Note that this is hard-coded for ANSI (vs wide) bytes.\n        success = _FillConsoleOutputCharacterA(\n            handle, char, length, start, byref(num_written))\n        return num_written.value\n",
+    "after": "    def FillConsoleOutputCharacter(stream_id, char, length, start):\n        handle = _GetStdHandle(stream_id)\n        char = c_char(char.encode())\n        length = wintypes.DWORD(length)\n        num_written = wintypes.DWORD(0)\n        # Note that this is hard-coded for ANSI (vs wide) bytes.\n        _FillConsoleOutputCharacterA(\n            handle, char, length, start, byref(num_written))\n        return num_written.value\n"
+  },
+  {
+    "t6_row": 75,
+    "row": "colorama/winterm.py::enable_vt_processing::178",
+    "file": "colorama/winterm.py",
+    "replace_span": "colorama/winterm.py:L178-L195",
+    "kind": "diff",
+    "selected_role": "fallback_return_fix:log_and_return",
+    "digest": "f5f1cc69ce",
+    "before": "def enable_vt_processing(fd):\n    if win32.windll is None or not win32.winapi_test():\n        return False\n\n    try:\n        handle = get_osfhandle(fd)\n        mode = win32.GetConsoleMode(handle)\n        win32.SetConsoleMode(\n            handle,\n            mode | win32.ENABLE_VIRTUAL_TERMINAL_PROCESSING,\n        )\n\n        mode = win32.GetConsoleMode(handle)\n        if mode & win32.ENABLE_VIRTUAL_TERMINAL_PROCESSING:\n            return True\n    # Can get TypeError in testsuite where 'fd' is a Mock()\n    except (OSError, TypeError):\n        return False\n",
+    "after": "def enable_vt_processing(fd):\n    if win32.windll is None or not win32.winapi_test():\n        return False\n\n    try:\n        handle = get_osfhandle(fd)\n        mode = win32.GetConsoleMode(handle)\n        win32.SetConsoleMode(\n            handle,\n            mode | win32.ENABLE_VIRTUAL_TERMINAL_PROCESSING,\n        )\n\n        mode = win32.GetConsoleMode(handle)\n        if mode & win32.ENABLE_VIRTUAL_TERMINAL_PROCESSING:\n            return True\n    # Can get TypeError in testsuite where 'fd' is a Mock()\n    except (OSError, TypeError):\n        import logging\n        logging.getLogger(__name__).debug(\"enable_vt_processing: error swallowed, returning the fallback\", exc_info=True)\n        return False\n"
+  }
+]

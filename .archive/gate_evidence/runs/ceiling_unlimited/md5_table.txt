@@ -1,0 +1,22 @@
+file<TAB>base_md5 (= the original's current md5)<TAB>after_md5
+utils/code_analysis/fingerprint.py	d011c5deebdfa025128ec3a520273e38	e16fc16b9e6652cceefb466e74b16b0c	SAME
+no_aivalidator/noai_validator/file_validation.py	6d856db94c92344d21ad970e9a26482b	7ee6a30ae068636d7dd278020a785e3f	SAME
+no_aivalidator/repair_generators/file_level.py	dcf4ebba982c2108cfbebfbba73fc81e	229613d50070602dc5a8e7a52a5bd9ad	SAME
+system_scripts/test_runner_tracker.py	dad4bacacafe4f6c1113ec387efb060b	b047c70d21967f0682f6fbeefeda2ad7	SAME
+system_scripts/entry_point_wrapper.py	9df0925f793805e8c5019f7c2b5a8617	d104e79ea85cd042e0b92091b8e55f0d	SAME
+system_scripts/health_check.py	354641878170fb666ce5c64bebdcebec	c8ce3b7260410d3e174c19003a4ad051	SAME
+BUILD_PLANS_FIXES_2026-09-08/FIX_47_rca_001_reroute.md	0e42cb5e82efd99e2ddd0eaebe147f51	b4d34c38fffb88b54fdc2c82e4cb2b41	SAME
+
+NEW (no base):
+system_scripts/fix47_rca_reroute_proof.py	-	39b4a27f4fde3e4555f96f768cbbc84e
+
+UNCHANGED (verified):
+system_scripts/preranker_allowlist.json	cc24d9f1c670c22f53973114214c490e	IDENTICAL-TO-ORIGINAL
+system_scripts/rule_dispositions.json	b9bc7a10332e19e4144d3ac7485c8a85	IDENTICAL-TO-ORIGINAL
+system_scripts/circuit_daemon.py	5d8e7f7498084177f0b4a48ef692b8cf	IDENTICAL-TO-ORIGINAL
+no_aivalidator/BUILDER_DAEMON.py	8d964a1a306d4e0dfd87f342f94c94c7	IDENTICAL-TO-ORIGINAL
+no_aivalidator/cheatsheets/cheatsheet_intelligence/knowledge_base.py	ca8b97221d56db58e19f0535cc3b28a9	IDENTICAL-TO-ORIGINAL
+no_aivalidator/noai_validator/validator.py	23d69e27bb866f91dfd883bb4e5bbd53	IDENTICAL-TO-ORIGINAL
+
+LEDGER:
+.archive/PRERANKER_HUNT_2026-09-17.tsv	cb348102d0aec0eeae9d59846c25f58c	2407 lines (2391 before; +16 RUN_136 rows, append-only)

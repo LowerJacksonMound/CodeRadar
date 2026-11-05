@@ -25,7 +25,7 @@ from __future__ import annotations
 import ast
 import math
 import re
-from typing import Any, Callable, Dict, List, Optional
+from typing import Any, Callable, Dict, List, Optional, Tuple, TypeGuard, cast
 
 from .boundary_probes import _call, _kind, _NOMINAL
 from .intent_claims import _compile, last_return_line, slice_lines
@@ -40,7 +40,7 @@ def _params(fn: ast.FunctionDef) -> List[str]:
     return [a.arg for a in fn.args.args if a.arg not in ("self", "cls")]
 
 
-def _num(v: Any) -> bool:
+def _num(v: Any) -> TypeGuard[float]:
     return isinstance(v, (int, float)) and not isinstance(v, bool)
 
 
@@ -156,7 +156,7 @@ _U: Dict[str, tuple] = {
     "kib": ("d", 1024.0), "mib": ("d", 1024.0 ** 2), "gib": ("d", 1024.0 ** 3),
 }
 _TEMP = {"c": "C", "celsius": "C", "f": "F", "fahrenheit": "F", "k": "K", "kelvin": "K"}
-_TEMP_AT = {("C", "F"): [(0, 32), (100, 212), (-40, -40)], ("F", "C"): [(32, 0), (212, 100), (-40, -40)],
+_TEMP_AT: Dict[Tuple[str, str], List[Tuple[float, float]]] = {("C", "F"): [(0, 32), (100, 212), (-40, -40)], ("F", "C"): [(32, 0), (212, 100), (-40, -40)],
             ("C", "K"): [(0, 273.15), (100, 373.15)], ("K", "C"): [(273.15, 0), (373.15, 100)],
             ("F", "K"): [(32, 273.15), (212, 373.15)], ("K", "F"): [(273.15, 32), (373.15, 212)]}
 _ALSO_DECIMAL = {"kb": 1024.0, "mb": 1024.0 ** 2, "gb": 1024.0 ** 3}   # KB = 1000 or 1024 is a convention, both accepted
@@ -279,7 +279,7 @@ def _truthy(fns: List[ast.FunctionDef]) -> Dict[str, Dict[str, Any]]:
             ann = next((ast.unparse(a.annotation) for a in f.args.args if a.arg == p and a.annotation), "")
             if re.search(r"\b(str|list|dict|bool|List|Dict|Sequence)\b", ann):
                 continue
-            site = None
+            site: Optional[ast.stmt] = None
             for n in ast.walk(f):
                 if isinstance(n, ast.Assign) and isinstance(n.value, ast.BoolOp) and isinstance(n.value.op, ast.Or) \
                         and isinstance(n.value.values[0], ast.Name) and n.value.values[0].id == p \
@@ -326,7 +326,8 @@ def _seeded(fns: List[ast.FunctionDef]) -> Dict[str, Dict[str, Any]]:
         param = _one(ps)
         if param is None or _kind(f, param) != "seq":
             continue
-        seeds = {n.targets[0].id: (n.value.value if isinstance(n.value, ast.Constant) else -n.value.operand.value, n)
+        seeds: Dict[str, Tuple[Any, ast.Assign]] = {cast(ast.Name, n.targets[0]).id: (n.value.value if isinstance(n.value, ast.Constant)
+                                           else -cast(Any, cast(ast.Constant, n.value.operand).value), n)
                  for n in f.body if isinstance(n, ast.Assign) and isinstance(_one(n.targets), ast.Name)
                  and ((isinstance(n.value, ast.Constant) and _num(n.value.value))
                       or (isinstance(n.value, ast.UnaryOp) and isinstance(n.value.op, ast.USub)
@@ -340,7 +341,7 @@ def _seeded(fns: List[ast.FunctionDef]) -> Dict[str, Dict[str, Any]]:
         for n in ast.walk(loops[0]):
             if isinstance(n, ast.Assign) and isinstance(n.targets[0], ast.Name) and n.targets[0].id in seeds \
                     and isinstance(n.value, ast.Call) and getattr(n.value.func, "id", "") in ("max", "min"):
-                mode = (n.targets[0].id, n.value.func.id)
+                mode = (n.targets[0].id, cast(ast.Name, n.value.func).id)
             if isinstance(n, ast.If) and isinstance(n.test, ast.Compare) and _one(n.test.ops) is not None:
                 names = [x.id for x in (n.test.left, n.test.comparators[0]) if isinstance(x, ast.Name)]
                 acc = next((x for x in names if x in seeds), None)
@@ -377,7 +378,7 @@ def _formula_shapes(fns: List[ast.FunctionDef]) -> Dict[str, Dict[str, Any]]:
     out: Dict[str, Dict[str, Any]] = {}
     for f in fns:
         name = f.name.lower()
-        hit = None
+        hit: Optional[Tuple[ast.stmt | ast.expr, str]] = None
         for n in ast.walk(f):
             if isinstance(n, ast.BinOp) and isinstance(n.op, ast.Div) and isinstance(n.left, ast.BinOp) \
                     and isinstance(n.left.op, ast.Pow) and _is_const(n.left.right, 1) \
@@ -409,7 +410,7 @@ def _formula_shapes(fns: List[ast.FunctionDef]) -> Dict[str, Dict[str, Any]]:
 
 
 # ── NAI-250 leap_year ────────────────────────────────────────────────────────────────────────────────────────────────
-def _mod_eq(n: ast.AST, k: int) -> bool:
+def _mod_eq(n: ast.AST, k: int) -> TypeGuard[ast.BinOp]:
     return isinstance(n, ast.BinOp) and isinstance(n.op, ast.Mod) and _is_const(n.right, k)
 
 

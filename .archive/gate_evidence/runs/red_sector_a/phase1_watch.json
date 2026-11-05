@@ -1,0 +1,37 @@
+{
+  "started": true,
+  "target": "/Users/dev/Desktop/red_sector_a",
+  "repo_id": "7cfe2e71fa83",
+  "phase": "MONITORING",
+  "gates": [
+    {
+      "gate": "circuit READY/RUNNING",
+      "status": "PASS",
+      "seconds": 1.5
+    },
+    {
+      "gate": "circuit WIRING",
+      "status": "PASS",
+      "seconds": null
+    },
+    {
+      "gate": "NOAI MONITORING",
+      "status": "PASS",
+      "seconds": 5.6
+    },
+    {
+      "gate": "CHEATSHEETS MONITORING",
+      "status": "PASS",
+      "seconds": 1.0
+    },
+    {
+      "gate": "dashboard HTTP 200",
+      "status": "PASS",
+      "seconds": 0.0
+    }
+  ],
+  "gate_budget_s": 2328,
+  "dashboard_url": "http://127.0.0.1:8081",
+  "health_url": "http://127.0.0.1:8052/health",
+  "error": null
+}

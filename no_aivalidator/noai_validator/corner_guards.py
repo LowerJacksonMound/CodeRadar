@@ -43,7 +43,7 @@ def _empty_default(v: ast.AST) -> bool:
 
 def _one_arg_get(v: ast.AST) -> bool:
     return (isinstance(v, ast.Call) and isinstance(v.func, ast.Attribute) and v.func.attr == "get"
-            and v.args and not v.args[1:] and not v.keywords)
+            and bool(v.args) and not v.args[1:] and not v.keywords)
 
 
 def _tests_value(t: ast.AST, name: str) -> bool:
@@ -108,7 +108,7 @@ def static_observations(functions: List[Any]) -> Dict[str, List[Dict[str, Any]]]
             if [x for x in stores.get(name, []) if x != at]:
                 continue   # bound somewhere else too — the default is not the only value used
             guards = [g for g in _guard_lines(fn, name)]
-            uses = []
+            uses: List[ast.expr] = []
             for n in own:
                 if variant == "defaulted_empty_indexed" and isinstance(n, ast.Subscript) and isinstance(n.ctx, ast.Load) \
                         and isinstance(n.value, ast.Name) and n.value.id == name and _const_index(n):

@@ -1,0 +1,4034 @@
+{
+  "status": "47 FINDINGS",
+  "last_scan": "2026-09-28T21:46:19.532041+00:00",
+  "target_repo": "/Users/dev/Desktop/seven_cities_of_gold",
+  "summary": {
+    "total_functions": 191,
+    "passed": 23,
+    "failed": 47,
+    "failed_validator": 47,
+    "bucket_gap": 0,
+    "files_scanned": 4,
+    "repairs": 2,
+    "no_vetted_fix": 45,
+    "withheld_failed": 0,
+    "span_refused": 0,
+    "whitelisted": 0,
+    "withheld": 121,
+    "withheld_gate": 0,
+    "withheld_by_design": 0,
+    "rule_outcomes": {}
+  },
+  "repairs": [
+    {
+      "file": "six.py",
+      "function": "_resolve",
+      "line": 164,
+      "line_end": 166,
+      "replace_span": "six.py:L164-L166",
+      "finding_lines": [
+        164
+      ],
+      "rule_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-114",
+        "NAI-183",
+        "NAI-185",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "RCA-001"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] RCA-001 (line 164): Calls failed function '_import_module' without forwarding params ['self']",
+      "fix": "Forward the caller's own parameters into the failed callee (or stop calling it) so the caller's result depends on its inputs; the flip itself re-routes as Ranker evidence under Q7.",
+      "before_code": "    def _resolve(self):\n        module = _import_module(self.mod)\n        return getattr(module, self.attr)",
+      "after_code": "def caller(a, b):\n    return callee(a, b)",
+      "selected_role": "solution_RCA-001",
+      "solution_kind": "prescribed",
+      "digest": "5758f90aa5",
+      "apply": "review",
+      "withheld_by": null,
+      "return_channel": "/Users/dev/Desktop/CODE_RADAR_REFURBISH_copy3/system_scripts/return_channel_b8beb28d80c2.jsonl"
+    },
+    {
+      "file": "six.py",
+      "function": "exec_module",
+      "line": 239,
+      "line_end": 240,
+      "replace_span": "six.py:L239-L240",
+      "finding_lines": [
+        239
+      ],
+      "rule_ids": [
+        "NAI-004",
+        "NAI-084",
+        "NAI-185",
+        "NAI-120",
+        "NAI-121",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-004 (line 239): func_name=exec_module, body_type=pass",
+      "gate_withheld": {
+        "solution_NAI-004": "gate: not selectable \u2014 the shape carries 2 placeholder(s) the site cannot bind (`<compute from the parameters per the intent>`, `<result>`); an unattended seat has nothing to render (I-152) [solution_NAI-004]"
+      },
+      "fix": "Implement the body: compute and return what the name and the intent's expected output promise; a declared-but-unimplemented member (a reserved hook whose only meaning is 'not yet') raises NotImplementedError naming the missing piece \u2014 give the function an effect without inventing one (the owner's form, hand check #17, 2026-09-16).",
+      "before_code": "    def exec_module(self, module):\n        pass",
+      "after_code": "def <name>(<params>):\n    \"\"\"<existing docstring>\"\"\"\n    raise NotImplementedError(\"<name>: not implemented\")",
+      "selected_role": "solution_NAI-120",
+      "solution_kind": "prescribed",
+      "digest": "f81881556e",
+      "apply": "review",
+      "withheld_by": null,
+      "return_channel": "/Users/dev/Desktop/CODE_RADAR_REFURBISH_copy3/system_scripts/return_channel_b8beb28d80c2.jsonl"
+    }
+  ],
+  "no_vetted_fix": [
+    {
+      "file": "six.py",
+      "function": "__len__",
+      "line": 62,
+      "line_end": 63,
+      "replace_span": "six.py:L62-L63",
+      "finding_lines": [
+        62
+      ],
+      "rule_ids": [
+        "NAI-084",
+        "NAI-185",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 62): similar function structure (normalized): __dir__@508, __len__@62, _get_module@186, b@674, create_unbound_method@570, get_unbound_function@565, get_unbound_function@575, u@651",
+      "gate_withheld": {
+        "solution_NAI-230": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<difference>`); an unattended seat has nothing to render (I-152) [solution_NAI-230]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "_add_doc",
+      "line": 80,
+      "line_end": 82,
+      "replace_span": "six.py:L80-L82",
+      "finding_lines": [
+        80
+      ],
+      "rule_ids": [
+        "NAI-082",
+        "NAI-084",
+        "NAI-086",
+        "NAI-113",
+        "NAI-185",
+        "NAI-104",
+        "NAI-121",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-104 (line 80): func_name=_add_doc, implied_verb=add, expected_ops=['Add', 'BinOp']",
+      "gate_withheld": {
+        "solution_NAI-104": "gate: not selectable \u2014 the shape carries 2 placeholder(s) the site cannot bind (`<verb>`, `<the verb's operation on target with value>`); an unattended seat has nothing to render (I-152) [solution_NAI-104]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "_import_module",
+      "line": 85,
+      "line_end": 88,
+      "replace_span": "six.py:L85-L88",
+      "finding_lines": [
+        85
+      ],
+      "rule_ids": [
+        "NAI-097",
+        "NAI-082",
+        "NAI-084",
+        "NAI-086",
+        "NAI-113",
+        "NAI-185",
+        "NAI-121",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 85): similar function structure (normalized): __prepare__@880, _import_module@85, _resolve@119, advance_iterator@552, b@648, byte2int@683, create_bound_method@578, create_module@236, create_unbound_method@581, get_code@228, indexbytes@686, iteritems@627, iterkeys@621, iterlists@630, itervalues@624, wraps@851",
+      "gate_withheld": {
+        "solution_NAI-230": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<difference>`); an unattended seat has nothing to render (I-152) [solution_NAI-230]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "__get__",
+      "line": 96,
+      "line_end": 105,
+      "replace_span": "six.py:L96-L105",
+      "finding_lines": [
+        96,
+        103
+      ],
+      "rule_ids": [
+        "NAI-003",
+        "NAI-078",
+        "NAI-082",
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-114",
+        "NAI-183",
+        "NAI-185",
+        "NAI-186",
+        "NAI-168",
+        "NAI-121",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "SIG-silent_exception"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-003 (line 96): func_name=__get__, unused_params=['tp'], total_effective_params=2, all_params_ignored=False",
+      "gate_withheld": {
+        "solution_NAI-003": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<result>`); an unattended seat has nothing to render (I-152) [solution_NAI-003]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "_resolve",
+      "line": 119,
+      "line_end": 120,
+      "replace_span": "six.py:L119-L120",
+      "finding_lines": [
+        119
+      ],
+      "rule_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-183",
+        "NAI-185",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 119): similar function structure (normalized): __prepare__@880, _import_module@85, _resolve@119, advance_iterator@552, b@648, byte2int@683, create_bound_method@578, create_module@236, create_unbound_method@581, get_code@228, indexbytes@686, iteritems@627, iterkeys@621, iterlists@630, itervalues@624, wraps@851",
+      "gate_withheld": {
+        "solution_NAI-230": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<difference>`); an unattended seat has nothing to render (I-152) [solution_NAI-230]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "_get_module",
+      "line": 186,
+      "line_end": 187,
+      "replace_span": "six.py:L186-L187",
+      "finding_lines": [
+        186
+      ],
+      "rule_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-183",
+        "NAI-185",
+        "NAI-121",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 186): similar function structure (normalized): __dir__@508, __len__@62, _get_module@186, b@674, create_unbound_method@570, get_unbound_function@565, get_unbound_function@575, u@651",
+      "gate_withheld": {
+        "solution_NAI-230": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<difference>`); an unattended seat has nothing to render (I-152) [solution_NAI-230]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "find_module",
+      "line": 189,
+      "line_end": 192,
+      "replace_span": "six.py:L189-L192",
+      "finding_lines": [
+        189
+      ],
+      "rule_ids": [
+        "NAI-003",
+        "NAI-030",
+        "NAI-082",
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-183",
+        "NAI-185",
+        "NAI-186",
+        "NAI-121",
+        "MEASURED-NOTHING",
+        "NAI-229"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-003 (line 189): func_name=find_module, unused_params=['path'], total_effective_params=2, all_params_ignored=False",
+      "gate_withheld": {
+        "solution_NAI-003": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<result>`); an unattended seat has nothing to render (I-152) [solution_NAI-003]",
+        "solution_NAI-030": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<compute using a AND b>`); an unattended seat has nothing to render (I-152) [solution_NAI-030]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "find_spec",
+      "line": 194,
+      "line_end": 197,
+      "replace_span": "six.py:L194-L197",
+      "finding_lines": [
+        194
+      ],
+      "rule_ids": [
+        "NAI-003",
+        "NAI-030",
+        "NAI-082",
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-183",
+        "NAI-185",
+        "NAI-186",
+        "NAI-121",
+        "MEASURED-NOTHING",
+        "NAI-229"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-003 (line 194): func_name=find_spec, unused_params=['path', 'target'], total_effective_params=3, all_params_ignored=False",
+      "gate_withheld": {
+        "solution_NAI-003": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<result>`); an unattended seat has nothing to render (I-152) [solution_NAI-003]",
+        "solution_NAI-030": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<compute using a AND b>`); an unattended seat has nothing to render (I-152) [solution_NAI-030]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "load_module",
+      "line": 205,
+      "line_end": 217,
+      "replace_span": "six.py:L205-L217",
+      "finding_lines": [
+        205,
+        209
+      ],
+      "rule_ids": [
+        "NAI-078",
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-114",
+        "NAI-183",
+        "NAI-185",
+        "NAI-186",
+        "NAI-168",
+        "NAI-121",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "SIG-silent_exception"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-078 (line 209): swallow_type=bare_pass",
+      "status": "declined",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": null
+    },
+    {
+      "file": "six.py",
+      "function": "is_package",
+      "line": 219,
+      "line_end": 226,
+      "replace_span": "six.py:L219-L226",
+      "finding_lines": [
+        219
+      ],
+      "rule_ids": [
+        "HR-NAME",
+        "NAI-084",
+        "NAI-086",
+        "NAI-113",
+        "NAI-183",
+        "NAI-185",
+        "NAI-121",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 219): similar function structure (normalized): assertCountEqual@699, assertNotRegex@711, assertRaisesRegex@703, assertRegex@707, is_package@219, iteritems@609, iterkeys@603, iterlists@612, itervalues@606, next@586, u@678",
+      "gate_withheld": {
+        "solution_NAI-230": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<difference>`); an unattended seat has nothing to render (I-152) [solution_NAI-230]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "get_code",
+      "line": 228,
+      "line_end": 233,
+      "replace_span": "six.py:L228-L233",
+      "finding_lines": [
+        228
+      ],
+      "rule_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-113",
+        "NAI-183",
+        "NAI-185",
+        "NAI-121",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 228): similar function structure (normalized): __prepare__@880, _import_module@85, _resolve@119, advance_iterator@552, b@648, byte2int@683, create_bound_method@578, create_module@236, create_unbound_method@581, get_code@228, indexbytes@686, iteritems@627, iterkeys@621, iterlists@630, itervalues@624, wraps@851",
+      "gate_withheld": {
+        "solution_NAI-230": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<difference>`); an unattended seat has nothing to render (I-152) [solution_NAI-230]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "create_module",
+      "line": 236,
+      "line_end": 237,
+      "replace_span": "six.py:L236-L237",
+      "finding_lines": [
+        236
+      ],
+      "rule_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-183",
+        "NAI-185",
+        "NAI-121",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 236): similar function structure (normalized): __prepare__@880, _import_module@85, _resolve@119, advance_iterator@552, b@648, byte2int@683, create_bound_method@578, create_module@236, create_unbound_method@581, get_code@228, indexbytes@686, iteritems@627, iterkeys@621, iterlists@630, itervalues@624, wraps@851",
+      "gate_withheld": {
+        "solution_NAI-230": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<difference>`); an unattended seat has nothing to render (I-152) [solution_NAI-230]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "__dir__",
+      "line": 508,
+      "line_end": 509,
+      "replace_span": "six.py:L508-L509",
+      "finding_lines": [
+        508
+      ],
+      "rule_ids": [
+        "NAI-084",
+        "NAI-185",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 508): similar function structure (normalized): __dir__@508, __len__@62, _get_module@186, b@674, create_unbound_method@570, get_unbound_function@565, get_unbound_function@575, u@651",
+      "gate_withheld": {
+        "solution_NAI-230": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<difference>`); an unattended seat has nothing to render (I-152) [solution_NAI-230]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "advance_iterator",
+      "line": 552,
+      "line_end": 553,
+      "replace_span": "six.py:L552-L553",
+      "finding_lines": [
+        552
+      ],
+      "rule_ids": [
+        "NAI-082",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-121",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 552): similar function structure (normalized): __prepare__@880, _import_module@85, _resolve@119, advance_iterator@552, b@648, byte2int@683, create_bound_method@578, create_module@236, create_unbound_method@581, get_code@228, indexbytes@686, iteritems@627, iterkeys@621, iterlists@630, itervalues@624, wraps@851",
+      "gate_withheld": {
+        "solution_NAI-230": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<difference>`); an unattended seat has nothing to render (I-152) [solution_NAI-230]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "get_unbound_function",
+      "line": 565,
+      "line_end": 566,
+      "replace_span": "six.py:L565-L566",
+      "finding_lines": [],
+      "rule_ids": [
+        "NAI-016S"
+      ],
+      "infraction": "[HARD_REQUIREMENTS] NAI-016S: Identity passthrough \u2014 returns exact input unchanged",
+      "gate_withheld": {
+        "solution_NAI-016S": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<transform>`); an unattended seat has nothing to render (I-152) [solution_NAI-016S]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "create_unbound_method",
+      "line": 570,
+      "line_end": 571,
+      "replace_span": "six.py:L570-L571",
+      "finding_lines": [],
+      "rule_ids": [
+        "NAI-026S"
+      ],
+      "infraction": "[HARD_REQUIREMENTS] NAI-026S: For-loop identity accumulator \u2014 buf=[]; for x in param: buf.append(x) chain",
+      "gate_withheld": {
+        "solution_NAI-026S": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<transform>`); an unattended seat has nothing to render (I-152) [solution_NAI-026S]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "get_unbound_function",
+      "line": 575,
+      "line_end": 576,
+      "replace_span": "six.py:L575-L576",
+      "finding_lines": [
+        575
+      ],
+      "rule_ids": [
+        "NAI-082",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-121",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 575): similar function structure (normalized): __dir__@508, __len__@62, _get_module@186, b@674, create_unbound_method@570, get_unbound_function@565, get_unbound_function@575, u@651",
+      "gate_withheld": {
+        "solution_NAI-230": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<difference>`); an unattended seat has nothing to render (I-152) [solution_NAI-230]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "create_bound_method",
+      "line": 578,
+      "line_end": 579,
+      "replace_span": "six.py:L578-L579",
+      "finding_lines": [
+        578
+      ],
+      "rule_ids": [
+        "NAI-082",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-121",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 578): similar function structure (normalized): __prepare__@880, _import_module@85, _resolve@119, advance_iterator@552, b@648, byte2int@683, create_bound_method@578, create_module@236, create_unbound_method@581, get_code@228, indexbytes@686, iteritems@627, iterkeys@621, iterlists@630, itervalues@624, wraps@851",
+      "gate_withheld": {
+        "solution_NAI-230": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<difference>`); an unattended seat has nothing to render (I-152) [solution_NAI-230]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "create_unbound_method",
+      "line": 581,
+      "line_end": 582,
+      "replace_span": "six.py:L581-L582",
+      "finding_lines": [
+        581
+      ],
+      "rule_ids": [
+        "NAI-082",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-121",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 581): similar function structure (normalized): __prepare__@880, _import_module@85, _resolve@119, advance_iterator@552, b@648, byte2int@683, create_bound_method@578, create_module@236, create_unbound_method@581, get_code@228, indexbytes@686, iteritems@627, iterkeys@621, iterlists@630, itervalues@624, wraps@851",
+      "gate_withheld": {
+        "solution_NAI-230": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<difference>`); an unattended seat has nothing to render (I-152) [solution_NAI-230]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "next",
+      "line": 586,
+      "line_end": 587,
+      "replace_span": "six.py:L586-L587",
+      "finding_lines": [
+        586
+      ],
+      "rule_ids": [
+        "NAI-084",
+        "NAI-185",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 586): similar function structure (normalized): assertCountEqual@699, assertNotRegex@711, assertRaisesRegex@703, assertRegex@707, is_package@219, iteritems@609, iterkeys@603, iterlists@612, itervalues@606, next@586, u@678",
+      "gate_withheld": {
+        "solution_NAI-230": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<difference>`); an unattended seat has nothing to render (I-152) [solution_NAI-230]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "iterkeys",
+      "line": 603,
+      "line_end": 604,
+      "replace_span": "six.py:L603-L604",
+      "finding_lines": [
+        603
+      ],
+      "rule_ids": [
+        "NAI-082",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-121",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 603): similar function structure (normalized): assertCountEqual@699, assertNotRegex@711, assertRaisesRegex@703, assertRegex@707, is_package@219, iteritems@609, iterkeys@603, iterlists@612, itervalues@606, next@586, u@678",
+      "gate_withheld": {
+        "solution_NAI-230": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<difference>`); an unattended seat has nothing to render (I-152) [solution_NAI-230]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "itervalues",
+      "line": 606,
+      "line_end": 607,
+      "replace_span": "six.py:L606-L607",
+      "finding_lines": [
+        606
+      ],
+      "rule_ids": [
+        "NAI-082",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-121",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 606): similar function structure (normalized): assertCountEqual@699, assertNotRegex@711, assertRaisesRegex@703, assertRegex@707, is_package@219, iteritems@609, iterkeys@603, iterlists@612, itervalues@606, next@586, u@678",
+      "gate_withheld": {
+        "solution_NAI-230": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<difference>`); an unattended seat has nothing to render (I-152) [solution_NAI-230]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "iteritems",
+      "line": 609,
+      "line_end": 610,
+      "replace_span": "six.py:L609-L610",
+      "finding_lines": [
+        609
+      ],
+      "rule_ids": [
+        "NAI-082",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-121",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 609): similar function structure (normalized): assertCountEqual@699, assertNotRegex@711, assertRaisesRegex@703, assertRegex@707, is_package@219, iteritems@609, iterkeys@603, iterlists@612, itervalues@606, next@586, u@678",
+      "gate_withheld": {
+        "solution_NAI-230": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<difference>`); an unattended seat has nothing to render (I-152) [solution_NAI-230]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "iterlists",
+      "line": 612,
+      "line_end": 613,
+      "replace_span": "six.py:L612-L613",
+      "finding_lines": [
+        612
+      ],
+      "rule_ids": [
+        "NAI-082",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-121",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 612): similar function structure (normalized): assertCountEqual@699, assertNotRegex@711, assertRaisesRegex@703, assertRegex@707, is_package@219, iteritems@609, iterkeys@603, iterlists@612, itervalues@606, next@586, u@678",
+      "gate_withheld": {
+        "solution_NAI-230": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<difference>`); an unattended seat has nothing to render (I-152) [solution_NAI-230]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "iterkeys",
+      "line": 621,
+      "line_end": 622,
+      "replace_span": "six.py:L621-L622",
+      "finding_lines": [
+        621,
+        622
+      ],
+      "rule_ids": [
+        "NAI-159",
+        "NAI-082",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-121",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-159 (line 622): method=iterkeys, replacement=.keys()",
+      "gate_withheld": {
+        "solution_NAI-230": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<difference>`); an unattended seat has nothing to render (I-152) [solution_NAI-230]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "itervalues",
+      "line": 624,
+      "line_end": 625,
+      "replace_span": "six.py:L624-L625",
+      "finding_lines": [
+        624,
+        625
+      ],
+      "rule_ids": [
+        "NAI-159",
+        "NAI-082",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-121",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-159 (line 625): method=itervalues, replacement=.values()",
+      "gate_withheld": {
+        "solution_NAI-230": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<difference>`); an unattended seat has nothing to render (I-152) [solution_NAI-230]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "iteritems",
+      "line": 627,
+      "line_end": 628,
+      "replace_span": "six.py:L627-L628",
+      "finding_lines": [
+        627,
+        628
+      ],
+      "rule_ids": [
+        "NAI-159",
+        "NAI-082",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-121",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-159 (line 628): method=iteritems, replacement=.items()",
+      "gate_withheld": {
+        "solution_NAI-230": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<difference>`); an unattended seat has nothing to render (I-152) [solution_NAI-230]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "iterlists",
+      "line": 630,
+      "line_end": 631,
+      "replace_span": "six.py:L630-L631",
+      "finding_lines": [
+        630
+      ],
+      "rule_ids": [
+        "NAI-082",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-121",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 630): similar function structure (normalized): __prepare__@880, _import_module@85, _resolve@119, advance_iterator@552, b@648, byte2int@683, create_bound_method@578, create_module@236, create_unbound_method@581, get_code@228, indexbytes@686, iteritems@627, iterkeys@621, iterlists@630, itervalues@624, wraps@851",
+      "gate_withheld": {
+        "solution_NAI-230": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<difference>`); an unattended seat has nothing to render (I-152) [solution_NAI-230]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "b",
+      "line": 648,
+      "line_end": 649,
+      "replace_span": "six.py:L648-L649",
+      "finding_lines": [
+        648
+      ],
+      "rule_ids": [
+        "NAI-082",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-121",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 648): similar function structure (normalized): __prepare__@880, _import_module@85, _resolve@119, advance_iterator@552, b@648, byte2int@683, create_bound_method@578, create_module@236, create_unbound_method@581, get_code@228, indexbytes@686, iteritems@627, iterkeys@621, iterlists@630, itervalues@624, wraps@851",
+      "gate_withheld": {
+        "solution_NAI-230": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<difference>`); an unattended seat has nothing to render (I-152) [solution_NAI-230]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "u",
+      "line": 651,
+      "line_end": 652,
+      "replace_span": "six.py:L651-L652",
+      "finding_lines": [],
+      "rule_ids": [
+        "NAI-016S"
+      ],
+      "infraction": "[HARD_REQUIREMENTS] NAI-016S: Identity passthrough \u2014 returns exact input unchanged",
+      "gate_withheld": {
+        "solution_NAI-016S": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<transform>`); an unattended seat has nothing to render (I-152) [solution_NAI-016S]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "b",
+      "line": 674,
+      "line_end": 675,
+      "replace_span": "six.py:L674-L675",
+      "finding_lines": [],
+      "rule_ids": [
+        "NAI-016S"
+      ],
+      "infraction": "[HARD_REQUIREMENTS] NAI-016S: Identity passthrough \u2014 returns exact input unchanged",
+      "gate_withheld": {
+        "solution_NAI-016S": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<transform>`); an unattended seat has nothing to render (I-152) [solution_NAI-016S]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "u",
+      "line": 678,
+      "line_end": 679,
+      "replace_span": "six.py:L678-L679",
+      "finding_lines": [
+        678
+      ],
+      "rule_ids": [
+        "NAI-050",
+        "NAI-097",
+        "NAI-082",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-121",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-050 (line 678): func_name=u, undefined_calls=['unicode']",
+      "gate_withheld": {
+        "solution_NAI-050": "gate: not selectable \u2014 the shape carries 3 placeholder(s) the site cannot bind (`<module>`, `<real_name>`, `<args>`); an unattended seat has nothing to render (I-152) [solution_NAI-050]",
+        "solution_NAI-230": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<difference>`); an unattended seat has nothing to render (I-152) [solution_NAI-230]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "byte2int",
+      "line": 683,
+      "line_end": 684,
+      "replace_span": "six.py:L683-L684",
+      "finding_lines": [
+        683
+      ],
+      "rule_ids": [
+        "NAI-082",
+        "NAI-084",
+        "NAI-185",
+        "NAI-121",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 683): similar function structure (normalized): __prepare__@880, _import_module@85, _resolve@119, advance_iterator@552, b@648, byte2int@683, create_bound_method@578, create_module@236, create_unbound_method@581, get_code@228, indexbytes@686, iteritems@627, iterkeys@621, iterlists@630, itervalues@624, wraps@851",
+      "gate_withheld": {
+        "solution_NAI-230": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<difference>`); an unattended seat has nothing to render (I-152) [solution_NAI-230]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "indexbytes",
+      "line": 686,
+      "line_end": 687,
+      "replace_span": "six.py:L686-L687",
+      "finding_lines": [
+        686
+      ],
+      "rule_ids": [
+        "NAI-082",
+        "NAI-084",
+        "NAI-185",
+        "NAI-121",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 686): similar function structure (normalized): __prepare__@880, _import_module@85, _resolve@119, advance_iterator@552, b@648, byte2int@683, create_bound_method@578, create_module@236, create_unbound_method@581, get_code@228, indexbytes@686, iteritems@627, iterkeys@621, iterlists@630, itervalues@624, wraps@851",
+      "gate_withheld": {
+        "solution_NAI-230": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<difference>`); an unattended seat has nothing to render (I-152) [solution_NAI-230]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "assertCountEqual",
+      "line": 699,
+      "line_end": 700,
+      "replace_span": "six.py:L699-L700",
+      "finding_lines": [
+        699
+      ],
+      "rule_ids": [
+        "NAI-082",
+        "NAI-084",
+        "NAI-185",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 699): similar function structure (normalized): assertCountEqual@699, assertNotRegex@711, assertRaisesRegex@703, assertRegex@707, is_package@219, iteritems@609, iterkeys@603, iterlists@612, itervalues@606, next@586, u@678",
+      "gate_withheld": {
+        "solution_NAI-230": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<difference>`); an unattended seat has nothing to render (I-152) [solution_NAI-230]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "assertRaisesRegex",
+      "line": 703,
+      "line_end": 704,
+      "replace_span": "six.py:L703-L704",
+      "finding_lines": [
+        703
+      ],
+      "rule_ids": [
+        "NAI-082",
+        "NAI-084",
+        "NAI-185",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 703): similar function structure (normalized): assertCountEqual@699, assertNotRegex@711, assertRaisesRegex@703, assertRegex@707, is_package@219, iteritems@609, iterkeys@603, iterlists@612, itervalues@606, next@586, u@678",
+      "gate_withheld": {
+        "solution_NAI-230": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<difference>`); an unattended seat has nothing to render (I-152) [solution_NAI-230]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "assertRegex",
+      "line": 707,
+      "line_end": 708,
+      "replace_span": "six.py:L707-L708",
+      "finding_lines": [
+        707
+      ],
+      "rule_ids": [
+        "NAI-082",
+        "NAI-084",
+        "NAI-185",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 707): similar function structure (normalized): assertCountEqual@699, assertNotRegex@711, assertRaisesRegex@703, assertRegex@707, is_package@219, iteritems@609, iterkeys@603, iterlists@612, itervalues@606, next@586, u@678",
+      "gate_withheld": {
+        "solution_NAI-230": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<difference>`); an unattended seat has nothing to render (I-152) [solution_NAI-230]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "assertNotRegex",
+      "line": 711,
+      "line_end": 712,
+      "replace_span": "six.py:L711-L712",
+      "finding_lines": [
+        711
+      ],
+      "rule_ids": [
+        "NAI-082",
+        "NAI-084",
+        "NAI-185",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 711): similar function structure (normalized): assertCountEqual@699, assertNotRegex@711, assertRaisesRegex@703, assertRegex@707, is_package@219, iteritems@609, iterkeys@603, iterlists@612, itervalues@606, next@586, u@678",
+      "gate_withheld": {
+        "solution_NAI-230": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<difference>`); an unattended seat has nothing to render (I-152) [solution_NAI-230]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "exec_",
+      "line": 730,
+      "line_end": 740,
+      "replace_span": "six.py:L730-L740",
+      "finding_lines": [
+        730,
+        740
+      ],
+      "rule_ids": [
+        "NAI-082",
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-113",
+        "NAI-114",
+        "NAI-185",
+        "NAI-186",
+        "NAI-121",
+        "NAI-127",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "SIG-exec_usage"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-127 (line 740): callee=exec",
+      "gate_withheld": {
+        "solution_NAI-127": "gate: not selectable \u2014 the shape carries 4 placeholder(s) the site cannot bind (`<text>`, `<args>`, `<obj>`, `<attr>`); an unattended seat has nothing to render (I-152) [solution_NAI-127]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "raise_from",
+      "line": 758,
+      "line_end": 759,
+      "replace_span": "six.py:L758-L759",
+      "finding_lines": [
+        758
+      ],
+      "rule_ids": [
+        "NAI-003",
+        "NAI-082",
+        "NAI-084",
+        "NAI-185",
+        "NAI-121",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-003 (line 758): func_name=raise_from, unused_params=['from_value'], total_effective_params=2, all_params_ignored=False",
+      "gate_withheld": {
+        "solution_NAI-003": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<result>`); an unattended seat has nothing to render (I-152) [solution_NAI-003]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "print_",
+      "line": 764,
+      "line_end": 816,
+      "replace_span": "six.py:L764-L816",
+      "finding_lines": [
+        764
+      ],
+      "rule_ids": [
+        "NAI-050",
+        "NAI-097",
+        "NAI-082",
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-113",
+        "NAI-114",
+        "NAI-185",
+        "NAI-186",
+        "NAI-169",
+        "MEASURED-NOTHING",
+        "NAI-229"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-050 (line 764): func_name=print_, undefined_calls=['unicode']",
+      "gate_withheld": {
+        "solution_NAI-050": "gate: not selectable \u2014 the shape carries 3 placeholder(s) the site cannot bind (`<module>`, `<real_name>`, `<args>`); an unattended seat has nothing to render (I-152) [solution_NAI-050]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "_update_wrapper",
+      "line": 835,
+      "line_end": 848,
+      "replace_span": "six.py:L835-L848",
+      "finding_lines": [],
+      "rule_ids": [
+        "NAI-021S"
+      ],
+      "infraction": "[HARD_REQUIREMENTS] NAI-021S: Alias identity chain \u2014 all data flow is copy/alias, no real transformation",
+      "status": "declined",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": null
+    },
+    {
+      "file": "six.py",
+      "function": "wraps",
+      "line": 851,
+      "line_end": 854,
+      "replace_span": "six.py:L851-L854",
+      "finding_lines": [
+        851
+      ],
+      "rule_ids": [
+        "NAI-082",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-121",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 851): similar function structure (normalized): __prepare__@880, _import_module@85, _resolve@119, advance_iterator@552, b@648, byte2int@683, create_bound_method@578, create_module@236, create_unbound_method@581, get_code@228, indexbytes@686, iteritems@627, iterkeys@621, iterlists@630, itervalues@624, wraps@851",
+      "gate_withheld": {
+        "solution_NAI-230": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<difference>`); an unattended seat has nothing to render (I-152) [solution_NAI-230]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "__prepare__",
+      "line": 880,
+      "line_end": 881,
+      "replace_span": "six.py:L879-L881",
+      "finding_lines": [
+        880
+      ],
+      "rule_ids": [
+        "NAI-082",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-121",
+        "MEASURED-NOTHING",
+        "NAI-229",
+        "NAI-230"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-230 (line 880): similar function structure (normalized): __prepare__@880, _import_module@85, _resolve@119, advance_iterator@552, b@648, byte2int@683, create_bound_method@578, create_module@236, create_unbound_method@581, get_code@228, indexbytes@686, iteritems@627, iterkeys@621, iterlists@630, itervalues@624, wraps@851",
+      "gate_withheld": {
+        "solution_NAI-230": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<difference>`); an unattended seat has nothing to render (I-152) [solution_NAI-230]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    },
+    {
+      "file": "six.py",
+      "function": "add_metaclass",
+      "line": 885,
+      "line_end": 900,
+      "replace_span": "six.py:L885-L900",
+      "finding_lines": [
+        885,
+        893,
+        900
+      ],
+      "rule_ids": [
+        "NAI-082",
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-113",
+        "NAI-114",
+        "NAI-178",
+        "NAI-185",
+        "NAI-186",
+        "NAI-169",
+        "NAI-100",
+        "NAI-121",
+        "MEASURED-NOTHING",
+        "NAI-229"
+      ],
+      "infraction": "[AI_FAKE_DETECTOR] NAI-100 (line 900): unused_param=metaclass, func_name=add_metaclass",
+      "gate_withheld": {
+        "solution_NAI-100": "gate: not selectable \u2014 the shape carries 1 placeholder(s) the site cannot bind (`<expression over a and b>`); an unattended seat has nothing to render (I-152) [solution_NAI-100]"
+      },
+      "status": "ranker_none",
+      "selected_role": "",
+      "apply": "no",
+      "withheld_by": "gate.prescription_check"
+    }
+  ],
+  "withheld": [
+    {
+      "file": "documentation/conf.py",
+      "function": "<module>",
+      "line": 38,
+      "line_end": 38,
+      "species": "proxy:pathhack",
+      "withheld": "species:proxy:pathhack",
+      "withheld_by": "species",
+      "withheld_reason": "species:proxy:pathhack",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-094"
+      ]
+    },
+    {
+      "file": "setup.py",
+      "function": "<module>",
+      "line": 0,
+      "line_end": 0,
+      "species": "proxy:setup",
+      "withheld": "species:proxy:setup",
+      "withheld_by": "species",
+      "withheld_reason": "species:proxy:setup",
+      "rule_ids": [],
+      "context_ids": []
+    },
+    {
+      "file": "test_six.py",
+      "function": "<module>",
+      "line": 0,
+      "line_end": 0,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": []
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_add_doc",
+      "line": 32,
+      "line_end": 37,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-046",
+        "NAI-084",
+        "NAI-086",
+        "NAI-113",
+        "NAI-185",
+        "NAI-186",
+        "NAI-169",
+        "NAI-149",
+        "NAI-155",
+        "NAI-156",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "f",
+      "line": 33,
+      "line_end": 35,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-004",
+        "NAI-084",
+        "NAI-113",
+        "NAI-185",
+        "NAI-120",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_import_module",
+      "line": 40,
+      "line_end": 43,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-008",
+        "NAI-080",
+        "NAI-084",
+        "NAI-086",
+        "NAI-114",
+        "NAI-185",
+        "NAI-149",
+        "NAI-155",
+        "NAI-156",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_integer_types",
+      "line": 46,
+      "line_end": 50,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-155",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_string_types",
+      "line": 53,
+      "line_end": 56,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-149",
+        "NAI-155",
+        "NAI-156",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_class_types",
+      "line": 59,
+      "line_end": 66,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-155",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_text_type",
+      "line": 69,
+      "line_end": 70,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-149",
+        "NAI-155",
+        "NAI-156",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_binary_type",
+      "line": 73,
+      "line_end": 74,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-149",
+        "NAI-155",
+        "NAI-156",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_MAXSIZE",
+      "line": 77,
+      "line_end": 86,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-078",
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-186",
+        "NAI-168",
+        "NAI-150",
+        "NAI-155",
+        "NAI-157",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_lazy",
+      "line": 89,
+      "line_end": 97,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-114",
+        "NAI-185",
+        "NAI-186",
+        "NAI-149",
+        "NAI-155",
+        "NAI-156",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_move_items",
+      "line": 127,
+      "line_end": 146,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-082",
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-113",
+        "NAI-114",
+        "NAI-185",
+        "NAI-186",
+        "NAI-168",
+        "NAI-121",
+        "NAI-155",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_move_items_urllib_parse",
+      "line": 151,
+      "line_end": 154,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-022",
+        "NAI-082",
+        "NAI-084",
+        "NAI-086",
+        "NAI-113",
+        "NAI-185",
+        "NAI-121",
+        "NAI-155",
+        "NAI-229",
+        "NAI-230",
+        "HR-NAME",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_move_items_urllib_error",
+      "line": 159,
+      "line_end": 162,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-022",
+        "NAI-082",
+        "NAI-084",
+        "NAI-086",
+        "NAI-113",
+        "NAI-185",
+        "NAI-121",
+        "NAI-155",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_move_items_urllib_request",
+      "line": 167,
+      "line_end": 170,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-022",
+        "NAI-082",
+        "NAI-084",
+        "NAI-086",
+        "NAI-113",
+        "NAI-185",
+        "NAI-121",
+        "NAI-155",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_move_items_urllib_response",
+      "line": 175,
+      "line_end": 178,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-022",
+        "NAI-082",
+        "NAI-084",
+        "NAI-086",
+        "NAI-113",
+        "NAI-185",
+        "NAI-121",
+        "NAI-155",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_move_items_urllib_robotparser",
+      "line": 183,
+      "line_end": 186,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-022",
+        "NAI-082",
+        "NAI-084",
+        "NAI-086",
+        "NAI-113",
+        "NAI-185",
+        "NAI-121",
+        "NAI-155",
+        "NAI-229",
+        "NAI-230",
+        "HR-NAME",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_import_moves_error_1",
+      "line": 189,
+      "line_end": 193,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-008",
+        "NAI-011",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-149",
+        "NAI-155",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_import_moves_error_2",
+      "line": 196,
+      "line_end": 200,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-008",
+        "NAI-011",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-149",
+        "NAI-155",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_import_moves_error_3",
+      "line": 203,
+      "line_end": 206,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-008",
+        "NAI-011",
+        "NAI-020",
+        "NAI-084",
+        "NAI-185",
+        "NAI-155",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_from_imports",
+      "line": 209,
+      "line_end": 213,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-008",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-149",
+        "NAI-155",
+        "NAI-229",
+        "HR-NAME",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_filter",
+      "line": 216,
+      "line_end": 219,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-008",
+        "NAI-084",
+        "NAI-086",
+        "NAI-114",
+        "NAI-185",
+        "NAI-149",
+        "NAI-155",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_filter_false",
+      "line": 222,
+      "line_end": 227,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-008",
+        "NAI-099",
+        "NAI-084",
+        "NAI-086",
+        "NAI-114",
+        "NAI-185",
+        "NAI-149",
+        "NAI-155",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_map",
+      "line": 229,
+      "line_end": 231,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-008",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-149",
+        "NAI-155",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_getoutput",
+      "line": 234,
+      "line_end": 237,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-008",
+        "NAI-084",
+        "NAI-086",
+        "NAI-114",
+        "NAI-185",
+        "NAI-186",
+        "NAI-149",
+        "NAI-155",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_zip",
+      "line": 240,
+      "line_end": 242,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-008",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-149",
+        "NAI-155",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_zip_longest",
+      "line": 245,
+      "line_end": 250,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-008",
+        "NAI-084",
+        "NAI-086",
+        "NAI-114",
+        "NAI-185",
+        "NAI-149",
+        "NAI-155",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "teardown_method",
+      "line": 255,
+      "line_end": 263,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-003",
+        "NAI-078",
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-186",
+        "NAI-168",
+        "NAI-121",
+        "NAI-229",
+        "SIG-silent_exception",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_moved_attribute",
+      "line": 266,
+      "line_end": 279,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-114",
+        "NAI-185",
+        "NAI-186",
+        "NAI-149",
+        "NAI-155",
+        "NAI-156",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_moved_module",
+      "line": 282,
+      "line_end": 292,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-114",
+        "NAI-185",
+        "NAI-186",
+        "NAI-149",
+        "NAI-155",
+        "NAI-156",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_custom_move_module",
+      "line": 295,
+      "line_end": 305,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-008",
+        "NAI-084",
+        "NAI-086",
+        "NAI-114",
+        "NAI-185",
+        "NAI-155",
+        "NAI-156",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_custom_move_attribute",
+      "line": 308,
+      "line_end": 318,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-008",
+        "NAI-084",
+        "NAI-086",
+        "NAI-114",
+        "NAI-185",
+        "NAI-155",
+        "NAI-156",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_empty_remove",
+      "line": 321,
+      "line_end": 322,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-150",
+        "NAI-155",
+        "NAI-156",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_get_unbound_function",
+      "line": 325,
+      "line_end": 329,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-186",
+        "NAI-169",
+        "NAI-149",
+        "NAI-155",
+        "NAI-156",
+        "NAI-229",
+        "NAI-230",
+        "HR-NAME",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "m",
+      "line": 327,
+      "line_end": 328,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-004",
+        "NAI-084",
+        "NAI-185",
+        "NAI-120",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_get_method_self",
+      "line": 332,
+      "line_end": 338,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-080",
+        "NAI-084",
+        "NAI-086",
+        "NAI-114",
+        "NAI-185",
+        "NAI-186",
+        "NAI-169",
+        "NAI-155",
+        "NAI-229",
+        "NAI-230",
+        "HR-NAME",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "m",
+      "line": 334,
+      "line_end": 335,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-004",
+        "NAI-084",
+        "NAI-185",
+        "NAI-120",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_get_method_function",
+      "line": 341,
+      "line_end": 347,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-080",
+        "NAI-084",
+        "NAI-086",
+        "NAI-114",
+        "NAI-185",
+        "NAI-186",
+        "NAI-169",
+        "NAI-155",
+        "NAI-156",
+        "NAI-229",
+        "NAI-230",
+        "HR-NAME",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "m",
+      "line": 343,
+      "line_end": 344,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-004",
+        "NAI-084",
+        "NAI-185",
+        "NAI-120",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_get_function_closure",
+      "line": 350,
+      "line_end": 357,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-114",
+        "NAI-185",
+        "NAI-186",
+        "NAI-169",
+        "NAI-149",
+        "NAI-155",
+        "NAI-229",
+        "HR-NAME",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "f",
+      "line": 351,
+      "line_end": 355,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-080",
+        "NAI-084",
+        "NAI-114",
+        "NAI-185",
+        "NAI-186",
+        "NAI-169",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "g",
+      "line": 353,
+      "line_end": 354,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-185",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_get_function_code",
+      "line": 360,
+      "line_end": 365,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-186",
+        "NAI-169",
+        "NAI-155",
+        "NAI-156",
+        "NAI-229",
+        "HR-NAME",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "f",
+      "line": 361,
+      "line_end": 362,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-004",
+        "NAI-084",
+        "NAI-185",
+        "NAI-120",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_get_function_defaults",
+      "line": 368,
+      "line_end": 371,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-186",
+        "NAI-169",
+        "NAI-149",
+        "NAI-155",
+        "NAI-229",
+        "NAI-230",
+        "HR-NAME",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "f",
+      "line": 369,
+      "line_end": 370,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-004",
+        "NAI-082",
+        "NAI-084",
+        "NAI-185",
+        "NAI-120",
+        "NAI-121",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_get_function_globals",
+      "line": 374,
+      "line_end": 377,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-186",
+        "NAI-169",
+        "NAI-149",
+        "NAI-155",
+        "NAI-229",
+        "NAI-230",
+        "HR-NAME",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "f",
+      "line": 375,
+      "line_end": 376,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-004",
+        "NAI-084",
+        "NAI-185",
+        "NAI-120",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_dictionary_iterators",
+      "line": 380,
+      "line_end": 414,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-082",
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-113",
+        "NAI-114",
+        "NAI-178",
+        "NAI-185",
+        "NAI-186",
+        "NAI-169",
+        "NAI-121",
+        "NAI-155",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "stock_method_name",
+      "line": 381,
+      "line_end": 387,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-082",
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-113",
+        "NAI-185",
+        "NAI-186",
+        "NAI-121",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "lists",
+      "line": 391,
+      "line_end": 392,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-030",
+        "NAI-084",
+        "NAI-185",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "iterlists",
+      "line": 393,
+      "line_end": 394,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-030",
+        "NAI-084",
+        "NAI-185",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "with_kw",
+      "line": 407,
+      "line_end": 409,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-097",
+        "NAI-082",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_dictionary_views",
+      "line": 417,
+      "line_end": 422,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-083",
+        "NAI-084",
+        "NAI-114",
+        "NAI-185",
+        "NAI-186",
+        "NAI-149",
+        "NAI-155",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_advance_iterator",
+      "line": 425,
+      "line_end": 432,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-054",
+        "NAI-099",
+        "NAI-084",
+        "NAI-086",
+        "NAI-090",
+        "NAI-114",
+        "NAI-185",
+        "NAI-155",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_iterator",
+      "line": 435,
+      "line_end": 443,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-099",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-186",
+        "NAI-169",
+        "NAI-149",
+        "NAI-155",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "__next__",
+      "line": 437,
+      "line_end": 438,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-185",
+        "NAI-229",
+        "NAI-230",
+        "NAI-009S",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "__next__",
+      "line": 441,
+      "line_end": 442,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-185",
+        "NAI-229",
+        "NAI-230",
+        "NAI-009S",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_callable",
+      "line": 446,
+      "line_end": 459,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-048",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-186",
+        "NAI-169",
+        "NAI-155",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "__call__",
+      "line": 448,
+      "line_end": 449,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-004",
+        "NAI-084",
+        "NAI-185",
+        "NAI-120",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "method",
+      "line": 450,
+      "line_end": 451,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-004",
+        "NAI-084",
+        "NAI-185",
+        "NAI-120",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_create_bound_method",
+      "line": 462,
+      "line_end": 470,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-080",
+        "NAI-084",
+        "NAI-086",
+        "NAI-114",
+        "NAI-185",
+        "NAI-186",
+        "NAI-169",
+        "NAI-149",
+        "NAI-155",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "f",
+      "line": 465,
+      "line_end": 466,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-016",
+        "NAI-082",
+        "NAI-084",
+        "NAI-185",
+        "NAI-229",
+        "NAI-230",
+        "NAI-016S",
+        "NAI-026S",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_create_unbound_method",
+      "line": 473,
+      "line_end": 484,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-080",
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-114",
+        "NAI-185",
+        "NAI-186",
+        "NAI-169",
+        "NAI-155",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "f",
+      "line": 477,
+      "line_end": 478,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-016",
+        "NAI-082",
+        "NAI-084",
+        "NAI-185",
+        "NAI-229",
+        "NAI-230",
+        "NAI-016S",
+        "NAI-026S",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_b",
+      "line": 489,
+      "line_end": 493,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-114",
+        "NAI-185",
+        "NAI-149",
+        "NAI-155",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_u",
+      "line": 496,
+      "line_end": 499,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-090",
+        "NAI-114",
+        "NAI-185",
+        "NAI-149",
+        "NAI-155",
+        "NAI-156",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_b",
+      "line": 503,
+      "line_end": 507,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-114",
+        "NAI-185",
+        "NAI-149",
+        "NAI-155",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_u",
+      "line": 510,
+      "line_end": 513,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-090",
+        "NAI-114",
+        "NAI-185",
+        "NAI-149",
+        "NAI-155",
+        "NAI-156",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_u_escapes",
+      "line": 516,
+      "line_end": 518,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-090",
+        "NAI-114",
+        "NAI-185",
+        "NAI-149",
+        "NAI-155",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_unichr",
+      "line": 521,
+      "line_end": 523,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-149",
+        "NAI-155",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_int2byte",
+      "line": 526,
+      "line_end": 528,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-155",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_byte2int",
+      "line": 531,
+      "line_end": 534,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-099",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-155",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_bytesindex",
+      "line": 537,
+      "line_end": 538,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-149",
+        "NAI-155",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_bytesiter",
+      "line": 541,
+      "line_end": 545,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-114",
+        "NAI-185",
+        "NAI-155",
+        "NAI-156",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_StringIO",
+      "line": 548,
+      "line_end": 551,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-114",
+        "NAI-185",
+        "NAI-149",
+        "NAI-155",
+        "NAI-156",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_BytesIO",
+      "line": 554,
+      "line_end": 557,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-114",
+        "NAI-185",
+        "NAI-149",
+        "NAI-155",
+        "NAI-156",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_exec_",
+      "line": 560,
+      "line_end": 575,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-099",
+        "NAI-084",
+        "NAI-086",
+        "NAI-090",
+        "NAI-114",
+        "NAI-185",
+        "NAI-186",
+        "NAI-169",
+        "NAI-149",
+        "NAI-155",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "f",
+      "line": 561,
+      "line_end": 564,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-090",
+        "NAI-114",
+        "NAI-185",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_reraise",
+      "line": 578,
+      "line_end": 617,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-081",
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-114",
+        "NAI-185",
+        "NAI-186",
+        "NAI-168",
+        "NAI-169",
+        "NAI-155",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "get_next",
+      "line": 579,
+      "line_end": 583,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-082",
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-186",
+        "NAI-121",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_raise_from",
+      "line": 620,
+      "line_end": 637,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-114",
+        "NAI-185",
+        "NAI-186",
+        "NAI-168",
+        "NAI-155",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_print_",
+      "line": 640,
+      "line_end": 676,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-114",
+        "NAI-185",
+        "NAI-186",
+        "NAI-168",
+        "NAI-169",
+        "NAI-155",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "__init__",
+      "line": 667,
+      "line_end": 669,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-183",
+        "NAI-185",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "flush",
+      "line": 670,
+      "line_end": 671,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-183",
+        "NAI-185",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_print_exceptions",
+      "line": 679,
+      "line_end": 682,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-150",
+        "NAI-155",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_with_metaclass",
+      "line": 685,
+      "line_end": 713,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-081",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-149",
+        "NAI-155",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_with_metaclass_typing",
+      "line": 716,
+      "line_end": 737,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-080",
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-090",
+        "NAI-114",
+        "NAI-185",
+        "NAI-186",
+        "NAI-168",
+        "NAI-155",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_with_metaclass_pep_560",
+      "line": 741,
+      "line_end": 759,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-114",
+        "NAI-185",
+        "NAI-186",
+        "NAI-169",
+        "NAI-149",
+        "NAI-155",
+        "NAI-156",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "__mro_entries__",
+      "line": 749,
+      "line_end": 750,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-003",
+        "NAI-084",
+        "NAI-185",
+        "NAI-121",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_with_metaclass_prepare",
+      "line": 763,
+      "line_end": 787,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-113",
+        "NAI-114",
+        "NAI-185",
+        "NAI-186",
+        "NAI-169",
+        "NAI-149",
+        "NAI-155",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "__prepare__",
+      "line": 772,
+      "line_end": 775,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-082",
+        "NAI-084",
+        "NAI-114",
+        "NAI-185",
+        "NAI-121",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_wraps",
+      "line": 790,
+      "line_end": 820,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-048",
+        "NAI-099",
+        "NAI-084",
+        "NAI-086",
+        "NAI-114",
+        "NAI-185",
+        "NAI-186",
+        "NAI-169",
+        "NAI-145",
+        "NAI-155",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "f",
+      "line": 791,
+      "line_end": 795,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-082",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-186",
+        "NAI-169",
+        "NAI-121",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "w",
+      "line": 793,
+      "line_end": 794,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "k",
+      "line": 796,
+      "line_end": 797,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-004",
+        "NAI-084",
+        "NAI-185",
+        "NAI-120",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "f",
+      "line": 807,
+      "line_end": 812,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-082",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-186",
+        "NAI-169",
+        "NAI-121",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "w",
+      "line": 808,
+      "line_end": 809,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-185",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_wraps_raises_on_missing_updated_field_on_wrapper",
+      "line": 823,
+      "line_end": 835,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-048",
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-113",
+        "NAI-185",
+        "NAI-186",
+        "NAI-169",
+        "NAI-150",
+        "NAI-155",
+        "NAI-229",
+        "NAI-230",
+        "HR-NAME",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "wrapped",
+      "line": 828,
+      "line_end": 829,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-004",
+        "NAI-084",
+        "NAI-185",
+        "NAI-120",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "wrapper",
+      "line": 831,
+      "line_end": 832,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-004",
+        "NAI-084",
+        "NAI-185",
+        "NAI-120",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_add_metaclass",
+      "line": 839,
+      "line_end": 909,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-010",
+        "NAI-031",
+        "NAI-081",
+        "NAI-084",
+        "NAI-086",
+        "NAI-090",
+        "NAI-113",
+        "NAI-114",
+        "NAI-185",
+        "NAI-145",
+        "NAI-155",
+        "NAI-156",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_add_metaclass_nested",
+      "line": 913,
+      "line_end": 929,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-114",
+        "NAI-185",
+        "NAI-149",
+        "NAI-155",
+        "NAI-156",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_assertCountEqual",
+      "line": 932,
+      "line_end": 940,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-186",
+        "NAI-169",
+        "NAI-155",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test",
+      "line": 934,
+      "line_end": 938,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-183",
+        "NAI-185",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_assertRegex",
+      "line": 943,
+      "line_end": 951,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-186",
+        "NAI-169",
+        "NAI-155",
+        "NAI-156",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test",
+      "line": 945,
+      "line_end": 949,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-183",
+        "NAI-185",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_assertNotRegex",
+      "line": 954,
+      "line_end": 962,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-186",
+        "NAI-169",
+        "NAI-155",
+        "NAI-156",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test",
+      "line": 956,
+      "line_end": 960,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-183",
+        "NAI-185",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_assertRaisesRegex",
+      "line": 965,
+      "line_end": 975,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-097",
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-186",
+        "NAI-169",
+        "NAI-155",
+        "NAI-156",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test",
+      "line": 967,
+      "line_end": 973,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-097",
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-183",
+        "NAI-185",
+        "NAI-140",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_python_2_unicode_compatible",
+      "line": 978,
+      "line_end": 996,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-050",
+        "NAI-097",
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-114",
+        "NAI-185",
+        "NAI-186",
+        "NAI-169",
+        "NAI-149",
+        "NAI-155",
+        "NAI-156",
+        "NAI-229",
+        "HR-NAME",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "__str__",
+      "line": 981,
+      "line_end": 982,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "__bytes__",
+      "line": 984,
+      "line_end": 985,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_ensure_binary_raise_type_error",
+      "line": 1005,
+      "line_end": 1007,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-185",
+        "NAI-150",
+        "NAI-155",
+        "NAI-229",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_errors_and_encoding",
+      "line": 1009,
+      "line_end": 1012,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-183",
+        "NAI-185",
+        "NAI-150",
+        "NAI-155",
+        "NAI-156",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_ensure_binary_raise",
+      "line": 1014,
+      "line_end": 1026,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-114",
+        "NAI-183",
+        "NAI-185",
+        "NAI-186",
+        "NAI-149",
+        "NAI-155",
+        "NAI-156",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_ensure_str",
+      "line": 1028,
+      "line_end": 1040,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-114",
+        "NAI-183",
+        "NAI-185",
+        "NAI-186",
+        "NAI-149",
+        "NAI-155",
+        "NAI-156",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    },
+    {
+      "file": "test_six.py",
+      "function": "test_ensure_text",
+      "line": 1042,
+      "line_end": 1054,
+      "species": "test",
+      "withheld": "species:test",
+      "withheld_by": "species",
+      "withheld_reason": "species:test",
+      "rule_ids": [],
+      "context_ids": [
+        "NAI-083",
+        "NAI-084",
+        "NAI-086",
+        "NAI-114",
+        "NAI-183",
+        "NAI-185",
+        "NAI-186",
+        "NAI-149",
+        "NAI-155",
+        "NAI-156",
+        "NAI-229",
+        "NAI-230",
+        "MEASURED-NOTHING"
+      ]
+    }
+  ],
+  "flagged_nodes": [
+    "six"
+  ],
+  "return_channel": "/Users/dev/Desktop/CODE_RADAR_REFURBISH_copy3/system_scripts/return_channel_b8beb28d80c2.jsonl",
+  "wiring": {
+    "severed": [],
+    "drawn": "red"
+  }
+}

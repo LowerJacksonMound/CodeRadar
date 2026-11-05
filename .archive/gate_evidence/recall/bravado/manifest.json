@@ -1,0 +1,32 @@
+{
+ "target": "/Users/dev/Desktop/bravado",
+ "built": "2026-09-10",
+ "by": "set 4b-25 (run 79)",
+ "base": "dreamline tree + colorama/repair_plant_shells.py + colorama/repair_plant_broken.py (does not parse) + two control files",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_shells.py",
+   "line": 9,
+   "function": "<class Port>",
+   "family": "NAI-214",
+   "accept_any_of": [
+    "NAI-214"
+   ],
+   "what": "an abstract shell — ABC with abstract methods, no concrete method, no subclass (set 4b-25, no-fix-by-design; a <class> row)"
+  },
+  {
+   "file": "colorama/repair_plant_broken.py",
+   "line": 1,
+   "function": "<file>",
+   "family": "NAI-208",
+   "accept_any_of": [
+    "NAI-208"
+   ],
+   "what": "a file that does not parse (set 4b-25, no-fix-by-design; a <file> row — the first through the Builder)"
+  }
+ ],
+ "controls": [
+  "colorama/repair_plant_shells_control.py",
+  "colorama/repair_pkg/__init__.py"
+ ]
+}

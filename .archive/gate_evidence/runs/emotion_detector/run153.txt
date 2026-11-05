@@ -1,0 +1,81 @@
+cr_watch started=True phase=MONITORING repo_id=87489ddef445 gate_budget_s=2318
+    circuit READY/RUNNING        PASS  36.8
+    circuit WIRING               PASS  None
+    NOAI MONITORING              PASS  7.5
+    CHEATSHEETS MONITORING       PASS  2.0
+    dashboard HTTP 200           PASS  25.7
+
+cr_status cycle=1 finished=False (mirror)
+  infractions {"total_functions": 355, "passed": 109, "failed": 163, "files_scanned": 64, "repairs": 153, "no_vetted_fix": 10, "whitelisted": 0, "withheld": 84, "withheld_gate": 1, "rule_outcomes": {}}
+  rule_outcomes published=True rules=0 all_zero=True
+
+rows in the mirror: 163
+
+cr_apply picked 3 rewriter row(s):
+  colorama/repair_plant_071.py::collect::4
+       role='alias_chain_fix:new_sequence' span=colorama/repair_plant_071.py:L4-L6 rules=['NAI-021S', 'NAI-071']
+  colorama/repair_plant_061.py::label::5
+       role='bool_literal_compare_fix' span=colorama/repair_plant_061.py:L5-L8 rules=['NAI-061']
+  colorama/repair_plant_070.py::count_ints::5
+       role='bare_except_fix' span=colorama/repair_plant_070.py:L5-L12 rules=['NAI-070']
+
+CLIENT APPLIED 3 rows over 3 file(s)
+  colorama/repair_plant_071.py:L4-L6 [alias_chain_fix:new_sequence]
+  colorama/repair_plant_061.py:L5-L8 [bool_literal_compare_fix]
+  colorama/repair_plant_070.py:L5-L12 [bare_except_fix]
+
+cr_run_module SUITE  exit=0 in 0.949s
+    38 passed, 14 skipped in 0.09s
+
+backed the third edit out of colorama/repair_plant_070.py — it is reported FAILED, so the target must not carry it
+
+cr_report_outcome — 2 confirmed, 1 failed
+  confirmed colorama/repair_plant_071.py::collect::4  written=True ledger=True error=None
+  confirmed colorama/repair_plant_061.py::label::5  written=True ledger=True error=None
+  failed    colorama/repair_plant_070.py::count_ints::5  written=True ledger=False (a failed verdict writes no ledger record)
+
+waiting one Builder cycle (from 1) …
+cr_status cycle=3 · counterfeit_failed 163 → 161
+
+rule_outcomes after the cycle — 14 rule(s)
+  MEASURED-NOTHING     confirmed_for  1  failed_against {"?": 1}
+  NAI-021S             confirmed_for  1  failed_against {}
+  NAI-061              confirmed_for  1  failed_against {}
+  NAI-070              confirmed_for  0  failed_against {"?": 1}
+  NAI-071              confirmed_for  1  failed_against {}
+  NAI-082              confirmed_for  1  failed_against {"?": 1}
+  NAI-083              confirmed_for  1  failed_against {"?": 1}
+  NAI-084              confirmed_for  1  failed_against {"?": 1}
+  NAI-114              confirmed_for  0  failed_against {"?": 1}
+  NAI-121              confirmed_for  1  failed_against {"?": 1}
+  NAI-168              confirmed_for  0  failed_against {"?": 1}
+  NAI-185              confirmed_for  1  failed_against {"?": 1}
+  NAI-186              confirmed_for  1  failed_against {"?": 1}
+  NAI-229              confirmed_for  1  failed_against {"?": 1}
+  ✓ every rule of the two confirmed rows carries a confirmation
+  ✗ every rule of the failed row carries the failure under its VARIANT
+  ✓ the failed repair took nothing off any confirmation
+  ✓ no variant name was recorded as a rule
+  ✓ the mirror FILE carries the same block cr_status answered
+
+cr_stop with a client manifest of 2 path(s): ['colorama/repair_plant_061.py', 'colorama/repair_plant_071.py']
+  stopped              true
+  residue_clean        true
+  byte_identical       false
+  files_compared       77
+  client_edits         2
+  unexpected_changes   []
+  run_dir              "/Users/dev/Desktop/CODE_RADAR_REFURBISH_copy1/.archive/runs/emotion_detector"
+  error                null
+  report_path            "/Users/dev/Desktop/CODE_RADAR_REFURBISH_copy1/.archive/runs/emotion_detector/tester_report.json"
+  builder_cycles         3
+  infractions            161
+  solutions              150
+  confirmed              2
+  confirmed_from_ledger  2
+  tester_ran             true
+  status                 "MEASURED"
+  orphans                0
+  finished               false
+  error                  null
+  ✓ tester_report.json carries rule_outcomes (14 rules)

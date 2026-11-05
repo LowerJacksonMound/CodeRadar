@@ -1,0 +1,18 @@
+{
+ "target": "/Users/dev/Desktop/heresy",
+ "built": "2026-09-10",
+ "by": "set 4b-36 (run 90)",
+ "base": "the_big_wheel tree + colorama/repair_plant_typos.py",
+ "planted_findings": [
+  {"file": "colorama/repair_plant_typos.py", "line": 8, "function": "widest_row", "family": "NAI-051", "accept_any_of": ["NAI-051"],
+   "what": "a call to `lenght(`, a misspelled builtin from the detector's table, unbound in the function (set 4b-36, rewriter misspelled_builtin_fix)"},
+  {"file": "colorama/repair_plant_typos.py", "line": 14, "function": "setting_for", "family": "NAI-052", "accept_any_of": ["NAI-052"],
+   "what": "`if key in table:` whose first statement is the same `if key in table:` with a dead else (set 4b-36, rewriter redundant_nesting_fix)"},
+  {"file": "colorama/repair_plant_typos.py", "line": 24, "function": "code_word", "family": "NAI-053", "accept_any_of": ["NAI-053"],
+   "what": "an if / elif chain whose two branches assign the same fresh literal (set 4b-36, no-fix-by-design)"},
+  {"file": "colorama/repair_plant_typos.py", "line": 35, "function": "mark_twice", "family": "NAI-054", "accept_any_of": ["NAI-054"],
+   "what": "two consecutive identical `marks.append(value)` statements at the top level (set 4b-36, no-fix-by-design)"},
+  {"file": "colorama/repair_plant_typos.py", "line": 41, "function": "ordered_table", "family": "NAI-056", "accept_any_of": ["NAI-056"],
+   "what": "`import colections` (the detector's table, correction collections) inside a try so NAI-008 stays out of the row; the bound name used below (set 4b-36, rewriter misspelled_module_fix)"}
+ ]
+}

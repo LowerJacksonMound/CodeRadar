@@ -1192,7 +1192,8 @@ class ExtendedSemanticChecksMixin:
                     out |= env[n.id]
             return out
 
-        env = {}
+        env: Dict[str, Set[str]] = {}
+        node: ast.AST
         for node in self.func.body:
             if isinstance(node, ast.Assign):
                 first, *rest = node.targets

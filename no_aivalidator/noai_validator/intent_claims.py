@@ -23,7 +23,7 @@ import math
 import re
 import statistics
 import sys
-from typing import Any, Callable, Dict, List, Optional, Tuple
+from typing import Any, Callable, Dict, List, Optional, Tuple, cast
 
 _DAYS = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
 _SAFE_CALLS = {"abs", "min", "max", "sum", "len", "range", "sorted", "round", "int", "float", "list", "bool", "enumerate",
@@ -41,16 +41,16 @@ _KNOWN_CONVERSIONS = {
 }
 
 
-def _doc(func: ast.FunctionDef) -> str:
+def _doc(func: ast.FunctionDef | ast.AsyncFunctionDef) -> str:
     return (ast.get_docstring(func) or "").strip()
 
 
-def _params(func: ast.FunctionDef) -> List[str]:
+def _params(func: ast.FunctionDef | ast.AsyncFunctionDef) -> List[str]:
     return [a.arg for a in func.args.args]
 
 
 # ── reading the claims ──────────────────────────────────────────────────────────────────────────────────────────────
-def claims(func: ast.FunctionDef) -> List[Dict[str, Any]]:
+def claims(func: ast.FunctionDef | ast.AsyncFunctionDef) -> List[Dict[str, Any]]:
     """Every checkable claim the docstring makes, as data. Empty when the docstring states nothing checkable."""
     doc = _doc(func)
     low = doc.lower()
@@ -155,7 +155,7 @@ def _module_constants(tree: Any) -> Dict[str, Any]:
             tgts = n.targets if isinstance(n, ast.Assign) else [n.target]
             if [type(t) for t in tgts] == [ast.Name] and n.value is not None:
                 try:
-                    out[tgts[0].id] = ast.literal_eval(n.value)
+                    out[cast(ast.Name, tgts[0]).id] = ast.literal_eval(n.value)
                 except (ValueError, TypeError, SyntaxError, MemoryError, RecursionError):
                     pass
     return out
@@ -179,7 +179,7 @@ def _strip(func: ast.FunctionDef) -> ast.FunctionDef:
     args = _copy.deepcopy(func.args)         # never mutate the caller's tree
     for a in [*args.args, *args.kwonlyargs, *(x for x in (args.vararg, args.kwarg) if x)]:
         a.annotation = None
-    kw = dict(name=func.name, args=args, body=_copy.deepcopy(func.body), decorator_list=[], returns=None)
+    kw: Dict[str, Any] = dict(name=func.name, args=args, body=_copy.deepcopy(func.body), decorator_list=[], returns=None)
     if sys.version_info >= (3, 12):
         kw["type_params"] = []
     return ast.FunctionDef(**kw)
@@ -389,7 +389,7 @@ def check(func: ast.FunctionDef) -> List[Dict[str, Any]]:
             vals, w = [5.0, 1.0, 9.0, 3.0, 7.0], 3
             r = _run(fn, vals, w)
             half = w // 2
-            want = [statistics.median(vals[max(0, i - half):min(len(vals), i + half + 1)]) for i in range(len(vals))]
+            want: Any = [statistics.median(vals[max(0, i - half):min(len(vals), i + half + 1)]) for i in range(len(vals))]
             if isinstance(r, list) and [round(x, 9) for x in r] != [round(x, 9) for x in want]:
                 bad(c, str(want), str(r), f"{func.name}({vals}, {w})")
         elif k == "clamp" and fn:

@@ -1,0 +1,2 @@
+{"digest": "84e0cae05f", "replace_span": "colorama/repair_plant_shape.py:L13-L18", "outcome": "confirmed", "failure_log": "run 144: applied the rewriter diff; the function is repaired", "tester": "coderadar-mcp run144", "timestamp": "2026-09-17T12:58:31.786710+00:00"}
+{"digest": "8f9a25700f", "replace_span": "colorama/repair_plant_071.py:L4-L6", "outcome": "failed", "failure_log": "run 144: not applied; reported failed so the Ranker re-decides", "tester": "coderadar-mcp run144", "timestamp": "2026-09-17T12:58:31.787718+00:00"}

@@ -1,0 +1,10 @@
+RUN 144 TRANSPLANT — S4-3 copy1 → original, 2026-09-17 08:03
+
+file                                                 base_expected                      orig_current                       how
+coderadar_mcp/tool_interface.py                      cb8769e4d13168b34c9872e4bfa41241   cb8769e4d13168b34c9872e4bfa41241   COPY-WHOLE
+coderadar_mcp/write_tools.py                         9564e8bedbdb0b8848aa8772689ba144   9564e8bedbdb0b8848aa8772689ba144   COPY-WHOLE
+coderadar_mcp/session_tools.py                       22f548973bf849e17244f809ddd4a699   22f548973bf849e17244f809ddd4a699   COPY-WHOLE
+system_scripts/gearbox.py                            8c494e1a1e254309a3a3428dddfe5252   8c494e1a1e254309a3a3428dddfe5252   COPY-WHOLE
+no_aivalidator/repair_generators/semantic.py         5abadd969b02d4e0ae8954678de7638d   5abadd969b02d4e0ae8954678de7638d   COPY-WHOLE
+system_scripts/mcp_confirmed_ledger_proof.py         ABSENT                             ABSENT                             COPY-WHOLE
+ALL_BASES_MATCH=1

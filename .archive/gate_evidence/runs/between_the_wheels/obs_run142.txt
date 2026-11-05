@@ -1,0 +1,48 @@
+$ /Users/dev/Desktop/CODE_RADAR_REFURBISH/.venv_new/bin/coderadar-mcp --target /Users/dev/Desktop/the_big_money
+coderadar-mcp 0.1.0: target /Users/dev/Desktop/the_big_money (repo_id 7f4b9bb8102b); state /Users/dev/Desktop/CODE_RADAR_REFURBISH/system_scripts; 13/13 tools bound
+INITIALIZE server coderadar 0.1.0 · protocol 2025-11-25  LIST_TOOLS 13
+
+CALL cr_watch({"target": "/Users/dev/Desktop/the_big_money"})
+  {"started": true, "target": "/Users/dev/Desktop/the_big_money", "repo_id": "7f4b9bb8102b", "phase": "MONITORING", "gate_budget_s": 2328, "dashboard_url": "http://127.0.0.1:8080", "health_url": "http://127.0.0.1:8051/health", "error": null}
+    GATE circuit READY/RUNNING: PASS 1.5s
+    GATE circuit WIRING: PASS Nones
+    GATE NOAI MONITORING: PASS 5.6s
+    GATE CHEATSHEETS MONITORING: PASS 1.0s
+    GATE dashboard HTTP 200: PASS 0.0s
+
+CALL cr_status({})
+  {"phase": "MONITORING", "cycle": 1, "finished": false, "finished_reason": "not finished: counterfeit_failed=NOT MEASURED, mypy_errors=574", "finished_source": "mirror", "infractions": {"total_functions": 355, "passed": 174, "failed": 98, "files_scanned": 64, "repairs": 90, "no_vetted_fix": 8, "whitelisted": 0, "withheld": 83}, "summary": {"broken_imports": 0, "path_hacks": 1, "mypy_errors": 574, "mypy_ran": true, "sync_needs_review": 8, "dead_code_items": 0, "dead_code_actionable": 0, "severed_links": 0, "finished": false, "finished_reason": "not finished: counterfeit_failed=NOT MEASURED, mypy_errors=574", "finished_gates": ["counterfeit_failed", "mypy_errors", "severed_links"], "finished_inputs": {"counterfeit_failed": null, "mypy_errors": 574, "severed_links": 0}, "counterfeit_failed": null}}
+
+waiting for the first FULL cycle (counterfeit_failed MEASURED) …
+  poll 1: cycle 1 · not finished: counterfeit_failed=98, mypy_errors=574
+
+CALL cr_status (first full cycle)
+  {"phase": "MONITORING", "cycle": 1, "finished": false, "finished_reason": "not finished: counterfeit_failed=98, mypy_errors=574", "finished_source": "mirror", "infractions": {"total_functions": 355, "passed": 174, "failed": 98, "files_scanned": 64, "repairs": 90, "no_vetted_fix": 8, "whitelisted": 0, "withheld": 83}, "summary": {"broken_imports": 0, "path_hacks": 1, "mypy_errors": 574, "mypy_ran": true, "sync_needs_review": 8, "dead_code_items": 0, "dead_code_actionable": 0, "severed_links": 0, "finished": false, "finished_reason": "not finished: counterfeit_failed=98, mypy_errors=574", "finished_gates": ["counterfeit_failed", "mypy_errors", "severed_links"], "finished_inputs": {"counterfeit_failed": 98, "mypy_errors": 574, "severed_links": 0}, "counterfeit_failed": 98}}
+
+CALL cr_infractions({"page": 1})
+  {"page": 1, "pages": 2, "total": 98, "page_size": 50, "files": ["colorama/repair_plant_invented.py", "colorama/repair_plant_loops.py", "colorama/repair_plant_stubs.py", "colorama/winterm.py", "colorama/repair_plant_093.py", "demos/demo08.py", "colorama/repair_plant_names.py", "colorama/repair_plant_ops.py", "colorama/repair_plant_order.py", "colorama/repair_plant_checks.py", "colorama/repair_plant_guards.py", "colorama/repair_plant_imports.py", "colorama/repair_plant_quiet.py", "colorama/repair_plant_roles.py", "colorama/repair_plant_split.py", "demos/fixpath.py", "colorama/repair_plant_flow.py", "colorama/repair_plant_secrets.py", "colorama/repair_plant_shells.py", "colorama/tests/utils.py", "colorama/repair_plant_context.py"]}
+  98 rows over 2 pages
+
+CALL cr_wiring({})
+  {"counts": {"possible": 29, "live": 0, "severed": 0}, "all_connected": true, "cycles": [], "severed_links": []}
+  nodes 64 · edges 29
+
+CALL cr_data_types({})
+  {"chosen": ["io", "mypy"], "not_run": ["crc", "vulture"], "issues": 574, "contract_violations": {"total": 0, "recent_count": 0, "violations": [], "disabled": true}}
+
+CALL cr_run_module({"path": "pytest", "args": ["colorama/tests", "-q"]})
+  {"exit_code": 0, "duration_s": 0.814, "args": ["colorama/tests", "-q", "-p", "no:cacheprovider"], "seen_on_band": true, "timed_out": false, "error": null}
+  stdout tail: ..........................ssssssssss........sss....s                     [100%] | 38 passed, 14 skipped in 0.08s | 
+
+CALL cr_stop({"verify_identity": true, "mark_pool": false})
+  {"stopped": true, "residue_clean": true, "byte_identical": true, "files_compared": 77, "client_edits": 0, "unexpected_changes": [], "run_dir": "/Users/dev/Desktop/CODE_RADAR_REFURBISH/.archive/runs/the_big_money", "error": null}
+    circuit_daemon pid 27764 exit 0 (SIGTERM)
+    noai_validator pid 27784 exit 0 (SIGTERM)
+    cheatsheets pid 27785 exit 0 (SIGTERM)
+    dashboard pid 27786 exit 0 (SIGTERM)
+
+CALL cr_hand_back({"note": "run 142 \u2014 the run of record: a fresh gearbox on run 141's edited target, nothing applied"})
+  {"report_path": "/Users/dev/Desktop/CODE_RADAR_REFURBISH/.archive/runs/the_big_money/tester_report.json", "builder_cycles": 1, "infractions": 98, "solutions": 90, "confirmed": 0, "confirmed_fraction": null, "tester_ran": false, "status": "MEASURED", "return_channel_lines": 0, "orphans": 0, "unparsed": 0, "finished": false, "error": null}
+  per_infraction rows: 98
+
+RUN 142 DONE

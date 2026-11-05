@@ -1,0 +1,881 @@
+{
+  "colorama/repair_plant_meaning.py::calculate_total::8": {
+    "row_key": "colorama/repair_plant_meaning.py::calculate_total::8",
+    "rule_ids": [
+      "NAI-100"
+    ],
+    "solution_kind": "prescribed",
+    "selected_role": null,
+    "digest": "22befb4227",
+    "replace_span": "colorama/repair_plant_meaning.py:L8-L10",
+    "before_code": "def calculate_total(items, tax):\n    tax = tax + 1\n    return sum(items)",
+    "after_code": "def calculate_x(a, b):\n    return <expression over a and b>",
+    "fix": "Make the disconnected parameter reach the result: a calculate / compute / sum function returns a value computed from every parameter the signature declares.",
+    "decision": {
+      "pick_role": "solution_NAI-100",
+      "why": "picked solution_NAI-100 over 0 other pickable candidate(s) of 1 offered; deciding method: n/a (one candidate); solution_NAI-100[kind=prescribed, parse=shape, differs=yes, rule=NAI-100, flow=same_paths, complexity=same, idiom=same, deps=none_added, defensive=same, readability=same, traps=none, answers=row]; profile: no intent fact matched"
+    },
+    "observations": {
+      "solution_NAI-100": [
+        "kind=prescribed",
+        "parse=shape",
+        "differs=yes",
+        "rule=NAI-100",
+        "flow=same_paths",
+        "complexity=same",
+        "idiom=same",
+        "deps=none_added",
+        "defensive=same",
+        "readability=same",
+        "traps=none"
+      ]
+    },
+    "infractions": null,
+    "tester": {
+      "confirmed": false,
+      "tester": "",
+      "timestamp": ""
+    },
+    "return_channel": "/Users/dev/Desktop/CODE_RADAR_REFURBISH/system_scripts/return_channel_a32f4c124796.jsonl"
+  },
+  "colorama/repair_plant_meaning.py::calculate_rate::13": {
+    "row_key": "colorama/repair_plant_meaning.py::calculate_rate::13",
+    "rule_ids": [
+      "NAI-101"
+    ],
+    "solution_kind": "prescribed",
+    "selected_role": null,
+    "digest": "30dd97f809",
+    "replace_span": "colorama/repair_plant_meaning.py:L13-L15",
+    "before_code": "def calculate_rate(amount):\n    amount = amount + 1\n    return 42",
+    "after_code": "RATE = <constant>\n\ndef calculate_x(a):\n    return a * RATE",
+    "fix": "Replace the magic-number return with the calculation the name promises, computed from the parameters; a constant that is genuinely part of the formula becomes a named module constant.",
+    "decision": {
+      "pick_role": "solution_NAI-101",
+      "why": "picked solution_NAI-101 over 0 other pickable candidate(s) of 1 offered; deciding method: n/a (one candidate); solution_NAI-101[kind=prescribed, parse=shape, differs=yes, rule=NAI-101, flow=same_paths, complexity=same, idiom=same, deps=none_added, defensive=same, readability=same, traps=none, answers=row]; profile: no intent fact matched"
+    },
+    "observations": {
+      "solution_NAI-101": [
+        "kind=prescribed",
+        "parse=shape",
+        "differs=yes",
+        "rule=NAI-101",
+        "flow=same_paths",
+        "complexity=same",
+        "idiom=same",
+        "deps=none_added",
+        "defensive=same",
+        "readability=same",
+        "traps=none"
+      ]
+    },
+    "infractions": null,
+    "tester": {
+      "confirmed": false,
+      "tester": "",
+      "timestamp": ""
+    },
+    "return_channel": "/Users/dev/Desktop/CODE_RADAR_REFURBISH/system_scripts/return_channel_a32f4c124796.jsonl"
+  },
+  "colorama/repair_plant_meaning.py::add_pair::18": {
+    "row_key": "colorama/repair_plant_meaning.py::add_pair::18",
+    "rule_ids": [
+      "NAI-102"
+    ],
+    "solution_kind": "prescribed",
+    "selected_role": null,
+    "digest": "e419339710",
+    "replace_span": "colorama/repair_plant_meaning.py:L18-L20",
+    "before_code": "def add_pair(a, b):\n    \"\"\"Add two numbers.\"\"\"\n    return a + b + 1",
+    "after_code": "def add(a, b):\n    \"\"\"Add two numbers.\"\"\"\n    return a + b",
+    "fix": "Make the code match the docstring: return `a + b` and drop the extra constant, unless the intent needs the offset, in which case the docstring names it.",
+    "decision": {
+      "pick_role": "solution_NAI-102",
+      "why": "picked solution_NAI-102 over 0 other pickable candidate(s) of 1 offered; deciding method: n/a (one candidate); solution_NAI-102[kind=prescribed, parse=shape, differs=yes, rule=NAI-102, flow=same_paths, complexity=same, idiom=same, deps=none_added, defensive=same, readability=same, traps=none, answers=row]; profile: no intent fact matched"
+    },
+    "observations": {
+      "solution_NAI-102": [
+        "kind=prescribed",
+        "parse=shape",
+        "differs=yes",
+        "rule=NAI-102",
+        "flow=same_paths",
+        "complexity=same",
+        "idiom=same",
+        "deps=none_added",
+        "defensive=same",
+        "readability=same",
+        "traps=none"
+      ]
+    },
+    "infractions": null,
+    "tester": {
+      "confirmed": false,
+      "tester": "",
+      "timestamp": ""
+    },
+    "return_channel": "/Users/dev/Desktop/CODE_RADAR_REFURBISH/system_scripts/return_channel_a32f4c124796.jsonl"
+  },
+  "colorama/repair_plant_meaning.py::is_positive::23": {
+    "row_key": "colorama/repair_plant_meaning.py::is_positive::23",
+    "rule_ids": [
+      "NAI-103"
+    ],
+    "solution_kind": "prescribed",
+    "selected_role": null,
+    "digest": "a65a20d7a9",
+    "replace_span": "colorama/repair_plant_meaning.py:L23-L26",
+    "before_code": "def is_positive(n):\n    if n <= 0:\n        return True\n    return False",
+    "after_code": "def is_positive(x):\n    return x > 0",
+    "fix": "Make the predicate answer its name: return True on the condition the name states (`is_positive` -> `x > 0`) and False otherwise.",
+    "decision": {
+      "pick_role": "solution_NAI-103",
+      "why": "picked solution_NAI-103 over 0 other pickable candidate(s) of 1 offered; deciding method: n/a (one candidate); solution_NAI-103[kind=prescribed, parse=shape, differs=yes, rule=NAI-103, flow=branch_removed:1, complexity=same, idiom=same, deps=none_added, defensive=same, readability=flatter:1+fewer_branches:1, traps=none, answers=row]; profile: no intent fact matched"
+    },
+    "observations": {
+      "solution_NAI-103": [
+        "kind=prescribed",
+        "parse=shape",
+        "differs=yes",
+        "rule=NAI-103",
+        "flow=branch_removed:1",
+        "complexity=same",
+        "idiom=same",
+        "deps=none_added",
+        "defensive=same",
+        "readability=flatter:1+fewer_branches:1",
+        "traps=none"
+      ]
+    },
+    "infractions": null,
+    "tester": {
+      "confirmed": false,
+      "tester": "",
+      "timestamp": ""
+    },
+    "return_channel": "/Users/dev/Desktop/CODE_RADAR_REFURBISH/system_scripts/return_channel_a32f4c124796.jsonl"
+  },
+  "colorama/repair_plant_names.py::count_rows::19": {
+    "row_key": "colorama/repair_plant_names.py::count_rows::19",
+    "rule_ids": [
+      "NAI-136"
+    ],
+    "solution_kind": "prescribed",
+    "selected_role": null,
+    "digest": "8872118191",
+    "replace_span": "colorama/repair_plant_names.py:L19-L20",
+    "before_code": "def count_rows(rows):\n    return int(bool(rows))",
+    "after_code": "def count_<what>(items):\n    return sum(1 for item in items if <condition(item)>)",
+    "fix": "Count the thing the name promises \u2014 sum(1 for item in items if <condition>) or len(...) \u2014 and return the number.",
+    "decision": {
+      "pick_role": "solution_NAI-136",
+      "why": "picked solution_NAI-136 over 0 other pickable candidate(s) of 1 offered; deciding method: n/a (one candidate); solution_NAI-136[kind=prescribed, parse=shape, differs=yes, rule=NAI-136, flow=same_paths, complexity=deeper:1, idiom=same, deps=none_added, defensive=same, readability=more_branches:2, traps=none, answers=row]; profile: no intent fact matched"
+    },
+    "observations": {
+      "solution_NAI-136": [
+        "kind=prescribed",
+        "parse=shape",
+        "differs=yes",
+        "rule=NAI-136",
+        "flow=same_paths",
+        "complexity=deeper:1",
+        "idiom=same",
+        "deps=none_added",
+        "defensive=same",
+        "readability=more_branches:2",
+        "traps=none"
+      ]
+    },
+    "infractions": null,
+    "tester": {
+      "confirmed": false,
+      "tester": "",
+      "timestamp": ""
+    },
+    "return_channel": "/Users/dev/Desktop/CODE_RADAR_REFURBISH/system_scripts/return_channel_a32f4c124796.jsonl"
+  },
+  "colorama/repair_plant_foreign.py::item_count::18": {
+    "row_key": "colorama/repair_plant_foreign.py::item_count::18",
+    "rule_ids": [
+      "NAI-108"
+    ],
+    "solution_kind": "prescribed",
+    "selected_role": null,
+    "digest": "5eadc7d7eb",
+    "replace_span": "colorama/repair_plant_foreign.py:L18-L20",
+    "before_code": "def item_count(items):\n    items = list(items)\n    return \"many\"",
+    "after_code": "def get_item_count(items):\n    return len(items)",
+    "fix": "Return the type the name suffix promises (`_count` -> int, `_name` -> str, `_list` -> list, `_dict` -> dict), computed from the inputs; or rename the function to what it returns.",
+    "decision": {
+      "pick_role": "solution_NAI-108",
+      "why": "picked solution_NAI-108 over 0 other pickable candidate(s) of 1 offered; deciding method: n/a (one candidate); solution_NAI-108[kind=prescribed, parse=shape, differs=yes, rule=NAI-108, flow=same_paths, complexity=same, idiom=same, deps=none_added, defensive=same, readability=same, traps=none, answers=row]; profile: no intent fact matched"
+    },
+    "observations": {
+      "solution_NAI-108": [
+        "kind=prescribed",
+        "parse=shape",
+        "differs=yes",
+        "rule=NAI-108",
+        "flow=same_paths",
+        "complexity=same",
+        "idiom=same",
+        "deps=none_added",
+        "defensive=same",
+        "readability=same",
+        "traps=none"
+      ]
+    },
+    "infractions": null,
+    "tester": {
+      "confirmed": false,
+      "tester": "",
+      "timestamp": ""
+    },
+    "return_channel": "/Users/dev/Desktop/CODE_RADAR_REFURBISH/system_scripts/return_channel_a32f4c124796.jsonl"
+  },
+  "colorama/repair_plant_foreign.py::add_entry::23": {
+    "row_key": "colorama/repair_plant_foreign.py::add_entry::23",
+    "rule_ids": [
+      "NAI-091",
+      "NAI-100",
+      "NAI-109"
+    ],
+    "solution_kind": "prescribed",
+    "selected_role": null,
+    "digest": "e28ab29f45",
+    "replace_span": "colorama/repair_plant_foreign.py:L23-L25",
+    "before_code": "def add_entry(entries, entry):\n    entries.remove(entry)\n    return len(entries)",
+    "after_code": "def add_item(self, item):\n    self.items.append(item)\n    return self.items",
+    "fix": "Make the action match the verb: `add_x` calls the adding method (`.add` / `.append`), `remove_x` the removing one; the name and the call must agree.",
+    "decision": {
+      "pick_role": "solution_NAI-109",
+      "why": "picked solution_NAI-109 over 2 other pickable candidate(s) of 3 offered; deciding method: intent alignment & logic soundness (+0.10 over solution_NAI-100); param_mutation_fix:shallow_copy[parse=ok, differs=yes, safety=clean, rule=NAI-091, flow=same_paths, complexity=copies_input, idiom=same, deps=none_added, defensive=same, readability=same, traps=none, answers=row]; solution_NAI-100[kind=prescribed, parse=shape, differs=yes, rule=NAI-100, flow=same_paths, complexity=same, idiom=same, deps=none_added, defensive=same, readability=same, traps=none, answers=neighbour]; solution_NAI-109[kind=prescribed, parse=shape, differs=yes, rule=NAI-109, flow=same_paths, complexity=same, idiom=same, deps=none_added, defensive=same, readability=same, traps=none, answers=neighbour]; profile: no intent fact matched"
+    },
+    "observations": {
+      "param_mutation_fix:shallow_copy": [
+        "parse=ok",
+        "differs=yes",
+        "safety=clean",
+        "rule=NAI-091",
+        "flow=same_paths",
+        "complexity=copies_input",
+        "idiom=same",
+        "deps=none_added",
+        "defensive=same",
+        "readability=same",
+        "traps=none"
+      ],
+      "solution_NAI-100": [
+        "kind=prescribed",
+        "parse=shape",
+        "differs=yes",
+        "rule=NAI-100",
+        "flow=same_paths",
+        "complexity=same",
+        "idiom=same",
+        "deps=none_added",
+        "defensive=same",
+        "readability=same",
+        "traps=none"
+      ],
+      "solution_NAI-109": [
+        "kind=prescribed",
+        "parse=shape",
+        "differs=yes",
+        "rule=NAI-109",
+        "flow=same_paths",
+        "complexity=same",
+        "idiom=same",
+        "deps=none_added",
+        "defensive=same",
+        "readability=same",
+        "traps=none"
+      ]
+    },
+    "infractions": null,
+    "tester": {
+      "confirmed": false,
+      "tester": "",
+      "timestamp": ""
+    },
+    "return_channel": "/Users/dev/Desktop/CODE_RADAR_REFURBISH/system_scripts/return_channel_a32f4c124796.jsonl"
+  },
+  "colorama/repair_plant_hr.py::level::8": {
+    "row_key": "colorama/repair_plant_hr.py::level::8",
+    "rule_ids": [
+      "HR-002",
+      "NAI-098"
+    ],
+    "solution_kind": "prescribed",
+    "selected_role": null,
+    "digest": "7c1870b32e",
+    "replace_span": "colorama/repair_plant_hr.py:L7-L9",
+    "before_code": "    @property\n    def level(self):\n        print(\"level requested\")",
+    "after_code": "@property\ndef x(self):\n    return self._x",
+    "fix": "Return the backing attribute (or the value computed from it) that the property's name promises.",
+    "decision": {
+      "pick_role": "solution_HR-002",
+      "why": "picked solution_HR-002 over 1 other pickable candidate(s) of 2 offered; deciding method: intent alignment & logic soundness (+8.61 over solution_NAI-098); solution_HR-002[kind=prescribed, parse=shape, differs=yes, rule=HR-002, flow=terminal_added, complexity=same, idiom=same, deps=none_added, defensive=same, readability=same, traps=none, answers=row]; solution_NAI-098[kind=prescribed, parse=shape, differs=yes, rule=NAI-098, flow=terminal_added, complexity=same, idiom=same, deps=none_added, defensive=same, readability=same, traps=none, answers=neighbour]; profile: no intent fact matched"
+    },
+    "observations": {
+      "solution_HR-002": [
+        "kind=prescribed",
+        "parse=shape",
+        "differs=yes",
+        "rule=HR-002",
+        "flow=terminal_added",
+        "complexity=same",
+        "idiom=same",
+        "deps=none_added",
+        "defensive=same",
+        "readability=same",
+        "traps=none"
+      ],
+      "solution_NAI-098": [
+        "kind=prescribed",
+        "parse=shape",
+        "differs=yes",
+        "rule=NAI-098",
+        "flow=terminal_added",
+        "complexity=same",
+        "idiom=same",
+        "deps=none_added",
+        "defensive=same",
+        "readability=same",
+        "traps=none"
+      ]
+    },
+    "infractions": null,
+    "tester": {
+      "confirmed": false,
+      "tester": "",
+      "timestamp": ""
+    },
+    "return_channel": "/Users/dev/Desktop/CODE_RADAR_REFURBISH/system_scripts/return_channel_a32f4c124796.jsonl"
+  },
+  "colorama/repair_plant_hr.py::level::12": {
+    "row_key": "colorama/repair_plant_hr.py::level::12",
+    "rule_ids": [
+      "HR-001",
+      "NAI-098"
+    ],
+    "solution_kind": "prescribed",
+    "selected_role": null,
+    "digest": "a0dd2ebc66",
+    "replace_span": "colorama/repair_plant_hr.py:L11-L13",
+    "before_code": "    @level.setter\n    def level(self):\n        print(\"level set\")",
+    "after_code": "@x.setter\ndef x(self, value):\n    self._x = value",
+    "fix": "Give the setter its value parameter and assign it to the backing attribute the property reads.",
+    "decision": {
+      "pick_role": "solution_HR-001",
+      "why": "picked solution_HR-001 over 1 other pickable candidate(s) of 2 offered; deciding method: intent alignment & logic soundness (+16.67 over solution_NAI-098); solution_HR-001[kind=prescribed, parse=shape, differs=yes, rule=HR-001, flow=same_paths, complexity=same, idiom=same, deps=none_added, defensive=same, readability=same, traps=none, answers=row]; solution_NAI-098[kind=prescribed, parse=shape, differs=yes, rule=NAI-098, flow=terminal_added, complexity=same, idiom=same, deps=none_added, defensive=same, readability=same, traps=none, answers=neighbour]; profile: no intent fact matched"
+    },
+    "observations": {
+      "solution_HR-001": [
+        "kind=prescribed",
+        "parse=shape",
+        "differs=yes",
+        "rule=HR-001",
+        "flow=same_paths",
+        "complexity=same",
+        "idiom=same",
+        "deps=none_added",
+        "defensive=same",
+        "readability=same",
+        "traps=none"
+      ],
+      "solution_NAI-098": [
+        "kind=prescribed",
+        "parse=shape",
+        "differs=yes",
+        "rule=NAI-098",
+        "flow=terminal_added",
+        "complexity=same",
+        "idiom=same",
+        "deps=none_added",
+        "defensive=same",
+        "readability=same",
+        "traps=none"
+      ]
+    },
+    "infractions": null,
+    "tester": {
+      "confirmed": false,
+      "tester": "",
+      "timestamp": ""
+    },
+    "return_channel": "/Users/dev/Desktop/CODE_RADAR_REFURBISH/system_scripts/return_channel_a32f4c124796.jsonl"
+  },
+  "colorama/repair_plant_roles.py::get_width::23": {
+    "row_key": "colorama/repair_plant_roles.py::get_width::23",
+    "rule_ids": [
+      "NAI-130"
+    ],
+    "solution_kind": "prescribed",
+    "selected_role": null,
+    "digest": "69f06e3fbb",
+    "replace_span": "colorama/repair_plant_roles.py:L23-L24",
+    "before_code": "    def get_width(self):\n        self.refresh()",
+    "after_code": "def get_<thing>(self):\n    return self._<thing>",
+    "fix": "Return the value the getter is named for: read it from self / the source and return it; a getter that only sets or prints is renamed to what it does.",
+    "decision": {
+      "pick_role": "solution_NAI-130",
+      "why": "picked solution_NAI-130 over 0 other pickable candidate(s) of 1 offered; deciding method: n/a (one candidate); solution_NAI-130[kind=prescribed, parse=shape, differs=yes, rule=NAI-130, flow=terminal_added, complexity=same, idiom=same, deps=none_added, defensive=same, readability=same, traps=none, answers=row]; profile: no intent fact matched"
+    },
+    "observations": {
+      "solution_NAI-130": [
+        "kind=prescribed",
+        "parse=shape",
+        "differs=yes",
+        "rule=NAI-130",
+        "flow=terminal_added",
+        "complexity=same",
+        "idiom=same",
+        "deps=none_added",
+        "defensive=same",
+        "readability=same",
+        "traps=none"
+      ]
+    },
+    "infractions": null,
+    "tester": {
+      "confirmed": false,
+      "tester": "",
+      "timestamp": ""
+    },
+    "return_channel": "/Users/dev/Desktop/CODE_RADAR_REFURBISH/system_scripts/return_channel_a32f4c124796.jsonl"
+  },
+  "colorama/repair_plant_roles.py::is_ready::34": {
+    "row_key": "colorama/repair_plant_roles.py::is_ready::34",
+    "rule_ids": [
+      "NAI-104",
+      "NAI-132"
+    ],
+    "solution_kind": "prescribed",
+    "selected_role": null,
+    "digest": "fa96f9b45f",
+    "replace_span": "colorama/repair_plant_roles.py:L34-L35",
+    "before_code": "def is_ready(flag) -> int:\n    return 1 if flag else 0",
+    "after_code": "def is_<what>(...) -> bool:\n    return <predicate>",
+    "fix": "Annotate the function -> bool and return a bool (the predicate the name asks), or rename the function to what it actually returns.",
+    "decision": {
+      "pick_role": "solution_NAI-132",
+      "why": "picked solution_NAI-132 over 1 other pickable candidate(s) of 2 offered; deciding method: built-in function & library leverage (+8.00 over solution_NAI-104); solution_NAI-104[kind=prescribed, parse=shape, differs=yes, rule=NAI-104, flow=same_paths+opaque:1, complexity=same+opaque:1, idiom=same+opaque:1, deps=none_added+opaque:1, defensive=same+opaque:1, readability=fewer_branches:1+opaque:1, traps=none+opaque:1, answers=row]; solution_NAI-132[kind=prescribed, parse=shape, differs=yes, rule=NAI-132, flow=same_paths, complexity=same, idiom=same, deps=none_added, defensive=same, readability=fewer_branches:1, traps=none, answers=neighbour]; profile: no intent fact matched"
+    },
+    "observations": {
+      "solution_NAI-104": [
+        "kind=prescribed",
+        "parse=shape",
+        "differs=yes",
+        "rule=NAI-104",
+        "flow=same_paths+opaque:1",
+        "complexity=same+opaque:1",
+        "idiom=same+opaque:1",
+        "deps=none_added+opaque:1",
+        "defensive=same+opaque:1",
+        "readability=fewer_branches:1+opaque:1",
+        "traps=none+opaque:1"
+      ],
+      "solution_NAI-132": [
+        "kind=prescribed",
+        "parse=shape",
+        "differs=yes",
+        "rule=NAI-132",
+        "flow=same_paths",
+        "complexity=same",
+        "idiom=same",
+        "deps=none_added",
+        "defensive=same",
+        "readability=fewer_branches:1",
+        "traps=none"
+      ]
+    },
+    "infractions": null,
+    "tester": {
+      "confirmed": false,
+      "tester": "",
+      "timestamp": ""
+    },
+    "return_channel": "/Users/dev/Desktop/CODE_RADAR_REFURBISH/system_scripts/return_channel_a32f4c124796.jsonl"
+  },
+  "colorama/repair_plant_keys.py::widths::7": {
+    "row_key": "colorama/repair_plant_keys.py::widths::7",
+    "rule_ids": [
+      "NAI-174",
+      "NAI-145"
+    ],
+    "solution_kind": "prescribed",
+    "selected_role": null,
+    "digest": "80375513a2",
+    "replace_span": "colorama/repair_plant_keys.py:L7-L10",
+    "before_code": "def widths(items):\n    count = len(items)\n    len = count\n    return len(items) + 1",
+    "after_code": "<domain_name> = <value>   # was: list = ... / id = ... / len = ...",
+    "fix": "Rename the local to a domain name (items, mapping, ident, length) so the builtin the function calls stays reachable, changing every read of the local in the function.",
+    "decision": {
+      "pick_role": "solution_NAI-174",
+      "why": "picked solution_NAI-174 over 1 other pickable candidate(s) of 2 offered; deciding method: intent alignment & logic soundness (+8.20 over solution_NAI-145); solution_NAI-174[kind=prescribed, parse=shape, differs=yes, rule=NAI-174, flow=terminal_lost, complexity=same, idiom=same, deps=none_added, defensive=same, readability=flatter:0, traps=removed:shadowed_builtin:len, answers=row]; solution_NAI-145[kind=prescribed, parse=shape, differs=yes, rule=NAI-145, flow=terminal_lost+opaque:1, complexity=same+opaque:1, idiom=same+opaque:1, deps=none_added+opaque:1, defensive=same+opaque:1, readability=flatter:0+opaque:1, traps=removed:shadowed_builtin:len+opaque:1, answers=neighbour]; profile: no intent fact matched"
+    },
+    "observations": {
+      "solution_NAI-174": [
+        "kind=prescribed",
+        "parse=shape",
+        "differs=yes",
+        "rule=NAI-174",
+        "flow=terminal_lost",
+        "complexity=same",
+        "idiom=same",
+        "deps=none_added",
+        "defensive=same",
+        "readability=flatter:0",
+        "traps=removed:shadowed_builtin:len"
+      ],
+      "solution_NAI-145": [
+        "kind=prescribed",
+        "parse=shape",
+        "differs=yes",
+        "rule=NAI-145",
+        "flow=terminal_lost+opaque:1",
+        "complexity=same+opaque:1",
+        "idiom=same+opaque:1",
+        "deps=none_added+opaque:1",
+        "defensive=same+opaque:1",
+        "readability=flatter:0+opaque:1",
+        "traps=removed:shadowed_builtin:len+opaque:1"
+      ]
+    },
+    "infractions": null,
+    "tester": {
+      "confirmed": false,
+      "tester": "",
+      "timestamp": ""
+    },
+    "return_channel": "/Users/dev/Desktop/CODE_RADAR_REFURBISH/system_scripts/return_channel_a32f4c124796.jsonl"
+  },
+  "colorama/repair_plant_ops.py::check::20": {
+    "row_key": "colorama/repair_plant_ops.py::check::20",
+    "rule_ids": [
+      "NAI-014"
+    ],
+    "solution_kind": "prescribed",
+    "selected_role": null,
+    "digest": "c29a16c935",
+    "replace_span": "colorama/repair_plant_ops.py:L20-L22",
+    "before_code": "def check(a, b):\n    a == b\n    return a + b",
+    "after_code": "<delete `x = x`>\n# or\nresult = <expr>   # the value was meant\n# or\nif <compare>:\n    ...",
+    "fix": "Delete the statement, or, when a value was meant to be kept, assign the expression to the name that uses it: a self-assignment goes, a discarded compare / operation becomes the assignment or the condition it was written for.",
+    "decision": {
+      "pick_role": "solution_NAI-014",
+      "why": "picked solution_NAI-014 over 0 other pickable candidate(s) of 1 offered; deciding method: n/a (one candidate); solution_NAI-014[kind=prescribed, parse=shape, differs=yes, rule=NAI-014, flow=terminal_lost+branch_added:1+opaque:1, complexity=same+opaque:1, idiom=same+opaque:1, deps=none_added+opaque:1, defensive=same+opaque:1, readability=more_branches:1+opaque:1, traps=none+opaque:1, answers=row]; profile: no intent fact matched"
+    },
+    "observations": {
+      "solution_NAI-014": [
+        "kind=prescribed",
+        "parse=shape",
+        "differs=yes",
+        "rule=NAI-014",
+        "flow=terminal_lost+branch_added:1+opaque:1",
+        "complexity=same+opaque:1",
+        "idiom=same+opaque:1",
+        "deps=none_added+opaque:1",
+        "defensive=same+opaque:1",
+        "readability=more_branches:1+opaque:1",
+        "traps=none+opaque:1"
+      ]
+    },
+    "infractions": null,
+    "tester": {
+      "confirmed": false,
+      "tester": "",
+      "timestamp": ""
+    },
+    "return_channel": "/Users/dev/Desktop/CODE_RADAR_REFURBISH/system_scripts/return_channel_a32f4c124796.jsonl"
+  },
+  "colorama/repair_plant_names.py::process_rows::7": {
+    "row_key": "colorama/repair_plant_names.py::process_rows::7",
+    "rule_ids": [
+      "NAI-133"
+    ],
+    "solution_kind": "prescribed",
+    "selected_role": null,
+    "digest": "ebc30c1957",
+    "replace_span": "colorama/repair_plant_names.py:L7-L8",
+    "before_code": "def process_rows(rows):\n    return rows[0]",
+    "after_code": "def process_<what>(items):\n    return [<transform(item)> for item in items]",
+    "fix": "Process the input: iterate its items (or call the transformer) and return the processed value the name promises; a delegating call to the real worker is fine.",
+    "decision": {
+      "pick_role": "solution_NAI-133",
+      "why": "picked solution_NAI-133 over 0 other pickable candidate(s) of 1 offered; deciding method: n/a (one candidate); solution_NAI-133[kind=prescribed, parse=shape, differs=yes, rule=NAI-133, flow=same_paths, complexity=deeper:1, idiom=same, deps=none_added, defensive=same, readability=more_branches:1, traps=none, answers=row]; profile: no intent fact matched"
+    },
+    "observations": {
+      "solution_NAI-133": [
+        "kind=prescribed",
+        "parse=shape",
+        "differs=yes",
+        "rule=NAI-133",
+        "flow=same_paths",
+        "complexity=deeper:1",
+        "idiom=same",
+        "deps=none_added",
+        "defensive=same",
+        "readability=more_branches:1",
+        "traps=none"
+      ]
+    },
+    "infractions": null,
+    "tester": {
+      "confirmed": false,
+      "tester": "",
+      "timestamp": ""
+    },
+    "return_channel": "/Users/dev/Desktop/CODE_RADAR_REFURBISH/system_scripts/return_channel_a32f4c124796.jsonl"
+  },
+  "colorama/repair_plant_names.py::filter_rows::11": {
+    "row_key": "colorama/repair_plant_names.py::filter_rows::11",
+    "rule_ids": [
+      "NAI-134"
+    ],
+    "solution_kind": "prescribed",
+    "selected_role": null,
+    "digest": "4fa4ae3eb4",
+    "replace_span": "colorama/repair_plant_names.py:L11-L12",
+    "before_code": "def filter_rows(rows):\n    return list(rows)",
+    "after_code": "def filter_<what>(items):\n    return [item for item in items if <condition(item)>]",
+    "fix": "Filter by the condition the name promises: keep the items for which the predicate from the intent holds and return them.",
+    "decision": {
+      "pick_role": "solution_NAI-134",
+      "why": "picked solution_NAI-134 over 0 other pickable candidate(s) of 1 offered; deciding method: n/a (one candidate); solution_NAI-134[kind=prescribed, parse=shape, differs=yes, rule=NAI-134, flow=same_paths, complexity=deeper:1, idiom=same, deps=none_added, defensive=same, readability=more_branches:2, traps=none, answers=row]; profile: no intent fact matched"
+    },
+    "observations": {
+      "solution_NAI-134": [
+        "kind=prescribed",
+        "parse=shape",
+        "differs=yes",
+        "rule=NAI-134",
+        "flow=same_paths",
+        "complexity=deeper:1",
+        "idiom=same",
+        "deps=none_added",
+        "defensive=same",
+        "readability=more_branches:2",
+        "traps=none"
+      ]
+    },
+    "infractions": null,
+    "tester": {
+      "confirmed": false,
+      "tester": "",
+      "timestamp": ""
+    },
+    "return_channel": "/Users/dev/Desktop/CODE_RADAR_REFURBISH/system_scripts/return_channel_a32f4c124796.jsonl"
+  },
+  "colorama/repair_plant_names.py::sort_rows::15": {
+    "row_key": "colorama/repair_plant_names.py::sort_rows::15",
+    "rule_ids": [
+      "NAI-135"
+    ],
+    "solution_kind": "prescribed",
+    "selected_role": null,
+    "digest": "f23a5e3813",
+    "replace_span": "colorama/repair_plant_names.py:L15-L16",
+    "before_code": "def sort_rows(rows):\n    return list(reversed(rows))",
+    "after_code": "def sort_<what>(items):\n    return sorted(items, key=lambda item: <key>, reverse=<bool>)",
+    "fix": "Sort by the key and direction the name promises: sorted(items, key=<key>, reverse=<bool>).",
+    "decision": {
+      "pick_role": "solution_NAI-135",
+      "why": "picked solution_NAI-135 over 0 other pickable candidate(s) of 1 offered; deciding method: n/a (one candidate); solution_NAI-135[kind=prescribed, parse=shape, differs=yes, rule=NAI-135, flow=same_paths, complexity=same, idiom=same, deps=none_added, defensive=same, readability=same, traps=none, answers=row]; profile: no intent fact matched"
+    },
+    "observations": {
+      "solution_NAI-135": [
+        "kind=prescribed",
+        "parse=shape",
+        "differs=yes",
+        "rule=NAI-135",
+        "flow=same_paths",
+        "complexity=same",
+        "idiom=same",
+        "deps=none_added",
+        "defensive=same",
+        "readability=same",
+        "traps=none"
+      ]
+    },
+    "infractions": null,
+    "tester": {
+      "confirmed": false,
+      "tester": "",
+      "timestamp": ""
+    },
+    "return_channel": "/Users/dev/Desktop/CODE_RADAR_REFURBISH/system_scripts/return_channel_a32f4c124796.jsonl"
+  },
+  "colorama/repair_plant_checks.py::near_tenth::16": {
+    "row_key": "colorama/repair_plant_checks.py::near_tenth::16",
+    "rule_ids": [
+      "NAI-095"
+    ],
+    "solution_kind": "prescribed",
+    "selected_role": null,
+    "digest": "68a1321628",
+    "replace_span": "colorama/repair_plant_checks.py:L16-L17",
+    "before_code": "def near_tenth(x):\n    return x == 0.1",
+    "after_code": "if math.isclose(<a>, <b>, rel_tol=<REL_TOL>, abs_tol=<ABS_TOL>):",
+    "fix": "Compare with a tolerance the domain sets: math.isclose(a, b, rel_tol=<r>, abs_tol=<a>) with the tolerance from the module's own constant or the intent's precision, not a default.",
+    "decision": {
+      "pick_role": "solution_NAI-095",
+      "why": "picked solution_NAI-095 over 0 other pickable candidate(s) of 1 offered; deciding method: n/a (one candidate); solution_NAI-095[kind=prescribed, parse=shape, differs=yes, rule=NAI-095, flow=terminal_lost+branch_added:1, complexity=same, idiom=same, deps=none_added, defensive=same, readability=more_branches:1, traps=none, answers=row]; profile: no intent fact matched"
+    },
+    "observations": {
+      "solution_NAI-095": [
+        "kind=prescribed",
+        "parse=shape",
+        "differs=yes",
+        "rule=NAI-095",
+        "flow=terminal_lost+branch_added:1",
+        "complexity=same",
+        "idiom=same",
+        "deps=none_added",
+        "defensive=same",
+        "readability=more_branches:1",
+        "traps=none"
+      ]
+    },
+    "infractions": null,
+    "tester": {
+      "confirmed": false,
+      "tester": "",
+      "timestamp": ""
+    },
+    "return_channel": "/Users/dev/Desktop/CODE_RADAR_REFURBISH/system_scripts/return_channel_a32f4c124796.jsonl"
+  },
+  "colorama/repair_plant_quiet.py::test_parse_never_fails::8": {
+    "row_key": "colorama/repair_plant_quiet.py::test_parse_never_fails::8",
+    "rule_ids": [
+      "NAI-020",
+      "NAI-078",
+      "NAI-157"
+    ],
+    "solution_kind": "prescribed",
+    "selected_role": null,
+    "digest": "6e7a9de2c6",
+    "replace_span": "colorama/repair_plant_quiet.py:L8-L12",
+    "before_code": "def test_parse_never_fails():\n    try:\n        int(\"x\")\n    except ValueError:\n        pass",
+    "after_code": "def test_<what>():\n    result = <unit>(<input>)\n    assert result == <expected>",
+    "fix": "Assert the behaviour the test's name promises: call the unit and compare its result (or its raised exception) to the expected literal from the spec / intent.",
+    "decision": {
+      "pick_role": "solution_NAI-020",
+      "why": "declined: fallback_return_fix found nothing to rewrite; picked solution_NAI-020 over 1 other pickable candidate(s) of 2 offered; deciding method: intent alignment & logic soundness (+14.45 over solution_NAI-157); solution_NAI-020[kind=prescribed, parse=shape, differs=yes, rule=NAI-020, flow=same_paths, complexity=same, idiom=same, deps=none_added, defensive=same, readability=flatter:1+fewer_branches:1, traps=none, answers=row]; solution_NAI-157[kind=prescribed, parse=shape, differs=yes, rule=NAI-157, flow=same_paths+opaque:1, complexity=same+opaque:1, idiom=same+opaque:1, deps=none_added+opaque:1, defensive=same+opaque:1, readability=flatter:1+fewer_branches:1+opaque:1, traps=none+opaque:1, answers=neighbour]; profile: no intent fact matched"
+    },
+    "observations": {
+      "solution_NAI-020": [
+        "kind=prescribed",
+        "parse=shape",
+        "differs=yes",
+        "rule=NAI-020",
+        "flow=same_paths",
+        "complexity=same",
+        "idiom=same",
+        "deps=none_added",
+        "defensive=same",
+        "readability=flatter:1+fewer_branches:1",
+        "traps=none"
+      ],
+      "solution_NAI-157": [
+        "kind=prescribed",
+        "parse=shape",
+        "differs=yes",
+        "rule=NAI-157",
+        "flow=same_paths+opaque:1",
+        "complexity=same+opaque:1",
+        "idiom=same+opaque:1",
+        "deps=none_added+opaque:1",
+        "defensive=same+opaque:1",
+        "readability=flatter:1+fewer_branches:1+opaque:1",
+        "traps=none+opaque:1"
+      ]
+    },
+    "infractions": null,
+    "tester": {
+      "confirmed": false,
+      "tester": "",
+      "timestamp": ""
+    },
+    "return_channel": "/Users/dev/Desktop/CODE_RADAR_REFURBISH/system_scripts/return_channel_a32f4c124796.jsonl"
+  },
+  "colorama/repair_plant_foreign.py::get_users::33": {
+    "row_key": "colorama/repair_plant_foreign.py::get_users::33",
+    "rule_ids": [
+      "NAI-115"
+    ],
+    "solution_kind": "prescribed",
+    "selected_role": null,
+    "digest": "84475b6eed",
+    "replace_span": "colorama/repair_plant_foreign.py:L33-L35",
+    "before_code": "def get_users(source):\n    source = str(source)\n    return [\"alice\", \"bob\"]",
+    "after_code": "def get_items(store):\n    return store.query(<what the name promises>)",
+    "fix": "Fetch the data from the source the intent names (the external system, file or store) instead of returning a literal list / dict; a genuine fixture moves to a constant named as one.",
+    "decision": {
+      "pick_role": "solution_NAI-115",
+      "why": "picked solution_NAI-115 over 0 other pickable candidate(s) of 1 offered; deciding method: n/a (one candidate); solution_NAI-115[kind=prescribed, parse=shape, differs=yes, rule=NAI-115, flow=same_paths, complexity=same, idiom=same, deps=none_added, defensive=same, readability=same, traps=none, answers=row]; profile: no intent fact matched"
+    },
+    "observations": {
+      "solution_NAI-115": [
+        "kind=prescribed",
+        "parse=shape",
+        "differs=yes",
+        "rule=NAI-115",
+        "flow=same_paths",
+        "complexity=same",
+        "idiom=same",
+        "deps=none_added",
+        "defensive=same",
+        "readability=same",
+        "traps=none"
+      ]
+    },
+    "infractions": null,
+    "tester": {
+      "confirmed": false,
+      "tester": "",
+      "timestamp": ""
+    },
+    "return_channel": "/Users/dev/Desktop/CODE_RADAR_REFURBISH/system_scripts/return_channel_a32f4c124796.jsonl"
+  },
+  "colorama/repair_plant_ops.py::same::25": {
+    "row_key": "colorama/repair_plant_ops.py::same::25",
+    "rule_ids": [
+      "NAI-016S"
+    ],
+    "solution_kind": "prescribed",
+    "selected_role": null,
+    "digest": "9c48b57007",
+    "replace_span": "colorama/repair_plant_ops.py:L25-L26",
+    "before_code": "def same(value):\n    return value",
+    "after_code": "def f(param):\n    return <transform>(param)",
+    "fix": "Replace `return param` with the transformation the name and the intent promise, applied to param.",
+    "decision": {
+      "pick_role": "solution_NAI-016S",
+      "why": "picked solution_NAI-016S over 0 other pickable candidate(s) of 1 offered; deciding method: n/a (one candidate); solution_NAI-016S[kind=prescribed, parse=shape, differs=yes, rule=NAI-016S, flow=same_paths, complexity=same, idiom=same, deps=none_added, defensive=same, readability=same, traps=none, answers=row]; profile: no intent fact matched"
+    },
+    "observations": {
+      "solution_NAI-016S": [
+        "kind=prescribed",
+        "parse=shape",
+        "differs=yes",
+        "rule=NAI-016S",
+        "flow=same_paths",
+        "complexity=same",
+        "idiom=same",
+        "deps=none_added",
+        "defensive=same",
+        "readability=same",
+        "traps=none"
+      ]
+    },
+    "infractions": null,
+    "tester": {
+      "confirmed": false,
+      "tester": "",
+      "timestamp": ""
+    },
+    "return_channel": "/Users/dev/Desktop/CODE_RADAR_REFURBISH/system_scripts/return_channel_a32f4c124796.jsonl"
+  }
+}

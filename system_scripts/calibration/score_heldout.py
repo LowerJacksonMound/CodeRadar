@@ -9,6 +9,7 @@ usage: score_heldout.py CAL --held-libs a,b --real x,y --plants corpus_B --fit f
 from __future__ import annotations
 import argparse, collections, json, sys
 from pathlib import Path
+from typing import Any
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from calib_common import ROOT, load_table, table_dispositions, deciding_ids, recomputed_failed, consistency, load_dump, verify_rows, manifests, target_rows
 import importlib.util as _ilu
@@ -37,7 +38,7 @@ def main(argv=None) -> int:
                                      "ids_now_context": [i for i in r["all_ids"] if i in ov]})
         if lib not in real: honest_rows += len(rows); honest_raw += len(raw); honest_cal += len(calf)
     # plants (held-out corpus B)
-    mans = manifests(a.plants); pl = {"manifests": [m["_dir"] for m in mans], "families": {}}
+    mans = manifests(a.plants); pl: dict[str, Any] = {"manifests": [m["_dir"] for m in mans], "families": {}}
     for m in mans:
         t = vm.resolve_target(m["target"])   # retired targets may live under ~/Desktop/RUN_AGAINST_DIRS_*/
         if not t.exists(): pl.setdefault("absent", []).append(m["_dir"]); continue

@@ -1,0 +1,48 @@
+{
+ "target": "/Users/dev/Desktop/the_color_of_right",
+ "built": "2026-09-10",
+ "by": "set 4b-40 (run 94, app copy 2)",
+ "base": "half_the_world tree + colorama/repair_plant_strict.py",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_strict.py",
+   "line": 8,
+   "function": "default_limit",
+   "family": "NAI-009S",
+   "accept_any_of": ["NAI-009S"],
+   "what": "a body of exactly `return 100` under an unread parameter — strict takes the row alone (set 4b-40, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_strict.py",
+   "line": 12,
+   "function": "same",
+   "family": "NAI-016S",
+   "accept_any_of": ["NAI-016S"],
+   "what": "a body of exactly `return value` with one parameter (set 4b-40, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_strict.py",
+   "line": 16,
+   "function": "risk_report",
+   "family": "NAI-017S",
+   "accept_any_of": ["NAI-017S"],
+   "what": "a body of exactly `return {'status': 'ok', 'score': 0}` under an unread parameter (set 4b-40, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_strict.py",
+   "line": 20,
+   "function": "fetch_validation",
+   "family": "NAI-022S",
+   "accept_any_of": ["NAI-022S"],
+   "what": "`record_id` never read; `result = _gateway_result(); return result` — the split-fake delegator (set 4b-40, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_strict.py",
+   "line": 31,
+   "function": "normalize_rows",
+   "family": "NAI-023S",
+   "accept_any_of": ["NAI-023S"],
+   "what": "list() → [:] → identity comprehension → return — the comprehension keeps NAI-021S's identity trace quiet, so the AST-only twin decides (set 4b-40, no-fix-by-design)"
+  }
+ ]
+}

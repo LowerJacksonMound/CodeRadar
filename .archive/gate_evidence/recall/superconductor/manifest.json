@@ -1,0 +1,58 @@
+{
+ "target": "/Users/dev/Desktop/superconductor",
+ "built": "2026-09-10",
+ "by": "set 4b-19 (run 73)",
+ "base": "presto tree + colorama/repair_plant_branches.py",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_branches.py",
+   "line": 10,
+   "function": "guarded",
+   "family": "NAI-002",
+   "accept_any_of": [
+    "NAI-002"
+   ],
+   "what": "a statement after a raise (the row also carries NAI-140, declared) (set 4b-19, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_branches.py",
+   "line": 14,
+   "function": "render",
+   "family": "NAI-003",
+   "accept_any_of": [
+    "NAI-003"
+   ],
+   "what": "a parameter never read (the row also carries NAI-030) (set 4b-19, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_branches.py",
+   "line": 19,
+   "function": "pick",
+   "family": "NAI-005",
+   "accept_any_of": [
+    "NAI-005"
+   ],
+   "what": "a redundant else after an if that returns (set 4b-19, rewritten live by redundant_else_fix)"
+  },
+  {
+   "file": "colorama/repair_plant_branches.py",
+   "line": 26,
+   "function": "stamp",
+   "family": "NAI-006",
+   "accept_any_of": [
+    "NAI-006"
+   ],
+   "what": "a value overwritten before it is read (set 4b-19, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_branches.py",
+   "line": 32,
+   "function": "outer",
+   "family": "NAI-007",
+   "accept_any_of": [
+    "NAI-007"
+   ],
+   "what": "a nested def never called or returned (set 4b-19, no-fix-by-design)"
+  }
+ ]
+}

@@ -24,7 +24,7 @@ import subprocess
 import sys
 import tempfile
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Set, Tuple
+from typing import Any, Dict, List, Optional, Set, Tuple, cast
 
 _PLUGIN_DIR = Path(__file__).resolve().parent.parent / "runtime_plugin"
 _SKIP_DIRS = {".git", ".venv", "venv", "env", "node_modules", "__pycache__", ".tox", ".mypy_cache", ".pytest_cache"}
@@ -72,7 +72,7 @@ def run_traced(root: Path, plan: Optional[Dict[str, Any]] = None) -> Dict[str, A
         return {"status": "ran", "rows": rows, "probes": probes}
 
 
-def _fn_by_first(tree: ast.AST, first: int) -> Optional[ast.AST]:
+def _fn_by_first(tree: ast.AST, first: int) -> Optional[ast.FunctionDef | ast.AsyncFunctionDef]:
     for n in ast.walk(tree):
         if isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef)) \
                 and min([n.lineno] + [d.lineno for d in n.decorator_list]) == first:
@@ -80,7 +80,7 @@ def _fn_by_first(tree: ast.AST, first: int) -> Optional[ast.AST]:
     return None
 
 
-def _span(n: ast.AST) -> Set[int]:
+def _span(n: Any) -> Set[int]:
     return set(range(n.lineno, (getattr(n, "end_lineno", None) or n.lineno) + 1))
 
 
@@ -178,7 +178,7 @@ def observations(trees_by_rel: Dict[str, ast.AST], root: Path,
         stmt = _innermost_stmt(test_fn, r["failing_line"]) if (test_fn is not None and r.get("failing_line")) else None
         if stmt is None:
             continue
-        feed = _feeding_lines(test_fn, stmt, _actual(stmt))
+        feed = _feeding_lines(cast(ast.AST, test_fn), stmt, _actual(stmt))
         hit = [c for c in r["calls"] if c["caller_line"] in feed and not (c["name"].startswith("__") and c["name"].endswith("__"))]
         blamed: Dict[Tuple[str, int], List[Dict[str, Any]]] = {}
         for c in hit:

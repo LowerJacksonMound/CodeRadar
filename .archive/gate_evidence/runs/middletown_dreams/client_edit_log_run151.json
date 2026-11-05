@@ -1,0 +1,35 @@
+[
+  {
+    "function": "sole",
+    "row": "colorama/repair_plant_evidence.py::sole::24",
+    "file": "colorama/repair_plant_evidence.py",
+    "replace_span": "colorama/repair_plant_evidence.py:L24-L26",
+    "kind": "diff",
+    "selected_role": "dead_local_fix:drop_assignment",
+    "digest": "a640aaacfb",
+    "before": "def sole(items):\n    info = shape(items)\n    return len(items)\n",
+    "after": "def sole(items):\n    return len(items)\n"
+  },
+  {
+    "function": "shadowed",
+    "row": "colorama/repair_plant_evidence.py::shadowed::29",
+    "file": "colorama/repair_plant_evidence.py",
+    "replace_span": "colorama/repair_plant_evidence.py:L29-L31",
+    "kind": "diff",
+    "selected_role": "dead_local_fix:keep_call_effect",
+    "digest": "d042313cc3",
+    "before": "def shadowed(items):\n    info = outline(items)\n    return len(items)\n",
+    "after": "def shadowed(items):\n    outline(items)\n    return len(items)\n"
+  },
+  {
+    "function": "loud",
+    "row": "colorama/repair_plant_evidence.py::loud::34",
+    "file": "colorama/repair_plant_evidence.py",
+    "replace_span": "colorama/repair_plant_evidence.py:L34-L36",
+    "kind": "diff",
+    "selected_role": "dead_local_fix:keep_call_effect",
+    "digest": "5e6478ae13",
+    "before": "def loud(items):\n    info = noisy(items)\n    return len(items)\n",
+    "after": "def loud(items):\n    noisy(items)\n    return len(items)\n"
+  }
+]

@@ -51,7 +51,7 @@ def main(argv=None) -> int:
                 if r.get("species") == "test" or not recomputed_failed(r, disp): continue
                 dd = deciding_ids(r, disp)
                 if fam in dd: cands[lib].append((dd == [fam], r))
-        picked = []; order = sorted(cands); rng.shuffle(order)
+        picked: list[tuple[str, dict]] = []; order = sorted(cands); rng.shuffle(order)
         for alone_first in (True, False):
             while len(picked) < a.n and any(cands[l] for l in order):
                 progressed = False

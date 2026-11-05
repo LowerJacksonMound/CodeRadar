@@ -1,0 +1,58 @@
+{
+ "target": "/Users/dev/Desktop/wheres_my_thing",
+ "built": "2026-09-10",
+ "by": "set 4b-28 (run 82)",
+ "base": "face_up tree + colorama/repair_plant_foreign.py",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_foreign.py",
+   "line": 13,
+   "function": "convert_rows",
+   "family": "NAI-105",
+   "accept_any_of": [
+    "NAI-105"
+   ],
+   "what": "a convert_* whose loop appends each row unchanged (set 4b-28, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_foreign.py",
+   "line": 20,
+   "function": "item_count",
+   "family": "NAI-108",
+   "accept_any_of": [
+    "NAI-108"
+   ],
+   "what": "an item_count returning the string 'many' (set 4b-28, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_foreign.py",
+   "line": 24,
+   "function": "add_entry",
+   "family": "NAI-109",
+   "accept_any_of": [
+    "NAI-109"
+   ],
+   "what": "an add_* that removes from the collection whose size it returns (set 4b-28, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_foreign.py",
+   "line": 30,
+   "function": "label_upper",
+   "family": "NAI-110",
+   "accept_any_of": [
+    "NAI-110"
+   ],
+   "what": "a JavaScript .toUpperCase() on a str the function binds with an f-string (set 4b-28, rewriter cross_language_fix)"
+  },
+  {
+   "file": "colorama/repair_plant_foreign.py",
+   "line": 35,
+   "function": "get_users",
+   "family": "NAI-115",
+   "accept_any_of": [
+    "NAI-115"
+   ],
+   "what": "a get_* returning a literal list (set 4b-28, no-fix-by-design)"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+  "target": "/Users/dev/Desktop/animate",
+  "built": "2026-09-10",
+  "by": "row 7 R-B (run 99, app copy 1): FIX_18 HR observations; FIX_17 stopped at its catalog read (owner ruling); FIX_16 expected external steps 1-2",
+  "base": "limelight tree + colorama/repair_plant_deficits.py + colorama/repair_plant_deficits_control.py",
+  "planted_findings": [
+    {
+      "file": "colorama/repair_plant_deficits.py",
+      "line": 12,
+      "function": "width",
+      "family": "HR-002",
+      "accept_any_of": ["HR-002"],
+      "what": "a @property (declared GETTER) whose body assigns and returns nothing — published as an observation {tag HR-002, type GETTER, deficit return, votes}, the ranker decides (FIX_18)"
+    },
+    {
+      "file": "colorama/repair_plant_deficits.py",
+      "line": 21,
+      "function": "opened_gauge",
+      "family": "HR-003",
+      "accept_any_of": ["HR-003"],
+      "what": "a @contextmanager (declared CONTEXT_MANAGER) with no yield — {tag HR-003, deficit yield} (FIX_18)"
+    }
+  ],
+  "controls": [
+    "colorama/repair_plant_deficits_control.py"
+  ]
+}

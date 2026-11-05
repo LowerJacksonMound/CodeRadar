@@ -227,7 +227,7 @@ def check(func: Any, claims: List[Dict[str, Any]], fn: Callable, run: Callable, 
             i = params.index(c["of"])
             # "first" / "last" mean a position OR a time ("first arrival" = the earliest): either reading is correct
             accept = {"name_max": (max,), "name_min": (min,), "name_first": (lambda v: v[0], min),
-                      "name_last": (lambda v: v[-1], max)}.get(k)
+                      "name_last": (lambda v: v[-1], max)}[k]
             pick = next(iter(accept))
             for a in calls:
                 xs = a[i]

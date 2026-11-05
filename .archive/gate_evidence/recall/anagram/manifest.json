@@ -1,0 +1,59 @@
+{
+ "target": "/Users/dev/Desktop/anagram",
+ "built": "2026-09-10",
+ "by": "set 4b-20 (run 74)",
+ "base": "superconductor tree + colorama/repair_plant_ops.py",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_ops.py",
+   "line": 8,
+   "function": "lookup",
+   "family": "NAI-009",
+   "accept_any_of": [
+    "NAI-009"
+   ],
+   "what": "an empty dict returned whatever the inputs (the row also carries NAI-003 / NAI-030) (set 4b-20, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_ops.py",
+   "line": 11,
+   "function": "total",
+   "family": "NAI-010",
+   "accept_any_of": [
+    "NAI-010"
+   ],
+   "what": "a local computed and never read (the row also carries NAI-031 / NAI-147) (set 4b-20, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_ops.py",
+   "line": 16,
+   "function": "note",
+   "family": "NAI-011",
+   "accept_any_of": [
+    "NAI-011"
+   ],
+   "what": "no return, no call, no effect (set 4b-20, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_ops.py",
+   "line": 21,
+   "function": "check",
+   "family": "NAI-014",
+   "accept_any_of": [
+    "NAI-014"
+   ],
+   "what": "a comparison written as a statement (set 4b-20, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_ops.py",
+   "line": 25,
+   "function": "same",
+   "family": "NAI-016",
+   "accept_any_of": [
+    "NAI-016",
+    "NAI-016S"
+   ],
+   "what": "an identity function — the row is NAI-016S's on the daemon route (strict) (set 4b-20, no-fix-by-design)"
+  }
+ ]
+}

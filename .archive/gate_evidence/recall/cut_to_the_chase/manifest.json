@@ -1,0 +1,122 @@
+{
+ "target": "/Users/dev/Desktop/cut_to_the_chase",
+ "built": "2026-09-15",
+ "by": "row 14 Item 3 (run 103, app copy 1): the ARTIFACT SCANNER as one stage — species by content with the proxy kinds, the whole-file stub consult, the dot-dir intent sources",
+ "base": "limelight tree (76 files) + seven proxy files at the root (demo_plant.py proxy:demo, run_all_plant.py proxy:runner, pathhack_plant.py proxy:pathhack, git_plant.py proxy:git, shim_plant.py proxy:entry_shim, assert_only_plant.py proxy:assertion_only, setup.py proxy:setup) + colorama/proto_stub.py (a whole-file stub → whitelist stub:ellipsis_body, never a row) + colorama/repair_plant_scanner_source.py (live SOURCE with an NAI-003 shape — the stage must leave its judgement untouched) + intent sources .github/workflows/ci.yml, setup.cfg#[mypy]/[flake8], docs/USAGE.md, tox.ini (README.rst, CHANGELOG.rst, pyproject.toml are the sdist's own)",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_scanner_source.py",
+   "line": 4,
+   "function": "scale_width",
+   "family": "NAI-003",
+   "accept_any_of": [
+    "NAI-003"
+   ],
+   "what": "an unread parameter `factor` in a live SOURCE file beside the proxies — decided as before (the stage changes nothing for source)"
+  },
+  {
+   "file": "demo_plant.py",
+   "line": 5,
+   "function": "show_width",
+   "family": "NAI-003",
+   "accept_any_of": [
+    "NAI-003"
+   ],
+   "withheld_as": "proxy:demo",
+   "what": "an unread parameter `factor` in a DEMO (constant-argument top-level calls, nothing referenced elsewhere) — the row is WITHHELD under proxy:demo, NAI-003 rides as context"
+  },
+  {
+   "file": "run_all_plant.py",
+   "line": 5,
+   "function": "run_one",
+   "family": "NAI-003",
+   "accept_any_of": [
+    "NAI-003"
+   ],
+   "withheld_as": "proxy:runner",
+   "what": "an unread parameter `timeout` in a RUNNER (top-level subprocess.run, nothing imports it) — withheld under proxy:runner"
+  },
+  {
+   "file": "pathhack_plant.py",
+   "line": 9,
+   "function": "paint",
+   "family": "NAI-003",
+   "accept_any_of": [
+    "NAI-003"
+   ],
+   "withheld_as": "proxy:pathhack",
+   "what": "an unread parameter `color` in a PATH-HACK SCRIPT (sys.path.insert before an import, nothing imports it) — withheld under proxy:pathhack"
+  },
+  {
+   "file": "git_plant.py",
+   "line": 5,
+   "function": "current_branch",
+   "family": "NAI-003",
+   "accept_any_of": [
+    "NAI-003"
+   ],
+   "withheld_as": "proxy:git",
+   "what": "an unread parameter `verbose` in a GIT SCRIPT (subprocess whose first argument is `git`, nothing imports it) — withheld under proxy:git"
+  },
+  {
+   "file": "assert_only_plant.py",
+   "line": 4,
+   "function": "check_width",
+   "family": "NAI-003",
+   "accept_any_of": [
+    "NAI-003"
+   ],
+   "withheld_as": "proxy:assertion_only",
+   "what": "an unread parameter `factor` in an ASSERTION-ONLY file (every def asserts, none returns, no framework, nothing imports it) — withheld under proxy:assertion_only"
+  },
+  {
+   "file": "setup.py",
+   "line": 5,
+   "function": "read",
+   "family": "NAI-003",
+   "accept_any_of": [
+    "NAI-003"
+   ],
+   "withheld_as": "proxy:setup",
+   "what": "an unread parameter `encoding` in a SETUP SCRIPT (top-level setuptools setup()) — withheld under proxy:setup"
+  }
+ ],
+ "controls": [
+  "demo_plant.py",
+  "run_all_plant.py",
+  "pathhack_plant.py",
+  "git_plant.py",
+  "shim_plant.py",
+  "assert_only_plant.py",
+  "setup.py"
+ ],
+ "controls_note": "every proxy file carries an unread-parameter shape (NAI-003) that FAILS as app code; as a proxy its rows are WITHHELD (published PASS with species:proxy:<kind>), so each is a control that must be clean — the withholding is the proof; shim_plant.py has no def, so no row at all",
+ "expected_species": {
+  "demo_plant.py": "proxy:demo",
+  "run_all_plant.py": "proxy:runner",
+  "pathhack_plant.py": "proxy:pathhack",
+  "git_plant.py": "proxy:git",
+  "shim_plant.py": "proxy:entry_shim",
+  "assert_only_plant.py": "proxy:assertion_only",
+  "setup.py": "proxy:setup",
+  "colorama/__init__.py": "proxy:package_marker",
+  "colorama/tests/__init__.py": "proxy:package_marker",
+  "demos/demo01.py": "proxy:demo",
+  "colorama/repair_plant_scanner_source.py": "",
+  "demos/fixpath.py": ""
+ },
+ "expected_species_note": "demos/fixpath.py mutates sys.path but is imported by the demos (in_degree 8): the mutation stays the path-hack detector's business, never a species — the plan's rule proven on the sdist's own file",
+ "expected_whitelist": {
+  "colorama/proto_stub.py": "stub:ellipsis_body"
+ },
+ "expected_intent_sources": [
+  "changelog",
+  "ci_workflow",
+  "docs",
+  "lint_config",
+  "packaging",
+  "readme",
+  "tox",
+  "type_config"
+ ]
+}

@@ -1,0 +1,113 @@
+{
+ "target": "/Users/dev/Desktop/CODE_RADAR_REFURBISH/RUN_AGAINST_DIRS_recall_targets/cr_sunny",
+ "built": "2026-10-07",
+ "by": "owner (cr_sunny L1\u2013L5 counterfeit levels, ANSWER_SHEET.md); guarded copy at RUN_AGAINST_DIRS_recall_targets/cr_sunny \u2014 the manifest names the frozen copy so edits to ~/Desktop/cr_sunny never move the guard",
+ "base": "10 planted functions across the five counterfeit levels, each beside a clean twin; the twins are controls by function \u2014 the guard's controls are FILE-level, so the twins are asserted by the per-function scorer and the clean twin files below",
+ "planted_findings": [
+  {
+   "file": "sweet_dee_gets_audited.py",
+   "line": 8,
+   "function": "audit_tab",
+   "family": "NAI-004",
+   "accept_any_of": [
+    "NAI-004"
+   ],
+   "what": "L1: placeholder body (pass + TODO) whose result the caller uses"
+  },
+  {
+   "file": "sweet_dee_gets_audited.py",
+   "line": 18,
+   "function": "swallow_shortage",
+   "family": "NAI-017",
+   "accept_any_of": [
+    "NAI-017"
+   ],
+   "what": "L1: except Exception: pass hides a bad line"
+  },
+  {
+   "file": "flowers_for_charlie.py",
+   "line": 8,
+   "function": "charlie_iq",
+   "family": "NAI-036",
+   "accept_any_of": [
+    "NAI-036",
+    "NAI-009",
+    "NAI-019"
+   ],
+   "what": "L2: `85 if computed or not computed` \u2014 a tautology returns a constant regardless of input"
+  },
+  {
+   "file": "mac_and_dennis_break_up.py",
+   "line": 21,
+   "function": "right_paddle_blocks",
+   "family": "NAI-236",
+   "accept_any_of": [
+    "NAI-236"
+   ],
+   "what": "L3: twin of left_paddle_blocks with `if paddle['side'] == 'right': return False` switching the real check off"
+  },
+  {
+   "file": "the_gang_solves_the_gas_crisis.py",
+   "line": 10,
+   "function": "gallons_saved",
+   "family": "NAI-237",
+   "accept_any_of": [
+    "NAI-237"
+   ],
+   "what": "L4: returns the test's literal (n == 7 \u2192 13) and flips after repeated calls"
+  },
+  {
+   "file": "chardee_macdennis.py",
+   "line": 10,
+   "function": "hits_goal",
+   "family": "NAI-003",
+   "accept_any_of": [
+    "NAI-003",
+    "NAI-102"
+   ],
+   "what": "L5: compares y to the goal's x \u2014 x unused"
+  },
+  {
+   "file": "the_gang_buys_a_boat.py",
+   "line": 8,
+   "function": "rudder_heading",
+   "family": "NAI-102",
+   "accept_any_of": [
+    "NAI-102"
+   ],
+   "what": "L5: docstring says a right rudder adds; body subtracts"
+  },
+  {
+   "file": "gun_fever.py",
+   "line": 8,
+   "function": "in_fever_band",
+   "family": "NAI-102",
+   "accept_any_of": [
+    "NAI-102"
+   ],
+   "what": "L5: docstring says 100..180; body counts 100..107"
+  },
+  {
+   "file": "the_nightman_cometh.py",
+   "line": 16,
+   "function": "troll_toll_due",
+   "family": "NAI-102",
+   "accept_any_of": [
+    "NAI-102"
+   ],
+   "what": "L5: docstring says any crossing; body only the exact centre (==)"
+  },
+  {
+   "file": "the_waitress_is_getting_married.py",
+   "line": 8,
+   "function": "is_invited",
+   "family": "NAI-003",
+   "accept_any_of": [
+    "NAI-003",
+    "NAI-102"
+   ],
+   "what": "L5: name says invited; body checks the barred list \u2014 `invited` unused"
+  }
+ ],
+ "controls": []
+}

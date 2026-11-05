@@ -1,0 +1,35 @@
+{
+ "target": "/Users/dev/Desktop/totem",
+ "built": "2026-09-10",
+ "by": "row 13 R-C (run 100, app copy 2): FIX_13 dot-dir walkers, FIX_14 exclusion table, FIX_15 walker containment, FIX_32 RCA downstream callers, FIX_33 context manager (steps 1, 2, 4, 5)",
+ "base": "limelight tree + .totem/hidden_bridge.py (a live module in a dot-dir, FIX_13) + totem_entry.py (imports colorama/environment.py — a name the old substring table excluded, FIX_14) + colorama/leaf_totem.py (a leaf with two callers caller_one.py / caller_two.py, FIX_32; sibling test_leaf_totem.py, FIX_33) + colorama/linked_dir -> ~/Desktop/totem_outside and colorama/outside.py -> ~/Desktop/totem_outside/outside_mod.py (symlinks resolving OUTSIDE the target, FIX_15)",
+ "planted_findings": [
+  {
+   "file": "totem_entry.py",
+   "line": 12,
+   "function": "gather",
+   "family": "NAI-071",
+   "accept_any_of": [
+    "NAI-071"
+   ],
+   "what": "a mutable default `seen=[]` in the entry — its row's RCA candidates must name colorama/environment.py as an upstream import (FIX_14: `environment` was silently out of scope under the substring table)",
+   "withheld_as": "proxy:pathhack",
+   "withheld_note": "Item 3 (run 103, 2026-09-15): totem_entry.py mutates sys.path at top level before an in-target import and nothing imports it — the artifact scanner's proxy:pathhack by content; the ranker withholds its rows, NAI-071 rides as context. Caught-withheld is the plant caught."
+  },
+  {
+   "file": "colorama/leaf_totem.py",
+   "line": 4,
+   "function": "leaf_sum",
+   "family": "NAI-003",
+   "accept_any_of": [
+    "NAI-003"
+   ],
+   "what": "an unread parameter `scale` in a LEAF module (imports nothing) — its RCA candidates must carry BOTH callers with the downstream line (FIX_32; before: an empty suspect list) and the sibling test with `Related by context (test)` (FIX_33)"
+  }
+ ],
+ "controls": [
+  "colorama/outside.py",
+  "colorama/linked_dir/outside_mod.py"
+ ],
+ "controls_note": "colorama/outside.py is a SYMLINK to a file outside the target holding an unread-parameter function that NAI-003 would decide if it were scanned; linked_dir/ is a symlinked directory holding the same file. Clean = never walked (FIX_15). The dot-dir module .totem/hidden_bridge.py is proven by the circuit NODE and the scope chip (counts equal), not by a row."
+}

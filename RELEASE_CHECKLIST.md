@@ -6,8 +6,9 @@ The measured record (trial rounds, stress cases, the clean-clone rehearsal) is k
 ## Any change
 
 - [ ] `system_scripts/health_check.py` passes, 23 steps, from `.venv_new` (the installer runs it on a fresh clone).
-- [ ] `./replay_gates.sh <name>`: 17 of 17, or every red named here as a known limit. On 2026-11-04: 15 of 17, the same
-      three reds since 2026-10-10 (read_tools, conformance needs the external notes dir, mypy tally), none in the scan or write route.
+- [ ] `./replay_gates.sh <name>`: 17 of 17, no known limits. 2026-11-05: the three reds carried as "known limits" since
+      2026-10-10 were a crashing proof (read_tools), a gate whose script never existed (conformance, removed) and 137
+      mypy errors; all three cleared. The gates read `.archive/gate_evidence/`, which a clone must have (see below).
 - [ ] A changed or new observation has a plant that fires without the fix and not with it, and 0 new hits on the ten honest
       libraries (the NAI-260 bar: row-for-row identical before and after).
 - [ ] README, QUICKSTART and HOW_CODERADAR_WORKS match the code: tool count, what it catches, known limits.

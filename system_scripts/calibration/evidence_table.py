@@ -3,6 +3,7 @@
 from __future__ import annotations
 import argparse, collections, json, sys
 from pathlib import Path
+from typing import Any
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from calib_common import ROOT, load_table, table_dispositions, deciding_ids, recomputed_failed, load_dump, dump_libs
 
@@ -38,7 +39,7 @@ def main(argv=None) -> int:
     cal_libs = fit.get("cal_libs") or libs
     fams = [x for x in a.families.split(",") if x] or sorted(fit.get("families", {})) or sorted(table["families"])
     # precision over the calibration libs (raw dispositions)
-    P = collections.defaultdict(lambda: {"libs": set(), "anywhere": 0, "alone": 0, "in_tests": 0, "first": 0})
+    P: dict[str, dict[str, Any]] = collections.defaultdict(lambda: {"libs": set(), "anywhere": 0, "alone": 0, "in_tests": 0, "first": 0})
     for lib in cal_libs:
         try: d = load_dump(cal, lib)
         except SystemExit: continue
@@ -55,7 +56,7 @@ def main(argv=None) -> int:
     # recall from the fit (archived + A) and the score (B)
     def plants_from(state, fam):
         return state.get(fam) or {"planted": 0, "caught_in_substance": 0, "caught_by_id": 0}
-    recA = {}; recArch = {}
+    recA: dict = {}; recArch = {}
     close = ROOT / "system_scripts" / "disposition_close.json"
     if close.exists():
         cl = json.load(open(close))

@@ -30,7 +30,7 @@ from .intent_claims import _compile, bind_module, unbind_module
 
 _RENAME = re.compile(r"^(?:legacy|old|new|orig|original|deprecated|tmp)_+|_+(?:legacy|old|new|orig|impl|v\d+|\d+|copy|tmp)$")
 _SHAPE_MIN = 0.8
-_VARIANTS = {"num": [0, 1, -1, 7.5, 100, 3.14159, 0.666], "int": [0, 1, -1, 7, 100, 13], "str": ["", "a", "Hello World", "x,y"],
+_VARIANTS: Dict[str, List[Any]] = {"num": [0, 1, -1, 7.5, 100, 3.14159, 0.666], "int": [0, 1, -1, 7, 100, 13], "str": ["", "a", "Hello World", "x,y"],
              "seq": [[], [1], [3, 1, 2], [-2.5, 0, 4]]}
 
 

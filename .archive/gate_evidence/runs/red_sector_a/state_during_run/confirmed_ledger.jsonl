@@ -1,0 +1,1 @@
+{"digest": "84e0cae05f", "replace_span": "colorama/repair_plant_shape.py:L13-L18", "rule_ids": ["NAI-021S"], "file": "colorama/repair_plant_shape.py", "function": "merge_tags", "line": 13, "seat": "coderadar-mcp run144", "note": "run 144: applied the rewriter diff; the function is repaired", "edit_kind": "diff", "timestamp": "2026-09-17T12:58:31.786710+00:00"}

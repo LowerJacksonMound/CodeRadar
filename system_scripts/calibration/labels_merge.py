@@ -11,8 +11,8 @@ LABELS = {"honest", "counterfeit", "instrument-gap"}
 def parse_sheet(p: Path):
     """Rows of a filled sheet as [(family, row)]. A per-family sheet (labels_<FAMILY>.md) carries the family in its name;
     a repo sheet (repo_<lib>.md, repo_sheets.py) carries a `family` column — families present, never ranked."""
-    fam = re.search(r"labels_([A-Z]+-[A-Za-z0-9]+)\.md$", p.name); fam = fam.group(1) if fam else None
-    out = []; by_col = False
+    m = re.search(r"labels_([A-Z]+-[A-Za-z0-9]+)\.md$", p.name); fam = m.group(1) if m else None
+    out = []; by_col = False; f: str | None
     for line in p.read_text(encoding="utf-8").splitlines():
         if line.startswith("| #"): by_col = "| family |" in line; continue
         if not line.startswith("|") or line.startswith("|---"): continue

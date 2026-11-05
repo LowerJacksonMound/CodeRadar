@@ -1,0 +1,27 @@
+the two processes as `ps` sees them (identical command lines, different cwd):
+  pid 80395 [INSIDE the target] cwd=/Users/dev/Desktop/ceiling_unlimited
+      /opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m pytest colorama/tests/ceiling_unlimited_test.py -p no:cacheprovider -q
+  pid 80396 [ANOTHER tree] cwd=/private/tmp/claude-501/-Users-ian-Desktop-CODE-RADAR-REFURBISH/578c03cc-b552-4cb7-ab25-31c60be8e155/scratchpad/decoy_tree
+      /opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m pytest colorama/tests/ceiling_unlimited_test.py -p no:cacheprovider -q
+
+BEFORE — the lane's base matcher (.archive/lane_base/), the same two pids:
+  listed: pid 80395 [INSIDE] pytest -> colorama/tests/ceiling_unlimited_test.py [ps]
+  listed: pid 80396 [ANOTHER TREE] pytest -> colorama/tests/ceiling_unlimited_test.py [ps]
+
+AFTER — the matcher under proof (I-53), the same two pids:
+  listed: pid 80395 [INSIDE] pytest -> colorama/tests/ceiling_unlimited_test.py [ps]
+
+LIVE — what the running circuit daemon published this frame:
+  frame None at None
+  pid 80395 pytest -> colorama/tests/ceiling_unlimited_test.py [ps]  <- OUR pytest, inside the target
+  inside pid 80395 listed : True
+  foreign pid 80396 listed: False
+
+both pytests killed
+=== the daemon's own band lines while BOTH pytests were alive (pid 80395 inside, pid 80396 another tree) ===
+1507:[2026-09-17 02:54:41] TEST RUNNER: pytest pid 80395 → colorama/tests/ceiling_unlimited_test.py [ps]
+1582:[2026-09-17 02:54:44] TEST RUNNER: pytest pid 80395 → colorama/tests/ceiling_unlimited_test.py [ps]
+
+=== every mention of the foreign pid 80396 in the daemon log ===
+0
+  0 — the foreign pytest never reached this target's band

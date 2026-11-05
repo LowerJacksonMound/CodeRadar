@@ -1,0 +1,58 @@
+{
+ "target": "/Users/dev/Desktop/entre_nous",
+ "built": "2026-09-10",
+ "by": "set 4b-08 (run 62)",
+ "base": "jacobs_ladder tree + colorama/repair_plant_checks.py",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_checks.py",
+   "line": 9,
+   "function": "hosts_present",
+   "family": "NAI-079",
+   "accept_any_of": [
+    "NAI-079"
+   ],
+   "what": "`os.path.exists(\"/etc/hosts\")` \u2014 an absolute path literal (set 4b-08, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_checks.py",
+   "line": 13,
+   "function": "push",
+   "family": "NAI-091",
+   "accept_any_of": [
+    "NAI-091"
+   ],
+   "what": "`items.append(value)` \u2014 a parameter mutated with another parameter (set 4b-08, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_checks.py",
+   "line": 17,
+   "function": "near_tenth",
+   "family": "NAI-095",
+   "accept_any_of": [
+    "NAI-095"
+   ],
+   "what": "`x == 0.1` \u2014 float equality (set 4b-08, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_checks.py",
+   "line": 21,
+   "function": "scale",
+   "family": "NAI-096",
+   "accept_any_of": [
+    "NAI-096"
+   ],
+   "what": "`assert n > 0, \"...\"` as the first statement \u2014 rewritten live by assert_guard_fix (set 4b-08)"
+  },
+  {
+   "file": "colorama/repair_plant_checks.py",
+   "line": 25,
+   "function": "show",
+   "family": "NAI-098",
+   "accept_any_of": [
+    "NAI-098"
+   ],
+   "what": "`print(message)` with nothing returned (set 4b-08, no-fix-by-design)"
+  }
+ ]
+}

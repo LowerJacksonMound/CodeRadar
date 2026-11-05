@@ -1,0 +1,65 @@
+==============================================================================
+RUN 144 — red_sector_a — the confirmed ledger, live
+==============================================================================
+
+[1] cr_watch
+  started True · phase MONITORING · repo_id 7cfe2e71fa83 · budget 2328s
+    gate {'gate': 'circuit READY/RUNNING', 'status': 'PASS', 'seconds': 1.5}
+    gate {'gate': 'circuit WIRING', 'status': 'PASS', 'seconds': None}
+    gate {'gate': 'NOAI MONITORING', 'status': 'PASS', 'seconds': 5.6}
+    gate {'gate': 'CHEATSHEETS MONITORING', 'status': 'PASS', 'seconds': 1.0}
+    gate {'gate': 'dashboard HTTP 200', 'status': 'PASS', 'seconds': 0.0}
+
+[2] cr_status
+  cycle 1 · finished False · not finished: counterfeit_failed=NOT MEASURED, mypy_errors=586
+  infractions {'total_functions': 355, 'passed': 108, 'failed': 164, 'files_scanned': 64, 'repairs': 156, 'no_vetted_fix': 8, 'whitelisted': 0, 'withheld': 83}
+
+[3] the row the client will repair: colorama/repair_plant_shape.py::merge_tags::13
+    rules ['NAI-021S'] · role alias_chain_fix:new_sequence · digest 84e0cae05f · span colorama/repair_plant_shape.py:L13-L18
+    cr_apply kind=diff applies_cleanly=True
+    ---- the diff the server rendered (the client writes the bytes, Q3) ----
+    --- colorama/repair_plant_shape.py:L13-L18
+    +++ colorama/repair_plant_shape.py:L13-L18
+    @@ -1,6 +1,7 @@
+     def merge_tags(tags, extra):
+    +    new_tags = list(tags)
+         merged = []
+         for tag in extra:
+             merged.append(tag.strip())
+    -    tags.extend(merged)
+    -    return tags
+    +    new_tags.extend(merged)
+    +    return new_tags
+    CLIENT EDIT written: colorama/repair_plant_shape.py lines 13-18 · ast.parse ok
+
+[4] cr_report_outcome(confirmed) on the row just repaired — inside the cycle
+    written True · bytes 269
+    ledger_written True → /Users/dev/Desktop/CODE_RADAR_REFURBISH_copy1/system_scripts/confirmed_ledger_7cfe2e71fa83.jsonl
+    ledger record {"digest": "84e0cae05f", "replace_span": "colorama/repair_plant_shape.py:L13-L18", "rule_ids": ["NAI-021S"], "file": "colorama/repair_plant_shape.py", "function": "merge_tags", "line": 13, "seat": "coderadar-mcp run144", "note": "run 144: applied the rewriter diff; the function is repaired", "edit_kind": "diff", "timestamp": "2026-09-17T12:58:31.786710+00:00"}
+
+[5] cr_report_outcome(failed) on an UNAPPLIED row: colorama/repair_plant_071.py::collect::4
+    written True · ledger_written False · ledger '' · record {}
+
+[6] one Builder cycle
+    cycle 1 → 3 · rows 163
+    the repaired row is still in the mirror: False
+    summary.tester {"confirmed": 0, "solutions": 155, "orphans": 1, "unparsed": 0, "channel_lines": 2}
+    the failed row's evidence: ['rule_id=NAI-021S', 'caller_score=0.00', 'import_score=0.00', 'complexity_score=0.00', 'depth=0', 'dependents=0', 'cross_file_duplicate:fingerprint=9b44aab40b6f91fc...,count=28', "semantic_parameter_usage:code=PUA020,line=4,name=items,msg=Mutable default argument for 'items'", "semantic_module:code=MOD020,line=4,msg=Deeply nested function 'collect' (depth 1)", 'tester=failed:8f9a25700f', 'tester_log=run 144: not applied; reported failed so the Ranker re-decides']
+
+[7] cr_stop with the client's manifest
+    stopped True · residue_clean True · byte_identical False · files 77
+    client_edits 1 · unexpected_changes []
+      {'name': 'circuit_daemon', 'pid': 41580, 'exit_code': 0, 'signal': 'SIGTERM'}
+      {'name': 'noai_validator', 'pid': 41585, 'exit_code': 0, 'signal': 'SIGTERM'}
+      {'name': 'cheatsheets', 'pid': 41586, 'exit_code': 0, 'signal': 'SIGTERM'}
+      {'name': 'dashboard', 'pid': 41587, 'exit_code': 0, 'signal': 'SIGTERM'}
+
+[8] cr_hand_back — AFTER cr_stop (T4 decision 3)
+    report /Users/dev/Desktop/CODE_RADAR_REFURBISH_copy1/.archive/runs/red_sector_a/tester_report.json
+    builder_cycles 3 · infractions 163 · solutions 155
+    confirmed 1 (joined 0 · from_ledger 1) · orphans 0 (channel 1) · unparsed 0
+    confirmed_fraction 0.0064516129032258064 · tester_ran True · channel_lines 2
+    ledger /Users/dev/Desktop/CODE_RADAR_REFURBISH_copy1/system_scripts/confirmed_ledger_7cfe2e71fa83.jsonl
+      ledger row: {"digest": "84e0cae05f", "replace_span": "colorama/repair_plant_shape.py:L13-L18", "rule_ids": ["NAI-021S"], "file": "colorama/repair_plant_shape.py", "function": "merge_tags", "line": 13, "seat": "coderadar-mcp run144", "note": "run 144: applied the rewriter diff; the function is repaired", "edit_kind": "diff", "timestamp": "2026-09-17T12:58:31.786710+00:00"}
+
+RUN 144 PASS — confirmed 1 (from ledger) · failed 1 (joined) · orphans 0

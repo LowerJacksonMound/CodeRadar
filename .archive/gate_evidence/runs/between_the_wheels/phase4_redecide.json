@@ -1,0 +1,60 @@
+{
+  "colorama/repair_plant_flow.py::sign::24": {
+    "found": false,
+    "solution_kind": null,
+    "digest": null,
+    "tester": null,
+    "evidence": null,
+    "status": null,
+    "no_fix_status": null,
+    "why": null
+  },
+  "colorama/repair_plant_trust.py::label::22": {
+    "found": false,
+    "solution_kind": null,
+    "digest": null,
+    "tester": null,
+    "evidence": null,
+    "status": null,
+    "no_fix_status": null,
+    "why": null
+  },
+  "colorama/repair_plant_invented.py::__serialize__::18": {
+    "found": false,
+    "solution_kind": null,
+    "digest": null,
+    "tester": null,
+    "evidence": null,
+    "status": null,
+    "no_fix_status": null,
+    "why": null
+  },
+  "colorama/ansitowin32.py::isatty::49": {
+    "found": true,
+    "solution_kind": "rewriter",
+    "digest": "2891d4b3a3",
+    "tester": {
+      "confirmed": false,
+      "tester": "",
+      "timestamp": ""
+    },
+    "evidence": null,
+    "status": null,
+    "no_fix_status": null,
+    "why": "tester failed 8cab17f075: run 141: applied, then BACKED OUT by the client. The target's own runner failed \u2014 isatty_test.py::IsattyTest::test_withPycharmNoneOverride: RuntimeError('isatty failed') where the test asserts False. The rewriter turned a documented `return False` fallback into a raise.; picked fallback_return_fix:re_raise over 0 other pickable candidate(s) of 2 offered; deciding method: n/a (one candidate); fallback_return_fix:re_raise[parse=ok, differs=yes, safety=clean, quality=Warning: Unusual dunder access '__stdout__' detected, quality=Warning: Unusual dunder access '__stderr__' detected, rule=NAI-078, flow=same_paths, complexity=same, idiom=same, deps=none_added, defensive=same, readability=same, traps=none, answers=row]; fallback_return_fix:raise_named[parse=ok, differs=yes, safety=clean, quality=Warning: Unusual dunder access '__stdout__' detected, quality=Warning: Unusual dunder access '__stderr__' detected, rule=NAI-078, flow=same_paths, complexity=same, idiom=same, deps=none_added, defensive=same, readability=same, traps=none, tester=failed:8cab17f075]; profile: no intent fact matched"
+  },
+  "colorama/ansitowin32.py::closed::62": {
+    "found": true,
+    "solution_kind": "rewriter",
+    "digest": "2ad90aa8f1",
+    "tester": {
+      "confirmed": false,
+      "tester": "",
+      "timestamp": ""
+    },
+    "evidence": null,
+    "status": null,
+    "no_fix_status": null,
+    "why": "tester failed 3ba74f0b6d: run 141: applied, then BACKED OUT by the client. The target's own runner failed \u2014 ansitowin32_test.py::StreamWrapperTest::test_closed_shouldnt_raise_on_detached_stream and AnsiToWin32Test::test_wrap_shouldnt_raise_on_missing_closed_attr: AttributeError escapes where the tests assert the fallback answers. The rewriter turned a documented `return True` fallback into a re-raise.; picked fallback_return_fix:raise_named over 0 other pickable candidate(s) of 2 offered; deciding method: n/a (one candidate); fallback_return_fix:re_raise[parse=ok, differs=yes, safety=clean, rule=NAI-078, flow=same_paths, complexity=same, idiom=same, deps=none_added, defensive=same, readability=same, traps=none, tester=failed:3ba74f0b6d]; fallback_return_fix:raise_named[parse=ok, differs=yes, safety=clean, rule=NAI-078, flow=same_paths, complexity=same, idiom=same, deps=none_added, defensive=same, readability=same, traps=none, answers=row]; profile: no intent fact matched"
+  }
+}

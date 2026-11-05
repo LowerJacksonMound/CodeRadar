@@ -1,0 +1,14 @@
+{
+ "target": "/Users/dev/Desktop/spindrift",
+ "built": "2026-09-10",
+ "by": "set 4b-34 (run 88, app copy 3)",
+ "base": "the_larger_bowl tree + colorama/repair_plant_duplicates.py + colorama/repair_plant_duplicates_control.py",
+ "planted_findings": [
+  {"file": "colorama/repair_plant_duplicates.py", "line": 8, "function": "left_count", "family": "NAI-231", "accept_any_of": ["NAI-231", "NAI-228", "NAI-012", "NAI-003"], "what": "one of two functions with identical normalized fingerprints — NAI-231 (strict duplicates, on the file's first row) and NAI-228 (the route's duplicate line; NAI-012 is its health-check twin) are warning lines on the row; NAI-003 decides it (set 4b-34, never decides)"},
+  {"file": "colorama/repair_plant_duplicates.py", "line": 12, "function": "right_count", "family": "NAI-231", "accept_any_of": ["NAI-231", "NAI-228", "NAI-012", "NAI-003"], "what": "the other half of the duplicate pair — NAI-228 warning line on the row; NAI-003 decides it (set 4b-34, never decides)"},
+  {"file": "colorama/repair_plant_duplicates.py", "line": 16, "function": "steps", "family": "NAI-013", "accept_any_of": ["NAI-013", "SYM-002", "NAI-003"], "what": "an arithmetic progression [10, 20, 30, 40] — NAI-013's line is published as SYM-002, a warning on the row; NAI-003 decides it (set 4b-34, never decides)"}
+ ],
+ "controls": [
+  "colorama/repair_plant_duplicates_control.py"
+ ]
+}

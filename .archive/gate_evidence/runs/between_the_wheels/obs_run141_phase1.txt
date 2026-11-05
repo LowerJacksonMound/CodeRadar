@@ -1,0 +1,48 @@
+coderadar-mcp 0.1.0: target /Users/dev/Desktop/between_the_wheels (repo_id a32f4c124796); state /Users/dev/Desktop/CODE_RADAR_REFURBISH/system_scripts; 13/13 tools bound
+$ /Users/dev/Desktop/CODE_RADAR_REFURBISH/.venv_new/bin/coderadar-mcp --target /Users/dev/Desktop/between_the_wheels
+INITIALIZE  server coderadar 0.1.0 · protocol 2025-11-25
+LIST_TOOLS  13 tools
+
+CALL cr_watch({"target": "/Users/dev/Desktop/between_the_wheels"})
+  {"started": true, "target": "/Users/dev/Desktop/between_the_wheels", "repo_id": "a32f4c124796", "phase": "MONITORING", "gate_budget_s": 2328, "dashboard_url": "http://127.0.0.1:8080", "health_url": "http://127.0.0.1:8051/health", "error": null}
+    GATE circuit READY/RUNNING: PASS 1.5s
+    GATE circuit WIRING: PASS Nones
+    GATE NOAI MONITORING: PASS 5.6s
+    GATE CHEATSHEETS MONITORING: PASS 1.0s
+    GATE dashboard HTTP 200: PASS 0.0s
+
+CALL cr_status (measured)
+  {"phase": "MONITORING", "cycle": 1, "finished": false, "finished_reason": "not finished: counterfeit_failed=164, mypy_errors=586", "finished_source": "mirror", "infractions": {"total_functions": 355, "passed": 108, "failed": 164, "files_scanned": 64, "repairs": 156, "no_vetted_fix": 8, "whitelisted": 0, "withheld": 83}, "summary": {"broken_imports": 0, "path_hacks": 1, "mypy_errors": 586, "mypy_ran": true, "sync_needs_review": 8, "dead_code_items": 0, "dead_code_actionable": 0, "severed_links": 0, "finished": false, "finished_reason": "not finished: counterfeit_failed=164, mypy_errors=586", "finished_gates": ["counterfeit_failed", "mypy_errors", "severed_links"], "finished_inputs": {"counterfeit_failed": 164, "mypy_errors": 586, "severed_links": 0}, "counterfeit_failed": 164}}
+
+CALL cr_infractions({"page": 1})
+  {"page": 1, "pages": 4, "total": 164, "page_size": 50, "files": ["colorama/repair_plant_071.py", "colorama/repair_plant_061.py", "colorama/repair_plant_070.py", "colorama/repair_plant_invented.py", "colorama/repair_plant_loops.py", "colorama/repair_plant_shape.py", "colorama/repair_plant_stubs.py", "colorama/repair_plant_typos.py", "colorama/winterm.py", "colorama/repair_plant_008.py", "colorama/repair_plant_092.py", "colorama/repair_plant_093.py", "demos/demo08.py", "colorama/repair_plant_branches.py", "colorama/r …
+
+CALL cr_infractions({"page": 2})
+  {"page": 2, "pages": 4, "total": 164, "page_size": 50, "files": ["colorama/repair_plant_order.py", "colorama/repair_plant_chains.py", "colorama/repair_plant_checks.py", "colorama/repair_plant_graph.py", "colorama/repair_plant_guards.py", "colorama/repair_plant_hr.py", "colorama/repair_plant_imports.py", "colorama/repair_plant_join.py", "colorama/repair_plant_meaning.py", "colorama/repair_plant_noop.py", "colorama/repair_plant_quiet.py", "colorama/repair_plant_roles.py", "colorama/repair_plant_split.py", "demos/fixp …
+
+CALL cr_infractions({"page": 3})
+  {"page": 3, "pages": 4, "total": 164, "page_size": 50, "files": ["colorama/repair_plant_quietly.py", "colorama/repair_plant_secrets.py", "colorama/repair_plant_shells.py", "colorama/tests/utils.py", "colorama/repair_plant_context.py", "colorama/repair_plant_dynamic.py", "colorama/repair_plant_extended.py", "colorama/repair_plant_foreign.py", "colorama/repair_plant_trust.py", "colorama/repair_plant_launch.py", "colorama/repair_plant_stale.py", "demos/demo07.py"]}
+
+CALL cr_infractions({"page": 4})
+  {"page": 4, "pages": 4, "total": 164, "page_size": 50, "files": ["colorama/repair_plant_dynamic_two.py", "colorama/ansi.py", "colorama/win32.py", "demos/demo06.py", "colorama/ansitowin32.py", "colorama/initialise.py"]}
+
+  164 rows over 4 pages, total 164
+
+CALL cr_wiring({})
+  {"counts": {"possible": 29, "live": 0, "severed": 0}, "all_connected": true, "cycles": [], "severed_links": []}
+  nodes 64 · edges 29
+
+CALL cr_data_types({})
+  {"chosen": ["io", "mypy"], "not_run": ["crc", "vulture"], "issues": 586, "contract_violations": {"total": 0, "recent_count": 0, "violations": [], "disabled": true}}
+
+CALL cr_intent({})
+  {"target": "/Users/dev/Desktop/between_the_wheels", "repo_id": "a32f4c124796", "statement": null, "facts_by_source": {"changelog": 3, "packaging": 2, "readme": 2}, "file": "/Users/dev/Desktop/CODE_RADAR_REFURBISH/system_scripts/intent_a32f4c124796.json"}
+
+CALL cr_run_module({"path": "pytest", "args": ["colorama/tests", "-q"]})
+  {"exit_code": 0, "duration_s": 0.843, "module": "pytest", "args": ["colorama/tests", "-q", "-p", "no:cacheprovider"], "seen_on_band": true, "timed_out": false, "error": null}
+  stdout tail: ..........................ssssssssss........sss....s                     [100%] | 38 passed, 14 skipped in 0.07s | 
+
+cr_apply over 156 rows with a solution in 0.6s
+  kinds {'diff': 57, 'shape': 99} · applies_cleanly true on 57
+
+PHASE 1 DONE — the stack is still UP; the client now edits the target.

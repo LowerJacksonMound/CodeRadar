@@ -1,0 +1,35 @@
+{
+ "target": "/Users/dev/Desktop/dreamline",
+ "built": "2026-09-10",
+ "by": "set 4b-24 (run 78)",
+ "base": "available_light tree + colorama/repair_plant_graph.py + colorama/repair_plant_graph_control.py",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_graph.py",
+   "line": 8,
+   "function": "dead_store",
+   "family": "GRF-001",
+   "accept_any_of": [
+    "GRF-001",
+    "NAI-147",
+    "NAI-010",
+    "NAI-031"
+   ],
+   "what": "a dead store — GRF-001 is a warning line on the row; NAI-147 / 010 / 031 decide it (set 4b-24, never decides)"
+  },
+  {
+   "file": "colorama/repair_plant_graph.py",
+   "line": 14,
+   "function": "chain",
+   "family": "GRF-003",
+   "accept_any_of": [
+    "GRF-003",
+    "NAI-021S"
+   ],
+   "what": "a copy / alias identity chain — GRF-003 is a warning line on the row; NAI-021S decides it (set 4b-24, never decides)"
+  }
+ ],
+ "controls": [
+  "colorama/repair_plant_graph_control.py"
+ ]
+}

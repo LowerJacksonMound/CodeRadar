@@ -1,0 +1,428 @@
+{
+  "monitor": {
+    "status": "ISSUES FOUND",
+    "summary": {
+      "broken_imports": 0,
+      "path_hacks": 1,
+      "mypy_errors": 0,
+      "mypy_ran": true,
+      "sync_needs_review": 8,
+      "dead_code_items": 0,
+      "dead_code_actionable": 0,
+      "severed_links": 0,
+      "finished": false,
+      "finished_reason": "not finished: counterfeit_failed=NOT MEASURED",
+      "finished_gates": [
+        "counterfeit_failed",
+        "mypy_errors",
+        "severed_links"
+      ],
+      "finished_inputs": {
+        "counterfeit_failed": null,
+        "mypy_errors": 0,
+        "severed_links": 0
+      },
+      "counterfeit_failed": null
+    },
+    "zero_signal": [
+      "broken_imports",
+      "path_hacks",
+      "mypy_errors",
+      "sync_needs_review",
+      "dead_code_actionable",
+      "severed_links"
+    ],
+    "whitelisted_files": [
+      ".DS_Store",
+      ".gitignore",
+      "CHANGELOG.rst",
+      "LICENSE.txt",
+      "PKG-INFO",
+      "README.rst",
+      "colorama/.DS_Store",
+      "demos/demo.bat",
+      "demos/demo.sh",
+      "demos/demo02.py",
+      "demos/demo03.py",
+      "demos/demo04.py",
+      "demos/demo05.py",
+      "demos/demo09.py",
+      "pyproject.toml"
+    ],
+    "recommended_order": [
+      {
+        "step": 1,
+        "category": "path_hacks",
+        "reason": "Clean imports are the foundation. Fixing sys.path hacks and relative imports changes what mypy can resolve \u2014 some suppressed import-not-found errors are caused by path hacks.",
+        "resolution": "Replace sys.path.insert hacks with proper package installs (pip install -e .) or __init__.py wiring. Convert relative imports to absolute where the package structure supports it. Guard external imports with try/except for optional dependencies."
+      },
+      {
+        "step": 2,
+        "category": "mypy",
+        "reason": "Once imports are clean, mypy sees the real picture. Adding type annotations makes the I/O review safer because you can verify signatures after async conversion.",
+        "resolution": "Add return type annotations to untyped functions. Add parameter type annotations where missing. Replace bare generic types (dict, list, tuple) with parameterized versions (dict[str, Any], list[int]). Fix incompatible defaults by using Optional (e.g. content: str | None = None)."
+      },
+      {
+        "step": 3,
+        "category": "sync_needs_review",
+        "reason": "Converting sync I/O to async is the most invasive change. It ripples through callers. Clean imports (real call graph) and proper types (verified signatures) make this much safer.",
+        "resolution": "For each sync function doing I/O: if an async sibling already exists, remove the sync version and update callers. If no async version exists, convert to async (file_open -> aiofiles, subprocess_run -> asyncio.create_subprocess_exec, fs_exists/rglob -> asyncio.to_thread). Update all callers to await the converted function."
+      }
+    ],
+    "imports": {
+      "total_scripts": 65,
+      "connected": 65,
+      "broken": [],
+      "cycles": []
+    },
+    "wiring": {
+      "severed": [],
+      "severed_since": {},
+      "drawn": "red"
+    },
+    "path_hacks": {
+      "total": 1,
+      "hacks": {
+        "demos/fixpath.py": [
+          {
+            "line": 8,
+            "type": "sys_path_insert",
+            "details": "sys.path.insert(local_colorama_module)",
+            "disposition": "deciding",
+            "warning": ""
+          }
+        ]
+      },
+      "other": {
+        "colorama/__init__.py": [
+          {
+            "line": 2,
+            "type": "relative_import",
+            "details": "Relative import: .initialise",
+            "disposition": "context",
+            "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+          },
+          {
+            "line": 3,
+            "type": "relative_import",
+            "details": "Relative import: .ansi",
+            "disposition": "context",
+            "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+          },
+          {
+            "line": 4,
+            "type": "relative_import",
+            "details": "Relative import: .ansitowin32",
+            "disposition": "context",
+            "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+          }
+        ],
+        "colorama/ansitowin32.py": [
+          {
+            "line": 6,
+            "type": "relative_import",
+            "details": "Relative import: .ansi",
+            "disposition": "context",
+            "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+          },
+          {
+            "line": 7,
+            "type": "relative_import",
+            "details": "Relative import: .winterm",
+            "disposition": "context",
+            "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+          },
+          {
+            "line": 8,
+            "type": "relative_import",
+            "details": "Relative import: .win32",
+            "disposition": "context",
+            "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+          }
+        ],
+        "colorama/repair_plant_stubs.py": [
+          {
+            "line": 5,
+            "type": "relative_import",
+            "details": "Relative import: .ansi",
+            "disposition": "context",
+            "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+          }
+        ],
+        "colorama/repair_plant_extended.py": [
+          {
+            "line": 7,
+            "type": "relative_import",
+            "details": "Relative import: .ansi",
+            "disposition": "context",
+            "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+          },
+          {
+            "line": 7,
+            "type": "wildcard_import",
+            "details": "from .ansi import * \u2014 pollutes namespace, breaks traceability",
+            "disposition": "deciding",
+            "warning": ""
+          }
+        ],
+        "colorama/winterm.py": [
+          {
+            "line": 9,
+            "type": "relative_import",
+            "details": "Relative import: .",
+            "disposition": "context",
+            "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+          }
+        ],
+        "colorama/initialise.py": [
+          {
+            "line": 6,
+            "type": "relative_import",
+            "details": "Relative import: .ansitowin32",
+            "disposition": "context",
+            "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+          }
+        ],
+        "colorama/tests/isatty_test.py": [
+          {
+            "line": 5,
+            "type": "relative_import",
+            "details": "Relative import: ..ansitowin32",
+            "disposition": "context",
+            "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+          },
+          {
+            "line": 6,
+            "type": "relative_import",
+            "details": "Relative import: .utils",
+            "disposition": "context",
+            "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+          }
+        ],
+        "colorama/tests/initialise_test.py": [
+          {
+            "line": 10,
+            "type": "relative_import",
+            "details": "Relative import: ..ansitowin32",
+            "disposition": "context",
+            "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+          },
+          {
+            "line": 11,
+            "type": "relative_import",
+            "details": "Relative import: ..initialise",
+            "disposition": "context",
+            "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+          },
+          {
+            "line": 12,
+            "type": "relative_import",
+            "details": "Relative import: .utils",
+            "disposition": "context",
+            "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+          }
+        ],
+        "colorama/tests/ansi_test.py": [
+          {
+            "line": 5,
+            "type": "relative_import",
+            "details": "Relative import: ..ansi",
+            "disposition": "context",
+            "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+          },
+          {
+            "line": 6,
+            "type": "relative_import",
+            "details": "Relative import: ..ansitowin32",
+            "disposition": "context",
+            "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+          }
+        ],
+        "colorama/tests/winterm_test.py": [
+          {
+            "line": 10,
+            "type": "relative_import",
+            "details": "Relative import: ..winterm",
+            "disposition": "context",
+            "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+          }
+        ],
+        "colorama/tests/ansitowin32_test.py": [
+          {
+            "line": 15,
+            "type": "relative_import",
+            "details": "Relative import: ..ansitowin32",
+            "disposition": "context",
+            "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+          },
+          {
+            "line": 16,
+            "type": "relative_import",
+            "details": "Relative import: ..win32",
+            "disposition": "context",
+            "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+          },
+          {
+            "line": 17,
+            "type": "relative_import",
+            "details": "Relative import: .utils",
+            "disposition": "context",
+            "warning": "relative import inside a package \u2014 informational, not counted (D24 / FIX_35 c)"
+          }
+        ],
+        "(measurements)": [
+          {
+            "line": 0,
+            "type": "not_measured",
+            "details": "unguarded_external: NOT MEASURED \u2014 no declared dependencies (no [project.dependencies] / requirements*.txt in the target, none in the intent file)",
+            "disposition": "deciding",
+            "warning": ""
+          }
+        ],
+        "demos": [
+          {
+            "line": 0,
+            "type": "missing_init",
+            "details": "Directory has 5 .py files but no __init__.py",
+            "disposition": "context",
+            "warning": "namespace package or script dir \u2014 no __init__.py; informational, not an infraction (owner Q9, 2026-09-15)"
+          }
+        ],
+        "colorama/repair_pkg": [
+          {
+            "line": 0,
+            "type": "empty_package",
+            "details": "Package has __init__.py but no source modules",
+            "disposition": "deciding",
+            "warning": ""
+          },
+          {
+            "line": 0,
+            "type": "unconnected_init",
+            "details": "Package 'colorama.repair_pkg' has __init__.py but is never imported",
+            "disposition": "deciding",
+            "warning": ""
+          }
+        ]
+      }
+    },
+    "mypy": {
+      "mypy_ran": true,
+      "mypy_rc": 1,
+      "files_checked": 65,
+      "passed": 65,
+      "failed": 0,
+      "total_errors": 0,
+      "total_errors_unfiltered": 0,
+      "suppressed_errors": 0,
+      "errors": [],
+      "suppressed": []
+    },
+    "dead_code": {
+      "files_scanned": 0,
+      "files_with_dead_code": 0,
+      "total_items": 0,
+      "items_by_category": {},
+      "items": [],
+      "suppressed_items": []
+    },
+    "functions": {
+      "total": 301,
+      "async": 1,
+      "sync": 300,
+      "io_functions": 25,
+      "sync_needs_review": [
+        {
+          "file": "colorama/ansitowin32.py",
+          "line": 46,
+          "name": "write",
+          "async": false,
+          "io_types": [
+            "file_write"
+          ],
+          "sync_exempt": false,
+          "exempt_reason": ""
+        },
+        {
+          "file": "colorama/ansitowin32.py",
+          "line": 175,
+          "name": "write",
+          "async": false,
+          "io_types": [
+            "file_flush",
+            "file_write"
+          ],
+          "sync_exempt": false,
+          "exempt_reason": ""
+        },
+        {
+          "file": "colorama/ansitowin32.py",
+          "line": 185,
+          "name": "reset_all",
+          "async": false,
+          "io_types": [
+            "file_write"
+          ],
+          "sync_exempt": false,
+          "exempt_reason": ""
+        },
+        {
+          "file": "colorama/ansitowin32.py",
+          "line": 208,
+          "name": "write_plain_text",
+          "async": false,
+          "io_types": [
+            "file_flush",
+            "file_write"
+          ],
+          "sync_exempt": false,
+          "exempt_reason": ""
+        },
+        {
+          "file": "colorama/ansitowin32.py",
+          "line": 276,
+          "name": "flush",
+          "async": false,
+          "io_types": [
+            "file_flush"
+          ],
+          "sync_exempt": false,
+          "exempt_reason": ""
+        },
+        {
+          "file": "colorama/repair_plant_flow.py",
+          "line": 19,
+          "name": "spin",
+          "async": false,
+          "io_types": [
+            "queue_get"
+          ],
+          "sync_exempt": false,
+          "exempt_reason": ""
+        },
+        {
+          "file": "colorama/repair_plant_guards.py",
+          "line": 12,
+          "name": "read_all",
+          "async": false,
+          "io_types": [
+            "file_open"
+          ],
+          "sync_exempt": false,
+          "exempt_reason": ""
+        },
+        {
+          "file": "colorama/repair_plant_hr.py",
+          "line": 17,
+          "name": "opened",
+          "async": false,
+          "io_types": [
+            "file_open"
+          ],
+          "sync_exempt": false,
+          "exempt_reason": ""
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+ "target": "/Users/dev/Desktop/sir_gawain_and_the_green_knight",
+ "built": "2026-09-10",
+ "by": "set 4b-04 (run 58)",
+ "base": "la_villa_strangiato tree + colorama/repair_plant_dynamic.py",
+ "note": "none of the five ids of this set can decide a row today (219/225 warnings only; SEC-001..003 from a regex scan off the daemon's route) — each plant accepts the neighbouring id that decides its site, so the row is caught by id and the manifest records which id holds it",
+ "planted_findings": [
+  {"file": "colorama/repair_plant_dynamic.py", "line": 10, "function": "total", "family": "NAI-225", "accept_any_of": ["NAI-225", "NAI-050"], "what": "call to `summarise`, defined nowhere — NAI-225 is a warning; the site is decided by NAI-050 (set 4b-04, no-fix-by-design)"},
+  {"file": "colorama/repair_plant_dynamic.py", "line": 14, "function": "evaluate", "family": "SEC-001", "accept_any_of": ["SEC-001", "NAI-160", "NAI-127"], "what": "`eval(expr)` — SEC-001's regex scan is off the daemon's route; the site is decided by NAI-160/127 (set 4b-04, no-fix-by-design)"},
+  {"file": "colorama/repair_plant_dynamic.py", "line": 18, "function": "run", "family": "SEC-002", "accept_any_of": ["SEC-002", "NAI-160", "NAI-127"], "what": "`exec(code)` — SEC-002's regex scan is off the daemon's route; the site is decided by NAI-160/127 (set 4b-04, no-fix-by-design)"},
+  {"file": "colorama/repair_plant_dynamic.py", "line": 22, "function": "restore", "family": "SEC-003", "accept_any_of": ["SEC-003", "NAI-093"], "what": "`pickle.loads(blob)` — SEC-003's regex scan is off the daemon's route; the site is decided by NAI-093 (set 4b-04, no-fix-by-design)"}
+ ]
+}

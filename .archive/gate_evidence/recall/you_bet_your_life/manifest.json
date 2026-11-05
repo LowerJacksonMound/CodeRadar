@@ -1,0 +1,51 @@
+{
+ "target": "/Users/dev/Desktop/you_bet_your_life",
+ "built": "2026-09-10",
+ "by": "set 4b-43 (run 97)",
+ "base": "neurotica tree + colorama/repair_plant_loops.py + colorama/repair_plant_flag_control.py (control)",
+ "planted_findings": [
+  {
+   "file": "colorama/repair_plant_loops.py",
+   "line": 8,
+   "function": "spacer",
+   "family": "NAI-087",
+   "accept_any_of": [
+    "NAI-087"
+   ],
+   "what": "a call assigned inside a loop that reads no loop-bound name (`width = len(pad)`), not break-guarded — the loop-invariant shape (set 4b-43, no-fix-by-design)"
+  },
+  {
+   "file": "colorama/repair_plant_loops.py",
+   "line": 16,
+   "function": "dashes",
+   "family": "NAI-088",
+   "accept_any_of": [
+    "NAI-088"
+   ],
+   "what": "`text += \"-\"` as a for loop's only statement with `text = \"\"` directly above — NAI-088's string concat in a loop; the row also carries NAI-116 (set 4b-43, ALIAS of the join role, rewriter join_fix)"
+  },
+  {
+   "file": "colorama/repair_plant_loops.py",
+   "line": 22,
+   "function": "gather",
+   "family": "NAI-089",
+   "accept_any_of": [
+    "NAI-089"
+   ],
+   "what": "the identity append loop `for item in items: out.append(item)` on a list the function binds (`out = [header]`), observed on the for line (set 4b-43, REWRITER append_loop_extend_fix)"
+  },
+  {
+   "file": "colorama/repair_plant_loops.py",
+   "line": 30,
+   "function": "glue",
+   "family": "NAI-179",
+   "accept_any_of": [
+    "NAI-179"
+   ],
+   "what": "`text = text + str(part)` as a for loop's only statement with `text = \"\"` directly above — the plain-assignment spelling NAI-088 misses (set 4b-43, ALIAS of the join role, rewriter join_fix)"
+  }
+ ],
+ "controls": [
+  "colorama/repair_plant_flag_control.py"
+ ]
+}

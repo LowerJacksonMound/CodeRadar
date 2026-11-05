@@ -1,0 +1,171 @@
+{
+  "phase": "MONITORING",
+  "detail": "cycle 1: 164 findings, 156 with fix, no fix 8 (declined 8), 0 whitelisted; tester confirmed 0 of 156 solutions \u2014 0.3s",
+  "cycle": 1,
+  "target": "/Users/dev/Desktop/red_sector_a",
+  "repo_id": "7cfe2e71fa83",
+  "gates": {
+    "all_passed": false,
+    "seconds": 0,
+    "gates": []
+  },
+  "band": {
+    "cadence": {
+      "cycle": 4,
+      "scripts": 64,
+      "rescanned": 13,
+      "reused": 51,
+      "viewed_dirs": [
+        "."
+      ]
+    },
+    "restarts": [],
+    "runners": {
+      "status": "MEASURED",
+      "presence": {
+        "pytest": {
+          "files": [],
+          "evidence": []
+        },
+        "unittest": {
+          "files": [
+            "colorama/tests/ansi_test.py",
+            "colorama/tests/ansitowin32_test.py",
+            "colorama/tests/initialise_test.py",
+            "colorama/tests/isatty_test.py",
+            "colorama/tests/winterm_test.py"
+          ],
+          "evidence": [
+            {
+              "file": "colorama/tests/ansi_test.py",
+              "line": 3,
+              "kind": "import"
+            },
+            {
+              "file": "colorama/tests/ansi_test.py",
+              "line": 12,
+              "kind": "TestCase"
+            },
+            {
+              "file": "colorama/tests/ansitowin32_test.py",
+              "line": 3,
+              "kind": "import"
+            },
+            {
+              "file": "colorama/tests/ansitowin32_test.py",
+              "line": 20,
+              "kind": "TestCase"
+            },
+            {
+              "file": "colorama/tests/ansitowin32_test.py",
+              "line": 61,
+              "kind": "TestCase"
+            },
+            {
+              "file": "colorama/tests/ansitowin32_test.py",
+              "line": 11,
+              "kind": "import"
+            },
+            {
+              "file": "colorama/tests/initialise_test.py",
+              "line": 3,
+              "kind": "import"
+            },
+            {
+              "file": "colorama/tests/initialise_test.py",
+              "line": 18,
+              "kind": "TestCase"
+            },
+            {
+              "file": "colorama/tests/initialise_test.py",
+              "line": 119,
+              "kind": "TestCase"
+            },
+            {
+              "file": "colorama/tests/initialise_test.py",
+              "line": 6,
+              "kind": "import"
+            },
+            {
+              "file": "colorama/tests/isatty_test.py",
+              "line": 3,
+              "kind": "import"
+            },
+            {
+              "file": "colorama/tests/isatty_test.py",
+              "line": 12,
+              "kind": "TestCase"
+            },
+            {
+              "file": "colorama/tests/winterm_test.py",
+              "line": 3,
+              "kind": "import"
+            },
+            {
+              "file": "colorama/tests/winterm_test.py",
+              "line": 13,
+              "kind": "TestCase"
+            },
+            {
+              "file": "colorama/tests/winterm_test.py",
+              "line": 6,
+              "kind": "import"
+            }
+          ]
+        },
+        "config": [],
+        "scanned_at": "2026-09-17T07:58:24.797190"
+      },
+      "execution": {
+        "entries": [],
+        "sources": {
+          "wrapper": "MEASURED",
+          "ps": "MEASURED",
+          "kernel": "not run \u2014 tracer is lsof"
+        }
+      }
+    }
+  },
+  "health": {
+    "ok": true,
+    "url": "http://127.0.0.1:8052/health",
+    "status": "ok"
+  },
+  "summary": {
+    "broken_imports": 0,
+    "path_hacks": 1,
+    "mypy_errors": 586,
+    "mypy_ran": true,
+    "sync_needs_review": 8,
+    "dead_code_items": 0,
+    "dead_code_actionable": 0,
+    "severed_links": 0,
+    "finished": false,
+    "finished_reason": "not finished: counterfeit_failed=NOT MEASURED, mypy_errors=586",
+    "finished_gates": [
+      "counterfeit_failed",
+      "mypy_errors",
+      "severed_links"
+    ],
+    "finished_inputs": {
+      "counterfeit_failed": null,
+      "mypy_errors": 586,
+      "severed_links": 0
+    },
+    "counterfeit_failed": null
+  },
+  "infractions": {
+    "total_functions": 355,
+    "passed": 108,
+    "failed": 164,
+    "files_scanned": 64,
+    "repairs": 156,
+    "no_vetted_fix": 8,
+    "whitelisted": 0,
+    "withheld": 83
+  },
+  "error": null,
+  "finished": false,
+  "finished_reason": "not finished: counterfeit_failed=NOT MEASURED, mypy_errors=586",
+  "finished_source": "mirror"
+}

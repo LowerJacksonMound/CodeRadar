@@ -47,7 +47,7 @@ def _phrase(p: str) -> str:
 
 
 def _own(func: ast.FunctionDef):
-    stack = list(func.body)
+    stack: List[ast.AST] = list(func.body)
     while stack:
         n = stack.pop()
         yield n
@@ -55,7 +55,7 @@ def _own(func: ast.FunctionDef):
             stack.extend(ast.iter_child_nodes(n))
 
 
-def _bad(kind: str, says: str, expected: str, node: ast.AST, got: Optional[str] = None) -> Dict[str, Any]:
+def _bad(kind: str, says: str, expected: str, node: ast.stmt | ast.expr, got: Optional[str] = None) -> Dict[str, Any]:
     return {"claim": kind, "says": says, "expected": expected, "got": got if got is not None else f"`{ast.unparse(node)}`",
             "probe": "shape", "line": node.lineno, "lines": [node.lineno]}
 

@@ -690,7 +690,7 @@ class CircuitScanner:
                                         else self._resolve_module(module_name, script_dir))
             is_local = path is not None
             # Normalize to canonical node name so edges resolve directly
-            canonical = self._path_to_node_name(path) if path is not None else module_name
+            canonical = self._path_to_node_name(path) if path is not None else cast(str, module_name)
             resolved_imports.append(ResolvedImport(
                 module_name=canonical,
                 raw_import=raw_import,

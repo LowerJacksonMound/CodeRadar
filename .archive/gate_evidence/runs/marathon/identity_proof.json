@@ -1,0 +1,25 @@
+{
+ "snapshot_files": 78,
+ "final_files": 78,
+ "changed": [
+  "./colorama/repair_plant_branches.py",
+  "./colorama/repair_plant_chains.py",
+  "./colorama/repair_plant_noop.py",
+  "./colorama/repair_plant_shape.py",
+  "./colorama/repair_plant_typos.py",
+  "./colorama/win32.py",
+  "./colorama/winterm.py"
+ ],
+ "client_edit_files": [
+  "./colorama/repair_plant_branches.py",
+  "./colorama/repair_plant_chains.py",
+  "./colorama/repair_plant_noop.py",
+  "./colorama/repair_plant_shape.py",
+  "./colorama/repair_plant_typos.py",
+  "./colorama/win32.py",
+  "./colorama/winterm.py"
+ ],
+ "rows": 8,
+ "identity": true,
+ "afters_present": true
+}
