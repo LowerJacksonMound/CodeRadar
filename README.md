@@ -91,6 +91,7 @@ Open an issue on this repository. A precise report carries: the `cr_status` summ
 (`<file>::<function>::<line>`) and its `rule_ids`, the `cr_row` output for that row, and, for a repair that was
 refused, the attempt record (`status`, `stage`, `detail`). The run's own log is `.archive/runs/<name>/` in the
 checkout. This project does not take outside code; issues are welcome.
+Issues are read; there is no schedule for replies or fixes. Verified 2026-11-05 on a fresh clone on an Apple Silicon Mac under Python 3.13 and 3.14, the full gate bar; other Macs are untested.
 
 ## Status
 
