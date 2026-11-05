@@ -3,7 +3,7 @@
 #      standard library (sys.stdlib_module_names) nor a shipped module was recorded, with how it is reached: at module
 #      level, inside a function, inside try/except, or under `if TYPE_CHECKING:`.
 #   2. Checked subprocess calls that run a package through CodeRadar's own interpreter (`sys.executable -m <pkg>`).
-#   3. Installed the current `.[lane]` into a fresh Python 3.13 venv, imported all 192 shipped modules, and ran the
+#   3. Installed the current `.[lane]` into a fresh Python 3.13 venv (and 3.14.6 on 2026-11-05), imported all 192 shipped modules, and ran the
 #      launch health check (Steps 1-22): PASSED. Versions below are the ones that venv resolved.
 #   Each dependency's comment names a file:line where it is used.
 #
@@ -23,7 +23,7 @@ description = "Finds counterfeit code in a Python repo and hands an AI agent ran
 readme = "README.md"
 license = "PolyForm-Noncommercial-1.0.0"  # SPDX string; the table form is deprecated by setuptools (ends 2027-02-18)
 license-files = ["LICENSE"]
-requires-python = ">=3.12"                # unchanged; measured on 3.13
+requires-python = ">=3.12"                # unchanged; measured on 3.13 and 3.14
 authors = [{ name = "lowerjacksonmound" }]
 classifiers = [
     "Programming Language :: Python :: 3",
