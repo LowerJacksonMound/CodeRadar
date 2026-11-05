@@ -471,7 +471,7 @@ def retirable(rows: List[Dict[str, str]], live: Dict[tuple, List[int]]) -> Tuple
         status = str(r.get("status", "")).replace("orphan:", "")
         if RETIRED_MARK in status: retire[k] = by_key[k]; continue     # already retired — idempotent
         if DESCOPED_MARK in status or status.startswith(("CUT", "ENDED")): continue
-        if (ROOT / r["file"]).exists(): continue
+        if (ROOT / r["file"]).exists() or is_dash_state(r["file"]): continue   # same rule as orphan_kinds
         succ = successor_of(r, live)
         if succ: kept[k] = succ; continue
         retire[k] = by_key[k]
