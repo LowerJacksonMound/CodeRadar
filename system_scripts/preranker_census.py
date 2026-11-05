@@ -154,6 +154,11 @@ DESCOPED_MARK = "ENDED→DESCOPED"
 # row is KEPT in the TSV as history and is DROPPED from the frozen number and from step 17's orphan
 # count — it is not an unpoliced decision, it is a decision about a module that no longer exists.
 RETIRED_MARK = "retired: file gone"
+
+def is_dash_state(p: str) -> bool:
+    """The two dash-view-state files the hunter excludes (owner ruling 2026-09-17). They are launch state,
+    not tracked, so their rows must read the same on a tree that has never launched (2026-11-05)."""
+    return p == "system_scripts/poll_config.json" or (p.startswith("system_scripts/intent_") and p.endswith(".json"))
 _IDENT = re.compile(r"[A-Za-z_][A-Za-z_0-9]*")
 _KEEP_NAMES = frozenset(keyword.kwlist) | frozenset(getattr(keyword, "softkwlist", [])) | frozenset(dir(builtins))
 # A STRING LITERAL is copied through verbatim: its words are text, never names the code binds, and an
@@ -412,7 +417,7 @@ def orphan_kinds(rows: List[Dict[str, str]], live: Dict[tuple, List[int]]) -> Di
         seen.add(k)
         if DESCOPED_MARK in status: out["cut"] += 1; out["descoped"] += 1; continue
         if status.startswith(("CUT", "ENDED")): out["cut"] += 1; continue
-        if not (ROOT / r["file"]).exists(): out["file_gone"] += 1; continue
+        if not (ROOT / r["file"]).exists() and not is_dash_state(r["file"]): out["file_gone"] += 1; continue
         if by_ve.get((k[1], k[2])): out["superseded"] += 1; continue
         out["blind"] += 1
         out["blind_rows"].append(f"{r['file']}:{r.get('line', '?')} [{k[1]}] {r['expr'][:70]} — {status[:60]}")

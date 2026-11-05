@@ -32,7 +32,7 @@ The measured record (trial rounds, stress cases, the clean-clone rehearsal) is k
 
 - [x] Version 0.1.0 in pyproject.toml and `coderadar_mcp/__init__.py`; annotated tag `v0.1.0` pushed 2026-11-04; draft
       prerelease "CodeRadar 0.1.0" on GitHub with install, verify and known limits.
-- [x] Working tree clean at the tag (`.archive/` census TSVs are untracked by design).
+- [x] Working tree clean at the tag (the two census ledgers the gate reads, 2026-10-23 and 2026-11-04, are tracked; older ones are not).
 
 ## Rung 3: public
 

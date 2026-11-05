@@ -60,9 +60,7 @@ def hunt(pc) -> Dict[str, list]:
     subprocess.run([sys.executable, str(HERE / "preranker_hunt.py"), str(tmp)],
                    cwd=str(ROOT), capture_output=True, text=True, timeout=300, check=False)
     hv = json.load(open(tmp))
-    def is_dash_state(p: str) -> bool:
-        return p == "system_scripts/poll_config.json" or (p.startswith("system_scripts/intent_") and p.endswith(".json"))
-    return {k: [s for s in v if not is_dash_state(str(s[0]))] for k, v in hv.items()}
+    return {k: [s for s in v if not pc.is_dash_state(str(s[0]))] for k, v in hv.items()}
 
 
 def _norm_v1(t: str) -> str:
@@ -301,7 +299,10 @@ def launched_side(pc) -> Tuple[bool, str]:
     so they read `file gone` on a tree that has never launched and `BLIND` on one that has. That moves
     the four-kind split by 3 and, since this lane retires `file gone` rows, it would move the frozen
     number itself. The side is therefore recorded IN the close file, and every reading of the frozen
-    number has to be taken on the same side it was frozen on."""
+    number has to be taken on the same side it was frozen on.
+    2026-11-05: `orphan_kinds` no longer reads those rows as `file gone` on either side (a clone has never
+    launched, and the release bar must pass on a clone), so the two sides now read alike; the side is
+    still recorded, as the record of how the number was frozen."""
     live = (pc.ROOT / LAUNCH_WITNESS).exists()
     return live, ("launched — `" + LAUNCH_WITNESS + "` is present, so its three rows read BLIND"
                   if live else
