@@ -1089,22 +1089,10 @@ class NoAIValidatorDaemon:
                 report.stubs.setdefault(_rel, _kind)
             self.artifact_report = report
             self.validator.artifact_report = report  # type: ignore[attr-defined]  # FIX_54 ast-pos
-            # Owner 2026-10-08 (M-126, intent plumbing): the intent sources' facts (README, docs, CI, packaging …)
-            # are written into the target's intent file — before this they were only counted on the dash, so the
-            # Ranker never saw them. `replace_source_facts` refreshes only these sources; the developer's statement,
-            # its facts and the tester's facts stay.
-            try:
-                _ss = str(Path(__file__).resolve().parent.parent / "system_scripts")
-                if _ss not in sys.path:
-                    sys.path.insert(0, _ss)
-                import intent_file as _intent  # type: ignore
-                _intent.replace_source_facts(repo, [f.as_dict() for f in report.intent_facts])
-            except Exception as _ie:
-                logger.warning(f"[ARTIFACTS] intent facts not written to the intent file: {_ie}")
             _s = report.summary()
             _write_progress("ARTIFACTS",
                             f"species {sum(_s['species'].values())} (proxy {_s['proxies']}, test {_s['tests']}) · "
-                            f"stubs {sum(_s['stubs'].values())} · intent sources {len(_s['intent_sources'])} · facts {_s['intent_facts']}",
+                            f"stubs {sum(_s['stubs'].values())}",
                             progress=1.0,
                             substeps=[{"file": f, "status": sp} for f, sp in sorted(report.proxies().items())[:20]])
             logger.info(f"[ARTIFACTS] {_s}")

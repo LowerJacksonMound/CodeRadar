@@ -1121,16 +1121,20 @@ def _ranked(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """Fix A: rank by apply state — `yes`, then `review`, then `no` (`APPLY_STATES` order). A page
     never splits a file (Q9), so the sort is stable and file-aware: inside a file its `yes` rows
     come first and its `review` rows after them; files are ordered by their best state, then by
-    mirror position. On a one-file target every `review` row sits below every `yes` row."""
+    mirror position. On a one-file target every `review` row sits below every `yes` row.
+    A CLOSER hole (rule `CLOSER_HOLE`) is tier -1: before every `yes`."""
     tier = {state: i for i, state in enumerate(APPLY_STATES)}
+
+    def tier_of(rec: dict[str, Any]) -> int:
+        return -1 if rec.get("rule_id") == "CLOSER_HOLE" else tier.get(rec["apply"], len(APPLY_STATES))
+
     best: dict[str, int] = {}
     first: dict[str, int] = {}
     for i, rec in enumerate(records):
-        t = tier.get(rec["apply"], len(APPLY_STATES))
+        t = tier_of(rec)
         best[rec["file"]] = min(best.get(rec["file"], t), t)
         first.setdefault(rec["file"], i)
-    return sorted(records, key=lambda r: (best[r["file"]], first[r["file"]],
-                                          tier.get(r["apply"], len(APPLY_STATES))))
+    return sorted(records, key=lambda r: (best[r["file"]], first[r["file"]], tier_of(r)))
 
 
 def cr_infractions(file: str | None = None, rule: str | None = None,
@@ -1159,6 +1163,8 @@ def cr_infractions(file: str | None = None, rule: str | None = None,
     if withheld is True:
         for row in mirror.get("withheld", []):
             records.append(_row_record(row, has_solution=False))
+    holes = hole_rows(closer_holes(_target_dir()), _target_dir()) if withheld is not True else []
+    records = holes + records
 
     if file is not None:
         records = [r for r in records if r["file"] == file]
@@ -1186,6 +1192,7 @@ def cr_infractions(file: str | None = None, rule: str | None = None,
         "files": files,
         "last_scan": str(mirror.get("last_scan", "")),
         "naming_drift_status": drift_status,
+        "closer_holes": len(holes),
         "error": None,
     }
 
@@ -1285,6 +1292,8 @@ def cr_row(id: str) -> dict[str, Any]:
                 "closed": None, "error": err}
     rows = builder.get("rows", {})
     rows = rows if isinstance(rows, dict) else {}
+    # Ian 2026-11-11: CLOSER's holes answer here too, by their `<file>::<function>::0` id.
+    rows = {**{r["id"]: r for r in hole_rows(closer_holes(_target_dir()), _target_dir())}, **rows}
     channel = builder.get("return_channel")
     key, how, problem = _resolve_key(rows, id)
     row = rows.get(key) if key else None
@@ -1511,25 +1520,71 @@ def cr_intent() -> dict[str, Any]:
         path = src.file_for((str(named),))
     else:
         path = src.file_for((f"intent_{src.repo_id}.json",))
+    #: Ian 2026-11-11: the gearbox applies CLOSER's approved plan as the statement (source "closer") and
+    #: records the applied plan's sha in closer_holes_<repo id>.json; null when no plan has been applied.
+    published, perr = _read_json(src.file_for((f"closer_holes_{src.repo_id}.json",)))
+    plan_sha = None if perr is not None else published.get("plan_sha256")
     data, err = _read_json(path)
     if err is not None:
-        return {"target": "", "repo_id": "", "generated_at": "", "statement": None,
-                "facts": [], "facts_by_source": {}, "file": str(path), "error": err}
+        return {"target": "", "repo_id": "", "generated_at": "", "statement": None, "source": None,
+                "plan_sha256": plan_sha, "facts": [], "facts_by_source": {}, "file": str(path), "error": err}
     mismatch = _wrong_target(data, src)
     if mismatch is not None:
         return {"target": str(data.get("target", "")), "repo_id": str(data.get("repo_id", "")),
-                "generated_at": "", "statement": None, "facts": [], "facts_by_source": {},
-                "file": str(path), "error": mismatch}
+                "generated_at": "", "statement": None, "source": None, "plan_sha256": plan_sha,
+                "facts": [], "facts_by_source": {}, "file": str(path), "error": mismatch}
+    statement = data.get("statement")
     return {
         "target": str(data.get("target", "")),
         "repo_id": str(data.get("repo_id", "")),
         "generated_at": str(data.get("generated_at", "")),
-        "statement": data.get("statement"),
+        "statement": statement,
+        "source": statement.get("source") if isinstance(statement, dict) else None,
+        "plan_sha256": plan_sha,
         "facts": data.get("facts", []),
         "facts_by_source": summary_intent.get("facts_by_source", {}),
         "file": str(path),
         "error": None,
     }
+
+
+def hole_rows(holes: list[dict[str, Any]], target: Path | str | None) -> list[dict[str, Any]]:
+    """One row per CLOSER hole record (a location whose second cl_submit try failed; nothing was
+    written there), in `_row_record`'s shape under rule CLOSER_HOLE, line 0. Pure. A record without
+    file or function is skipped. The list is already one record per OPEN location (the gearbox
+    publishes holes.latest_holes, which drops a location whose last record is `repaired`), so there
+    is no dedup here. A hole's file is already target-relative, so `target` is only the signature's
+    second half."""
+    rows: list[dict[str, Any]] = []
+    for h in holes:
+        if not (h.get("file") and h.get("function")):
+            continue
+        rel, func, kind = str(h["file"]), str(h["function"]), str(h.get("kind") or "")
+        rows.append({
+            "id": f"{rel}::{func}::0", "file": rel, "function": func, "line": 0, "line_end": 0,
+            "replace_span": f"{rel}:L0-L0", "replace_span_live": "", "span_current": False,
+            "finding_lines": [], "rule_ids": ["CLOSER_HOLE"], "rule_id": "CLOSER_HOLE",
+            "infraction": f"CLOSER hole ({kind}): " + "; ".join(str(r) for r in h.get("reasons") or []),
+            "solution_kind": None, "digest": "", "has_solution": False, "status": "open",
+            "withheld": False, "species": "closer_hole", "selected_role": "", "apply": "review",
+            "apply_reason": "no CodeRadar candidate: the repair is yours, filed with cr_submit", "withheld_by": None, "gate_withheld_reasons": {},
+            "variant": kind,
+        })
+    return rows
+
+
+def closer_holes(target: Path | str | None) -> list[dict[str, Any]]:
+    """Ian 2026-11-11: the holes the gearbox last read for `target` (CLOSER's holes.jsonl, published
+    as system_scripts/closer_holes_<repo id>.json on the manifest tick; the seat never reads
+    ~/.closer); [] when the file is missing, unreadable or names another target."""
+    if not target:
+        return []
+    path = sources().tree / "system_scripts" / f"closer_holes_{repo_id_of(str(target))}.json"
+    data, err = _read_json(path)
+    # both sides resolved: /tmp vs /private/tmp on macOS is the same target
+    if err is not None or not data.get("target") or Path(str(data["target"])).resolve() != Path(target).resolve():
+        return []
+    return [h for h in data.get("holes") or [] if isinstance(h, dict)]
 
 
 # ─────────────────────────────────────────────────────────────────────────────

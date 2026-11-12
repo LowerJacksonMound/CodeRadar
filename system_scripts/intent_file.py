@@ -325,11 +325,11 @@ def extract_statement_facts(text: str, target: Path | str, source: str = "develo
     return uniq
 
 
-def submit_statement(target: Path | str, text: str) -> Tuple[dict, List[dict]]:
-    """The Purpose field's one action: store the statement (developer), extract its facts, append them.
-    Returns (file, the facts extracted)."""
-    set_statement(target, text, source="developer")
-    facts = extract_statement_facts(text, target, source="developer")
+def submit_statement(target: Path | str, text: str, source: str = "developer") -> Tuple[dict, List[dict]]:
+    """The statement's one action: store it (source "developer" from the Purpose box; "closer" when the gearbox
+    applies CLOSER's approved plan, Ian 2026-11-11), extract its facts, append them. Returns (file, the facts)."""
+    set_statement(target, text, source=source)
+    facts = extract_statement_facts(text, target, source=source)
     data, _ = append_facts(target, facts)
     return data, facts
 

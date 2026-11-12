@@ -1768,6 +1768,35 @@ def main() -> int:
                 if added:
                     log(f"manifest: recorded {added} new mirror write(s) "
                         f"({len(manifest.entries)} total) -> {manifest.path.name}")
+                # Ian 2026-11-11: CLOSER's holes ride this same tick — read from CLOSER's state dir
+                # (its tree is on PYTHONPATH from coderadar-mcp.sh) and published for the MCP seat
+                # as closer_holes_<repo id>.json, one atomic write, the way the intent file is written.
+                try:
+                    import holes, judge
+                    state = judge.state_dir(target)
+                    found = holes.latest_holes(state)  # open holes only: a `repaired` record closes its location
+                    hp = SCRIPT_DIR / f"closer_holes_{repo_id}.json"
+                    # Ian 2026-11-11: CLOSER's approved plan IS the person's intent (Cartouche-signed, or cl_plan
+                    # approved), so a newly approved plan becomes the statement, source "closer"; the sha of the
+                    # one applied rides this file. No approved plan: the launch purpose stands.
+                    try:
+                        applied = json.loads(hp.read_text(encoding="utf-8")).get("plan_sha256")
+                    except (OSError, ValueError):
+                        applied = None
+                    plan = holes.approved_plan(state)
+                    if plan is not None and plan.get("sha256") != applied:
+                        import intent_file
+                        intent_file.submit_statement(target, f"{plan.get('intent', '')}\n{plan.get('expectation', '')}",
+                                                     source="closer")
+                        applied = plan.get("sha256")
+                        log(f"closer plan {str(applied)[:12]} is now the intent statement (source closer)")
+                    tmp = hp.with_suffix(".json.tmp")
+                    tmp.write_text(json.dumps({"target": str(target), "read_at": datetime.now(timezone.utc).isoformat(),
+                                               "plan_sha256": applied, "holes": found}, indent=1, ensure_ascii=False) + "\n",
+                                   encoding="utf-8")
+                    os.replace(tmp, hp)
+                except (ImportError, AttributeError, OSError, ValueError) as e:     # as the manifest scan: logged, never a way out
+                    log(f"closer holes read failed ({type(e).__name__}: {e}) — retried next period")
                 last_manifest_scan = now
 
             # S4 task 5: the circuit writes once per poll and the slider goes to 10 min — the warning

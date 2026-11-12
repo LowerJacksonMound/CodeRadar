@@ -252,7 +252,7 @@ PAGE = r"""<!doctype html>
       <div class="row"><label title="eslogger (macOS) records which of the target's modules a run really loads, so a link a run exercised goes green instead of purple. Needs root once: the terminal asks for your password right after Start."><input type="checkbox" id="loadproof"> load proof <span class="hint" style="margin:0">— records the modules a run really loads (links go green); the terminal asks for your password once, after Start</span></label></div>
     </div>
     <div class="panel">
-      <h2>Purpose <span style="text-transform:none;letter-spacing:0">(optional)</span></h2>
+      <h2>Purpose <span style="text-transform:none;letter-spacing:0">(optional; a CLOSER plan replaces it)</span></h2>
       <textarea id="purpose" rows="2" placeholder="What the target is for — written to its intent file before any daemon starts. Leave empty to skip."></textarea>
       <h2 class="next">Launch command</h2>
       <pre class="cmd" id="cmd"></pre>

@@ -30,7 +30,10 @@
 # writes to it.
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")" && pwd)"
-export PYTHONPATH="$ROOT${PYTHONPATH:+:$PYTHONPATH}"
+# Ian 2026-11-11: CLOSER's tree rides after ROOT so the gearbox's `import holes` / `import judge`
+# resolve (it reads CLOSER's holes.jsonl on the manifest tick); nothing in this tree names either.
+CLOSER_TREE="${CLOSER_TREE:-$HOME/Desktop/CLOSER}"
+export PYTHONPATH="$ROOT:$CLOSER_TREE${PYTHONPATH:+:$PYTHONPATH}"
 export PYTHONDONTWRITEBYTECODE=1
 export PYTHONPYCACHEPREFIX="$ROOT/system_scripts/.cr_pycache/mcp_$(date +%Y%m%d_%H%M%S)"
 export MYPY_CACHE_DIR="$PYTHONPYCACHEPREFIX/mypy"

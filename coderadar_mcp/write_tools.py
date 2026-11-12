@@ -185,6 +185,9 @@ def _find_row(rid: str) -> tuple[dict[str, Any] | None, str]:
         for row in rows:
             if isinstance(row, dict) and row_id(row) == rid:
                 return row, bucket
+    for row in _hole_rows():
+        if row_id(row) == rid:
+            return row, "closer_holes"
     return None, "not found"
 
 
@@ -225,7 +228,7 @@ def _candidates(rid: str) -> list[tuple[str, dict[str, Any], str]]:
         return []
     mirror = _mirror()
     out: list[tuple[str, dict[str, Any], str]] = []
-    for bucket, rows in _buckets(mirror or {}):
+    for bucket, rows in _buckets(mirror or {}) + [("closer_holes", _hole_rows())]:
         for row in rows:
             if not isinstance(row, dict):
                 continue
@@ -716,6 +719,12 @@ def cr_apply(row: str, context_lines: int = 3) -> dict[str, Any]:
         return _apply_payload(row, error=f"cr_apply: row {row!r} — {err or bucket}")
     span = str(rec.get("replace_span") or "")
     rel = str(rec.get("file") or "")
+    if bucket == "closer_holes":
+        # Ian 2026-11-11: a hole has no candidate and no live span — the shape (nothing) is the
+        # seat's to write with cr_submit, as a prescribed row's is; no lease, nothing to apply.
+        return _apply_payload(row, kind="shape", reason=str(rec.get("infraction") or ""), file=rel,
+                              replace_span=span, replace_span_live=span, span_current=None,
+                              resolved_by=how, resolved_id=rid, given_id=given)
     if bucket != "repairs":
         # `no_vetted_fix` publishes `status` (run 136: `declined`); a withheld row publishes
         # `withheld` (FIX_51, e.g. `species:proxy:package_marker`). Either IS the reason.
@@ -1237,7 +1246,7 @@ def _hand_edited(lease: dict[str, Any], row: dict[str, Any]) -> str:
             f"since — the edit was applied by hand, or the file moved on")
 
 
-def cr_submit(row: str, code: str, note: str = "") -> dict[str, Any]:
+def cr_submit(row: str, code: str, note: str = "", checks: list[dict[str, Any]] | None = None) -> dict[str, Any]:
     """Solution gate, item 1 (owner 2026-10-08): the agent writes new attempts, CodeRadar strictly checks, filters
     and ranks them. This call only RECORDS one attempt beside the return channel; the Builder joins every attempt on
     the row as a candidate (source `agent`) next cycle. It refuses — with `error` naming why — an unknown row, empty
@@ -1253,14 +1262,38 @@ def cr_submit(row: str, code: str, note: str = "") -> dict[str, Any]:
     `cr_stop` counts the file under `gate_writes`. So: cr_submit files, the Builder writes, the seat edits nothing.
 
     B2 — one row, one writer: a row whose `cr_apply` bytes were edited by hand since the diff was
-    handed out is refused here (that repair is a `cr_report_outcome` matter, outside the gate)."""
+    handed out is refused here (that repair is a `cr_report_outcome` matter, outside the gate).
+
+    Ian 2026-11-11 (2-cr_holes_land): a CLOSER_HOLE row is CLOSER's location, not the Builder's. Its judge
+    writes the repair NOW, under the approved plan's locked checks plus `checks` (CLOSER's form: {call, expect} /
+    {call, raises} / {call, contains}); a PASS is already in the file, a FAIL wrote nothing and may be filed
+    again. `checks` on any other row is refused."""
     out: dict[str, Any] = {"accepted": False, "attempt": 0, "max_attempts": MAX_ATTEMPTS, "attempt_id": "",
                            "store": "", "resolved_id": "", "error": None}
     found, _bucket, rid, _by, err = _resolve_row(row)
     if found is None:
-        out["error"] = err or f"cr_submit: no row {row!r}"
+        out["error"] = f"cr_submit: no row {row!r}" + (f" — {err}" if err else "")
         return out
     out["resolved_id"] = rid
+    if list(found.get("rule_ids") or []) == ["CLOSER_HOLE"]:
+        from . import read_tools as rt
+        import holes, judge  # CLOSER's tree, on PYTHONPATH from coderadar-mcp.sh
+        target = rt._target_dir()
+        st = judge.state_dir(target)
+        plan = holes.approved_plan(st)
+        if plan is None:
+            out["error"] = "no approved CLOSER plan for this repo: the hole's locked checks are unknown"
+            return out
+        verdict, message = judge.submit(
+            target, found["file"], code, checks or [],
+            stance={"purpose": note or "CodeRadar repair of a CLOSER hole", "intent": plan["intent"], "agrees": True},
+            plan=plan["sha256"], contracts=plan["contracts"], repair=True)
+        out.update(accepted=verdict == "PASS", verdict=verdict, message=message, max_attempts=0,
+                   store=str(st / "holes.jsonl"), error=None if verdict == "PASS" else message)
+        return out
+    if checks:
+        out["error"] = "cr_submit: checks are for CLOSER hole rows"
+        return out
     src = textwrap.dedent(code or "").strip("\n")
     if not src.strip():
         out["error"] = "cr_submit: empty code — send the whole replacement function"
@@ -1331,6 +1364,16 @@ def _read_jsonl(path: str) -> list[dict[str, Any]]:
         if isinstance(doc, dict):
             rows.append(doc)
     return rows
+
+
+def _hole_rows() -> list[dict[str, Any]]:
+    """Ian 2026-11-11: CLOSER's holes as rows (read_tools.hole_rows), so cr_row and cr_apply see
+    them beside the mirror's. The target is the seat's configured one (read_tools._target_dir),
+    the same source cr_infractions and cr_row read, not the mirror's stale target_repo.
+    Lazy import: read_tools imports this module."""
+    from . import read_tools as rt
+    target = rt._target_dir()
+    return rt.hole_rows(rt.closer_holes(target), target)
 
 
 register_handler("cr_apply", cr_apply)

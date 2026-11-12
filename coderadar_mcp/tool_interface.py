@@ -690,6 +690,7 @@ _SPECS: list[ToolSpec] = [
             Field("naming_drift_status", "str", "ND2: the naming-drift tracker's rows ride here too (rule_id `NAMING_DRIFT`, `variant` = tier T1|T2|T3, `has_solution` false, `apply` \"no\" — the developer renames, CodeRadar never does). \"measured — N group(s) published as rows\" once the launch scan has completed; before that \"NOT MEASURED — <reason>\" and no such row is invented", required=False),
             # ── Fix plan 2026-10-23 C1: the field that replaces the `has_more` guess.
             Field("done", "bool", "true only on the last page (`page >= pages`) or when there is none — stop paging when this is true, never on a missing `has_more`", required=False, default=False),
+            Field("closer_holes", "int", "Ian 2026-11-11: holes from CLOSER's holes.jsonl (a location whose second cl_submit try failed; nothing was written there) ride as rows with rule `CLOSER_HOLE`, ranked FIRST — before every `yes` row — `variant` = the hole kind (counterfeit | did not run | unchecked | unlandable), `apply` \"review\", `has_solution` false, line 0: the repair is yours, filed with cr_submit. This is their count before the file/rule filters; the gearbox refreshes them on its manifest tick", required=False, default=0),
             _ERROR,
         ),
         example_input={"file": "colorama/repair_plant_071.py", "page": 1},
@@ -844,15 +845,21 @@ _SPECS: list[ToolSpec] = [
     # ── §B row 7: intent ────────────────────────────────────────────────────
     ToolSpec(
         name="cr_intent",
-        contract="The dev's derived intent — the profile facts the Ranker reads — verbatim from the intent file.",
+        contract=("The intent, verbatim from the intent file. The statement is CLOSER's approved plan when one "
+                  "exists (Cartouche's signed intent when Cartouche was used), the launch purpose otherwise; the "
+                  "facts are the fixed-rule facts of that statement. Do not go looking for intent elsewhere."),
         packet_row="cr_intent()",
-        source_of_record="system_scripts/intent_<repo_id>.json, named by `BUILDER_STATE.json.summary.intent.file`",
+        source_of_record="system_scripts/intent_<repo_id>.json, named by `BUILDER_STATE.json.summary.intent.file`; "
+                         "the applied plan's sha from system_scripts/closer_holes_<repo_id>.json",
         input_schema=(),
         output_schema=(
             Field("target", "str", "the intent file's `target`"),
             Field("repo_id", "str", "the intent file's `repo_id`"),
             Field("generated_at", "str", "ISO"),
-            Field("statement", "str|None", "the dev's own statement; null when none was found (Item 8)"),
+            Field("statement", "dict|None", "{text, source, submitted_at}; null when none was found (Item 8)"),
+            Field("source", "str|None", "the statement's source: `closer` when CLOSER's approved plan wrote it, "
+                                        "`developer` for the launch purpose; null with no statement"),
+            Field("plan_sha256", "str|None", "the sha256 of the CLOSER plan applied as the statement; null when none"),
             Field("facts", "list", "{fact, value, source, evidence, recorded_at} — verbatim"),
             Field("facts_by_source", "dict", "`BUILDER_STATE.summary.intent.facts_by_source`, e.g. {changelog: 3, packaging: 2, readme: 2}"),
             Field("file", "str", "the intent file's absolute path"),
@@ -861,7 +868,8 @@ _SPECS: list[ToolSpec] = [
         example_input={},
         example_output={
             "target": "/Users/dev/code/myrepo", "repo_id": "4fd707688a44",
-            "generated_at": "2026-09-17T07:09:34.062761+00:00", "statement": None,
+            "generated_at": "2026-09-17T07:09:34.062761+00:00", "statement": None, "source": None,
+            "plan_sha256": None,
             "facts": [{"fact": "package_name", "value": "colorama", "source": "packaging",
                        "evidence": "pyproject.toml", "recorded_at": "2026-09-17T07:09:34.062750+00:00"}],
             "facts_by_source": {"changelog": 3, "packaging": 2, "readme": 2},
@@ -978,6 +986,7 @@ _SPECS: list[ToolSpec] = [
             Field("row", "str", "the row id `<file>::<function>::<line>` — the same id cr_infractions / cr_row / cr_apply use"),
             Field("code", "str", "the complete replacement for the row's function (its `def` line through its last line), dedented"),
             Field("note", "str", "what the attempt changes and why, in a sentence — kept with the attempt", required=False, default=""),
+            Field("checks", "list", "CLOSER's check form, each {call, expect} / {call, raises} / {call, contains}. Only for a CLOSER_HOLE row: CLOSER's judge writes the repair NOW, under the plan's locked checks plus these; a PASS is already in the file; a FAIL wrote nothing and you may file again; the Builder never sees it. Refused on any other row.", required=False, default=None),
         ),
         output_schema=(
             Field("accepted", "bool", "the attempt was recorded (it still has to pass the gate)"),
